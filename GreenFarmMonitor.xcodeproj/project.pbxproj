@@ -1,0 +1,589 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D9EED2F243C3A7D00EE97D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9EED2E243C3A7D00EE97D2 /* AppDelegate.swift */; };
+		1D9EED31243C3A7D00EE97D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9EED30243C3A7D00EE97D2 /* SceneDelegate.swift */; };
+		1D9EED33243C3A7D00EE97D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9EED32243C3A7D00EE97D2 /* ViewController.swift */; };
+		1D9EED36243C3A7D00EE97D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D9EED34243C3A7D00EE97D2 /* Main.storyboard */; };
+		1D9EED38243C3A7E00EE97D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D9EED37243C3A7E00EE97D2 /* Assets.xcassets */; };
+		1D9EED3B243C3A7E00EE97D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D9EED39243C3A7E00EE97D2 /* LaunchScreen.storyboard */; };
+		1D9EED46243C3A7E00EE97D2 /* GreenFarmMonitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9EED45243C3A7E00EE97D2 /* GreenFarmMonitorTests.swift */; };
+		1D9EED51243C3A7F00EE97D2 /* GreenFarmMonitorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9EED50243C3A7F00EE97D2 /* GreenFarmMonitorUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1D9EED42243C3A7E00EE97D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D9EED23243C3A7D00EE97D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D9EED2A243C3A7D00EE97D2;
+			remoteInfo = GreenFarmMonitor;
+		};
+		1D9EED4D243C3A7F00EE97D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D9EED23243C3A7D00EE97D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D9EED2A243C3A7D00EE97D2;
+			remoteInfo = GreenFarmMonitor;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1D9EED2B243C3A7D00EE97D2 /* GreenFarmMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreenFarmMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D9EED2E243C3A7D00EE97D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1D9EED30243C3A7D00EE97D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1D9EED32243C3A7D00EE97D2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1D9EED35243C3A7D00EE97D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1D9EED37243C3A7E00EE97D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1D9EED3A243C3A7E00EE97D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1D9EED3C243C3A7E00EE97D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D9EED41243C3A7E00EE97D2 /* GreenFarmMonitorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GreenFarmMonitorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D9EED45243C3A7E00EE97D2 /* GreenFarmMonitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenFarmMonitorTests.swift; sourceTree = "<group>"; };
+		1D9EED47243C3A7E00EE97D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D9EED4C243C3A7F00EE97D2 /* GreenFarmMonitorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GreenFarmMonitorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D9EED50243C3A7F00EE97D2 /* GreenFarmMonitorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenFarmMonitorUITests.swift; sourceTree = "<group>"; };
+		1D9EED52243C3A7F00EE97D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D9EED28243C3A7D00EE97D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D9EED3E243C3A7E00EE97D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D9EED49243C3A7F00EE97D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1D9EED22243C3A7D00EE97D2 = {
+			isa = PBXGroup;
+			children = (
+				1D9EED2D243C3A7D00EE97D2 /* GreenFarmMonitor */,
+				1D9EED44243C3A7E00EE97D2 /* GreenFarmMonitorTests */,
+				1D9EED4F243C3A7F00EE97D2 /* GreenFarmMonitorUITests */,
+				1D9EED2C243C3A7D00EE97D2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1D9EED2C243C3A7D00EE97D2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D9EED2B243C3A7D00EE97D2 /* GreenFarmMonitor.app */,
+				1D9EED41243C3A7E00EE97D2 /* GreenFarmMonitorTests.xctest */,
+				1D9EED4C243C3A7F00EE97D2 /* GreenFarmMonitorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1D9EED2D243C3A7D00EE97D2 /* GreenFarmMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				1D9EED2E243C3A7D00EE97D2 /* AppDelegate.swift */,
+				1D9EED30243C3A7D00EE97D2 /* SceneDelegate.swift */,
+				1D9EED32243C3A7D00EE97D2 /* ViewController.swift */,
+				1D9EED34243C3A7D00EE97D2 /* Main.storyboard */,
+				1D9EED37243C3A7E00EE97D2 /* Assets.xcassets */,
+				1D9EED39243C3A7E00EE97D2 /* LaunchScreen.storyboard */,
+				1D9EED3C243C3A7E00EE97D2 /* Info.plist */,
+			);
+			path = GreenFarmMonitor;
+			sourceTree = "<group>";
+		};
+		1D9EED44243C3A7E00EE97D2 /* GreenFarmMonitorTests */ = {
+			isa = PBXGroup;
+			children = (
+				1D9EED45243C3A7E00EE97D2 /* GreenFarmMonitorTests.swift */,
+				1D9EED47243C3A7E00EE97D2 /* Info.plist */,
+			);
+			path = GreenFarmMonitorTests;
+			sourceTree = "<group>";
+		};
+		1D9EED4F243C3A7F00EE97D2 /* GreenFarmMonitorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1D9EED50243C3A7F00EE97D2 /* GreenFarmMonitorUITests.swift */,
+				1D9EED52243C3A7F00EE97D2 /* Info.plist */,
+			);
+			path = GreenFarmMonitorUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D9EED2A243C3A7D00EE97D2 /* GreenFarmMonitor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D9EED55243C3A7F00EE97D2 /* Build configuration list for PBXNativeTarget "GreenFarmMonitor" */;
+			buildPhases = (
+				1D9EED27243C3A7D00EE97D2 /* Sources */,
+				1D9EED28243C3A7D00EE97D2 /* Frameworks */,
+				1D9EED29243C3A7D00EE97D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GreenFarmMonitor;
+			productName = GreenFarmMonitor;
+			productReference = 1D9EED2B243C3A7D00EE97D2 /* GreenFarmMonitor.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1D9EED40243C3A7E00EE97D2 /* GreenFarmMonitorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D9EED58243C3A7F00EE97D2 /* Build configuration list for PBXNativeTarget "GreenFarmMonitorTests" */;
+			buildPhases = (
+				1D9EED3D243C3A7E00EE97D2 /* Sources */,
+				1D9EED3E243C3A7E00EE97D2 /* Frameworks */,
+				1D9EED3F243C3A7E00EE97D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1D9EED43243C3A7E00EE97D2 /* PBXTargetDependency */,
+			);
+			name = GreenFarmMonitorTests;
+			productName = GreenFarmMonitorTests;
+			productReference = 1D9EED41243C3A7E00EE97D2 /* GreenFarmMonitorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1D9EED4B243C3A7F00EE97D2 /* GreenFarmMonitorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D9EED5B243C3A7F00EE97D2 /* Build configuration list for PBXNativeTarget "GreenFarmMonitorUITests" */;
+			buildPhases = (
+				1D9EED48243C3A7F00EE97D2 /* Sources */,
+				1D9EED49243C3A7F00EE97D2 /* Frameworks */,
+				1D9EED4A243C3A7F00EE97D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1D9EED4E243C3A7F00EE97D2 /* PBXTargetDependency */,
+			);
+			name = GreenFarmMonitorUITests;
+			productName = GreenFarmMonitorUITests;
+			productReference = 1D9EED4C243C3A7F00EE97D2 /* GreenFarmMonitorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1D9EED23243C3A7D00EE97D2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Nikhil Gholap";
+				TargetAttributes = {
+					1D9EED2A243C3A7D00EE97D2 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					1D9EED40243C3A7E00EE97D2 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 1D9EED2A243C3A7D00EE97D2;
+					};
+					1D9EED4B243C3A7F00EE97D2 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 1D9EED2A243C3A7D00EE97D2;
+					};
+				};
+			};
+			buildConfigurationList = 1D9EED26243C3A7D00EE97D2 /* Build configuration list for PBXProject "GreenFarmMonitor" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1D9EED22243C3A7D00EE97D2;
+			productRefGroup = 1D9EED2C243C3A7D00EE97D2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D9EED2A243C3A7D00EE97D2 /* GreenFarmMonitor */,
+				1D9EED40243C3A7E00EE97D2 /* GreenFarmMonitorTests */,
+				1D9EED4B243C3A7F00EE97D2 /* GreenFarmMonitorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D9EED29243C3A7D00EE97D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D9EED3B243C3A7E00EE97D2 /* LaunchScreen.storyboard in Resources */,
+				1D9EED38243C3A7E00EE97D2 /* Assets.xcassets in Resources */,
+				1D9EED36243C3A7D00EE97D2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D9EED3F243C3A7E00EE97D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D9EED4A243C3A7F00EE97D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D9EED27243C3A7D00EE97D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D9EED33243C3A7D00EE97D2 /* ViewController.swift in Sources */,
+				1D9EED2F243C3A7D00EE97D2 /* AppDelegate.swift in Sources */,
+				1D9EED31243C3A7D00EE97D2 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D9EED3D243C3A7E00EE97D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D9EED46243C3A7E00EE97D2 /* GreenFarmMonitorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D9EED48243C3A7F00EE97D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D9EED51243C3A7F00EE97D2 /* GreenFarmMonitorUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1D9EED43243C3A7E00EE97D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1D9EED2A243C3A7D00EE97D2 /* GreenFarmMonitor */;
+			targetProxy = 1D9EED42243C3A7E00EE97D2 /* PBXContainerItemProxy */;
+		};
+		1D9EED4E243C3A7F00EE97D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1D9EED2A243C3A7D00EE97D2 /* GreenFarmMonitor */;
+			targetProxy = 1D9EED4D243C3A7F00EE97D2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1D9EED34243C3A7D00EE97D2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1D9EED35243C3A7D00EE97D2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1D9EED39243C3A7E00EE97D2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1D9EED3A243C3A7E00EE97D2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1D9EED53243C3A7F00EE97D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1D9EED54243C3A7F00EE97D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1D9EED56243C3A7F00EE97D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GreenFarmMonitor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dev.GreenFarmMonitor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1D9EED57243C3A7F00EE97D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GreenFarmMonitor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dev.GreenFarmMonitor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1D9EED59243C3A7F00EE97D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GreenFarmMonitorTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dev.GreenFarmMonitorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GreenFarmMonitor.app/GreenFarmMonitor";
+			};
+			name = Debug;
+		};
+		1D9EED5A243C3A7F00EE97D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GreenFarmMonitorTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dev.GreenFarmMonitorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GreenFarmMonitor.app/GreenFarmMonitor";
+			};
+			name = Release;
+		};
+		1D9EED5C243C3A7F00EE97D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GreenFarmMonitorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dev.GreenFarmMonitorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GreenFarmMonitor;
+			};
+			name = Debug;
+		};
+		1D9EED5D243C3A7F00EE97D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GreenFarmMonitorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dev.GreenFarmMonitorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GreenFarmMonitor;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D9EED26243C3A7D00EE97D2 /* Build configuration list for PBXProject "GreenFarmMonitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D9EED53243C3A7F00EE97D2 /* Debug */,
+				1D9EED54243C3A7F00EE97D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1D9EED55243C3A7F00EE97D2 /* Build configuration list for PBXNativeTarget "GreenFarmMonitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D9EED56243C3A7F00EE97D2 /* Debug */,
+				1D9EED57243C3A7F00EE97D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1D9EED58243C3A7F00EE97D2 /* Build configuration list for PBXNativeTarget "GreenFarmMonitorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D9EED59243C3A7F00EE97D2 /* Debug */,
+				1D9EED5A243C3A7F00EE97D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1D9EED5B243C3A7F00EE97D2 /* Build configuration list for PBXNativeTarget "GreenFarmMonitorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D9EED5C243C3A7F00EE97D2 /* Debug */,
+				1D9EED5D243C3A7F00EE97D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1D9EED23243C3A7D00EE97D2 /* Project object */;
+}
