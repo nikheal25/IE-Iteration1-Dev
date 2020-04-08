@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D50297D243D90C100D4F426 /* UserdefaultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D50297C243D90C100D4F426 /* UserdefaultsController.swift */; };
+		1D502981243D919A00D4F426 /* UserdefaultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D502980243D919A00D4F426 /* UserdefaultsProtocol.swift */; };
 		1D9EED2F243C3A7D00EE97D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9EED2E243C3A7D00EE97D2 /* AppDelegate.swift */; };
 		1D9EED31243C3A7D00EE97D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9EED30243C3A7D00EE97D2 /* SceneDelegate.swift */; };
 		1D9EED33243C3A7D00EE97D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9EED32243C3A7D00EE97D2 /* ViewController.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D50297C243D90C100D4F426 /* UserdefaultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserdefaultsController.swift; sourceTree = "<group>"; };
+		1D502980243D919A00D4F426 /* UserdefaultsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserdefaultsProtocol.swift; sourceTree = "<group>"; };
 		1D9EED2B243C3A7D00EE97D2 /* GreenFarmMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreenFarmMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D9EED2E243C3A7D00EE97D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D9EED30243C3A7D00EE97D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +83,8 @@
 		1D0B0840243D82390098D644 /* UserDefaults */ = {
 			isa = PBXGroup;
 			children = (
+				1D50297C243D90C100D4F426 /* UserdefaultsController.swift */,
+				1D502980243D919A00D4F426 /* UserdefaultsProtocol.swift */,
 			);
 			path = UserDefaults;
 			sourceTree = "<group>";
@@ -284,7 +290,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D9EED33243C3A7D00EE97D2 /* ViewController.swift in Sources */,
+				1D502981243D919A00D4F426 /* UserdefaultsProtocol.swift in Sources */,
 				1D9EED2F243C3A7D00EE97D2 /* AppDelegate.swift in Sources */,
+				1D50297D243D90C100D4F426 /* UserdefaultsController.swift in Sources */,
 				1D9EED31243C3A7D00EE97D2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
