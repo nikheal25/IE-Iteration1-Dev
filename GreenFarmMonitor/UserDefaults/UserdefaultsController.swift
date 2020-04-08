@@ -9,5 +9,13 @@
 import UIKit
 
 class UserdefaultsController: NSObject, UserdefaultsProtocol {
+    func generateUniqueUserId() -> String {
+        return ""
+    }
+    
+    func retrieveUserId() -> String {
+        return ""
+    }
+    
 
 }

@@ -9,5 +9,6 @@
 import Foundation
 
 protocol UserdefaultsProtocol {
-   
+    func generateUniqueUserId() -> String
+    func retrieveUserId() -> String
 }

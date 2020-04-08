@@ -39,7 +39,7 @@
 /* Begin PBXFileReference section */
 		1D50297C243D90C100D4F426 /* UserdefaultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserdefaultsController.swift; sourceTree = "<group>"; };
 		1D502980243D919A00D4F426 /* UserdefaultsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserdefaultsProtocol.swift; sourceTree = "<group>"; };
-		1D9EED2B243C3A7D00EE97D2 /* GreenFarmMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreenFarmMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D9EED2B243C3A7D00EE97D2 /* Green Farm Monitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Green Farm Monitor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D9EED2E243C3A7D00EE97D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D9EED30243C3A7D00EE97D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1D9EED32243C3A7D00EE97D2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -116,7 +116,7 @@
 		1D9EED2C243C3A7D00EE97D2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D9EED2B243C3A7D00EE97D2 /* GreenFarmMonitor.app */,
+				1D9EED2B243C3A7D00EE97D2 /* Green Farm Monitor.app */,
 				1D9EED41243C3A7E00EE97D2 /* GreenFarmMonitorTests.xctest */,
 				1D9EED4C243C3A7F00EE97D2 /* GreenFarmMonitorUITests.xctest */,
 			);
@@ -175,7 +175,7 @@
 			);
 			name = GreenFarmMonitor;
 			productName = GreenFarmMonitor;
-			productReference = 1D9EED2B243C3A7D00EE97D2 /* GreenFarmMonitor.app */;
+			productReference = 1D9EED2B243C3A7D00EE97D2 /* Green Farm Monitor.app */;
 			productType = "com.apple.product-type.application";
 		};
 		1D9EED40243C3A7E00EE97D2 /* GreenFarmMonitorTests */ = {
@@ -473,7 +473,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dev.GreenFarmMonitor;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Green Farm Monitor";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -490,7 +490,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dev.GreenFarmMonitor;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Green Farm Monitor";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
