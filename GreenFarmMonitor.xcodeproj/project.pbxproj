@@ -76,6 +76,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D0B0840243D82390098D644 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		1D0B0841243D82580098D644 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		1D0B0842243D82640098D644 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		1D9EED22243C3A7D00EE97D2 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +120,9 @@
 		1D9EED2D243C3A7D00EE97D2 /* GreenFarmMonitor */ = {
 			isa = PBXGroup;
 			children = (
+				1D0B0842243D82640098D644 /* Models */,
+				1D0B0841243D82580098D644 /* Database */,
+				1D0B0840243D82390098D644 /* UserDefaults */,
 				1D9EED2E243C3A7D00EE97D2 /* AppDelegate.swift */,
 				1D9EED30243C3A7D00EE97D2 /* SceneDelegate.swift */,
 				1D9EED32243C3A7D00EE97D2 /* ViewController.swift */,
