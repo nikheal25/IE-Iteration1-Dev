@@ -17,6 +17,7 @@
 		1D9EED3B243C3A7E00EE97D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D9EED39243C3A7E00EE97D2 /* LaunchScreen.storyboard */; };
 		1D9EED46243C3A7E00EE97D2 /* GreenFarmMonitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9EED45243C3A7E00EE97D2 /* GreenFarmMonitorTests.swift */; };
 		1D9EED51243C3A7F00EE97D2 /* GreenFarmMonitorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9EED50243C3A7F00EE97D2 /* GreenFarmMonitorUITests.swift */; };
+		E804809D243DCBAD00EC342A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E804809C243DCBAD00EC342A /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		1D9EED4C243C3A7F00EE97D2 /* GreenFarmMonitorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GreenFarmMonitorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D9EED50243C3A7F00EE97D2 /* GreenFarmMonitorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenFarmMonitorUITests.swift; sourceTree = "<group>"; };
 		1D9EED52243C3A7F00EE97D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E804809C243DCBAD00EC342A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				1D9EED37243C3A7E00EE97D2 /* Assets.xcassets */,
 				1D9EED39243C3A7E00EE97D2 /* LaunchScreen.storyboard */,
 				1D9EED3C243C3A7E00EE97D2 /* Info.plist */,
+				E804809C243DCBAD00EC342A /* SettingsViewController.swift */,
 			);
 			path = GreenFarmMonitor;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				1D9EED2F243C3A7D00EE97D2 /* AppDelegate.swift in Sources */,
 				1D50297D243D90C100D4F426 /* UserdefaultsController.swift in Sources */,
 				1D9EED31243C3A7D00EE97D2 /* SceneDelegate.swift in Sources */,
+				E804809D243DCBAD00EC342A /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
