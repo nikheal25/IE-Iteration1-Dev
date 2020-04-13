@@ -19,8 +19,7 @@ class MyCropTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let crop1 = Crop()
-        crop1.cropName = "tomato"
+        let crop1 = Crop(cropId: "1", cropName: "Tomato", cropImage: "")
         cropList.append(crop1)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

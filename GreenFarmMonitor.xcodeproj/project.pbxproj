@@ -22,6 +22,7 @@
 		1DDEE7E12444363B005BC7D8 /* CropTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEE7E02444363B005BC7D8 /* CropTableViewCell.swift */; };
 		1DDEE7E5244443CD005BC7D8 /* AddNewCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEE7E4244443CD005BC7D8 /* AddNewCropViewController.swift */; };
 		1DDEE7E724445EEC005BC7D8 /* DetailNewCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEE7E624445EEC005BC7D8 /* DetailNewCropViewController.swift */; };
+		1DDEE7E924446777005BC7D8 /* MyCropCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEE7E824446777005BC7D8 /* MyCropCellTableViewCell.swift */; };
 		E804809D243DCBAD00EC342A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E804809C243DCBAD00EC342A /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		1DDEE7E02444363B005BC7D8 /* CropTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropTableViewCell.swift; sourceTree = "<group>"; };
 		1DDEE7E4244443CD005BC7D8 /* AddNewCropViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCropViewController.swift; sourceTree = "<group>"; };
 		1DDEE7E624445EEC005BC7D8 /* DetailNewCropViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNewCropViewController.swift; sourceTree = "<group>"; };
+		1DDEE7E824446777005BC7D8 /* MyCropCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCropCellTableViewCell.swift; sourceTree = "<group>"; };
 		E804809C243DCBAD00EC342A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -147,6 +149,7 @@
 				1D9EED30243C3A7D00EE97D2 /* SceneDelegate.swift */,
 				1D9EED32243C3A7D00EE97D2 /* ViewController.swift */,
 				1D9EED34243C3A7D00EE97D2 /* Main.storyboard */,
+				1DDEE7E824446777005BC7D8 /* MyCropCellTableViewCell.swift */,
 				1D9EED37243C3A7E00EE97D2 /* Assets.xcassets */,
 				1D9EED39243C3A7E00EE97D2 /* LaunchScreen.storyboard */,
 				1D9EED3C243C3A7E00EE97D2 /* Info.plist */,
@@ -308,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DDEE7E12444363B005BC7D8 /* CropTableViewCell.swift in Sources */,
+				1DDEE7E924446777005BC7D8 /* MyCropCellTableViewCell.swift in Sources */,
 				1DDEE7DD244432CF005BC7D8 /* Crop.swift in Sources */,
 				1D9EED33243C3A7D00EE97D2 /* ViewController.swift in Sources */,
 				1DDEE7E5244443CD005BC7D8 /* AddNewCropViewController.swift in Sources */,

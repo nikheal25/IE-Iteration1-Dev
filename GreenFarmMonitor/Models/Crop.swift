@@ -9,7 +9,13 @@
 import Foundation
 
 class Crop: NSObject {
-    var cropId: String?
-    var cropName: String?
-    var cropImage: String?
+    var cropId: String
+    var cropName: String
+    var cropImage: String
+    
+    init(cropId: String, cropName: String, cropImage: String) {
+        self.cropId = cropId
+        self.cropName = cropName
+        self.cropImage = cropImage
+    }
 }
