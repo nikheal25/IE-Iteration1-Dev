@@ -46,15 +46,13 @@ class AddNewCropViewController: UIViewController{
 //       }
        
        
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "specificCropSegue" {
+            let destination = segue.destination //as! AddNewCropViewController
+            
+        }
     }
-    */
 
 }
 
@@ -99,6 +97,15 @@ extension AddNewCropViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return cell!
     }
+    
+    //This method gets called when any cell is selected by the user
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+          if indexPath.section == SECTION_ACTIVITY{
+              selectedRow = indexPath.row
+              tableView.deselectRow(at: indexPath, animated: true)
+              self.performSegue(withIdentifier: "specificCropSegue", sender: self)
+          }
+      }
     
     
 }
