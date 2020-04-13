@@ -25,6 +25,7 @@
 		1DDEE7E924446777005BC7D8 /* MyCropCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEE7E824446777005BC7D8 /* MyCropCellTableViewCell.swift */; };
 		1DDEE7ED24448112005BC7D8 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEE7EC24448112005BC7D8 /* FirstViewController.swift */; };
 		1DDEE7F224448F72005BC7D8 /* intro2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1DDEE7F124448F68005BC7D8 /* intro2.mp4 */; };
+		1DDEE7F424449C46005BC7D8 /* MyCropMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEE7F324449C46005BC7D8 /* MyCropMainTableViewCell.swift */; };
 		E804809D243DCBAD00EC342A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E804809C243DCBAD00EC342A /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,7 @@
 		1DDEE7E824446777005BC7D8 /* MyCropCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCropCellTableViewCell.swift; sourceTree = "<group>"; };
 		1DDEE7EC24448112005BC7D8 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		1DDEE7F124448F68005BC7D8 /* intro2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = intro2.mp4; sourceTree = "<group>"; };
+		1DDEE7F324449C46005BC7D8 /* MyCropMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCropMainTableViewCell.swift; sourceTree = "<group>"; };
 		E804809C243DCBAD00EC342A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -163,6 +165,7 @@
 				1DDEE7E624445EEC005BC7D8 /* DetailNewCropViewController.swift */,
 				1DDEE7EC24448112005BC7D8 /* FirstViewController.swift */,
 				1DDEE7F124448F68005BC7D8 /* intro2.mp4 */,
+				1DDEE7F324449C46005BC7D8 /* MyCropMainTableViewCell.swift */,
 			);
 			path = GreenFarmMonitor;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				1DDEE7ED24448112005BC7D8 /* FirstViewController.swift in Sources */,
 				1DDEE7E724445EEC005BC7D8 /* DetailNewCropViewController.swift in Sources */,
 				1D502981243D919A00D4F426 /* UserdefaultsProtocol.swift in Sources */,
+				1DDEE7F424449C46005BC7D8 /* MyCropMainTableViewCell.swift in Sources */,
 				1DDEE7DF244433D3005BC7D8 /* MyCropTableViewController.swift in Sources */,
 				1D9EED2F243C3A7D00EE97D2 /* AppDelegate.swift in Sources */,
 				1D50297D243D90C100D4F426 /* UserdefaultsController.swift in Sources */,

@@ -43,8 +43,9 @@ class MyCropTableViewController: UITableViewController {
 
    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == SECTION_ACTIVITY {
-            let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ACTIVITY, for: indexPath)
-            cell.textLabel?.text = cropList[indexPath.row].cropName
+            let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ACTIVITY, for: indexPath) as! MyCropMainTableViewCell
+            //cell.textLabel?.text = cropList[indexPath.row].cropName
+            cell.setCell(crop: cropList[indexPath.row])
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: CELL_COUNT, for: indexPath)
@@ -53,6 +54,13 @@ class MyCropTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+       if section == SECTION_ACTIVITY {
+            return "Existing crops in my list"
+        }
+        return "Add new Crops"
+
+    }
 
     /*
     // Override to support conditional editing of the table view.
