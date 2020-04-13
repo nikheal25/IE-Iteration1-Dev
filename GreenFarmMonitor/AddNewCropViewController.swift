@@ -34,24 +34,16 @@ class AddNewCropViewController: UIViewController{
            return 2
        }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == SECTION_ACTIVITY {
-            return (allCropsName.count)
-        }
-        return 1;
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-           if indexPath.section == SECTION_ACTIVITY {
-                      let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ACTIVITY, for: indexPath)
-                      cell.textLabel?.text = allCropsName[indexPath.row]
-                      return cell
-                  }
-                  let cell = tableView.dequeueReusableCell(withIdentifier: CELL_COUNT, for: indexPath)
-                  cell.textLabel?.text = " alerts in the list"
-                  cell.selectionStyle = .none
-                  return cell
-       }
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        if section == SECTION_ACTIVITY {
+//            return (allCropsName.count)
+//        }
+//        return 1;
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//
+//       }
        
        
     /*
@@ -68,23 +60,45 @@ class AddNewCropViewController: UIViewController{
 
 extension AddNewCropViewController: UITableViewDelegate, UITableViewDataSource {
     
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if searching {
-//            return searchedCountry.count
-//        } else {
-//            return countryNameArr.count
-//        }
-//    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if searching {
+            if section == SECTION_ACTIVITY {
+                return (searchedCountry.count)
+            }
+            return 1;
+        } else {
+            if section == SECTION_ACTIVITY {
+                return (allCropsName.count)
+            }
+            return 1;
+        }
+    }
     
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-//        if searching {
-//            cell?.textLabel?.text = searchedCountry[indexPath.row]
-//        } else {
-//            cell?.textLabel?.text = countryNameArr[indexPath.row]
-//        }
-//        return cell!
-//    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
+        if searching {
+            if indexPath.section == SECTION_ACTIVITY {
+                                            let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ACTIVITY, for: indexPath)
+                                            cell.textLabel?.text = searchedCountry[indexPath.row]
+                                            return cell
+                                        }
+                                        let cell = tableView.dequeueReusableCell(withIdentifier: CELL_COUNT, for: indexPath)
+            cell.textLabel?.text = "\(searchedCountry.count) alerts in the list"
+                                        cell.selectionStyle = .none
+                                        return cell
+        } else {
+             if indexPath.section == SECTION_ACTIVITY {
+                                 let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ACTIVITY, for: indexPath)
+                                 cell.textLabel?.text = allCropsName[indexPath.row]
+                                 return cell
+                             }
+                             let cell = tableView.dequeueReusableCell(withIdentifier: CELL_COUNT, for: indexPath)
+            cell.textLabel?.text = "\(allCropsName.count) crops in the list"
+                             cell.selectionStyle = .none
+                             return cell
+        }
+        return cell!
+    }
     
     
 }
