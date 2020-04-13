@@ -198,7 +198,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xWt-Zi-Yqa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2835" y="-232"/>
+            <point key="canvasLocation" x="2723" y="-364"/>
         </scene>
         <!--My Crop-->
         <scene sceneID="jYz-VE-eLF">
