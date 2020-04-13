@@ -306,10 +306,10 @@
             </objects>
             <point key="canvasLocation" x="-936.23188405797111" y="2332.3660714285711"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail New Crop View Controller-->
         <scene sceneID="Sb3-rU-tnB">
             <objects>
-                <viewController id="RG7-Oh-y8c" sceneMemberID="viewController">
+                <viewController id="RG7-Oh-y8c" customClass="DetailNewCropViewController" customModule="Green_Farm_Monitor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9gY-m0-TOh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -424,6 +424,9 @@
                                 <state key="normal" title="Add Crop To My Crops">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="addCropButtonPressed:" destination="RG7-Oh-y8c" eventType="touchUpInside" id="rJb-9E-dHF"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOb-rY-LYw">
                                 <rect key="frame" x="200" y="648" width="42" height="21"/>

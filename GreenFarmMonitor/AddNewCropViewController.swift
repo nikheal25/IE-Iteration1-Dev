@@ -49,8 +49,8 @@ class AddNewCropViewController: UIViewController{
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "specificCropSegue" {
-            let destination = segue.destination //as! AddNewCropViewController
-            
+            let destination = segue.destination as! DetailNewCropViewController
+            destination.specificCrop = nil   //// TODO - send the variable
         }
     }
 
