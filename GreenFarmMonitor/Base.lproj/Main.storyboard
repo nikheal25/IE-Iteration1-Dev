@@ -200,41 +200,58 @@
             </objects>
             <point key="canvasLocation" x="2723" y="-364"/>
         </scene>
+        <!--My Crops-->
+        <scene sceneID="dUw-OU-e2l">
+            <objects>
+                <tableViewController id="DHY-iT-N33" customClass="MyCropTableViewController" customModule="Green_Farm_Monitor" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="o06-TL-ZHm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCropCell" id="6gT-vv-8rZ">
+                                <rect key="frame" x="0.0" y="55.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6gT-vv-8rZ" id="o7f-wn-9k7">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellCounter" id="ZJe-eu-2WA">
+                                <rect key="frame" x="0.0" y="99" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZJe-eu-2WA" id="bAZ-HB-KcO">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="DHY-iT-N33" id="gcu-oi-dc6"/>
+                            <outlet property="delegate" destination="DHY-iT-N33" id="F9P-TJ-1V4"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="My Crops" id="T71-E0-OmJ"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hgc-TU-r9b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-965" y="1568"/>
+        </scene>
         <!--My Crop-->
         <scene sceneID="jYz-VE-eLF">
             <objects>
-                <viewController id="Ko8-hr-wKM" sceneMemberID="viewController">
+                <viewController id="Ko8-hr-wKM" customClass="ViewController" customModule="Green_Farm_Monitor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IhP-Zx-ltf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenHouse-2" translatesAutoresizingMaskIntoConstraints="NO" id="q1u-M0-VTz">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mk5-3y-0bK">
-                                <rect key="frame" x="30" y="108" width="354" height="23"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="EiU-4G-cEU" firstAttribute="trailing" secondItem="mk5-3y-0bK" secondAttribute="trailing" constant="30" id="Nsl-Gj-xDy"/>
-                            <constraint firstItem="EiU-4G-cEU" firstAttribute="bottom" secondItem="q1u-M0-VTz" secondAttribute="bottom" id="TKZ-QZ-mlX"/>
-                            <constraint firstItem="q1u-M0-VTz" firstAttribute="leading" secondItem="EiU-4G-cEU" secondAttribute="leading" id="YMP-ZK-F4H"/>
-                            <constraint firstItem="EiU-4G-cEU" firstAttribute="trailing" secondItem="q1u-M0-VTz" secondAttribute="trailing" id="Z6X-SX-fxK"/>
-                            <constraint firstItem="mk5-3y-0bK" firstAttribute="leading" secondItem="EiU-4G-cEU" secondAttribute="leading" constant="30" id="ab5-Oe-Z7Q"/>
-                            <constraint firstItem="mk5-3y-0bK" firstAttribute="top" secondItem="EiU-4G-cEU" secondAttribute="top" constant="20" id="dvx-jL-F4z"/>
-                            <constraint firstItem="q1u-M0-VTz" firstAttribute="top" secondItem="EiU-4G-cEU" secondAttribute="top" id="jW9-rx-EEP"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="EiU-4G-cEU"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Crop" id="CrF-YW-hin"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZoE-68-hba" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-188" y="1514"/>
+            <point key="canvasLocation" x="721.73913043478262" y="1513.3928571428571"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Ubg-Jz-Cyg">
@@ -249,6 +266,7 @@
                         <segue destination="27n-dz-cPa" kind="relationship" relationship="viewControllers" id="9iu-ld-SQB"/>
                         <segue destination="Ex3-ue-bil" kind="relationship" relationship="viewControllers" id="WSW-0D-tXv"/>
                         <segue destination="BdO-ON-fGF" kind="relationship" relationship="viewControllers" id="Q3k-o4-796"/>
+                        <segue destination="NUq-PZ-WBC" kind="relationship" relationship="viewControllers" id="3qC-7n-141"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0S1-i3-ZNc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -311,8 +329,24 @@
             </objects>
             <point key="canvasLocation" x="3839.130434782609" y="522.99107142857144"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="vcC-88-CP8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NUq-PZ-WBC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="AGm-Au-5FZ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ffb-7p-e5y">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="DHY-iT-N33" kind="relationship" relationship="rootViewController" id="Re8-t7-B19"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hHd-yb-C3J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1041" y="747"/>
+        </scene>
     </scenes>
-    <resources>
-        <image name="greenHouse-2" width="666.5" height="889"/>
-    </resources>
 </document>

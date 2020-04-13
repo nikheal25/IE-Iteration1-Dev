@@ -17,6 +17,9 @@
 		1D9EED3B243C3A7E00EE97D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D9EED39243C3A7E00EE97D2 /* LaunchScreen.storyboard */; };
 		1D9EED46243C3A7E00EE97D2 /* GreenFarmMonitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9EED45243C3A7E00EE97D2 /* GreenFarmMonitorTests.swift */; };
 		1D9EED51243C3A7F00EE97D2 /* GreenFarmMonitorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9EED50243C3A7F00EE97D2 /* GreenFarmMonitorUITests.swift */; };
+		1DDEE7DD244432CF005BC7D8 /* Crop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEE7DC244432CF005BC7D8 /* Crop.swift */; };
+		1DDEE7DF244433D3005BC7D8 /* MyCropTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEE7DE244433D3005BC7D8 /* MyCropTableViewController.swift */; };
+		1DDEE7E12444363B005BC7D8 /* CropTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEE7E02444363B005BC7D8 /* CropTableViewCell.swift */; };
 		E804809D243DCBAD00EC342A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E804809C243DCBAD00EC342A /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +57,9 @@
 		1D9EED4C243C3A7F00EE97D2 /* GreenFarmMonitorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GreenFarmMonitorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D9EED50243C3A7F00EE97D2 /* GreenFarmMonitorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenFarmMonitorUITests.swift; sourceTree = "<group>"; };
 		1D9EED52243C3A7F00EE97D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1DDEE7DC244432CF005BC7D8 /* Crop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crop.swift; sourceTree = "<group>"; };
+		1DDEE7DE244433D3005BC7D8 /* MyCropTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCropTableViewController.swift; sourceTree = "<group>"; };
+		1DDEE7E02444363B005BC7D8 /* CropTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropTableViewCell.swift; sourceTree = "<group>"; };
 		E804809C243DCBAD00EC342A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -87,6 +93,7 @@
 			children = (
 				1D50297C243D90C100D4F426 /* UserdefaultsController.swift */,
 				1D502980243D919A00D4F426 /* UserdefaultsProtocol.swift */,
+				1DDEE7E02444363B005BC7D8 /* CropTableViewCell.swift */,
 			);
 			path = UserDefaults;
 			sourceTree = "<group>";
@@ -101,6 +108,7 @@
 		1D0B0842243D82640098D644 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1DDEE7DC244432CF005BC7D8 /* Crop.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -139,6 +147,7 @@
 				1D9EED39243C3A7E00EE97D2 /* LaunchScreen.storyboard */,
 				1D9EED3C243C3A7E00EE97D2 /* Info.plist */,
 				E804809C243DCBAD00EC342A /* SettingsViewController.swift */,
+				1DDEE7DE244433D3005BC7D8 /* MyCropTableViewController.swift */,
 			);
 			path = GreenFarmMonitor;
 			sourceTree = "<group>";
@@ -292,8 +301,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DDEE7E12444363B005BC7D8 /* CropTableViewCell.swift in Sources */,
+				1DDEE7DD244432CF005BC7D8 /* Crop.swift in Sources */,
 				1D9EED33243C3A7D00EE97D2 /* ViewController.swift in Sources */,
 				1D502981243D919A00D4F426 /* UserdefaultsProtocol.swift in Sources */,
+				1DDEE7DF244433D3005BC7D8 /* MyCropTableViewController.swift in Sources */,
 				1D9EED2F243C3A7D00EE97D2 /* AppDelegate.swift in Sources */,
 				1D50297D243D90C100D4F426 /* UserdefaultsController.swift in Sources */,
 				1D9EED31243C3A7D00EE97D2 /* SceneDelegate.swift in Sources */,
