@@ -10,5 +10,9 @@ import Foundation
 
 protocol UserdefaultsProtocol {
     func generateUniqueUserId() -> String
+    func assignUserId(userId: String)
+    func assignName(name: String)
+    func assignCLLocation(lat: String, long: String)
+    func retrieveName() -> String
     func retrieveUserId() -> String
 }
