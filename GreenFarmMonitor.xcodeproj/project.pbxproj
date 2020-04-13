@@ -20,6 +20,7 @@
 		1DDEE7DD244432CF005BC7D8 /* Crop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEE7DC244432CF005BC7D8 /* Crop.swift */; };
 		1DDEE7DF244433D3005BC7D8 /* MyCropTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEE7DE244433D3005BC7D8 /* MyCropTableViewController.swift */; };
 		1DDEE7E12444363B005BC7D8 /* CropTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEE7E02444363B005BC7D8 /* CropTableViewCell.swift */; };
+		1DDEE7E5244443CD005BC7D8 /* AddNewCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEE7E4244443CD005BC7D8 /* AddNewCropViewController.swift */; };
 		E804809D243DCBAD00EC342A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E804809C243DCBAD00EC342A /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		1DDEE7DC244432CF005BC7D8 /* Crop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crop.swift; sourceTree = "<group>"; };
 		1DDEE7DE244433D3005BC7D8 /* MyCropTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCropTableViewController.swift; sourceTree = "<group>"; };
 		1DDEE7E02444363B005BC7D8 /* CropTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropTableViewCell.swift; sourceTree = "<group>"; };
+		1DDEE7E4244443CD005BC7D8 /* AddNewCropViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCropViewController.swift; sourceTree = "<group>"; };
 		E804809C243DCBAD00EC342A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -148,6 +150,7 @@
 				1D9EED3C243C3A7E00EE97D2 /* Info.plist */,
 				E804809C243DCBAD00EC342A /* SettingsViewController.swift */,
 				1DDEE7DE244433D3005BC7D8 /* MyCropTableViewController.swift */,
+				1DDEE7E4244443CD005BC7D8 /* AddNewCropViewController.swift */,
 			);
 			path = GreenFarmMonitor;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				1DDEE7E12444363B005BC7D8 /* CropTableViewCell.swift in Sources */,
 				1DDEE7DD244432CF005BC7D8 /* Crop.swift in Sources */,
 				1D9EED33243C3A7D00EE97D2 /* ViewController.swift in Sources */,
+				1DDEE7E5244443CD005BC7D8 /* AddNewCropViewController.swift in Sources */,
 				1D502981243D919A00D4F426 /* UserdefaultsProtocol.swift in Sources */,
 				1DDEE7DF244433D3005BC7D8 /* MyCropTableViewController.swift in Sources */,
 				1D9EED2F243C3A7D00EE97D2 /* AppDelegate.swift in Sources */,

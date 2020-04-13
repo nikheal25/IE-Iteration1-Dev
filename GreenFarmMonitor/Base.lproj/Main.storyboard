@@ -232,10 +232,78 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="My Crops" id="T71-E0-OmJ"/>
+                    <connections>
+                        <segue destination="RFN-Gy-5fg" kind="show" identifier="addNewCropSegue" id="gDm-6V-5H8"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hgc-TU-r9b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-965" y="1568"/>
+        </scene>
+        <!--Add New Crop View Controller-->
+        <scene sceneID="pJj-C0-a7B">
+            <objects>
+                <viewController id="RFN-Gy-5fg" customClass="AddNewCropViewController" customModule="Green_Farm_Monitor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Ow-Oe-x9R">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gRw-el-lB6">
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="RFN-Gy-5fg" id="jjU-qB-tVo"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rY7-1W-dUf">
+                                <rect key="frame" x="0.0" y="144" width="414" height="752"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Crop" id="ykX-ET-JuK">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ykX-ET-JuK" id="ToY-UQ-TRk">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellCounter" id="Hqu-vq-yFV">
+                                        <rect key="frame" x="0.0" y="71.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hqu-vq-yFV" id="W7M-FX-f7Z">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="RFN-Gy-5fg" id="Ih9-yS-1ZA"/>
+                                    <outlet property="delegate" destination="RFN-Gy-5fg" id="BHQ-u6-iKp"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="rY7-1W-dUf" firstAttribute="trailing" secondItem="35w-u1-h7c" secondAttribute="trailing" id="3x0-bn-d86"/>
+                            <constraint firstItem="rY7-1W-dUf" firstAttribute="top" secondItem="gRw-el-lB6" secondAttribute="bottom" symbolic="YES" id="AQO-gf-k9j"/>
+                            <constraint firstItem="rY7-1W-dUf" firstAttribute="leading" secondItem="35w-u1-h7c" secondAttribute="leading" id="JJO-S0-fuN"/>
+                            <constraint firstItem="gRw-el-lB6" firstAttribute="top" secondItem="9Ow-Oe-x9R" secondAttribute="topMargin" id="PyV-W6-JRY"/>
+                            <constraint firstItem="gRw-el-lB6" firstAttribute="centerX" secondItem="9Ow-Oe-x9R" secondAttribute="centerX" id="atH-eH-N87"/>
+                            <constraint firstItem="gRw-el-lB6" firstAttribute="leading" secondItem="35w-u1-h7c" secondAttribute="leading" id="g0f-ww-2ua"/>
+                            <constraint firstAttribute="bottom" secondItem="rY7-1W-dUf" secondAttribute="bottom" id="kfC-9Y-AqR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="35w-u1-h7c"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Wqh-fc-9mn"/>
+                    <connections>
+                        <outlet property="searchBar" destination="gRw-el-lB6" id="Wec-hc-kfr"/>
+                        <outlet property="tableView" destination="rY7-1W-dUf" id="Tja-be-ZEC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yMq-7z-4LB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-936.23188405797111" y="2332.3660714285711"/>
         </scene>
         <!--My Crop-->
         <scene sceneID="jYz-VE-eLF">

@@ -19,7 +19,9 @@ class MyCropTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        cropList.append(Crop)
+        let crop1 = Crop()
+        crop1.cropName = "tomato"
+        cropList.append(crop1)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -88,14 +90,21 @@ class MyCropTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    //This method gets called when any cell is selected by the user
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+          if indexPath.section == SECTION_ACTIVITY{
+              selectedRow = indexPath.row
+              tableView.deselectRow(at: indexPath, animated: true)
+              self.performSegue(withIdentifier: "addNewCropSegue", sender: self)
+          }
+      }
+  
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "addNewCropSegue" {
+            let destination = segue.destination as! AddNewCropViewController
+            
+        }
     }
-    */
+  
 
 }
