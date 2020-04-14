@@ -10,6 +10,7 @@ target 'GreenFarmMonitor' do
   pod 'FirebaseAuth'
   pod 'FirebaseFirestore'
   pod 'Charts'
+  pod 'paper-onboarding'
   
   target 'GreenFarmMonitorTests' do
     inherit! :search_paths

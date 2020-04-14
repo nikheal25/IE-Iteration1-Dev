@@ -21,6 +21,9 @@ class FirstViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func nextButtonClicked(_ sender: Any) {
+        performSegue(withIdentifier: "onBoardingSegue", sender: self)
+    }
     func playVideo() {
            guard let path = Bundle.main.path(forResource: "intro2", ofType: "mp4") else {
                 print("no video found")

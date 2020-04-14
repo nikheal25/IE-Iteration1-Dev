@@ -186,6 +186,9 @@
                                 <rect key="frame" x="50" y="723" width="314" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="nextButtonClicked:" destination="0vi-oQ-bUa" eventType="touchUpInside" id="cTC-Bm-h8O"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -204,17 +207,17 @@
                         <outlet property="mainButton" destination="S1Q-vK-0Fs" id="SyR-Mf-avU"/>
                         <outlet property="mainLabel" destination="okr-UP-B6e" id="zn4-N5-Jwb"/>
                         <outlet property="videoLayer" destination="tuh-dh-FYm" id="MVh-QI-Di1"/>
-                        <segue destination="DVU-ys-H6N" kind="show" id="yhZ-pe-Ohn"/>
+                        <segue destination="DVU-ys-H6N" kind="show" identifier="onBoardingSegue" id="yhZ-pe-Ohn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xWt-Zi-Yqa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2723" y="-364"/>
         </scene>
-        <!--View Controller-->
+        <!--Onboarding View Controller-->
         <scene sceneID="qyw-UC-HKT">
             <objects>
-                <viewController id="DVU-ys-H6N" sceneMemberID="viewController">
+                <viewController id="DVU-ys-H6N" customClass="OnboardingViewController" customModule="Green_Farm_Monitor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PJh-IC-C6a">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -225,7 +228,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="phP-Kc-QbM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3746" y="-347"/>
+            <point key="canvasLocation" x="3768" y="-364"/>
         </scene>
         <!--My Crops-->
         <scene sceneID="dUw-OU-e2l">

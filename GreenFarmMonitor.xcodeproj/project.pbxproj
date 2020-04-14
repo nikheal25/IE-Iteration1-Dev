@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D2FCB7424457EA80024FFBB /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2FCB7324457EA80024FFBB /* OnboardingViewController.swift */; };
+		1D2FCB7624457FF10024FFBB /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 1D2FCB7524457FF10024FFBB /* Fonts */; };
 		1D50297D243D90C100D4F426 /* UserdefaultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D50297C243D90C100D4F426 /* UserdefaultsController.swift */; };
 		1D502981243D919A00D4F426 /* UserdefaultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D502980243D919A00D4F426 /* UserdefaultsProtocol.swift */; };
 		1D9EED2F243C3A7D00EE97D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9EED2E243C3A7D00EE97D2 /* AppDelegate.swift */; };
@@ -50,6 +52,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D2FCB7324457EA80024FFBB /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		1D2FCB7524457FF10024FFBB /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		1D50297C243D90C100D4F426 /* UserdefaultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserdefaultsController.swift; sourceTree = "<group>"; };
 		1D502980243D919A00D4F426 /* UserdefaultsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserdefaultsProtocol.swift; sourceTree = "<group>"; };
 		1D9EED2B243C3A7D00EE97D2 /* Green Farm Monitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Green Farm Monitor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,6 +183,7 @@
 				1D0B0841243D82580098D644 /* Database */,
 				1D0B0840243D82390098D644 /* UserDefaults */,
 				1D9EED2E243C3A7D00EE97D2 /* AppDelegate.swift */,
+				1D2FCB7524457FF10024FFBB /* Fonts */,
 				1D9EED30243C3A7D00EE97D2 /* SceneDelegate.swift */,
 				1D9EED32243C3A7D00EE97D2 /* ViewController.swift */,
 				1D9EED34243C3A7D00EE97D2 /* Main.storyboard */,
@@ -193,6 +198,7 @@
 				1DDEE7EC24448112005BC7D8 /* FirstViewController.swift */,
 				1DDEE7F124448F68005BC7D8 /* intro2.mp4 */,
 				1DDEE7F324449C46005BC7D8 /* MyCropMainTableViewCell.swift */,
+				1D2FCB7324457EA80024FFBB /* OnboardingViewController.swift */,
 			);
 			path = GreenFarmMonitor;
 			sourceTree = "<group>";
@@ -225,7 +231,6 @@
 				D72296D4C58E57A318A390F9 /* Pods-GreenFarmMonitorTests.debug.xcconfig */,
 				D31F8651731FD2164B702A8E /* Pods-GreenFarmMonitorTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -338,6 +343,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D2FCB7624457FF10024FFBB /* Fonts in Resources */,
 				1DDEE7F224448F72005BC7D8 /* intro2.mp4 in Resources */,
 				1D9EED3B243C3A7E00EE97D2 /* LaunchScreen.storyboard in Resources */,
 				1D9EED38243C3A7E00EE97D2 /* Assets.xcassets in Resources */,
@@ -476,6 +482,7 @@
 				1DDEE7E5244443CD005BC7D8 /* AddNewCropViewController.swift in Sources */,
 				1DDEE7ED24448112005BC7D8 /* FirstViewController.swift in Sources */,
 				1DDEE7E724445EEC005BC7D8 /* DetailNewCropViewController.swift in Sources */,
+				1D2FCB7424457EA80024FFBB /* OnboardingViewController.swift in Sources */,
 				1D502981243D919A00D4F426 /* UserdefaultsProtocol.swift in Sources */,
 				1DDEE7F424449C46005BC7D8 /* MyCropMainTableViewCell.swift in Sources */,
 				1DDEE7DF244433D3005BC7D8 /* MyCropTableViewController.swift in Sources */,
