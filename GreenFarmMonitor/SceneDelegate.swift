@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
 //            userDefaultController = UserdefaultsController()
-//             
+//
 //             if (userDefaultController?.retrieveUserId().isEmpty)! {
 //
 //                let windowScene = UIWindowScene(session: session, connectionOptions: connectionOptions)
@@ -37,7 +37,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //                     self.window?.makeKeyAndVisible()
 //
 //             }
-        
+//
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 
