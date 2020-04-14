@@ -17,7 +17,12 @@
 		1D9EED3B243C3A7E00EE97D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D9EED39243C3A7E00EE97D2 /* LaunchScreen.storyboard */; };
 		1D9EED46243C3A7E00EE97D2 /* GreenFarmMonitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9EED45243C3A7E00EE97D2 /* GreenFarmMonitorTests.swift */; };
 		1D9EED51243C3A7F00EE97D2 /* GreenFarmMonitorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9EED50243C3A7F00EE97D2 /* GreenFarmMonitorUITests.swift */; };
-		E804809D243DCBAD00EC342A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E804809C243DCBAD00EC342A /* SettingsViewController.swift */; };
+		E883C94224443BEB006F6AC8 /* DiseaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E883C94124443BEB006F6AC8 /* DiseaseViewController.swift */; };
+		E883C944244442F3006F6AC8 /* DiseaseOfCrops.swift in Sources */ = {isa = PBXBuildFile; fileRef = E883C943244442F3006F6AC8 /* DiseaseOfCrops.swift */; };
+		E883C94624444B8B006F6AC8 /* MyCropsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E883C94524444B8B006F6AC8 /* MyCropsTableViewCell.swift */; };
+		E883C94824444BDB006F6AC8 /* DiseaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E883C94724444BDB006F6AC8 /* DiseaseTableViewCell.swift */; };
+		E883C94A24446A04006F6AC8 /* DetailOfDiseaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E883C94924446A04006F6AC8 /* DetailOfDiseaseViewController.swift */; };
+		E883C94C244473E1006F6AC8 /* SymptomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E883C94B244473E1006F6AC8 /* SymptomsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +59,12 @@
 		1D9EED4C243C3A7F00EE97D2 /* GreenFarmMonitorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GreenFarmMonitorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D9EED50243C3A7F00EE97D2 /* GreenFarmMonitorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenFarmMonitorUITests.swift; sourceTree = "<group>"; };
 		1D9EED52243C3A7F00EE97D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E804809C243DCBAD00EC342A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = SOURCE_ROOT; };
+		E883C94124443BEB006F6AC8 /* DiseaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseViewController.swift; sourceTree = "<group>"; };
+		E883C943244442F3006F6AC8 /* DiseaseOfCrops.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseOfCrops.swift; sourceTree = "<group>"; };
+		E883C94524444B8B006F6AC8 /* MyCropsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCropsTableViewCell.swift; sourceTree = "<group>"; };
+		E883C94724444BDB006F6AC8 /* DiseaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseTableViewCell.swift; sourceTree = "<group>"; };
+		E883C94924446A04006F6AC8 /* DetailOfDiseaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOfDiseaseViewController.swift; sourceTree = "<group>"; };
+		E883C94B244473E1006F6AC8 /* SymptomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +148,12 @@
 				1D9EED37243C3A7E00EE97D2 /* Assets.xcassets */,
 				1D9EED39243C3A7E00EE97D2 /* LaunchScreen.storyboard */,
 				1D9EED3C243C3A7E00EE97D2 /* Info.plist */,
-				E804809C243DCBAD00EC342A /* SettingsViewController.swift */,
+				E883C94124443BEB006F6AC8 /* DiseaseViewController.swift */,
+				E883C943244442F3006F6AC8 /* DiseaseOfCrops.swift */,
+				E883C94524444B8B006F6AC8 /* MyCropsTableViewCell.swift */,
+				E883C94724444BDB006F6AC8 /* DiseaseTableViewCell.swift */,
+				E883C94924446A04006F6AC8 /* DetailOfDiseaseViewController.swift */,
+				E883C94B244473E1006F6AC8 /* SymptomsViewController.swift */,
 			);
 			path = GreenFarmMonitor;
 			sourceTree = "<group>";
@@ -294,10 +309,15 @@
 			files = (
 				1D9EED33243C3A7D00EE97D2 /* ViewController.swift in Sources */,
 				1D502981243D919A00D4F426 /* UserdefaultsProtocol.swift in Sources */,
+				E883C94C244473E1006F6AC8 /* SymptomsViewController.swift in Sources */,
 				1D9EED2F243C3A7D00EE97D2 /* AppDelegate.swift in Sources */,
+				E883C94824444BDB006F6AC8 /* DiseaseTableViewCell.swift in Sources */,
 				1D50297D243D90C100D4F426 /* UserdefaultsController.swift in Sources */,
+				E883C944244442F3006F6AC8 /* DiseaseOfCrops.swift in Sources */,
+				E883C94624444B8B006F6AC8 /* MyCropsTableViewCell.swift in Sources */,
+				E883C94A24446A04006F6AC8 /* DetailOfDiseaseViewController.swift in Sources */,
 				1D9EED31243C3A7D00EE97D2 /* SceneDelegate.swift in Sources */,
-				E804809D243DCBAD00EC342A /* SettingsViewController.swift in Sources */,
+				E883C94224443BEB006F6AC8 /* DiseaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

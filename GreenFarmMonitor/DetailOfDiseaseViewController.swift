@@ -12,11 +12,29 @@ class DetailOfDiseaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+       content()
         // Do any additional setup after loading the view.
     }
+    var name:String = ""
+    var image:String = ""
+    @IBOutlet weak var DiseaseImage: UIImageView!
     
-
+    @IBOutlet weak var NameLabel: UILabel!
+    
+    @IBOutlet weak var DescriptionLabel: UILabel!
+    
+    
+    
+    func content()
+    {
+        if name.isEmpty == false && image.isEmpty == false
+        {
+            NameLabel.text = name
+            DiseaseImage.image = UIImage(named: image)
+            
+        }
+        
+    }
     /*
     // MARK: - Navigation
 
