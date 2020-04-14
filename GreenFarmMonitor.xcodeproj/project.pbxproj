@@ -26,6 +26,9 @@
 		1DDEE7ED24448112005BC7D8 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEE7EC24448112005BC7D8 /* FirstViewController.swift */; };
 		1DDEE7F224448F72005BC7D8 /* intro2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1DDEE7F124448F68005BC7D8 /* intro2.mp4 */; };
 		1DDEE7F424449C46005BC7D8 /* MyCropMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEE7F324449C46005BC7D8 /* MyCropMainTableViewCell.swift */; };
+		6992816D53F91886A2B7680D /* Pods_GreenFarmMonitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A122108DE2294E9FA457C053 /* Pods_GreenFarmMonitor.framework */; };
+		71835699E5530A901DEE4FB1 /* Pods_GreenFarmMonitorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F61D639F27E8DC5F2B99E811 /* Pods_GreenFarmMonitorTests.framework */; };
+		D26E170D55087CF02BE5EBCE /* Pods_GreenFarmMonitor_GreenFarmMonitorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1C0F13ABC1DA09716F02BC /* Pods_GreenFarmMonitor_GreenFarmMonitorUITests.framework */; };
 		E804809D243DCBAD00EC342A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E804809C243DCBAD00EC342A /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,7 +75,16 @@
 		1DDEE7EC24448112005BC7D8 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		1DDEE7F124448F68005BC7D8 /* intro2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = intro2.mp4; sourceTree = "<group>"; };
 		1DDEE7F324449C46005BC7D8 /* MyCropMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCropMainTableViewCell.swift; sourceTree = "<group>"; };
+		24C2FF36E3EE696890DBFDC0 /* Pods-GreenFarmMonitor-GreenFarmMonitorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreenFarmMonitor-GreenFarmMonitorUITests.debug.xcconfig"; path = "Target Support Files/Pods-GreenFarmMonitor-GreenFarmMonitorUITests/Pods-GreenFarmMonitor-GreenFarmMonitorUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5199DFB7DDCBF11918E71EB6 /* Pods-GreenFarmMonitor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreenFarmMonitor.release.xcconfig"; path = "Target Support Files/Pods-GreenFarmMonitor/Pods-GreenFarmMonitor.release.xcconfig"; sourceTree = "<group>"; };
+		84188086EAE359F9609095B7 /* Pods-GreenFarmMonitor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreenFarmMonitor.debug.xcconfig"; path = "Target Support Files/Pods-GreenFarmMonitor/Pods-GreenFarmMonitor.debug.xcconfig"; sourceTree = "<group>"; };
+		858380275824480C34138CC4 /* Pods-GreenFarmMonitor-GreenFarmMonitorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreenFarmMonitor-GreenFarmMonitorUITests.release.xcconfig"; path = "Target Support Files/Pods-GreenFarmMonitor-GreenFarmMonitorUITests/Pods-GreenFarmMonitor-GreenFarmMonitorUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A122108DE2294E9FA457C053 /* Pods_GreenFarmMonitor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GreenFarmMonitor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA1C0F13ABC1DA09716F02BC /* Pods_GreenFarmMonitor_GreenFarmMonitorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GreenFarmMonitor_GreenFarmMonitorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D31F8651731FD2164B702A8E /* Pods-GreenFarmMonitorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreenFarmMonitorTests.release.xcconfig"; path = "Target Support Files/Pods-GreenFarmMonitorTests/Pods-GreenFarmMonitorTests.release.xcconfig"; sourceTree = "<group>"; };
+		D72296D4C58E57A318A390F9 /* Pods-GreenFarmMonitorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreenFarmMonitorTests.debug.xcconfig"; path = "Target Support Files/Pods-GreenFarmMonitorTests/Pods-GreenFarmMonitorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E804809C243DCBAD00EC342A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = SOURCE_ROOT; };
+		F61D639F27E8DC5F2B99E811 /* Pods_GreenFarmMonitorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GreenFarmMonitorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6992816D53F91886A2B7680D /* Pods_GreenFarmMonitor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71835699E5530A901DEE4FB1 /* Pods_GreenFarmMonitorTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,12 +108,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D26E170D55087CF02BE5EBCE /* Pods_GreenFarmMonitor_GreenFarmMonitorUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12C4BB09FC6B58A9390B1918 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A122108DE2294E9FA457C053 /* Pods_GreenFarmMonitor.framework */,
+				AA1C0F13ABC1DA09716F02BC /* Pods_GreenFarmMonitor_GreenFarmMonitorUITests.framework */,
+				F61D639F27E8DC5F2B99E811 /* Pods_GreenFarmMonitorTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1D0B0840243D82390098D644 /* UserDefaults */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +157,8 @@
 				1D9EED44243C3A7E00EE97D2 /* GreenFarmMonitorTests */,
 				1D9EED4F243C3A7F00EE97D2 /* GreenFarmMonitorUITests */,
 				1D9EED2C243C3A7D00EE97D2 /* Products */,
+				9BB5EE78BDC93058F8D33EB0 /* Pods */,
+				12C4BB09FC6B58A9390B1918 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -188,6 +215,20 @@
 			path = GreenFarmMonitorUITests;
 			sourceTree = "<group>";
 		};
+		9BB5EE78BDC93058F8D33EB0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				84188086EAE359F9609095B7 /* Pods-GreenFarmMonitor.debug.xcconfig */,
+				5199DFB7DDCBF11918E71EB6 /* Pods-GreenFarmMonitor.release.xcconfig */,
+				24C2FF36E3EE696890DBFDC0 /* Pods-GreenFarmMonitor-GreenFarmMonitorUITests.debug.xcconfig */,
+				858380275824480C34138CC4 /* Pods-GreenFarmMonitor-GreenFarmMonitorUITests.release.xcconfig */,
+				D72296D4C58E57A318A390F9 /* Pods-GreenFarmMonitorTests.debug.xcconfig */,
+				D31F8651731FD2164B702A8E /* Pods-GreenFarmMonitorTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -195,9 +236,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D9EED55243C3A7F00EE97D2 /* Build configuration list for PBXNativeTarget "GreenFarmMonitor" */;
 			buildPhases = (
+				5CD9662893DA01390946CD7B /* [CP] Check Pods Manifest.lock */,
 				1D9EED27243C3A7D00EE97D2 /* Sources */,
 				1D9EED28243C3A7D00EE97D2 /* Frameworks */,
 				1D9EED29243C3A7D00EE97D2 /* Resources */,
+				5D40C9329231FA76C217CA40 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -212,6 +255,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D9EED58243C3A7F00EE97D2 /* Build configuration list for PBXNativeTarget "GreenFarmMonitorTests" */;
 			buildPhases = (
+				1136C82C0ECD0C5649ADB753 /* [CP] Check Pods Manifest.lock */,
 				1D9EED3D243C3A7E00EE97D2 /* Sources */,
 				1D9EED3E243C3A7E00EE97D2 /* Frameworks */,
 				1D9EED3F243C3A7E00EE97D2 /* Resources */,
@@ -230,9 +274,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D9EED5B243C3A7F00EE97D2 /* Build configuration list for PBXNativeTarget "GreenFarmMonitorUITests" */;
 			buildPhases = (
+				B65C34211924A30BE3C4B158 /* [CP] Check Pods Manifest.lock */,
 				1D9EED48243C3A7F00EE97D2 /* Sources */,
 				1D9EED49243C3A7F00EE97D2 /* Frameworks */,
 				1D9EED4A243C3A7F00EE97D2 /* Resources */,
+				AF3DC764E123DB5AB03EC658 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -314,6 +360,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1136C82C0ECD0C5649ADB753 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GreenFarmMonitorTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5CD9662893DA01390946CD7B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GreenFarmMonitor-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5D40C9329231FA76C217CA40 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GreenFarmMonitor/Pods-GreenFarmMonitor-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GreenFarmMonitor/Pods-GreenFarmMonitor-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GreenFarmMonitor/Pods-GreenFarmMonitor-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF3DC764E123DB5AB03EC658 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GreenFarmMonitor-GreenFarmMonitorUITests/Pods-GreenFarmMonitor-GreenFarmMonitorUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GreenFarmMonitor-GreenFarmMonitorUITests/Pods-GreenFarmMonitor-GreenFarmMonitorUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GreenFarmMonitor-GreenFarmMonitorUITests/Pods-GreenFarmMonitor-GreenFarmMonitorUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B65C34211924A30BE3C4B158 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GreenFarmMonitor-GreenFarmMonitorUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1D9EED27243C3A7D00EE97D2 /* Sources */ = {
@@ -504,6 +653,7 @@
 		};
 		1D9EED56243C3A7F00EE97D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84188086EAE359F9609095B7 /* Pods-GreenFarmMonitor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -521,6 +671,7 @@
 		};
 		1D9EED57243C3A7F00EE97D2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5199DFB7DDCBF11918E71EB6 /* Pods-GreenFarmMonitor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -538,6 +689,7 @@
 		};
 		1D9EED59243C3A7F00EE97D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D72296D4C58E57A318A390F9 /* Pods-GreenFarmMonitorTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -559,6 +711,7 @@
 		};
 		1D9EED5A243C3A7F00EE97D2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D31F8651731FD2164B702A8E /* Pods-GreenFarmMonitorTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -580,6 +733,7 @@
 		};
 		1D9EED5C243C3A7F00EE97D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24C2FF36E3EE696890DBFDC0 /* Pods-GreenFarmMonitor-GreenFarmMonitorUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -599,6 +753,7 @@
 		};
 		1D9EED5D243C3A7F00EE97D2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 858380275824480C34138CC4 /* Pods-GreenFarmMonitor-GreenFarmMonitorUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

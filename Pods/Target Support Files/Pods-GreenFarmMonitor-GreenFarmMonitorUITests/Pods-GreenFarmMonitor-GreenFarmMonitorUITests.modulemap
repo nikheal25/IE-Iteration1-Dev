@@ -1,0 +1,6 @@
+framework module Pods_GreenFarmMonitor_GreenFarmMonitorUITests {
+  umbrella header "Pods-GreenFarmMonitor-GreenFarmMonitorUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
