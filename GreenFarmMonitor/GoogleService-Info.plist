@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>189740363427-51reeag05muhq5l0h82jafoo47i1pdki.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.189740363427-51reeag05muhq5l0h82jafoo47i1pdki</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCCPYzG8qIirSnvH7G1qPtR--7iJwGS0lo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>189740363427</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.dev.GreenFarmMonitor</string>
+	<key>PROJECT_ID</key>
+	<string>ie-iteration-dev</string>
+	<key>STORAGE_BUCKET</key>
+	<string>ie-iteration-dev.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:189740363427:ios:4a3052938c669981a09916</string>
+	<key>DATABASE_URL</key>
+	<string>https://ie-iteration-dev.firebaseio.com</string>
+</dict>
+</plist>
