@@ -11,6 +11,9 @@ import  paper_onboarding
 
 class OnboardingViewController: UIViewController, PaperOnboardingDataSource {
 
+    let titleFont = UIFont(name: "Nunito-Bold", size: 36.0) ?? UIFont.boldSystemFont(ofSize: 25.0)
+    let descriptionFont = UIFont(name: "OpenSans-Regular", size: 14.0) ?? UIFont.systemFont(ofSize: 14.0)
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -20,10 +23,17 @@ class OnboardingViewController: UIViewController, PaperOnboardingDataSource {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
+
+    @IBOutlet weak var nectAction: UIButton!
     
+    @IBAction func nextButtonClicked(_ sender: Any) {
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        nectAction.isHidden = true
+        
+        
          let onboarding = PaperOnboarding()
                 onboarding.dataSource = self
                 onboarding.translatesAutoresizingMaskIntoConstraints = false
@@ -41,36 +51,42 @@ class OnboardingViewController: UIViewController, PaperOnboardingDataSource {
                                                       constant: 0)
                   view.addConstraint(constraint)
                 }
+        
+         view.bringSubviewToFront(nectAction)
                 }
-              func onboardingItem(at index: Int) -> OnboardingItemInfo {
+             
+    func onboardingItem(at index: Int) -> OnboardingItemInfo {
 
                return [
-                OnboardingItemInfo(informationImage: UIImage(named: "temp")!,
-                                               title: "title",
-                                         description: "description",
-                                         pageIcon: UIImage(named: "temp")!,
-                                         color: UIColor(hexString: "#3f3f3f"),
-                                          titleColor: UIColor.red,
-                                    descriptionColor: UIColor.red,
-                                    titleFont: UIFont(name: "OpenSans-Regular", size: 14.0) ?? UIFont.systemFont(ofSize: 14.0), descriptionFont: UIFont(name: "OpenSans-Regular", size: 14.0) ?? UIFont.systemFont(ofSize: 14.0)),
+                OnboardingItemInfo(informationImage: UIImage(named: "Stores")!,
+                                               title: "Ideal condition for a crop",
+                                         description: "Find out the ideal conditions for your crop",
+                                         pageIcon: UIImage(named: "Stores")!,
+                                         color: UIColor(hexString: "#588B8B"),
+                                          titleColor: UIColor.white,
+                                          descriptionColor: UIColor.white,
+                                    titleFont: titleFont,
+                                    descriptionFont: descriptionFont),
 
                 OnboardingItemInfo(informationImage: UIImage(named: "temp")!,
-                           title: "title",
-                     description: "description",
+                           title: "Crop disease Detection",
+                     description: "Know more about diseases that may affect  your crop",
                      pageIcon: UIImage(named: "temp")!,
                            color: UIColor.red,
-                      titleColor: UIColor.red,
-                descriptionColor: UIColor.red,
-                       titleFont: UIFont(name: "OpenSans-Regular", size: 14.0) ?? UIFont.systemFont(ofSize: 14.0), descriptionFont: UIFont(name: "OpenSans-Regular", size: 14.0) ?? UIFont.systemFont(ofSize: 14.0)),
+                      titleColor: UIColor.white,
+                descriptionColor: UIColor.white,
+                       titleFont: titleFont,
+                       descriptionFont: descriptionFont),
                 
                 OnboardingItemInfo(informationImage: UIImage(named: "temp")!,
-                           title: "title",
-                     description: "description",
+                           title: "Buy Organic",
+                     description: "Get suggestions regarding the best Organic products in market",
                      pageIcon: UIImage(named: "temp")!,
                            color: UIColor.red,
-                      titleColor: UIColor.red,
-                descriptionColor: UIColor.red,
-                       titleFont: UIFont(name: "OpenSans-Regular", size: 14.0) ?? UIFont.systemFont(ofSize: 14.0), descriptionFont: UIFont(name: "OpenSans-Regular", size: 14.0) ?? UIFont.systemFont(ofSize: 14.0))
+                      titleColor: UIColor.white,
+                descriptionColor: UIColor.white,
+                       titleFont: titleFont,
+                       descriptionFont: descriptionFont)
 
                 ][index]
              }
@@ -110,3 +126,30 @@ class OnboardingViewController: UIViewController, PaperOnboardingDataSource {
             return String(format:"#%06x", rgb)
         }
         }
+
+
+// MARK: PaperOnboardingDelegate
+
+extension OnboardingViewController: PaperOnboardingDelegate {
+
+    // TODO - the line below is not executing, need to make it executable
+    func onboardingWillTransitonToIndex(_ index: Int) {
+        nectAction.isHidden = index == 2 ? true : false
+    }
+
+    func onboardingConfigurationItem(_ item: OnboardingContentViewItem, index: Int) {
+        
+        // configure item
+        
+        //item.titleLabel?.backgroundColor = .redColor()
+        //item.descriptionLabel?.backgroundColor = .redColor()
+        //item.imageView = ...
+    }
+}
+
+//MARK: Constants
+ extension OnboardingViewController {
+    
+     
+}
+
