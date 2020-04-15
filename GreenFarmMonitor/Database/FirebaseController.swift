@@ -43,6 +43,10 @@ class FirebaseController: NSObject, DatabaseProtocol {
         }
         return returnVal
     }
+    
+    func updateMyCropList() {
+        
+    }
   
     func addUserCropRelation(userCropRelation: UserCropRelation) -> UserCropRelation {
         // TODO

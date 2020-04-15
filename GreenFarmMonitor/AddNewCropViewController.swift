@@ -8,8 +8,20 @@
 
 import UIKit
 
-class AddNewCropViewController: UIViewController{
+class AddNewCropViewController: UIViewController, DatabaseListener{
+    func onRDiseaseOfCrops(change: DiseaseOfCrops, diseaseOfCrops: [DiseaseOfCrops]) {
+        
+    }
+    
+    func onCropsChange(change: DatabaseChange, crops: [Crop]) {
+        
+    }
+    
    
+    var listenerType: ListenerType = ListenerType.all // listener
+    weak var databaseController: DatabaseProtocol?
+    weak var userDefaultController: UserdefaultsProtocol?
+    
     var allCropsName: [Crop] = []
     
     func createFakeData() -> [Crop] {
@@ -39,15 +51,26 @@ class AddNewCropViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        allCropsName = createFakeData()
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        userDefaultController = appDelegate.userDefaultController
+        databaseController = appDelegate.databaseController
+        
+//        allCropsName = createFakeData()
+        
+        
         searchBar.delegate = self
         // Do any additional setup after loading the view.
     }
     
+
     func numberOfSections(in tableView: UITableView) -> Int {
            return 2
        }
 
+    func onUserCropRelationChange(change: DatabaseChange, userCropRelation: [UserCropRelation]){
+        
+    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "specificCropSegue" {

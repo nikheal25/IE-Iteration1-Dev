@@ -8,19 +8,60 @@
 
 import UIKit
 
-class MyCropTableViewController: UITableViewController {
+class MyCropTableViewController: UITableViewController, DatabaseListener {
+    
+    var listenerType: ListenerType = ListenerType.all // listener
+    weak var databaseController: DatabaseProtocol?
+    weak var userDefaultController: UserdefaultsProtocol?
+    
+    func onRDiseaseOfCrops(change: DiseaseOfCrops, diseaseOfCrops: [DiseaseOfCrops]) {
+        
+    }
+    
+    func onCropsChange(change: DatabaseChange, crops: [Crop]) {
+        
+    }
+    
+    func onUserCropRelationChange(change: DatabaseChange, userCropRelation: [UserCropRelation]) {
+        let currentUserId = userDefaultController?.retrieveUserId()
+        
+        //GET ALL THE CROPS
+        let allCropList = databaseController?.cropsList
+        
+        myCropList = []
+        for item in userCropRelation{
+            if item.userId == currentUserId {
+                var crop = findCropById(cropId: item.cropId)
+                if crop == nil{
+//                    device = IoTDevice()
+//                    device!.iotId = "00000"
+//                    device!.deviceName = "Unregistered Device"
+                }
+                //Separate list for storing the ids - start
+//                self.deviceIDs.append((device?.iotId)!)
+                //End
+                self.myCropList.append(crop!)
+                tableView.reloadData()
+            }
+        }
+    }
+    
 
     let SECTION_ACTIVITY = 0;
      let SECTION_COUNT = 1;
      let CELL_COUNT = "CellCounter"
      let CELL_ACTIVITY = "myCropCell"
-     var cropList: [Crop] = []
+     var myCropList: [Crop] = []
      var selectedRow = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let crop1 = Crop(cropId: "1", cropName: "Tomato", cropImage: "")
-        cropList.append(crop1)
+        
+        myCropList = [Crop]()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        userDefaultController = appDelegate.userDefaultController
+        databaseController = appDelegate.databaseController
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -28,6 +69,22 @@ class MyCropTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+        override func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(animated)
+        
+            myCropList = []
+           // self.onTemperatureChange(change: .update, temperatures: databaseController!.tempList)
+//            self.onUserCropRelationChange(change: .update, userCropRelation: databaseController!.userCropRelation)
+           //self.onRuleChange(change: .update, rule: databaseController!.ruleList)
+            databaseController?.addListener(listener: self)
+        }
+        
+        override func viewWillDisappear(_ animated: Bool) {
+            super.viewWillDisappear(animated)
+            databaseController?.removeListener(listener: self)
+        }
+        
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -36,7 +93,7 @@ class MyCropTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == SECTION_ACTIVITY {
-            return (cropList.count)
+            return (myCropList.count)
         }
         return 1;
     }
@@ -45,11 +102,11 @@ class MyCropTableViewController: UITableViewController {
         if indexPath.section == SECTION_ACTIVITY {
             let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ACTIVITY, for: indexPath) as! MyCropMainTableViewCell
             //cell.textLabel?.text = cropList[indexPath.row].cropName
-            cell.setCell(crop: cropList[indexPath.row])
+            cell.setCell(crop: myCropList[indexPath.row])
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: CELL_COUNT, for: indexPath)
-        cell.textLabel?.text = "\(cropList.count) alerts in the list"
+        cell.textLabel?.text = "\(myCropList.count) alerts in the list"
         cell.selectionStyle = .none
         return cell
     }
@@ -112,6 +169,17 @@ class MyCropTableViewController: UITableViewController {
             
         }
     }
+    
+    //returns the object of crop, for specified ID
+       func findCropById(cropId: String) -> Crop? {
+           let allOnFirebaseCrops = databaseController!.cropsList
+           for crop in allOnFirebaseCrops {
+               if(crop.cropId == cropId){
+                   return crop
+               }
+           }
+           return nil
+       }
   
 
 }
