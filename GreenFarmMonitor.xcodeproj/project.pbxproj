@@ -32,6 +32,7 @@
 		1DDEE7ED24448112005BC7D8 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEE7EC24448112005BC7D8 /* FirstViewController.swift */; };
 		1DDEE7F224448F72005BC7D8 /* intro2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1DDEE7F124448F68005BC7D8 /* intro2.mp4 */; };
 		1DDEE7F424449C46005BC7D8 /* MyCropMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEE7F324449C46005BC7D8 /* MyCropMainTableViewCell.swift */; };
+		1DFBCFC52446B63900DCC4B2 /* UserCropRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFBCFC42446B63900DCC4B2 /* UserCropRelation.swift */; };
 		6992816D53F91886A2B7680D /* Pods_GreenFarmMonitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A122108DE2294E9FA457C053 /* Pods_GreenFarmMonitor.framework */; };
 		71835699E5530A901DEE4FB1 /* Pods_GreenFarmMonitorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F61D639F27E8DC5F2B99E811 /* Pods_GreenFarmMonitorTests.framework */; };
 		D26E170D55087CF02BE5EBCE /* Pods_GreenFarmMonitor_GreenFarmMonitorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1C0F13ABC1DA09716F02BC /* Pods_GreenFarmMonitor_GreenFarmMonitorUITests.framework */; };
@@ -92,6 +93,7 @@
 		1DDEE7EC24448112005BC7D8 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		1DDEE7F124448F68005BC7D8 /* intro2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = intro2.mp4; sourceTree = "<group>"; };
 		1DDEE7F324449C46005BC7D8 /* MyCropMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCropMainTableViewCell.swift; sourceTree = "<group>"; };
+		1DFBCFC42446B63900DCC4B2 /* UserCropRelation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCropRelation.swift; sourceTree = "<group>"; };
 		24C2FF36E3EE696890DBFDC0 /* Pods-GreenFarmMonitor-GreenFarmMonitorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreenFarmMonitor-GreenFarmMonitorUITests.debug.xcconfig"; path = "Target Support Files/Pods-GreenFarmMonitor-GreenFarmMonitorUITests/Pods-GreenFarmMonitor-GreenFarmMonitorUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5199DFB7DDCBF11918E71EB6 /* Pods-GreenFarmMonitor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreenFarmMonitor.release.xcconfig"; path = "Target Support Files/Pods-GreenFarmMonitor/Pods-GreenFarmMonitor.release.xcconfig"; sourceTree = "<group>"; };
 		84188086EAE359F9609095B7 /* Pods-GreenFarmMonitor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreenFarmMonitor.debug.xcconfig"; path = "Target Support Files/Pods-GreenFarmMonitor/Pods-GreenFarmMonitor.debug.xcconfig"; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				1DDEE7DC244432CF005BC7D8 /* Crop.swift */,
+				1DFBCFC42446B63900DCC4B2 /* UserCropRelation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 				1D50297D243D90C100D4F426 /* UserdefaultsController.swift in Sources */,
 				E883C944244442F3006F6AC8 /* DiseaseOfCrops.swift in Sources */,
 				E883C94624444B8B006F6AC8 /* MyCropsTableViewCell.swift in Sources */,
+				1DFBCFC52446B63900DCC4B2 /* UserCropRelation.swift in Sources */,
 				E883C94A24446A04006F6AC8 /* DetailOfDiseaseViewController.swift in Sources */,
 				1D9EED31243C3A7D00EE97D2 /* SceneDelegate.swift in Sources */,
 				1D2FCB852445A2EF0024FFBB /* MulticastDelegate.swift in Sources */,

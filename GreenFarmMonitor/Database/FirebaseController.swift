@@ -18,17 +18,28 @@ class FirebaseController: NSObject, DatabaseProtocol {
        var database: Firestore
     
     var cropRef: CollectionReference?
+    var userCropRelationRef: CollectionReference?
     
     var cropsList: [Crop] = []
+    var userCropRelation: [UserCropRelation] = []
+    var myCropList: [Crop] = []
     
-    
-    
-    func addCrop(crop: Crop) -> Crop {
-        return Crop(cropId: "test", cropName: "test", cropImage: "test")
+  
+    func addUserCropRelation(userCropRelation: UserCropRelation) -> UserCropRelation {
+        // TODO
+        let id = userCropRelationRef?.addDocument(data: ["cropId":userCropRelation.cropId, "userId":userCropRelation.userId])
+        userCropRelation.relationId = id!.documentID
+        return userCropRelation
     }
     
     func addListener(listener: DatabaseListener) {
-        
+        listeners.addDelegate(listener)
+        if listener.listenerType == ListenerType.Crops || listener.listenerType == ListenerType.all {
+            listener.onCropsChange(change: .update, crops: cropsList)
+        }
+        if listener.listenerType == ListenerType.UserCropRelation || listener.listenerType == ListenerType.all {
+            listener.onUserCropRelationChange(change: .update, userCropRelation: userCropRelation)
+        }
     }
     
     func removeListener(listener: DatabaseListener) {
@@ -43,6 +54,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
     database = Firestore.firestore()
 
     cropsList = [Crop]()
+    userCropRelation = [UserCropRelation]()
         
         super.init()
               
@@ -62,7 +74,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
     func setUpListeners() {
         
     
-        //Rule
+        //Crop
         cropRef = database.collection("Crops")
         cropRef?.order(by: "date", descending: false)
         cropRef?.addSnapshotListener { querySnapshot, error in
@@ -71,6 +83,17 @@ class FirebaseController: NSObject, DatabaseProtocol {
                 return
             }
             self.parseCropSnapshot(snapshot: querySnapshot!)
+        }
+        
+        //userCrop
+        userCropRelationRef = database.collection("UserCropRelation")
+        userCropRelationRef?.order(by: "date", descending: false)
+        userCropRelationRef?.addSnapshotListener { querySnapshot, error in
+            guard (querySnapshot?.documents) != nil else {
+                print("Error fetching documents: \(error!)")
+                return
+            }
+            self.parseUserCropRelationSnapshot(snapshot: querySnapshot!)
         }
 
 
@@ -87,60 +110,90 @@ class FirebaseController: NSObject, DatabaseProtocol {
     }
     
     //This method add all the Rule from Firebase to a list
-       func parseCropSnapshot(snapshot: QuerySnapshot) {
+       func parseUserCropRelationSnapshot(snapshot: QuerySnapshot) {
            snapshot.documentChanges.forEach { change in
                
                 let documentRef = change.document.documentID
                 let docData = change.document.data()
             
                let cropId = stringUnwrapper(val: docData, key: "cropId")
-               let cropName = stringUnwrapper(val: docData, key: "cropName")
-               let cropImage = stringUnwrapper(val: docData, key: "cropImage")
+               let userId = stringUnwrapper(val: docData, key: "userId")
             
-              
-               
                if change.type == .added {
                    
-                   let newCrop = Crop(cropId: documentRef, cropName: cropName, cropImage: cropImage)
-                   
-//                   newCrop.ruleId = documentRef
-             
-                   cropsList.append(newCrop)
+                let newRelation = UserCropRelation(relationId: documentRef ,userId: userId, cropId: cropId)
+                   userCropRelation.append(newRelation)
                }
                
                if change.type == .modified {
-//                   if let index = getRuleIndexByID(reference: documentRef) {
-//                       //newAlert.alertId = documentRef
-//                       ruleList[index].ruleId = documentRef
-//                       ruleList[index].iotId = cropId
-//                       ruleList[index].userId = userId
-//                       ruleList[index].severity = severity
-//                       ruleList[index].ruleName = ruleName
-//                       ruleList[index].ruleMessage = ruleMessage
-//                       ruleList[index].temperatureRule = temperature
-//                       ruleList[index].temperatureMin = temperatureMin
-//                       ruleList[index].temperatureMax = temperatureMax
-//                       ruleList[index].humidityRule = humidity
-//                       ruleList[index].humidityMin = humidityMin
-//                       ruleList[index].humidityMax = humidityMax
-//                       ruleList[index].lightRule = light
-//                       ruleList[index].lightIntensity = lightIntensity
-//                   }
+                //TODO
                }
                
                if change.type == .removed {
-//                   if let index = getCropIndexByID(reference: documentRef){
-//                       cropsList.remove(at: index)
-//                   }
+                //TODO
                }
            }
            
            listeners.invoke { (listener) in
-               if listener.listenerType == ListenerType.Crops || listener.listenerType == ListenerType.all {
-                   listener.onCropsChange(change: .update, crops: cropsList)
+               if listener.listenerType == ListenerType.UserCropRelation || listener.listenerType == ListenerType.all {
+                listener.onUserCropRelationChange(change: .update, userCropRelation: userCropRelation)
                }
            }
        }
+    
+     //This method add all the Rule from Firebase to a list
+           func parseCropSnapshot(snapshot: QuerySnapshot) {
+               snapshot.documentChanges.forEach { change in
+                   
+                    let documentRef = change.document.documentID
+                    let docData = change.document.data()
+                
+                   let cropId = stringUnwrapper(val: docData, key: "cropId")
+                   let cropName = stringUnwrapper(val: docData, key: "cropName")
+                   let cropImage = stringUnwrapper(val: docData, key: "cropImage")
+                
+                   if change.type == .added {
+                       
+                       let newCrop = Crop(cropId: documentRef, cropName: cropName, cropImage: cropImage)
+                       
+    //                   newCrop.ruleId = documentRef
+                 
+                       cropsList.append(newCrop)
+                   }
+                   
+                   if change.type == .modified {
+    //                   if let index = getRuleIndexByID(reference: documentRef) {
+    //                       //newAlert.alertId = documentRef
+    //                       ruleList[index].ruleId = documentRef
+    //                       ruleList[index].iotId = cropId
+    //                       ruleList[index].userId = userId
+    //                       ruleList[index].severity = severity
+    //                       ruleList[index].ruleName = ruleName
+    //                       ruleList[index].ruleMessage = ruleMessage
+    //                       ruleList[index].temperatureRule = temperature
+    //                       ruleList[index].temperatureMin = temperatureMin
+    //                       ruleList[index].temperatureMax = temperatureMax
+    //                       ruleList[index].humidityRule = humidity
+    //                       ruleList[index].humidityMin = humidityMin
+    //                       ruleList[index].humidityMax = humidityMax
+    //                       ruleList[index].lightRule = light
+    //                       ruleList[index].lightIntensity = lightIntensity
+    //                   }
+                   }
+                   
+                   if change.type == .removed {
+    //                   if let index = getCropIndexByID(reference: documentRef){
+    //                       cropsList.remove(at: index)
+    //                   }
+                   }
+               }
+               
+               listeners.invoke { (listener) in
+                   if listener.listenerType == ListenerType.Crops || listener.listenerType == ListenerType.all {
+                       listener.onCropsChange(change: .update, crops: cropsList)
+                   }
+               }
+           }
     
     //  This method allows to get Index of the references to be updated or deleted.
     func getCropIndexByID(reference: String) -> Int? {

@@ -20,23 +20,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
-            userDefaultController = UserdefaultsController()
-
-             if (userDefaultController?.retrieveUserId().isEmpty)! {
-
-                let windowScene = UIWindowScene(session: session, connectionOptions: connectionOptions)
-                     self.window = UIWindow(windowScene: windowScene)
-                     //self.window =  UIWindow(frame: UIScreen.main.bounds)
-                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                guard let rootVC = storyboard.instantiateViewController(identifier: "FirstViewController") as? FirstViewController else {
-                         print("ViewController not found")
-                         return
-                     }
-                     let rootNC = UINavigationController(rootViewController: rootVC)
-                     self.window?.rootViewController = rootNC
-                     self.window?.makeKeyAndVisible()
-
-             }
+//            userDefaultController = UserdefaultsController()
+//
+//             if (userDefaultController?.retrieveUserId().isEmpty)! {
+//
+//                let windowScene = UIWindowScene(session: session, connectionOptions: connectionOptions)
+//                     self.window = UIWindow(windowScene: windowScene)
+//                     //self.window =  UIWindow(frame: UIScreen.main.bounds)
+//                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//                guard let rootVC = storyboard.instantiateViewController(identifier: "FirstViewController") as? FirstViewController else {
+//                         print("ViewController not found")
+//                         return
+//                     }
+//                     let rootNC = UINavigationController(rootViewController: rootVC)
+//                     self.window?.rootViewController = rootNC
+//                     self.window?.makeKeyAndVisible()
+//
+//             }
 
         guard let _ = (scene as? UIWindowScene) else { return }
     }
