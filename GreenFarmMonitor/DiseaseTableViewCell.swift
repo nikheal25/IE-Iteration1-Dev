@@ -24,4 +24,5 @@ class DiseaseTableViewCell: UITableViewCell {
     
     @IBOutlet weak var DiseaseName: UILabel!
     
+    
 }
