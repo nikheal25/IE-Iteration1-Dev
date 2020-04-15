@@ -163,7 +163,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aw8-7O-obG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5928.985507246377" y="695.75892857142856"/>
+            <point key="canvasLocation" x="5793" y="653"/>
         </scene>
         <!--FirstViewController-->
         <scene sceneID="O9v-aC-QGO">
@@ -275,7 +275,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kmf-Yw-AVe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4775" y="-364"/>
+            <point key="canvasLocation" x="4749" y="-364"/>
         </scene>
         <!--My Crops-->
         <scene sceneID="dUw-OU-e2l">
@@ -366,7 +366,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gRw-el-lB6">
+                            <searchBar contentMode="redraw" placeholder="Search" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gRw-el-lB6">
                                 <rect key="frame" x="0.0" y="88" width="414" height="56"/>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <textInputTraits key="textInputTraits"/>
