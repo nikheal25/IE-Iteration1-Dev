@@ -21,7 +21,7 @@ class UserdefaultsController: NSObject, UserdefaultsProtocol {
         let format = DateFormatter()
         format.dateFormat = "yy-MM-dd-HH:mm:ss"
         let formattedDate = format.string(from: date)
-        let random = randomString(length: 20)
+        let random = randomString(length: 5)
         assignUserId(userId: (formattedDate+random))
         return (formattedDate+random)
     }

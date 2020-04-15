@@ -31,7 +31,8 @@ class OnboardingViewController: UIViewController, PaperOnboardingDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nectAction.isHidden = true
+        //TODO - CHANGE
+        nectAction.isHidden = false
         
         
          let onboarding = PaperOnboarding()
@@ -133,9 +134,9 @@ class OnboardingViewController: UIViewController, PaperOnboardingDataSource {
 extension OnboardingViewController: PaperOnboardingDelegate {
 
     // TODO - the line below is not executing, need to make it executable
-    func onboardingWillTransitonToIndex(_ index: Int) {
-        nectAction.isHidden = index == 2 ? true : false
-    }
+   func onboardingWillTransitonToIndex(_ index: Int) {
+       nectAction.isHidden = index == 2 ? true : false
+   }
 
     func onboardingConfigurationItem(_ item: OnboardingContentViewItem, index: Int) {
         

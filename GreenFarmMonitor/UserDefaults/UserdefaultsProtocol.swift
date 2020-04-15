@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol UserdefaultsProtocol {
+protocol UserdefaultsProtocol: AnyObject {
     func generateUniqueUserId() -> String
     func assignUserId(userId: String)
     func assignName(name: String)

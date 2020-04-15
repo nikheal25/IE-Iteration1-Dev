@@ -225,6 +225,7 @@
                                 <state key="normal" title="Next"/>
                                 <connections>
                                     <action selector="nextButtonClicked:" destination="DVU-ys-H6N" eventType="touchUpInside" id="2bA-VR-9Ta"/>
+                                    <segue destination="d3q-yA-hpY" kind="show" id="k0t-fM-dzr"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -243,6 +244,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="phP-Kc-QbM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3768" y="-364"/>
+        </scene>
+        <!--Login Screen-->
+        <scene sceneID="70X-aW-u6T">
+            <objects>
+                <viewController id="d3q-yA-hpY" customClass="LoginViewController" customModule="Green_Farm_Monitor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fTH-wh-QsD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q1M-Nl-IL6">
+                                <rect key="frame" x="50" y="624" width="314" height="38"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Get started"/>
+                                <connections>
+                                    <action selector="loginClicked:" destination="d3q-yA-hpY" eventType="touchUpInside" id="R5a-ku-fss"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Q1M-Nl-IL6" firstAttribute="leading" secondItem="yx7-pX-pOF" secondAttribute="leading" constant="50" id="Jb2-Fy-A8e"/>
+                            <constraint firstItem="Q1M-Nl-IL6" firstAttribute="centerX" secondItem="fTH-wh-QsD" secondAttribute="centerX" id="L1a-tT-w3b"/>
+                            <constraint firstItem="yx7-pX-pOF" firstAttribute="bottom" secondItem="Q1M-Nl-IL6" secondAttribute="bottom" constant="200" id="Ozw-lh-UaS"/>
+                            <constraint firstItem="yx7-pX-pOF" firstAttribute="trailing" secondItem="Q1M-Nl-IL6" secondAttribute="trailing" constant="50" id="ePI-u9-HcG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yx7-pX-pOF"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Login Screen" id="t6u-XA-ALz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kmf-Yw-AVe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4775" y="-364"/>
         </scene>
         <!--My Crops-->
         <scene sceneID="dUw-OU-e2l">

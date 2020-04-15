@@ -12,7 +12,7 @@ import FirebaseAuth
 import FirebaseFirestore
 
 class FirebaseController: NSObject, DatabaseProtocol {
-    
+
     var listeners = MulticastDelegate<DatabaseListener>()
        var authController: Auth
        var database: Firestore
@@ -24,6 +24,25 @@ class FirebaseController: NSObject, DatabaseProtocol {
     var userCropRelation: [UserCropRelation] = []
     var myCropList: [Crop] = []
     
+    func insertNewUserToFirebase(user: User) -> Bool {
+        // Add a new document in collection "user"
+        var returnVal = true
+        database.collection("Users").document(user.userId).setData([
+            "userName": user.userName,
+            "userId": user.userId,
+            "farmLong": user.farmLong,
+            "farmLocationName": user.farmLocationName,
+            "farmLat": user.farmLat,
+        ]) { err in
+            if let err = err {
+                print("Error while creating new user document: \(err)")
+            } else {
+                print("Document successfully written!")
+                returnVal = true
+            }
+        }
+        return returnVal
+    }
   
     func addUserCropRelation(userCropRelation: UserCropRelation) -> UserCropRelation {
         // TODO
