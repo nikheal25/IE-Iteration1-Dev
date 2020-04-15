@@ -13,6 +13,7 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
     var listenerType: ListenerType = ListenerType.all // listener
     weak var databaseController: DatabaseProtocol?
     weak var userDefaultController: UserdefaultsProtocol?
+    var deviceIDs: [String] = []
     
     func onRDiseaseOfCrops(change: DiseaseOfCrops, diseaseOfCrops: [DiseaseOfCrops]) {
         
@@ -29,6 +30,7 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
         let allCropList = databaseController?.cropsList
         
         myCropList = []
+        deviceIDs = []
         for item in userCropRelation{
             if item.userId == currentUserId {
                 var crop = findCropById(cropId: item.cropId)
@@ -36,11 +38,13 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
 //                    device = IoTDevice()
 //                    device!.iotId = "00000"
 //                    device!.deviceName = "Unregistered Device"
+                } else{
+                    //Separate list for storing the ids - start
+                    self.deviceIDs.append(crop!.cropId)
+                    //End
+                    self.myCropList.append(crop!)
                 }
-                //Separate list for storing the ids - start
-//                self.deviceIDs.append((device?.iotId)!)
-                //End
-                self.myCropList.append(crop!)
+                
                 tableView.reloadData()
             }
         }
@@ -58,6 +62,8 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
         super.viewDidLoad()
         
         myCropList = [Crop]()
+        deviceIDs = [String]()
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         userDefaultController = appDelegate.userDefaultController
         databaseController = appDelegate.databaseController
@@ -166,7 +172,7 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addNewCropSegue" {
             let destination = segue.destination as! AddNewCropViewController
-            
+            destination.registeredCrop = deviceIDs
         }
     }
     

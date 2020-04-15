@@ -23,19 +23,7 @@ class AddNewCropViewController: UIViewController, DatabaseListener{
     weak var userDefaultController: UserdefaultsProtocol?
     
     var allCropsName: [Crop] = []
-    
-    func createFakeData() -> [Crop] {
-        let aCrops = ["Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegowina", "Botswana", "Bouvet Island", "Brazil", "British Indian Ocean Territory", "Brunei Darussalam", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Cocos (Keeling) Islands", "Colombia", "Comoros", "Congo"]
-        var i = 0
-        var tempArray: [Crop] = []
-        
-        for crop in aCrops {
-            tempArray.append(Crop(cropId: "\(i)", cropName: crop, cropImage: crop))
-            i = i+1
-        }
-        
-        return tempArray
-    }
+    var registeredCrop: [String]?
     
     var searchedCrop = [Crop]()
     var searching = false
@@ -56,8 +44,8 @@ class AddNewCropViewController: UIViewController, DatabaseListener{
         userDefaultController = appDelegate.userDefaultController
         databaseController = appDelegate.databaseController
         
-//        allCropsName = createFakeData()
-        
+   
+        allCropsName = getRelevantCrops()
         
         searchBar.delegate = self
         // Do any additional setup after loading the view.
@@ -70,6 +58,18 @@ class AddNewCropViewController: UIViewController, DatabaseListener{
 
     func onUserCropRelationChange(change: DatabaseChange, userCropRelation: [UserCropRelation]){
         
+    }
+    
+    func getRelevantCrops() -> [Crop] {
+        let allCrops = databaseController!.cropsList
+        var tempList: [Crop] = []
+        
+        for crop in allCrops {
+            if !((registeredCrop?.contains(crop.cropId))!) {
+                tempList.append(crop)
+            }
+        }
+        return tempList
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

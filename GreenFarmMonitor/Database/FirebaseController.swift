@@ -177,7 +177,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
                 
                    if change.type == .added {
                        
-                       let newCrop = Crop(cropId: documentRef, cropName: cropName, cropImage: cropImage)
+                       let newCrop = Crop(cropId: cropId, cropName: cropName, cropImage: cropImage)
                        
     //                   newCrop.ruleId = documentRef
                  
