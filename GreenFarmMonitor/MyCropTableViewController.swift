@@ -15,7 +15,7 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
     weak var userDefaultController: UserdefaultsProtocol?
     var deviceIDs: [String] = []
     
-    func onRDiseaseOfCrops(change: DiseaseOfCrops, diseaseOfCrops: [DiseaseOfCrops]) {
+    func onDiseaseOfCropsChange(change: DatabaseChange, diseaseOfCrops: [DiseaseOfCrops]) {
         
     }
     

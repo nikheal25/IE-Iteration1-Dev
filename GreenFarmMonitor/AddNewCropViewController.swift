@@ -9,7 +9,8 @@
 import UIKit
 
 class AddNewCropViewController: UIViewController, DatabaseListener{
-    func onRDiseaseOfCrops(change: DiseaseOfCrops, diseaseOfCrops: [DiseaseOfCrops]) {
+   
+    func onDiseaseOfCropsChange(change: DatabaseChange, diseaseOfCrops: [DiseaseOfCrops]) {
         
     }
     
