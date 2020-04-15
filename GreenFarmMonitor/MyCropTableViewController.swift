@@ -112,7 +112,7 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: CELL_COUNT, for: indexPath)
-        cell.textLabel?.text = "\(myCropList.count) alerts in the list"
+     //   cell.textLabel?.text = "\(myCropList.count) alerts in the list"
         cell.selectionStyle = .none
         return cell
     }
@@ -123,6 +123,37 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
         }
         return "Add new Crops"
 
+    }
+    
+//    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+//         let headerView = UIView()
+//        // MARK: - change the color
+////               headerView.backgroundColor = UIColor.red
+//               return headerView
+//    }
+//
+//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let headerView = UIView()
+//        headerView.backgroundColor = UIColor(hexString: "#588B8B")
+//        headerView.text
+//        let lbl = UILabel()
+//        lbl.text = "yourString"
+//
+//        // Enum type, two variations:
+//        lbl.textAlignment = NSTextAlignment.right
+//        lbl.textAlignment = .right
+//
+//        lbl.textColor = UIColor.red
+//        lbl.shadowColor = UIColor(hexString: "#588B8B")
+//        lbl.font = UIFont(name: "HelveticaNeue", size: CGFloat(22))
+//        headerView.addSubview(lbl)
+//        return headerView
+//    }
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == SECTION_ACTIVITY {
+            return 40
+        }
+        return 20
     }
 
     /*
@@ -186,6 +217,4 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
            }
            return nil
        }
-  
-
 }
