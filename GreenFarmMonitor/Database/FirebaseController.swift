@@ -19,7 +19,9 @@ class FirebaseController: NSObject, DatabaseProtocol {
     
     var cropRef: CollectionReference?
     var userCropRelationRef: CollectionReference?
+    var diseaseRef:CollectionReference?
     
+    var diseaseList:[DiseaseOfCrops]
     var cropsList: [Crop] = []
     var userCropRelation: [UserCropRelation] = []
     var myCropList: [Crop] = []
@@ -40,6 +42,9 @@ class FirebaseController: NSObject, DatabaseProtocol {
         if listener.listenerType == ListenerType.UserCropRelation || listener.listenerType == ListenerType.all {
             listener.onUserCropRelationChange(change: .update, userCropRelation: userCropRelation)
         }
+        if listener.listenerType == ListenerType.Disease || listener.listenerType == ListenerType.all {
+            listener.onDiseaseOfCropsChange(change: .update, diseaseOfCrops: diseaseList)
+        }
     }
     
     func removeListener(listener: DatabaseListener) {
@@ -55,7 +60,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
 
     cropsList = [Crop]()
     userCropRelation = [UserCropRelation]()
-        
+    diseaseList = [DiseaseOfCrops]()
         super.init()
               
               // This will START THE PROCESS of signing in with an anonymous account
@@ -95,7 +100,15 @@ class FirebaseController: NSObject, DatabaseProtocol {
             }
             self.parseUserCropRelationSnapshot(snapshot: querySnapshot!)
         }
-
+        //Disease
+        diseaseRef = database.collection("Diseases")
+        diseaseRef?.addSnapshotListener { querySnapshot, error in
+            guard (querySnapshot?.documents) != nil else {
+                print("Error fetching documents: \(error!)")
+                return
+            }
+            self.parseDiseaseSnapshot(snapshot: querySnapshot!)
+        }
 
     }
     
@@ -205,5 +218,61 @@ class FirebaseController: NSObject, DatabaseProtocol {
         return nil
     }
     
-
+   
+    func parseDiseaseSnapshot(snapshot: QuerySnapshot) {
+            
+               snapshot.documentChanges.forEach { change in
+                let documentRef = change.document.documentID
+                let crop = change.document.data()["Crop"] as! String
+                let name = change.document.data()["Name"] as! String
+                let descriptionOfSymptom = change.document.data()["Description"] as! String
+                let image = change.document.data ()["Image"]as! String
+//                print(documentRef)
+                if change.type == .added {
+                    print("New disease: \(change.document.data())")
+                let newDisease = DiseaseOfCrops(id: documentRef, name: name, image: image, crop: crop, descriptionOfSymptom: descriptionOfSymptom)
+//                    newDisease.crop = crop
+//                    newDisease.name = name
+//                    newDisease.image = image
+//                    newDisease.descriptionOfSymptom = descriptionOfSymptom
+//                    newDisease.id = documentRef
+                    diseaseList.append(newDisease)
+                  }
+                   if change.type == .modified {
+                       print("Updated data: \(change.document.data())")
+                      
+                    let index = getDiseaseIndexByID(reference: documentRef)!
+                    diseaseList[index].crop = crop
+                    diseaseList[index].name = name
+                    
+                    diseaseList[index].descriptionOfSymptom = descriptionOfSymptom
+                    diseaseList[index].id = documentRef
+                   }
+                  if change.type == .removed {
+                    print("Removed data: \(change.document.data())")
+                    
+                    if let index = getDiseaseIndexByID(reference: documentRef) {
+                          diseaseList.remove(at: index)
+                     }
+                 }
+               }
+              listeners.invoke { (listener) in
+                  if listener.listenerType == ListenerType.Disease||listener.listenerType == ListenerType.all {
+                      listener.onDiseaseOfCropsChange(change: .update, diseaseOfCrops: diseaseList)
+                  }
+               }
+        }
+    func getDiseaseIndexByID(reference: String)-> Int? {
+        for data in diseaseList{
+           if (data.id == reference){
+                return diseaseList.firstIndex(of: data)
+            }
+            
+        }
+        return nil
+    }
+    
+        
+        
+    
 }

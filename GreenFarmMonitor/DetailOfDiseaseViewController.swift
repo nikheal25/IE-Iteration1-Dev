@@ -17,6 +17,7 @@ class DetailOfDiseaseViewController: UIViewController {
     }
     var name:String = ""
     var image:String = ""
+    var detail: String = ""
     @IBOutlet weak var DiseaseImage: UIImageView!
     
     @IBOutlet weak var NameLabel: UILabel!
@@ -31,7 +32,7 @@ class DetailOfDiseaseViewController: UIViewController {
         {
             NameLabel.text = name
             DiseaseImage.image = UIImage(named: image)
-            
+            DescriptionLabel.text = detail
         }
         
     }
