@@ -47,17 +47,17 @@ class FirebaseController: NSObject, DatabaseProtocol {
         return returnVal
     }
     
-<<<<<<< HEAD
+
     
     
-    func updateMyCropList() {
-=======
+    
+
     func updateMyCropList(new: Bool, userId: String, cropId: String) {
         let format = DateFormatter()
                format.dateFormat = "yy-MM-dd-HH:mm:ss"
                let formattedDate = format.string(from: Date())
              
->>>>>>> 092023be206437fd200876c8c1bb7b2cc142bd89
+
         
         let uniqueRefId = randomString(length: 5) + formattedDate
         
