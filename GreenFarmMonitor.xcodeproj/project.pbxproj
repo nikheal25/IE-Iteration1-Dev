@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D2FCB7424457EA80024FFBB /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2FCB7324457EA80024FFBB /* OnboardingViewController.swift */; };
 		1D2FCB7624457FF10024FFBB /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 1D2FCB7524457FF10024FFBB /* Fonts */; };
 		1D2FCB832445A17F0024FFBB /* DatabaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2FCB822445A17F0024FFBB /* DatabaseProtocol.swift */; };
 		1D2FCB852445A2EF0024FFBB /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2FCB842445A2EF0024FFBB /* MulticastDelegate.swift */; };
@@ -65,7 +64,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1D2FCB7324457EA80024FFBB /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		1D2FCB7524457FF10024FFBB /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		1D2FCB822445A17F0024FFBB /* DatabaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseProtocol.swift; sourceTree = "<group>"; };
 		1D2FCB842445A2EF0024FFBB /* MulticastDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulticastDelegate.swift; sourceTree = "<group>"; };
@@ -230,7 +228,6 @@
 				1DDEE7EC24448112005BC7D8 /* FirstViewController.swift */,
 				1DDEE7F124448F68005BC7D8 /* intro2.mp4 */,
 				1DDEE7F324449C46005BC7D8 /* MyCropMainTableViewCell.swift */,
-				1D2FCB7324457EA80024FFBB /* OnboardingViewController.swift */,
 				E883C94124443BEB006F6AC8 /* DiseaseViewController.swift */,
 				E883C94524444B8B006F6AC8 /* MyCropsTableViewCell.swift */,
 				E883C94724444BDB006F6AC8 /* DiseaseTableViewCell.swift */,
@@ -524,7 +521,6 @@
 				1D4743DB2447ECA100866CEB /* DetailOfTheCropViewController.swift in Sources */,
 				1DDEE7ED24448112005BC7D8 /* FirstViewController.swift in Sources */,
 				1DDEE7E724445EEC005BC7D8 /* DetailNewCropViewController.swift in Sources */,
-				1D2FCB7424457EA80024FFBB /* OnboardingViewController.swift in Sources */,
 				1D502981243D919A00D4F426 /* UserdefaultsProtocol.swift in Sources */,
 				1DDEE7F424449C46005BC7D8 /* MyCropMainTableViewCell.swift in Sources */,
 				1D2FCB872445A3110024FFBB /* FirebaseController.swift in Sources */,
