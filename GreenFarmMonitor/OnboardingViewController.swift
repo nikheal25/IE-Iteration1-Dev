@@ -23,11 +23,13 @@ class OnboardingViewController: UIViewController, PaperOnboardingDataSource {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
+    @IBOutlet weak var nextAction: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //TODO - CHANGE
-//        nextAction.isHidden = false
+        nextAction.isHidden = false
         
         
          let onboarding = PaperOnboarding()
@@ -48,7 +50,7 @@ class OnboardingViewController: UIViewController, PaperOnboardingDataSource {
                   view.addConstraint(constraint)
                 }
         
-//         view.bringSubviewToFront(nextAction)
+         view.bringSubviewToFront(nextAction)
                 }
              
     func onboardingItem(at index: Int) -> OnboardingItemInfo {

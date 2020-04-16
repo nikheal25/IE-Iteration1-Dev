@@ -238,15 +238,17 @@
         <!--Onboarding View Controller-->
         <scene sceneID="qyw-UC-HKT">
             <objects>
-                <viewController id="DVU-ys-H6N" customClass="OnboardingViewController" sceneMemberID="viewController">
+                <viewController id="DVU-ys-H6N" customClass="OnboardingViewController" customModule="Green_Farm_Monitor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PJh-IC-C6a">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Rq-BV-hFR">
-                                <rect key="frame" x="307" y="113" width="57" height="46"/>
+                                <rect key="frame" x="311" y="113" width="53" height="46"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <state key="normal" title="Next"/>
+                                <state key="normal" title="Skip">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="d3q-yA-hpY" kind="show" id="k0t-fM-dzr"/>
                                 </connections>
@@ -260,10 +262,13 @@
                         <viewLayoutGuide key="safeArea" id="u11-4K-2Dx"/>
                     </view>
                     <navigationItem key="navigationItem" id="0E6-d2-YT0"/>
+                    <connections>
+                        <outlet property="nextAction" destination="8Rq-BV-hFR" id="YlV-px-GvL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="phP-Kc-QbM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3768" y="-364"/>
+            <point key="canvasLocation" x="3766.666666666667" y="-364.28571428571428"/>
         </scene>
         <!--Login Screen-->
         <scene sceneID="70X-aW-u6T">
@@ -348,19 +353,6 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZJe-eu-2WA" id="bAZ-HB-KcO">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iTunesArtwork" translatesAutoresizingMaskIntoConstraints="NO" id="gQ5-Z3-7CT">
-                                            <rect key="frame" x="132" y="25" width="150" height="150"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="150" id="16W-pC-lmR"/>
-                                                <constraint firstAttribute="height" constant="150" id="IxW-GV-Ghv"/>
-                                            </constraints>
-                                        </imageView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="gQ5-Z3-7CT" firstAttribute="centerY" secondItem="bAZ-HB-KcO" secondAttribute="centerY" id="MP3-Jf-sA5"/>
-                                        <constraint firstItem="gQ5-Z3-7CT" firstAttribute="centerX" secondItem="bAZ-HB-KcO" secondAttribute="centerX" id="y7S-CF-jbg"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -370,7 +362,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="My Crops" id="T71-E0-OmJ">
-                        <barButtonItem key="rightBarButtonItem" title="Add Crop" id="NhA-is-Hdm">
+                        <barButtonItem key="rightBarButtonItem" title="Add New Crop" id="NhA-is-Hdm">
                             <connections>
                                 <action selector="addNewCrop:" destination="DHY-iT-N33" id="z8z-iJ-YX3"/>
                             </connections>
@@ -1120,11 +1112,10 @@
     <resources>
         <image name="greenHouse-1" width="222" height="333"/>
         <image name="greenHouse-2" width="666.5" height="889"/>
-        <image name="iTunesArtwork" width="512" height="512"/>
         <image name="playstore" width="512" height="512"/>
         <image name="temp" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gb7-L6-GNo"/>
+        <segue reference="0BZ-rP-Cky"/>
     </inferredMetricsTieBreakers>
 </document>
