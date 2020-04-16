@@ -45,6 +45,8 @@
 		E883C94824444BDB006F6AC8 /* DiseaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E883C94724444BDB006F6AC8 /* DiseaseTableViewCell.swift */; };
 		E883C94A24446A04006F6AC8 /* DetailOfDiseaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E883C94924446A04006F6AC8 /* DetailOfDiseaseViewController.swift */; };
 		E883C94C244473E1006F6AC8 /* SymptomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E883C94B244473E1006F6AC8 /* SymptomsViewController.swift */; };
+		E8FDFCA924470CED00143844 /* ChangeUserLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FDFCA824470CED00143844 /* ChangeUserLocationViewController.swift */; };
+		E8FDFCAB2447133F00143844 /* LocationAnnotation .swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FDFCAA2447133F00143844 /* LocationAnnotation .swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +116,8 @@
 		E883C94724444BDB006F6AC8 /* DiseaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseTableViewCell.swift; sourceTree = "<group>"; };
 		E883C94924446A04006F6AC8 /* DetailOfDiseaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOfDiseaseViewController.swift; sourceTree = "<group>"; };
 		E883C94B244473E1006F6AC8 /* SymptomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsViewController.swift; sourceTree = "<group>"; };
+		E8FDFCA824470CED00143844 /* ChangeUserLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserLocationViewController.swift; sourceTree = "<group>"; };
+		E8FDFCAA2447133F00143844 /* LocationAnnotation .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationAnnotation .swift"; sourceTree = "<group>"; };
 		F61D639F27E8DC5F2B99E811 /* Pods_GreenFarmMonitorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GreenFarmMonitorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -238,6 +242,8 @@
 				E883C94B244473E1006F6AC8 /* SymptomsViewController.swift */,
 				1DFBCFC62446CBBC00DCC4B2 /* LoginViewController.swift */,
 				1D4743DA2447ECA100866CEB /* DetailOfTheCropViewController.swift */,
+				E8FDFCA824470CED00143844 /* ChangeUserLocationViewController.swift */,
+				E8FDFCAA2447133F00143844 /* LocationAnnotation .swift */,
 			);
 			path = GreenFarmMonitor;
 			sourceTree = "<group>";
@@ -519,6 +525,7 @@
 				1DDEE7E12444363B005BC7D8 /* CropTableViewCell.swift in Sources */,
 				1DDEE7E924446777005BC7D8 /* MyCropCellTableViewCell.swift in Sources */,
 				1DDEE7DD244432CF005BC7D8 /* Crop.swift in Sources */,
+				E8FDFCAB2447133F00143844 /* LocationAnnotation .swift in Sources */,
 				1D9EED33243C3A7D00EE97D2 /* ViewController.swift in Sources */,
 				1DDEE7E5244443CD005BC7D8 /* AddNewCropViewController.swift in Sources */,
 				1D4743DB2447ECA100866CEB /* DetailOfTheCropViewController.swift in Sources */,
@@ -539,6 +546,7 @@
 				1DFBCFC52446B63900DCC4B2 /* UserCropRelation.swift in Sources */,
 				E883C94A24446A04006F6AC8 /* DetailOfDiseaseViewController.swift in Sources */,
 				1D9EED31243C3A7D00EE97D2 /* SceneDelegate.swift in Sources */,
+				E8FDFCA924470CED00143844 /* ChangeUserLocationViewController.swift in Sources */,
 				1D2FCB852445A2EF0024FFBB /* MulticastDelegate.swift in Sources */,
 				E883C94224443BEB006F6AC8 /* DiseaseViewController.swift in Sources */,
 				1D2FCB832445A17F0024FFBB /* DatabaseProtocol.swift in Sources */,

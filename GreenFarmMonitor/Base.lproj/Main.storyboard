@@ -149,21 +149,45 @@
             </objects>
             <point key="canvasLocation" x="2566.666666666667" y="696.42857142857144"/>
         </scene>
-        <!--Diseases-->
+        <!--Change Your Location-->
         <scene sceneID="L7m-X9-nAY">
             <objects>
-                <viewController id="xHO-5A-7f3" sceneMemberID="viewController">
+                <viewController id="xHO-5A-7f3" customClass="ChangeUserLocationViewController" customModule="Green_Farm_Monitor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RwT-CM-8js">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="BuC-zj-nzL">
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="CurrentLocation" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Et-gp-JTR">
+                                <rect key="frame" x="20" y="98" width="287" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmZ-eU-9uP">
+                                <rect key="frame" x="334" y="99" width="60" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Change"/>
+                                <connections>
+                                    <action selector="ChangeBtn:" destination="xHO-5A-7f3" eventType="touchUpInside" id="VyD-wl-NZ7"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="4pg-HS-muc"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Diseases" id="tJ3-4w-Aqn"/>
+                    <navigationItem key="navigationItem" title="Change Your Location" id="tJ3-4w-Aqn"/>
+                    <connections>
+                        <outlet property="locationText" destination="0Et-gp-JTR" id="7Y1-rV-SLv"/>
+                        <outlet property="mapView" destination="BuC-zj-nzL" id="YlP-3g-o7M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aw8-7O-obG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5793" y="653"/>
+            <point key="canvasLocation" x="5826.0869565217399" y="522.99107142857144"/>
         </scene>
         <!--FirstViewController-->
         <scene sceneID="O9v-aC-QGO">
@@ -1027,10 +1051,10 @@
             </objects>
             <point key="canvasLocation" x="3497.1014492753625" y="617.41071428571422"/>
         </scene>
-        <!--Item 2-->
+        <!--Disease-->
         <scene sceneID="C20-Sg-fLO">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pk9-Zt-63V" sceneMemberID="viewController">
+                <navigationController title="Disease" automaticallyAdjustsScrollViewInsets="NO" id="Pk9-Zt-63V" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item 2" id="Q8H-22-n0O"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kH9-T9-YbH">
