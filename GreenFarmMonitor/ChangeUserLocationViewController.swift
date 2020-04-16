@@ -10,12 +10,34 @@ import UIKit
 import MapKit
 import CoreLocation
 class ChangeUserLocationViewController: UIViewController {
-  
     
+
+    var LocationList = [LocationAnnotation]()
+    
+   
+    
+    weak var databaseController: DatabaseProtocol?
     override func viewDidLoad() {
         super.viewDidLoad()
-        let location = LocationAnnotation(newTitle: "My farm", lat: -37.877623, long: 145.1362)
-        mapView.addAnnotation(location)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+     
+        databaseController = appDelegate.databaseController
+        
+        let userList = databaseController?.userList
+        for user in userList!
+        {
+            if user.userId == "20-04-16-15:00:22tqAOd"{
+            let lat = Double(user.farmLat)
+            let long = Double(user.farmLong)
+           
+            LocationList.append(LocationAnnotation(newTitle: user.farmLocationName, lat: lat!, long: long!))
+            }
+        }
+//        let location = LocationAnnotation(newTitle: "My farm", lat: -37.877623, long: 145.1362)
+      
+        mapView.addAnnotations(LocationList)
+        focusOn(annotation: LocationList.first!)
+       
         // Do any additional setup after loading the view.
     }
     
@@ -44,7 +66,13 @@ class ChangeUserLocationViewController: UIViewController {
         {placemarks,error in
             let placemarks = placemarks?.first
             let location = LocationAnnotation(newTitle: "New farm", lat: (placemarks?.location?.coordinate.latitude)!, long: (placemarks?.location?.coordinate.longitude)!)
+            let lat = String(location.coordinate.latitude)
+            let long = String(location.coordinate.longitude)
+            self.databaseController!.updateLocation(userId:"20-04-16-15:00:22tqAOd", lat: lat ,locationName: "New farm", long: long)
+            self.mapView.removeAnnotations(self.mapView.annotations)
+            
             self.mapView.addAnnotation(location)
+            self.focusOn(annotation:location)
             
                 }
      

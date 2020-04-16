@@ -9,6 +9,10 @@
 import UIKit
 
 class MyCropTableViewController: UITableViewController, DatabaseListener {
+    func onUserChange(change: DatabaseChange, users: [User]) {
+        
+    }
+    
     
     var listenerType: ListenerType = ListenerType.all // listener
     weak var databaseController: DatabaseProtocol?

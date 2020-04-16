@@ -9,6 +9,10 @@
 import UIKit
 
 class DiseaseViewController: UIViewController,UITableViewDataSource, UITableViewDelegate,DatabaseListener{
+    func onUserChange(change: DatabaseChange, users: [User]) {
+        
+    }
+    
  
     
     
@@ -70,7 +74,7 @@ class DiseaseViewController: UIViewController,UITableViewDataSource, UITableView
                 if disease.crop == currentCrops[indexPath.row].cropName
                 {
                     shownDisease.append(disease)
-                    print(disease)
+//                    print(disease)
                 }
             }
             }

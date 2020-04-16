@@ -20,11 +20,12 @@ class FirebaseController: NSObject, DatabaseProtocol {
     var cropRef: CollectionReference?
     var userCropRelationRef: CollectionReference?
     var diseaseRef:CollectionReference?
-    
+    var userRef:CollectionReference?
     var diseaseList:[DiseaseOfCrops]
     var cropsList: [Crop] = []
     var userCropRelation: [UserCropRelation] = []
     var myCropList: [Crop] = []
+    var userList: [User] = []
     
     func insertNewUserToFirebase(user: User) -> Bool {
         // Add a new document in collection "user"
@@ -45,6 +46,8 @@ class FirebaseController: NSObject, DatabaseProtocol {
         }
         return returnVal
     }
+    
+    
     
     func updateMyCropList() {
         
@@ -68,6 +71,10 @@ class FirebaseController: NSObject, DatabaseProtocol {
         if listener.listenerType == ListenerType.Disease || listener.listenerType == ListenerType.all {
             listener.onDiseaseOfCropsChange(change: .update, diseaseOfCrops: diseaseList)
         }
+        
+        if listener.listenerType == ListenerType.User || listener.listenerType == ListenerType.all {
+            listener.onUserChange(change: .update, users: userList)
+        }
     }
     
     func removeListener(listener: DatabaseListener) {
@@ -81,6 +88,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
     authController = Auth.auth()
     database = Firestore.firestore()
 
+    userList = [User]()
     cropsList = [Crop]()
     userCropRelation = [UserCropRelation]()
     diseaseList = [DiseaseOfCrops]()
@@ -132,7 +140,16 @@ class FirebaseController: NSObject, DatabaseProtocol {
             }
             self.parseDiseaseSnapshot(snapshot: querySnapshot!)
         }
-
+        //User
+              userRef = database.collection("Users")
+              userRef?.addSnapshotListener { querySnapshot, error in
+                  guard (querySnapshot?.documents) != nil else {
+                      print("Error fetching documents: \(error!)")
+                      return
+                  }
+                
+                self.parseUserSnapshot(snapshot: querySnapshot!)
+              }
     }
     
     func stringUnwrapper(val: [String : Any], key: String) -> String {
@@ -144,6 +161,53 @@ class FirebaseController: NSObject, DatabaseProtocol {
         }
         return finalValue
     }
+    
+    func parseUserSnapshot(snapshot: QuerySnapshot) {
+                
+                   snapshot.documentChanges.forEach { change in
+                    let documentRef = change.document.documentID
+                   
+        
+                    let lat = change.document.data()["farmLat"] as! String
+                    let long = change.document.data()["farmLong"] as! String
+                    let locationName = change.document.data()["farmLocationName"] as! String
+                    let userId = change.document.data ()["userId"]as! String
+                    let userName = change.document.data ()["userName"]as! String
+    //                print(documentRef)
+                    if change.type == .added {
+//             print("New USER: \(change.document.data())")
+                        let newUser = User(userId: userId, userName: userName, farmLocationName: locationName, farmLat: lat,farmLong: long )
+    //                    newDisease.crop = crop
+    //                    newDisease.name = name
+    //                    newDisease.image = image
+    //                    newDisease.descriptionOfSymptom = descriptionOfSymptom
+    //                    newDisease.id = documentRef
+                        userList.append(newUser)
+                      }
+                       if change.type == .modified {
+    //                       print("Updated data: \(change.document.data())")
+                          
+//                        let index = getDiseaseIndexByID(reference: documentRef)!
+//                        diseaseList[index].crop = crop
+//                        diseaseList[index].name = name
+//
+//                        diseaseList[index].descriptionOfSymptom = descriptionOfSymptom
+//                        diseaseList[index].id = documentRef
+                       }
+                      if change.type == .removed {
+    //                    print("Removed data: \(change.document.data())")
+//
+//                        if let index = getDiseaseIndexByID(reference: documentRef) {
+//                              diseaseList.remove(at: index)
+//                         }
+                     }
+                   }
+                  listeners.invoke { (listener) in
+                      if listener.listenerType == ListenerType.User||listener.listenerType == ListenerType.all {
+                          listener.onUserChange(change: .update, users: userList)
+                      }
+                   }
+            }
     
     //This method add all the Rule from Firebase to a list
        func parseUserCropRelationSnapshot(snapshot: QuerySnapshot) {
@@ -252,7 +316,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
                 let image = change.document.data ()["Image"]as! String
 //                print(documentRef)
                 if change.type == .added {
-                    print("New disease: \(change.document.data())")
+//                    print("New disease: \(change.document.data())")
                 let newDisease = DiseaseOfCrops(id: documentRef, name: name, image: image, crop: crop, descriptionOfSymptom: descriptionOfSymptom)
 //                    newDisease.crop = crop
 //                    newDisease.name = name
@@ -262,7 +326,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
                     diseaseList.append(newDisease)
                   }
                    if change.type == .modified {
-                       print("Updated data: \(change.document.data())")
+//                       print("Updated data: \(change.document.data())")
                       
                     let index = getDiseaseIndexByID(reference: documentRef)!
                     diseaseList[index].crop = crop
@@ -272,7 +336,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
                     diseaseList[index].id = documentRef
                    }
                   if change.type == .removed {
-                    print("Removed data: \(change.document.data())")
+//                    print("Removed data: \(change.document.data())")
                     
                     if let index = getDiseaseIndexByID(reference: documentRef) {
                           diseaseList.remove(at: index)
@@ -295,7 +359,18 @@ class FirebaseController: NSObject, DatabaseProtocol {
         return nil
     }
     
-        
+    //update the location of farm
+    func updateLocation(userId:String, lat:String, locationName:String, long:String)
+        {
+           
+            database.collection("Users").document(userId).updateData([
+                "farmLat":lat,
+                "farmLocationName":locationName,
+                "farmLong":long
+            ])
+           
+            
+    }
         
     
 }
