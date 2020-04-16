@@ -104,6 +104,8 @@ extension AddNewCropViewController: UITableViewDelegate, UITableViewDataSource {
             if indexPath.section == SECTION_ACTIVITY {
                                             let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ACTIVITY, for: indexPath) as! MyCropCellTableViewCell
 //                                            cell.textLabel?.text = searchedCountry[indexPath.row]
+                cell.cellView.layer.cornerRadius = cell.cellView.frame.height / 2
+                cell.cropImageView.layer.cornerRadius = cell.cropImageView.layer.frame.height / 2
                 cell.setCell(crop: searchedCrop[indexPath.row])
                                             return cell
                                         }
