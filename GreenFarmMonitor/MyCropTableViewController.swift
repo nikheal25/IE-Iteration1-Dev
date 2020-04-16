@@ -23,6 +23,9 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
         
     }
     
+    @IBAction func addNewCrop(_ sender: Any) {
+        self.performSegue(withIdentifier: "newSpecificCrop", sender: self)
+    }
     func onUserCropRelationChange(change: DatabaseChange, userCropRelation: [UserCropRelation]) {
         let currentUserId = userDefaultController?.retrieveUserId()
         
@@ -205,6 +208,9 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
             let destination = segue.destination as! AddNewCropViewController
             destination.registeredCrop = deviceIDs
         }
+        if segue.identifier == "newSpecificCrop" {
+                   let destination = segue.destination as! DetailOfTheCropViewController
+               }
     }
     
     //returns the object of crop, for specified ID
