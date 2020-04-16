@@ -121,6 +121,7 @@ class DetailOfTheCropViewController: UIViewController {
         if let new = newCrop {
             if new == true {
                 databaseController?.updateMyCropList(new: new, userId: (userDefaultController?.retrieveUserId())!, cropId: specificCrop!.cropId)
+                _ = navigationController?.popToRootViewController(animated: true)
             } else {
                
             }

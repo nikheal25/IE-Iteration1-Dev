@@ -87,16 +87,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "212F9D44-4E25-4DF3-95CE-6E01BBE137F6"
+            uuid = "77B05546-4F7D-41ED-92CC-5DF87DC6B45A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "GreenFarmMonitor/DetailOfTheCropViewController.swift"
+            filePath = "GreenFarmMonitor/Database/FirebaseController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "animationCircle(center:endAngle:fillColor:strokeColor:theView:)"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "addUserCropRelation(userCropRelation:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
