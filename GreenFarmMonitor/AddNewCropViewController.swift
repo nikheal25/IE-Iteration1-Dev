@@ -45,7 +45,7 @@ class AddNewCropViewController: UIViewController, DatabaseListener{
         userDefaultController = appDelegate.userDefaultController
         databaseController = appDelegate.databaseController
         
-   
+   tableView.tableFooterView = UIView()
         allCropsName = getRelevantCrops()
         
         searchBar.delegate = self
@@ -110,7 +110,7 @@ extension AddNewCropViewController: UITableViewDelegate, UITableViewDataSource {
                                             return cell
                                         }
                                         let cell = tableView.dequeueReusableCell(withIdentifier: CELL_COUNT, for: indexPath)
-//            cell.textLabel?.text = "\(searchedCountry.count) alerts in the list"
+            cell.textLabel?.text = "\(searchedCrop.count) total crops in the list"
                                         cell.selectionStyle = .none
                                         return cell
         } else {
@@ -121,7 +121,7 @@ extension AddNewCropViewController: UITableViewDelegate, UITableViewDataSource {
                                  return cell
                              }
                              let cell = tableView.dequeueReusableCell(withIdentifier: CELL_COUNT, for: indexPath)
-//            cell.textLabel?.text = "\(allCropsName.count) crops in the list"
+cell.textLabel?.text = "\(allCropsName.count) total crops in the list"
                              cell.selectionStyle = .none
                              return cell
         }
