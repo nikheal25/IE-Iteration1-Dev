@@ -5,7 +5,6 @@
 //  Created by Nikhil Gholap on 14/4/20.
 //  Copyright © 2020 Nikhil Gholap. All rights reserved.
 //
-
 import UIKit
 import paper_onboarding
 
@@ -23,16 +22,12 @@ class OnboardingViewController: UIViewController, PaperOnboardingDataSource {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
-
-    @IBOutlet weak var nectAction: UIButton!
     
-    @IBAction func nextButtonClicked(_ sender: Any) {
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //TODO - CHANGE
-        nectAction.isHidden = false
+//        nextAction.isHidden = false
         
         
          let onboarding = PaperOnboarding()
@@ -53,7 +48,7 @@ class OnboardingViewController: UIViewController, PaperOnboardingDataSource {
                   view.addConstraint(constraint)
                 }
         
-         view.bringSubviewToFront(nectAction)
+//         view.bringSubviewToFront(nextAction)
                 }
              
     func onboardingItem(at index: Int) -> OnboardingItemInfo {
@@ -99,43 +94,72 @@ class OnboardingViewController: UIViewController, PaperOnboardingDataSource {
 
         }
 
-        extension UIColor {
-        convenience init(hexString: String, alpha: CGFloat = 1.0) {
-            let hexString: String = hexString.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-            let scanner = Scanner(string: hexString)
-            if (hexString.hasPrefix("#")) {
-                scanner.scanLocation = 1
-            }
-            var color: UInt32 = 0
-            scanner.scanHexInt32(&color)
-            let mask = 0x000000FF
-            let r = Int(color >> 16) & mask
-            let g = Int(color >> 8) & mask
-            let b = Int(color) & mask
-            let red   = CGFloat(r) / 255.0
-            let green = CGFloat(g) / 255.0
-            let blue  = CGFloat(b) / 255.0
-            self.init(red:red, green:green, blue:blue, alpha:alpha)
-        }
-        func toHexString() -> String {
-            var r:CGFloat = 0
-            var g:CGFloat = 0
-            var b:CGFloat = 0
-            var a:CGFloat = 0
-            getRed(&r, green: &g, blue: &b, alpha: &a)
-            let rgb:Int = (Int)(r*255)<<16 | (Int)(g*255)<<8 | (Int)(b*255)<<0
-            return String(format:"#%06x", rgb)
-        }
-        }
+//        extension UIColor {
+//        convenience init(hexString: String, alpha: CGFloat = 1.0) {
+//            let hexString: String = hexString.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+//            let scanner = Scanner(string: hexString)
+//            if (hexString.hasPrefix("#")) {
+//                scanner.scanLocation = 1
+//            }
+//            var color: UInt32 = 0
+//            scanner.scanHexInt32(&color)
+//            let mask = 0x000000FF
+//            let r = Int(color >> 16) & mask
+//            let g = Int(color >> 8) & mask
+//            let b = Int(color) & mask
+//            let red   = CGFloat(r) / 255.0
+//            let green = CGFloat(g) / 255.0
+//            let blue  = CGFloat(b) / 255.0
+//            self.init(red:red, green:green, blue:blue, alpha:alpha)
+//        }
+//        func toHexString() -> String {
+//            var r:CGFloat = 0
+//            var g:CGFloat = 0
+//            var b:CGFloat = 0
+//            var a:CGFloat = 0
+//            getRed(&r, green: &g, blue: &b, alpha: &a)
+//            let rgb:Int = (Int)(r*255)<<16 | (Int)(g*255)<<8 | (Int)(b*255)<<0
+//            return String(format:"#%06x", rgb)
+//        }
+//        }
+//
+//extension UIColor {
+//convenience init(hexString: String, alpha: CGFloat = 1.0) {
+//    let hexString: String = hexString.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+//    let scanner = Scanner(string: hexString)
+//    if (hexString.hasPrefix("#")) {
+//        scanner.scanLocation = 1
+//    }
+//    var color: UInt32 = 0
+//    scanner.scanHexInt32(&color)
+//    let mask = 0x000000FF
+//    let r = Int(color >> 16) & mask
+//    let g = Int(color >> 8) & mask
+//    let b = Int(color) & mask
+//    let red   = CGFloat(r) / 255.0
+//    let green = CGFloat(g) / 255.0
+//    let blue  = CGFloat(b) / 255.0
+//    self.init(red:red, green:green, blue:blue, alpha:alpha)
+//}
+//func toHexString() -> String {
+//    var r:CGFloat = 0
+//    var g:CGFloat = 0
+//    var b:CGFloat = 0
+//    var a:CGFloat = 0
+//    getRed(&r, green: &g, blue: &b, alpha: &a)
+//    let rgb:Int = (Int)(r*255)<<16 | (Int)(g*255)<<8 | (Int)(b*255)<<0
+//    return String(format:"#%06x", rgb)
+//}
+//}
+
 
 
 // MARK: PaperOnboardingDelegate
-
 extension OnboardingViewController: PaperOnboardingDelegate {
 
     // TODO - the line below is not executing, need to make it executable
    func onboardingWillTransitonToIndex(_ index: Int) {
-       nectAction.isHidden = index == 2 ? true : false
+//       nextAction.isHidden = index == 2 ? true : false
    }
 
     func onboardingConfigurationItem(_ item: OnboardingContentViewItem, index: Int) {
@@ -153,4 +177,3 @@ extension OnboardingViewController: PaperOnboardingDelegate {
     
      
 }
-

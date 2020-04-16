@@ -10,6 +10,11 @@ import UIKit
 
 class DetailOfTheCropViewController: UIViewController {
     
+    var specificCrop: Crop?
+    weak var databaseController: DatabaseProtocol?
+    weak var userDefaultController: UserdefaultsProtocol?
+    var newCrop: Bool?
+    
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var imageView: UIView!
     @IBOutlet weak var infoView: UIView!
@@ -20,10 +25,18 @@ class DetailOfTheCropViewController: UIViewController {
     @IBOutlet weak var temperatureBarView: UIView!
     @IBOutlet weak var cropNameLabel: UILabel!
     @IBOutlet weak var phBarView: UIView!
+    @IBOutlet weak var descriptionLanel: UILabel!
     
+    @IBOutlet weak var scintificNameLabel: UILabel!
+    @IBOutlet weak var pHlabel: UILabel!
     @IBOutlet weak var tempLabel: UILabel!
+    @IBOutlet weak var minMoisstureRange: UILabel!
+    @IBOutlet weak var maxMoistureRange: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fillLabels()
+        
         mainView.backgroundColor = UIColor(hexString: "#24343F")
         
         self.imageView.layer.cornerRadius = 8
@@ -32,31 +45,28 @@ class DetailOfTheCropViewController: UIViewController {
         
         setInfoView()
         
-        let shapeLayer = CAShapeLayer()
-       
-        let center = tempLabel.center
+        animationCircle(center: tempLabel.center, endAngle: 2 * CGFloat.pi, fillColor: UIColor.white.cgColor, strokeColor: UIColor.red.cgColor, theView: temperatureBarView)
         
-        let circularPath = UIBezierPath(arcCenter: center, radius: 40, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
+        animationCircle(center: tempLabel.center, endAngle:  CGFloat.pi, fillColor: UIColor.white.cgColor, strokeColor: UIColor.red.cgColor, theView: phBarView)
         
-        shapeLayer.path = circularPath.cgPath
-        shapeLayer.strokeColor = UIColor.red.cgColor
-        shapeLayer.fillColor = UIColor.white.cgColor
-        shapeLayer.lineWidth = 6
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        userDefaultController = appDelegate.userDefaultController
+        databaseController = appDelegate.databaseController
         
-        shapeLayer.lineCap = CAShapeLayerLineCap.round
-        
-        shapeLayer.strokeEnd = 0
-        
-        temperatureBarView.layer.addSublayer(shapeLayer)
-        
-        let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
-        basicAnimation.toValue = 1
-        basicAnimation.duration = 3
-        basicAnimation.fillMode = CAMediaTimingFillMode.forwards
-        basicAnimation.isRemovedOnCompletion = false
-        
-        shapeLayer.add(basicAnimation, forKey: "urSoBasic")
-        
+        if let new = newCrop {
+            if new == true {
+                print("newCrop")
+            } else {
+               
+            }
+        }
+    }
+    
+    func fillLabels() {
+        cropNameLabel.text = specificCrop?.cropName
+        scintificNameLabel.text = ""
+        descriptionLanel.text = "Following conditions are the ideal for the growth of the crop"
+        minMoisstureRange.text = ""
     }
     
     func getPointForView(_ view : UIView) -> (x:CGFloat,y:CGFloat)
@@ -64,6 +74,31 @@ class DetailOfTheCropViewController: UIViewController {
         let x = view.frame.origin.x
         let y = view.frame.origin.y
         return (x,y)
+    }
+    
+    func animationCircle(center: CGPoint, endAngle: CGFloat, fillColor: CGColor, strokeColor: CGColor, theView: UIView)  {
+        let shapeLayer = CAShapeLayer()
+        
+        
+        let circularPath = UIBezierPath(arcCenter: center, radius: 40, startAngle: -CGFloat.pi / 2, endAngle: endAngle, clockwise: true)
+        shapeLayer.path = circularPath.cgPath
+        shapeLayer.strokeColor = strokeColor//
+        shapeLayer.fillColor = fillColor//
+        shapeLayer.lineWidth = 6
+        
+        shapeLayer.lineCap = CAShapeLayerLineCap.round
+        
+        shapeLayer.strokeEnd = 0
+        
+        theView.layer.addSublayer(shapeLayer)
+        
+        let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        basicAnimation.toValue = 1
+        basicAnimation.duration = 2
+        basicAnimation.fillMode = CAMediaTimingFillMode.forwards
+        basicAnimation.isRemovedOnCompletion = false
+        
+        shapeLayer.add(basicAnimation, forKey: "urSoBasic")
     }
     
     
@@ -82,5 +117,14 @@ class DetailOfTheCropViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
+    @IBAction func confirmButtonPushed(_ sender: Any) {
+        if let new = newCrop {
+            if new == true {
+                databaseController?.updateMyCropList(new: new, userId: (userDefaultController?.retrieveUserId())!, cropId: specificCrop!.cropId)
+            } else {
+               
+            }
+        }
+    }
     
 }

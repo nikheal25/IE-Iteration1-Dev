@@ -36,7 +36,7 @@ protocol DatabaseProtocol: AnyObject {
   //  func checkLogin(userName: String, password: String) -> User?
     func addUserCropRelation(userCropRelation: UserCropRelation) -> UserCropRelation
     func insertNewUserToFirebase(user: User) -> Bool
-    func updateMyCropList()
+    func updateMyCropList(new: Bool, userId: String, cropId: String)
     func addListener(listener: DatabaseListener)
     func removeListener(listener: DatabaseListener)
     func updateLocation(userId:String, lat:String, locationName:String, long:String)

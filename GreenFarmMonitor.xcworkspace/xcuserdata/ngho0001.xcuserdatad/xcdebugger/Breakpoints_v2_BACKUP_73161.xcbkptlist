@@ -94,10 +94,47 @@
             filePath = "GreenFarmMonitor/DetailOfTheCropViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
             startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "animationCircle(center:endAngle:fillColor:strokeColor:theView:)"
+            endingLineNumber = "87">
+=======
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "confirmButtonPushed(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "212F9D44-4E25-4DF3-95CE-6E01BBE137F6 - ba3eea85a946d09b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Green_Farm_Monitor.DetailOfTheCropViewController.confirmButtonPushed(Any) -&gt; ()"
+                  moduleName = "Green Farm Monitor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///var/folders/1d/6yjtjkx1421dcyb0wmhrws905mvt7_/T/tmp.tvXhr5ue/Desktop/IE%20project/GreenFarmMonitor/GreenFarmMonitor/DetailOfTheCropViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "123"
+                  endingLineNumber = "123"
+                  offsetFromSymbolStart = "190">
+               </Location>
+               <Location
+                  uuid = "212F9D44-4E25-4DF3-95CE-6E01BBE137F6 - ba3eea85a946d09b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Green_Farm_Monitor.DetailOfTheCropViewController.confirmButtonPushed(Any) -&gt; ()"
+                  moduleName = "Green Farm Monitor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///var/folders/1d/6yjtjkx1421dcyb0wmhrws905mvt7_/T/tmp.tvXhr5ue/Desktop/IE%20project/GreenFarmMonitor/GreenFarmMonitor/DetailOfTheCropViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "123"
+                  endingLineNumber = "123"
+                  offsetFromSymbolStart = "870">
+               </Location>
+            </Locations>
+>>>>>>> thursdayUI
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

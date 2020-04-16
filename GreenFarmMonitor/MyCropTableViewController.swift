@@ -28,7 +28,7 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
     }
     
     @IBAction func addNewCrop(_ sender: Any) {
-        self.performSegue(withIdentifier: "newSpecificCrop", sender: self)
+        self.performSegue(withIdentifier: "addNewCropSegue", sender: self)
     }
     func onUserCropRelationChange(change: DatabaseChange, userCropRelation: [UserCropRelation]) {
         let currentUserId = userDefaultController?.retrieveUserId()
@@ -203,7 +203,7 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
           if indexPath.section == SECTION_ACTIVITY{
               selectedRow = indexPath.row
               tableView.deselectRow(at: indexPath, animated: true)
-              self.performSegue(withIdentifier: "addNewCropSegue", sender: self)
+              self.performSegue(withIdentifier: "newSpecificCrop", sender: self)
           }
       }
   
@@ -214,6 +214,7 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
         }
         if segue.identifier == "newSpecificCrop" {
                    let destination = segue.destination as! DetailOfTheCropViewController
+            destination.specificCrop = myCropList[selectedRow]
                }
     }
     
