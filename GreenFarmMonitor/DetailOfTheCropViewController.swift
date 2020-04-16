@@ -19,6 +19,7 @@ class DetailOfTheCropViewController: UIViewController {
     
     @IBOutlet weak var temperatureBarView: UIView!
     @IBOutlet weak var cropNameLabel: UILabel!
+    @IBOutlet weak var phBarView: UIView!
     
     @IBOutlet weak var tempLabel: UILabel!
     override func viewDidLoad() {

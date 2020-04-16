@@ -585,6 +585,23 @@
                                                                     <constraint firstAttribute="height" constant="100" id="oT4-uO-Bvd"/>
                                                                 </constraints>
                                                             </view>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Soil pH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5f-gR-J6H">
+                                                                <rect key="frame" x="181" y="70" width="144" height="21"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="144" id="NtU-hS-UA0"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Edp-3R-wNu">
+                                                                <rect key="frame" x="183" y="99" width="100" height="100"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="100" id="T3M-Eg-2fk"/>
+                                                                    <constraint firstAttribute="width" constant="100" id="W2i-hd-L7b"/>
+                                                                </constraints>
+                                                            </view>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <constraints>
@@ -592,9 +609,13 @@
                                                             <constraint firstItem="IQs-r9-PaA" firstAttribute="top" secondItem="BRx-Cd-7ia" secondAttribute="bottom" constant="8" id="I7D-Om-bv9"/>
                                                             <constraint firstAttribute="height" constant="326" id="MNE-lE-Pr3"/>
                                                             <constraint firstItem="BRx-Cd-7ia" firstAttribute="leading" secondItem="vz3-lu-REF" secondAttribute="leadingMargin" constant="5" id="Mi8-pt-qcx"/>
+                                                            <constraint firstItem="j5f-gR-J6H" firstAttribute="baseline" secondItem="BRx-Cd-7ia" secondAttribute="baseline" id="Qxt-s9-ea9"/>
                                                             <constraint firstItem="BRx-Cd-7ia" firstAttribute="top" secondItem="vz3-lu-REF" secondAttribute="top" constant="70" id="RpE-FC-MsO"/>
                                                             <constraint firstItem="pHR-8i-ven" firstAttribute="top" secondItem="vz3-lu-REF" secondAttribute="top" constant="25" id="VWS-lI-b16"/>
                                                             <constraint firstItem="pHR-8i-ven" firstAttribute="centerX" secondItem="vz3-lu-REF" secondAttribute="centerX" id="WZA-dt-wdb"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Edp-3R-wNu" secondAttribute="trailing" constant="50" id="h50-rs-xp4"/>
+                                                            <constraint firstItem="Edp-3R-wNu" firstAttribute="top" secondItem="j5f-gR-J6H" secondAttribute="bottom" constant="8" id="wUG-Fr-Xz6"/>
+                                                            <constraint firstItem="j5f-gR-J6H" firstAttribute="leading" secondItem="BRx-Cd-7ia" secondAttribute="trailing" constant="70" id="wgr-Am-5p7"/>
                                                         </constraints>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQH-iR-eUi">
@@ -661,6 +682,7 @@
                         <outlet property="infoViewONE" destination="R5I-d2-sLJ" id="yXZ-ao-11c"/>
                         <outlet property="infoViewTWO" destination="vz3-lu-REF" id="jhZ-Gc-zcV"/>
                         <outlet property="mainView" destination="jeT-uq-ipp" id="TgM-pz-M1o"/>
+                        <outlet property="phBarView" destination="Edp-3R-wNu" id="aci-yp-lVo"/>
                         <outlet property="tempLabel" destination="BRx-Cd-7ia" id="46L-Cp-Uyu"/>
                         <outlet property="temperatureBarView" destination="IQs-r9-PaA" id="O47-f9-gan"/>
                     </connections>
