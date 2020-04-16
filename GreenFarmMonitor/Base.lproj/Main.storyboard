@@ -214,7 +214,7 @@
         <!--Onboarding View Controller-->
         <scene sceneID="qyw-UC-HKT">
             <objects>
-                <viewController id="DVU-ys-H6N" customClass="OnboardingViewController" customModule="Green_Farm_Monitor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="DVU-ys-H6N" customClass="OnboardingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PJh-IC-C6a">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -224,7 +224,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
-                                    <action selector="nextButtonClicked:" destination="DVU-ys-H6N" eventType="touchUpInside" id="2bA-VR-9Ta"/>
                                     <segue destination="d3q-yA-hpY" kind="show" id="k0t-fM-dzr"/>
                                 </connections>
                             </button>
@@ -237,9 +236,6 @@
                         <viewLayoutGuide key="safeArea" id="u11-4K-2Dx"/>
                     </view>
                     <navigationItem key="navigationItem" id="0E6-d2-YT0"/>
-                    <connections>
-                        <outlet property="nectAction" destination="8Rq-BV-hFR" id="hyQ-hO-TNx"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="phP-Kc-QbM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -365,7 +361,7 @@
             </objects>
             <point key="canvasLocation" x="-965.21739130434787" y="1567.6339285714284"/>
         </scene>
-        <!--Add New Crop View Controller-->
+        <!--All Crops-->
         <scene sceneID="pJj-C0-a7B">
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="RFN-Gy-5fg" customClass="AddNewCropViewController" customModule="Green_Farm_Monitor" customModuleProvider="target" sceneMemberID="viewController">
@@ -460,11 +456,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="35w-u1-h7c"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Wqh-fc-9mn"/>
+                    <navigationItem key="navigationItem" title="All Crops" id="Wqh-fc-9mn"/>
                     <connections>
                         <outlet property="searchBar" destination="gRw-el-lB6" id="Wec-hc-kfr"/>
                         <outlet property="tableView" destination="rY7-1W-dUf" id="Tja-be-ZEC"/>
                         <segue destination="RG7-Oh-y8c" kind="show" identifier="specificCropSegue" id="TDE-Dm-fmS"/>
+                        <segue destination="yiQ-Q6-hV5" kind="show" identifier="addThatCropSegue" id="gb7-L6-GNo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yMq-7z-4LB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -530,12 +527,12 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XoD-1o-tYe">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XoD-1o-tYe">
                                                                 <rect key="frame" x="13" y="133" width="307" height="60"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="60" id="AYc-5q-nXq"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -572,13 +569,13 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRx-Cd-7ia">
-                                                                <rect key="frame" x="13" y="70" width="98" height="21"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <rect key="frame" x="13" y="70" width="109" height="24"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IQs-r9-PaA">
-                                                                <rect key="frame" x="13" y="99" width="100" height="100"/>
+                                                                <rect key="frame" x="13" y="102" width="100" height="100"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="100" id="WPn-9g-PXY"/>
@@ -586,22 +583,42 @@
                                                                 </constraints>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Soil pH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5f-gR-J6H">
-                                                                <rect key="frame" x="181" y="70" width="144" height="21"/>
+                                                                <rect key="frame" x="192" y="70" width="144" height="24"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="144" id="NtU-hS-UA0"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Edp-3R-wNu">
-                                                                <rect key="frame" x="183" y="99" width="100" height="100"/>
+                                                                <rect key="frame" x="183" y="102" width="100" height="100"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="100" id="T3M-Eg-2fk"/>
                                                                     <constraint firstAttribute="width" constant="100" id="W2i-hd-L7b"/>
                                                                 </constraints>
                                                             </view>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Soil Moisture range" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvQ-eh-b6G">
+                                                                <rect key="frame" x="83" y="232" width="167" height="24"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pd7-Dk-Ohc">
+                                                                <rect key="frame" x="41" y="272" width="42" height="21"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55Y-S9-R6Q">
+                                                                <rect key="frame" x="241" y="271" width="42" height="21"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <constraints>
@@ -614,6 +631,8 @@
                                                             <constraint firstItem="pHR-8i-ven" firstAttribute="top" secondItem="vz3-lu-REF" secondAttribute="top" constant="25" id="VWS-lI-b16"/>
                                                             <constraint firstItem="pHR-8i-ven" firstAttribute="centerX" secondItem="vz3-lu-REF" secondAttribute="centerX" id="WZA-dt-wdb"/>
                                                             <constraint firstAttribute="trailing" secondItem="Edp-3R-wNu" secondAttribute="trailing" constant="50" id="h50-rs-xp4"/>
+                                                            <constraint firstItem="tvQ-eh-b6G" firstAttribute="centerX" secondItem="vz3-lu-REF" secondAttribute="centerX" id="mB3-Uz-E3U"/>
+                                                            <constraint firstItem="tvQ-eh-b6G" firstAttribute="top" secondItem="Edp-3R-wNu" secondAttribute="bottom" constant="30" id="mVy-cT-7ux"/>
                                                             <constraint firstItem="Edp-3R-wNu" firstAttribute="top" secondItem="j5f-gR-J6H" secondAttribute="bottom" constant="8" id="wUG-Fr-Xz6"/>
                                                             <constraint firstItem="j5f-gR-J6H" firstAttribute="leading" secondItem="BRx-Cd-7ia" secondAttribute="trailing" constant="70" id="wgr-Am-5p7"/>
                                                         </constraints>
@@ -624,6 +643,9 @@
                                                         <state key="normal" title="Button">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="confirmButtonPushed:" destination="yiQ-Q6-hV5" eventType="touchUpInside" id="2ip-ot-b62"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -677,19 +699,24 @@
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
                         <outlet property="cropNameLabel" destination="CQp-PE-s5v" id="qA1-N5-dYT"/>
+                        <outlet property="descriptionLanel" destination="XoD-1o-tYe" id="LcG-HC-qGE"/>
                         <outlet property="imageView" destination="gwR-xi-i24" id="ktt-Oc-Spw"/>
                         <outlet property="infoView" destination="P1v-eT-vKl" id="ASH-wF-Dxq"/>
                         <outlet property="infoViewONE" destination="R5I-d2-sLJ" id="yXZ-ao-11c"/>
                         <outlet property="infoViewTWO" destination="vz3-lu-REF" id="jhZ-Gc-zcV"/>
                         <outlet property="mainView" destination="jeT-uq-ipp" id="TgM-pz-M1o"/>
+                        <outlet property="maxMoistureRange" destination="55Y-S9-R6Q" id="J96-1X-JBa"/>
+                        <outlet property="minMoisstureRange" destination="pd7-Dk-Ohc" id="9sv-Qu-oT7"/>
+                        <outlet property="pHlabel" destination="j5f-gR-J6H" id="nza-PM-aBn"/>
                         <outlet property="phBarView" destination="Edp-3R-wNu" id="aci-yp-lVo"/>
+                        <outlet property="scintificNameLabel" destination="6jh-vr-p7I" id="nK9-gL-uv6"/>
                         <outlet property="tempLabel" destination="BRx-Cd-7ia" id="46L-Cp-Uyu"/>
                         <outlet property="temperatureBarView" destination="IQs-r9-PaA" id="O47-f9-gan"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qTt-99-syF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1943.4782608695655" y="2237.9464285714284"/>
+            <point key="canvasLocation" x="-2054" y="2660"/>
         </scene>
         <!--Detail New Crop View Controller-->
         <scene sceneID="Sb3-rU-tnB">
@@ -866,7 +893,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Fn-We-Gum" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-957.97101449275374" y="3075"/>
+            <point key="canvasLocation" x="-896" y="3054"/>
         </scene>
         <!--My Crop-->
         <scene sceneID="jYz-VE-eLF">
@@ -1073,4 +1100,7 @@
         <image name="playstore" width="512" height="512"/>
         <image name="temp" width="512" height="512"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="gb7-L6-GNo"/>
+    </inferredMetricsTieBreakers>
 </document>

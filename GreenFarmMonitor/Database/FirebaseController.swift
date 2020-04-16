@@ -46,8 +46,23 @@ class FirebaseController: NSObject, DatabaseProtocol {
         return returnVal
     }
     
-    func updateMyCropList() {
+    func updateMyCropList(new: Bool, userId: String, cropId: String) {
+        let format = DateFormatter()
+               format.dateFormat = "yy-MM-dd-HH:mm:ss"
+               let formattedDate = format.string(from: Date())
+             
         
+        let uniqueRefId = randomString(length: 5) + formattedDate
+        
+        let id = userCropRelationRef?.addDocument(data: ["cropId": cropId, "userId": userId, "relationId": uniqueRefId])
+        
+    }
+    
+    //generates the random string of the length that is passed to it
+    func randomString(length: Int) -> String {
+       
+        let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        return String((0..<length).map{ _ in letters.randomElement()! })
     }
   
     func addUserCropRelation(userCropRelation: UserCropRelation) -> UserCropRelation {

@@ -74,9 +74,10 @@ class AddNewCropViewController: UIViewController, DatabaseListener{
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "specificCropSegue" {
-            let destination = segue.destination as! DetailNewCropViewController
-            destination.specificCrop = nil   //// TODO - send the variable
+        if segue.identifier == "addThatCropSegue" {
+            let destination = segue.destination as! DetailOfTheCropViewController
+            destination.specificCrop = allCropsName[selectedRow]
+            destination.newCrop = true
         }
     }
 
@@ -133,7 +134,7 @@ cell.textLabel?.text = "\(allCropsName.count) total crops in the list"
           if indexPath.section == SECTION_ACTIVITY{
               selectedRow = indexPath.row
               tableView.deselectRow(at: indexPath, animated: true)
-              self.performSegue(withIdentifier: "specificCropSegue", sender: self)
+              self.performSegue(withIdentifier: "addThatCropSegue", sender: self)
           }
       }
     
