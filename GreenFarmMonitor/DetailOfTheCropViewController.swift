@@ -11,6 +11,9 @@ import UIKit
 class DetailOfTheCropViewController: UIViewController {
     
     var specificCrop: Crop?
+    weak var databaseController: DatabaseProtocol?
+    weak var userDefaultController: UserdefaultsProtocol?
+    var newCrop: Bool?
     
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var imageView: UIView!
@@ -45,6 +48,18 @@ class DetailOfTheCropViewController: UIViewController {
         animationCircle(center: tempLabel.center, endAngle: 2 * CGFloat.pi, fillColor: UIColor.white.cgColor, strokeColor: UIColor.red.cgColor, theView: temperatureBarView)
         
         animationCircle(center: tempLabel.center, endAngle:  CGFloat.pi, fillColor: UIColor.white.cgColor, strokeColor: UIColor.red.cgColor, theView: phBarView)
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        userDefaultController = appDelegate.userDefaultController
+        databaseController = appDelegate.databaseController
+        
+        if let new = newCrop {
+            if new == true {
+                print("newCrop")
+            } else {
+               
+            }
+        }
     }
     
     func fillLabels() {
@@ -103,7 +118,13 @@ class DetailOfTheCropViewController: UIViewController {
      }
      */
     @IBAction func confirmButtonPushed(_ sender: Any) {
-        
+        if let new = newCrop {
+            if new == true {
+                databaseController?.updateMyCropList(new: new, userId: (userDefaultController?.retrieveUserId())!, cropId: specificCrop!.cropId)
+            } else {
+               
+            }
+        }
     }
     
 }

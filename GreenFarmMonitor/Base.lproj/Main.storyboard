@@ -214,7 +214,7 @@
         <!--Onboarding View Controller-->
         <scene sceneID="qyw-UC-HKT">
             <objects>
-                <viewController id="DVU-ys-H6N" customClass="OnboardingViewController" customModule="Green_Farm_Monitor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="DVU-ys-H6N" customClass="OnboardingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PJh-IC-C6a">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -224,7 +224,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
-                                    <action selector="nextButtonClicked:" destination="DVU-ys-H6N" eventType="touchUpInside" id="2bA-VR-9Ta"/>
                                     <segue destination="d3q-yA-hpY" kind="show" id="k0t-fM-dzr"/>
                                 </connections>
                             </button>
@@ -237,9 +236,6 @@
                         <viewLayoutGuide key="safeArea" id="u11-4K-2Dx"/>
                     </view>
                     <navigationItem key="navigationItem" id="0E6-d2-YT0"/>
-                    <connections>
-                        <outlet property="nectAction" destination="8Rq-BV-hFR" id="hyQ-hO-TNx"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="phP-Kc-QbM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

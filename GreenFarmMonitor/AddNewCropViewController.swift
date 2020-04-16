@@ -77,7 +77,7 @@ class AddNewCropViewController: UIViewController, DatabaseListener{
         if segue.identifier == "addThatCropSegue" {
             let destination = segue.destination as! DetailOfTheCropViewController
             destination.specificCrop = allCropsName[selectedRow]
-            
+            destination.newCrop = true
         }
     }
 
