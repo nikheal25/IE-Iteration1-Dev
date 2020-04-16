@@ -12,6 +12,7 @@ class DetailOfTheCropViewController: UIViewController {
     
     var specificCrop: Crop?
     weak var databaseController: DatabaseProtocol?
+    @IBOutlet weak var addNewButton: UIButton!
     weak var userDefaultController: UserdefaultsProtocol?
     var newCrop: Bool?
     
@@ -55,9 +56,9 @@ class DetailOfTheCropViewController: UIViewController {
         
         if let new = newCrop {
             if new == true {
-                print("newCrop")
+                addNewButton.isHidden = false
             } else {
-               
+                addNewButton.isHidden = true
             }
         }
     }

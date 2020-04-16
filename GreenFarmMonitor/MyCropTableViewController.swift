@@ -215,6 +215,7 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
         if segue.identifier == "newSpecificCrop" {
                    let destination = segue.destination as! DetailOfTheCropViewController
             destination.specificCrop = myCropList[selectedRow]
+            destination.newCrop = false
                }
     }
     

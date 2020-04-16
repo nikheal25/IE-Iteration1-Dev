@@ -203,10 +203,12 @@
                                 <color key="textColor" red="0.91013310485691201" green="0.70700953595582794" blue="0.0012255332545642694" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S1Q-vK-0Fs">
+                            <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S1Q-vK-0Fs">
                                 <rect key="frame" x="50" y="723" width="314" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Get started">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="nextButtonClicked:" destination="0vi-oQ-bUa" eventType="touchUpInside" id="cTC-Bm-h8O"/>
                                 </connections>
@@ -654,9 +656,9 @@
                                                         </constraints>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQH-iR-eUi">
-                                                        <rect key="frame" x="150.5" y="586" width="72" height="42"/>
+                                                        <rect key="frame" x="100" y="586" width="173" height="42"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                        <state key="normal" title="Button">
+                                                        <state key="normal" title="Add To List">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
@@ -669,12 +671,14 @@
                                                     <constraint firstAttribute="trailing" secondItem="vz3-lu-REF" secondAttribute="trailing" constant="20" symbolic="YES" id="4LN-Gy-AR4"/>
                                                     <constraint firstItem="vz3-lu-REF" firstAttribute="leading" secondItem="P1v-eT-vKl" secondAttribute="leading" constant="20" symbolic="YES" id="7AW-WC-O8d"/>
                                                     <constraint firstAttribute="trailing" secondItem="R5I-d2-sLJ" secondAttribute="trailing" constant="20" symbolic="YES" id="Ifb-1E-9Qc"/>
+                                                    <constraint firstItem="NQH-iR-eUi" firstAttribute="leading" secondItem="P1v-eT-vKl" secondAttribute="leading" constant="100" id="Q0Y-c9-dBd"/>
                                                     <constraint firstAttribute="bottom" secondItem="vz3-lu-REF" secondAttribute="bottom" constant="93" id="SOP-Oz-nCo"/>
                                                     <constraint firstItem="NQH-iR-eUi" firstAttribute="centerX" secondItem="P1v-eT-vKl" secondAttribute="centerX" id="V46-hU-H3G"/>
                                                     <constraint firstAttribute="bottom" secondItem="NQH-iR-eUi" secondAttribute="bottom" constant="15" id="iAw-Y1-bgv"/>
                                                     <constraint firstItem="R5I-d2-sLJ" firstAttribute="top" secondItem="P1v-eT-vKl" secondAttribute="top" constant="20" symbolic="YES" id="k1g-yz-OFr"/>
                                                     <constraint firstItem="R5I-d2-sLJ" firstAttribute="leading" secondItem="P1v-eT-vKl" secondAttribute="leading" constant="20" symbolic="YES" id="n7X-l6-H90"/>
                                                     <constraint firstItem="vz3-lu-REF" firstAttribute="top" secondItem="P1v-eT-vKl" secondAttribute="top" constant="224" id="opO-gh-gkw"/>
+                                                    <constraint firstAttribute="trailing" secondItem="NQH-iR-eUi" secondAttribute="trailing" constant="100" id="qxF-TH-jMd"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -714,6 +718,7 @@
                     <navigationItem key="navigationItem" id="w0A-ZF-u7t"/>
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
+                        <outlet property="addNewButton" destination="NQH-iR-eUi" id="2bs-0x-Sas"/>
                         <outlet property="cropNameLabel" destination="CQp-PE-s5v" id="qA1-N5-dYT"/>
                         <outlet property="descriptionLanel" destination="XoD-1o-tYe" id="LcG-HC-qGE"/>
                         <outlet property="imageView" destination="gwR-xi-i24" id="ktt-Oc-Spw"/>
@@ -1116,6 +1121,6 @@
         <image name="temp" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gb7-L6-GNo"/>
+        <segue reference="0BZ-rP-Cky"/>
     </inferredMetricsTieBreakers>
 </document>
