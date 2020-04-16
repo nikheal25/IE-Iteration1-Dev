@@ -22,13 +22,18 @@ class DetailOfTheCropViewController: UIViewController {
     @IBOutlet weak var temperatureBarView: UIView!
     @IBOutlet weak var cropNameLabel: UILabel!
     @IBOutlet weak var phBarView: UIView!
+    @IBOutlet weak var descriptionLanel: UILabel!
     
+    @IBOutlet weak var scintificNameLabel: UILabel!
     @IBOutlet weak var pHlabel: UILabel!
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var minMoisstureRange: UILabel!
     @IBOutlet weak var maxMoistureRange: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fillLabels()
+        
         mainView.backgroundColor = UIColor(hexString: "#24343F")
         
         self.imageView.layer.cornerRadius = 8
@@ -40,22 +45,13 @@ class DetailOfTheCropViewController: UIViewController {
         animationCircle(center: tempLabel.center, endAngle: 2 * CGFloat.pi, fillColor: UIColor.white.cgColor, strokeColor: UIColor.red.cgColor, theView: temperatureBarView)
         
         animationCircle(center: tempLabel.center, endAngle:  CGFloat.pi, fillColor: UIColor.white.cgColor, strokeColor: UIColor.red.cgColor, theView: phBarView)
-        
-//        let shapeLayer = CAShapeLayer()
-//
-//        let circularPath = UIBezierPath(arcCenter: tempLabel.center, radius: 40, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
-//        shapeLayer.path = circularPath.cgPath
-//        shapeLayer.strokeColor =  UIColor.red.cgColor//
-//
-//        shapeLayer.lineWidth = 6
-//
-//        shapeLayer.lineCap = CAShapeLayerLineCap.round
-//
-//        shapeLayer.strokeEnd = 0
-//
-//        phBarView.layer.addSublayer(shapeLayer)
-        
-        
+    }
+    
+    func fillLabels() {
+        cropNameLabel.text = specificCrop?.cropName
+        scintificNameLabel.text = ""
+        descriptionLanel.text = "Following conditions are the ideal for the growth of the crop"
+        minMoisstureRange.text = ""
     }
     
     func getPointForView(_ view : UIView) -> (x:CGFloat,y:CGFloat)
