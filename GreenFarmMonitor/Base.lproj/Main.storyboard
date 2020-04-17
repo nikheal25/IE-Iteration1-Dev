@@ -369,7 +369,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="My Crops" id="T71-E0-OmJ">
-                        <barButtonItem key="rightBarButtonItem" title="Add New Crop" id="NhA-is-Hdm">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="NhA-is-Hdm">
                             <connections>
                                 <action selector="addNewCrop:" destination="DHY-iT-N33" id="z8z-iJ-YX3"/>
                             </connections>
@@ -720,7 +720,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hq4-RM-0Cd"/>
                     </view>
-                    <navigationItem key="navigationItem" id="w0A-ZF-u7t"/>
+                    <navigationItem key="navigationItem" id="w0A-ZF-u7t">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="r4c-Yb-pPy"/>
+                    </navigationItem>
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
                         <outlet property="addNewButton" destination="NQH-iR-eUi" id="2bs-0x-Sas"/>
@@ -919,7 +921,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Fn-We-Gum" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-896" y="3054"/>
+            <point key="canvasLocation" x="-965" y="3104"/>
         </scene>
         <!--My Crop-->
         <scene sceneID="jYz-VE-eLF">

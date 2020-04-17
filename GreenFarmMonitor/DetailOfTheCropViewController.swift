@@ -38,12 +38,10 @@ class DetailOfTheCropViewController: UIViewController {
         
         fillLabels()
         
-        mainView.backgroundColor = UIColor(hexString: "#24343F")
+        mainView.backgroundColor = UIColor(hexString: "#358600")
         
-        self.imageView.layer.cornerRadius = 8
-        self.imageView.layer.shadowOpacity = 0.4
-        self.imageView.layer.shadowRadius = 1
         
+        setImageView()
         setInfoView()
         
         animationCircle(center: tempLabel.center, endAngle: 2 * CGFloat.pi, fillColor: UIColor.white.cgColor, strokeColor: UIColor.red.cgColor, theView: temperatureBarView)
@@ -102,11 +100,17 @@ class DetailOfTheCropViewController: UIViewController {
         shapeLayer.add(basicAnimation, forKey: "urSoBasic")
     }
     
+    func setImageView()  {
+        self.imageView.layer.cornerRadius = 15
+        self.imageView.layer.shadowOpacity = 0.4
+        self.imageView.layer.shadowRadius = 1
+    }
     
     func setInfoView()  {
-        self.infoView.layer.cornerRadius = 8
+        self.infoView.layer.cornerRadius = 15
         self.infoView.layer.shadowOpacity = 0.4
         self.infoView.layer.shadowRadius = 1
+//        self.infoView.backgroundColor = UIColor(hexString: "#FCFCFC")
     }
     
     /*
