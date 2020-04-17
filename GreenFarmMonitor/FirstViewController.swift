@@ -17,6 +17,10 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var mainButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        mainButton.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.3)
+        mainButton.layer.cornerRadius = 20
+//        mainButton.layer.borderWidth = 1
+        mainButton.layer.borderColor = UIColor.black.cgColor
         playVideo()
         // Do any additional setup after loading the view.
     }

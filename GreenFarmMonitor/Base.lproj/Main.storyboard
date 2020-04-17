@@ -204,10 +204,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S1Q-vK-0Fs">
-                                <rect key="frame" x="50" y="723" width="314" height="39"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <rect key="frame" x="50" y="720" width="314" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Get started">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 </state>
                                 <connections>
                                     <action selector="nextButtonClicked:" destination="0vi-oQ-bUa" eventType="touchUpInside" id="cTC-Bm-h8O"/>
@@ -281,9 +281,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q1M-Nl-IL6">
-                                <rect key="frame" x="50" y="624" width="314" height="38"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Get started"/>
+                                <rect key="frame" x="50" y="614" width="314" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleColor" red="0.097202159464359283" green="0.17231905460357666" blue="0.044279389083385468" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="loginClicked:" destination="d3q-yA-hpY" eventType="touchUpInside" id="R5a-ku-fss"/>
                                 </connections>
@@ -299,6 +301,9 @@
                         <viewLayoutGuide key="safeArea" id="yx7-pX-pOF"/>
                     </view>
                     <navigationItem key="navigationItem" title="Login Screen" id="t6u-XA-ALz"/>
+                    <connections>
+                        <outlet property="loginButton" destination="Q1M-Nl-IL6" id="m8Z-UJ-77M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kmf-Yw-AVe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

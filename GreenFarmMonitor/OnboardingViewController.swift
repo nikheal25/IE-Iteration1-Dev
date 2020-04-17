@@ -56,10 +56,10 @@ class OnboardingViewController: UIViewController, PaperOnboardingDataSource {
     func onboardingItem(at index: Int) -> OnboardingItemInfo {
 
                return [
-                OnboardingItemInfo(informationImage: UIImage(named: "Stores")!,
+                OnboardingItemInfo(informationImage: UIImage(named: "Wallet")!,
                                                title: "Ideal condition for a crop",
                                          description: "Find out the ideal conditions for your crop",
-                                         pageIcon: UIImage(named: "Stores")!,
+                                         pageIcon: UIImage(named: "Wallet")!,
                                          color: UIColor(hexString: "#588B8B"),
                                           titleColor: UIColor.white,
                                           descriptionColor: UIColor.white,
@@ -76,10 +76,10 @@ class OnboardingViewController: UIViewController, PaperOnboardingDataSource {
                        titleFont: titleFont,
                        descriptionFont: descriptionFont),
                 
-                OnboardingItemInfo(informationImage: UIImage(named: "Wallet")!,
+                OnboardingItemInfo(informationImage: UIImage(named: "Stores")!,
                            title: "Buy Organic",
                      description: "Get suggestions regarding the best Organic products in market",
-                     pageIcon: UIImage(named: "Wallet")!,
+                     pageIcon: UIImage(named: "Stores")!,
                            color: UIColor(hexString: "#D4E09B"),
                       titleColor: UIColor.white,
                 descriptionColor: UIColor.white,

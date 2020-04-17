@@ -13,12 +13,21 @@ class LoginViewController: UIViewController {
    weak var userDefaultController: UserdefaultsProtocol?
     weak var databaseController: DatabaseProtocol?
     
+    @IBOutlet weak var loginButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        loginButton.layer.cornerRadius = 20
+        loginButton.layer.borderColor = UIColor.orange.cgColor
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         userDefaultController = appDelegate.userDefaultController
         databaseController = appDelegate.databaseController
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = self.view.bounds
+        gradientLayer.colors = [UIColor.orange.cgColor, UIColor.white.cgColor]
+        self.view.layer.insertSublayer(gradientLayer, at: 0)
         
         // Do any additional setup after loading the view.
     }
