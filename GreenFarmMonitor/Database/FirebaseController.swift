@@ -293,6 +293,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
 //                let spacingInPlantRow = stringUnwrapper(val: docData, key: "SPACING_PLANTS_INROWS")
                 let spacingInPlantRow = "N.A."
 //                let spacingRow = stringUnwrapper(val: docData, key: "SPACING_ROWS")
+                /// MARK:- don't  use it
                  let spacingRow = "N.A."
 //                let plantingDepth = stringUnwrapper(val: docData, key: "PLANTING_DEPTH")
                 let plantingDepth = "N.A."
