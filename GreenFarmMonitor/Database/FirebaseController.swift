@@ -130,7 +130,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
         
     
         //Crop
-        cropRef = database.collection("Crops")
+        cropRef = database.collection("newCrops")
         cropRef?.order(by: "date", descending: false)
         cropRef?.addSnapshotListener { querySnapshot, error in
             guard (querySnapshot?.documents) != nil else {
@@ -174,7 +174,18 @@ class FirebaseController: NSObject, DatabaseProtocol {
     func stringUnwrapper(val: [String : Any], key: String) -> String {
         var finalValue = ""
         if let temp = val[key]{
+           
             finalValue = temp as! String
+        }  else {
+            finalValue = "default"
+        }
+        return finalValue
+    }
+    
+    func numberUnwrapper(val: [String : Any], key: String) -> String {
+        var finalValue = ""
+        if let temp = val[key] as? NSNumber{
+            finalValue = "\(temp)"
         }  else {
             finalValue = "default"
         }
@@ -264,16 +275,36 @@ class FirebaseController: NSObject, DatabaseProtocol {
            func parseCropSnapshot(snapshot: QuerySnapshot) {
                snapshot.documentChanges.forEach { change in
                    
+              
                     let documentRef = change.document.documentID
                     let docData = change.document.data()
                 
-                   let cropId = stringUnwrapper(val: docData, key: "cropId")
-                   let cropName = stringUnwrapper(val: docData, key: "cropName")
-                   let cropImage = stringUnwrapper(val: docData, key: "cropImage")
+//                   let cropId = stringUnwrapper(val: docData, key: "cropId")
+                let cropId = documentRef
+                   let cropName = stringUnwrapper(val: docData, key: "VEGETABLE")
+//                   let cropImage = stringUnwrapper(val: docData, key: "cropImage")
+                let cropImage = cropName
+                let minSoilTemp = numberUnwrapper(val: docData, key: "MINSOILTEMP_C")
+                let maxSoilTemp = numberUnwrapper(val: docData, key: "MAXSOILTEMP_C")
+                let optimmumSoilTemp = numberUnwrapper(val: docData, key: "OPTIMUMSOILTEMP_C")
+               
+                let frostTol = stringUnwrapper(val: docData, key: "FROST_TOLERANCE")
+                //TODO change the DB
+//                let spacingInPlantRow = stringUnwrapper(val: docData, key: "SPACING_PLANTS_INROWS")
+                let spacingInPlantRow = "N.A."
+//                let spacingRow = stringUnwrapper(val: docData, key: "SPACING_ROWS")
+                 let spacingRow = "N.A."
+//                let plantingDepth = stringUnwrapper(val: docData, key: "PLANTING_DEPTH")
+                let plantingDepth = "N.A."
+                let nutrients = stringUnwrapper(val: docData, key: "NUTRIENT_REQ")
+                let organicFertilises = stringUnwrapper(val: docData, key: "ORGANIC_FERTILISERS_REQ")
+                
+                let maxSoilpH = numberUnwrapper(val: docData, key: "SOILpH_Max")
+                let minSoilpH = numberUnwrapper(val: docData, key: "SOILpH_Min")
                 
                    if change.type == .added {
                        
-                       let newCrop = Crop(cropId: cropId, cropName: cropName, cropImage: cropImage)
+                       let newCrop = Crop(cropId: cropId, cropName: cropName, cropImage: cropImage, minSoilTemp: minSoilTemp, maxSoilTemp: maxSoilTemp, optimmumSoilTemp: optimmumSoilTemp, frostTol: frostTol, spacingPlantInRow: spacingInPlantRow, spacingRow: spacingRow, plantingDepth: plantingDepth, nutrients: nutrients, organicFertilises: organicFertilises, minSoilpH: minSoilpH, maxSoilpH: maxSoilpH)
                        
     //                   newCrop.ruleId = documentRef
                  
