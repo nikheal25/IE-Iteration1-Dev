@@ -33,20 +33,22 @@ class DetailOfTheCropViewController: UIViewController {
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var minMoisstureRange: UILabel!
     @IBOutlet weak var maxMoistureRange: UILabel!
+    @IBOutlet weak var temperatureVal: UILabel!
+    @IBOutlet weak var phVal: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         fillLabels()
         
-        mainView.backgroundColor = UIColor(hexString: "#358600")
+        mainView.backgroundColor = UIColor(hexString: "#020122") //UIColor(hexString: "#358600")
         
         
         setImageView()
         setInfoView()
         
-        animationCircle(center: tempLabel.center, endAngle: 2 * CGFloat.pi, fillColor: UIColor.white.cgColor, strokeColor: UIColor.red.cgColor, theView: temperatureBarView)
+        animationCircle(center: tempLabel.center, endAngle: calculateTheAngleTemp(num: specificCrop!.optimmumSoilTemp), fillColor: UIColor.white.cgColor, strokeColor: UIColor.red.cgColor, theView: temperatureBarView)
         
-        animationCircle(center: tempLabel.center, endAngle:  CGFloat.pi, fillColor: UIColor.white.cgColor, strokeColor: UIColor.red.cgColor, theView: phBarView)
+        animationCircle(center: tempLabel.center, endAngle:  calculateTheAnglePH(num: (specificCrop!.maxSoilpH)), fillColor: UIColor.white.cgColor, strokeColor: UIColor.red.cgColor, theView: phBarView)
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         userDefaultController = appDelegate.userDefaultController
@@ -63,9 +65,14 @@ class DetailOfTheCropViewController: UIViewController {
     
     func fillLabels() {
         cropNameLabel.text = specificCrop?.cropName
+        cropNameLabel.textColor = UIColor(hexString: "D63AF9")
         scintificNameLabel.text = ""
         descriptionLanel.text = "Following conditions are the ideal for the growth of the crop"
         minMoisstureRange.text = ""
+        temperatureVal.text = specificCrop?.optimmumSoilTemp
+        let str1 = (specificCrop?.minSoilpH)!
+        let str2 = (specificCrop?.maxSoilpH)!
+        phVal.text = "\(str1) - \(str2)"
     }
     
     func getPointForView(_ view : UIView) -> (x:CGFloat,y:CGFloat)
@@ -75,9 +82,25 @@ class DetailOfTheCropViewController: UIViewController {
         return (x,y)
     }
     
+    func calculateTheAngleTemp(num: String) -> CGFloat {
+        let val = (num as NSString).floatValue
+       
+        
+        let perc = ((val/50))
+        let a = CGFloat(perc) / CGFloat.pi
+        return a + CGFloat.pi
+    }
+    
+    func calculateTheAnglePH(num: String) -> CGFloat {
+        let val = (num as NSString).floatValue
+    
+        let perc = ((val/10))
+        let a = CGFloat(perc) / CGFloat.pi * 2
+        return a + CGFloat.pi
+    }
+    
     func animationCircle(center: CGPoint, endAngle: CGFloat, fillColor: CGColor, strokeColor: CGColor, theView: UIView)  {
         let shapeLayer = CAShapeLayer()
-        
         
         let circularPath = UIBezierPath(arcCenter: center, radius: 40, startAngle: -CGFloat.pi / 2, endAngle: endAngle, clockwise: true)
         shapeLayer.path = circularPath.cgPath

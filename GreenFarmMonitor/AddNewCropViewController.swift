@@ -44,7 +44,6 @@ class AddNewCropViewController: UIViewController, DatabaseListener{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         userDefaultController = appDelegate.userDefaultController
         databaseController = appDelegate.databaseController

@@ -17,10 +17,11 @@ class MyCropMainTableViewCell: UITableViewCell {
     //        cropImageView = image
             cropTitleLable.text = crop.cropName
         
-        self.contentView.backgroundColor = UIColor(hexString: "#FCE5D3")
+        self.contentView.backgroundColor = UIColor(hexString: "#020122")
         self.layer.cornerRadius = 10
         self.layer.shadowOpacity = 5
         self.layer.shadowRadius = 10
+        self.imageTitle.image = UIImage(named: crop.cropImage)
         
         //TODO
 //        self.cropTitleLable.layer.cornerRadius = 10

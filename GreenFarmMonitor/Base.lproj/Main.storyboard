@@ -325,7 +325,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="playstore" translatesAutoresizingMaskIntoConstraints="NO" id="uP5-VC-k0j">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlossomDrop" translatesAutoresizingMaskIntoConstraints="NO" id="uP5-VC-k0j">
                                             <rect key="frame" x="70" y="11" width="274" height="155"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="155" id="DN5-3c-xBv"/>
@@ -335,7 +335,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vhT-15-fuc">
                                             <rect key="frame" x="100" y="174" width="214" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -360,6 +360,20 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZJe-eu-2WA" id="bAZ-HB-KcO">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add more crops to this list by clicking on plus button" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Weo-IA-t8X">
+                                            <rect key="frame" x="45" y="51" width="324" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Weo-IA-t8X" firstAttribute="centerX" secondItem="bAZ-HB-KcO" secondAttribute="centerX" id="06W-NH-soC"/>
+                                        <constraint firstItem="Weo-IA-t8X" firstAttribute="leading" secondItem="bAZ-HB-KcO" secondAttribute="leadingMargin" constant="25" id="39L-Ct-r1Y"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Weo-IA-t8X" secondAttribute="trailing" constant="25" id="e9c-zi-y1l"/>
+                                        <constraint firstItem="Weo-IA-t8X" firstAttribute="top" secondItem="bAZ-HB-KcO" secondAttribute="topMargin" constant="40" id="uis-Tn-sz4"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -599,8 +613,18 @@
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IQs-r9-PaA">
                                                                 <rect key="frame" x="13" y="102" width="100" height="100"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="37 C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LqU-Hq-gQy">
+                                                                        <rect key="frame" x="25" y="8" width="28.5" height="16"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                 <constraints>
+                                                                    <constraint firstItem="LqU-Hq-gQy" firstAttribute="leading" secondItem="IQs-r9-PaA" secondAttribute="leading" constant="25" id="CzH-lE-GFf"/>
+                                                                    <constraint firstItem="LqU-Hq-gQy" firstAttribute="top" secondItem="IQs-r9-PaA" secondAttribute="top" constant="8" id="GTf-1n-oFM"/>
                                                                     <constraint firstAttribute="width" constant="100" id="WPn-9g-PXY"/>
                                                                     <constraint firstAttribute="height" constant="100" id="oT4-uO-Bvd"/>
                                                                 </constraints>
@@ -616,8 +640,21 @@
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Edp-3R-wNu">
                                                                 <rect key="frame" x="183" y="102" width="100" height="100"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNZ-So-Uv3">
+                                                                        <rect key="frame" x="8" y="8" width="72" height="17"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="72" id="Eh8-n5-Boh"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                 <constraints>
+                                                                    <constraint firstItem="TNZ-So-Uv3" firstAttribute="top" secondItem="Edp-3R-wNu" secondAttribute="top" constant="8" id="CnH-JE-4Cj"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="TNZ-So-Uv3" secondAttribute="trailing" constant="20" id="M6N-9D-Uqg"/>
                                                                     <constraint firstAttribute="height" constant="100" id="T3M-Eg-2fk"/>
                                                                     <constraint firstAttribute="width" constant="100" id="W2i-hd-L7b"/>
                                                                 </constraints>
@@ -737,14 +774,16 @@
                         <outlet property="minMoisstureRange" destination="pd7-Dk-Ohc" id="9sv-Qu-oT7"/>
                         <outlet property="pHlabel" destination="j5f-gR-J6H" id="nza-PM-aBn"/>
                         <outlet property="phBarView" destination="Edp-3R-wNu" id="aci-yp-lVo"/>
+                        <outlet property="phVal" destination="TNZ-So-Uv3" id="f08-If-it9"/>
                         <outlet property="scintificNameLabel" destination="6jh-vr-p7I" id="nK9-gL-uv6"/>
                         <outlet property="tempLabel" destination="BRx-Cd-7ia" id="46L-Cp-Uyu"/>
                         <outlet property="temperatureBarView" destination="IQs-r9-PaA" id="O47-f9-gan"/>
+                        <outlet property="temperatureVal" destination="LqU-Hq-gQy" id="JJ6-5q-Z6g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qTt-99-syF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2054" y="2660"/>
+            <point key="canvasLocation" x="-2055.072463768116" y="2659.8214285714284"/>
         </scene>
         <!--Detail New Crop View Controller-->
         <scene sceneID="Sb3-rU-tnB">
@@ -1086,11 +1125,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BlossomDrop" width="550" height="550"/>
         <image name="greenHouse-1" width="222" height="333"/>
         <image name="greenHouse-2" width="666.5" height="889"/>
         <image name="icons8-soil-100" width="33" height="33"/>
         <image name="icons8-virus-100" width="33" height="33"/>
-        <image name="playstore" width="512" height="512"/>
         <image name="temp" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
