@@ -387,7 +387,7 @@
         <!--All Crops-->
         <scene sceneID="pJj-C0-a7B">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="RFN-Gy-5fg" customClass="AddNewCropViewController" customModule="Green_Farm_Monitor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="RFN-Gy-5fg" customClass="AddNewCropViewController" customModule="Green_Farm_Monitor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Ow-Oe-x9R">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -923,22 +923,6 @@
             </objects>
             <point key="canvasLocation" x="-965" y="3104"/>
         </scene>
-        <!--My Crop-->
-        <scene sceneID="jYz-VE-eLF">
-            <objects>
-                <viewController id="Ko8-hr-wKM" customClass="ViewController" customModule="Green_Farm_Monitor" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="IhP-Zx-ltf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="EiU-4G-cEU"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="My Crop" id="CrF-YW-hin"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZoE-68-hba" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="721.73913043478262" y="1513.3928571428571"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Ubg-Jz-Cyg">
             <objects>
@@ -949,10 +933,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="27n-dz-cPa" kind="relationship" relationship="viewControllers" id="9iu-ld-SQB"/>
+                        <segue destination="NUq-PZ-WBC" kind="relationship" relationship="viewControllers" id="3qC-7n-141"/>
                         <segue destination="Pk9-Zt-63V" kind="relationship" relationship="viewControllers" id="WSW-0D-tXv"/>
                         <segue destination="BdO-ON-fGF" kind="relationship" relationship="viewControllers" id="Q3k-o4-796"/>
-                        <segue destination="NUq-PZ-WBC" kind="relationship" relationship="viewControllers" id="3qC-7n-141"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0S1-i3-ZNc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -976,25 +959,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BVo-5K-doi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1516" y="-364"/>
-        </scene>
-        <!--Item 1-->
-        <scene sceneID="5Pr-Hg-y04">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="27n-dz-cPa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="zQ0-0U-NIR"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CiV-n4-qNI">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Ko8-hr-wKM" kind="relationship" relationship="rootViewController" id="Wwm-SS-7fv"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CFq-ot-fRo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-228.98550724637684" y="695.75892857142856"/>
         </scene>
         <!--Item-->
         <scene sceneID="cZ3-DF-pZ0">
@@ -1086,7 +1050,7 @@
         <scene sceneID="C20-Sg-fLO">
             <objects>
                 <navigationController title="Disease" automaticallyAdjustsScrollViewInsets="NO" id="Pk9-Zt-63V" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="Q8H-22-n0O"/>
+                    <tabBarItem key="tabBarItem" title="Plant Disease" image="icons8-virus-100" id="Q8H-22-n0O"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kH9-T9-YbH">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -1101,11 +1065,11 @@
             </objects>
             <point key="canvasLocation" x="1657.9710144927537" y="696.42857142857144"/>
         </scene>
-        <!--Item-->
+        <!--My Crop-->
         <scene sceneID="vcC-88-CP8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NUq-PZ-WBC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="AGm-Au-5FZ"/>
+                    <tabBarItem key="tabBarItem" title="My Crop" image="icons8-soil-100" id="AGm-Au-5FZ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ffb-7p-e5y">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -1124,6 +1088,8 @@
     <resources>
         <image name="greenHouse-1" width="222" height="333"/>
         <image name="greenHouse-2" width="666.5" height="889"/>
+        <image name="icons8-soil-100" width="33" height="33"/>
+        <image name="icons8-virus-100" width="33" height="33"/>
         <image name="playstore" width="512" height="512"/>
         <image name="temp" width="512" height="512"/>
     </resources>

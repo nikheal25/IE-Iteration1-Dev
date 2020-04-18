@@ -119,19 +119,37 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: CELL_COUNT, for: indexPath)
-     //   cell.textLabel?.text = "\(myCropList.count) alerts in the list"
+        cell.textLabel?.text = "\(myCropList.count) alerts in the list"
         cell.selectionStyle = .none
         return cell
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
        if section == SECTION_ACTIVITY {
+        
+        if myCropList.count == 0 {
+            return "Your list of crops is empty. Please add  the crops by clicking on Plus button"
+        }
             return "Existing crops in my list"
         }
         return "Add new Crops"
 
     }
     
+//    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        if myCropList.count == 0 {
+////        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 30))
+//        let headerView = UIView()
+//        headerView.backgroundColor = UIColor.red
+//        return headerView
+//        }
+//        let headerView = UIView()
+//        return headerView
+//    }
+//
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 25
+    }
 //    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
 //         let headerView = UIView()
 //        // MARK: - change the color
@@ -171,17 +189,17 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
     }
     */
 
-    /*
-    // Override to support editing the table view.
+
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+//             Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+//             Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+
 
     /*
     // Override to support rearranging the table view.
