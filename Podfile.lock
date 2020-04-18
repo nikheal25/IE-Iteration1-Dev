@@ -219,6 +219,7 @@ PODS:
     - FirebaseCore (~> 6.6)
     - GoogleUtilities/UserDefaults (~> 6.5)
     - PromisesObjC (~> 1.2)
+  - FoldingCell (5.0.2)
   - GoogleAppMeasurement (6.4.1):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
     - GoogleUtilities/MethodSwizzler (~> 6.0)
@@ -278,6 +279,7 @@ DEPENDENCIES:
   - Firebase
   - FirebaseAuth
   - FirebaseFirestore
+  - FoldingCell
   - paper-onboarding
 
 SPEC REPOS:
@@ -294,6 +296,7 @@ SPEC REPOS:
     - FirebaseCoreDiagnosticsInterop
     - FirebaseFirestore
     - FirebaseInstallations
+    - FoldingCell
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
@@ -319,6 +322,7 @@ SPEC CHECKSUMS:
   FirebaseCoreDiagnosticsInterop: 296e2c5f5314500a850ad0b83e9e7c10b011a850
   FirebaseFirestore: a750487e2019ac35464c78311dcf2fde9d817c52
   FirebaseInstallations: acb3216eb9784d3b1d2d2d635ff74fa892cc0c44
+  FoldingCell: f92eb5fb9842319e7cd08c71533c98408b785099
   GoogleAppMeasurement: e49be3954045b17d046f271b9cc1ec052bad9702
   GoogleDataTransport: 6ffa4dd0b6d547f8d27b91bd92fa9e197a3f5f1f
   GoogleDataTransportCCTSupport: 12f02e5c8f09c055615de90bcd5ba2c375546051
@@ -331,6 +335,6 @@ SPEC CHECKSUMS:
   paper-onboarding: d3f16416e6f42add686117e8b32bfffaad899a79
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
 
-PODFILE CHECKSUM: 1e1b78f3b9f58ec8d635b100e80a1c4baad10f7f
+PODFILE CHECKSUM: 617c2a0c9882c49f67a8a51c860371d54d4a233b
 
 COCOAPODS: 1.8.4

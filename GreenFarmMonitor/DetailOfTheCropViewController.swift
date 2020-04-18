@@ -68,7 +68,7 @@ class DetailOfTheCropViewController: UIViewController {
         cropNameLabel.textColor = UIColor(hexString: "D63AF9")
         scintificNameLabel.text = ""
         descriptionLanel.text = "Following conditions are the ideal for the growth of the crop"
-        minMoisstureRange.text = ""
+        minMoisstureRange.text = "TODO"
         temperatureVal.text = specificCrop?.optimmumSoilTemp
         let str1 = (specificCrop?.minSoilpH)!
         let str2 = (specificCrop?.maxSoilpH)!
