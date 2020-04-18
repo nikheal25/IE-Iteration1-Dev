@@ -10,6 +10,9 @@ import UIKit
 import FoldingCell
 
 class FoldingTableViewController: UITableViewController {
+    
+    var specificCrop: Crop?
+    
      enum Const {
             static let closeCellHeight: CGFloat = 179
             static let openCellHeight: CGFloat = 488

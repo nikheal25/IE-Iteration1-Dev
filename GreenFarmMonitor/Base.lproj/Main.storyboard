@@ -1798,6 +1798,7 @@
                                     <outlet property="foregroundView" destination="42k-X6-as8" id="0z1-Up-pHA"/>
                                     <outlet property="foregroundViewTop" destination="mP6-Fe-0SN" id="ImM-mc-CuA"/>
                                     <outlet property="openNumberLabel" destination="y87-Qw-tYY" id="PV5-bM-5Mh"/>
+                                    <outlet property="requestButton" destination="Y6H-1m-3aI" id="zyG-kN-geD"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
