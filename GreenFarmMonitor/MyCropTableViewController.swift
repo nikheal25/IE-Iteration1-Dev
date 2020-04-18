@@ -225,7 +225,7 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
           if indexPath.section == SECTION_ACTIVITY{
               selectedRow = indexPath.row
               tableView.deselectRow(at: indexPath, animated: true)
-              self.performSegue(withIdentifier: "newSpecificCrop", sender: self)
+              self.performSegue(withIdentifier: "foldingSegue", sender: self)
           }
       }
   
@@ -239,6 +239,11 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
             destination.specificCrop = myCropList[selectedRow]
             destination.newCrop = false
                }
+        
+        if segue.identifier == "foldingSegue" {
+                          let destination = segue.destination as! FoldingTableViewController
+                  
+                      }
     }
     
     //returns the object of crop, for specified ID
