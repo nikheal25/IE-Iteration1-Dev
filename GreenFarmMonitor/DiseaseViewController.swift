@@ -15,10 +15,11 @@ class DiseaseViewController: UIViewController,UITableViewDataSource, UITableView
     
  
     
-    
+ 
     var currentCrops: [Crop] = []
     var currentDiseases: [DiseaseOfCrops] = []
     weak var databaseController: DatabaseProtocol?
+     weak var userDefaultController: UserdefaultsProtocol?
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == Section_Crops
         {
@@ -42,7 +43,9 @@ class DiseaseViewController: UIViewController,UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        if indexPath.section == Section_disease{
+            return 100}
+        return 60
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -104,11 +107,11 @@ class DiseaseViewController: UIViewController,UITableViewDataSource, UITableView
      
 //        createCrops()
 //        createDisease()
-       self.DiseaseTable.dataSource = self
-       self.DiseaseTable.delegate = self
+        self.DiseaseTable.dataSource = self
+        self.DiseaseTable.delegate = self
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         databaseController = appDelegate.databaseController
-   
+        userDefaultController = appDelegate.userDefaultController
         
 
         // Do any additional setup after loading the view.
@@ -132,16 +135,26 @@ class DiseaseViewController: UIViewController,UITableViewDataSource, UITableView
     }
     
     func onUserCropRelationChange(change: DatabaseChange, userCropRelation: [UserCropRelation]) {
+    let currentUserId = userDefaultController?.retrieveUserId()
+  
+    currentCrops = [Crop]()
+        for item in userCropRelation
         
+    {
+        if item.userId == currentUserId{
+             let crop = findCropById(cropId: item.cropId)
+            self.currentCrops.append(crop!)
+        }
+        
+        }
+        DiseaseTable.reloadData()
     }
     
     
     
     func onCropsChange(change: DatabaseChange, crops: [Crop])
     {
-        currentCrops = crops
         
-        DiseaseTable.reloadData()
         
     }
 
@@ -187,7 +200,15 @@ class DiseaseViewController: UIViewController,UITableViewDataSource, UITableView
         
         
     }
-    
+    func findCropById(cropId: String) -> Crop? {
+          let allCropList = databaseController!.cropsList
+        for crop in allCropList {
+            if(crop.cropId == cropId){
+                return crop
+            }
+        }
+        return nil
+    }
     
 
 }
