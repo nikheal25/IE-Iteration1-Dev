@@ -85,6 +85,9 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
         override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
         
+//            self.navigationController!.navigationBar.barStyle = .red
+            self.navigationController!.navigationBar.isTranslucent = true
+            
             myCropList = []
            // self.onTemperatureChange(change: .update, temperatures: databaseController!.tempList)
 //            self.onUserCropRelationChange(change: .update, userCropRelation: databaseController!.userCropRelation)
