@@ -297,6 +297,7 @@
                                 </state>
                                 <connections>
                                     <action selector="loginClicked:" destination="d3q-yA-hpY" eventType="touchUpInside" id="R5a-ku-fss"/>
+                                    <segue destination="5b7-kb-K7H" kind="show" id="RmH-iO-LPp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -976,6 +977,7 @@
         <scene sceneID="Ubg-Jz-Cyg">
             <objects>
                 <tabBarController id="5b7-kb-K7H" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="fzg-Eh-Dbq"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bjx-aN-He7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -989,7 +991,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0S1-i3-ZNc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-45" y="-103"/>
+            <point key="canvasLocation" x="-104" y="485"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Fw2-vt-6Rf">
@@ -1009,11 +1011,11 @@
             </objects>
             <point key="canvasLocation" x="1516" y="-364"/>
         </scene>
-        <!--Item-->
+        <!--My Location-->
         <scene sceneID="cZ3-DF-pZ0">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BdO-ON-fGF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="eyf-a2-oVa"/>
+                    <tabBarItem key="tabBarItem" title="My Location" image="location" id="eyf-a2-oVa"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xCg-00-iyl">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -1820,6 +1822,7 @@
         <image name="icons8-soil-100" width="33" height="33"/>
         <image name="icons8-virus-100" width="33" height="33"/>
         <image name="image" width="16" height="16"/>
+        <image name="location" width="33" height="33"/>
         <image name="photo" width="16" height="16"/>
         <image name="stars" width="16" height="16"/>
         <image name="temp" width="512" height="512"/>
