@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D19C544244C082C00989079 /* DemoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D19C543244C082C00989079 /* DemoTableViewCell.swift */; };
 		1D2FCB7624457FF10024FFBB /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 1D2FCB7524457FF10024FFBB /* Fonts */; };
 		1D2FCB832445A17F0024FFBB /* DatabaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2FCB822445A17F0024FFBB /* DatabaseProtocol.swift */; };
 		1D2FCB852445A2EF0024FFBB /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2FCB842445A2EF0024FFBB /* MulticastDelegate.swift */; };
@@ -69,6 +70,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D19C543244C082C00989079 /* DemoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTableViewCell.swift; sourceTree = "<group>"; };
 		1D2FCB7524457FF10024FFBB /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		1D2FCB822445A17F0024FFBB /* DatabaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseProtocol.swift; sourceTree = "<group>"; };
 		1D2FCB842445A2EF0024FFBB /* MulticastDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulticastDelegate.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				1D2FCB7524457FF10024FFBB /* Fonts */,
 				1D9EED30243C3A7D00EE97D2 /* SceneDelegate.swift */,
 				1D9EED32243C3A7D00EE97D2 /* ViewController.swift */,
+				1D19C543244C082C00989079 /* DemoTableViewCell.swift */,
 				1D94FF07244AC9AC00CB2F25 /* DemoCell.swift */,
 				1D9EED34243C3A7D00EE97D2 /* Main.storyboard */,
 				1D94FF05244AC82700CB2F25 /* FoldingTableViewController.swift */,
@@ -553,6 +556,7 @@
 				E883C94624444B8B006F6AC8 /* MyCropsTableViewCell.swift in Sources */,
 				1DFBCFC52446B63900DCC4B2 /* UserCropRelation.swift in Sources */,
 				E883C94A24446A04006F6AC8 /* DetailOfDiseaseViewController.swift in Sources */,
+				1D19C544244C082C00989079 /* DemoTableViewCell.swift in Sources */,
 				1D9EED31243C3A7D00EE97D2 /* SceneDelegate.swift in Sources */,
 				E8FDFCA924470CED00143844 /* ChangeUserLocationViewController.swift in Sources */,
 				1D2FCB852445A2EF0024FFBB /* MulticastDelegate.swift in Sources */,
