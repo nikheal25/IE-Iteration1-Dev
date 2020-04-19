@@ -60,7 +60,7 @@ class FoldingTableViewController: UITableViewController {
         }
 
         override func tableView(_: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-            guard case let cell as DemoCell = cell else {
+            guard case let cell as DemoTableViewCell = cell else {
                 return
             }
 
