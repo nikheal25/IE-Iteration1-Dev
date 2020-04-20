@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D9EED2A243C3A7D00EE97D2"
-            BuildableName = "Green Farm Monitor.app"
+            BuildableName = "Organic Together.app"
             BlueprintName = "GreenFarmMonitor"
             ReferencedContainer = "container:../GreenFarmMonitor.xcodeproj">
          </BuildableReference>
