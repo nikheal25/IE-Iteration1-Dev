@@ -16,17 +16,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5dC-Dc-DHc">
-                                <rect key="frame" x="89.5" y="194" width="235" height="235"/>
+                                <rect key="frame" x="89.5" y="330.5" width="235" height="235"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="235" id="cxs-L1-wAq"/>
                                     <constraint firstAttribute="width" constant="235" id="ff8-ER-5fP"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="POWERED BY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTe-oX-3tu">
+                                <rect key="frame" x="132" y="261.5" width="150" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="qlp-M2-FiL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="5dC-Dc-DHc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="1Ju-oi-uma"/>
+                            <constraint firstItem="fTe-oX-3tu" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="FrV-A8-RQZ"/>
                             <constraint firstItem="5dC-Dc-DHc" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="MBI-hS-awR"/>
+                            <constraint firstItem="5dC-Dc-DHc" firstAttribute="top" secondItem="fTe-oX-3tu" secondAttribute="bottom" constant="50" id="UYK-7U-YbC"/>
+                            <constraint firstItem="5dC-Dc-DHc" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="my7-sK-rVV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
