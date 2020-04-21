@@ -26,8 +26,14 @@ class LoginViewController: UIViewController {
         
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = self.view.bounds
-        gradientLayer.colors = [UIColor.orange.cgColor, UIColor.white.cgColor]
+        
+        let backgroundColor = UIColor(red: 152/255, green: 255/255, blue: 152/255, alpha: 1)
+            
+        gradientLayer.colors = [backgroundColor.cgColor, UIColor.white.cgColor]
         self.view.layer.insertSublayer(gradientLayer, at: 0)
+        
+        loginButton.backgroundColor = UIColor(red: 01, green: 1, blue: 1, alpha: 0.8)
+        loginButton.layer.cornerRadius = 20
         
         // Do any additional setup after loading the view.
     }

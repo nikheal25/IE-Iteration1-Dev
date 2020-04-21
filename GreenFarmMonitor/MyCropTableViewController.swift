@@ -132,9 +132,9 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
        if section == SECTION_ACTIVITY {
         
         if myCropList.count == 0 {
-            return "Your list of crops is empty. Please add  the crops by clicking on Plus button"
+            return "Currently you have NO crops in your list Add Crops to continue"
         }
-            return "Existing crops in my list"
+            return "\(myCropList.count ) crops in list"
         }
         return "Add new Crops"
 

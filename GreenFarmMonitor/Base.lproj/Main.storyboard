@@ -24,7 +24,7 @@
         <!--Disease-->
         <scene sceneID="7nH-Ot-lEG">
             <objects>
-                <viewController title="Disease" id="Ex3-ue-bil" customClass="DiseaseViewController" customModule="Green_Farm_Monitor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Disease" id="Ex3-ue-bil" customClass="DiseaseViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7DT-qD-EWy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -43,7 +43,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="604"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CropCell" rowHeight="53" id="aoT-UJ-9Dn" customClass="MyCropsTableViewCell" customModule="Green_Farm_Monitor" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CropCell" rowHeight="53" id="aoT-UJ-9Dn" customClass="MyCropsTableViewCell" customModule="Organic_Together" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aoT-UJ-9Dn" id="vW9-Lk-34b">
@@ -70,7 +70,7 @@
                                             <outlet property="CropsName" destination="weX-n0-V55" id="eOE-g9-SYj"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DiseaseCell" rowHeight="53" id="rBb-Sk-gl0" customClass="DiseaseTableViewCell" customModule="Green_Farm_Monitor" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DiseaseCell" rowHeight="53" id="rBb-Sk-gl0" customClass="DiseaseTableViewCell" customModule="Organic_Together" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="81" width="414" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rBb-Sk-gl0" id="o6f-LB-goT">
@@ -161,7 +161,7 @@
         <!--Change Your Location-->
         <scene sceneID="L7m-X9-nAY">
             <objects>
-                <viewController id="xHO-5A-7f3" customClass="ChangeUserLocationViewController" customModule="Green_Farm_Monitor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xHO-5A-7f3" customClass="ChangeUserLocationViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RwT-CM-8js">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -201,15 +201,15 @@
         <!--FirstViewController-->
         <scene sceneID="O9v-aC-QGO">
             <objects>
-                <viewController storyboardIdentifier="FirstViewController" title="FirstViewController" id="0vi-oQ-bUa" customClass="FirstViewController" customModule="Green_Farm_Monitor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstViewController" title="FirstViewController" id="0vi-oQ-bUa" customClass="FirstViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tuh-dh-FYm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okr-UP-B6e">
-                                <rect key="frame" x="130.5" y="516" width="153" height="46"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WELCOME TO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okr-UP-B6e">
+                                <rect key="frame" x="86" y="288" width="242" height="46"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="38"/>
-                                <color key="textColor" red="0.91013310485691201" green="0.70700953595582794" blue="0.0012255332545642694" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S1Q-vK-0Fs">
@@ -222,15 +222,35 @@
                                     <action selector="nextButtonClicked:" destination="0vi-oQ-bUa" eventType="touchUpInside" id="cTC-Bm-h8O"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="epb-AY-0H1">
+                                <rect key="frame" x="127" y="379" width="160" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="Q1i-Fr-WMC"/>
+                                    <constraint firstAttribute="width" constant="160" id="bBx-af-f7h"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AgroCommunity Together" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2l5-wH-OPh">
+                                <rect key="frame" x="107" y="589" width="200" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="psZ-1v-2Lv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="S1Q-vK-0Fs" firstAttribute="centerX" secondItem="tuh-dh-FYm" secondAttribute="centerX" id="AXK-Gf-KG8"/>
-                            <constraint firstItem="V40-Hf-TkI" firstAttribute="bottom" secondItem="okr-UP-B6e" secondAttribute="bottom" constant="300" id="C9V-qR-97e"/>
                             <constraint firstItem="okr-UP-B6e" firstAttribute="centerX" secondItem="tuh-dh-FYm" secondAttribute="centerX" id="GmC-We-jOA"/>
                             <constraint firstItem="S1Q-vK-0Fs" firstAttribute="leading" secondItem="V40-Hf-TkI" secondAttribute="leading" constant="50" id="Rhb-YD-CDb"/>
+                            <constraint firstItem="epb-AY-0H1" firstAttribute="top" secondItem="okr-UP-B6e" secondAttribute="bottom" constant="45" id="UV8-Fz-RYz"/>
+                            <constraint firstItem="okr-UP-B6e" firstAttribute="top" secondItem="V40-Hf-TkI" secondAttribute="top" constant="200" id="Vv4-fd-S1g"/>
                             <constraint firstItem="V40-Hf-TkI" firstAttribute="trailing" secondItem="S1Q-vK-0Fs" secondAttribute="trailing" constant="50" id="dTo-2d-FT1"/>
+                            <constraint firstItem="2l5-wH-OPh" firstAttribute="top" secondItem="epb-AY-0H1" secondAttribute="bottom" constant="50" id="rT1-lV-yO9"/>
                             <constraint firstItem="V40-Hf-TkI" firstAttribute="bottom" secondItem="S1Q-vK-0Fs" secondAttribute="bottom" constant="100" id="v7I-xp-La2"/>
+                            <constraint firstItem="epb-AY-0H1" firstAttribute="centerX" secondItem="tuh-dh-FYm" secondAttribute="centerX" id="x0i-tR-iFo"/>
+                            <constraint firstItem="2l5-wH-OPh" firstAttribute="centerX" secondItem="tuh-dh-FYm" secondAttribute="centerX" id="zj0-eF-EGv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="V40-Hf-TkI"/>
                     </view>
@@ -244,12 +264,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xWt-Zi-Yqa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2723" y="-364"/>
+            <point key="canvasLocation" x="2721.739130434783" y="-364.28571428571428"/>
         </scene>
         <!--Onboarding View Controller-->
         <scene sceneID="qyw-UC-HKT">
             <objects>
-                <viewController id="DVU-ys-H6N" customClass="OnboardingViewController" customModule="Green_Farm_Monitor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="DVU-ys-H6N" customClass="OnboardingViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PJh-IC-C6a">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -281,18 +301,18 @@
             </objects>
             <point key="canvasLocation" x="3766.666666666667" y="-364.28571428571428"/>
         </scene>
-        <!--Login Screen-->
+        <!--Login-->
         <scene sceneID="70X-aW-u6T">
             <objects>
-                <viewController id="d3q-yA-hpY" customClass="LoginViewController" customModule="Green_Farm_Monitor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="d3q-yA-hpY" customClass="LoginViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fTH-wh-QsD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q1M-Nl-IL6">
-                                <rect key="frame" x="50" y="614" width="314" height="48"/>
+                                <rect key="frame" x="50" y="464" width="314" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Register">
+                                <state key="normal" title="Login">
                                     <color key="titleColor" red="0.097202159464359283" green="0.17231905460357666" blue="0.044279389083385468" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -300,35 +320,55 @@
                                     <segue destination="5b7-kb-K7H" kind="show" id="RmH-iO-LPp"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="351-v0-eW3">
+                                <rect key="frame" x="92" y="355" width="230" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="230" id="JVA-ZT-dpp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5HT-c2-DBZ">
+                                <rect key="frame" x="92" y="281" width="230" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="230" id="FVI-UJ-fbO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Q1M-Nl-IL6" firstAttribute="leading" secondItem="yx7-pX-pOF" secondAttribute="leading" constant="50" id="Jb2-Fy-A8e"/>
                             <constraint firstItem="Q1M-Nl-IL6" firstAttribute="centerX" secondItem="fTH-wh-QsD" secondAttribute="centerX" id="L1a-tT-w3b"/>
-                            <constraint firstItem="yx7-pX-pOF" firstAttribute="bottom" secondItem="Q1M-Nl-IL6" secondAttribute="bottom" constant="200" id="Ozw-lh-UaS"/>
+                            <constraint firstItem="Q1M-Nl-IL6" firstAttribute="top" secondItem="351-v0-eW3" secondAttribute="bottom" constant="75" id="MeZ-tA-VPl"/>
+                            <constraint firstItem="yx7-pX-pOF" firstAttribute="bottom" secondItem="Q1M-Nl-IL6" secondAttribute="bottom" constant="350" id="Ozw-lh-UaS"/>
+                            <constraint firstItem="5HT-c2-DBZ" firstAttribute="centerX" secondItem="fTH-wh-QsD" secondAttribute="centerX" id="Xhb-0Z-UGx"/>
                             <constraint firstItem="yx7-pX-pOF" firstAttribute="trailing" secondItem="Q1M-Nl-IL6" secondAttribute="trailing" constant="50" id="ePI-u9-HcG"/>
+                            <constraint firstItem="351-v0-eW3" firstAttribute="centerX" secondItem="fTH-wh-QsD" secondAttribute="centerX" id="h09-fP-F2g"/>
+                            <constraint firstItem="351-v0-eW3" firstAttribute="top" secondItem="5HT-c2-DBZ" secondAttribute="bottom" constant="40" id="nj3-Nc-2AW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yx7-pX-pOF"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Login Screen" id="t6u-XA-ALz"/>
+                    <navigationItem key="navigationItem" title="Login" id="t6u-XA-ALz"/>
                     <connections>
                         <outlet property="loginButton" destination="Q1M-Nl-IL6" id="m8Z-UJ-77M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kmf-Yw-AVe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4749" y="-364"/>
+            <point key="canvasLocation" x="4747.826086956522" y="-364.28571428571428"/>
         </scene>
         <!--My Crops-->
         <scene sceneID="dUw-OU-e2l">
             <objects>
-                <tableViewController id="DHY-iT-N33" customClass="MyCropTableViewController" customModule="Green_Farm_Monitor" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="DHY-iT-N33" customClass="MyCropTableViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="200" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="o06-TL-ZHm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCropCell" id="6gT-vv-8rZ" customClass="MyCropMainTableViewCell" customModule="Green_Farm_Monitor" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCropCell" id="6gT-vv-8rZ" customClass="MyCropMainTableViewCell" customModule="Organic_Together" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="55.5" width="414" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6gT-vv-8rZ" id="o7f-wn-9k7">
@@ -371,7 +411,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add more crops to this list by clicking on plus button" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Weo-IA-t8X">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can add more crops to your list" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Weo-IA-t8X">
                                             <rect key="frame" x="45" y="51" width="324" height="16"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -393,7 +433,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="My Crops" id="T71-E0-OmJ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="NhA-is-Hdm">
+                        <barButtonItem key="rightBarButtonItem" title="Add Crop" id="NhA-is-Hdm">
                             <connections>
                                 <action selector="addNewCrop:" destination="DHY-iT-N33" id="z8z-iJ-YX3"/>
                             </connections>
@@ -412,12 +452,12 @@
         <!--All Crops-->
         <scene sceneID="pJj-C0-a7B">
             <objects>
-                <viewController id="RFN-Gy-5fg" customClass="AddNewCropViewController" customModule="Green_Farm_Monitor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="RFN-Gy-5fg" customClass="AddNewCropViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Ow-Oe-x9R">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" placeholder="Search" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gRw-el-lB6">
+                            <searchBar contentMode="redraw" placeholder="Search for crop" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gRw-el-lB6">
                                 <rect key="frame" x="0.0" y="88" width="414" height="56"/>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -429,7 +469,7 @@
                                 <rect key="frame" x="0.0" y="144" width="414" height="752"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Crop" id="ykX-ET-JuK" customClass="MyCropCellTableViewCell" customModule="Green_Farm_Monitor" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Crop" id="ykX-ET-JuK" customClass="MyCropCellTableViewCell" customModule="Organic_Together" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ykX-ET-JuK" id="ToY-UQ-TRk">
@@ -519,7 +559,7 @@
         <!--Detail Of The Crop View Controller-->
         <scene sceneID="mNU-Ir-YEq">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="yiQ-Q6-hV5" customClass="DetailOfTheCropViewController" customModule="Green_Farm_Monitor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="yiQ-Q6-hV5" customClass="DetailOfTheCropViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ePo-PE-W8y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -794,12 +834,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qTt-99-syF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1646" y="2880"/>
+            <point key="canvasLocation" x="-1884" y="2871"/>
         </scene>
         <!--Detail New Crop View Controller-->
         <scene sceneID="Sb3-rU-tnB">
             <objects>
-                <viewController id="RG7-Oh-y8c" customClass="DetailNewCropViewController" customModule="Green_Farm_Monitor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="RG7-Oh-y8c" customClass="DetailNewCropViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9gY-m0-TOh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1033,7 +1073,7 @@
         <!--Symptoms-->
         <scene sceneID="u4d-JT-VYk">
             <objects>
-                <viewController id="2Kg-aO-PYg" customClass="SymptomsViewController" customModule="Green_Farm_Monitor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2Kg-aO-PYg" customClass="SymptomsViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pa3-Be-0pY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1049,7 +1089,7 @@
         <!--Details-->
         <scene sceneID="9bH-5N-hdR">
             <objects>
-                <viewController id="CM5-eV-gRe" customClass="DetailOfDiseaseViewController" customModule="Green_Farm_Monitor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="CM5-eV-gRe" customClass="DetailOfDiseaseViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N78-xj-Pb4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1138,14 +1178,14 @@
         <!--Folding Table View Controller-->
         <scene sceneID="5RK-j0-OTk">
             <objects>
-                <tableViewController storyboardIdentifier="MainTableViewController" id="auZ-DV-ex4" customClass="FoldingTableViewController" customModule="Green_Farm_Monitor" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MainTableViewController" id="auZ-DV-ex4" customClass="FoldingTableViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="667" sectionHeaderHeight="28" sectionFooterHeight="28" id="pF8-XU-PNN">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="708"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FoldingCell" rowHeight="667" id="gXt-61-trc" customClass="DemoTableViewCell" customModule="Green_Farm_Monitor" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FoldingCell" rowHeight="667" id="gXt-61-trc" customClass="DemoTableViewCell" customModule="Organic_Together" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="667"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gXt-61-trc" id="3IL-LK-O1a">
@@ -1828,6 +1868,6 @@
         <image name="temp" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0BZ-rP-Cky"/>
+        <segue reference="gb7-L6-GNo"/>
     </inferredMetricsTieBreakers>
 </document>
