@@ -207,8 +207,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WELCOME TO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okr-UP-B6e">
-                                <rect key="frame" x="86" y="288" width="242" height="46"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                <rect key="frame" x="118" y="288" width="178.5" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -222,15 +222,15 @@
                                     <action selector="nextButtonClicked:" destination="0vi-oQ-bUa" eventType="touchUpInside" id="cTC-Bm-h8O"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="epb-AY-0H1">
-                                <rect key="frame" x="127" y="379" width="160" height="160"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appstore" translatesAutoresizingMaskIntoConstraints="NO" id="epb-AY-0H1">
+                                <rect key="frame" x="127" y="366.5" width="160" height="160"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="Q1i-Fr-WMC"/>
                                     <constraint firstAttribute="width" constant="160" id="bBx-af-f7h"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AgroCommunity Together" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2l5-wH-OPh">
-                                <rect key="frame" x="107" y="589" width="200" height="21"/>
+                                <rect key="frame" x="107" y="576.5" width="200" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="psZ-1v-2Lv"/>
                                 </constraints>
@@ -257,7 +257,9 @@
                     <navigationItem key="navigationItem" id="2Jp-1J-Czg"/>
                     <connections>
                         <outlet property="mainButton" destination="S1Q-vK-0Fs" id="SyR-Mf-avU"/>
+                        <outlet property="mainImage" destination="epb-AY-0H1" id="K5r-Zm-OB0"/>
                         <outlet property="mainLabel" destination="okr-UP-B6e" id="zn4-N5-Jwb"/>
+                        <outlet property="subtitle" destination="2l5-wH-OPh" id="8jv-Jz-ufj"/>
                         <outlet property="videoLayer" destination="tuh-dh-FYm" id="MVh-QI-Di1"/>
                         <segue destination="DVU-ys-H6N" kind="show" identifier="onBoardingSegue" id="yhZ-pe-Ohn"/>
                     </connections>
@@ -320,7 +322,7 @@
                                     <segue destination="5b7-kb-K7H" kind="show" id="RmH-iO-LPp"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="351-v0-eW3">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Password here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="351-v0-eW3">
                                 <rect key="frame" x="92" y="355" width="230" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="230" id="JVA-ZT-dpp"/>
@@ -328,7 +330,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5HT-c2-DBZ">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Email here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5HT-c2-DBZ">
                                 <rect key="frame" x="92" y="281" width="230" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="230" id="FVI-UJ-fbO"/>
@@ -809,7 +811,7 @@
                         <viewLayoutGuide key="safeArea" id="hq4-RM-0Cd"/>
                     </view>
                     <navigationItem key="navigationItem" id="w0A-ZF-u7t">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="r4c-Yb-pPy"/>
+                        <barButtonItem key="rightBarButtonItem" title="Add Crop to List" id="r4c-Yb-pPy"/>
                     </navigationItem>
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
@@ -1854,6 +1856,7 @@
     </scenes>
     <resources>
         <image name="BlossomDrop" width="550" height="550"/>
+        <image name="appstore" width="1024" height="1024"/>
         <image name="arrow" width="16" height="16"/>
         <image name="burger" width="16" height="16"/>
         <image name="dots" width="16" height="16"/>
@@ -1868,6 +1871,6 @@
         <image name="temp" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gb7-L6-GNo"/>
+        <segue reference="0BZ-rP-Cky"/>
     </inferredMetricsTieBreakers>
 </document>

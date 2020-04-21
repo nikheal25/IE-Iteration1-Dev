@@ -123,7 +123,8 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: CELL_COUNT, for: indexPath)
-        cell.textLabel?.text = "\(myCropList.count) crops in the list"
+    //MARK:- TODO
+//        cell.textLabel?.text = "\(myCropList.count) crops in the list"
         cell.selectionStyle = .none
         return cell
     }
@@ -132,11 +133,17 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
        if section == SECTION_ACTIVITY {
         
         if myCropList.count == 0 {
-            return "Currently you have NO crops in your list Add Crops to continue"
+//            return "Currently you have NO crops in your list Add Crops to continue"
+            return ""
+        }else{
+            return "\(myCropList.count ) crops in list."
         }
-            return "\(myCropList.count ) crops in list"
         }
-        return "Add new Crops"
+       // return "Add new Crops"
+        if myCropList.count == 0 {
+            return "Currently you have NO crops in your list Add Crops to continue."
+        }
+        return ""
 
     }
     
