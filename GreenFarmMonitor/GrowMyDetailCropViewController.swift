@@ -37,9 +37,19 @@ class GrowMyDetailCropViewController: UIViewController {
         self.spreadRangeLabel.text = specificCrop?.Spread_Ranges
         self.heightRangeLabel.text = specificCrop?.Height_Ranges
         self.soilTypeLabel.text = specificCrop?.Soil_Type
+        let str1 = (specificCrop?.minSoilpH)!
+        let str2 = (specificCrop?.maxSoilpH)!
+        self.soilpHLabel.numberOfLines = 0
+        self.soilpHLabel.text = "\(str1) - \(str2)"
         self.moistureLabel.text = specificCrop?.AvMoisture_Percent
         self.nutriLabel.text = specificCrop?.N_P_K_Req
+//        self.waterReqLabel.numberOfLines = 0
+        self.waterReqLabel.adjustsFontSizeToFitWidth = true
+        self.waterReqLabel.minimumScaleFactor = 0.5
         self.waterReqLabel.text = specificCrop?.Water_Needs
+//        self.lightIntLabel.numberOfLines = 0 //.sizeToFit()
+        self.lightIntLabel.adjustsFontSizeToFitWidth = true
+        self.lightIntLabel.minimumScaleFactor = 0.5
         self.lightIntLabel.text = specificCrop?.Light_Needs
         self.frostLabel.text = specificCrop?.frostTol
     }
