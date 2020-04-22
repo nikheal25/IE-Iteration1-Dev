@@ -123,7 +123,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
         
     
         //Crop
-        cropRef = database.collection("newCrops")
+        cropRef = database.collection("cropLatest")
         cropRef?.order(by: "date", descending: false)
         cropRef?.addSnapshotListener { querySnapshot, error in
             guard (querySnapshot?.documents) != nil else {
@@ -281,7 +281,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
                 let maxSoilTemp = numberUnwrapper(val: docData, key: "MAXSOILTEMP_C")
                 let optimmumSoilTemp = numberUnwrapper(val: docData, key: "OPTIMUMSOILTEMP_C")
                
-                let frostTol = stringUnwrapper(val: docData, key: "FROST_TOLERANCE")
+                let frostTol = stringUnwrapper(val: docData, key: "FROST TOL")
                 //TODO change the DB
 //                let spacingInPlantRow = stringUnwrapper(val: docData, key: "SPACING_PLANTS_INROWS")
                 let spacingInPlantRow = "N.A."
@@ -290,15 +290,30 @@ class FirebaseController: NSObject, DatabaseProtocol {
                  let spacingRow = "N.A."
 //                let plantingDepth = stringUnwrapper(val: docData, key: "PLANTING_DEPTH")
                 let plantingDepth = "N.A."
-                let nutrients = stringUnwrapper(val: docData, key: "NUTRIENT_REQ")
+                let nutrients = stringUnwrapper(val: docData, key: "N-P-K_Req")
                 let organicFertilises = stringUnwrapper(val: docData, key: "ORGANIC_FERTILISERS_REQ")
                 
-                let maxSoilpH = numberUnwrapper(val: docData, key: "SOILpH_Max")
-                let minSoilpH = numberUnwrapper(val: docData, key: "SOILpH_Min")
+                let maxSoilpH = stringUnwrapper(val: docData, key: "SOILpH_Max")
+                let minSoilpH = stringUnwrapper(val: docData, key: "SOILpH_Min")
+                
+                /// NEW ATTRIBUTES
+                let Description = stringUnwrapper(val: docData, key: "Description")
+                let AvMoisture_Percent = stringUnwrapper(val: docData, key: "AvMoisture_Percent")
+                let AvN_Percent = stringUnwrapper(val: docData, key: "AvN_Percent")
+                let AvP_Percent = stringUnwrapper(val: docData, key: "AvP_Percent")
+                let Days_to_maturity = stringUnwrapper(val: docData, key: "Days_to_maturity")
+                let Height_Ranges = stringUnwrapper(val: docData, key: "Height_Ranges")
+                let Light_Needs = stringUnwrapper(val: docData, key: "Light_Needs")
+                let N_P_K_Req = stringUnwrapper(val: docData, key: "N-P-K_Req")
+                let Plant_Type = stringUnwrapper(val: docData, key: "Plant_Type")
+                let Soil_Additional = stringUnwrapper(val: docData, key: "Soil_Additional")
+                let Water_Needs = stringUnwrapper(val: docData, key: "Water_Needs")
+                let Soil_Type = stringUnwrapper(val: docData, key: "Soil_Type")
+                let Spread_Ranges = stringUnwrapper(val: docData, key: "Spread_Ranges")
                 
                    if change.type == .added {
                        
-                       let newCrop = Crop(cropId: cropId, cropName: cropName, cropImage: cropImage, minSoilTemp: minSoilTemp, maxSoilTemp: maxSoilTemp, optimmumSoilTemp: optimmumSoilTemp, frostTol: frostTol, spacingPlantInRow: spacingInPlantRow, spacingRow: spacingRow, plantingDepth: plantingDepth, nutrients: nutrients, organicFertilises: organicFertilises, minSoilpH: minSoilpH, maxSoilpH: maxSoilpH)
+                       let newCrop = Crop(cropId: cropId, cropName: cropName, cropImage: cropImage, frostTol: frostTol, minSoilpH: minSoilpH, maxSoilpH: maxSoilpH, Description: Description, AvMoisture_Percent: AvMoisture_Percent, AvN_Percent: AvN_Percent, AvP_Percent: AvP_Percent, Days_to_maturity: Days_to_maturity, Height_Ranges: Height_Ranges, Light_Needs: Light_Needs, N_P_K_Req: N_P_K_Req, Plant_Type: Plant_Type, Soil_Additional: Soil_Additional, Water_Needs: Water_Needs, Soil_Type: Soil_Type, Spread_Ranges: Spread_Ranges)
                        
     //                   newCrop.ruleId = documentRef
                  
@@ -351,56 +366,56 @@ class FirebaseController: NSObject, DatabaseProtocol {
     
    
     func parseDiseaseSnapshot(snapshot: QuerySnapshot) {
-            
-               snapshot.documentChanges.forEach { change in
-                let documentRef = change.document.documentID
-                let crop = change.document.data()["Crop"] as! String
-                let name = change.document.data()["CommonDisease"] as! String
-                let descriptionOfSymptom = change.document.data()["Description"] as! String
+                
+                   snapshot.documentChanges.forEach { change in
+                    let documentRef = change.document.documentID
+                    let crop = change.document.data()["Crop"] as! String
+                    let name = change.document.data()["CommonDisease"] as! String
+                    let descriptionOfSymptom = change.document.data()["Description"] as! String
 
-//                let image = change.document.data ()["Image"]as! String
-//                print(documentRef)
-                if change.type == .added {
-//                    print("New disease: \(change.document.data())")
-                let newDisease = DiseaseOfCrops( name: name, crop: crop, descriptionOfSymptom: descriptionOfSymptom)
+    //                let image = change.document.data ()["Image"]as! String
+    //                print(documentRef)
+                    if change.type == .added {
+    //                    print("New disease: \(change.document.data())")
+                    let newDisease = DiseaseOfCrops( name: name, crop: crop, descriptionOfSymptom: descriptionOfSymptom)
 
-//                    newDisease.crop = crop
-//                    newDisease.name = name
-//                    newDisease.image = image
-//                    newDisease.descriptionOfSymptom = descriptionOfSymptom
-//                    newDisease.id = documentRef
-                    diseaseList.append(newDisease)
-                  }
-                   if change.type == .modified {
-//                       print("Updated data: \(change.document.data())")
+    //                    newDisease.crop = crop
+    //                    newDisease.name = name
+    //                    newDisease.image = image
+    //                    newDisease.descriptionOfSymptom = descriptionOfSymptom
+    //                    newDisease.id = documentRef
+                        diseaseList.append(newDisease)
+                      }
+                       if change.type == .modified {
+    //                       print("Updated data: \(change.document.data())")
+                          
+
                       
+                        
+                       
 
-                  
-                    
-                   
+    //                    let index = getDiseaseIndexByID(reference: documentRef)!
+    //                    diseaseList[index].crop = crop
+    //                    diseaseList[index].name = name
+    //
+    //                    diseaseList[index].descriptionOfSymptom = descriptionOfSymptom
+    //                    diseaseList[index].id = documentRef
+                       }
+                      if change.type == .removed {
+    //                    print("Removed data: \(change.document.data())")
+    //
+    //                    if let index = getDiseaseIndexByID(reference: documentRef) {
+    //                          diseaseList.remove(at: index)
+    //                     }
 
-//                    let index = getDiseaseIndexByID(reference: documentRef)!
-//                    diseaseList[index].crop = crop
-//                    diseaseList[index].name = name
-//
-//                    diseaseList[index].descriptionOfSymptom = descriptionOfSymptom
-//                    diseaseList[index].id = documentRef
+                     }
                    }
-                  if change.type == .removed {
-//                    print("Removed data: \(change.document.data())")
-//
-//                    if let index = getDiseaseIndexByID(reference: documentRef) {
-//                          diseaseList.remove(at: index)
-//                     }
-
-                 }
-               }
-              listeners.invoke { (listener) in
-                  if listener.listenerType == ListenerType.Disease||listener.listenerType == ListenerType.all {
-                      listener.onDiseaseOfCropsChange(change: .update, diseaseOfCrops: diseaseList)
-                  }
-               }
-        }
+                  listeners.invoke { (listener) in
+                      if listener.listenerType == ListenerType.Disease||listener.listenerType == ListenerType.all {
+                          listener.onDiseaseOfCropsChange(change: .update, diseaseOfCrops: diseaseList)
+                      }
+                   }
+            }
 
    
 
