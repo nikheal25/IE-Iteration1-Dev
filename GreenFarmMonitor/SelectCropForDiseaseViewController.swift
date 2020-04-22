@@ -67,7 +67,9 @@ class SelectCropForDiseaseViewController: UIViewController , UITableViewDataSour
     @IBOutlet weak var cropTable: UITableView!
     
     @IBOutlet weak var searchBar: UISearchBar!
-    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
         return currentCrops.count
@@ -126,8 +128,8 @@ class SelectCropForDiseaseViewController: UIViewController , UITableViewDataSour
             
                 selectCrop = currentCrops[indexPath!.row].cropName
                 destination.crop = selectCrop
-                
-                
+           
+//                print(selectCrop)
 //            }else{
 //                selectCrop = tempCrops[indexPath!.row].cropName
 //                destination.crop = selectCrop
