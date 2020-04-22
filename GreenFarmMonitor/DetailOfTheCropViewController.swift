@@ -46,9 +46,9 @@ class DetailOfTheCropViewController: UIViewController {
         setImageView()
         setInfoView()
         
-        animationCircle(center: tempLabel.center, endAngle: calculateTheAngleTemp(num: specificCrop!.optimmumSoilTemp), fillColor: UIColor.white.cgColor, strokeColor: UIColor.red.cgColor, theView: temperatureBarView)
-        
-        animationCircle(center: tempLabel.center, endAngle:  calculateTheAnglePH(num: (specificCrop!.maxSoilpH)), fillColor: UIColor.white.cgColor, strokeColor: UIColor.red.cgColor, theView: phBarView)
+//        animationCircle(center: tempLabel.center, endAngle: calculateTheAngleTemp(num: specificCrop!.optimmumSoilTemp), fillColor: UIColor.white.cgColor, strokeColor: UIColor.red.cgColor, theView: temperatureBarView)
+//
+//        animationCircle(center: tempLabel.center, endAngle:  calculateTheAnglePH(num: (specificCrop!.maxSoilpH)), fillColor: UIColor.white.cgColor, strokeColor: UIColor.red.cgColor, theView: phBarView)
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         userDefaultController = appDelegate.userDefaultController
@@ -69,7 +69,7 @@ class DetailOfTheCropViewController: UIViewController {
         scintificNameLabel.text = ""
         descriptionLanel.text = "Following conditions are the ideal for the growth of the crop"
         minMoisstureRange.text = "TODO"
-        temperatureVal.text = specificCrop?.optimmumSoilTemp
+        temperatureVal.text = "TODOOOOO"
         let str1 = (specificCrop?.minSoilpH)!
         let str2 = (specificCrop?.maxSoilpH)!
         phVal.text = "\(str1) - \(str2)"
