@@ -11,17 +11,25 @@ import UIKit
 class DetailNewCropViewController: UIViewController {
 
     var specificCrop: Crop?
+    weak var userDefaultController: UserdefaultsProtocol?
+    weak var databaseController: DatabaseProtocol?
     
+    @IBOutlet weak var cropImage: UIImageView!
+    @IBOutlet weak var detailLabel: UILabel!
+    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = specificCrop?.cropName
+        cropImage.image = UIImage(named: specificCrop!.cropImage)
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        userDefaultController = appDelegate.userDefaultController
+        databaseController = appDelegate.databaseController
     }
     
 
-    @IBAction func addCropButtonPressed(_ sender: Any) {
-        showMessage(tittle: "Invalid fields", message: "Please complete all the fields")
-    }
-    
     //This method shows a pop up informing changes in the information
     func showMessage(tittle: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
@@ -34,6 +42,10 @@ class DetailNewCropViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    @IBAction func addCropToListButton(_ sender: Any) {
+        databaseController?.updateMyCropList(new: true, userId: (userDefaultController?.retrieveUserId())!, cropId: specificCrop!.cropId)
+        _ = navigationController?.popToRootViewController(animated: true)
+    }
     /*
     // MARK: - Navigation
 
