@@ -1,14 +1,14 @@
 //
-//  DiseaseTableViewCell.swift
+//  FoundDiseaseCropsTableViewCell.swift
 //  GreenFarmMonitor
 //
-//  Created by Hanlin Shen on 13/4/20.
+//  Created by Hanlin Shen on 22/4/20.
 //  Copyright © 2020 Nikhil Gholap. All rights reserved.
 //
 
 import UIKit
 
-class DiseaseTableViewCell: UITableViewCell {
+class FoundDiseaseCropsTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,7 +20,8 @@ class DiseaseTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-   
+
+    @IBOutlet weak var cropImage: UIImageView!
     
-    
+    @IBOutlet weak var cropNameLabel: UILabel!
 }
