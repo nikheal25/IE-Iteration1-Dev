@@ -72,13 +72,6 @@ class FirebaseController: NSObject, DatabaseProtocol {
         return String((0..<length).map{ _ in letters.randomElement()! })
     }
   
-//    func addUserCropRelation(userCropRelation: UserCropRelation) -> UserCropRelation {
-//        // TODO
-//        let id = userCropRelationRef?.addDocument(data: ["cropId":userCropRelation.cropId, "userId":userCropRelation.userId])
-//        userCropRelation.relationId = id!.documentID
-//        return userCropRelation
-//    }
-    
     func addListener(listener: DatabaseListener) {
         listeners.addDelegate(listener)
         if listener.listenerType == ListenerType.Crops || listener.listenerType == ListenerType.all {
