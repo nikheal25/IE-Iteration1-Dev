@@ -13,10 +13,12 @@ class DiseaseListViewController: UIViewController,UITableViewDataSource, UITable
         return shownDiseases.count
         
     }
-  
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let diseaseCell = tableView.dequeueReusableCell(withIdentifier: "disease",for: indexPath)as!
-        DiseaseTableViewCell
+        let diseaseCell = tableView.dequeueReusableCell(withIdentifier: "disease",for: indexPath)as! DiseaseTableViewCell
         let disease = shownDiseases[indexPath.row]
         diseaseCell.diseaseImage.image = UIImage(named: disease.name)
         diseaseCell.diseaseNameLabel.text = disease.name
@@ -24,25 +26,9 @@ class DiseaseListViewController: UIViewController,UITableViewDataSource, UITable
     }
     
     var listenerType = ListenerType.all
-    override func viewWillAppear(_ animated: Bool) {
-         super.viewWillAppear(animated)
-         databaseController?.addListener(listener:self)
-     }
-     override func viewWillDisappear(_ animated: Bool) {
-         super.viewWillDisappear(animated)
-        databaseController?.removeListener(listener:self)
-     }
+    
     func onDiseaseOfCropsChange(change: DatabaseChange, diseaseOfCrops: [DiseaseOfCrops]) {
-        for disease in diseaseOfCrops
-        {
-            if disease.crop.uppercased() == "Bean"
-
-            {
-                shownDiseases.append(disease)
-            }
-        }
-//        shownDiseases = diseaseOfCrops
-        diseaseTable.reloadData()
+ 
     }
     
     func onCropsChange(change: DatabaseChange, crops: [Crop]) {
@@ -57,21 +43,38 @@ class DiseaseListViewController: UIViewController,UITableViewDataSource, UITable
        
     }
     
-
+    
     var crop:String = ""
     var shownDiseases:[DiseaseOfCrops] = []
      weak var databaseController: DatabaseProtocol?
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        databaseController = appDelegate.databaseController
+        
         self.diseaseTable.delegate = self
         self.diseaseTable.dataSource = self
-        navigationItem.title = crop
+         shownDiseases = [DiseaseOfCrops]()
+        let DiseasesList = databaseController!.diseaseList
+               for disease in DiseasesList
+               {
+                    if disease.crop.uppercased() == crop
+
+                    {
+                        shownDiseases.append(disease)
+                    }
+                }
+                
+        //      shownDiseases = diseaseOfCrops
+            diseaseTable.reloadData()
+        
+            navigationItem.title = crop
     }
     
     @IBOutlet weak var diseaseTable: UITableView!
     var selectDisease:String = ""
-    var diseaseName:String = ""
+    
     var diseaseDescription:String = ""
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
