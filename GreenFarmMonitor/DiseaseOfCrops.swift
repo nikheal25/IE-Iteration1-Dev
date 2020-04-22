@@ -21,7 +21,7 @@ class DiseaseOfCrops:NSObject
            self.name = name
 
            self.crop = crop
-            self.descriptionOfSymptom = descriptionOfSymptom
+        self.descriptionOfSymptom = descriptionOfSymptom
 
 
        }
