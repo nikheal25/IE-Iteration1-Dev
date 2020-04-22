@@ -19,25 +19,15 @@ class SelectCropForDiseaseViewController: UIViewController , UITableViewDataSour
  
 
  func onDiseaseOfCropsChange(change: DatabaseChange, diseaseOfCrops: [DiseaseOfCrops]) {
-    currentDiseases = diseaseOfCrops
-    
+
      
  }
  
  func onCropsChange(change: DatabaseChange, crops: [Crop]) {
-      for disease in currentDiseases
-      {
-        for crop in crops
-        {
-            if disease.name.uppercased() == crop.cropName
-            {
-                currentCrops.append(crop)
-                
-            }
-            
-        }
-        
-    }
+    
+   
+    currentCrops = crops
+    
     cropTable.reloadData()
  }
  
@@ -56,8 +46,8 @@ class SelectCropForDiseaseViewController: UIViewController , UITableViewDataSour
         super.viewDidLoad()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
                
-               databaseController = appDelegate.databaseController
-               
+        databaseController = appDelegate.databaseController
+        
         self.cropTable.dataSource = self
         self.cropTable.delegate = self
         self.searchBar.delegate = self
@@ -83,19 +73,22 @@ class SelectCropForDiseaseViewController: UIViewController , UITableViewDataSour
         return currentCrops.count
     }
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    if searching{
+    //if searching
+   //{
     let cropsCell = tableView.dequeueReusableCell(withIdentifier: "Crop",for: indexPath) as! FoundDiseaseCropsTableViewCell
     let crop = currentCrops[indexPath.row]
     cropsCell.cropImage.image = UIImage(named:crop.cropImage)
     cropsCell.cropNameLabel.text = crop.cropName
         return cropsCell
-    }else{
-        let searchCell = tableView.dequeueReusableCell(withIdentifier: "Crop",for: indexPath) as! FoundDiseaseCropsTableViewCell
-        let crop = tempCrops[indexPath.row]
-        searchCell.cropImage.image = UIImage(named:crop.cropImage)
-        searchCell.cropNameLabel.text = crop.cropName
-        return searchCell
-    }
+//    }
+    
+//    else{
+//        let searchCell = tableView.dequeueReusableCell(withIdentifier: "Crop",for: indexPath) as! FoundDiseaseCropsTableViewCell
+//        let crop = tempCrops[indexPath.row]
+//        searchCell.cropImage.image = UIImage(named:crop.cropImage)
+//        searchCell.cropNameLabel.text = crop.cropName
+//        return searchCell
+//    }
     }
     var tempCrops:[Crop] = []
    
@@ -120,14 +113,28 @@ class SelectCropForDiseaseViewController: UIViewController , UITableViewDataSour
             searchBar.text = ""
            cropTable.reloadData()
         }
-    /*
+    
     // MARK: - Navigation
-
+    var selectCrop: String = ""
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "SelectCropSegue"
+        {
+            let destination = segue.destination as! DiseaseListViewController
+            let indexPath = self.cropTable.indexPathForSelectedRow
+//            if searching{
+            
+                selectCrop = currentCrops[indexPath!.row].cropName
+                destination.crop = selectCrop
+                
+                
+//            }else{
+//                selectCrop = tempCrops[indexPath!.row].cropName
+//                destination.crop = selectCrop
+//                
+//            }
+        }
     }
-    */
+    
 
 }

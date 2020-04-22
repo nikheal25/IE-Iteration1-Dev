@@ -13,6 +13,7 @@ class DetailOfDiseaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        content()
+        navigationItem.title = name
         // Do any additional setup after loading the view.
     }
     var name:String = ""
