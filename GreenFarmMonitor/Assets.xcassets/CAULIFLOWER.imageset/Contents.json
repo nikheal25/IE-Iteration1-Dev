@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "CAULIFLOWER.jpg",
+      "filename" : "Cauliflower.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "CAULIFLOWER@2x.jpg",
+      "filename" : "Cauliflower@2x.jpg",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "CAULIFLOWER@3x.jpg",
+      "filename" : "Cauliflower@3x.jpg",
       "scale" : "3x"
     }
   ],

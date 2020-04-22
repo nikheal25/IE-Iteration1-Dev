@@ -23,6 +23,7 @@ class DetailNewCropViewController: UIViewController {
         
         self.title = specificCrop?.cropName
         cropImage.image = UIImage(named: specificCrop!.cropImage)
+        self.detailLabel.text = specificCrop?.Description
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         userDefaultController = appDelegate.userDefaultController

@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "BRUSSELS SPROUTS.jpg",
+      "filename" : "Brussels Sprouts.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "BRUSSELS SPROUTS@2x.jpg",
+      "filename" : "Brussels Sprouts@2x.jpg",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "BRUSSELS SPROUTS@3x.jpg",
+      "filename" : "Brussels Sprouts@3x.jpg",
       "scale" : "3x"
     }
   ],

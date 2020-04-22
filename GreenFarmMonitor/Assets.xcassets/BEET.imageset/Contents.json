@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "BEET.jpg",
+      "filename" : "Beet.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "BEET@2x.jpg",
+      "filename" : "Beet@2x.jpg",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "BEET@3x.jpg",
+      "filename" : "Beet@3x.jpg",
       "scale" : "3x"
     }
   ],
