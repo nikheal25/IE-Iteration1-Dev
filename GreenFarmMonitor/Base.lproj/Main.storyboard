@@ -477,11 +477,11 @@
                                     <constraint firstItem="Rs6-zf-7Rb" firstAttribute="leading" secondItem="8ml-WL-rHr" secondAttribute="leading" constant="50" id="lQH-pd-dvl"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bXN-Pb-1M8">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bXN-Pb-1M8">
                                 <rect key="frame" x="0.0" y="196" width="414" height="617"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Crop" rowHeight="104" id="Ux4-xO-sKe" customClass="GrowMyCropTableViewCell" customModule="Organic_Together" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="10" reuseIdentifier="Crop" rowHeight="104" id="Ux4-xO-sKe" customClass="GrowMyCropTableViewCell" customModule="Organic_Together" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="104"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ux4-xO-sKe" id="Ntt-61-1GB">
@@ -492,54 +492,57 @@
                                                     <rect key="frame" x="20" y="11" width="374" height="82"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oT2-HL-fsV">
-                                                            <rect key="frame" x="30" y="10.5" width="150" height="61"/>
+                                                            <rect key="frame" x="5" y="5" width="150" height="72"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="150" id="S2X-n6-H5h"/>
-                                                                <constraint firstAttribute="height" constant="61" id="fnw-5s-lke"/>
+                                                                <constraint firstAttribute="width" constant="150" id="k9d-ao-h95"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qks-N6-mRF">
-                                                            <rect key="frame" x="234" y="21" width="100" height="40"/>
+                                                            <rect key="frame" x="224" y="26" width="100" height="30"/>
                                                             <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="100" id="Ekz-QA-fc2"/>
-                                                                <constraint firstAttribute="height" constant="40" id="SdW-Gj-ySO"/>
+                                                                <constraint firstAttribute="width" constant="100" id="qm4-fb-g3l"/>
                                                             </constraints>
                                                             <state key="normal" title="Button">
                                                                 <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                                 <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="growCropButtonClicked:" destination="Ux4-xO-sKe" eventType="touchUpInside" id="dqj-a8-eks"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
-                                                        <constraint firstItem="Qks-N6-mRF" firstAttribute="centerY" secondItem="oIW-zk-pcP" secondAttribute="centerY" id="5xT-OB-HQj"/>
-                                                        <constraint firstItem="oT2-HL-fsV" firstAttribute="centerY" secondItem="oIW-zk-pcP" secondAttribute="centerY" id="CtG-m4-ca7"/>
-                                                        <constraint firstAttribute="trailing" secondItem="Qks-N6-mRF" secondAttribute="trailing" constant="40" id="jpU-OQ-GFf"/>
-                                                        <constraint firstItem="oT2-HL-fsV" firstAttribute="leading" secondItem="oIW-zk-pcP" secondAttribute="leading" constant="30" id="xQ6-6B-P0b"/>
+                                                        <constraint firstItem="oT2-HL-fsV" firstAttribute="centerY" secondItem="oIW-zk-pcP" secondAttribute="centerY" id="Dbt-gc-vj5"/>
+                                                        <constraint firstItem="oT2-HL-fsV" firstAttribute="top" secondItem="oIW-zk-pcP" secondAttribute="top" constant="5" id="fGo-dt-gqR"/>
+                                                        <constraint firstItem="Qks-N6-mRF" firstAttribute="centerY" secondItem="oIW-zk-pcP" secondAttribute="centerY" id="m4L-hx-boQ"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Qks-N6-mRF" secondAttribute="trailing" constant="50" id="mnM-Lf-aFq"/>
+                                                        <constraint firstItem="oT2-HL-fsV" firstAttribute="leading" secondItem="oIW-zk-pcP" secondAttribute="leading" constant="5" id="oja-GI-5FM"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="oIW-zk-pcP" firstAttribute="leading" secondItem="Ntt-61-1GB" secondAttribute="leadingMargin" id="9zg-NH-Svr"/>
-                                                <constraint firstItem="oIW-zk-pcP" firstAttribute="top" secondItem="Ntt-61-1GB" secondAttribute="topMargin" id="MW6-Gf-8Ou"/>
-                                                <constraint firstItem="oIW-zk-pcP" firstAttribute="bottom" secondItem="Ntt-61-1GB" secondAttribute="bottomMargin" id="jbj-VU-4fQ"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="oIW-zk-pcP" secondAttribute="trailing" id="uCX-1c-S1Z"/>
+                                                <constraint firstItem="oIW-zk-pcP" firstAttribute="bottom" secondItem="Ntt-61-1GB" secondAttribute="bottomMargin" id="CGC-Hw-nCR"/>
+                                                <constraint firstItem="oIW-zk-pcP" firstAttribute="trailing" secondItem="Ntt-61-1GB" secondAttribute="trailingMargin" id="CNK-1H-IyE"/>
+                                                <constraint firstItem="oIW-zk-pcP" firstAttribute="top" secondItem="Ntt-61-1GB" secondAttribute="topMargin" id="Zk3-Rl-4RT"/>
+                                                <constraint firstItem="oIW-zk-pcP" firstAttribute="leading" secondItem="Ntt-61-1GB" secondAttribute="leadingMargin" id="cCB-yw-ISf"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="cellView" destination="oIW-zk-pcP" id="lC8-4y-HTw"/>
                                             <outlet property="cropTitleLable" destination="oT2-HL-fsV" id="pzx-Z4-YXf"/>
+                                            <outlet property="growCropButton" destination="Qks-N6-mRF" id="e4W-MB-WWc"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellCounter" id="L4n-Js-zaa">
-                                        <rect key="frame" x="0.0" y="132" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="132" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L4n-Js-zaa" id="kJ7-8e-HZ7">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -565,11 +568,28 @@
                     <navigationItem key="navigationItem" title="Grow My Crops" id="aVU-ZV-Zbk"/>
                     <connections>
                         <outlet property="tableView" destination="bXN-Pb-1M8" id="jbN-zV-RAM"/>
+                        <segue destination="5yO-X8-Iwv" kind="show" identifier="growSpecificCropSegue" id="xyq-dO-ZwK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IZH-9y-7wV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="47.826086956521742" y="2372.5446428571427"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="F1b-NQ-kns">
+            <objects>
+                <viewController id="5yO-X8-Iwv" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="l2L-7w-PaX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="GId-hX-fqe"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="7vE-2Q-NQi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xzx-XZ-Egz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="933" y="2373"/>
         </scene>
         <!--All Crops-->
         <scene sceneID="pJj-C0-a7B">

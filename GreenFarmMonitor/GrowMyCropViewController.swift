@@ -8,7 +8,9 @@
 
 import UIKit
 
-class GrowMyCropViewController: UIViewController, DatabaseListener {
+class GrowMyCropViewController: UIViewController, DatabaseListener, GrowCropDelegate {
+    
+    
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -33,13 +35,14 @@ class GrowMyCropViewController: UIViewController, DatabaseListener {
         
         myCropList = [Crop]()
         // Do any additional setup after loading the view.
+        tableView.tableFooterView = UIView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         myCropList = []
-//        onUserCropRelationChange(change: .update, userCropRelation: databaseController!.userCropRelation)
+        //        onUserCropRelationChange(change: .update, userCropRelation: databaseController!.userCropRelation)
         databaseController?.addListener(listener: self)
     }
     
@@ -55,7 +58,7 @@ class GrowMyCropViewController: UIViewController, DatabaseListener {
     func onCropsChange(change: DatabaseChange, crops: [Crop]) {
         
     }
-
+    
     
     func onUserCropRelationChange(change: DatabaseChange, userCropRelation: [UserCropRelation]) {
         let currentUserId = userDefaultController?.retrieveUserId()
@@ -91,6 +94,11 @@ class GrowMyCropViewController: UIViewController, DatabaseListener {
         
     }
     
+    //MARK: - MyCustomCellDelegator Methods
+    func callSegueFromCell(crop: Crop) {
+        self.performSegue(withIdentifier: "growSpecificCropSegue", sender: self)
+    }
+    
 }
 
 extension GrowMyCropViewController: UITableViewDelegate, UITableViewDataSource {
@@ -107,8 +115,12 @@ extension GrowMyCropViewController: UITableViewDelegate, UITableViewDataSource {
         
         if indexPath.section == SECTION_ACTIVITY {
             let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ACTIVITY, for: indexPath) as! GrowMyCropTableViewCell
-            //                cell.textLabel?.text = allCropsName[indexPath.row].cropName
+            
+            //MARK:- Set delegate for the cell
+            cell.delegate = self
+            
             cell.setCell(crop: myCropList[indexPath.row])
+            
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: CELL_COUNT, for: indexPath)
@@ -122,8 +134,8 @@ extension GrowMyCropViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == SECTION_ACTIVITY{
             selectedRow = indexPath.row
-            tableView.deselectRow(at: indexPath, animated: true)
-            self.performSegue(withIdentifier: "specificCropSegue", sender: self)
+//            tableView.deselectRow(at: indexPath, animated: true)
+//            self.performSegue(withIdentifier: "specificCropSegue", sender: self)
         }
     }
     
