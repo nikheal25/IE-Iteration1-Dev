@@ -10,19 +10,19 @@ import Foundation
 
 class DiseaseOfCrops:NSObject
 {
-   
+
     var crop:String
     var name:String
     
     var descriptionOfSymptom: String
+
     
-    init( name:String, crop:String,descriptionOfSymptom:String) {
-       
-        self.name = name
-    
-        self.crop = crop
-        self.descriptionOfSymptom = descriptionOfSymptom
-        
-    }
-    
+     init( name:String, crop:String,descriptionOfSymptom:String) {
+           self.name = name
+
+           self.crop = crop
+            self.descriptionOfSymptom = descriptionOfSymptom
+
+
+       }
 }

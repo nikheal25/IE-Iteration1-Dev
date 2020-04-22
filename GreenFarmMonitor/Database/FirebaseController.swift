@@ -357,11 +357,13 @@ class FirebaseController: NSObject, DatabaseProtocol {
                 let crop = change.document.data()["Crop"] as! String
                 let name = change.document.data()["CommonDisease"] as! String
                 let descriptionOfSymptom = change.document.data()["Description"] as! String
-                
+
+//                let image = change.document.data ()["Image"]as! String
 //                print(documentRef)
                 if change.type == .added {
 //                    print("New disease: \(change.document.data())")
-                let newDisease = DiseaseOfCrops( name: name,  crop: crop, descriptionOfSymptom: descriptionOfSymptom)
+                let newDisease = DiseaseOfCrops( name: name, crop: crop, descriptionOfSymptom: descriptionOfSymptom)
+
 //                    newDisease.crop = crop
 //                    newDisease.name = name
 //                    newDisease.image = image
@@ -372,12 +374,25 @@ class FirebaseController: NSObject, DatabaseProtocol {
                    if change.type == .modified {
 //                       print("Updated data: \(change.document.data())")
                       
+
+                  
                     
+                   
+
+//                    let index = getDiseaseIndexByID(reference: documentRef)!
+//                    diseaseList[index].crop = crop
+//                    diseaseList[index].name = name
+//
+//                    diseaseList[index].descriptionOfSymptom = descriptionOfSymptom
+//                    diseaseList[index].id = documentRef
                    }
                   if change.type == .removed {
 //                    print("Removed data: \(change.document.data())")
-                    
-                   
+//
+//                    if let index = getDiseaseIndexByID(reference: documentRef) {
+//                          diseaseList.remove(at: index)
+//                     }
+
                  }
                }
               listeners.invoke { (listener) in
@@ -386,7 +401,19 @@ class FirebaseController: NSObject, DatabaseProtocol {
                   }
                }
         }
+
    
+
+//    func getDiseaseIndexByID(reference: String)-> Int? {
+//        for data in diseaseList{
+//           if (data.id == reference){
+//                return diseaseList.firstIndex(of: data)
+//            }
+//
+//        }
+//        return nil
+//    }
+
     
     //update the location of farm
     func updateLocation(userId:String, lat:String, locationName:String, long:String)
