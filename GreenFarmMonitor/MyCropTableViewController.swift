@@ -229,11 +229,11 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
 
     //This method gets called when any cell is selected by the user
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-          if indexPath.section == SECTION_ACTIVITY{
-              selectedRow = indexPath.row
-              tableView.deselectRow(at: indexPath, animated: true)
-              self.performSegue(withIdentifier: "foldingSegue", sender: self)
-          }
+//          if indexPath.section == SECTION_ACTIVITY{
+//              selectedRow = indexPath.row
+//              tableView.deselectRow(at: indexPath, animated: true)
+//              self.performSegue(withIdentifier: "foldingSegue", sender: self)
+//          }
       }
   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
