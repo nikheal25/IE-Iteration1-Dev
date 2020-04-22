@@ -17,6 +17,7 @@ class MyCropCellTableViewCell: UITableViewCell {
     func setCell(crop: Crop) {
 //        cropImageView = image
         cropTitleLable.text = crop.cropName
+        cropImageView.image = UIImage(named: crop.cropImage)
             //// MARK:- color behind cell
         self.contentView.backgroundColor = UIColor(hexString: "#B5D4BE")
         self.cellView.layer.cornerRadius = 8
