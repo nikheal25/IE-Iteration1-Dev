@@ -57,8 +57,8 @@ class OnboardingViewController: UIViewController, PaperOnboardingDataSource {
 
                return [
                 OnboardingItemInfo(informationImage: UIImage(named: "Wallet")!,
-                                               title: "Ideal condition for a crop",
-                                         description: "Find out the ideal conditions for your crop",
+                                               title: "Crop Ideal Conditions",
+                                         description: "Know the ideal conditions and requirements for your crop",
                                          pageIcon: UIImage(named: "Wallet")!,
                                          color: UIColor(hexString: "#588B8B"),
                                           titleColor: UIColor.white,
@@ -67,8 +67,8 @@ class OnboardingViewController: UIViewController, PaperOnboardingDataSource {
                                     descriptionFont: descriptionFont),
 
                 OnboardingItemInfo(informationImage: UIImage(named: "Shopping-cart")!,
-                           title: "Crop disease Detection",
-                     description: "Know more about diseases that may affect your crop",
+                           title: "Crop Disease Identification",
+                     description: "Know the common diseases and infections that might affect your crops",
                      pageIcon: UIImage(named: "Shopping-cart")!,
                            color: UIColor(hexString: "#E85D75"),   // #E85D75 - 3.5
                       titleColor: UIColor.white,
@@ -76,22 +76,22 @@ class OnboardingViewController: UIViewController, PaperOnboardingDataSource {
                        titleFont: titleFont,
                        descriptionFont: descriptionFont),
                 
-                OnboardingItemInfo(informationImage: UIImage(named: "Stores")!,
-                           title: "Buy Organic",
-                     description: "Get suggestions regarding the best Organic products in market",
-                     pageIcon: UIImage(named: "Stores")!,
-                           color: UIColor(hexString: "#D4E09B"),
-                      titleColor: UIColor.white,
-                descriptionColor: UIColor.white,
-                       titleFont: titleFont,
-                       descriptionFont: descriptionFont)
+//                OnboardingItemInfo(informationImage: UIImage(named: "Stores")!,
+//                           title: "Buy Organic",
+//                     description: "Get suggestions regarding the best Organic products in market",
+//                     pageIcon: UIImage(named: "Stores")!,
+//                           color: UIColor(hexString: "#D4E09B"),
+//                      titleColor: UIColor.white,
+//                descriptionColor: UIColor.white,
+//                       titleFont: titleFont,
+//                       descriptionFont: descriptionFont)
 
                 ][index]
              }
 
 
              func onboardingItemsCount() -> Int {
-                return 3
+                return 2
               }
 
         }

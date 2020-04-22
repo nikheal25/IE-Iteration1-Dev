@@ -82,6 +82,10 @@ class AddNewCropViewController: UIViewController, DatabaseListener{
             destination.specificCrop = allCropsName[selectedRow]
             destination.newCrop = true
         }
+        if segue.identifier == "specificCropSegue" {
+                   let destination = segue.destination as! DetailNewCropViewController
+                   destination.specificCrop = allCropsName[selectedRow]
+               }
     }
 
 }
@@ -137,7 +141,7 @@ cell.textLabel?.text = "\(allCropsName.count) total crops in the list"
           if indexPath.section == SECTION_ACTIVITY{
               selectedRow = indexPath.row
               tableView.deselectRow(at: indexPath, animated: true)
-              self.performSegue(withIdentifier: "addThatCropSegue", sender: self)
+              self.performSegue(withIdentifier: "specificCropSegue", sender: self)
           }
       }
     
