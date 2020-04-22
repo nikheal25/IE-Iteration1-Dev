@@ -1989,7 +1989,7 @@
                                                         <rect key="frame" x="20" y="72" width="333" height="55"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="agriculture-1" translatesAutoresizingMaskIntoConstraints="NO" id="PP7-La-RmN">
-                                                                <rect key="frame" x="0.0" y="0.0" width="55.000000000000028" height="55.000000000000028"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="55" id="FAp-pY-IaN"/>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="55" id="Whj-rJ-QlN"/>
