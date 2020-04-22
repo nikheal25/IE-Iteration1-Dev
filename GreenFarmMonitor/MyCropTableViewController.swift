@@ -136,12 +136,12 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
 //            return "Currently you have NO crops in your list Add Crops to continue"
             return ""
         }else{
-            return "\(myCropList.count ) crops in list."
+            return "\(myCropList.count ) crops in list"
         }
         }
        // return "Add new Crops"
         if myCropList.count == 0 {
-            return "Currently you have NO crops in your list Add Crops to continue."
+            return "Currently you have NO crops in your list Add Crops to continue"
         }
         return ""
 

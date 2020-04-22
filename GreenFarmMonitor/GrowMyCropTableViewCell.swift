@@ -26,12 +26,15 @@ class GrowMyCropTableViewCell: UITableViewCell {
         //        cropImageView = image
         cropTitleLable.text = crop.cropName
         //// MARK:- color behind cell
-        self.contentView.backgroundColor = UIColor(hexString: "#B5D4BE")
+        self.contentView.backgroundColor = UIColor(hexString: "#FAEDCA")
         self.cellView.layer.cornerRadius = 5
         self.cellView.layer.shadowOpacity = 0.4
-        self.cellView.layer.shadowRadius = 1
+        self.cellView.layer.shadowRadius = 2
         
         self.growCropButton.layer.cornerRadius = 3
+        self.growCropButton.layer.borderWidth = 1
+        self.growCropButton.layer.borderColor = UIColor.black.cgColor
+        
         //        self.cellView.layer.masksToBounds = true
         //        self.cellView.layer.shadowColor = UIColor(named: "Orange")?.cgColor
         //         self.cropImageView.layer.shadowOffset = CGSize(width: 3, height: 3)

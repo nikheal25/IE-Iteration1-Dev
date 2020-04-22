@@ -19,7 +19,8 @@ class GrowMyCropViewController: UIViewController, DatabaseListener, GrowCropDele
     let CELL_COUNT = "CellCounter"
     let CELL_ACTIVITY = "Crop"
     var selectedRow = 0
-   
+    @IBOutlet weak var headerLabel: UILabel!
+    
     
     var myCropList: [Crop] = []
     
@@ -29,6 +30,9 @@ class GrowMyCropViewController: UIViewController, DatabaseListener, GrowCropDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.headerLabel.adjustsFontSizeToFitWidth = true
+        self.headerLabel.minimumScaleFactor = 0.5
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         userDefaultController = appDelegate.userDefaultController
@@ -76,8 +80,14 @@ class GrowMyCropViewController: UIViewController, DatabaseListener, GrowCropDele
                     self.myCropList.append(crop!)
                 }
                 
+                
                 tableView.reloadData()
             }
+        }
+        if myCropList.count == 0 {
+            headerLabel.text = "Currently you have 0 crops in your list"
+        }else{
+            headerLabel.text = "CHOOSE THE CROP YOU WANT TO GROW"
         }
     }
     
@@ -152,5 +162,13 @@ extension GrowMyCropViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//
+//        // return "Add new Crops"
+//        if myCropList.count == 0 {
+//            return "Currently you have 0 crops in your list. ."
+//        }
+//        return ""
+//
+//    }
 }

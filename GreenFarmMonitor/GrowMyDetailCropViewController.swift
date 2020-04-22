@@ -74,7 +74,7 @@ class GrowMyDetailCropViewController: UIViewController {
         setImageView()
         setInfoView()
         
-        mainView.backgroundColor = UIColor(hexString: "#020122")
+        mainView.backgroundColor = UIColor(hexString: "#3F6845")
         // Do any additional setup after loading the view.
     }
     
