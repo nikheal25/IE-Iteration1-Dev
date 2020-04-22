@@ -20,9 +20,9 @@ class DiseaseTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    @IBOutlet weak var DiseaseImage: UIImageView!
+   
+    @IBOutlet weak var diseaseImage: UIImageView!
     
-    @IBOutlet weak var DiseaseName: UILabel!
-    
+    @IBOutlet weak var diseaseNameLabel: UILabel!
     
 }

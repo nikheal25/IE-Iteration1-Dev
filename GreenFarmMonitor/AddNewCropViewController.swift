@@ -11,7 +11,7 @@ import UIKit
 class AddNewCropViewController: UIViewController, DatabaseListener{
     func onUserChange(change: DatabaseChange, users: [User]) {
         
-    }
+    }		
     
    
     func onDiseaseOfCropsChange(change: DatabaseChange, diseaseOfCrops: [DiseaseOfCrops]) {
