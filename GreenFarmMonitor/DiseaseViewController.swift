@@ -64,7 +64,7 @@ class DiseaseViewController: UIViewController,UITableViewDataSource, UITableView
 
         diseaseCell.DiseaseName.text = disease.name
 
-        diseaseCell.DiseaseImage.image = UIImage(named:disease.image)
+        diseaseCell.DiseaseImage.image = UIImage(named:disease.name)
         return diseaseCell
     }
     var shownDisease: [DiseaseOfCrops] = []
@@ -190,7 +190,7 @@ class DiseaseViewController: UIViewController,UITableViewDataSource, UITableView
         { let indexPath = self.DiseaseTable.indexPathForSelectedRow
             selectDisease = shownDisease[indexPath!.row].name
             diseaseDescription = shownDisease[indexPath!.row].descriptionOfSymptom
-            diseaseImage = shownDisease[indexPath!.row].image
+            diseaseImage = shownDisease[indexPath!.row].name
             let destination = segue.destination as! DetailOfDiseaseViewController
             destination.name = selectDisease
             destination.image = diseaseImage
