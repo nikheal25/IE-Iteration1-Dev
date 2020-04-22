@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1D124287244FF4D2001C6BAD /* GrowMyCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D124286244FF4D2001C6BAD /* GrowMyCropViewController.swift */; };
 		1D124289245002B9001C6BAD /* GrowMyCropTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D124288245002B9001C6BAD /* GrowMyCropTableViewCell.swift */; };
+		1D12428B245068B9001C6BAD /* GrowMyDetailCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D12428A245068B9001C6BAD /* GrowMyDetailCropViewController.swift */; };
 		1D19C544244C082C00989079 /* DemoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D19C543244C082C00989079 /* DemoTableViewCell.swift */; };
 		1D2FCB7624457FF10024FFBB /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 1D2FCB7524457FF10024FFBB /* Fonts */; };
 		1D2FCB832445A17F0024FFBB /* DatabaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2FCB822445A17F0024FFBB /* DatabaseProtocol.swift */; };
@@ -74,6 +75,7 @@
 /* Begin PBXFileReference section */
 		1D124286244FF4D2001C6BAD /* GrowMyCropViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowMyCropViewController.swift; sourceTree = "<group>"; };
 		1D124288245002B9001C6BAD /* GrowMyCropTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowMyCropTableViewCell.swift; sourceTree = "<group>"; };
+		1D12428A245068B9001C6BAD /* GrowMyDetailCropViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowMyDetailCropViewController.swift; sourceTree = "<group>"; };
 		1D19C543244C082C00989079 /* DemoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTableViewCell.swift; sourceTree = "<group>"; };
 		1D2FCB7524457FF10024FFBB /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		1D2FCB822445A17F0024FFBB /* DatabaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseProtocol.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				1D9EED32243C3A7D00EE97D2 /* ViewController.swift */,
 				1D19C543244C082C00989079 /* DemoTableViewCell.swift */,
 				1D9EED34243C3A7D00EE97D2 /* Main.storyboard */,
+				1D12428A245068B9001C6BAD /* GrowMyDetailCropViewController.swift */,
 				1D124288245002B9001C6BAD /* GrowMyCropTableViewCell.swift */,
 				1D124286244FF4D2001C6BAD /* GrowMyCropViewController.swift */,
 				1D94FF05244AC82700CB2F25 /* FoldingTableViewController.swift */,
@@ -545,6 +548,7 @@
 				E8FDFCAB2447133F00143844 /* LocationAnnotation .swift in Sources */,
 				1D9EED33243C3A7D00EE97D2 /* ViewController.swift in Sources */,
 				1DDEE7E5244443CD005BC7D8 /* AddNewCropViewController.swift in Sources */,
+				1D12428B245068B9001C6BAD /* GrowMyDetailCropViewController.swift in Sources */,
 				1D4743DB2447ECA100866CEB /* DetailOfTheCropViewController.swift in Sources */,
 				1DDEE7ED24448112005BC7D8 /* FirstViewController.swift in Sources */,
 				1DDEE7E724445EEC005BC7D8 /* DetailNewCropViewController.swift in Sources */,
@@ -568,10 +572,7 @@
 				E8DF843D245000CA0032CFAB /* SelectCropForDiseaseViewController.swift in Sources */,
 				E8FDFCA924470CED00143844 /* ChangeUserLocationViewController.swift in Sources */,
 				1D2FCB852445A2EF0024FFBB /* MulticastDelegate.swift in Sources */,
-
-				E883C94224443BEB006F6AC8 /* DiseaseViewController.swift in Sources */,
 				1D124289245002B9001C6BAD /* GrowMyCropTableViewCell.swift in Sources */,
-
 				1D2FCB832445A17F0024FFBB /* DatabaseProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

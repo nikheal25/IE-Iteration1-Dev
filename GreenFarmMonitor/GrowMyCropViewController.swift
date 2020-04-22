@@ -19,6 +19,7 @@ class GrowMyCropViewController: UIViewController, DatabaseListener, GrowCropDele
     let CELL_COUNT = "CellCounter"
     let CELL_ACTIVITY = "Crop"
     var selectedRow = 0
+   
     
     var myCropList: [Crop] = []
     
@@ -96,7 +97,19 @@ class GrowMyCropViewController: UIViewController, DatabaseListener, GrowCropDele
     
     //MARK: - MyCustomCellDelegator Methods
     func callSegueFromCell(crop: Crop) {
-        self.performSegue(withIdentifier: "growSpecificCropSegue", sender: self)
+//        self.performSegue(withIdentifier: "growSpecificCropSegue", sender: self)
+        passingVal = crop
+        self.performSegue(withIdentifier: "newGrowDetailCropSegue", sender: self)
+        
+    }
+    
+     var passingVal: Crop?
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+          if segue.identifier == "newGrowDetailCropSegue" {
+              let destination = segue.destination as! GrowMyDetailCropViewController
+              destination.specificCrop = passingVal
+          }
     }
     
 }
