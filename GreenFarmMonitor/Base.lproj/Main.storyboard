@@ -1054,7 +1054,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Ubg-Jz-Cyg">
             <objects>
-                <tabBarController id="5b7-kb-K7H" sceneMemberID="viewController">
+                <tabBarController hidesBottomBarWhenPushed="YES" id="5b7-kb-K7H" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="fzg-Eh-Dbq"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bjx-aN-He7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -1063,8 +1063,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="NUq-PZ-WBC" kind="relationship" relationship="viewControllers" id="3qC-7n-141"/>
-                        <segue destination="Pk9-Zt-63V" kind="relationship" relationship="viewControllers" id="WSW-0D-tXv"/>
                         <segue destination="sgY-Yw-PWc" kind="relationship" relationship="viewControllers" id="nLI-gw-bXY"/>
+                        <segue destination="Pk9-Zt-63V" kind="relationship" relationship="viewControllers" id="WSW-0D-tXv"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0S1-i3-ZNc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1893,7 +1893,7 @@
         <scene sceneID="brH-b0-cI1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sgY-Yw-PWc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Grow Crops" selectedImage="GROWMY" id="iI6-UZ-Us3"/>
+                    <tabBarItem key="tabBarItem" title="Grow Crops" image="GROWMY" selectedImage="GROWMY" id="iI6-UZ-Us3"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="9MU-u6-o2c"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jpv-zl-IUn">

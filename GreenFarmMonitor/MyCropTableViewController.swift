@@ -84,7 +84,7 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
 
         override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
-        
+        self.navigationItem.hidesBackButton = true
 //            self.navigationController!.navigationBar.barStyle = .black
             self.navigationController!.navigationBar.isTranslucent = true
 //            self.navigationController!.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
