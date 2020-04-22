@@ -42,15 +42,7 @@ class DiseaseListViewController: UIViewController,UITableViewDataSource, UITable
     func onUserChange(change: DatabaseChange, users: [User]) {
        
     }
-//    override func viewWillAppear(_ animated: Bool) {
-//           super.viewWillAppear(animated)
-//           databaseController?.addListener(listener:self)
-//       }
-//       override func viewWillDisappear(_ animated: Bool) {
-//           super.viewWillDisappear(animated)
-//          databaseController?.removeListener(listener:self)
-//       }
-//    
+
     var crop:String = ""
     var shownDiseases:[DiseaseOfCrops] = []
      weak var databaseController: DatabaseProtocol?
@@ -66,13 +58,13 @@ class DiseaseListViewController: UIViewController,UITableViewDataSource, UITable
         let DiseasesList = databaseController!.diseaseList
                for disease in DiseasesList
                {
-                    if disease.crop.uppercased() == crop
+                if disease.crop.uppercased() == crop.uppercased()
 
                     {
                         shownDiseases.append(disease)
                     }
                 }
-                
+                print(DiseasesList)
         //      shownDiseases = diseaseOfCrops
             diseaseTable.reloadData()
         
