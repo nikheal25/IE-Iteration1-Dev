@@ -24,7 +24,7 @@
         <!--Disease-->
         <scene sceneID="7nH-Ot-lEG">
             <objects>
-                <viewController title="Disease" id="Ex3-ue-bil" customClass="DiseaseViewController" customModule="Green_Farm_Monitor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Disease" id="Ex3-ue-bil" customClass="DiseaseViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7DT-qD-EWy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -43,7 +43,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="604"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CropCell" rowHeight="53" id="aoT-UJ-9Dn" customClass="MyCropsTableViewCell" customModule="Green_Farm_Monitor" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CropCell" rowHeight="53" id="aoT-UJ-9Dn" customClass="MyCropsTableViewCell" customModule="Organic_Together" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aoT-UJ-9Dn" id="vW9-Lk-34b">
@@ -70,7 +70,7 @@
                                             <outlet property="CropsName" destination="weX-n0-V55" id="eOE-g9-SYj"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DiseaseCell" rowHeight="53" id="rBb-Sk-gl0" customClass="DiseaseTableViewCell" customModule="Green_Farm_Monitor" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DiseaseCell" rowHeight="53" id="rBb-Sk-gl0" customClass="DiseaseTableViewCell" customModule="Organic_Together" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="81" width="414" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rBb-Sk-gl0" id="o6f-LB-goT">
@@ -161,7 +161,7 @@
         <!--Change Your Location-->
         <scene sceneID="L7m-X9-nAY">
             <objects>
-                <viewController id="xHO-5A-7f3" customClass="ChangeUserLocationViewController" customModule="Green_Farm_Monitor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xHO-5A-7f3" customClass="ChangeUserLocationViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RwT-CM-8js">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -201,7 +201,7 @@
         <!--FirstViewController-->
         <scene sceneID="O9v-aC-QGO">
             <objects>
-                <viewController storyboardIdentifier="FirstViewController" title="FirstViewController" id="0vi-oQ-bUa" customClass="FirstViewController" customModule="Green_Farm_Monitor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstViewController" title="FirstViewController" id="0vi-oQ-bUa" customClass="FirstViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tuh-dh-FYm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -249,7 +249,7 @@
         <!--Onboarding View Controller-->
         <scene sceneID="qyw-UC-HKT">
             <objects>
-                <viewController id="DVU-ys-H6N" customClass="OnboardingViewController" customModule="Green_Farm_Monitor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="DVU-ys-H6N" customClass="OnboardingViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PJh-IC-C6a">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -284,7 +284,7 @@
         <!--Login Screen-->
         <scene sceneID="70X-aW-u6T">
             <objects>
-                <viewController id="d3q-yA-hpY" customClass="LoginViewController" customModule="Green_Farm_Monitor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="d3q-yA-hpY" customClass="LoginViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fTH-wh-QsD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -322,13 +322,13 @@
         <!--My Crops-->
         <scene sceneID="dUw-OU-e2l">
             <objects>
-                <tableViewController id="DHY-iT-N33" customClass="MyCropTableViewController" customModule="Green_Farm_Monitor" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="DHY-iT-N33" customClass="MyCropTableViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="200" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="o06-TL-ZHm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCropCell" id="6gT-vv-8rZ" customClass="MyCropMainTableViewCell" customModule="Green_Farm_Monitor" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCropCell" id="6gT-vv-8rZ" customClass="MyCropMainTableViewCell" customModule="Organic_Together" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="55.5" width="414" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6gT-vv-8rZ" id="o7f-wn-9k7">
@@ -412,7 +412,7 @@
         <!--All Crops-->
         <scene sceneID="pJj-C0-a7B">
             <objects>
-                <viewController id="RFN-Gy-5fg" customClass="AddNewCropViewController" customModule="Green_Farm_Monitor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="RFN-Gy-5fg" customClass="AddNewCropViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Ow-Oe-x9R">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -429,7 +429,7 @@
                                 <rect key="frame" x="0.0" y="144" width="414" height="752"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Crop" id="ykX-ET-JuK" customClass="MyCropCellTableViewCell" customModule="Green_Farm_Monitor" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Crop" id="ykX-ET-JuK" customClass="MyCropCellTableViewCell" customModule="Organic_Together" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ykX-ET-JuK" id="ToY-UQ-TRk">
@@ -519,7 +519,7 @@
         <!--Detail Of The Crop View Controller-->
         <scene sceneID="mNU-Ir-YEq">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="yiQ-Q6-hV5" customClass="DetailOfTheCropViewController" customModule="Green_Farm_Monitor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="yiQ-Q6-hV5" customClass="DetailOfTheCropViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ePo-PE-W8y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -799,7 +799,7 @@
         <!--Detail New Crop View Controller-->
         <scene sceneID="Sb3-rU-tnB">
             <objects>
-                <viewController id="RG7-Oh-y8c" customClass="DetailNewCropViewController" customModule="Green_Farm_Monitor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="RG7-Oh-y8c" customClass="DetailNewCropViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9gY-m0-TOh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1033,7 +1033,7 @@
         <!--Symptoms-->
         <scene sceneID="u4d-JT-VYk">
             <objects>
-                <viewController id="2Kg-aO-PYg" customClass="SymptomsViewController" customModule="Green_Farm_Monitor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2Kg-aO-PYg" customClass="SymptomsViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pa3-Be-0pY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1049,7 +1049,7 @@
         <!--Details-->
         <scene sceneID="9bH-5N-hdR">
             <objects>
-                <viewController id="CM5-eV-gRe" customClass="DetailOfDiseaseViewController" customModule="Green_Farm_Monitor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="CM5-eV-gRe" customClass="DetailOfDiseaseViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N78-xj-Pb4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1138,14 +1138,14 @@
         <!--Folding Table View Controller-->
         <scene sceneID="5RK-j0-OTk">
             <objects>
-                <tableViewController storyboardIdentifier="MainTableViewController" id="auZ-DV-ex4" customClass="FoldingTableViewController" customModule="Green_Farm_Monitor" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MainTableViewController" id="auZ-DV-ex4" customClass="FoldingTableViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="667" sectionHeaderHeight="28" sectionFooterHeight="28" id="pF8-XU-PNN">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="708"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FoldingCell" rowHeight="667" id="gXt-61-trc" customClass="DemoTableViewCell" customModule="Green_Farm_Monitor" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FoldingCell" rowHeight="667" id="gXt-61-trc" customClass="DemoTableViewCell" customModule="Organic_Together" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="667"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gXt-61-trc" id="3IL-LK-O1a">
@@ -1165,13 +1165,13 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TODAY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkS-yp-RXY">
-                                                            <rect key="frame" x="18" y="101" width="32" height="14"/>
+                                                            <rect key="frame" x="18" y="103" width="33" height="12"/>
                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06:30 PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYO-fs-6Cs">
-                                                            <rect key="frame" x="18" y="119" width="56" height="18"/>
+                                                            <rect key="frame" x="18" y="121.5" width="56" height="15.5"/>
                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="13"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="0.80434438340000003" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -1205,13 +1205,13 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="W 85th St, New York, 10024 " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="mP7-TK-Hpj" userLabel="W 85th St, New York, 10024">
-                                                    <rect key="frame" x="368" y="28" width="182" height="19.5"/>
+                                                    <rect key="frame" x="370" y="28" width="180" height="16.5"/>
                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                                     <color key="textColor" red="0.20000000000000001" green="0.23921568630000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E 30th St, New York, 10016" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="UJM-Nv-QQs" userLabel="W 85th St, New York, 10024">
-                                                    <rect key="frame" x="377" y="57" width="173" height="19.5"/>
+                                                    <rect key="frame" x="378" y="57" width="172" height="16.5"/>
                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                                     <color key="textColor" red="0.20000000000000001" green="0.23921568630000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1220,7 +1220,7 @@
                                                     <rect key="frame" x="410" y="100" width="150" height="40"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WEIGHT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGC-Js-m0m">
-                                                            <rect key="frame" x="0.0" y="0.0" width="38" height="14"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="39" height="12"/>
                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
                                                             <color key="textColor" red="0.20000000000000001" green="0.23921568630000001" blue="0.26274509800000001" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -1246,7 +1246,7 @@
                                                     <rect key="frame" x="259" y="100" width="150" height="40"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLEDGE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wnF-41-nbH">
-                                                            <rect key="frame" x="0.0" y="0.0" width="37" height="14"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="39" height="12"/>
                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
                                                             <color key="textColor" red="0.20000000000000001" green="0.23921568630000001" blue="0.26274509800000001" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -1272,7 +1272,7 @@
                                                     <rect key="frame" x="108" y="100" width="150" height="40"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REQUESTS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGy-lK-pk0">
-                                                            <rect key="frame" x="0.0" y="0.0" width="49" height="14"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="53" height="12"/>
                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
                                                             <color key="textColor" red="0.20000000000000001" green="0.23921568630000001" blue="0.26274509800000001" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -1380,7 +1380,7 @@
                                                             <rect key="frame" x="10" y="117" width="179.5" height="40"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REQUESTS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJl-48-88h">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="49" height="14"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="53" height="12"/>
                                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
                                                                     <color key="textColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -1407,7 +1407,7 @@
                                                             <rect key="frame" x="190.5" y="117" width="179" height="40"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLEDGE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCa-uf-wFE">
-                                                                    <rect key="frame" x="71" y="0.0" width="37" height="14"/>
+                                                                    <rect key="frame" x="70" y="0.0" width="39" height="12"/>
                                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
                                                                     <color key="textColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -1431,7 +1431,7 @@
                                                             <rect key="frame" x="370.5" y="117" width="179.5" height="40"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WEIGHT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glH-D0-YUW">
-                                                                    <rect key="frame" x="141.5" y="0.0" width="38" height="14"/>
+                                                                    <rect key="frame" x="140.5" y="0.0" width="39" height="12"/>
                                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
                                                                     <color key="textColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -1481,7 +1481,7 @@
                                                     <rect key="frame" x="0.0" y="165" width="560" height="165"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SENDER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUu-oc-R1p">
-                                                            <rect key="frame" x="22" y="9" width="38" height="14"/>
+                                                            <rect key="frame" x="22" y="11" width="40" height="12"/>
                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
                                                             <color key="textColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="0.49546030410000003" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -1516,19 +1516,19 @@
                                                             <rect key="frame" x="22" y="92" width="257.5" height="73"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FROM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9J6-Pr-8K7">
-                                                                    <rect key="frame" x="0.0" y="8" width="247.5" height="14"/>
+                                                                    <rect key="frame" x="0.0" y="8" width="247.5" height="12"/>
                                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
                                                                     <color key="textColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="0.49546030410000003" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="W 90th St" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYF-fQ-AKz">
-                                                                    <rect key="frame" x="0.0" y="26" width="247.5" height="17.5"/>
+                                                                    <rect key="frame" x="0.0" y="24" width="247.5" height="17.5"/>
                                                                     <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="15"/>
                                                                     <color key="textColor" red="0.20392156859999999" green="0.23921568630000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New York, NY 10025" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xbo-c6-Zdd">
-                                                                    <rect key="frame" x="0.0" y="43.5" width="247.5" height="16.5"/>
+                                                                    <rect key="frame" x="0.0" y="41.5" width="247.5" height="14"/>
                                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="12"/>
                                                                     <color key="textColor" red="0.20392156859999999" green="0.23921568630000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -1551,19 +1551,19 @@
                                                             <rect key="frame" x="280.5" y="92" width="257.5" height="73"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbv-Kb-3IW">
-                                                                    <rect key="frame" x="0.0" y="8" width="257.5" height="14"/>
+                                                                    <rect key="frame" x="0.0" y="8" width="257.5" height="12"/>
                                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
                                                                     <color key="textColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="0.49546030410000003" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="46th Ave" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KQV-bq-wdU">
-                                                                    <rect key="frame" x="0.0" y="26" width="257.5" height="17.5"/>
+                                                                    <rect key="frame" x="0.0" y="24" width="257.5" height="17.5"/>
                                                                     <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="15"/>
                                                                     <color key="textColor" red="0.20392156859999999" green="0.23921568630000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Woodside, NY 11101" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fgh-Dn-he9">
-                                                                    <rect key="frame" x="0.0" y="43.5" width="257.5" height="16.5"/>
+                                                                    <rect key="frame" x="0.0" y="41.5" width="257.5" height="14"/>
                                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="12"/>
                                                                     <color key="textColor" red="0.20392156859999999" green="0.23921568630000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -1628,19 +1628,19 @@
                                                             <rect key="frame" x="22" y="0.0" width="256.5" height="73"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DELIVERY DATE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dib-Q9-6lv">
-                                                                    <rect key="frame" x="0.0" y="8" width="246.5" height="14"/>
+                                                                    <rect key="frame" x="0.0" y="8" width="246.5" height="12"/>
                                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
                                                                     <color key="textColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="0.49546030410000003" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06:30 pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2n-xq-iCZ">
-                                                                    <rect key="frame" x="0.0" y="26" width="246.5" height="17.5"/>
+                                                                    <rect key="frame" x="0.0" y="24" width="246.5" height="17.5"/>
                                                                     <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="15"/>
                                                                     <color key="textColor" red="0.20392156859999999" green="0.23921568630000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="May 16, 2015" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KyA-0K-fXk">
-                                                                    <rect key="frame" x="0.0" y="43.5" width="246.5" height="16.5"/>
+                                                                    <rect key="frame" x="0.0" y="41.5" width="246.5" height="14"/>
                                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="12"/>
                                                                     <color key="textColor" red="0.20392156859999999" green="0.23921568630000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -1663,13 +1663,13 @@
                                                             <rect key="frame" x="281.5" y="0.0" width="256.5" height="73"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REQUEST DEADLINE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Yy-0m-PtG">
-                                                                    <rect key="frame" x="0.0" y="8" width="256.5" height="14"/>
+                                                                    <rect key="frame" x="0.0" y="8" width="256.5" height="12"/>
                                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
                                                                     <color key="textColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="0.49546030410000003" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24 minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Qt-s3-Roc">
-                                                                    <rect key="frame" x="0.0" y="26" width="256.5" height="17.5"/>
+                                                                    <rect key="frame" x="0.0" y="24" width="256.5" height="17.5"/>
                                                                     <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="15"/>
                                                                     <color key="textColor" red="0.20392156859999999" green="0.23921568630000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -1828,6 +1828,6 @@
         <image name="temp" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0BZ-rP-Cky"/>
+        <segue reference="gb7-L6-GNo"/>
     </inferredMetricsTieBreakers>
 </document>

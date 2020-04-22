@@ -74,7 +74,7 @@ class DiseaseViewController: UIViewController,UITableViewDataSource, UITableView
         {
             shownDisease = [DiseaseOfCrops]()
         for disease in currentDiseases{
-                if disease.crop == currentCrops[indexPath.row].cropName
+            if disease.crop == currentCrops[indexPath.row].cropName
                 {
                     shownDisease.append(disease)
 //                    print(disease)
