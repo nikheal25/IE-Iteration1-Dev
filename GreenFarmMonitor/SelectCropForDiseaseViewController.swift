@@ -9,6 +9,7 @@
 import UIKit
 
 class SelectCropForDiseaseViewController: UIViewController , UITableViewDataSource,UISearchBarDelegate, UITableViewDelegate,DatabaseListener{
+
     func onUserCropRelationChange(change: DatabaseChange, userCropRelation: [UserCropRelation]) {
         
     }
@@ -71,41 +72,52 @@ class SelectCropForDiseaseViewController: UIViewController , UITableViewDataSour
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    
-        return currentCrops.count
+        if !searching {
+            return currentCrops.count}
+        else{
+            return filterCrops.count
+        }
     }
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    //if searching
-   //{
+    if !searching
+   {
     let cropsCell = tableView.dequeueReusableCell(withIdentifier: "Crop",for: indexPath) as! FoundDiseaseCropsTableViewCell
     let crop = currentCrops[indexPath.row]
     cropsCell.cropImage.image = UIImage(named:crop.cropImage)
     cropsCell.cropNameLabel.text = crop.cropName
         return cropsCell
-//    }
+    }
     
-//    else{
-//        let searchCell = tableView.dequeueReusableCell(withIdentifier: "Crop",for: indexPath) as! FoundDiseaseCropsTableViewCell
-//        let crop = tempCrops[indexPath.row]
-//        searchCell.cropImage.image = UIImage(named:crop.cropImage)
-//        searchCell.cropNameLabel.text = crop.cropName
-//        return searchCell
-//    }
+    else{
+        let searchCell = tableView.dequeueReusableCell(withIdentifier: "Crop",for: indexPath) as! FoundDiseaseCropsTableViewCell
+        let crop = filterCrops[indexPath.row]
+        searchCell.cropImage.image = UIImage(named:crop.cropImage)
+        searchCell.cropNameLabel.text = crop.cropName
+        return searchCell
+    }
     }
     var tempCrops:[Crop] = []
-   
-    func filterCells(term:String) -> [Crop]
+    var filterCrops: [Crop] = []
+    func updateSearchResults() -> [Crop]
     {
-        for crop in currentCrops {
-       if crop.cropName.lowercased().prefix(term.count) == term.lowercased() {
-                tempCrops.append(crop)
-            }
+//        for crop in currentCrops {
+//       if crop.cropName.lowercased().prefix(term.count) == term.lowercased() {
+//                tempCrops.append(crop)
+//            }
+//        }
+        if let searchText = searchBar.text?.lowercased(),searchText.count > 0
+        {
+            tempCrops = currentCrops.filter({(crop:Crop) -> Bool in
+                return crop.cropName.lowercased().contains(searchText)
+            })
         }
         return tempCrops
     }
       func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
     //        searchedCountry = allCropsName.filter({$0.lowercased().prefix(searchText.count) == searchText.lowercased()})
-            searchedCrop = filterCells(term: searchText)
+        
+           filterCrops = updateSearchResults()
+        print (filterCrops)
             searching = true
         cropTable.reloadData()
         }
@@ -124,17 +136,16 @@ class SelectCropForDiseaseViewController: UIViewController , UITableViewDataSour
         {
             let destination = segue.destination as! DiseaseListViewController
             let indexPath = self.cropTable.indexPathForSelectedRow
-//            if searching{
+            if !searching{
             
                 selectCrop = currentCrops[indexPath!.row].cropName
                 destination.crop = selectCrop
-           
+
 //                print(selectCrop)
-//            }else{
-//                selectCrop = tempCrops[indexPath!.row].cropName
-//                destination.crop = selectCrop
-//                
-//            }
+            }else{
+                selectCrop = filterCrops[indexPath!.row].cropName
+                destination.crop = selectCrop
+            }
         }
     }
     
