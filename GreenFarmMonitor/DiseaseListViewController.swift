@@ -64,7 +64,7 @@ class DiseaseListViewController: UIViewController,UITableViewDataSource, UITable
                         shownDiseases.append(disease)
                     }
                 }
-                print(DiseasesList)
+//                print(DiseasesList)
         //      shownDiseases = diseaseOfCrops
             diseaseTable.reloadData()
         
