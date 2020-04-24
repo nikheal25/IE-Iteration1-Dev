@@ -1341,7 +1341,7 @@
                                                     <rect key="frame" x="0.0" y="165" width="560" height="250"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwo-YL-Q4c">
-                                                            <rect key="frame" x="10" y="8" width="540" height="234"/>
+                                                            <rect key="frame" x="10" y="0.0" width="540" height="250"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -1356,9 +1356,9 @@
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="xwo-YL-Q4c" secondAttribute="trailing" constant="10" id="03h-NF-BJe"/>
                                                         <constraint firstItem="xwo-YL-Q4c" firstAttribute="leading" secondItem="Qbi-JT-8Ye" secondAttribute="leading" constant="10" id="8vb-qS-oE2"/>
-                                                        <constraint firstItem="xwo-YL-Q4c" firstAttribute="top" secondItem="Qbi-JT-8Ye" secondAttribute="top" constant="8" id="OdG-zl-X7t"/>
+                                                        <constraint firstItem="xwo-YL-Q4c" firstAttribute="top" secondItem="Qbi-JT-8Ye" secondAttribute="top" id="OdG-zl-X7t"/>
                                                         <constraint firstAttribute="height" constant="250" id="nxS-qb-nAc"/>
-                                                        <constraint firstAttribute="bottom" secondItem="xwo-YL-Q4c" secondAttribute="bottom" constant="8" id="oFs-Wa-N4L"/>
+                                                        <constraint firstAttribute="bottom" secondItem="xwo-YL-Q4c" secondAttribute="bottom" id="oFs-Wa-N4L"/>
                                                     </constraints>
                                                 </view>
                                                 <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kax-Jx-GPi" userLabel="BottomContainerView" customClass="RotatedView" customModule="FoldingCell">
@@ -1383,7 +1383,7 @@
                                                                 <action selector="clickAddCropButton:" destination="gXt-61-trc" eventType="touchUpInside" id="YJb-BA-9K4"/>
                                                             </connections>
                                                         </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 people have sent a request" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBq-Gv-yRx">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The crop will be added to My Crop List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBq-Gv-yRx">
                                                             <rect key="frame" x="0.0" y="44" width="560" height="28"/>
                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
                                                             <color key="textColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="0.49546030410000003" colorSpace="custom" customColorSpace="sRGB"/>

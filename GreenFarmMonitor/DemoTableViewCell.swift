@@ -9,7 +9,14 @@
 import FoldingCell
 import UIKit
 
+protocol SelectionDelegate {
+    func didAddCrop()
+}
+
 class DemoTableViewCell: FoldingCell {
+    
+
+    var selectionDelegate: SelectionDelegate!
     
     weak var userDefaultController: UserdefaultsProtocol?
     weak var databaseController: DatabaseProtocol?
@@ -61,6 +68,7 @@ class DemoTableViewCell: FoldingCell {
 
     @IBAction func clickAddCropButton(_ sender: Any) {
         databaseController?.updateMyCropList(new: true, userId: (userDefaultController?.retrieveUserId())!, cropId: specificCrop!.cropId)
+        selectionDelegate.didAddCrop()
         //self.navigationController?.popToRootViewController(animated: true)
    }
     
