@@ -21,23 +21,24 @@ class GrowMyCropTableViewCell: UITableViewCell {
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var cropTitleLable: UILabel!
     @IBOutlet weak var growCropButton: UIButton!
+    @IBOutlet weak var cropImageView: UIImageView!
     func setCell(crop: Crop) {
         self.crop = crop
         //        cropImageView = image
         cropTitleLable.text = crop.cropName
-        //// MARK:- color behind cell
-        self.contentView.backgroundColor = UIColor(hexString: "#FAEDCA")
-        self.cellView.layer.cornerRadius = 5
-        self.cellView.layer.shadowOpacity = 0.4
-        self.cellView.layer.shadowRadius = 2
+        
+        cropImageView.image = UIImage(named: crop.cropImage)
         
         self.growCropButton.layer.cornerRadius = 3
         self.growCropButton.layer.borderWidth = 1
         self.growCropButton.layer.borderColor = UIColor.black.cgColor
-        
-        //        self.cellView.layer.masksToBounds = true
-        //        self.cellView.layer.shadowColor = UIColor(named: "Orange")?.cgColor
-        //         self.cropImageView.layer.shadowOffset = CGSize(width: 3, height: 3)
+       
+        self.contentView.backgroundColor = UIColor(hexString: "#3A4F41")
+        self.cellView.layer.cornerRadius = 8
+        self.cellView.layer.shadowOpacity = 0.4
+        self.cellView.layer.shadowRadius = 2
+
+        self.cropImageView.layer.cornerRadius = 6
     }
     
     @IBAction func growCropButtonClicked(_ sender: Any) {

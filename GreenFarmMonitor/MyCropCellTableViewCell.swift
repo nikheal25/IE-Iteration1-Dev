@@ -13,19 +13,19 @@ class MyCropCellTableViewCell: UITableViewCell {
     @IBOutlet weak var cropImageView: UIImageView!
     @IBOutlet weak var cropTitleLable: UILabel!
     @IBOutlet weak var cellView: UIView!
+    var opened = Bool()
     
-    func setCell(crop: Crop) {
-//        cropImageView = image
+    func setCell(crop: Crop, opened: Bool) {
+        self.opened = opened
+        
         cropTitleLable.text = crop.cropName
         cropImageView.image = UIImage(named: crop.cropImage)
             //// MARK:- color behind cell
-        self.contentView.backgroundColor = UIColor(hexString: "#B5D4BE")
+        self.contentView.backgroundColor = UIColor(hexString: "#3A4F41")
         self.cellView.layer.cornerRadius = 8
         self.cellView.layer.shadowOpacity = 0.4
         self.cellView.layer.shadowRadius = 2
-//        self.cellView.layer.masksToBounds = true
-//        self.cellView.layer.shadowColor = UIColor(named: "Orange")?.cgColor
-//         self.cropImageView.layer.shadowOffset = CGSize(width: 3, height: 3)
+
         self.cropImageView.layer.cornerRadius = 6
     }
 }

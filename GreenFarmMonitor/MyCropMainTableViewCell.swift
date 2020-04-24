@@ -12,18 +12,21 @@ class MyCropMainTableViewCell: UITableViewCell {
 
     @IBOutlet weak var cropTitleLable: UILabel!
     @IBOutlet weak var imageTitle: UIImageView!
+    @IBOutlet weak var cellView: UIView!
     
     func setCell(crop: Crop) {
             cropTitleLable.text = crop.cropName
         
         
-        self.contentView.backgroundColor = UIColor(hexString: "#E3E3E3")
-//        self.layer.cornerRadius = 10
-//        self.layer.shadowOpacity = 5
-//        self.layer.shadowRadius = 10
-        imageTitle.layer.cornerRadius = 10
-        cropTitleLable.textColor = .black
+ 
         self.imageTitle.image = UIImage(named: crop.cropImage)
+        
+         self.contentView.backgroundColor = UIColor(hexString: "#3A4F41")
+                self.cellView.layer.cornerRadius = 8
+                self.cellView.layer.shadowOpacity = 0.4
+                self.cellView.layer.shadowRadius = 2
+
+                self.imageTitle.layer.cornerRadius = 6
         
         //TODO
 //        self.cropTitleLable.layer.cornerRadius = 10

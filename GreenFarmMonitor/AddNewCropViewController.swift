@@ -114,7 +114,7 @@ extension AddNewCropViewController: UITableViewDelegate, UITableViewDataSource {
 //                                            cell.textLabel?.text = searchedCountry[indexPath.row]
                 cell.cellView.layer.cornerRadius = cell.cellView.frame.height / 2
                 cell.cropImageView.layer.cornerRadius = cell.cropImageView.layer.frame.height / 2
-                cell.setCell(crop: searchedCrop[indexPath.row])
+                cell.setCell(crop: searchedCrop[indexPath.row], opened: false)
                                             return cell
                                         }
                                         let cell = tableView.dequeueReusableCell(withIdentifier: CELL_COUNT, for: indexPath)
@@ -125,7 +125,7 @@ extension AddNewCropViewController: UITableViewDelegate, UITableViewDataSource {
              if indexPath.section == SECTION_ACTIVITY {
                                  let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ACTIVITY, for: indexPath) as! MyCropCellTableViewCell
 //                cell.textLabel?.text = allCropsName[indexPath.row].cropName
-                cell.setCell(crop: allCropsName[indexPath.row])
+                cell.setCell(crop: allCropsName[indexPath.row], opened: false)
                                  return cell
                              }
                              let cell = tableView.dequeueReusableCell(withIdentifier: CELL_COUNT, for: indexPath)
@@ -143,6 +143,7 @@ cell.textLabel?.text = "\(allCropsName.count) total crops in the list"
               tableView.deselectRow(at: indexPath, animated: true)
               self.performSegue(withIdentifier: "specificCropSegue", sender: self)
           }
+     
       }
     
     
