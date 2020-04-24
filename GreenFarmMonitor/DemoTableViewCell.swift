@@ -10,6 +10,12 @@ import FoldingCell
 import UIKit
 
 class DemoTableViewCell: FoldingCell {
+    
+    weak var userDefaultController: UserdefaultsProtocol?
+    weak var databaseController: DatabaseProtocol?
+    
+    var specificCrop: Crop?
+    
 
     @IBOutlet weak var cropImage: UIImageView!
     @IBOutlet weak var cropLabel: UILabel!
@@ -45,8 +51,19 @@ class DemoTableViewCell: FoldingCell {
 //        self.layer.shadowRadius = 2
 
         self.cropImage.layer.cornerRadius = 6
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        userDefaultController = appDelegate.userDefaultController
+        databaseController = appDelegate.databaseController
+        
+        self.specificCrop = crop
     }
 
+    @IBAction func clickAddCropButton(_ sender: Any) {
+        databaseController?.updateMyCropList(new: true, userId: (userDefaultController?.retrieveUserId())!, cropId: specificCrop!.cropId)
+//               _ = navigationController?.popToRootViewController(animated: true)
+    }
+    
     override func animationDuration(_ itemIndex: NSInteger, type _: FoldingCell.AnimationType) -> TimeInterval {
         let durations = [0.26, 0.2, 0.2]
         return durations[itemIndex]

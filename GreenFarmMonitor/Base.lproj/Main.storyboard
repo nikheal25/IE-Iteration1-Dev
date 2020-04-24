@@ -1228,10 +1228,10 @@
             </objects>
             <point key="canvasLocation" x="-1041" y="747"/>
         </scene>
-        <!--Folding Table View Controller-->
+        <!--All Crops-->
         <scene sceneID="5RK-j0-OTk">
             <objects>
-                <tableViewController storyboardIdentifier="MainTableViewController" id="auZ-DV-ex4" customClass="FoldingTableViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MainTableViewController" title="All Crops" id="auZ-DV-ex4" customClass="FoldingTableViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="667" sectionHeaderHeight="28" sectionFooterHeight="28" id="pF8-XU-PNN">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="708"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1370,6 +1370,9 @@
                                                                     <integer key="value" value="10"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="clickAddCropButton:" destination="gXt-61-trc" eventType="touchUpInside" id="YJb-BA-9K4"/>
+                                                            </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 people have sent a request" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBq-Gv-yRx">
                                                             <rect key="frame" x="0.0" y="44" width="560" height="28"/>
@@ -1451,7 +1454,7 @@
                             <outlet property="delegate" destination="auZ-DV-ex4" id="fT8-g7-Nqw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Z5Y-RB-nxl"/>
+                    <navigationItem key="navigationItem" title="All Crops" id="Z5Y-RB-nxl"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="708"/>
                     <connections>

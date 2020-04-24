@@ -45,6 +45,8 @@ class FoldingTableViewController: UITableViewController {
         userDefaultController = appDelegate.userDefaultController
         databaseController = appDelegate.databaseController
         
+        self.title = "All Crops"
+        
         tableView.tableFooterView = UIView()
         allCropsName = getRelevantCrops()
         searchBar.delegate = self
