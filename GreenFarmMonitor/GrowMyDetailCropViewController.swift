@@ -9,7 +9,7 @@
 import UIKit
 
 class GrowMyDetailCropViewController: UIViewController {
-
+    
     var specificCrop: Crop?
     
     @IBOutlet weak var mainView: UIView!
@@ -43,11 +43,11 @@ class GrowMyDetailCropViewController: UIViewController {
         self.soilpHLabel.text = "\(str1) - \(str2)"
         self.moistureLabel.text = specificCrop?.AvMoisture_Percent
         self.nutriLabel.text = specificCrop?.N_P_K_Req
-//        self.waterReqLabel.numberOfLines = 0
+        //        self.waterReqLabel.numberOfLines = 0
         self.waterReqLabel.adjustsFontSizeToFitWidth = true
         self.waterReqLabel.minimumScaleFactor = 0.5
         self.waterReqLabel.text = specificCrop?.Water_Needs
-//        self.lightIntLabel.numberOfLines = 0 //.sizeToFit()
+        //        self.lightIntLabel.numberOfLines = 0 //.sizeToFit()
         self.lightIntLabel.adjustsFontSizeToFitWidth = true
         self.lightIntLabel.minimumScaleFactor = 0.5
         self.lightIntLabel.text = specificCrop?.Light_Needs
@@ -55,21 +55,21 @@ class GrowMyDetailCropViewController: UIViewController {
     }
     
     func setImageView()  {
-            self.imageView.layer.cornerRadius = 15
-            self.imageView.layer.shadowOpacity = 0.4
-            self.imageView.layer.shadowRadius = 1
-        }
-        
-        func setInfoView()  {
-            self.infoView.layer.cornerRadius = 15
-            self.infoView.layer.shadowOpacity = 0.4
-            self.infoView.layer.shadowRadius = 1
-    //        self.infoView.backgroundColor = UIColor(hexString: "#FCFCFC")
-        }
+        self.imageView.layer.cornerRadius = 15
+        self.imageView.layer.shadowOpacity = 0.4
+        self.imageView.layer.shadowRadius = 1
+    }
+    
+    func setInfoView()  {
+        self.infoView.layer.cornerRadius = 15
+        self.infoView.layer.shadowOpacity = 0.4
+        self.infoView.layer.shadowRadius = 1
+        //        self.infoView.backgroundColor = UIColor(hexString: "#FCFCFC")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setLabels()
         setImageView()
         setInfoView()
@@ -80,15 +80,15 @@ class GrowMyDetailCropViewController: UIViewController {
     
     
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

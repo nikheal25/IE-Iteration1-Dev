@@ -212,7 +212,7 @@ extension FoldingTableViewController: UISearchBarDelegate {
 }
 
 extension FoldingTableViewController: SelectionDelegate{
-  
+    
     func didAddCrop() {
         _ = navigationController?.popToRootViewController(animated: true)
     }

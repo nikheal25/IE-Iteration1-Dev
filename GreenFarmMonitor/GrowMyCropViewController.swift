@@ -107,19 +107,19 @@ class GrowMyCropViewController: UIViewController, DatabaseListener, GrowCropDele
     
     //MARK: - MyCustomCellDelegator Methods
     func callSegueFromCell(crop: Crop) {
-//        self.performSegue(withIdentifier: "growSpecificCropSegue", sender: self)
+        //        self.performSegue(withIdentifier: "growSpecificCropSegue", sender: self)
         passingVal = crop
         self.performSegue(withIdentifier: "newGrowDetailCropSegue", sender: self)
         
     }
     
-     var passingVal: Crop?
+    var passingVal: Crop?
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-          if segue.identifier == "newGrowDetailCropSegue" {
-              let destination = segue.destination as! GrowMyDetailCropViewController
-              destination.specificCrop = passingVal
-          }
+        if segue.identifier == "newGrowDetailCropSegue" {
+            let destination = segue.destination as! GrowMyDetailCropViewController
+            destination.specificCrop = passingVal
+        }
     }
     
 }
@@ -157,18 +157,18 @@ extension GrowMyCropViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == SECTION_ACTIVITY{
             selectedRow = indexPath.row
-//            tableView.deselectRow(at: indexPath, animated: true)
-//            self.performSegue(withIdentifier: "specificCropSegue", sender: self)
+            //            tableView.deselectRow(at: indexPath, animated: true)
+            //            self.performSegue(withIdentifier: "specificCropSegue", sender: self)
         }
     }
     
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//
-//        // return "Add new Crops"
-//        if myCropList.count == 0 {
-//            return "Currently you have 0 crops in your list. ."
-//        }
-//        return ""
-//
-//    }
+    //    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    //
+    //        // return "Add new Crops"
+    //        if myCropList.count == 0 {
+    //            return "Currently you have 0 crops in your list. ."
+    //        }
+    //        return ""
+    //
+    //    }
 }
