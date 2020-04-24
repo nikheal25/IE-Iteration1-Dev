@@ -1327,17 +1327,10 @@
                                                     </constraints>
                                                 </view>
                                                 <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qbi-JT-8Ye" userLabel="SecondContainerView" customClass="RotatedView" customModule="FoldingCell">
-                                                    <rect key="frame" x="0.0" y="165" width="560" height="165"/>
+                                                    <rect key="frame" x="0.0" y="165" width="560" height="240"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l9C-w1-Cp3" userLabel="bottom line">
-                                                            <rect key="frame" x="0.0" y="164" width="560" height="1"/>
-                                                            <color key="backgroundColor" red="0.39607843139999999" green="0.40000000000000002" blue="0.39607843139999999" alpha="0.20135663009999999" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="1" id="dVT-eu-pGP"/>
-                                                            </constraints>
-                                                        </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwo-YL-Q4c">
-                                                            <rect key="frame" x="10" y="5" width="540" height="154"/>
+                                                            <rect key="frame" x="10" y="8" width="540" height="224"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -1345,21 +1338,11 @@
                                                     </subviews>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="165" id="28i-Vc-YmT"/>
-                                                        <constraint firstItem="l9C-w1-Cp3" firstAttribute="leading" secondItem="Qbi-JT-8Ye" secondAttribute="leading" id="28t-ye-YvY"/>
-                                                        <constraint firstAttribute="bottom" secondItem="l9C-w1-Cp3" secondAttribute="bottom" id="2Jx-4M-NzM"/>
-                                                        <constraint firstAttribute="trailing" secondItem="xwo-YL-Q4c" secondAttribute="trailing" constant="10" id="EvN-NX-Wi9"/>
-                                                        <constraint firstItem="l9C-w1-Cp3" firstAttribute="top" secondItem="xwo-YL-Q4c" secondAttribute="bottom" constant="5" id="Pfq-gZ-NRU"/>
-                                                        <constraint firstItem="xwo-YL-Q4c" firstAttribute="top" secondItem="Qbi-JT-8Ye" secondAttribute="top" constant="5" id="UpQ-zL-6OJ"/>
-                                                        <constraint firstItem="xwo-YL-Q4c" firstAttribute="leading" secondItem="Qbi-JT-8Ye" secondAttribute="leading" constant="10" id="Whe-3S-LO2"/>
-                                                        <constraint firstAttribute="trailing" secondItem="l9C-w1-Cp3" secondAttribute="trailing" id="oJe-fQ-hfq"/>
-                                                    </constraints>
-                                                </view>
-                                                <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0bS-3s-vCi" userLabel="ThirdContainerView" customClass="RotatedView" customModule="FoldingCell">
-                                                    <rect key="frame" x="0.0" y="330" width="560" height="72"/>
-                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="72" id="oJL-88-gi5"/>
+                                                        <constraint firstAttribute="trailing" secondItem="xwo-YL-Q4c" secondAttribute="trailing" constant="10" id="03h-NF-BJe"/>
+                                                        <constraint firstItem="xwo-YL-Q4c" firstAttribute="leading" secondItem="Qbi-JT-8Ye" secondAttribute="leading" constant="10" id="8vb-qS-oE2"/>
+                                                        <constraint firstItem="xwo-YL-Q4c" firstAttribute="top" secondItem="Qbi-JT-8Ye" secondAttribute="top" constant="8" id="OdG-zl-X7t"/>
+                                                        <constraint firstAttribute="height" constant="240" id="nxS-qb-nAc"/>
+                                                        <constraint firstAttribute="bottom" secondItem="xwo-YL-Q4c" secondAttribute="bottom" constant="8" id="oFs-Wa-N4L"/>
                                                     </constraints>
                                                 </view>
                                                 <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kax-Jx-GPi" userLabel="BottomContainerView" customClass="RotatedView" customModule="FoldingCell">
@@ -1424,11 +1407,8 @@
                                                 <constraint firstItem="Qbi-JT-8Ye" firstAttribute="top" secondItem="Jaq-VL-v0N" secondAttribute="top" constant="165" identifier="yPosition" id="57E-gR-Ugp"/>
                                                 <constraint firstItem="Kax-Jx-GPi" firstAttribute="top" secondItem="Jaq-VL-v0N" secondAttribute="top" constant="402" identifier="yPosition" id="HM1-Ky-M6S"/>
                                                 <constraint firstAttribute="trailing" secondItem="Kax-Jx-GPi" secondAttribute="trailing" id="N7v-X8-p9E"/>
-                                                <constraint firstItem="0bS-3s-vCi" firstAttribute="top" secondItem="Jaq-VL-v0N" secondAttribute="top" constant="330" identifier="yPosition" id="NTc-hI-TVe"/>
                                                 <constraint firstItem="dPQ-ZM-Q2t" firstAttribute="top" secondItem="Jaq-VL-v0N" secondAttribute="top" id="QTI-V1-KR6"/>
-                                                <constraint firstAttribute="trailing" secondItem="0bS-3s-vCi" secondAttribute="trailing" id="RFJ-qT-SdX"/>
                                                 <constraint firstItem="Kax-Jx-GPi" firstAttribute="leading" secondItem="Jaq-VL-v0N" secondAttribute="leading" id="VcI-ds-uSk"/>
-                                                <constraint firstItem="0bS-3s-vCi" firstAttribute="leading" secondItem="Jaq-VL-v0N" secondAttribute="leading" id="bFs-QS-1vT"/>
                                                 <constraint firstItem="Qbi-JT-8Ye" firstAttribute="leading" secondItem="Jaq-VL-v0N" secondAttribute="leading" id="uqg-pv-L8c"/>
                                                 <constraint firstAttribute="trailing" secondItem="Qbi-JT-8Ye" secondAttribute="trailing" id="uvY-1u-gMV"/>
                                             </constraints>
@@ -1997,6 +1977,6 @@
         <image name="water" width="28" height="28"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gb7-L6-GNo"/>
+        <segue reference="0BZ-rP-Cky"/>
     </inferredMetricsTieBreakers>
 </document>
