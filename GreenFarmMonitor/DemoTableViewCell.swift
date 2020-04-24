@@ -13,6 +13,8 @@ class DemoTableViewCell: FoldingCell {
 
     @IBOutlet weak var cropImage: UIImageView!
     @IBOutlet weak var cropLabel: UILabel!
+    @IBOutlet weak var fullCropImage: UIImageView!
+    @IBOutlet weak var topBarLabel: UILabel!
     var number: Int = 0 {
         didSet {
    
@@ -27,7 +29,11 @@ class DemoTableViewCell: FoldingCell {
     
     func setUp(crop: Crop) {
         self.cropLabel.text = crop.cropName
+        self.topBarLabel.text = crop.cropName
+        
+        
         self.cropImage.image = UIImage(named: crop.cropImage)
+        self.fullCropImage.image = UIImage(named: crop.cropImage)
         
         self.contentView.backgroundColor = UIColor(hexString: "#3A4F41")
 //        self.layer.cornerRadius = 8

@@ -1288,19 +1288,9 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6HJ-hS-EeR" userLabel="bar">
                                                             <rect key="frame" x="0.0" y="0.0" width="560" height="49"/>
                                                             <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XfL-pE-t4L">
-                                                                    <rect key="frame" x="14" y="8.5" width="32" height="32"/>
-                                                                    <state key="normal" image="burger"/>
-                                                                </button>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# 2618-3157" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y87-Qw-tYY">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cropname" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y87-Qw-tYY">
                                                                     <rect key="frame" x="0.0" y="0.0" width="560" height="49"/>
                                                                     <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="18"/>
-                                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$25" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJN-VI-jTp">
-                                                                    <rect key="frame" x="517" y="0.0" width="31" height="49"/>
-                                                                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="18"/>
                                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -1308,16 +1298,10 @@
                                                             <color key="backgroundColor" red="0.36470588240000001" green="0.29411764709999999" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="bottom" secondItem="y87-Qw-tYY" secondAttribute="bottom" id="ATo-Td-0r0"/>
-                                                                <constraint firstItem="XfL-pE-t4L" firstAttribute="leading" secondItem="6HJ-hS-EeR" secondAttribute="leading" constant="14" id="Lqv-Zi-6Na"/>
-                                                                <constraint firstItem="XfL-pE-t4L" firstAttribute="centerY" secondItem="6HJ-hS-EeR" secondAttribute="centerY" id="Nqn-LU-dDG"/>
-                                                                <constraint firstItem="FJN-VI-jTp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6HJ-hS-EeR" secondAttribute="leading" constant="20" symbolic="YES" id="Oq0-5i-vvJ"/>
-                                                                <constraint firstItem="FJN-VI-jTp" firstAttribute="top" secondItem="6HJ-hS-EeR" secondAttribute="top" id="P44-hc-6LC"/>
-                                                                <constraint firstAttribute="bottom" secondItem="FJN-VI-jTp" secondAttribute="bottom" id="RdO-5Q-frp"/>
                                                                 <constraint firstAttribute="trailing" secondItem="y87-Qw-tYY" secondAttribute="trailing" id="baU-hP-ef6"/>
                                                                 <constraint firstAttribute="height" constant="49" id="d3u-fO-kOu"/>
                                                                 <constraint firstItem="y87-Qw-tYY" firstAttribute="top" secondItem="6HJ-hS-EeR" secondAttribute="top" id="r5C-Mc-2VN"/>
                                                                 <constraint firstItem="y87-Qw-tYY" firstAttribute="leading" secondItem="6HJ-hS-EeR" secondAttribute="leading" id="st9-W0-dSS"/>
-                                                                <constraint firstAttribute="trailing" secondItem="FJN-VI-jTp" secondAttribute="trailing" constant="12" id="uaX-Xz-MSQ"/>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1669,7 +1653,7 @@
                                                                 <constraint firstAttribute="height" constant="41" id="OxK-4t-Hh1"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="18"/>
-                                                            <state key="normal" title="REQUEST">
+                                                            <state key="normal" title="Add to List">
                                                                 <color key="titleColor" red="0.27058823529999998" green="0.2156862745" blue="0.08235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
                                                             <userDefinedRuntimeAttributes>
@@ -1750,6 +1734,8 @@
                                     <outlet property="cropLabel" destination="BhO-Nf-gtk" id="1R9-mw-mHT"/>
                                     <outlet property="foregroundView" destination="42k-X6-as8" id="0z1-Up-pHA"/>
                                     <outlet property="foregroundViewTop" destination="mP6-Fe-0SN" id="ImM-mc-CuA"/>
+                                    <outlet property="fullCropImage" destination="9BG-Ff-t9k" id="mQF-he-uqw"/>
+                                    <outlet property="topBarLabel" destination="y87-Qw-tYY" id="vuU-f7-yzE"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -2270,7 +2256,6 @@
         <image name="Light intensity" width="28" height="28"/>
         <image name="Plant type" width="28" height="28"/>
         <image name="arrow" width="16" height="16"/>
-        <image name="burger" width="16" height="16"/>
         <image name="frost" width="28" height="28"/>
         <image name="greenHouse-1" width="222" height="333"/>
         <image name="greenHouse-2" width="666.5" height="889"/>
