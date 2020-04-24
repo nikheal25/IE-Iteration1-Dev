@@ -1254,7 +1254,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="42k-X6-as8" userLabel="Foreground" customClass="RotatedView" customModule="FoldingCell">
-                                            <rect key="frame" x="20" y="7" width="560" height="165"/>
+                                            <rect key="frame" x="7" y="5" width="586" height="165"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RPR-eY-OjE">
                                                     <rect key="frame" x="8" y="12" width="125" height="141"/>
@@ -1727,10 +1727,10 @@
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="Jaq-VL-v0N" firstAttribute="leading" secondItem="3IL-LK-O1a" secondAttribute="leading" constant="20" id="6b1-Rk-xN6"/>
-                                        <constraint firstItem="42k-X6-as8" firstAttribute="leading" secondItem="3IL-LK-O1a" secondAttribute="leading" constant="20" id="Bho-S8-WgE"/>
-                                        <constraint firstAttribute="trailing" secondItem="42k-X6-as8" secondAttribute="trailing" constant="20" id="Szu-95-6Jg"/>
+                                        <constraint firstItem="42k-X6-as8" firstAttribute="leading" secondItem="3IL-LK-O1a" secondAttribute="leading" constant="7" id="Bho-S8-WgE"/>
+                                        <constraint firstAttribute="trailing" secondItem="42k-X6-as8" secondAttribute="trailing" constant="7" id="Szu-95-6Jg"/>
                                         <constraint firstAttribute="trailing" secondItem="Jaq-VL-v0N" secondAttribute="trailing" constant="20" id="gbh-Px-DQc"/>
-                                        <constraint firstItem="42k-X6-as8" firstAttribute="top" secondItem="3IL-LK-O1a" secondAttribute="top" constant="7" identifier="ForegroundViewTop" id="mP6-Fe-0SN"/>
+                                        <constraint firstItem="42k-X6-as8" firstAttribute="top" secondItem="3IL-LK-O1a" secondAttribute="top" constant="5" identifier="ForegroundViewTop" id="mP6-Fe-0SN"/>
                                         <constraint firstItem="Jaq-VL-v0N" firstAttribute="top" secondItem="3IL-LK-O1a" secondAttribute="top" constant="180" identifier="ContainerViewTop" id="uxT-fU-qIh"/>
                                     </constraints>
                                 </tableViewCellContentView>
