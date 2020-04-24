@@ -126,6 +126,7 @@ class SelectCropForDiseaseViewController: UIViewController , UITableViewDataSour
         func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
             searching = false
             searchBar.text = ""
+            searchBar.endEditing(true)
            cropTable.reloadData()
         }
     
