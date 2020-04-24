@@ -15,6 +15,7 @@ class DemoTableViewCell: FoldingCell {
     @IBOutlet weak var cropLabel: UILabel!
     @IBOutlet weak var fullCropImage: UIImageView!
     @IBOutlet weak var topBarLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     var number: Int = 0 {
         didSet {
    
@@ -30,6 +31,9 @@ class DemoTableViewCell: FoldingCell {
     func setUp(crop: Crop) {
         self.cropLabel.text = crop.cropName
         self.topBarLabel.text = crop.cropName
+        self.descriptionLabel.adjustsFontSizeToFitWidth = true
+        self.descriptionLabel.minimumScaleFactor = 0.5
+        self.descriptionLabel.text = crop.Description
         
         
         self.cropImage.image = UIImage(named: crop.cropImage)
