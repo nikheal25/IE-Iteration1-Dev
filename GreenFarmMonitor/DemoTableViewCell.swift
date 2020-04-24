@@ -61,8 +61,8 @@ class DemoTableViewCell: FoldingCell {
 
     @IBAction func clickAddCropButton(_ sender: Any) {
         databaseController?.updateMyCropList(new: true, userId: (userDefaultController?.retrieveUserId())!, cropId: specificCrop!.cropId)
-//               _ = navigationController?.popToRootViewController(animated: true)
-    }
+        //self.navigationController?.popToRootViewController(animated: true)
+   }
     
     override func animationDuration(_ itemIndex: NSInteger, type _: FoldingCell.AnimationType) -> TimeInterval {
         let durations = [0.26, 0.2, 0.2]
