@@ -68,7 +68,7 @@ class FoldingTableViewController: UITableViewController {
     
     // MARK: Helpers
     private func setup() {
-        cellHeights = Array(repeating: Const.closeCellHeight, count: Const.rowsCount)
+        cellHeights = Array(repeating: Const.closeCellHeight, count: allCropsName.count)
         tableView.estimatedRowHeight = Const.closeCellHeight
         tableView.rowHeight = UITableView.automaticDimension
         //            tableView.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "background"))
@@ -128,6 +128,7 @@ extension FoldingTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! DemoTableViewCell
+        cell.setUp(crop: allCropsName[indexPath.row])
         if searching {
             
             let durations: [TimeInterval] = [0.26, 0.2, 0.2]
