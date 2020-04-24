@@ -85,6 +85,7 @@ class SelectCropForDiseaseViewController: UIViewController , UITableViewDataSour
     let crop = currentCrops[indexPath.row]
     cropsCell.cropImage.image = UIImage(named:crop.cropImage)
     cropsCell.cropNameLabel.text = crop.cropName
+   
         return cropsCell
     }
     
