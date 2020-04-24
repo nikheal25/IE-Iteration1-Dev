@@ -1327,34 +1327,32 @@
                                                     </constraints>
                                                 </view>
                                                 <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qbi-JT-8Ye" userLabel="SecondContainerView" customClass="RotatedView" customModule="FoldingCell">
-                                                    <rect key="frame" x="0.0" y="165" width="560" height="240"/>
+                                                    <rect key="frame" x="0.0" y="165" width="560" height="250"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwo-YL-Q4c">
-                                                            <rect key="frame" x="10" y="8" width="540" height="224"/>
+                                                            <rect key="frame" x="10" y="8" width="540" height="234"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZtV-Rf-bZz" userLabel="line">
+                                                            <rect key="frame" x="0.0" y="8" width="560" height="10"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </view>
                                                     </subviews>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="xwo-YL-Q4c" secondAttribute="trailing" constant="10" id="03h-NF-BJe"/>
                                                         <constraint firstItem="xwo-YL-Q4c" firstAttribute="leading" secondItem="Qbi-JT-8Ye" secondAttribute="leading" constant="10" id="8vb-qS-oE2"/>
                                                         <constraint firstItem="xwo-YL-Q4c" firstAttribute="top" secondItem="Qbi-JT-8Ye" secondAttribute="top" constant="8" id="OdG-zl-X7t"/>
-                                                        <constraint firstAttribute="height" constant="240" id="nxS-qb-nAc"/>
+                                                        <constraint firstAttribute="height" constant="250" id="nxS-qb-nAc"/>
                                                         <constraint firstAttribute="bottom" secondItem="xwo-YL-Q4c" secondAttribute="bottom" constant="8" id="oFs-Wa-N4L"/>
                                                     </constraints>
                                                 </view>
                                                 <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kax-Jx-GPi" userLabel="BottomContainerView" customClass="RotatedView" customModule="FoldingCell">
                                                     <rect key="frame" x="0.0" y="402" width="560" height="72"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZtV-Rf-bZz" userLabel="line">
-                                                            <rect key="frame" x="0.0" y="0.0" width="560" height="10"/>
-                                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="10" id="IPx-MX-WB2"/>
-                                                            </constraints>
-                                                        </view>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y6H-1m-3aI">
                                                             <rect key="frame" x="22" y="3" width="516" height="41"/>
                                                             <color key="backgroundColor" red="0.99607843139999996" green="0.74509803919999995" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1383,15 +1381,12 @@
                                                     </subviews>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstItem="ZtV-Rf-bZz" firstAttribute="leading" secondItem="Kax-Jx-GPi" secondAttribute="leading" id="160-ZW-NlY"/>
                                                         <constraint firstItem="SBq-Gv-yRx" firstAttribute="leading" secondItem="Kax-Jx-GPi" secondAttribute="leading" id="9Ah-UW-OuH"/>
                                                         <constraint firstAttribute="height" constant="72" id="BIP-cZ-a51"/>
-                                                        <constraint firstAttribute="trailing" secondItem="ZtV-Rf-bZz" secondAttribute="trailing" id="C8Q-pT-qnP"/>
                                                         <constraint firstAttribute="bottom" secondItem="SBq-Gv-yRx" secondAttribute="bottom" id="NOL-H2-lEw"/>
                                                         <constraint firstItem="Y6H-1m-3aI" firstAttribute="leading" secondItem="Kax-Jx-GPi" secondAttribute="leading" constant="22" id="ORf-ny-iHh"/>
                                                         <constraint firstItem="SBq-Gv-yRx" firstAttribute="top" secondItem="Y6H-1m-3aI" secondAttribute="bottom" id="Wl0-Nh-DjF"/>
                                                         <constraint firstAttribute="trailing" secondItem="SBq-Gv-yRx" secondAttribute="trailing" id="bTY-pP-PMW"/>
-                                                        <constraint firstItem="ZtV-Rf-bZz" firstAttribute="top" secondItem="Kax-Jx-GPi" secondAttribute="top" id="d6K-oD-oqo"/>
                                                         <constraint firstItem="Y6H-1m-3aI" firstAttribute="centerY" secondItem="Kax-Jx-GPi" secondAttribute="centerY" constant="-12.5" id="n1h-cG-IdG"/>
                                                         <constraint firstAttribute="trailing" secondItem="Y6H-1m-3aI" secondAttribute="trailing" constant="22" id="z1m-E6-SRx"/>
                                                     </constraints>
@@ -1980,6 +1975,6 @@
         <image name="water" width="28" height="28"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0BZ-rP-Cky"/>
+        <segue reference="gb7-L6-GNo"/>
     </inferredMetricsTieBreakers>
 </document>
