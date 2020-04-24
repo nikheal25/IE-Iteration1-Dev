@@ -87,7 +87,7 @@ class GrowMyCropViewController: UIViewController, DatabaseListener, GrowCropDele
         if myCropList.count == 0 {
             headerLabel.text = "Currently you have 0 crops in your list"
         }else{
-            headerLabel.text = "CHOOSE THE CROP YOU WANT TO GROW"
+            headerLabel.text = "Click on the crop that you want to grow"
         }
     }
     
