@@ -378,52 +378,64 @@
         <scene sceneID="dUw-OU-e2l">
             <objects>
                 <tableViewController id="DHY-iT-N33" customClass="MyCropTableViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="200" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="o06-TL-ZHm">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="o06-TL-ZHm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCropCell" id="6gT-vv-8rZ" customClass="MyCropMainTableViewCell" customModule="Organic_Together" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="55.5" width="414" height="200"/>
+                                <rect key="frame" x="0.0" y="55.5" width="414" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6gT-vv-8rZ" id="o7f-wn-9k7">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlossomDrop" translatesAutoresizingMaskIntoConstraints="NO" id="uP5-VC-k0j">
-                                            <rect key="frame" x="70" y="11" width="274" height="155"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V1c-eb-Xmv">
+                                            <rect key="frame" x="7" y="5" width="400" height="110"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlossomDrop" translatesAutoresizingMaskIntoConstraints="NO" id="uP5-VC-k0j">
+                                                    <rect key="frame" x="8" y="12" width="125" height="86"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="125" id="9eE-7R-Ief"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vhT-15-fuc">
+                                                    <rect key="frame" x="203" y="30" width="127" height="50"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="155" id="DN5-3c-xBv"/>
-                                                <constraint firstAttribute="width" constant="274" id="gOI-Rf-MVT"/>
+                                                <constraint firstItem="uP5-VC-k0j" firstAttribute="top" secondItem="V1c-eb-Xmv" secondAttribute="top" constant="12" id="3fd-xs-iN7"/>
+                                                <constraint firstAttribute="bottom" secondItem="uP5-VC-k0j" secondAttribute="bottom" constant="12" id="CGV-PJ-M2F"/>
+                                                <constraint firstAttribute="trailing" secondItem="vhT-15-fuc" secondAttribute="trailing" constant="70" id="NqW-xm-jib"/>
+                                                <constraint firstItem="uP5-VC-k0j" firstAttribute="leading" secondItem="V1c-eb-Xmv" secondAttribute="leading" constant="8" id="RDd-zV-Qqm"/>
+                                                <constraint firstAttribute="bottom" secondItem="vhT-15-fuc" secondAttribute="bottom" constant="30" id="Xto-ti-3yT"/>
+                                                <constraint firstItem="vhT-15-fuc" firstAttribute="leading" secondItem="uP5-VC-k0j" secondAttribute="trailing" constant="70" id="eqk-dA-iqw"/>
+                                                <constraint firstItem="vhT-15-fuc" firstAttribute="top" secondItem="V1c-eb-Xmv" secondAttribute="top" constant="30" id="lKC-Ek-v5M"/>
                                             </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vhT-15-fuc">
-                                            <rect key="frame" x="100" y="174" width="214" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="vhT-15-fuc" firstAttribute="leading" secondItem="o7f-wn-9k7" secondAttribute="leading" constant="100" id="76B-7s-Is2"/>
-                                        <constraint firstAttribute="bottom" secondItem="vhT-15-fuc" secondAttribute="bottom" constant="5" id="B8T-3H-SEA"/>
-                                        <constraint firstItem="uP5-VC-k0j" firstAttribute="top" secondItem="o7f-wn-9k7" secondAttribute="topMargin" id="PTc-wu-9Mw"/>
-                                        <constraint firstAttribute="trailing" secondItem="vhT-15-fuc" secondAttribute="trailing" constant="100" id="jjb-7P-M87"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="uP5-VC-k0j" secondAttribute="trailing" constant="50" id="ksK-7Y-n5k"/>
-                                        <constraint firstItem="uP5-VC-k0j" firstAttribute="leading" secondItem="o7f-wn-9k7" secondAttribute="leadingMargin" constant="50" id="pGS-73-lRK"/>
-                                        <constraint firstItem="vhT-15-fuc" firstAttribute="centerX" secondItem="o7f-wn-9k7" secondAttribute="centerX" id="r4l-5W-tU2"/>
+                                        <constraint firstItem="V1c-eb-Xmv" firstAttribute="top" secondItem="o7f-wn-9k7" secondAttribute="top" constant="5" id="4TZ-es-GEi"/>
+                                        <constraint firstAttribute="trailing" secondItem="V1c-eb-Xmv" secondAttribute="trailing" constant="7" id="F2y-kr-5Ri"/>
+                                        <constraint firstAttribute="bottom" secondItem="V1c-eb-Xmv" secondAttribute="bottom" constant="5" id="I8c-Mw-rnU"/>
+                                        <constraint firstItem="V1c-eb-Xmv" firstAttribute="leading" secondItem="o7f-wn-9k7" secondAttribute="leading" constant="7" id="i9B-V7-4rZ"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="cellView" destination="V1c-eb-Xmv" id="xgs-Fy-ibd"/>
                                     <outlet property="cropTitleLable" destination="vhT-15-fuc" id="kZE-aF-FLq"/>
                                     <outlet property="imageTitle" destination="uP5-VC-k0j" id="wPo-EL-H1K"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellCounter" id="ZJe-eu-2WA">
-                                <rect key="frame" x="0.0" y="255.5" width="414" height="200"/>
+                                <rect key="frame" x="0.0" y="175.5" width="414" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZJe-eu-2WA" id="bAZ-HB-KcO">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can add more crops to your list" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Weo-IA-t8X">
