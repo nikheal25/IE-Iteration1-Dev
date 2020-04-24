@@ -13,9 +13,11 @@ class MyCropCellTableViewCell: UITableViewCell {
     @IBOutlet weak var cropImageView: UIImageView!
     @IBOutlet weak var cropTitleLable: UILabel!
     @IBOutlet weak var cellView: UIView!
+    var opened = Bool()
     
-    func setCell(crop: Crop) {
-//        cropImageView = image
+    func setCell(crop: Crop, opened: Bool) {
+        self.opened = opened
+        
         cropTitleLable.text = crop.cropName
         cropImageView.image = UIImage(named: crop.cropImage)
             //// MARK:- color behind cell

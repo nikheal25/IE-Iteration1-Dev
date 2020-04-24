@@ -21,10 +21,13 @@ class GrowMyCropTableViewCell: UITableViewCell {
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var cropTitleLable: UILabel!
     @IBOutlet weak var growCropButton: UIButton!
+    @IBOutlet weak var cropImageView: UIImageView!
     func setCell(crop: Crop) {
         self.crop = crop
         //        cropImageView = image
         cropTitleLable.text = crop.cropName
+        
+        cropImageView.image = UIImage(named: crop.cropImage)
         //// MARK:- color behind cell
         self.contentView.backgroundColor = UIColor(hexString: "#FAEDCA")
         self.cellView.layer.cornerRadius = 5

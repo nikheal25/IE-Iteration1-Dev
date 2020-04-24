@@ -13,6 +13,23 @@ class FoldingTableViewController: UITableViewController {
     
     var specificCrop: Crop?
     
+    var listenerType: ListenerType = ListenerType.all // listener
+      weak var databaseController: DatabaseProtocol?
+      weak var userDefaultController: UserdefaultsProtocol?
+      
+      var allCropsName: [Crop] = []
+      var registeredCrop: [String]?
+      
+      var searchedCrop = [Crop]()
+      var searching = false
+    
+    let SECTION_ACTIVITY = 0;
+    let SECTION_COUNT = 1;
+    let CELL_COUNT = "CellCounter"
+    let CELL_ACTIVITY = "Crop"
+    var selectedRow = 0
+    @IBOutlet weak var searchBar: UISearchBar!
+    
      enum Const {
             static let closeCellHeight: CGFloat = 179
             static let openCellHeight: CGFloat = 488
@@ -24,8 +41,30 @@ class FoldingTableViewController: UITableViewController {
         // MARK: Life Cycle
         override func viewDidLoad() {
             super.viewDidLoad()
+             let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                 userDefaultController = appDelegate.userDefaultController
+                 databaseController = appDelegate.databaseController
+                 
+            tableView.tableFooterView = UIView()
+                 allCropsName = getRelevantCrops()
+                 searchBar.delegate = self
+                 // Do any additional setup after
+            
             setup()
+            
         }
+    
+    func getRelevantCrops() -> [Crop] {
+          let allCrops = databaseController!.cropsList
+          var tempList: [Crop] = []
+          
+          for crop in allCrops {
+              if !((registeredCrop?.contains(crop.cropId))!) {
+                  tempList.append(crop)
+              }
+          }
+          return tempList
+      }
 
         // MARK: Helpers
         private func setup() {
@@ -55,9 +94,21 @@ class FoldingTableViewController: UITableViewController {
 
     extension FoldingTableViewController {
 
-        override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-            return 5
+        override func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
+             if searching {
+                       if section == SECTION_ACTIVITY {
+                           return (searchedCrop.count)
+                       }
+                       return 1;
+                   } else {
+                       if section == SECTION_ACTIVITY {
+                           return (allCropsName.count)
+                       }
+                       return 1;
+                   }
         }
+        
+        
 
         override func tableView(_: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
             guard case let cell as DemoTableViewCell = cell else {
@@ -76,11 +127,20 @@ class FoldingTableViewController: UITableViewController {
         }
 
         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! FoldingCell
+             let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! DemoTableViewCell
+            if searching {
+           
             let durations: [TimeInterval] = [0.26, 0.2, 0.2]
             cell.durationsForExpandedState = durations
             cell.durationsForCollapsedState = durations
-            return cell
+            
+            } else {
+                
+                            let durations: [TimeInterval] = [0.26, 0.2, 0.2]
+                           cell.durationsForExpandedState = durations
+                           cell.durationsForCollapsedState = durations
+            }
+              return cell
         }
 
         override func tableView(_: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -118,3 +178,31 @@ class FoldingTableViewController: UITableViewController {
             }, completion: nil)
         }
     }
+
+extension FoldingTableViewController: UISearchBarDelegate {
+    
+    func filterCells(term: String) -> [Crop] {
+        var tempCrops: [Crop] = []
+        
+        for crop in allCropsName {
+            if crop.cropName.lowercased().prefix(term.count) == term.lowercased() {
+                tempCrops.append(crop)
+            }
+        }
+        return tempCrops
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//        searchedCountry = allCropsName.filter({$0.lowercased().prefix(searchText.count) == searchText.lowercased()})
+        searchedCrop = filterCells(term: searchText)
+        searching = true
+        tableView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searching = false
+        searchBar.text = ""
+        tableView.reloadData()
+    }
+    
+}
