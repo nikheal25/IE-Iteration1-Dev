@@ -42,6 +42,8 @@ class DemoTableViewCell: FoldingCell {
     }
     
     func setUp(crop: Crop) {
+        self.cropLabel.adjustsFontSizeToFitWidth = true
+        self.cropLabel.minimumScaleFactor = 0.5
         self.cropLabel.text = crop.cropName
         self.topBarLabel.text = crop.cropName
         self.descriptionLabel.adjustsFontSizeToFitWidth = true
@@ -50,15 +52,11 @@ class DemoTableViewCell: FoldingCell {
         
         
         self.cropImage.image = UIImage(named: crop.cropImage)
+        self.cropImage.layer.cornerRadius = 6
         self.fullCropImage.image = UIImage(named: crop.cropImage)
         
         self.contentView.backgroundColor = UIColor(hexString: "#3A4F41")
-        //        self.layer.cornerRadius = 8
-        //        self.layer.shadowOpacity = 0.4
-        //        self.layer.shadowRadius = 2
-        
-        self.cropImage.layer.cornerRadius = 6
-        
+
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         userDefaultController = appDelegate.userDefaultController
         databaseController = appDelegate.databaseController

@@ -31,7 +31,7 @@ class FoldingTableViewController: UITableViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     
     enum Const {
-        static let closeCellHeight: CGFloat = 179
+        static let closeCellHeight: CGFloat = 130
         static let openCellHeight: CGFloat = 488
         static let rowsCount = 10
     }
@@ -130,19 +130,24 @@ extension FoldingTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! DemoTableViewCell
-        cell.setUp(crop: allCropsName[indexPath.row])
-        cell.selectionDelegate = self
+          let durations: [TimeInterval] = [0.26, 0.2, 0.1]
+        //[0.26, 0.2, 0.2]
         if searching {
             
-            let durations: [TimeInterval] = [0.26, 0.2, 0.2]
+          
             cell.durationsForExpandedState = durations
             cell.durationsForCollapsedState = durations
+            
+            cell.setUp(crop: searchedCrop[indexPath.row])
+            cell.selectionDelegate = self
             
         } else {
             
-            let durations: [TimeInterval] = [0.26, 0.2, 0.2]
             cell.durationsForExpandedState = durations
             cell.durationsForCollapsedState = durations
+            
+            cell.setUp(crop: allCropsName[indexPath.row])
+            cell.selectionDelegate = self
         }
         return cell
     }
