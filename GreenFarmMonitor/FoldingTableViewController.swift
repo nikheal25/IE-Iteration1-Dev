@@ -31,7 +31,7 @@ class FoldingTableViewController: UITableViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     
     enum Const {
-        static let closeCellHeight: CGFloat = 179
+        static let closeCellHeight: CGFloat = 130
         static let openCellHeight: CGFloat = 488
         static let rowsCount = 10
     }

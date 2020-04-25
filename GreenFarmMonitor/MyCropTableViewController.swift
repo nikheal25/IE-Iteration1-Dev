@@ -28,7 +28,8 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
     }
     
     @IBAction func addNewCrop(_ sender: Any) {
-        self.performSegue(withIdentifier: "addNewCropSegue", sender: self)
+        self.performSegue(withIdentifier: "foldingSegue", sender: self)
+        //self.performSegue(withIdentifier: "addNewCropSegue", sender: self)
     }
     func onUserCropRelationChange(change: DatabaseChange, userCropRelation: [UserCropRelation]) {
         let currentUserId = userDefaultController?.retrieveUserId()
