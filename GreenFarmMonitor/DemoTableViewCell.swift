@@ -47,7 +47,7 @@ class DemoTableViewCell: FoldingCell {
         self.cropLabel.text = crop.cropName
         self.topBarLabel.text = crop.cropName
         self.descriptionLabel.adjustsFontSizeToFitWidth = true
-        self.descriptionLabel.minimumScaleFactor = 0.5
+        self.descriptionLabel.minimumScaleFactor = 0.2
         self.descriptionLabel.sizeToFit()
         self.descriptionLabel.text = crop.Description
         
