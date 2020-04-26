@@ -17,7 +17,8 @@ class MyCropMainTableViewCell: UITableViewCell {
     func setCell(crop: Crop) {
             cropTitleLable.text = crop.cropName
         
-        
+        self.cropTitleLable.adjustsFontSizeToFitWidth = true
+        self.cropTitleLable.minimumScaleFactor = 0.5
  
         self.imageTitle.image = UIImage(named: crop.cropImage)
         
