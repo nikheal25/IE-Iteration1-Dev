@@ -27,6 +27,8 @@ class GrowMyCropTableViewCell: UITableViewCell {
         self.crop = crop
         //        cropImageView = image
         cropTitleLable.text = crop.cropName
+        self.cropTitleLable.adjustsFontSizeToFitWidth = true
+        self.cropTitleLable.minimumScaleFactor = 0.5
         
         cropImageView.image = UIImage(named: crop.cropImage)
         

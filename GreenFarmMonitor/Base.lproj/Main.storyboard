@@ -391,7 +391,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vhT-15-fuc">
-                                                    <rect key="frame" x="203" y="30" width="127" height="50"/>
+                                                    <rect key="frame" x="203" y="30" width="167" height="50"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -401,7 +401,7 @@
                                             <constraints>
                                                 <constraint firstItem="uP5-VC-k0j" firstAttribute="top" secondItem="V1c-eb-Xmv" secondAttribute="top" constant="12" id="3fd-xs-iN7"/>
                                                 <constraint firstAttribute="bottom" secondItem="uP5-VC-k0j" secondAttribute="bottom" constant="12" id="CGV-PJ-M2F"/>
-                                                <constraint firstAttribute="trailing" secondItem="vhT-15-fuc" secondAttribute="trailing" constant="70" id="NqW-xm-jib"/>
+                                                <constraint firstAttribute="trailing" secondItem="vhT-15-fuc" secondAttribute="trailing" constant="30" id="NqW-xm-jib"/>
                                                 <constraint firstItem="uP5-VC-k0j" firstAttribute="leading" secondItem="V1c-eb-Xmv" secondAttribute="leading" constant="8" id="RDd-zV-Qqm"/>
                                                 <constraint firstAttribute="bottom" secondItem="vhT-15-fuc" secondAttribute="bottom" constant="30" id="Xto-ti-3yT"/>
                                                 <constraint firstItem="vhT-15-fuc" firstAttribute="leading" secondItem="uP5-VC-k0j" secondAttribute="trailing" constant="70" id="eqk-dA-iqw"/>
@@ -514,7 +514,10 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oT2-HL-fsV">
-                                                            <rect key="frame" x="183" y="30" width="42" height="48"/>
+                                                            <rect key="frame" x="153" y="30" width="100" height="48"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="100" id="N5q-2a-bD4"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -536,7 +539,7 @@
                                                         <constraint firstAttribute="bottom" secondItem="R6u-By-989" secondAttribute="bottom" constant="12" id="Ye9-RE-4TW"/>
                                                         <constraint firstItem="R6u-By-989" firstAttribute="top" secondItem="oIW-zk-pcP" secondAttribute="top" constant="12" id="fVr-8M-55M"/>
                                                         <constraint firstAttribute="trailing" secondItem="fod-fD-6Nr" secondAttribute="trailing" constant="40" id="fft-4l-XN1"/>
-                                                        <constraint firstItem="oT2-HL-fsV" firstAttribute="leading" secondItem="R6u-By-989" secondAttribute="trailing" constant="50" id="kwb-W9-OhH"/>
+                                                        <constraint firstItem="oT2-HL-fsV" firstAttribute="leading" secondItem="R6u-By-989" secondAttribute="trailing" constant="20" id="kwb-W9-OhH"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
