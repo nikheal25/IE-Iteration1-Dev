@@ -1247,7 +1247,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search for the crop" showsCancelButton="YES" id="4b0-Sy-8gg">
-                            <rect key="frame" x="0.0" y="0.0" width="786" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
@@ -1351,10 +1351,13 @@
                                                     </constraints>
                                                 </view>
                                                 <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qbi-JT-8Ye" userLabel="SecondContainerView" customClass="RotatedView" customModule="FoldingCell">
-                                                    <rect key="frame" x="0.0" y="200" width="560" height="250"/>
+                                                    <rect key="frame" x="0.0" y="200" width="560" height="220"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwo-YL-Q4c">
-                                                            <rect key="frame" x="10" y="0.0" width="540" height="250"/>
+                                                            <rect key="frame" x="10" y="30" width="540" height="17"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="200" id="DTn-jB-v8h"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -1364,9 +1367,8 @@
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="xwo-YL-Q4c" secondAttribute="trailing" constant="10" id="03h-NF-BJe"/>
                                                         <constraint firstItem="xwo-YL-Q4c" firstAttribute="leading" secondItem="Qbi-JT-8Ye" secondAttribute="leading" constant="10" id="8vb-qS-oE2"/>
-                                                        <constraint firstItem="xwo-YL-Q4c" firstAttribute="top" secondItem="Qbi-JT-8Ye" secondAttribute="top" id="OdG-zl-X7t"/>
-                                                        <constraint firstAttribute="height" constant="250" id="nxS-qb-nAc"/>
-                                                        <constraint firstAttribute="bottom" secondItem="xwo-YL-Q4c" secondAttribute="bottom" id="oFs-Wa-N4L"/>
+                                                        <constraint firstItem="xwo-YL-Q4c" firstAttribute="top" secondItem="Qbi-JT-8Ye" secondAttribute="top" constant="30" id="OdG-zl-X7t"/>
+                                                        <constraint firstAttribute="height" constant="220" id="cfa-cs-Yrx"/>
                                                     </constraints>
                                                 </view>
                                                 <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kax-Jx-GPi" userLabel="BottomContainerView" customClass="RotatedView" customModule="FoldingCell">
