@@ -127,7 +127,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DGL-Z1-Nq5"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Crop Diseases" id="dDa-Vo-dAx"/>
+                    <navigationItem key="navigationItem" title="Plant" id="dDa-Vo-dAx"/>
                     <connections>
                         <outlet property="cropTable" destination="Rpi-V6-ZFR" id="MKV-9n-ehF"/>
                         <outlet property="searchBar" destination="g4d-UC-TIt" id="9Xb-n2-rbT"/>
