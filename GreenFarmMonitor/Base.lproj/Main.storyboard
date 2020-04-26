@@ -1241,7 +1241,7 @@
         <scene sceneID="5RK-j0-OTk">
             <objects>
                 <tableViewController storyboardIdentifier="MainTableViewController" title="All Crops" id="auZ-DV-ex4" customClass="FoldingTableViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="667" sectionHeaderHeight="28" sectionFooterHeight="28" id="pF8-XU-PNN">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="618" sectionHeaderHeight="28" sectionFooterHeight="28" id="pF8-XU-PNN">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="708"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1255,11 +1255,11 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FoldingCell" rowHeight="667" id="gXt-61-trc" customClass="DemoTableViewCell" customModule="Organic_Together" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="600" height="667"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FoldingCell" rowHeight="618" id="gXt-61-trc" customClass="DemoTableViewCell" customModule="Organic_Together" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="600" height="618"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gXt-61-trc" id="3IL-LK-O1a">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="667"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="618"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="42k-X6-as8" userLabel="Foreground" customClass="RotatedView" customModule="FoldingCell">
