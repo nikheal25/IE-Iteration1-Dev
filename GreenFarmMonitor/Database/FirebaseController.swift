@@ -123,7 +123,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
         
     
         //Crop
-        cropRef = database.collection("cropLatest")
+        cropRef = database.collection("cropIteration")
         cropRef?.order(by: "date", descending: false)
         cropRef?.addSnapshotListener { querySnapshot, error in
             guard (querySnapshot?.documents) != nil else {
@@ -144,7 +144,8 @@ class FirebaseController: NSObject, DatabaseProtocol {
             self.parseUserCropRelationSnapshot(snapshot: querySnapshot!)
         }
         //Disease
-        diseaseRef = database.collection("Diseases")
+        //MARK:- new db ref
+        diseaseRef = database.collection("diseaseIteration")  // Diseases
         diseaseRef?.addSnapshotListener { querySnapshot, error in
             guard (querySnapshot?.documents) != nil else {
                 print("Error fetching documents: \(error!)")
