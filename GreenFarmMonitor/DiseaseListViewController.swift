@@ -20,7 +20,7 @@ class DiseaseListViewController: UIViewController,UITableViewDataSource, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let diseaseCell = tableView.dequeueReusableCell(withIdentifier: "disease",for: indexPath)as! DiseaseTableViewCell
         let disease = shownDiseases[indexPath.row]
-        diseaseCell.diseaseImage.image = UIImage(named: disease.name)
+        diseaseCell.diseaseImage.image = UIImage(named: disease.name.lowercased())
         diseaseCell.diseaseNameLabel.text = disease.name
         return diseaseCell
     }
@@ -85,7 +85,7 @@ class DiseaseListViewController: UIViewController,UITableViewDataSource, UITable
             
             let destination = segue.destination as! DetailOfDiseaseViewController
             destination.name = selectDisease
-            destination.image = selectDisease
+            destination.image = selectDisease.lowercased()
             destination.detail = diseaseDescription
             
         }
