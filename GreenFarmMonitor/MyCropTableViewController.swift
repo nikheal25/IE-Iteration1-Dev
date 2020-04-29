@@ -87,6 +87,8 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
             super.viewWillAppear(animated)
         self.navigationItem.hidesBackButton = true
 //            self.navigationController!.navigationBar.barStyle = .black
+            
+            
             self.navigationController!.navigationBar.isTranslucent = true
 //            self.navigationController!.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
 //            self.navigationController!.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.99997437, blue: 0.9999912977, alpha: 1)

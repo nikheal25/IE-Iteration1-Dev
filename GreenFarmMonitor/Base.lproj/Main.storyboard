@@ -22,7 +22,7 @@
         <!--Crops-->
         <scene sceneID="7nH-Ot-lEG">
             <objects>
-                <viewController title="Crops" id="Ex3-ue-bil" customClass="SelectCropForDiseaseViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Crops" id="Ex3-ue-bil" customClass="SelectCropForDiseaseViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7DT-qD-EWy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,7 +49,7 @@
                                 <rect key="frame" x="0.0" y="144" width="414" height="669"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Crop" rowHeight="138" id="0Ei-d8-k6X" customClass="FoundDiseaseCropsTableViewCell" customModule="Organic_Together" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Crop" rowHeight="138" id="0Ei-d8-k6X" customClass="FoundDiseaseCropsTableViewCell" customModule="FarmCommunity_Together" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="138"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Ei-d8-k6X" id="xgm-ua-hcf">
@@ -140,7 +140,7 @@
         <!--Diseases-->
         <scene sceneID="GpI-O4-OFD">
             <objects>
-                <viewController id="uRE-0F-6ZE" customClass="DiseaseListViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="uRE-0F-6ZE" customClass="DiseaseListViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HM9-QO-5R6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -149,10 +149,10 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="disease" rowHeight="162" id="5AS-C7-z8u" customClass="DiseaseTableViewCell" customModule="Organic_Together" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="disease" rowHeight="162" id="5AS-C7-z8u" customClass="DiseaseTableViewCell" customModule="FarmCommunity_Together" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="162"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5AS-C7-z8u" id="iF7-1F-TML" customClass="DiseaseTableViewCell" customModule="Organic_Together" customModuleProvider="target">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5AS-C7-z8u" id="iF7-1F-TML" customClass="DiseaseTableViewCell" customModule="FarmCommunity_Together" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="162"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -229,7 +229,7 @@
         <!--Change Your Location-->
         <scene sceneID="L7m-X9-nAY">
             <objects>
-                <viewController id="xHO-5A-7f3" customClass="ChangeUserLocationViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xHO-5A-7f3" customClass="ChangeUserLocationViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RwT-CM-8js">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -269,7 +269,7 @@
         <!--FirstViewController-->
         <scene sceneID="O9v-aC-QGO">
             <objects>
-                <viewController storyboardIdentifier="FirstViewController" title="FirstViewController" id="0vi-oQ-bUa" customClass="FirstViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstViewController" title="FirstViewController" id="0vi-oQ-bUa" customClass="FirstViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tuh-dh-FYm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -336,7 +336,7 @@
         <!--Onboarding View Controller-->
         <scene sceneID="qyw-UC-HKT">
             <objects>
-                <viewController id="DVU-ys-H6N" customClass="OnboardingViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="DVU-ys-H6N" customClass="OnboardingViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PJh-IC-C6a">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -371,7 +371,7 @@
         <!--Get started-->
         <scene sceneID="70X-aW-u6T">
             <objects>
-                <viewController id="d3q-yA-hpY" customClass="LoginViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="d3q-yA-hpY" customClass="LoginViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fTH-wh-QsD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -409,13 +409,13 @@
         <!--My Crops-->
         <scene sceneID="dUw-OU-e2l">
             <objects>
-                <tableViewController id="DHY-iT-N33" customClass="MyCropTableViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="DHY-iT-N33" customClass="MyCropTableViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="o06-TL-ZHm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCropCell" id="6gT-vv-8rZ" customClass="MyCropMainTableViewCell" customModule="Organic_Together" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCropCell" id="6gT-vv-8rZ" customClass="MyCropMainTableViewCell" customModule="FarmCommunity_Together" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="55.5" width="414" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6gT-vv-8rZ" id="o7f-wn-9k7">
@@ -511,7 +511,7 @@
         <!--Grow Crop-->
         <scene sceneID="dCf-E4-mQL">
             <objects>
-                <viewController title="Grow Crop" id="YNr-Bz-n0u" customClass="GrowMyCropViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Grow Crop" id="YNr-Bz-n0u" customClass="GrowMyCropViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ta6-Lp-qhP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -538,7 +538,7 @@
                                 <rect key="frame" x="0.0" y="196" width="414" height="617"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="10" reuseIdentifier="Crop" id="Ux4-xO-sKe" customClass="GrowMyCropTableViewCell" customModule="Organic_Together" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="10" reuseIdentifier="Crop" id="Ux4-xO-sKe" customClass="GrowMyCropTableViewCell" customModule="FarmCommunity_Together" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ux4-xO-sKe" id="Ntt-61-1GB">
@@ -656,7 +656,7 @@
         <!--All Crops-->
         <scene sceneID="pJj-C0-a7B">
             <objects>
-                <viewController id="RFN-Gy-5fg" customClass="AddNewCropViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="RFN-Gy-5fg" customClass="AddNewCropViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Ow-Oe-x9R">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -673,7 +673,7 @@
                                 <rect key="frame" x="0.0" y="144" width="414" height="752"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Crop" id="ykX-ET-JuK" customClass="MyCropCellTableViewCell" customModule="Organic_Together" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Crop" id="ykX-ET-JuK" customClass="MyCropCellTableViewCell" customModule="FarmCommunity_Together" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ykX-ET-JuK" id="ToY-UQ-TRk">
@@ -763,7 +763,7 @@
         <!--Detail Of The Crop View Controller-->
         <scene sceneID="mNU-Ir-YEq">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="yiQ-Q6-hV5" customClass="DetailOfTheCropViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="yiQ-Q6-hV5" customClass="DetailOfTheCropViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ePo-PE-W8y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1043,7 +1043,7 @@
         <!--Detail New Crop View Controller-->
         <scene sceneID="Sb3-rU-tnB">
             <objects>
-                <viewController id="RG7-Oh-y8c" customClass="DetailNewCropViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="RG7-Oh-y8c" customClass="DetailNewCropViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9gY-m0-TOh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1102,7 +1102,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Ubg-Jz-Cyg">
             <objects>
-                <tabBarController hidesBottomBarWhenPushed="YES" id="5b7-kb-K7H" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="5b7-kb-K7H" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="fzg-Eh-Dbq"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bjx-aN-He7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -1159,7 +1159,7 @@
         <!--Symptoms-->
         <scene sceneID="u4d-JT-VYk">
             <objects>
-                <viewController id="2Kg-aO-PYg" customClass="SymptomsViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2Kg-aO-PYg" customClass="SymptomsViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pa3-Be-0pY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1175,7 +1175,7 @@
         <!--Details-->
         <scene sceneID="9bH-5N-hdR">
             <objects>
-                <viewController id="CM5-eV-gRe" customClass="DetailOfDiseaseViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="CM5-eV-gRe" customClass="DetailOfDiseaseViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N78-xj-Pb4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1264,14 +1264,14 @@
         <!--All Crops-->
         <scene sceneID="5RK-j0-OTk">
             <objects>
-                <tableViewController storyboardIdentifier="MainTableViewController" title="All Crops" id="auZ-DV-ex4" customClass="FoldingTableViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MainTableViewController" title="All Crops" id="auZ-DV-ex4" customClass="FoldingTableViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="618" sectionHeaderHeight="28" sectionFooterHeight="28" id="pF8-XU-PNN">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="708"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search for the crop" showsCancelButton="YES" id="4b0-Sy-8gg">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="786" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
@@ -1279,7 +1279,7 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FoldingCell" rowHeight="618" id="gXt-61-trc" customClass="DemoTableViewCell" customModule="Organic_Together" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FoldingCell" rowHeight="618" id="gXt-61-trc" customClass="DemoTableViewCell" customModule="FarmCommunity_Together" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="600" height="618"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gXt-61-trc" id="3IL-LK-O1a">
@@ -1528,7 +1528,7 @@
         <!--Grow My Detail Crop View Controller-->
         <scene sceneID="mLJ-P0-gQD">
             <objects>
-                <viewController id="xMu-wD-XeD" customClass="GrowMyDetailCropViewController" customModule="Organic_Together" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xMu-wD-XeD" customClass="GrowMyDetailCropViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1sW-z1-Jn4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -48,6 +48,8 @@ class LoginViewController: UIViewController {
             if successStatus! {
                 userDefaultController?.assignName(name: newUser.userName)
             }
+            
+            self.navigationController?.setNavigationBarHidden(true, animated: true)
             //else{
 //                print("______--------------FATAL ERROR : USER CANNOT REGISTER ON FIREBASE")
 //                //
