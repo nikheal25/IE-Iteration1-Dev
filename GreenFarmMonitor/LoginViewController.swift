@@ -38,6 +38,12 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        // Hide the navigation bar on the this view controller
+                   self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    
     @IBAction func loginClicked(_ sender: Any) {
         if validateFields() {
             let newUserId = userDefaultController?.generateUniqueUserId()
@@ -49,7 +55,8 @@ class LoginViewController: UIViewController {
                 userDefaultController?.assignName(name: newUser.userName)
             }
             
-            self.navigationController?.setNavigationBarHidden(true, animated: true)
+           
+//            self.navigationController?.setNavigationBarHidden(true, animated: true)
             //else{
 //                print("______--------------FATAL ERROR : USER CANNOT REGISTER ON FIREBASE")
 //                //
