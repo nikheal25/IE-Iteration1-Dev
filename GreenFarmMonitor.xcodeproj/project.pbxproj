@@ -29,6 +29,7 @@
 		1D9EED3B243C3A7E00EE97D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D9EED39243C3A7E00EE97D2 /* LaunchScreen.storyboard */; };
 		1D9EED46243C3A7E00EE97D2 /* GreenFarmMonitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9EED45243C3A7E00EE97D2 /* GreenFarmMonitorTests.swift */; };
 		1D9EED51243C3A7F00EE97D2 /* GreenFarmMonitorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9EED50243C3A7F00EE97D2 /* GreenFarmMonitorUITests.swift */; };
+		1DB74B3224603CF900530B81 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB74B3124603CF900530B81 /* WeatherAPI.swift */; };
 		1DDEE7DD244432CF005BC7D8 /* Crop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEE7DC244432CF005BC7D8 /* Crop.swift */; };
 		1DDEE7DF244433D3005BC7D8 /* MyCropTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEE7DE244433D3005BC7D8 /* MyCropTableViewController.swift */; };
 		1DDEE7E12444363B005BC7D8 /* CropTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEE7E02444363B005BC7D8 /* CropTableViewCell.swift */; };
@@ -101,6 +102,7 @@
 		1D9EED4C243C3A7F00EE97D2 /* GreenFarmMonitorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GreenFarmMonitorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D9EED50243C3A7F00EE97D2 /* GreenFarmMonitorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenFarmMonitorUITests.swift; sourceTree = "<group>"; };
 		1D9EED52243C3A7F00EE97D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1DB74B3124603CF900530B81 /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
 		1DDEE7DC244432CF005BC7D8 /* Crop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crop.swift; sourceTree = "<group>"; };
 		1DDEE7DE244433D3005BC7D8 /* MyCropTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCropTableViewController.swift; sourceTree = "<group>"; };
 		1DDEE7E02444363B005BC7D8 /* CropTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropTableViewCell.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 		1D9EED2D243C3A7D00EE97D2 /* GreenFarmMonitor */ = {
 			isa = PBXGroup;
 			children = (
+				1DB74B3024603CD400530B81 /* API */,
 				1D2FCB812445A16D0024FFBB /* Database */,
 				1D0B0842243D82640098D644 /* Models */,
 				1D0B0840243D82390098D644 /* UserDefaults */,
@@ -282,6 +285,14 @@
 				1D9EED52243C3A7F00EE97D2 /* Info.plist */,
 			);
 			path = GreenFarmMonitorUITests;
+			sourceTree = "<group>";
+		};
+		1DB74B3024603CD400530B81 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				1DB74B3124603CF900530B81 /* WeatherAPI.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		9BB5EE78BDC93058F8D33EB0 /* Pods */ = {
@@ -548,6 +559,7 @@
 				E8FDFCAB2447133F00143844 /* LocationAnnotation .swift in Sources */,
 				1D9EED33243C3A7D00EE97D2 /* ViewController.swift in Sources */,
 				1DDEE7E5244443CD005BC7D8 /* AddNewCropViewController.swift in Sources */,
+				1DB74B3224603CF900530B81 /* WeatherAPI.swift in Sources */,
 				1D12428B245068B9001C6BAD /* GrowMyDetailCropViewController.swift in Sources */,
 				1D4743DB2447ECA100866CEB /* DetailOfTheCropViewController.swift in Sources */,
 				1DDEE7ED24448112005BC7D8 /* FirstViewController.swift in Sources */,
