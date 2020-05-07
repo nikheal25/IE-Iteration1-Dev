@@ -1523,11 +1523,11 @@
             </objects>
             <point key="canvasLocation" x="-2478.2608695652175" y="1872.9910714285713"/>
         </scene>
-        <!--Know My Crops-->
+        <!--Know MyCrops-->
         <scene sceneID="brH-b0-cI1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sgY-Yw-PWc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Know My Crops" image="GROWMY" selectedImage="GROWMY" id="iI6-UZ-Us3"/>
+                    <tabBarItem key="tabBarItem" title="Know MyCrops" image="GROWMY" selectedImage="GROWMY" id="iI6-UZ-Us3"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="9MU-u6-o2c"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jpv-zl-IUn">
