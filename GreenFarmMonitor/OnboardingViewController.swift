@@ -75,7 +75,7 @@ class OnboardingViewController: UIViewController, PaperOnboardingDataSource {
         return [
             OnboardingItemInfo(informationImage: UIImage(named: "Wallet")!,
                                title: "Crop Ideal Conditions",
-                               description: "Know the ideal conditions and requirements for your crop",
+                               description: "    Know the ideal conditions and requirements for your crop    ",
                                pageIcon: UIImage(named: "Wallet")!,
                                color: UIColor(hexString: "#588B8B"),
                                titleColor: UIColor.white,
@@ -85,7 +85,7 @@ class OnboardingViewController: UIViewController, PaperOnboardingDataSource {
             
             OnboardingItemInfo(informationImage: UIImage(named: "Shopping-cart")!,
                                title: "Crop Disease Identification",
-                               description: "Know the common diseases and infections that might affect your crops",
+                               description: "    Know the common diseases and infections that might affect your crops    ",
                                pageIcon: UIImage(named: "Shopping-cart")!,
                                color: UIColor(hexString: "#E85D75"),   // #E85D75 - 3.5
                 titleColor: UIColor.white,

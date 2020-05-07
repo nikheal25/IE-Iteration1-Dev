@@ -280,6 +280,12 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose the crop crop you want to grow" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Tf-Ds-maR">
+                                <rect key="frame" x="38" y="427.5" width="338.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S1Q-vK-0Fs">
                                 <rect key="frame" x="50" y="720" width="314" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -290,39 +296,50 @@
                                     <action selector="nextButtonClicked:" destination="0vi-oQ-bUa" eventType="touchUpInside" id="cTC-Bm-h8O"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="epb-AY-0H1">
-                                <rect key="frame" x="127" y="418.5" width="160" height="160"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="160" id="Q1i-Fr-WMC"/>
-                                    <constraint firstAttribute="width" constant="160" id="bBx-af-f7h"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FarmCommunity Together" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2l5-wH-OPh">
                                 <rect key="frame" x="36.5" y="348.5" width="341.5" height="39"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find the ideal conditions for that crop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrc-M3-Dv8">
+                                <rect key="frame" x="46.5" y="481.5" width="321" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find the diseases related to the crop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFQ-Kc-gEs">
+                                <rect key="frame" x="50.5" y="535.5" width="313" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="AFQ-Kc-gEs" firstAttribute="centerX" secondItem="tuh-dh-FYm" secondAttribute="centerX" id="3SR-J5-vUI"/>
                             <constraint firstItem="S1Q-vK-0Fs" firstAttribute="centerX" secondItem="tuh-dh-FYm" secondAttribute="centerX" id="AXK-Gf-KG8"/>
                             <constraint firstItem="okr-UP-B6e" firstAttribute="centerX" secondItem="tuh-dh-FYm" secondAttribute="centerX" id="GmC-We-jOA"/>
+                            <constraint firstItem="0Tf-Ds-maR" firstAttribute="centerX" secondItem="tuh-dh-FYm" secondAttribute="centerX" id="IOr-ox-B20"/>
+                            <constraint firstItem="AFQ-Kc-gEs" firstAttribute="top" secondItem="hrc-M3-Dv8" secondAttribute="bottom" constant="30" id="LT0-2x-1rZ"/>
                             <constraint firstItem="S1Q-vK-0Fs" firstAttribute="leading" secondItem="V40-Hf-TkI" secondAttribute="leading" constant="50" id="Rhb-YD-CDb"/>
-                            <constraint firstItem="epb-AY-0H1" firstAttribute="top" secondItem="okr-UP-B6e" secondAttribute="bottom" constant="100" id="UV8-Fz-RYz"/>
                             <constraint firstItem="okr-UP-B6e" firstAttribute="top" secondItem="V40-Hf-TkI" secondAttribute="top" constant="200" id="Vv4-fd-S1g"/>
+                            <constraint firstItem="hrc-M3-Dv8" firstAttribute="centerX" secondItem="tuh-dh-FYm" secondAttribute="centerX" id="XVM-5p-e5S"/>
                             <constraint firstItem="2l5-wH-OPh" firstAttribute="top" secondItem="okr-UP-B6e" secondAttribute="bottom" constant="30" id="c0Z-fJ-3J0"/>
+                            <constraint firstItem="hrc-M3-Dv8" firstAttribute="top" secondItem="0Tf-Ds-maR" secondAttribute="bottom" constant="30" id="cjI-Xt-X4U"/>
                             <constraint firstItem="V40-Hf-TkI" firstAttribute="trailing" secondItem="S1Q-vK-0Fs" secondAttribute="trailing" constant="50" id="dTo-2d-FT1"/>
+                            <constraint firstItem="0Tf-Ds-maR" firstAttribute="top" secondItem="2l5-wH-OPh" secondAttribute="bottom" constant="40" id="lQY-Zv-Lwc"/>
                             <constraint firstItem="V40-Hf-TkI" firstAttribute="bottom" secondItem="S1Q-vK-0Fs" secondAttribute="bottom" constant="100" id="v7I-xp-La2"/>
-                            <constraint firstItem="epb-AY-0H1" firstAttribute="centerX" secondItem="tuh-dh-FYm" secondAttribute="centerX" id="x0i-tR-iFo"/>
                             <constraint firstItem="2l5-wH-OPh" firstAttribute="centerX" secondItem="tuh-dh-FYm" secondAttribute="centerX" id="xv3-QD-seW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="V40-Hf-TkI"/>
                     </view>
                     <navigationItem key="navigationItem" id="2Jp-1J-Czg"/>
                     <connections>
+                        <outlet property="featureLable" destination="0Tf-Ds-maR" id="YHi-sH-vBL"/>
+                        <outlet property="featureThree" destination="AFQ-Kc-gEs" id="FcU-YU-WyH"/>
+                        <outlet property="featureTwo" destination="hrc-M3-Dv8" id="KuE-IF-1NC"/>
                         <outlet property="mainButton" destination="S1Q-vK-0Fs" id="SyR-Mf-avU"/>
-                        <outlet property="mainImage" destination="epb-AY-0H1" id="K5r-Zm-OB0"/>
                         <outlet property="mainLabel" destination="okr-UP-B6e" id="zn4-N5-Jwb"/>
                         <outlet property="subtitle" destination="2l5-wH-OPh" id="8jv-Jz-ufj"/>
                         <outlet property="videoLayer" destination="tuh-dh-FYm" id="MVh-QI-Di1"/>
@@ -342,10 +359,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Rq-BV-hFR">
-                                <rect key="frame" x="311" y="113" width="53" height="46"/>
+                                <rect key="frame" x="274" y="113" width="90" height="46"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <state key="normal" title="Skip">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="   Skip   ">
+                                    <color key="titleColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
                                 <connections>
                                     <action selector="onClick:" destination="DVU-ys-H6N" eventType="touchUpInside" id="qJj-6x-MFH"/>
@@ -1048,7 +1066,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenHouse-2" translatesAutoresizingMaskIntoConstraints="NO" id="SDO-wC-zYB">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenHouse-2" translatesAutoresizingMaskIntoConstraints="NO" id="SDO-wC-zYB">
                                 <rect key="frame" x="0.0" y="88" width="414" height="254"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="254" id="dux-jC-Cpa"/>
@@ -1242,11 +1260,11 @@
             </objects>
             <point key="canvasLocation" x="1310" y="1102"/>
         </scene>
-        <!--My Crop-->
+        <!--My Garden-->
         <scene sceneID="vcC-88-CP8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NUq-PZ-WBC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Crop" image="icons8-soil-100" id="AGm-Au-5FZ"/>
+                    <tabBarItem key="tabBarItem" title="My Garden" image="icons8-soil-100" id="AGm-Au-5FZ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ffb-7p-e5y">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -1377,7 +1395,7 @@
                                                 <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qbi-JT-8Ye" userLabel="SecondContainerView" customClass="RotatedView" customModule="FoldingCell">
                                                     <rect key="frame" x="0.0" y="200" width="560" height="220"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwo-YL-Q4c">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwo-YL-Q4c">
                                                             <rect key="frame" x="10" y="30" width="540" height="17"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" relation="lessThanOrEqual" constant="200" id="DTn-jB-v8h"/>
@@ -1505,11 +1523,11 @@
             </objects>
             <point key="canvasLocation" x="-2478.2608695652175" y="1872.9910714285713"/>
         </scene>
-        <!--Grow Crops-->
+        <!--Know My Crops-->
         <scene sceneID="brH-b0-cI1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sgY-Yw-PWc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Grow Crops" image="GROWMY" selectedImage="GROWMY" id="iI6-UZ-Us3"/>
+                    <tabBarItem key="tabBarItem" title="Know My Crops" image="GROWMY" selectedImage="GROWMY" id="iI6-UZ-Us3"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="9MU-u6-o2c"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jpv-zl-IUn">
@@ -1542,7 +1560,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Dq-K6-4pR" userLabel="viewForImage">
                                                 <rect key="frame" x="20" y="20" width="373" height="221"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenHouse-1" translatesAutoresizingMaskIntoConstraints="NO" id="gTn-tI-oXS">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenHouse-1" translatesAutoresizingMaskIntoConstraints="NO" id="gTn-tI-oXS">
                                                         <rect key="frame" x="30" y="20" width="313" height="181"/>
                                                     </imageView>
                                                 </subviews>

@@ -15,8 +15,11 @@ class FirstViewController: UIViewController {
     @IBOutlet var videoLayer: UIView!
     @IBOutlet weak var mainLabel: UILabel!
     @IBOutlet weak var mainButton: UIButton!
-    @IBOutlet weak var mainImage: UIImageView!
+//    @IBOutlet weak var mainImage: UIImageView!
     @IBOutlet weak var subtitle: UILabel!
+    @IBOutlet weak var featureLable: UILabel!
+    @IBOutlet weak var featureTwo: UILabel!
+    @IBOutlet weak var featureThree: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         mainButton.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.3)
@@ -47,7 +50,10 @@ class FirstViewController: UIViewController {
         videoLayer.bringSubviewToFront(mainLabel)
            videoLayer.bringSubviewToFront(mainButton)
         videoLayer.bringSubviewToFront(subtitle)
-        videoLayer.bringSubviewToFront(mainImage)
+//        videoLayer.bringSubviewToFront(mainImage)
+         videoLayer.bringSubviewToFront(featureLable)
+        videoLayer.bringSubviewToFront(featureTwo)
+        videoLayer.bringSubviewToFront(featureThree)
         
         player.actionAtItemEnd = .none
         NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying), name: .AVPlayerItemDidPlayToEndTime, object: nil)
