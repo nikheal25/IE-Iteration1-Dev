@@ -226,7 +226,7 @@
             </objects>
             <point key="canvasLocation" x="3247.826086956522" y="1764.5089285714284"/>
         </scene>
-        <!--Change Your Location-->
+        <!--Add Your Location-->
         <scene sceneID="L7m-X9-nAY">
             <objects>
                 <viewController id="xHO-5A-7f3" customClass="ChangeUserLocationViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
@@ -235,10 +235,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="BuC-zj-nzL">
-                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="623"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="CurrentLocation" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Et-gp-JTR">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add your farm here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Et-gp-JTR">
                                 <rect key="frame" x="20" y="98" width="287" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -247,17 +247,25 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmZ-eU-9uP">
                                 <rect key="frame" x="334" y="99" width="60" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Change"/>
                                 <connections>
                                     <action selector="ChangeBtn:" destination="xHO-5A-7f3" eventType="touchUpInside" id="VyD-wl-NZ7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZi-mg-jg5">
+                                <rect key="frame" x="20" y="771" width="374" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Continue"/>
+                                <connections>
+                                    <segue destination="5b7-kb-K7H" kind="show" id="0Ul-wz-YEU"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="4pg-HS-muc"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Change Your Location" id="tJ3-4w-Aqn"/>
+                    <navigationItem key="navigationItem" title="Add Your Location" id="tJ3-4w-Aqn"/>
                     <connections>
+                        <outlet property="UIBtn" destination="qmZ-eU-9uP" id="jlG-mU-qgO"/>
                         <outlet property="locationText" destination="0Et-gp-JTR" id="7Y1-rV-SLv"/>
                         <outlet property="mapView" destination="BuC-zj-nzL" id="YlP-3g-o7M"/>
                     </connections>
@@ -367,7 +375,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onClick:" destination="DVU-ys-H6N" eventType="touchUpInside" id="qJj-6x-MFH"/>
-                                    <segue destination="5b7-kb-K7H" kind="show" id="VzF-hC-SKP"/>
+                                    <segue destination="xHO-5A-7f3" kind="show" id="FPC-GU-hdN"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1154,25 +1162,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BVo-5K-doi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1516" y="-364"/>
-        </scene>
-        <!--My Location-->
-        <scene sceneID="cZ3-DF-pZ0">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BdO-ON-fGF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Location" image="location" id="eyf-a2-oVa"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xCg-00-iyl">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="xHO-5A-7f3" kind="relationship" relationship="rootViewController" id="9K0-bd-Cze"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="el0-gC-GvF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4749.275362318841" y="522.99107142857144"/>
         </scene>
         <!--Symptoms-->
         <scene sceneID="u4d-JT-VYk">
@@ -2031,7 +2020,6 @@
         <image name="icons8-soil-100" width="33" height="33"/>
         <image name="icons8-virus-100" width="33" height="33"/>
         <image name="image" width="16" height="16"/>
-        <image name="location" width="33" height="33"/>
         <image name="moisture" width="28" height="28"/>
         <image name="nutrient requirement" width="28" height="28"/>
         <image name="soil ph" width="28" height="28"/>

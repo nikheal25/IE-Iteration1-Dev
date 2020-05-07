@@ -14,19 +14,19 @@ class ChangeUserLocationViewController: UIViewController {
 
     var LocationList = [LocationAnnotation]()
     
-   
+    weak var userDefaultController: UserdefaultsProtocol?
     
     weak var databaseController: DatabaseProtocol?
     override func viewDidLoad() {
         super.viewDidLoad()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-     
+     userDefaultController = appDelegate.userDefaultController
         databaseController = appDelegate.databaseController
-        
+         let currentUserId = userDefaultController?.retrieveUserId()
         let userList = databaseController?.userList
         for user in userList!
         {
-            if user.userId == "20-04-16-15:00:22tqAOd"{
+            if user.userId == "20-05-07-18:12:17x5bxy"{
             let lat = Double(user.farmLat)
             let long = Double(user.farmLong)
            
@@ -34,7 +34,16 @@ class ChangeUserLocationViewController: UIViewController {
             }
         }
 //        let location = LocationAnnotation(newTitle: "My farm", lat: -37.877623, long: 145.1362)
-      
+        if LocationList.first?.coordinate == nil
+        {
+            locationText.placeholder = "Add your farm here"
+            UIBtn.setTitle("Add", for:.normal)
+        }
+        else
+        {
+            locationText.placeholder = "Change your farm here"
+             UIBtn.setTitle("Change", for:.normal)
+        }
         mapView.addAnnotations(LocationList)
         focusOn(annotation: LocationList.first!)
        
@@ -57,10 +66,15 @@ class ChangeUserLocationViewController: UIViewController {
     }
     */
     
+    @IBOutlet weak var UIBtn: UIButton!
     @IBOutlet weak var locationText: UITextField!
     
     @IBAction func ChangeBtn(_ sender: Any) {
         let address = locationText.text
+        if address!.isEmpty
+        {}
+        else
+        {
         let geoCoder = CLGeocoder()
         geoCoder.geocodeAddressString(address!)
         {placemarks,error in
@@ -75,6 +89,7 @@ class ChangeUserLocationViewController: UIViewController {
             self.focusOn(annotation:location)
             
                 }
+        }
      
     }
     
