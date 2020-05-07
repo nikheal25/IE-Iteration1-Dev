@@ -1289,7 +1289,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search for the crop" showsCancelButton="YES" id="4b0-Sy-8gg">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="786" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
@@ -1523,11 +1523,11 @@
             </objects>
             <point key="canvasLocation" x="-2478.2608695652175" y="1872.9910714285713"/>
         </scene>
-        <!--Know MyCrops-->
+        <!--Know MyPlants-->
         <scene sceneID="brH-b0-cI1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sgY-Yw-PWc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Know MyCrops" image="GROWMY" selectedImage="GROWMY" id="iI6-UZ-Us3"/>
+                    <tabBarItem key="tabBarItem" title="Know MyPlants" image="GROWMY" selectedImage="GROWMY" id="iI6-UZ-Us3"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="9MU-u6-o2c"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jpv-zl-IUn">
