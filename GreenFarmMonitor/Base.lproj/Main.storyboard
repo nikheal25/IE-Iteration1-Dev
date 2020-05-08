@@ -1273,11 +1273,11 @@
             <objects>
                 <viewController id="0Ku-Rf-b4l" customClass="PopOverViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aUj-Mh-FzM">
-                        <rect key="frame" x="0.0" y="0.0" width="200" height="446"/>
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Y28-QO-Vfg">
-                                <rect key="frame" x="15" y="20" width="170" height="32"/>
+                                <rect key="frame" x="15" y="64" width="120" height="32"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <segments>
                                     <segment title="Sort by"/>
@@ -1288,13 +1288,13 @@
                                 </connections>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p1k-UI-XmA">
-                                <rect key="frame" x="0.0" y="305" width="200" height="387"/>
+                                <rect key="frame" x="0.0" y="-43" width="150" height="197"/>
                                 <connections>
                                     <segue destination="ZHU-zq-8rR" kind="embed" identifier="filterSegue" id="uMc-24-rdf"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PBi-z0-7H9">
-                                <rect key="frame" x="0.0" y="305" width="200" height="387"/>
+                                <rect key="frame" x="0.0" y="-43" width="150" height="197"/>
                                 <connections>
                                     <segue destination="hhe-hS-c5K" kind="embed" identifier="sortSegue" id="3in-J3-Vk7"/>
                                 </connections>
@@ -1317,7 +1317,7 @@
                         <viewLayoutGuide key="safeArea" id="ggr-Re-l0C"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="200" height="500"/>
+                    <size key="freeformSize" width="150" height="300"/>
                     <connections>
                         <outlet property="firstView" destination="PBi-z0-7H9" id="MaP-iZ-Ctp"/>
                         <outlet property="secondView" destination="p1k-UI-XmA" id="Qw5-8j-JYG"/>
@@ -2078,11 +2078,11 @@
             <objects>
                 <viewController id="hhe-hS-c5K" customClass="SortByViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="scZ-KU-NYz">
-                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A3A-9u-KPc">
-                                <rect key="frame" x="15" y="50" width="170" height="30"/>
+                                <rect key="frame" x="15" y="50" width="120" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hi7-aK-FvG">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
@@ -2101,7 +2101,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recommended" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inq-cD-fBP">
-                                        <rect key="frame" x="50" y="0.0" width="120" height="30"/>
+                                        <rect key="frame" x="50" y="0.0" width="70" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -2109,7 +2109,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1f2-TH-F8u">
-                                <rect key="frame" x="15" y="110" width="170" height="30"/>
+                                <rect key="frame" x="15" y="110" width="120" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Lc-vX-Ve1">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
@@ -2128,7 +2128,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alphabetically" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKU-EO-jmz">
-                                        <rect key="frame" x="50" y="0.0" width="120" height="30"/>
+                                        <rect key="frame" x="50" y="0.0" width="70" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -2136,7 +2136,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sh0-EU-L3K">
-                                <rect key="frame" x="40" y="114" width="120" height="36"/>
+                                <rect key="frame" x="40" y="214" width="70" height="36"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Done">
@@ -2162,7 +2162,7 @@
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="200" height="200"/>
+                    <size key="freeformSize" width="150" height="300"/>
                     <connections>
                         <outlet property="alphabetLabel" destination="oKU-EO-jmz" id="t4l-dP-dsM"/>
                         <outlet property="alphabeticalButton" destination="3Lc-vX-Ve1" id="fFw-oT-mN7"/>
@@ -2180,33 +2180,30 @@
             <objects>
                 <viewController id="ZHU-zq-8rR" customClass="FilterViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nyT-d6-35Y">
-                        <rect key="frame" x="0.0" y="0.0" width="200" height="387"/>
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mw3-FP-VAr">
                                 <rect key="frame" x="15" y="30" width="100" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="OfH-M5-fEj"/>
                                 </constraints>
-                                <state key="normal" title="Plant type"/>
+                                <state key="normal" title="Plant type">
+                                    <color key="titleColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="platTypeClicked:" destination="ZHU-zq-8rR" eventType="touchUpInside" id="RxJ-VB-YNX"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Gk-a7-OWK">
-                                <rect key="frame" x="18" y="150" width="164" height="138"/>
+                                <rect key="frame" x="18" y="130" width="114" height="138"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="138" id="HZg-T1-GHm"/>
                                 </constraints>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3T-4V-bJU">
-                                <rect key="frame" x="79" y="34.5" width="101" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfv-56-i1l">
-                                <rect key="frame" x="30" y="318" width="140" height="30"/>
+                                <rect key="frame" x="30" y="298" width="90" height="30"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
                                     <action selector="doneClicked:" destination="ZHU-zq-8rR" eventType="touchUpInside" id="bRg-c0-iSl"/>
@@ -2214,16 +2211,31 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kq6-CQ-KAR">
                                 <rect key="frame" x="15" y="70" width="100" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="nse-DO-bRK"/>
                                 </constraints>
-                                <state key="normal" title="Soil type"/>
+                                <state key="normal" title="Soil type">
+                                    <color key="titleColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="soilTypeClicked:" destination="ZHU-zq-8rR" eventType="touchUpInside" id="nhJ-ZJ-b5N"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o3D-P1-NSc">
-                                <rect key="frame" x="63" y="74.5" width="101" height="21"/>
+                                <rect key="frame" x="13" y="74.5" width="101" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3k-Lj-h5r">
+                                <rect key="frame" x="59.5" y="110" width="31" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3T-4V-bJU">
+                                <rect key="frame" x="13" y="34.5" width="101" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -2232,9 +2244,11 @@
                         <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="o3D-P1-NSc" secondAttribute="trailing" constant="20" id="1Bd-AG-2Jx"/>
+                            <constraint firstItem="8Gk-a7-OWK" firstAttribute="top" secondItem="g3k-Lj-h5r" secondAttribute="bottom" constant="5" id="8bX-5Z-vB3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="V3T-4V-bJU" secondAttribute="trailing" constant="20" id="BDg-AA-x6o"/>
                             <constraint firstItem="wfv-56-i1l" firstAttribute="leading" secondItem="nyT-d6-35Y" secondAttribute="leading" constant="30" id="DJh-me-R5o"/>
-                            <constraint firstAttribute="trailing" secondItem="V3T-4V-bJU" secondAttribute="trailing" constant="20" id="WzF-4b-75J"/>
-                            <constraint firstItem="V3T-4V-bJU" firstAttribute="centerY" secondItem="mw3-FP-VAr" secondAttribute="centerY" id="XSJ-sT-e8x"/>
+                            <constraint firstItem="g3k-Lj-h5r" firstAttribute="top" secondItem="kq6-CQ-KAR" secondAttribute="bottom" constant="10" id="K7U-vv-4xI"/>
+                            <constraint firstItem="V3T-4V-bJU" firstAttribute="centerY" secondItem="mw3-FP-VAr" secondAttribute="centerY" id="O9T-cW-ae4"/>
                             <constraint firstItem="mw3-FP-VAr" firstAttribute="top" secondItem="nyT-d6-35Y" secondAttribute="top" constant="30" id="XXC-X9-ApU"/>
                             <constraint firstItem="mw3-FP-VAr" firstAttribute="leading" secondItem="kq6-CQ-KAR" secondAttribute="leading" id="avL-JZ-Y8i"/>
                             <constraint firstItem="wfv-56-i1l" firstAttribute="top" secondItem="8Gk-a7-OWK" secondAttribute="bottom" constant="30" id="bWT-qy-rp9"/>
@@ -2242,13 +2256,16 @@
                             <constraint firstItem="kq6-CQ-KAR" firstAttribute="top" secondItem="mw3-FP-VAr" secondAttribute="bottom" constant="10" id="fDN-op-hZi"/>
                             <constraint firstItem="8Gk-a7-OWK" firstAttribute="leading" secondItem="nyT-d6-35Y" secondAttribute="leadingMargin" constant="2" id="fKe-Uf-cOW"/>
                             <constraint firstItem="8Gk-a7-OWK" firstAttribute="centerX" secondItem="nyT-d6-35Y" secondAttribute="centerX" id="i9T-ps-iFb"/>
-                            <constraint firstItem="8Gk-a7-OWK" firstAttribute="top" secondItem="kq6-CQ-KAR" secondAttribute="bottom" constant="50" id="lTN-62-2wb"/>
+                            <constraint firstItem="8Gk-a7-OWK" firstAttribute="top" secondItem="kq6-CQ-KAR" secondAttribute="bottom" constant="30" id="lTN-62-2wb"/>
                             <constraint firstItem="o3D-P1-NSc" firstAttribute="centerY" secondItem="kq6-CQ-KAR" secondAttribute="centerY" id="rc9-Us-0Qd"/>
+                            <constraint firstItem="g3k-Lj-h5r" firstAttribute="centerX" secondItem="nyT-d6-35Y" secondAttribute="centerX" id="rjh-FR-AvV"/>
                             <constraint firstItem="kq6-CQ-KAR" firstAttribute="leading" secondItem="nyT-d6-35Y" secondAttribute="leading" constant="15" id="v1g-HR-v5v"/>
                         </constraints>
                     </view>
+                    <size key="freeformSize" width="150" height="300"/>
                     <connections>
                         <outlet property="doneButton" destination="wfv-56-i1l" id="cXt-0M-zIW"/>
+                        <outlet property="instructionLabel" destination="g3k-Lj-h5r" id="xVe-YC-ZtT"/>
                         <outlet property="pickerView" destination="8Gk-a7-OWK" id="6Nb-rn-sAR"/>
                         <outlet property="platTypeLabel" destination="V3T-4V-bJU" id="0o6-di-Rva"/>
                         <outlet property="soilTypeLabel" destination="o3D-P1-NSc" id="ybr-kV-kZH"/>
@@ -2256,7 +2273,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bCn-Fp-tL6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3313.04347826087" y="2308.59375"/>
+            <point key="canvasLocation" x="-3313.04347826087" y="2308.2589285714284"/>
         </scene>
     </scenes>
     <resources>

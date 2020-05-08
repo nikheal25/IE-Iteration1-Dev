@@ -12,7 +12,10 @@ import FoldingCell
 class FoldingTableViewController: UITableViewController, UIPopoverPresentationControllerDelegate {
     
     var specificCrop: Crop?
+    // MARK: Sort and Filter
     var sortingSchema: Int?
+    var plantFilter: String?
+    var soilFilter: String?
     
     var listenerType: ListenerType = ListenerType.all // listener
     weak var databaseController: DatabaseProtocol?
@@ -42,6 +45,9 @@ class FoldingTableViewController: UITableViewController, UIPopoverPresentationCo
     // MARK: Life Cycle
     override func viewDidLoad() {
         sortingSchema = 1
+        plantFilter = "Please select"
+        soilFilter = "Please select"
+        
         super.viewDidLoad()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         userDefaultController = appDelegate.userDefaultController
@@ -75,6 +81,8 @@ class FoldingTableViewController: UITableViewController, UIPopoverPresentationCo
             let popoverViewController = segue.destination as! PopOverViewController
             popoverViewController.filterSelectedDelegate = self
             popoverViewController.sortingSchema = sortingSchema
+            popoverViewController.plantFilter = plantFilter
+            popoverViewController.soilFilter = soilFilter
             popoverViewController.popoverPresentationController?.delegate = self
         }
     }
@@ -273,16 +281,22 @@ extension FoldingTableViewController: filterDelgate {
     
     func filterOption(plantType: String, soilType: String) {
         print(plantType)
-        if plantType == "Please select" {
-            searchedCrop = filterCellsBySoilType(term: soilType)
-            searching = true
+        if plantType == "Please select" || soilType == "Please select" {
+            if plantType == "Please select" {
+                searchedCrop = filterCellsBySoilType(term: soilType)
+                searching = true
+                soilFilter = soilType
+               
+            }
+            if soilType == "Please select" {
+                searchedCrop = filterCellsByPlantType(term: plantType)
+                searching = true
+                plantFilter = plantType
+                
+            }
             tableView.reloadData()
         }
-        if soilType == "Please select" {
-            searchedCrop = filterCellsByPlantType(term: plantType)
-            searching = true
-            tableView.reloadData()
-        }
+        
         
     }
 }

@@ -15,19 +15,26 @@ protocol filterSelectionDelgate {
 class FilterViewController: UIViewController {
     
     var filterDelegate: filterSelectionDelgate!
+    var plantFilter: String!
+    var soilFilter: String!
     
     private var dataSource = ["Perennial","Herb", "Annual", "Fruit"]
     private let plantType = ["Perennial","Herb", "Annual", "Fruit"]
     private let soilType = ["Loam","Sand", "Clay"]
     
     private var flag = 1
-    
+    var soil: String!
+    var plant: String!
     @IBOutlet weak var soilTypeLabel: UILabel!
     @IBOutlet weak var platTypeLabel: UILabel!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var instructionLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        platTypeLabel.text = plantFilter
+        soilTypeLabel.text = soilFilter
         
         self.soilTypeLabel.adjustsFontSizeToFitWidth = true
         self.soilTypeLabel.minimumScaleFactor = 0.5
@@ -37,6 +44,7 @@ class FilterViewController: UIViewController {
         pickerView.delegate = self
         pickerView.isHidden = true
         doneButton.isHidden = true
+        instructionLabel.isHidden = true
         // Do any additional setup after loading the view.
     }
     
@@ -44,11 +52,14 @@ class FilterViewController: UIViewController {
         pickerView.isHidden = true
         doneButton.isHidden = true
         filterDelegate.selectedChoiced(plantType: platTypeLabel.text!, soilType: soilTypeLabel.text!)
+        instructionLabel.isHidden = true
         dismiss(animated: true, completion: nil)
     }
     @IBAction func soilTypeClicked(_ sender: Any) {
         pickerView.isHidden = false
         doneButton.isHidden = false
+        instructionLabel.isHidden = false
+        instructionLabel.text = "Please choose the Soil Type"
         dataSource = soilType
         flag = 2
         pickerView.reloadComponent(0)
@@ -56,10 +67,14 @@ class FilterViewController: UIViewController {
     @IBAction func platTypeClicked(_ sender: Any) {
         pickerView.isHidden = false
         doneButton.isHidden = false
+        instructionLabel.isHidden = false
+        instructionLabel.text = "Please choose the Plant Type"
         dataSource = plantType
         flag = 1
         pickerView.reloadComponent(0)
     }
+    
+    
 }
 
 extension FilterViewController: UIPickerViewDelegate, UIPickerViewDataSource{

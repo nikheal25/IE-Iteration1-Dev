@@ -16,6 +16,8 @@ protocol filterDelgate {
 class PopOverViewController: UIViewController {
 
     var sortingSchema: Int!
+    var plantFilter: String!
+    var soilFilter: String!
     @IBOutlet weak var firstView: UIView!
     @IBOutlet weak var secondView: UIView!
     var filterSelectedDelegate: filterDelgate!
@@ -42,6 +44,8 @@ class PopOverViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "filterSegue" {
             let destination = segue.destination as! FilterViewController
+            destination.plantFilter = plantFilter
+            destination.soilFilter = soilFilter
             destination.filterDelegate = self
         }
         if segue.identifier == "sortSegue" {
