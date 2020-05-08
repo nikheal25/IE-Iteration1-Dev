@@ -10,10 +10,12 @@ import UIKit
 
 protocol filterDelgate {
     func filterOption(plantType: String, soilType: String)
+    func sortOption(id: Int)
 }
 
 class PopOverViewController: UIViewController {
 
+    var sortingSchema: Int!
     @IBOutlet weak var firstView: UIView!
     @IBOutlet weak var secondView: UIView!
     var filterSelectedDelegate: filterDelgate!
@@ -42,12 +44,21 @@ class PopOverViewController: UIViewController {
             let destination = segue.destination as! FilterViewController
             destination.filterDelegate = self
         }
+        if segue.identifier == "sortSegue" {
+            let destination = segue.destination as! SortByViewController
+            destination.sortingSchema = sortingSchema
+            destination.sortSeletionDelegate = self
+        }
     }
-
 
 }
 
-extension PopOverViewController: filterSelectionDelgate {
+extension PopOverViewController: filterSelectionDelgate, sortSelectionDelgate {
+    func selectedSort(id: Int) {
+        sortingSchema = id
+        filterSelectedDelegate.sortOption(id: sortingSchema)
+    }
+    
     func selectedChoiced(plantType: String, soilType: String){
         print(plantType)
         print(soilType)

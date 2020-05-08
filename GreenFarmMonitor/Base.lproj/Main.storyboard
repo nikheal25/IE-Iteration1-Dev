@@ -1296,7 +1296,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PBi-z0-7H9">
                                 <rect key="frame" x="0.0" y="305" width="200" height="387"/>
                                 <connections>
-                                    <segue destination="hhe-hS-c5K" kind="embed" id="3in-J3-Vk7"/>
+                                    <segue destination="hhe-hS-c5K" kind="embed" identifier="sortSegue" id="3in-J3-Vk7"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -2073,12 +2073,12 @@
             </objects>
             <point key="canvasLocation" x="48" y="3155"/>
         </scene>
-        <!--View Controller-->
+        <!--Sort By View Controller-->
         <scene sceneID="evH-YS-Wgb">
             <objects>
-                <viewController id="hhe-hS-c5K" sceneMemberID="viewController">
+                <viewController id="hhe-hS-c5K" customClass="SortByViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="scZ-KU-NYz">
-                        <rect key="frame" x="0.0" y="0.0" width="200" height="97"/>
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A3A-9u-KPc">
@@ -2094,7 +2094,11 @@
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="30" id="euR-bo-0jU"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="fZa-SJ-7U5"/>
                                         </constraints>
-                                        <state key="normal" image="radio-checked"/>
+                                        <state key="normal" image="radio-unchecked"/>
+                                        <state key="selected" image="radio-checked"/>
+                                        <connections>
+                                            <action selector="recommendedClicked:" destination="hhe-hS-c5K" eventType="touchUpInside" id="Plc-VJ-W2C"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recommended" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inq-cD-fBP">
                                         <rect key="frame" x="50" y="0.0" width="120" height="30"/>
@@ -2118,6 +2122,10 @@
                                             <constraint firstAttribute="height" constant="30" id="o2m-Hq-g5v"/>
                                         </constraints>
                                         <state key="normal" image="radio-unchecked"/>
+                                        <state key="selected" image="radio-checked"/>
+                                        <connections>
+                                            <action selector="alphabeticalClicked:" destination="hhe-hS-c5K" eventType="touchUpInside" id="HBX-l9-XDR"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alphabetically" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKU-EO-jmz">
                                         <rect key="frame" x="50" y="0.0" width="120" height="30"/>
@@ -2127,19 +2135,41 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sh0-EU-L3K">
+                                <rect key="frame" x="40" y="114" width="120" height="36"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneButtonClicked:" destination="hhe-hS-c5K" eventType="touchUpInside" id="fh2-xo-3Lx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="sh0-EU-L3K" secondAttribute="trailing" constant="40" id="GOn-h0-6RG"/>
+                            <constraint firstAttribute="bottom" secondItem="sh0-EU-L3K" secondAttribute="bottom" constant="50" id="HQC-bM-4b8"/>
                             <constraint firstAttribute="trailing" secondItem="1f2-TH-F8u" secondAttribute="trailing" constant="15" id="JwT-jP-Xh2"/>
+                            <constraint firstItem="sh0-EU-L3K" firstAttribute="centerX" secondItem="scZ-KU-NYz" secondAttribute="centerX" id="KLe-by-XhV"/>
                             <constraint firstItem="A3A-9u-KPc" firstAttribute="leading" secondItem="scZ-KU-NYz" secondAttribute="leading" constant="15" id="Qco-gq-beK"/>
                             <constraint firstItem="1f2-TH-F8u" firstAttribute="leading" secondItem="scZ-KU-NYz" secondAttribute="leading" constant="15" id="SYv-FC-GH1"/>
                             <constraint firstItem="A3A-9u-KPc" firstAttribute="top" secondItem="scZ-KU-NYz" secondAttribute="top" constant="50" id="lnp-jp-9te"/>
                             <constraint firstItem="1f2-TH-F8u" firstAttribute="top" secondItem="A3A-9u-KPc" secondAttribute="bottom" constant="30" id="tL5-FV-YT5"/>
+                            <constraint firstItem="sh0-EU-L3K" firstAttribute="leading" secondItem="scZ-KU-NYz" secondAttribute="leading" constant="40" id="w6v-H2-PGo"/>
                             <constraint firstAttribute="trailing" secondItem="A3A-9u-KPc" secondAttribute="trailing" constant="15" id="xCt-Gl-FaB"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="200" height="97"/>
+                    <size key="freeformSize" width="200" height="200"/>
+                    <connections>
+                        <outlet property="alphabetLabel" destination="oKU-EO-jmz" id="t4l-dP-dsM"/>
+                        <outlet property="alphabeticalButton" destination="3Lc-vX-Ve1" id="fFw-oT-mN7"/>
+                        <outlet property="doneButton" destination="sh0-EU-L3K" id="Ptn-kv-CaP"/>
+                        <outlet property="recomendLabel" destination="inq-cD-fBP" id="xRd-vB-LDI"/>
+                        <outlet property="recommendedButton" destination="Hi7-aK-FvG" id="BJA-fp-uTB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I0w-Qc-gH5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2199,7 +2229,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="o3D-P1-NSc" secondAttribute="trailing" constant="20" id="1Bd-AG-2Jx"/>
                             <constraint firstItem="wfv-56-i1l" firstAttribute="leading" secondItem="nyT-d6-35Y" secondAttribute="leading" constant="30" id="DJh-me-R5o"/>

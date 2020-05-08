@@ -12,6 +12,7 @@ import FoldingCell
 class FoldingTableViewController: UITableViewController, UIPopoverPresentationControllerDelegate {
     
     var specificCrop: Crop?
+    var sortingSchema: Int?
     
     var listenerType: ListenerType = ListenerType.all // listener
     weak var databaseController: DatabaseProtocol?
@@ -40,6 +41,7 @@ class FoldingTableViewController: UITableViewController, UIPopoverPresentationCo
     
     // MARK: Life Cycle
     override func viewDidLoad() {
+        sortingSchema = 1
         super.viewDidLoad()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         userDefaultController = appDelegate.userDefaultController
@@ -72,6 +74,7 @@ class FoldingTableViewController: UITableViewController, UIPopoverPresentationCo
         if segue.identifier == "showPopOverSegue" {
             let popoverViewController = segue.destination as! PopOverViewController
             popoverViewController.filterSelectedDelegate = self
+            popoverViewController.sortingSchema = sortingSchema
             popoverViewController.popoverPresentationController?.delegate = self
         }
     }
@@ -263,6 +266,11 @@ extension FoldingTableViewController: SelectionDelegate{
     }
 }
 extension FoldingTableViewController: filterDelgate {
+    func sortOption(id: Int) {
+        print("Inside folding cell \(id)")
+        sortingSchema = id
+    }
+    
     func filterOption(plantType: String, soilType: String) {
         print(plantType)
         if plantType == "Please select" {
