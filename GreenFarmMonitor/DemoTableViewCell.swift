@@ -29,6 +29,7 @@ class DemoTableViewCell: FoldingCell {
     @IBOutlet weak var fullCropImage: UIImageView!
     @IBOutlet weak var topBarLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var addToButton: UIButton!
     var number: Int = 0 {
         didSet {
             
@@ -51,7 +52,7 @@ class DemoTableViewCell: FoldingCell {
         self.descriptionLabel.sizeToFit()
         self.descriptionLabel.text = crop.Description
         
-        
+       
         self.cropImage.image = UIImage(named: crop.cropImage)
         self.cropImage.layer.cornerRadius = 6
         self.fullCropImage.image = UIImage(named: crop.cropImage)
