@@ -24,7 +24,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
              if (userDefaultController?.retrieveUserId().isEmpty)! {
 
-                let windowScene = UIWindowScene(session: session, connectionOptions: connectionOptions)
+//                let windowScene = UIWindowScene(session: session, connectionOptions: connectionOptions)
+                if let windowScene = scene as? UIWindowScene{
                      self.window = UIWindow(windowScene: windowScene)
                      //self.window =  UIWindow(frame: UIScreen.main.bounds)
                      let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -33,12 +34,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                          return
                      }
                      let rootNC = UINavigationController(rootViewController: rootVC)
+                
                      self.window?.rootViewController = rootNC
                      self.window?.makeKeyAndVisible()
-
+                }
+              
              }
 
-        guard let _ = (scene as? UIWindowScene) else { return }
+//        guard let _ = (scene as? UIWindowScene) else { return }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

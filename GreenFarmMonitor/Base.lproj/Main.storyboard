@@ -37,9 +37,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <searchBar contentMode="redraw" placeholder="Search" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g4d-UC-TIt">
+                            <searchBar contentMode="redraw" placeholder="Search for diseases" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g4d-UC-TIt">
                                 <rect key="frame" x="0.0" y="88" width="414" height="56"/>
-                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="RFN-Gy-5fg" id="MYP-6Z-56H"/>
@@ -162,7 +161,7 @@
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="e5D-nz-loo">
                                                             <rect key="frame" x="18" y="22" width="149" height="97"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mxe-9u-fjf">
                                                             <rect key="frame" x="182" y="47" width="148" height="51"/>
@@ -234,33 +233,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="BuC-zj-nzL">
-                                <rect key="frame" x="0.0" y="140" width="414" height="623"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="BuC-zj-nzL">
+                                <rect key="frame" x="0.0" y="159" width="414" height="604"/>
                             </mapView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add your farm here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Et-gp-JTR">
-                                <rect key="frame" x="20" y="98" width="287" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add your farm here" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0Et-gp-JTR">
+                                <rect key="frame" x="7" y="98" width="330" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmZ-eU-9uP">
-                                <rect key="frame" x="334" y="99" width="60" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="ChangeBtn:" destination="xHO-5A-7f3" eventType="touchUpInside" id="VyD-wl-NZ7"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZi-mg-jg5">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZi-mg-jg5">
                                 <rect key="frame" x="20" y="771" width="374" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="HgD-CN-vii"/>
+                                </constraints>
                                 <state key="normal" title="Continue"/>
                                 <connections>
                                     <segue destination="5b7-kb-K7H" kind="show" id="0Ul-wz-YEU"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmZ-eU-9uP">
+                                <rect key="frame" x="345" y="98" width="60" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="8gy-gQ-LSf"/>
+                                    <constraint firstAttribute="width" constant="60" id="gjn-Yf-CPg"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="ChangeBtn:" destination="xHO-5A-7f3" eventType="touchUpInside" id="VyD-wl-NZ7"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drag the map to your farm location more accurate." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vdp-4l-dXF">
+                                <rect key="frame" x="8" y="139" width="398" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.2676692033678757" green="0.2676692033678757" blue="0.2676692033678757" alpha="0.39937279929577463" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="highlightedColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="0Et-gp-JTR" firstAttribute="leading" secondItem="Vdp-4l-dXF" secondAttribute="leading" id="1cM-ry-EDl"/>
+                            <constraint firstItem="Vdp-4l-dXF" firstAttribute="top" secondItem="0Et-gp-JTR" secondAttribute="bottom" constant="8" id="CNm-uj-O5E"/>
+                            <constraint firstItem="qmZ-eU-9uP" firstAttribute="leading" secondItem="0Et-gp-JTR" secondAttribute="trailing" constant="8" id="CTz-2J-oBF"/>
+                            <constraint firstItem="BuC-zj-nzL" firstAttribute="centerX" secondItem="FZi-mg-jg5" secondAttribute="centerX" id="Eyr-OJ-WPf"/>
+                            <constraint firstItem="0Et-gp-JTR" firstAttribute="centerY" secondItem="qmZ-eU-9uP" secondAttribute="centerY" id="Fgx-aM-tCf"/>
+                            <constraint firstItem="BuC-zj-nzL" firstAttribute="leading" secondItem="4pg-HS-muc" secondAttribute="leading" id="IWs-pg-epz"/>
+                            <constraint firstItem="0Et-gp-JTR" firstAttribute="top" secondItem="4pg-HS-muc" secondAttribute="top" constant="10" id="PeI-o1-L7U"/>
+                            <constraint firstItem="FZi-mg-jg5" firstAttribute="leading" secondItem="RwT-CM-8js" secondAttribute="leadingMargin" id="SJ1-v6-aOX"/>
+                            <constraint firstItem="4pg-HS-muc" firstAttribute="trailing" secondItem="qmZ-eU-9uP" secondAttribute="trailing" constant="9" id="ZRB-6x-7Kw"/>
+                            <constraint firstItem="0Et-gp-JTR" firstAttribute="top" secondItem="qmZ-eU-9uP" secondAttribute="top" id="a8j-W5-0Bb"/>
+                            <constraint firstItem="4pg-HS-muc" firstAttribute="trailing" secondItem="Vdp-4l-dXF" secondAttribute="trailing" constant="8" id="fY7-jv-gia"/>
+                            <constraint firstItem="4pg-HS-muc" firstAttribute="bottom" secondItem="FZi-mg-jg5" secondAttribute="bottom" constant="49" id="jHP-zY-pVr"/>
+                            <constraint firstItem="BuC-zj-nzL" firstAttribute="top" secondItem="0Et-gp-JTR" secondAttribute="bottom" constant="27" id="kAC-tH-aef"/>
+                            <constraint firstItem="Vdp-4l-dXF" firstAttribute="leading" secondItem="4pg-HS-muc" secondAttribute="leading" constant="8" id="ngO-ru-rFr"/>
+                            <constraint firstItem="qmZ-eU-9uP" firstAttribute="trailing" secondItem="Vdp-4l-dXF" secondAttribute="trailing" id="pcJ-jf-vdD"/>
+                            <constraint firstItem="FZi-mg-jg5" firstAttribute="top" secondItem="BuC-zj-nzL" secondAttribute="bottom" constant="8" id="xmz-oN-3eg"/>
+                            <constraint firstItem="FZi-mg-jg5" firstAttribute="trailing" secondItem="RwT-CM-8js" secondAttribute="trailingMargin" id="ynB-2A-fcC"/>
+                            <constraint firstItem="0Et-gp-JTR" firstAttribute="leading" secondItem="4pg-HS-muc" secondAttribute="leading" constant="7" id="z53-k4-nCT"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4pg-HS-muc"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Your Location" id="tJ3-4w-Aqn"/>
@@ -1187,7 +1215,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vQd-mM-59Y">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vQd-mM-59Y">
                                 <rect key="frame" x="0.0" y="88" width="414" height="285.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4E3-gw-CwA">
@@ -1337,7 +1365,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search for the crop" showsCancelButton="YES" id="4b0-Sy-8gg">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="786" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
@@ -2303,6 +2331,6 @@
         <image name="water" width="28" height="28"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0BZ-rP-Cky"/>
+        <segue reference="gb7-L6-GNo"/>
     </inferredMetricsTieBreakers>
 </document>

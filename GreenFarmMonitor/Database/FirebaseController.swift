@@ -199,7 +199,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
                     let userName = change.document.data ()["userName"]as! String
     //                print(documentRef)
                     if change.type == .added {
-//             print("New USER: \(change.document.data())")
+     //        print("New USER: \(change.document.data())")
                         let newUser = User(userId: userId, userName: userName, farmLocationName: locationName, farmLat: lat,farmLong: long )
     //                    newDisease.crop = crop
     //                    newDisease.name = name
@@ -209,14 +209,14 @@ class FirebaseController: NSObject, DatabaseProtocol {
                         userList.append(newUser)
                       }
                        if change.type == .modified {
-    //                       print("Updated data: \(change.document.data())")
-                          
-//                        let index = getDiseaseIndexByID(reference: documentRef)!
-//                        diseaseList[index].crop = crop
-//                        diseaseList[index].name = name
-//
-//                        diseaseList[index].descriptionOfSymptom = descriptionOfSymptom
-//                        diseaseList[index].id = documentRef
+//                         print("Updated data: \(change.document.data())")
+                         
+                        let index = getUserIndexByID(reference: userId)!
+                       userList[index].userId = userId
+                       userList[index].userName = userName
+                       userList[index].farmLocationName = locationName
+                        userList[index].farmLat = lat
+                        userList[index].farmLong = long
                        }
                       if change.type == .removed {
     //                    print("Removed data: \(change.document.data())")
@@ -420,15 +420,15 @@ class FirebaseController: NSObject, DatabaseProtocol {
 
    
 
-//    func getDiseaseIndexByID(reference: String)-> Int? {
-//        for data in diseaseList{
-//           if (data.id == reference){
-//                return diseaseList.firstIndex(of: data)
-//            }
-//
-//        }
-//        return nil
-//    }
+    func getUserIndexByID(reference: String)-> Int? {
+        for data in userList{
+           if (data.userId == reference){
+                return userList.firstIndex(of: data)
+            }
+
+        }
+        return nil
+    }
 
     
     //update the location of farm
