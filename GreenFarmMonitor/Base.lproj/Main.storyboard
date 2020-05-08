@@ -1290,7 +1290,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p1k-UI-XmA">
                                 <rect key="frame" x="0.0" y="305" width="200" height="387"/>
                                 <connections>
-                                    <segue destination="ZHU-zq-8rR" kind="embed" id="uMc-24-rdf"/>
+                                    <segue destination="ZHU-zq-8rR" kind="embed" identifier="filterSegue" id="uMc-24-rdf"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PBi-z0-7H9">

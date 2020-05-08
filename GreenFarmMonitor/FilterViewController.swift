@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol filterSelectionDelgate {
+    func selectedChoiced(plantType: String, soilType: String)
+}
+
 class FilterViewController: UIViewController {
+    
+    var filterDelegate: filterSelectionDelgate!
     
     private var dataSource = ["Perennial","Herb", "Annual", "Fruit"]
     private let plantType = ["Perennial","Herb", "Annual", "Fruit"]
@@ -37,6 +43,8 @@ class FilterViewController: UIViewController {
     @IBAction func doneClicked(_ sender: Any) {
         pickerView.isHidden = true
         doneButton.isHidden = true
+        filterDelegate.selectedChoiced(plantType: platTypeLabel.text!, soilType: soilTypeLabel.text!)
+        dismiss(animated: true, completion: nil)
     }
     @IBAction func soilTypeClicked(_ sender: Any) {
         pickerView.isHidden = false
@@ -70,9 +78,11 @@ extension FilterViewController: UIPickerViewDelegate, UIPickerViewDataSource{
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if flag == 1 {
             platTypeLabel.text = dataSource[row]
+            
         }
         if flag == 2 {
             soilTypeLabel.text = dataSource[row]
+        
         }
         
         
