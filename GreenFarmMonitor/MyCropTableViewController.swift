@@ -81,8 +81,9 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
-        let weather = WeatherAPI()
+//
+            //MARK:- TODO
+//        let weather = WeatherAPI()
     }
 
         override func viewWillAppear(_ animated: Bool) {

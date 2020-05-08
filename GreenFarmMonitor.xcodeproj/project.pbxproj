@@ -40,6 +40,7 @@
 		1DDEE7F224448F72005BC7D8 /* intro2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1DDEE7F124448F68005BC7D8 /* intro2.mp4 */; };
 		1DDEE7F424449C46005BC7D8 /* MyCropMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEE7F324449C46005BC7D8 /* MyCropMainTableViewCell.swift */; };
 		1DE82CCF2465064F00EF54A6 /* PopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE82CCE2465064F00EF54A6 /* PopOverViewController.swift */; };
+		1DE82CD124650E1B00EF54A6 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE82CD024650E1B00EF54A6 /* FilterViewController.swift */; };
 		1DFBCFC52446B63900DCC4B2 /* UserCropRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFBCFC42446B63900DCC4B2 /* UserCropRelation.swift */; };
 		1DFBCFC72446CBBC00DCC4B2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFBCFC62446CBBC00DCC4B2 /* LoginViewController.swift */; };
 		1DFBCFC92446CF4C00DCC4B2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFBCFC82446CF4C00DCC4B2 /* User.swift */; };
@@ -114,6 +115,7 @@
 		1DDEE7F124448F68005BC7D8 /* intro2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = intro2.mp4; sourceTree = "<group>"; };
 		1DDEE7F324449C46005BC7D8 /* MyCropMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCropMainTableViewCell.swift; sourceTree = "<group>"; };
 		1DE82CCE2465064F00EF54A6 /* PopOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverViewController.swift; sourceTree = "<group>"; };
+		1DE82CD024650E1B00EF54A6 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		1DFBCFC42446B63900DCC4B2 /* UserCropRelation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCropRelation.swift; sourceTree = "<group>"; };
 		1DFBCFC62446CBBC00DCC4B2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1DFBCFC82446CF4C00DCC4B2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 				1D19C543244C082C00989079 /* DemoTableViewCell.swift */,
 				1DE82CCE2465064F00EF54A6 /* PopOverViewController.swift */,
 				1D9EED34243C3A7D00EE97D2 /* Main.storyboard */,
+				1DE82CD024650E1B00EF54A6 /* FilterViewController.swift */,
 				1D12428A245068B9001C6BAD /* GrowMyDetailCropViewController.swift */,
 				1D124288245002B9001C6BAD /* GrowMyCropTableViewCell.swift */,
 				1D124286244FF4D2001C6BAD /* GrowMyCropViewController.swift */,
@@ -585,6 +588,7 @@
 				E883C94A24446A04006F6AC8 /* DetailOfDiseaseViewController.swift in Sources */,
 				1D19C544244C082C00989079 /* DemoTableViewCell.swift in Sources */,
 				1D9EED31243C3A7D00EE97D2 /* SceneDelegate.swift in Sources */,
+				1DE82CD124650E1B00EF54A6 /* FilterViewController.swift in Sources */,
 				E8DF843D245000CA0032CFAB /* SelectCropForDiseaseViewController.swift in Sources */,
 				E8FDFCA924470CED00143844 /* ChangeUserLocationViewController.swift in Sources */,
 				1D2FCB852445A2EF0024FFBB /* MulticastDelegate.swift in Sources */,
