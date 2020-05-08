@@ -1273,7 +1273,7 @@
             <objects>
                 <viewController id="0Ku-Rf-b4l" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aUj-Mh-FzM">
-                        <rect key="frame" x="0.0" y="0.0" width="200" height="150"/>
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="546"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KtB-NF-UIN">
@@ -1371,7 +1371,7 @@
                         <viewLayoutGuide key="safeArea" id="ggr-Re-l0C"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="200" height="150"/>
+                    <size key="freeformSize" width="200" height="600"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1S1-pL-6j6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
