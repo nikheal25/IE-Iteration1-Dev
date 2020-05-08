@@ -9,7 +9,7 @@
 import UIKit
 import FoldingCell
 
-class FoldingTableViewController: UITableViewController {
+class FoldingTableViewController: UITableViewController, UIPopoverPresentationControllerDelegate {
     
     var specificCrop: Crop?
     
@@ -68,7 +68,16 @@ class FoldingTableViewController: UITableViewController {
         return tempList
     }
     
- 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showPopOverSegue" {
+            let popoverViewController = segue.destination
+            popoverViewController.popoverPresentationController?.delegate = self
+        }
+    }
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return UIModalPresentationStyle.none
+    }
     
     @IBAction func showDirectionPopup(_ sender: UIView) {
        

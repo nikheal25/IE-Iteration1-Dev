@@ -1268,6 +1268,35 @@
             </objects>
             <point key="canvasLocation" x="-1041" y="747"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Yuz-80-05S">
+            <objects>
+                <viewController id="0Ku-Rf-b4l" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aUj-Mh-FzM">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter by" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OLy-hh-JVt">
+                                <rect key="frame" x="106" y="20" width="88.5" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="OLy-hh-JVt" firstAttribute="top" secondItem="aUj-Mh-FzM" secondAttribute="top" constant="20" id="0Xp-XI-lya"/>
+                            <constraint firstItem="OLy-hh-JVt" firstAttribute="centerX" secondItem="aUj-Mh-FzM" secondAttribute="centerX" id="eUW-j2-Z3m"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ggr-Re-l0C"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="300" height="200"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1S1-pL-6j6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3494" y="1899"/>
+        </scene>
         <!--All Crops-->
         <scene sceneID="5RK-j0-OTk">
             <objects>
@@ -1505,6 +1534,9 @@
                         <barButtonItem key="rightBarButtonItem" title="Sort" id="QI5-oS-Qjc">
                             <connections>
                                 <action selector="showDirectionPopup:" destination="auZ-DV-ex4" id="cFy-Qw-fr2"/>
+                                <segue destination="0Ku-Rf-b4l" kind="popoverPresentation" identifier="showPopOverSegue" popoverAnchorBarButtonItem="QI5-oS-Qjc" id="46S-2H-1Ub">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
