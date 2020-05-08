@@ -9,7 +9,61 @@
 import UIKit
 import MapKit
 import CoreLocation
-class ChangeUserLocationViewController: UIViewController {
+class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapViewDelegate{
+    var listenerType = ListenerType.all
+    
+    func onDiseaseOfCropsChange(change: DatabaseChange, diseaseOfCrops: [DiseaseOfCrops]) {
+        
+    }
+    
+    func onCropsChange(change: DatabaseChange, crops: [Crop]) {
+        
+    }
+    
+    func onUserCropRelationChange(change: DatabaseChange, userCropRelation: [UserCropRelation]) {
+        
+    }
+    
+    func onUserChange(change: DatabaseChange, users: [User]) {
+        LocationList = [LocationAnnotation]()
+        let currentUserId = userDefaultController?.retrieveUserId()
+              for user in users
+                   {
+                       if user.userId == currentUserId{
+                       let lat = Double(user.farmLat)
+                       let long = Double(user.farmLong)
+              
+                        self.LocationList.append(LocationAnnotation(newTitle: user.farmLocationName, lat: lat!, long: long!))
+                       }
+                   }
+        if LocationList.first?.coordinate == nil
+                {
+//                    self.locationText.placeholder = "Add your farm here"
+//                    self.UIBtn.setTitle("Add", for:.normal)
+                }
+                else
+                {
+//                    self.locationText.placeholder = "Change your farm here"
+//                    self.UIBtn.setTitle("Change", for:.normal)
+                    self.locationText.placeholder = "Add your farm here"
+                    self.UIBtn.setTitle("Add", for:.normal)
+                    self.mapView.addAnnotations(LocationList)
+                    self.focusOn(annotation: LocationList.first!)
+                             }
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        databaseController?.addListener(listener: self)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        databaseController?.removeListener(listener: self)
+    }
+   
+    
+  
     
 
     var LocationList = [LocationAnnotation]()
@@ -19,35 +73,14 @@ class ChangeUserLocationViewController: UIViewController {
     weak var databaseController: DatabaseProtocol?
     override func viewDidLoad() {
         super.viewDidLoad()
+//        "20-05-07-18:12:17x5bxy"
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
      userDefaultController = appDelegate.userDefaultController
         databaseController = appDelegate.databaseController
-         let currentUserId = userDefaultController?.retrieveUserId()
-        let userList = databaseController?.userList
-        for user in userList!
-        {
-            if user.userId == "20-05-07-18:12:17x5bxy"{
-            let lat = Double(user.farmLat)
-            let long = Double(user.farmLong)
-           
-            LocationList.append(LocationAnnotation(newTitle: user.farmLocationName, lat: lat!, long: long!))
-            }
-        }
-//        let location = LocationAnnotation(newTitle: "My farm", lat: -37.877623, long: 145.1362)
-        if LocationList.first?.coordinate == nil
-        {
-            locationText.placeholder = "Add your farm here"
-            UIBtn.setTitle("Add", for:.normal)
-        }
-        else
-        {
-            locationText.placeholder = "Change your farm here"
-             UIBtn.setTitle("Change", for:.normal)
-        }
-        mapView.addAnnotations(LocationList)
-        focusOn(annotation: LocationList.first!)
-       
-        // Do any additional setup after loading the view.
+     let currentUserId = userDefaultController?.retrieveUserId()
+     let userList = databaseController?.userList
+        self.mapView.delegate = self
+        
     }
     
     func focusOn(annotation:MKAnnotation){
@@ -70,29 +103,92 @@ class ChangeUserLocationViewController: UIViewController {
     @IBOutlet weak var locationText: UITextField!
     
     @IBAction func ChangeBtn(_ sender: Any) {
-        let address = locationText.text
+        let address = self.locationText.text
         if address!.isEmpty
         {}
         else
         {
+        let currentUserId = userDefaultController?.retrieveUserId()
         let geoCoder = CLGeocoder()
         geoCoder.geocodeAddressString(address!)
-        {placemarks,error in
+        {(placemarks,error) in
+            guard
             let placemarks = placemarks?.first
-            let location = LocationAnnotation(newTitle: "New farm", lat: (placemarks?.location?.coordinate.latitude)!, long: (placemarks?.location?.coordinate.longitude)!)
+            else
+            {
+                self.displayMessage(title: "Invalid Location!", message: "Please enter an valid location!")
+                return}
+            let location = LocationAnnotation(newTitle: "New farm", lat: (placemarks.location?.coordinate.latitude)!, long: (placemarks.location?.coordinate.longitude)!)
             let lat = String(location.coordinate.latitude)
             let long = String(location.coordinate.longitude)
-            self.databaseController!.updateLocation(userId:"20-04-16-15:00:22tqAOd", lat: lat ,locationName: "New farm", long: long)
+            self.databaseController!.updateLocation(userId:currentUserId!, lat: lat ,locationName: "New farm", long: long)
             self.mapView.removeAnnotations(self.mapView.annotations)
             
-            self.mapView.addAnnotation(location)
-            self.focusOn(annotation:location)
+//            self.mapView.addAnnotation(location)
+//            self.focusOn(annotation:location)
             
                 }
         }
+        
      
     }
     
     @IBOutlet weak var mapView: MKMapView!
     
+  
+    
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        self.mapView.removeAnnotations(mapView.annotations)
+
+           // Add new annotation
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = mapView.centerCoordinate
+        annotation.title = LocationList.first?.title
+        self.mapView.addAnnotation(annotation)
+        let lat = annotation.coordinate.latitude
+        let long = annotation.coordinate.longitude
+        let address = CLGeocoder.init()
+        address.reverseGeocodeLocation(CLLocation.init(latitude: lat, longitude:long)) { (placemarks, error) in
+            if error == nil{
+
+            }
+            let pm = placemarks! as [CLPlacemark]
+
+            if pm.count > 0 {
+                let pm = placemarks![0]
+//                print(pm.country)
+//                print(pm.locality)
+//                print(pm.subLocality)
+//                print(pm.thoroughfare)
+//                print(pm.postalCode)
+//                print(pm.subThoroughfare)
+              var addressString : String = ""
+                if pm.subThoroughfare != nil {
+                                   addressString = addressString + pm.subThoroughfare! + ", "
+                               }
+                if pm.subLocality != nil {
+                    addressString = addressString + pm.subLocality! + ", "
+                }
+                if pm.thoroughfare != nil {
+                    addressString = addressString + pm.thoroughfare! + ", "
+                }
+                if pm.locality != nil {
+                    addressString = addressString + pm.locality! + ", "
+                }
+                if pm.country != nil {
+                    addressString = addressString + pm.country! 
+                }
+              
+                self.locationText.text = addressString
+            }
+            
+        }
+    }
+    func displayMessage(title:String,message:String)
+    {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "Enter again", style:UIAlertAction.Style.default , handler:nil) )
+        self.present(alertController,animated: true,completion: nil)
+        
+    }
 }

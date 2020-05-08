@@ -29,7 +29,7 @@ class OnboardingViewController: UIViewController, PaperOnboardingDataSource {
     
     @IBAction func onClick(_ sender: Any) {
         let newUserId = userDefaultController?.generateUniqueUserId()
-        let newUser = User(userId: newUserId!, userName: "TestUser", farmLocationName: "Nashville", farmLat: "-15.55", farmLong: "141.1")
+        let newUser = User(userId: newUserId!, userName: "TestUser", farmLocationName: "Monash", farmLat: "-37.907803", farmLong: "145.133957")
         
         // Firebase Update
         let successStatus = databaseController?.insertNewUserToFirebase(user: newUser)
