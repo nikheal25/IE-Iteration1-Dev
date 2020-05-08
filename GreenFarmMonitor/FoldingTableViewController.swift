@@ -70,7 +70,8 @@ class FoldingTableViewController: UITableViewController, UIPopoverPresentationCo
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showPopOverSegue" {
-            let popoverViewController = segue.destination
+            let popoverViewController = segue.destination as! PopOverViewController
+            popoverViewController.filterSelectedDelegate = self
             popoverViewController.popoverPresentationController?.delegate = self
         }
     }
@@ -80,11 +81,11 @@ class FoldingTableViewController: UITableViewController, UIPopoverPresentationCo
     }
     
     @IBAction func showDirectionPopup(_ sender: UIView) {
-       
+        
     }
     
     private func showPopup(_ controller: UIViewController, sourceView: UIView) {
-      
+        
     }
     // MARK: Helpers
     private func setup() {
@@ -148,11 +149,11 @@ extension FoldingTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! DemoTableViewCell
-          let durations: [TimeInterval] = [0.26, 0.2, 0.1]
+        let durations: [TimeInterval] = [0.26, 0.2, 0.1]
         //[0.26, 0.2, 0.2]
         if searching {
             
-          
+            
             cell.durationsForExpandedState = durations
             cell.durationsForCollapsedState = durations
             
@@ -198,7 +199,6 @@ extension FoldingTableViewController {
             tableView.beginUpdates()
             tableView.endUpdates()
             
-            // fix https://github.com/Ramotion/folding-cell/issues/169
             if cell.frame.maxY > tableView.frame.maxY {
                 tableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.bottom, animated: true)
             }
@@ -213,6 +213,28 @@ extension FoldingTableViewController: UISearchBarDelegate {
         
         for crop in allCropsName {
             if crop.cropName.lowercased().prefix(term.count) == term.lowercased() {
+                tempCrops.append(crop)
+            }
+        }
+        return tempCrops
+    }
+    
+    func filterCellsByPlantType(term: String) -> [Crop] {
+        var tempCrops: [Crop] = []
+        
+        for crop in allCropsName {
+            if crop.Plant_Type.lowercased().prefix(term.count) == term.lowercased() {
+                tempCrops.append(crop)
+            }
+        }
+        return tempCrops
+    }
+    
+    func filterCellsBySoilType(term: String) -> [Crop] {
+        var tempCrops: [Crop] = []
+        
+        for crop in allCropsName {
+            if crop.Soil_Type.lowercased().prefix(term.count) == term.lowercased() {
                 tempCrops.append(crop)
             }
         }
@@ -238,5 +260,21 @@ extension FoldingTableViewController: SelectionDelegate{
     
     func didAddCrop() {
         _ = navigationController?.popToRootViewController(animated: true)
+    }
+}
+extension FoldingTableViewController: filterDelgate {
+    func filterOption(plantType: String, soilType: String) {
+        print(plantType)
+        if plantType == "Please select" {
+            searchedCrop = filterCellsBySoilType(term: soilType)
+            searching = true
+            tableView.reloadData()
+        }
+        if soilType == "Please select" {
+            searchedCrop = filterCellsByPlantType(term: plantType)
+            searching = true
+            tableView.reloadData()
+        }
+        
     }
 }

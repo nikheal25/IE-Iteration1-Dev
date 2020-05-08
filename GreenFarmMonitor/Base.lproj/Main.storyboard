@@ -1578,7 +1578,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OtQ-AI-X6s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2478.2608695652175" y="1872.9910714285713"/>
+            <point key="canvasLocation" x="-2464" y="1884"/>
         </scene>
         <!--Know MyPlants-->
         <scene sceneID="brH-b0-cI1">

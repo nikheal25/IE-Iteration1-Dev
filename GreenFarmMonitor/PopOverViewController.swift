@@ -8,10 +8,15 @@
 
 import UIKit
 
+protocol filterDelgate {
+    func filterOption(plantType: String, soilType: String)
+}
+
 class PopOverViewController: UIViewController {
 
     @IBOutlet weak var firstView: UIView!
     @IBOutlet weak var secondView: UIView!
+    var filterSelectedDelegate: filterDelgate!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -46,5 +51,6 @@ extension PopOverViewController: filterSelectionDelgate {
     func selectedChoiced(plantType: String, soilType: String){
         print(plantType)
         print(soilType)
+        filterSelectedDelegate.filterOption(plantType: plantType, soilType: soilType)
     }
 }
