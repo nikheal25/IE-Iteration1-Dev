@@ -68,6 +68,15 @@ class FoldingTableViewController: UITableViewController {
         return tempList
     }
     
+ 
+    
+    @IBAction func showDirectionPopup(_ sender: UIView) {
+       
+    }
+    
+    private func showPopup(_ controller: UIViewController, sourceView: UIView) {
+      
+    }
     // MARK: Helpers
     private func setup() {
         cellHeights = Array(repeating: Const.closeCellHeight, count: allCropsName.count)
