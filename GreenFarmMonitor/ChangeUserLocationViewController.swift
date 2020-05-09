@@ -74,6 +74,7 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
     override func viewDidLoad() {
         super.viewDidLoad()
 //        "20-05-07-18:12:17x5bxy"
+        self.view.backgroundColor = UIColor(hexString: "#9bb666")
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
      userDefaultController = appDelegate.userDefaultController
         databaseController = appDelegate.databaseController
@@ -105,7 +106,11 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
     @IBAction func ChangeBtn(_ sender: Any) {
         let address = self.locationText.text
         if address!.isEmpty
-        {}
+        {
+           self.locationText.endEditing(true)
+            displayMessage(title: "Empty", message: "Invalid values!")
+            
+        }
         else
         {
         let currentUserId = userDefaultController?.retrieveUserId()
@@ -124,6 +129,7 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
             self.databaseController!.updateLocation(userId:currentUserId!, lat: lat ,locationName: "New farm", long: long)
             self.mapView.removeAnnotations(self.mapView.annotations)
             self.displayMessage(title: "Add to database", message: "Successfully!")
+            
 //            self.mapView.addAnnotation(location)
 //            self.focusOn(annotation:location)
             
@@ -192,7 +198,12 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
     func displayMessage(title:String,message:String)
     {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-        alertController.addAction(UIAlertAction(title: "OK", style:UIAlertAction.Style.default , handler:nil) )
+        alertController.addAction(UIAlertAction(title: "OK", style:UIAlertAction.Style.default ){
+            (UIAlertAction) -> Void in
+            self.locationText.endEditing(true)
+            
+            
+        } )
         self.present(alertController,animated: true,completion: nil)
         
     }
