@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
-class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapViewDelegate{
+class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapViewDelegate,UITextFieldDelegate{
     var listenerType = ListenerType.all
     
     func onDiseaseOfCropsChange(change: DatabaseChange, diseaseOfCrops: [DiseaseOfCrops]) {
@@ -82,7 +82,12 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
      let userList = databaseController?.userList
         self.mapView.delegate = self
         
+        self.locationText.delegate = self
     }
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        self.locationText.endEditing(true)
+    }
+    
     
     func focusOn(annotation:MKAnnotation){
         //mapView.selectedAnnotations(annotation,animated:true)
