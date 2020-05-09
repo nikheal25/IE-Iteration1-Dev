@@ -112,7 +112,7 @@ class FoldingTableViewController: UITableViewController, UIPopoverPresentationCo
     
     func findSpecificCrop(name: String, defaultCrop: Crop) -> Crop {
         for crop in allCropsName {
-            if crop.cropName == "name" {
+            if crop.cropName == name {
                 return crop
             }
         }
@@ -178,7 +178,7 @@ extension FoldingTableViewController {
             cell.durationsForExpandedState = durations
             cell.durationsForCollapsedState = durations
             
-            let compatibleCrop = findSpecificCrop(name: searchedCrop[indexPath.row].cropName, defaultCrop: searchedCrop[indexPath.row])
+            let compatibleCrop = findSpecificCrop(name: searchedCrop[indexPath.row].Compatible_plant, defaultCrop: searchedCrop[indexPath.row])
             cell.setUp(crop: searchedCrop[indexPath.row], companionCrop: compatibleCrop)
             cell.selectionDelegate = self
             
@@ -187,7 +187,7 @@ extension FoldingTableViewController {
             cell.durationsForExpandedState = durations
             cell.durationsForCollapsedState = durations
             
-            let compatibleCrop = findSpecificCrop(name: allCropsName[indexPath.row].cropName, defaultCrop: allCropsName[indexPath.row])
+            let compatibleCrop = findSpecificCrop(name: allCropsName[indexPath.row].Compatible_plant, defaultCrop: allCropsName[indexPath.row])
             cell.setUp(crop: allCropsName[indexPath.row], companionCrop: compatibleCrop)
             cell.selectionDelegate = self
         }

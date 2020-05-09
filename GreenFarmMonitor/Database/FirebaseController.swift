@@ -123,7 +123,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
         
     
         //Crop
-        cropRef = database.collection("cropIteration")
+        cropRef = database.collection("cropsCompatibleOne")
         cropRef?.order(by: "date", descending: false)
         cropRef?.addSnapshotListener { querySnapshot, error in
             guard (querySnapshot?.documents) != nil else {
@@ -312,9 +312,14 @@ class FirebaseController: NSObject, DatabaseProtocol {
                 let Soil_Type = stringUnwrapper(val: docData, key: "Soil_Type")
                 let Spread_Ranges = stringUnwrapper(val: docData, key: "Spread_Ranges")
                 
+                ///New attributes
+                
+                let Compatible_plant = stringUnwrapper(val: docData, key: "Compatible_plant")
+                let All_Compatible_plants = stringUnwrapper(val: docData, key: "All_Compatible_plants")
+                
                    if change.type == .added {
                        
-                       let newCrop = Crop(cropId: cropId, cropName: cropName, cropImage: cropImage, frostTol: frostTol, minSoilpH: minSoilpH, maxSoilpH: maxSoilpH, Description: Description, AvMoisture_Percent: AvMoisture_Percent, AvN_Percent: AvN_Percent, AvP_Percent: AvP_Percent, Days_to_maturity: Days_to_maturity, Height_Ranges: Height_Ranges, Light_Needs: Light_Needs, N_P_K_Req: N_P_K_Req, Plant_Type: Plant_Type, Soil_Additional: Soil_Additional, Water_Needs: Water_Needs, Soil_Type: Soil_Type, Spread_Ranges: Spread_Ranges)
+                    let newCrop = Crop(cropId: cropId, cropName: cropName, cropImage: cropImage, frostTol: frostTol, minSoilpH: minSoilpH, maxSoilpH: maxSoilpH, Description: Description, AvMoisture_Percent: AvMoisture_Percent, AvN_Percent: AvN_Percent, AvP_Percent: AvP_Percent, Days_to_maturity: Days_to_maturity, Height_Ranges: Height_Ranges, Light_Needs: Light_Needs, N_P_K_Req: N_P_K_Req, Plant_Type: Plant_Type, Soil_Additional: Soil_Additional, Water_Needs: Water_Needs, Soil_Type: Soil_Type, Spread_Ranges: Spread_Ranges, Compatible_plant: Compatible_plant, All_Compatible_plants: All_Compatible_plants)
                        
     //                   newCrop.ruleId = documentRef
                  
