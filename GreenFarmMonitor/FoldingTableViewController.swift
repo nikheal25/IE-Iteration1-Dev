@@ -76,6 +76,18 @@ class FoldingTableViewController: UITableViewController, UIPopoverPresentationCo
         return tempList
     }
     
+    func sortCrops()  {
+        if sortingSchema == 2 {
+            allCropsName.sort {
+                $0.cropName < $1.cropName
+            }
+            
+            searchedCrop.sort {
+                $0.cropName < $1.cropName
+            }
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showPopOverSegue" {
             let popoverViewController = segue.destination as! PopOverViewController
@@ -289,6 +301,8 @@ extension FoldingTableViewController: filterDelgate {
     func sortOption(id: Int) {
         print("Inside folding cell \(id)")
         sortingSchema = id
+        sortCrops()
+        tableView.reloadData()
     }
     
     func filterOption(plantType: String, soilType: String) {
@@ -299,10 +313,10 @@ extension FoldingTableViewController: filterDelgate {
                 searchedCrop = filterCellsBySoilType(term: soilType)
                 searching = true
                 soilFilter = soilType
-               
+                
             }
             if plantType != "Please select" {
-//                searchedCrop = filterCellsByPlantType(term: plantType)
+                //                searchedCrop = filterCellsByPlantType(term: plantType)
                 searchedCrop.append(contentsOf: filterCellsByPlantType(term: plantType))
                 searching = true
                 plantFilter = plantType
