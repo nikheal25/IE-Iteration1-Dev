@@ -48,20 +48,36 @@ class FirebaseController: NSObject, DatabaseProtocol {
     }
     
 
-    
-    
-    
 
     func updateMyCropList(new: Bool, userId: String, cropId: String) {
-        let format = DateFormatter()
-               format.dateFormat = "yy-MM-dd-HH:mm:ss"
-               let formattedDate = format.string(from: Date())
-             
-
-        
-        let uniqueRefId = randomString(length: 5) + formattedDate
-        
-        let id = userCropRelationRef?.addDocument(data: ["cropId": cropId, "userId": userId, "relationId": uniqueRefId])
+        if new {
+             let format = DateFormatter()
+                   format.dateFormat = "yy-MM-dd-HH:mm:ss"
+                   let formattedDate = format.string(from: Date())
+                   
+                   let uniqueRefId = randomString(length: 5) + formattedDate
+                   
+                   let id = userCropRelationRef?.addDocument(data: ["cropId": cropId, "userId": userId, "relationId": uniqueRefId])
+        } else {
+            //Old
+            userCropRelationRef?.whereField("cropId", isEqualTo: cropId).whereField("userId", isEqualTo: userId).whereField("cropId", isEqualTo: cropId).getDocuments() { (querySnapshot, err) in
+              if let err = err {
+                print("Error getting documents: \(err)")
+              } else {
+                for document in querySnapshot!.documents {
+                    self.userCropRelationRef?.document("\(document.documentID)").delete()
+                    
+                    //MARK: To Delete if something goes south
+                    for (index, relation) in self.userCropRelation.enumerated() {
+                        if relation.cropId == cropId {
+                            self.userCropRelation.remove(at: index)
+                        }
+                    }
+                }
+              }
+            }
+        }
+       
         
     }
     
@@ -134,7 +150,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
         }
         
         //userCrop
-        userCropRelationRef = database.collection("UserCropRelation")
+        userCropRelationRef = database.collection("UserCropRelationOne")
         userCropRelationRef?.order(by: "date", descending: false)
         userCropRelationRef?.addSnapshotListener { querySnapshot, error in
             guard (querySnapshot?.documents) != nil else {
