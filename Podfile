@@ -12,6 +12,7 @@ target 'GreenFarmMonitor' do
   pod 'Charts'
   pod 'paper-onboarding'
   pod 'FoldingCell'
+  pod 'SwiftMessages'
   
   target 'GreenFarmMonitorTests' do
     inherit! :search_paths

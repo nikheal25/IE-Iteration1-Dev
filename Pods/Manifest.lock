@@ -273,6 +273,9 @@ PODS:
   - nanopb/encode (0.3.9011)
   - paper-onboarding (6.1.4)
   - PromisesObjC (1.2.8)
+  - SwiftMessages (7.0.1):
+    - SwiftMessages/App (= 7.0.1)
+  - SwiftMessages/App (7.0.1)
 
 DEPENDENCIES:
   - Charts
@@ -281,6 +284,7 @@ DEPENDENCIES:
   - FirebaseFirestore
   - FoldingCell
   - paper-onboarding
+  - SwiftMessages
 
 SPEC REPOS:
   trunk:
@@ -308,6 +312,7 @@ SPEC REPOS:
     - nanopb
     - paper-onboarding
     - PromisesObjC
+    - SwiftMessages
 
 SPEC CHECKSUMS:
   abseil: 18063d773f5366ff8736a050fe035a28f635fd27
@@ -334,7 +339,8 @@ SPEC CHECKSUMS:
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   paper-onboarding: d3f16416e6f42add686117e8b32bfffaad899a79
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
+  SwiftMessages: b577dc7043be8b299857ab35bb663dbff6483bd0
 
-PODFILE CHECKSUM: 617c2a0c9882c49f67a8a51c860371d54d4a233b
+PODFILE CHECKSUM: 7754cbbbdd67fb372afae551d69a93e7035b1687
 
 COCOAPODS: 1.8.4

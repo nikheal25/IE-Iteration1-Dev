@@ -8,6 +8,7 @@
 
 import UIKit
 import FoldingCell
+import SwiftMessages
 
 class FoldingTableViewController: UITableViewController, UIPopoverPresentationControllerDelegate {
     
@@ -38,6 +39,32 @@ class FoldingTableViewController: UITableViewController, UIPopoverPresentationCo
         static let closeCellHeight: CGFloat = 130
         static let openCellHeight: CGFloat = 488
         static let rowsCount = 10
+    }
+    
+    func showSwiftMessage(title: String, message: String, iconIndex: Int) {
+        let view = MessageView.viewFromNib(layout: .cardView)
+
+        // Theme message elements with the warning style.
+        //.success OR .warning OR .info OR .error
+        view.configureTheme(.success)
+
+        // Add a drop shadow.
+        view.configureDropShadow()
+
+        // Set message title, body, and icon. Here, we're overriding the default warning
+        // image with an emoji character.
+        let iconText = ["😄", "🌿", "🔝", "🆎"]
+        view.configureContent(title: title, body: message, iconImage: nil, iconText: iconText[iconIndex], buttonImage: nil, buttonTitle: "Great", buttonTapHandler: nil)
+
+        // Increase the external margin around the card. In general, the effect of this setting
+        // depends on how the given layout is constrained to the layout margins.
+        view.layoutMarginAdditions = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+
+        // Reduce the corner radius (applicable to layouts featuring rounded corners).
+        (view.backgroundView as? CornerRoundingView)?.cornerRadius = 10
+
+        // Show the message.
+        SwiftMessages.show(view: view)
     }
     
     var cellHeights: [CGFloat] = []
@@ -303,6 +330,12 @@ extension FoldingTableViewController: filterDelgate {
         sortingSchema = id
         sortCrops()
         tableView.reloadData()
+        if sortingSchema == 2 {
+            showSwiftMessage(title: "Sorted Alphabetically", message: "You can always change this!", iconIndex: 3)
+        } else {
+            showSwiftMessage(title: "Recommended First", message: "Ordered in recommended manner!", iconIndex: 2)
+        }
+        
     }
     
     func filterOption(plantType: String, soilType: String) {
