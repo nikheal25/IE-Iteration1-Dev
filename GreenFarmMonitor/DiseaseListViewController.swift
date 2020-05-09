@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DiseaseListViewController: UIViewController,UITableViewDataSource, UITableViewDelegate,DatabaseListener {
+class DiseaseListViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return shownDiseases.count
         
@@ -25,23 +25,8 @@ class DiseaseListViewController: UIViewController,UITableViewDataSource, UITable
         return diseaseCell
     }
     
-    var listenerType = ListenerType.all
+   
     
-    func onDiseaseOfCropsChange(change: DatabaseChange, diseaseOfCrops: [DiseaseOfCrops]) {
- 
-    }
-    
-    func onCropsChange(change: DatabaseChange, crops: [Crop]) {
-        
-    }
-    
-    func onUserCropRelationChange(change: DatabaseChange, userCropRelation: [UserCropRelation]) {
-        
-    }
-    
-    func onUserChange(change: DatabaseChange, users: [User]) {
-       
-    }
 
     var crop:String = ""
     var shownDiseases:[DiseaseOfCrops] = []
@@ -68,7 +53,7 @@ class DiseaseListViewController: UIViewController,UITableViewDataSource, UITable
         //      shownDiseases = diseaseOfCrops
             diseaseTable.reloadData()
         
-            navigationItem.title = crop
+            navigationItem.title = crop + " diseases"
     }
     
     @IBOutlet weak var diseaseTable: UITableView!
