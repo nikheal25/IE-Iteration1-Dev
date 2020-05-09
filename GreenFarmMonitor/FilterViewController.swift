@@ -43,6 +43,7 @@ class FilterViewController: UIViewController {
         pickerView.dataSource = self
         pickerView.delegate = self
         pickerView.isHidden = true
+        pickerView.backgroundColor = UIColor(hexString: "E4D9FF")
         doneButton.isHidden = true
         instructionLabel.isHidden = true
         // Do any additional setup after loading the view.
