@@ -90,5 +90,16 @@ class GrowMyDetailCropViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
+    var selectCrop:String = ""
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "diseaseSegue"
+            {
+                let destination = segue.destination as!DiseaseListViewController
+                
+                selectCrop = specificCrop!.cropName
+                destination.crop = selectCrop
+                }
+        }
+    
     
 }

@@ -260,6 +260,7 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
                           let destination = segue.destination as! FoldingTableViewController
                   destination.registeredCrop = deviceIDs
                       }
+        
     }
     
     //returns the object of crop, for specified ID
