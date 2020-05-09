@@ -83,7 +83,9 @@ class DemoTableViewCell: FoldingCell {
     }
     
     @IBAction func compatibleButton(_ sender: Any) {
-        
+        databaseController?.updateMyCropList(new: true, userId: (userDefaultController?.retrieveUserId())!, cropId: specificCrop!.cropId)
+        databaseController?.updateMyCropList(new: true, userId: (userDefaultController?.retrieveUserId())!, cropId: companionCrop!.cropId)
+        selectionDelegate.didAddCrop()
     }
     
     override func animationDuration(_ itemIndex: NSInteger, type _: FoldingCell.AnimationType) -> TimeInterval {
