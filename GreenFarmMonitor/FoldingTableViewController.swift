@@ -41,8 +41,15 @@ class FoldingTableViewController: UITableViewController, UIPopoverPresentationCo
         static let rowsCount = 10
     }
     
+    //MARK: Swiftmessage
     func showSwiftMessage(title: String, message: String, iconIndex: Int) {
         let view = MessageView.viewFromNib(layout: .cardView)
+        
+        var config = SwiftMessages.Config()
+
+        // Slide up from the bottom.
+//        config.presentationStyle = .bottom
+        config.duration = .seconds(seconds: 0.8)
 
         // Theme message elements with the warning style.
         //.success OR .warning OR .info OR .error
@@ -64,7 +71,7 @@ class FoldingTableViewController: UITableViewController, UIPopoverPresentationCo
         (view.backgroundView as? CornerRoundingView)?.cornerRadius = 10
 
         // Show the message.
-        SwiftMessages.show(view: view)
+        SwiftMessages.show(config: config, view: view)
     }
     
     var cellHeights: [CGFloat] = []
