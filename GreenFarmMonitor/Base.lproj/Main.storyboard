@@ -1478,7 +1478,7 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="41" id="OxK-4t-Hh1"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="16"/>
                                                             <state key="normal" title="Add to List">
                                                                 <color key="titleColor" red="0.27058823529999998" green="0.2156862745" blue="0.08235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
@@ -1527,12 +1527,32 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TnA-JY-nhP">
+                                                            <rect key="frame" x="22" y="167" width="516" height="33"/>
+                                                            <color key="backgroundColor" red="0.99607843139999996" green="0.74509803919999995" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="18"/>
+                                                            <state key="normal" title="Compatible">
+                                                                <color key="titleColor" red="0.27058823529999998" green="0.2156862745" blue="0.08235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="10"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="compatibleButton:" destination="gXt-61-trc" eventType="touchUpInside" id="m6c-NT-9Zi"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="xwo-YL-Q4c" secondAttribute="trailing" constant="10" id="03h-NF-BJe"/>
+                                                        <constraint firstAttribute="trailing" secondItem="TnA-JY-nhP" secondAttribute="trailing" constant="22" id="4YN-Pd-cbe"/>
                                                         <constraint firstItem="xwo-YL-Q4c" firstAttribute="leading" secondItem="Qbi-JT-8Ye" secondAttribute="leading" constant="10" id="8vb-qS-oE2"/>
+                                                        <constraint firstItem="TnA-JY-nhP" firstAttribute="leading" secondItem="Qbi-JT-8Ye" secondAttribute="leading" constant="22" id="AuY-yE-Mw5"/>
+                                                        <constraint firstItem="TnA-JY-nhP" firstAttribute="centerX" secondItem="Qbi-JT-8Ye" secondAttribute="centerX" id="LPG-ID-ntA"/>
                                                         <constraint firstItem="xwo-YL-Q4c" firstAttribute="top" secondItem="Qbi-JT-8Ye" secondAttribute="top" constant="30" id="OdG-zl-X7t"/>
+                                                        <constraint firstAttribute="bottom" secondItem="TnA-JY-nhP" secondAttribute="bottom" constant="10" id="QSy-WC-C3L"/>
                                                         <constraint firstAttribute="height" constant="210" id="cfa-cs-Yrx"/>
                                                     </constraints>
                                                 </view>
@@ -1573,6 +1593,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="addToButton" destination="Y6H-1m-3aI" id="Ohe-Ju-aVq"/>
+                                    <outlet property="compatibleButton" destination="TnA-JY-nhP" id="KF5-TC-U38"/>
                                     <outlet property="containerView" destination="Jaq-VL-v0N" id="pVJ-Gr-lg7"/>
                                     <outlet property="containerViewTop" destination="uxT-fU-qIh" id="p1P-fJ-owT"/>
                                     <outlet property="cropImage" destination="RPR-eY-OjE" id="aLh-gV-Llo"/>
@@ -2332,6 +2353,6 @@
         <image name="water" width="28" height="28"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gb7-L6-GNo"/>
+        <segue reference="0BZ-rP-Cky"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -22,7 +22,9 @@ class DemoTableViewCell: FoldingCell {
     weak var databaseController: DatabaseProtocol?
     
     var specificCrop: Crop?
+    var companionCrop: Crop?
     
+    @IBOutlet weak var compatibleButton: UIButton!
     
     @IBOutlet weak var cropImage: UIImageView!
     @IBOutlet weak var cropLabel: UILabel!
@@ -42,7 +44,7 @@ class DemoTableViewCell: FoldingCell {
         super.awakeFromNib()
     }
     
-    func setUp(crop: Crop) {
+    func setUp(crop: Crop, companionCrop: Crop) {
         self.cropLabel.adjustsFontSizeToFitWidth = true
         self.cropLabel.minimumScaleFactor = 0.5
         self.cropLabel.text = crop.cropName
@@ -64,12 +66,26 @@ class DemoTableViewCell: FoldingCell {
         databaseController = appDelegate.databaseController
         
         self.specificCrop = crop
+        self.companionCrop = companionCrop
+        self.compatibleButton.setTitle("Add \(companionCrop.cropName) with this crop", for: .normal)
+//        self.compatibleButton.titleLabel?.numberOfLines = 0
+//        self.compatibleButton.titleLabel?.adjustsFontSizeToFitWidth = true
+//        self.compatibleButton.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
+        
+        self.compatibleButton.titleLabel?.minimumScaleFactor = 0.01
+        self.compatibleButton.titleLabel?.adjustsFontSizeToFitWidth = true
     }
     
     @IBAction func clickAddCropButton(_ sender: Any) {
         databaseController?.updateMyCropList(new: true, userId: (userDefaultController?.retrieveUserId())!, cropId: specificCrop!.cropId)
         selectionDelegate.didAddCrop()
         //self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    @IBAction func compatibleButton(_ sender: Any) {
+        databaseController?.updateMyCropList(new: true, userId: (userDefaultController?.retrieveUserId())!, cropId: specificCrop!.cropId)
+        databaseController?.updateMyCropList(new: true, userId: (userDefaultController?.retrieveUserId())!, cropId: companionCrop!.cropId)
+        selectionDelegate.didAddCrop()
     }
     
     override func animationDuration(_ itemIndex: NSInteger, type _: FoldingCell.AnimationType) -> TimeInterval {

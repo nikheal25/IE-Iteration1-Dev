@@ -73,17 +73,18 @@ class OnboardingViewController: UIViewController, PaperOnboardingDataSource {
     func onboardingItem(at index: Int) -> OnboardingItemInfo {
         
         return [
-            OnboardingItemInfo(informationImage: UIImage(named: "Wallet")!,
+            OnboardingItemInfo(informationImage: UIImage(named: "test1_sv")!,
                                title: "Crop Ideal Conditions",
                                description: "    Know the ideal conditions and requirements for your crop    ",
-                               pageIcon: UIImage(named: "Wallet")!,
+                               pageIcon: UIImage(named: "test1_sv")!,
+                               //Wallet
                                color: UIColor(hexString: "#588B8B"),
                                titleColor: UIColor.white,
                                descriptionColor: UIColor.white,
                                titleFont: titleFont,
                                descriptionFont: descriptionFont),
             
-            OnboardingItemInfo(informationImage: UIImage(named: "Shopping-cart")!,
+            OnboardingItemInfo(informationImage: UIImage(named: "weather-svg-vect")!,
                                title: "Crop Disease Identification",
                                description: "    Know the common diseases and infections that might affect your crops    ",
                                pageIcon: UIImage(named: "Shopping-cart")!,
