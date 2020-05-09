@@ -236,61 +236,78 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="BuC-zj-nzL">
-                                <rect key="frame" x="0.0" y="159" width="414" height="604"/>
+                                <rect key="frame" x="0.0" y="242" width="414" height="521"/>
                             </mapView>
                             <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add your farm here" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0Et-gp-JTR">
-                                <rect key="frame" x="7" y="98" width="330" height="34"/>
+                                <rect key="frame" x="7" y="174" width="330" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZi-mg-jg5">
                                 <rect key="frame" x="20" y="771" width="374" height="42"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="HgD-CN-vii"/>
+                                    <constraint firstAttribute="height" constant="42" id="OIu-Me-Ulu"/>
                                 </constraints>
-                                <state key="normal" title="Continue"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="24"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
                                 <connections>
                                     <action selector="continueBtn:" destination="xHO-5A-7f3" eventType="touchUpInside" id="QEM-Ae-IHZ"/>
                                     <segue destination="5b7-kb-K7H" kind="show" identifier="continueSegue" id="0Ul-wz-YEU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmZ-eU-9uP">
-                                <rect key="frame" x="345" y="98" width="60" height="33"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="33" id="8gy-gQ-LSf"/>
-                                    <constraint firstAttribute="width" constant="60" id="gjn-Yf-CPg"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="ChangeBtn:" destination="xHO-5A-7f3" eventType="touchUpInside" id="VyD-wl-NZ7"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drag the map to your farm location more accurate." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vdp-4l-dXF">
-                                <rect key="frame" x="8" y="139" width="398" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Drag the map to your farm location more accurate." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vdp-4l-dXF">
+                                <rect key="frame" x="7" y="216" width="398" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.2676692033678757" green="0.2676692033678757" blue="0.2676692033678757" alpha="0.39937279929577463" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add your location to receive personalised solutions and regular weather alerts." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epw-zg-MMU">
+                                <rect key="frame" x="7" y="100" width="387" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="fEY-4m-XBH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="17"/>
+                                <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmZ-eU-9uP">
+                                <rect key="frame" x="345" y="174" width="60" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="SpE-fA-5Up"/>
+                                    <constraint firstAttribute="width" constant="60" id="gI5-yg-rz3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="17"/>
+                                <state key="normal">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="ChangeBtn:" destination="xHO-5A-7f3" eventType="touchUpInside" id="VyD-wl-NZ7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="0Et-gp-JTR" firstAttribute="leading" secondItem="Vdp-4l-dXF" secondAttribute="leading" id="1cM-ry-EDl"/>
-                            <constraint firstItem="Vdp-4l-dXF" firstAttribute="top" secondItem="0Et-gp-JTR" secondAttribute="bottom" constant="8" id="CNm-uj-O5E"/>
-                            <constraint firstItem="qmZ-eU-9uP" firstAttribute="leading" secondItem="0Et-gp-JTR" secondAttribute="trailing" constant="8" id="CTz-2J-oBF"/>
-                            <constraint firstItem="BuC-zj-nzL" firstAttribute="centerX" secondItem="FZi-mg-jg5" secondAttribute="centerX" id="Eyr-OJ-WPf"/>
-                            <constraint firstItem="0Et-gp-JTR" firstAttribute="centerY" secondItem="qmZ-eU-9uP" secondAttribute="centerY" id="Fgx-aM-tCf"/>
-                            <constraint firstItem="BuC-zj-nzL" firstAttribute="leading" secondItem="4pg-HS-muc" secondAttribute="leading" id="IWs-pg-epz"/>
-                            <constraint firstItem="0Et-gp-JTR" firstAttribute="top" secondItem="4pg-HS-muc" secondAttribute="top" constant="10" id="PeI-o1-L7U"/>
-                            <constraint firstItem="FZi-mg-jg5" firstAttribute="leading" secondItem="RwT-CM-8js" secondAttribute="leadingMargin" id="SJ1-v6-aOX"/>
-                            <constraint firstItem="4pg-HS-muc" firstAttribute="trailing" secondItem="qmZ-eU-9uP" secondAttribute="trailing" constant="9" id="ZRB-6x-7Kw"/>
-                            <constraint firstItem="0Et-gp-JTR" firstAttribute="top" secondItem="qmZ-eU-9uP" secondAttribute="top" id="a8j-W5-0Bb"/>
-                            <constraint firstItem="4pg-HS-muc" firstAttribute="trailing" secondItem="Vdp-4l-dXF" secondAttribute="trailing" constant="8" id="fY7-jv-gia"/>
-                            <constraint firstItem="4pg-HS-muc" firstAttribute="bottom" secondItem="FZi-mg-jg5" secondAttribute="bottom" constant="49" id="jHP-zY-pVr"/>
-                            <constraint firstItem="BuC-zj-nzL" firstAttribute="top" secondItem="0Et-gp-JTR" secondAttribute="bottom" constant="27" id="kAC-tH-aef"/>
-                            <constraint firstItem="Vdp-4l-dXF" firstAttribute="leading" secondItem="4pg-HS-muc" secondAttribute="leading" constant="8" id="ngO-ru-rFr"/>
-                            <constraint firstItem="qmZ-eU-9uP" firstAttribute="trailing" secondItem="Vdp-4l-dXF" secondAttribute="trailing" id="pcJ-jf-vdD"/>
-                            <constraint firstItem="FZi-mg-jg5" firstAttribute="top" secondItem="BuC-zj-nzL" secondAttribute="bottom" constant="8" id="xmz-oN-3eg"/>
-                            <constraint firstItem="FZi-mg-jg5" firstAttribute="trailing" secondItem="RwT-CM-8js" secondAttribute="trailingMargin" id="ynB-2A-fcC"/>
-                            <constraint firstItem="0Et-gp-JTR" firstAttribute="leading" secondItem="4pg-HS-muc" secondAttribute="leading" constant="7" id="z53-k4-nCT"/>
+                            <constraint firstItem="qmZ-eU-9uP" firstAttribute="trailing" secondItem="Vdp-4l-dXF" secondAttribute="trailing" id="6JP-5i-vaS"/>
+                            <constraint firstItem="BuC-zj-nzL" firstAttribute="centerX" secondItem="FZi-mg-jg5" secondAttribute="centerX" id="6Yl-nS-6QZ"/>
+                            <constraint firstItem="BuC-zj-nzL" firstAttribute="top" secondItem="Vdp-4l-dXF" secondAttribute="bottom" constant="8" id="E2O-Db-6LV"/>
+                            <constraint firstItem="epw-zg-MMU" firstAttribute="trailing" secondItem="FZi-mg-jg5" secondAttribute="trailing" id="Emh-1O-rh3"/>
+                            <constraint firstItem="4pg-HS-muc" firstAttribute="bottom" secondItem="FZi-mg-jg5" secondAttribute="bottom" constant="49" id="H84-wi-BAj"/>
+                            <constraint firstItem="epw-zg-MMU" firstAttribute="top" secondItem="4pg-HS-muc" secondAttribute="top" constant="12" id="JCj-gb-dKX"/>
+                            <constraint firstItem="epw-zg-MMU" firstAttribute="leading" secondItem="0Et-gp-JTR" secondAttribute="leading" id="JWK-8I-X1E"/>
+                            <constraint firstItem="0Et-gp-JTR" firstAttribute="top" secondItem="qmZ-eU-9uP" secondAttribute="top" id="KmG-e9-lsv"/>
+                            <constraint firstItem="Vdp-4l-dXF" firstAttribute="top" secondItem="0Et-gp-JTR" secondAttribute="bottom" constant="8" id="Nvx-n6-Z03"/>
+                            <constraint firstItem="0Et-gp-JTR" firstAttribute="top" secondItem="epw-zg-MMU" secondAttribute="bottom" constant="8" id="Qm6-Iq-1IU"/>
+                            <constraint firstItem="epw-zg-MMU" firstAttribute="leading" secondItem="4pg-HS-muc" secondAttribute="leading" constant="7" id="Vaj-ix-Ozm"/>
+                            <constraint firstItem="epw-zg-MMU" firstAttribute="trailing" secondItem="RwT-CM-8js" secondAttribute="trailingMargin" id="ZTk-jE-618"/>
+                            <constraint firstItem="FZi-mg-jg5" firstAttribute="leading" secondItem="RwT-CM-8js" secondAttribute="leadingMargin" id="dpN-J6-n7e"/>
+                            <constraint firstItem="4pg-HS-muc" firstAttribute="trailing" secondItem="qmZ-eU-9uP" secondAttribute="trailing" constant="9" id="eHy-en-0gG"/>
+                            <constraint firstItem="0Et-gp-JTR" firstAttribute="leading" secondItem="Vdp-4l-dXF" secondAttribute="leading" id="gP0-gj-2h9"/>
+                            <constraint firstItem="qmZ-eU-9uP" firstAttribute="leading" secondItem="0Et-gp-JTR" secondAttribute="trailing" constant="8" id="gzt-PI-cnv"/>
+                            <constraint firstItem="0Et-gp-JTR" firstAttribute="centerY" secondItem="qmZ-eU-9uP" secondAttribute="centerY" id="o7p-RX-lBc"/>
+                            <constraint firstItem="FZi-mg-jg5" firstAttribute="top" secondItem="BuC-zj-nzL" secondAttribute="bottom" constant="8" id="qFp-O0-dx7"/>
+                            <constraint firstItem="BuC-zj-nzL" firstAttribute="leading" secondItem="4pg-HS-muc" secondAttribute="leading" id="rXy-OW-CMe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4pg-HS-muc"/>
                     </view>
