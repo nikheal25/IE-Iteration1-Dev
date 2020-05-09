@@ -123,7 +123,7 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
             let long = String(location.coordinate.longitude)
             self.databaseController!.updateLocation(userId:currentUserId!, lat: lat ,locationName: "New farm", long: long)
             self.mapView.removeAnnotations(self.mapView.annotations)
-            
+            self.displayMessage(title: "Add to database", message: "Successfully!")
 //            self.mapView.addAnnotation(location)
 //            self.focusOn(annotation:location)
             
@@ -136,6 +136,11 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
     @IBOutlet weak var mapView: MKMapView!
     
   
+    @IBAction func continueBtn(_ sender: Any) {
+        displayContinueMessage(title: "Continue", message: "Do you want to change your location?")
+        
+        
+    }
     
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         self.mapView.removeAnnotations(mapView.annotations)
@@ -187,7 +192,19 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
     func displayMessage(title:String,message:String)
     {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-        alertController.addAction(UIAlertAction(title: "Enter again", style:UIAlertAction.Style.default , handler:nil) )
+        alertController.addAction(UIAlertAction(title: "OK", style:UIAlertAction.Style.default , handler:nil) )
+        self.present(alertController,animated: true,completion: nil)
+        
+    }
+    func displayContinueMessage(title:String, message:String)
+    {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "No", style:UIAlertAction.Style.default)
+        {
+            (UIAlertAction) -> Void in
+            self.performSegue(withIdentifier: "continueSegue", sender: self)
+        } )
+        alertController.addAction(UIAlertAction(title: "Yes", style:UIAlertAction.Style.default , handler:nil) )
         self.present(alertController,animated: true,completion: nil)
         
     }
