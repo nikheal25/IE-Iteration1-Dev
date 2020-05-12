@@ -147,7 +147,8 @@ extension GrowMyCropViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: CELL_COUNT, for: indexPath)
-        cell.textLabel?.text = "\(myCropList.count) total crops in the list"
+//        cell.textLabel?.text = "\(myCropList.count) total crops in the list"
+        cell.textLabel?.text = "Currently you have NO crops in your list Add Crops to continue"
         cell.selectionStyle = .none
         return cell
         

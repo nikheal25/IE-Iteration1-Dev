@@ -70,7 +70,10 @@ class FirebaseController: NSObject, DatabaseProtocol {
                     //MARK: To Delete if something goes south
                     for (index, relation) in self.userCropRelation.enumerated() {
                         if relation.cropId == cropId {
-                            self.userCropRelation.remove(at: index)
+//                            if self.userCropRelation.count < index {
+                                self.userCropRelation.remove(at: index)
+//                            }
+                            
                         }
                     }
                 }
