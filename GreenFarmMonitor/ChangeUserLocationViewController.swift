@@ -38,15 +38,16 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
                    }
         if LocationList.first?.coordinate == nil
                 {
-//                    self.locationText.placeholder = "Add your farm here"
-//                    self.UIBtn.setTitle("Add", for:.normal)
+                    self.locationText.placeholder = "Add your farm here"
+                    self.UIBtn.setTitle("Add", for:.normal)
+                  
                 }
                 else
                 {
-//                    self.locationText.placeholder = "Change your farm here"
-//                    self.UIBtn.setTitle("Change", for:.normal)
-                    self.locationText.placeholder = "Add your farm here"
-                    self.UIBtn.setTitle("Add", for:.normal)
+                    self.locationText.placeholder = "Change your farm here"
+                    self.UIBtn.setTitle("Change", for:.normal)
+//                    self.locationText.placeholder = "Add your farm here"
+//                    self.UIBtn.setTitle("Add", for:.normal)
                     self.mapView.addAnnotations(LocationList)
                     self.focusOn(annotation: LocationList.first!)
                              }
@@ -74,14 +75,19 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
     override func viewDidLoad() {
         super.viewDidLoad()
 //        "20-05-07-18:12:17x5bxy"
-        self.view.backgroundColor = UIColor(hexString: "#9bb666")
+//        self.view.backgroundColor = UIColor(hexString: "#9bb666")
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
      userDefaultController = appDelegate.userDefaultController
         databaseController = appDelegate.databaseController
      let currentUserId = userDefaultController?.retrieveUserId()
      let userList = databaseController?.userList
         self.mapView.delegate = self
-        
+        self.UIBtn.layer.cornerRadius = 8.0
+        self.UIBtn.layer.borderWidth = 1.0
+        self.UIBtn.layer.borderColor = UIColor.blue.cgColor
+        self.continueUIBtn.layer.cornerRadius = 8.0
+        self.continueUIBtn.layer.borderWidth = 1.0
+        self.continueUIBtn.layer.borderColor = UIColor.blue.cgColor
         self.locationText.delegate = self
     }
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
@@ -104,6 +110,7 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
         // Pass the selected object to the new view controller.
     }
     */
+    @IBOutlet weak var continueUIBtn: UIButton!
     
     @IBOutlet weak var UIBtn: UIButton!
     @IBOutlet weak var locationText: UITextField!
@@ -131,13 +138,29 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
             let location = LocationAnnotation(newTitle: "New farm", lat: (placemarks.location?.coordinate.latitude)!, long: (placemarks.location?.coordinate.longitude)!)
             let lat = String(location.coordinate.latitude)
             let long = String(location.coordinate.longitude)
+            
+            
+            if self.LocationList.count == 0
+            {
+                let newUserId = self.userDefaultController?.generateUniqueUserId()
+                let newUser = User(userId: newUserId!, userName: "TestUser", farmLocationName: "New farm", farmLat: lat, farmLong: long)
+                     
+                     // Firebase Update
+                let successStatus = self.databaseController?.insertNewUserToFirebase(user: newUser)
+                     if successStatus! {
+                        self.userDefaultController?.assignName(name: newUser.userName)
+                        self.displayMessage(title: "Add to database", message: "Successfully!")
+                }
+                
+                
+            }else{
             self.databaseController!.updateLocation(userId:currentUserId!, lat: lat ,locationName: "New farm", long: long)
             self.mapView.removeAnnotations(self.mapView.annotations)
-            self.displayMessage(title: "Add to database", message: "Successfully!")
+            self.displayMessage(title: "Change database", message: "Successfully!")
             
 //            self.mapView.addAnnotation(location)
 //            self.focusOn(annotation:location)
-            
+            }
                 }
         }
         
@@ -148,12 +171,13 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
     
   
     @IBAction func continueBtn(_ sender: Any) {
-        displayContinueMessage(title: "Continue", message: "Do you want to change your location?")
+        displayContinueMessage(title: "Continue", message: "Do you ensure current location?")
         
         
     }
     
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        if self.UIBtn.titleLabel?.text == "Change"{
         self.mapView.removeAnnotations(mapView.annotations)
 
            // Add new annotation
@@ -199,6 +223,7 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
             }
             
         }
+        }
     }
     func displayMessage(title:String,message:String)
     {
@@ -215,12 +240,12 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
     func displayContinueMessage(title:String, message:String)
     {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-        alertController.addAction(UIAlertAction(title: "No", style:UIAlertAction.Style.default)
+        alertController.addAction(UIAlertAction(title: "Yes", style:UIAlertAction.Style.default)
         {
             (UIAlertAction) -> Void in
             self.performSegue(withIdentifier: "continueSegue", sender: self)
         } )
-        alertController.addAction(UIAlertAction(title: "Yes", style:UIAlertAction.Style.default , handler:nil) )
+        alertController.addAction(UIAlertAction(title: "No", style:UIAlertAction.Style.default , handler:nil) )
         self.present(alertController,animated: true,completion: nil)
         
     }
