@@ -50,6 +50,7 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
 //                    self.UIBtn.setTitle("Add", for:.normal)
                     self.mapView.addAnnotations(LocationList)
                     self.focusOn(annotation: LocationList.first!)
+                    
                              }
         
     }
@@ -166,7 +167,7 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
         
      
     }
-    
+  
     @IBOutlet weak var mapView: MKMapView!
     
   
@@ -175,6 +176,34 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
         
         
     }
+//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+//
+//
+//
+//
+//            let reuseId = "test"
+//
+//        var anView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId)
+//            if anView == nil {
+//                anView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+//
+//                anView?.canShowCallout = true
+//
+//
+//                let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+//                imageView.image = UIImage(named: "anthracnose.jpg")
+//                imageView.layer.cornerRadius = imageView.layer.frame.size.width / 2
+//                imageView.layer.masksToBounds = true
+//                anView?.frame = imageView.frame
+//                anView?.addSubview(imageView)
+//            }
+//
+//
+//
+//                       return anView
+//    }
+    
+    
     
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         if self.UIBtn.titleLabel?.text == "Change"{
@@ -183,11 +212,12 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
            // Add new annotation
         let annotation = MKPointAnnotation()
         annotation.coordinate = mapView.centerCoordinate
-        annotation.title = LocationList.first?.title
+        annotation.title = self.LocationList.first?.title
         self.mapView.addAnnotation(annotation)
         let lat = annotation.coordinate.latitude
         let long = annotation.coordinate.longitude
         let address = CLGeocoder.init()
+        
         address.reverseGeocodeLocation(CLLocation.init(latitude: lat, longitude:long)) { (placemarks, error) in
             if error == nil{
 
