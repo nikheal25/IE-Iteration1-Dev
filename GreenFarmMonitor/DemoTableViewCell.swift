@@ -32,6 +32,7 @@ class DemoTableViewCell: FoldingCell {
     @IBOutlet weak var topBarLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var addToButton: UIButton!
+    @IBOutlet weak var compatibleCropLabel: UILabel!
     var number: Int = 0 {
         didSet {
             
@@ -50,7 +51,7 @@ class DemoTableViewCell: FoldingCell {
         self.cropLabel.text = crop.cropName
         self.topBarLabel.text = crop.cropName
         self.descriptionLabel.adjustsFontSizeToFitWidth = true
-        self.descriptionLabel.minimumScaleFactor = 0.2
+        self.descriptionLabel.minimumScaleFactor = 0.5
         self.descriptionLabel.sizeToFit()
         self.descriptionLabel.text = crop.Description
         
@@ -74,6 +75,9 @@ class DemoTableViewCell: FoldingCell {
         
         self.compatibleButton.titleLabel?.minimumScaleFactor = 0.01
         self.compatibleButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        self.compatibleCropLabel.text = "This crop grows best with \(companionCrop.All_Compatible_plants)"
+        self.compatibleCropLabel.adjustsFontSizeToFitWidth = true
+        self.compatibleCropLabel.minimumScaleFactor = 0.5
     }
     
     @IBAction func clickAddCropButton(_ sender: Any) {

@@ -1385,7 +1385,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search for the crop" showsCancelButton="YES" id="4b0-Sy-8gg">
-                            <rect key="frame" x="0.0" y="0.0" width="786" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
@@ -1537,12 +1537,18 @@
                                                 <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qbi-JT-8Ye" userLabel="SecondContainerView" customClass="RotatedView" customModule="FoldingCell">
                                                     <rect key="frame" x="0.0" y="200" width="560" height="210"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwo-YL-Q4c">
-                                                            <rect key="frame" x="10" y="30" width="540" height="17"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwo-YL-Q4c">
+                                                            <rect key="frame" x="10" y="5" width="540" height="17"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" relation="lessThanOrEqual" constant="200" id="DTn-jB-v8h"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compatible crop" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8B4-uo-qNI">
+                                                            <rect key="frame" x="10" y="32" width="540" height="18"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -1569,10 +1575,14 @@
                                                         <constraint firstAttribute="trailing" secondItem="TnA-JY-nhP" secondAttribute="trailing" constant="22" id="4YN-Pd-cbe"/>
                                                         <constraint firstItem="xwo-YL-Q4c" firstAttribute="leading" secondItem="Qbi-JT-8Ye" secondAttribute="leading" constant="10" id="8vb-qS-oE2"/>
                                                         <constraint firstItem="TnA-JY-nhP" firstAttribute="leading" secondItem="Qbi-JT-8Ye" secondAttribute="leading" constant="22" id="AuY-yE-Mw5"/>
+                                                        <constraint firstItem="8B4-uo-qNI" firstAttribute="leading" secondItem="Qbi-JT-8Ye" secondAttribute="leading" constant="10" id="Fdi-sp-smN"/>
                                                         <constraint firstItem="TnA-JY-nhP" firstAttribute="centerX" secondItem="Qbi-JT-8Ye" secondAttribute="centerX" id="LPG-ID-ntA"/>
-                                                        <constraint firstItem="xwo-YL-Q4c" firstAttribute="top" secondItem="Qbi-JT-8Ye" secondAttribute="top" constant="30" id="OdG-zl-X7t"/>
+                                                        <constraint firstItem="xwo-YL-Q4c" firstAttribute="top" secondItem="Qbi-JT-8Ye" secondAttribute="top" constant="5" id="OdG-zl-X7t"/>
                                                         <constraint firstAttribute="bottom" secondItem="TnA-JY-nhP" secondAttribute="bottom" constant="10" id="QSy-WC-C3L"/>
                                                         <constraint firstAttribute="height" constant="210" id="cfa-cs-Yrx"/>
+                                                        <constraint firstAttribute="trailing" secondItem="8B4-uo-qNI" secondAttribute="trailing" constant="10" id="fDp-UH-Jzo"/>
+                                                        <constraint firstItem="8B4-uo-qNI" firstAttribute="top" secondItem="xwo-YL-Q4c" secondAttribute="bottom" constant="10" id="pjj-jn-A4r"/>
+                                                        <constraint firstItem="8B4-uo-qNI" firstAttribute="centerX" secondItem="Qbi-JT-8Ye" secondAttribute="centerX" id="y9v-bb-f8f"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -1613,6 +1623,7 @@
                                 <connections>
                                     <outlet property="addToButton" destination="Y6H-1m-3aI" id="Ohe-Ju-aVq"/>
                                     <outlet property="compatibleButton" destination="TnA-JY-nhP" id="KF5-TC-U38"/>
+                                    <outlet property="compatibleCropLabel" destination="8B4-uo-qNI" id="QJr-49-Y02"/>
                                     <outlet property="containerView" destination="Jaq-VL-v0N" id="pVJ-Gr-lg7"/>
                                     <outlet property="containerViewTop" destination="uxT-fU-qIh" id="p1P-fJ-owT"/>
                                     <outlet property="cropImage" destination="RPR-eY-OjE" id="aLh-gV-Llo"/>
