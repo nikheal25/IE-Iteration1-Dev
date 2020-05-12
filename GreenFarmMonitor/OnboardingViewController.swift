@@ -98,7 +98,7 @@ class OnboardingViewController: UIViewController, PaperOnboardingDataSource {
                                           title: "Location-based Aid",
                                           description: "    Receive recommendations, alerts and personalised solution    ",
                                           pageIcon: UIImage(named: "Shopping-cart")!,
-                                          color: UIColor(hexString: "#E85D75"),   // #E85D75 - 3.5
+                                          color: UIColor(hexString: "#B1740F"),   // #E85D75 - 3.5
                            titleColor: UIColor.white,
                            descriptionColor: UIColor.white,
                            titleFont: titleFont,

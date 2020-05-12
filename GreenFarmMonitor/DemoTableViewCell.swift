@@ -81,7 +81,7 @@ class DemoTableViewCell: FoldingCell {
         
         self.specificCrop = crop
         self.companionCrop = companionCrop
-        self.compatibleButton.setTitle("Add \(companionCrop.cropName) with this crop", for: .normal)
+        self.compatibleButton.setTitle("Add \(companionCrop.cropName) with this plant", for: .normal)
 
         self.compatibleButton.titleLabel?.minimumScaleFactor = 0.01
         self.compatibleButton.titleLabel?.adjustsFontSizeToFitWidth = true
