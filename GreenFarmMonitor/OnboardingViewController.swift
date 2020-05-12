@@ -28,14 +28,14 @@ class OnboardingViewController: UIViewController, PaperOnboardingDataSource {
     @IBOutlet weak var nextAction: UIButton!
     
     @IBAction func onClick(_ sender: Any) {
-        let newUserId = userDefaultController?.generateUniqueUserId()
-        let newUser = User(userId: newUserId!, userName: "TestUser", farmLocationName: "Monash", farmLat: "-37.907803", farmLong: "145.133957")
-        
-        // Firebase Update
-        let successStatus = databaseController?.insertNewUserToFirebase(user: newUser)
-        if successStatus! {
-            userDefaultController?.assignName(name: newUser.userName)
-        }
+//        let newUserId = userDefaultController?.generateUniqueUserId()
+//        let newUser = User(userId: newUserId!, userName: "TestUser", farmLocationName: "Monash", farmLat: "-37.907803", farmLong: "145.133957")
+//
+//        // Firebase Update
+//        let successStatus = databaseController?.insertNewUserToFirebase(user: newUser)
+//        if successStatus! {
+//            userDefaultController?.assignName(name: newUser.userName)
+//        }
         
     }
     override func viewDidLoad() {
