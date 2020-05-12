@@ -1699,18 +1699,18 @@
                                                 <rect key="frame" x="20" y="20" width="373" height="221"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenHouse-1" translatesAutoresizingMaskIntoConstraints="NO" id="gTn-tI-oXS">
-                                                        <rect key="frame" x="30" y="20" width="313" height="181"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="373" height="221"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
-                                                    <constraint firstItem="gTn-tI-oXS" firstAttribute="leading" secondItem="4Dq-K6-4pR" secondAttribute="leading" constant="30" id="8rP-as-w9w"/>
-                                                    <constraint firstAttribute="trailing" secondItem="gTn-tI-oXS" secondAttribute="trailing" constant="30" id="9V9-ua-Auf"/>
-                                                    <constraint firstAttribute="bottom" secondItem="gTn-tI-oXS" secondAttribute="bottom" constant="20" id="Ir1-ol-aZB"/>
+                                                    <constraint firstItem="gTn-tI-oXS" firstAttribute="leading" secondItem="4Dq-K6-4pR" secondAttribute="leading" id="8rP-as-w9w"/>
+                                                    <constraint firstAttribute="trailing" secondItem="gTn-tI-oXS" secondAttribute="trailing" id="9V9-ua-Auf"/>
+                                                    <constraint firstAttribute="bottom" secondItem="gTn-tI-oXS" secondAttribute="bottom" id="Ir1-ol-aZB"/>
                                                     <constraint firstItem="gTn-tI-oXS" firstAttribute="centerY" secondItem="4Dq-K6-4pR" secondAttribute="centerY" id="Nl3-1c-yJN"/>
                                                     <constraint firstAttribute="height" constant="221" id="jQQ-5C-lse"/>
                                                     <constraint firstItem="gTn-tI-oXS" firstAttribute="centerX" secondItem="4Dq-K6-4pR" secondAttribute="centerX" id="jcC-gc-T8h"/>
-                                                    <constraint firstItem="gTn-tI-oXS" firstAttribute="top" secondItem="4Dq-K6-4pR" secondAttribute="top" constant="20" id="s8L-e2-42Y"/>
+                                                    <constraint firstItem="gTn-tI-oXS" firstAttribute="top" secondItem="4Dq-K6-4pR" secondAttribute="top" id="s8L-e2-42Y"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O73-P0-N24" userLabel="infoView">
