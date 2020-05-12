@@ -33,6 +33,8 @@ class GrowMyDetailCropViewController: UIViewController {
         self.title = specificCrop?.cropName
         self.cropImage.image = UIImage(named: specificCrop!.cropImage)
         self.plantTypeLabel.text = specificCrop?.Plant_Type
+        self.plantTypeLabel.adjustsFontSizeToFitWidth = true
+        self.plantTypeLabel.minimumScaleFactor = 0.5
         self.daysToMatLabel.text = specificCrop?.Days_to_maturity
         self.spreadRangeLabel.text = specificCrop?.Spread_Ranges
         self.heightRangeLabel.text = specificCrop?.Height_Ranges

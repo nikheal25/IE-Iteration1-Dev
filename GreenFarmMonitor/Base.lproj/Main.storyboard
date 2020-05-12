@@ -1717,7 +1717,7 @@
                                                 <rect key="frame" x="20" y="246" width="373" height="646"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="TeD-Tj-ISr">
-                                                        <rect key="frame" x="10" y="10" width="353" height="40"/>
+                                                        <rect key="frame" x="20" y="10" width="333" height="40"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Plant type" translatesAutoresizingMaskIntoConstraints="NO" id="S9x-QE-1C8">
                                                                 <rect key="frame" x="0.0" y="0.0" width="55" height="40"/>
@@ -1728,16 +1728,16 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Plant Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uHg-hB-e4w">
-                                                                <rect key="frame" x="63" y="0.0" width="100" height="40"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="100" id="yVj-bu-xRb"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <rect key="frame" x="63" y="0.0" width="162" height="40"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDZ-DU-pmC">
-                                                                <rect key="frame" x="171" y="0.0" width="182" height="40"/>
+                                                                <rect key="frame" x="233" y="0.0" width="100" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="100" id="S0t-d4-jO9"/>
+                                                                </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -1760,7 +1760,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="hIw-Bb-wwd"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -1791,7 +1791,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="P90-Nr-nHJ"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -1822,7 +1822,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="XOE-B9-efX"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -1853,7 +1853,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="p4k-4U-upH"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -1884,7 +1884,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="axA-nf-8UV"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -1915,7 +1915,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="gCn-ZG-ta3"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -1946,7 +1946,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="K8X-WX-VaU"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -1977,7 +1977,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="d65-ZK-FkH"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -2008,7 +2008,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="a10-Mj-dAU"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -2039,7 +2039,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="Bjb-dN-7Fw"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -2055,7 +2055,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ux-Ud-1Lh">
-                                                        <rect key="frame" x="10" y="558" width="333" height="30"/>
+                                                        <rect key="frame" x="20" y="558" width="323" height="30"/>
                                                         <state key="normal" title="View diseases"/>
                                                         <connections>
                                                             <segue destination="uRE-0F-6ZE" kind="show" identifier="diseaseSegue" id="DcB-GX-sFl"/>
@@ -2076,7 +2076,7 @@
                                                     <constraint firstItem="oxM-j0-btn" firstAttribute="leading" secondItem="O73-P0-N24" secondAttribute="leading" constant="20" id="NIt-ne-j4Y"/>
                                                     <constraint firstItem="b55-mc-M6a" firstAttribute="leading" secondItem="O73-P0-N24" secondAttribute="leading" constant="20" id="NxY-Hk-zUW"/>
                                                     <constraint firstItem="HgX-iL-EFb" firstAttribute="leading" secondItem="O73-P0-N24" secondAttribute="leading" constant="20" id="OJX-qI-9Ud"/>
-                                                    <constraint firstAttribute="trailing" secondItem="TeD-Tj-ISr" secondAttribute="trailing" constant="10" id="OnN-kb-BLj"/>
+                                                    <constraint firstAttribute="trailing" secondItem="TeD-Tj-ISr" secondAttribute="trailing" constant="20" id="OnN-kb-BLj"/>
                                                     <constraint firstItem="oxM-j0-btn" firstAttribute="top" secondItem="5dR-1t-aYt" secondAttribute="bottom" constant="10" id="Phg-df-oDf"/>
                                                     <constraint firstItem="B56-i1-lPm" firstAttribute="top" secondItem="U3C-oE-znO" secondAttribute="bottom" constant="10" id="TZL-h3-HAu"/>
                                                     <constraint firstItem="U3C-oE-znO" firstAttribute="leading" secondItem="O73-P0-N24" secondAttribute="leading" constant="20" id="VpW-PP-XS8"/>
@@ -2100,7 +2100,7 @@
                                                     <constraint firstItem="TeD-Tj-ISr" firstAttribute="centerX" secondItem="O73-P0-N24" secondAttribute="centerX" id="vC4-s2-sNe"/>
                                                     <constraint firstAttribute="trailing" secondItem="AUM-Jp-nY3" secondAttribute="trailing" constant="20" id="w37-Pw-2cv"/>
                                                     <constraint firstItem="3mz-Uo-8Mx" firstAttribute="top" secondItem="oxM-j0-btn" secondAttribute="bottom" constant="10" id="wlv-n1-APG"/>
-                                                    <constraint firstItem="TeD-Tj-ISr" firstAttribute="leading" secondItem="O73-P0-N24" secondAttribute="leading" constant="10" id="yBV-mM-zef"/>
+                                                    <constraint firstItem="TeD-Tj-ISr" firstAttribute="leading" secondItem="O73-P0-N24" secondAttribute="leading" constant="20" id="yBV-mM-zef"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
