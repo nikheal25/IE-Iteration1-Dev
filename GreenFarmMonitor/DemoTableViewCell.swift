@@ -24,6 +24,7 @@ class DemoTableViewCell: FoldingCell {
     var specificCrop: Crop?
     var companionCrop: Crop?
     
+    @IBOutlet weak var barView: UIView!
     @IBOutlet weak var compatibleButton: UIButton!
     
     @IBOutlet weak var cropImage: UIImageView!
@@ -46,6 +47,18 @@ class DemoTableViewCell: FoldingCell {
     }
     
     func setUp(crop: Crop, companionCrop: Crop) {
+        
+        // Change the color of Top bar - START
+        self.barView.backgroundColor = UIColor(hexString: "#243119")
+        self.barView.superview?.backgroundColor = UIColor(hexString: "#243119")
+        // END
+        
+        // Change the color of buttons - START
+        self.addToButton.backgroundColor = UIColor(hexString: "#616163")
+        self.compatibleButton.backgroundColor = UIColor(hexString: "#616163")
+        // END
+        
+        
         self.cropLabel.adjustsFontSizeToFitWidth = true
         self.cropLabel.minimumScaleFactor = 0.5
         self.cropLabel.text = crop.cropName
@@ -69,10 +82,7 @@ class DemoTableViewCell: FoldingCell {
         self.specificCrop = crop
         self.companionCrop = companionCrop
         self.compatibleButton.setTitle("Add \(companionCrop.cropName) with this crop", for: .normal)
-//        self.compatibleButton.titleLabel?.numberOfLines = 0
-//        self.compatibleButton.titleLabel?.adjustsFontSizeToFitWidth = true
-//        self.compatibleButton.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
-        
+
         self.compatibleButton.titleLabel?.minimumScaleFactor = 0.01
         self.compatibleButton.titleLabel?.adjustsFontSizeToFitWidth = true
         self.compatibleCropLabel.text = "This crop grows best with \(companionCrop.All_Compatible_plants)"
