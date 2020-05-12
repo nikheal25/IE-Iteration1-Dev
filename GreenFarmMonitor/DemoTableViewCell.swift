@@ -24,6 +24,7 @@ class DemoTableViewCell: FoldingCell {
     var specificCrop: Crop?
     var companionCrop: Crop?
     
+    @IBOutlet weak var barView: UIView!
     @IBOutlet weak var compatibleButton: UIButton!
     
     @IBOutlet weak var cropImage: UIImageView!
@@ -32,6 +33,7 @@ class DemoTableViewCell: FoldingCell {
     @IBOutlet weak var topBarLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var addToButton: UIButton!
+    @IBOutlet weak var compatibleCropLabel: UILabel!
     var number: Int = 0 {
         didSet {
             
@@ -45,12 +47,24 @@ class DemoTableViewCell: FoldingCell {
     }
     
     func setUp(crop: Crop, companionCrop: Crop) {
+        
+        // Change the color of Top bar - START
+        self.barView.backgroundColor = UIColor(hexString: "#243119")
+        self.barView.superview?.backgroundColor = UIColor(hexString: "#243119")
+        // END
+        
+        // Change the color of buttons - START
+        self.addToButton.backgroundColor = UIColor(hexString: "#616163")
+        self.compatibleButton.backgroundColor = UIColor(hexString: "#616163")
+        // END
+        
+        
         self.cropLabel.adjustsFontSizeToFitWidth = true
         self.cropLabel.minimumScaleFactor = 0.5
         self.cropLabel.text = crop.cropName
         self.topBarLabel.text = crop.cropName
         self.descriptionLabel.adjustsFontSizeToFitWidth = true
-        self.descriptionLabel.minimumScaleFactor = 0.2
+        self.descriptionLabel.minimumScaleFactor = 0.5
         self.descriptionLabel.sizeToFit()
         self.descriptionLabel.text = crop.Description
         
@@ -67,13 +81,13 @@ class DemoTableViewCell: FoldingCell {
         
         self.specificCrop = crop
         self.companionCrop = companionCrop
-        self.compatibleButton.setTitle("Add \(companionCrop.cropName) with this crop", for: .normal)
-//        self.compatibleButton.titleLabel?.numberOfLines = 0
-//        self.compatibleButton.titleLabel?.adjustsFontSizeToFitWidth = true
-//        self.compatibleButton.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
-        
+        self.compatibleButton.setTitle("Add \(companionCrop.cropName) with this plant", for: .normal)
+
         self.compatibleButton.titleLabel?.minimumScaleFactor = 0.01
         self.compatibleButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        self.compatibleCropLabel.text = "This crop grows best with \(companionCrop.All_Compatible_plants)"
+        self.compatibleCropLabel.adjustsFontSizeToFitWidth = true
+        self.compatibleCropLabel.minimumScaleFactor = 0.5
     }
     
     @IBAction func clickAddCropButton(_ sender: Any) {

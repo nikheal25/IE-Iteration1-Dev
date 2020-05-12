@@ -85,7 +85,8 @@ class GrowMyCropViewController: UIViewController, DatabaseListener, GrowCropDele
             }
         }
         if myCropList.count == 0 {
-            headerLabel.text = "Currently you have 0 crops in your list"
+            headerLabel.text = "Currently you have NO crops in your list Add Crops to continue"
+//            headerLabel.text = "Currently you have 0 crops in your list"
         }else{
             headerLabel.text = "Click on the crop that you want to grow"
         }
@@ -147,8 +148,8 @@ extension GrowMyCropViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: CELL_COUNT, for: indexPath)
-//        cell.textLabel?.text = "\(myCropList.count) total crops in the list"
-        cell.textLabel?.text = "Currently you have NO crops in your list Add Crops to continue"
+        cell.textLabel?.text = "\(myCropList.count) total crops in the list"
+//        cell.textLabel?.text = "Currently you have NO crops in your list Add Crops to continue"
         cell.selectionStyle = .none
         return cell
         
@@ -163,13 +164,16 @@ extension GrowMyCropViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    //    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    //
-    //        // return "Add new Crops"
-    //        if myCropList.count == 0 {
-    //            return "Currently you have 0 crops in your list. ."
-    //        }
-    //        return ""
-    //
-    //    }
+//        func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//
+//            // return "Add new Crops"
+//            if myCropList.count == 0 {
+//                return "Currently you have NO crops in your list Add Crops to continue"
+//            }
+//            return ""
+//
+//        }
+//    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return 25
+//    }
 }
