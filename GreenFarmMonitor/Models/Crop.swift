@@ -30,12 +30,14 @@ class Crop: NSObject {
     var Soil_Type: String
     var Spread_Ranges: String
     
+    var minTemp:String
+    var maxTemp:String
     //compatible
         var Compatible_plant: String
         var All_Compatible_plants: String
     
     
-    internal init(cropId: String, cropName: String, cropImage: String, frostTol: String, minSoilpH: String, maxSoilpH: String, Description: String, AvMoisture_Percent: String, AvN_Percent: String, AvP_Percent: String, Days_to_maturity: String, Height_Ranges: String, Light_Needs: String, N_P_K_Req: String, Plant_Type: String, Soil_Additional: String, Water_Needs: String, Soil_Type: String, Spread_Ranges: String, Compatible_plant: String, All_Compatible_plants: String) {
+    internal init(cropId: String, cropName: String, cropImage: String, frostTol: String, minSoilpH: String, maxSoilpH: String, Description: String, AvMoisture_Percent: String, AvN_Percent: String, AvP_Percent: String, Days_to_maturity: String, Height_Ranges: String, Light_Needs: String, N_P_K_Req: String, Plant_Type: String, Soil_Additional: String, Water_Needs: String, Soil_Type: String, Spread_Ranges: String, Compatible_plant: String, All_Compatible_plants: String, maxTemp: String, minTemp: String) {
         self.cropId = cropId
         self.cropName = cropName
         self.cropImage = cropImage
@@ -57,5 +59,7 @@ class Crop: NSObject {
         self.Spread_Ranges = Spread_Ranges
         self.Compatible_plant = Compatible_plant
         self.All_Compatible_plants = All_Compatible_plants
+        self.maxTemp = maxTemp
+        self.minTemp = minTemp
     }
 }

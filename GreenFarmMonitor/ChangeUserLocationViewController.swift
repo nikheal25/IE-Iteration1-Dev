@@ -73,6 +73,7 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
     weak var userDefaultController: UserdefaultsProtocol?
     
     weak var databaseController: DatabaseProtocol?
+    var newUserId = ""
     override func viewDidLoad() {
         super.viewDidLoad()
 //        "20-05-07-18:12:17x5bxy"
@@ -84,12 +85,12 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
      let userList = databaseController?.userList
         self.mapView.delegate = self
         self.UIBtn.layer.cornerRadius = 8.0
-        self.UIBtn.layer.borderWidth = 1.0
-        self.UIBtn.layer.borderColor = UIColor.blue.cgColor
+        self.UIBtn.backgroundColor = UIColor(hexString: "#616163")
+        self.continueUIBtn.backgroundColor = UIColor(hexString: "#616163")
         self.continueUIBtn.layer.cornerRadius = 8.0
-        self.continueUIBtn.layer.borderWidth = 1.0
-        self.continueUIBtn.layer.borderColor = UIColor.blue.cgColor
+        
         self.locationText.delegate = self
+        newUserId = (self.userDefaultController?.generateUniqueUserId())!
     }
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
         self.locationText.endEditing(true)
@@ -143,8 +144,8 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
             
             if self.LocationList.count == 0
             {
-                let newUserId = self.userDefaultController?.generateUniqueUserId()
-                let newUser = User(userId: newUserId!, userName: "TestUser", farmLocationName: "New farm", farmLat: lat, farmLong: long)
+               
+                let newUser = User(userId: self.newUserId, userName: "TestUser", farmLocationName: "New farm", farmLat: lat, farmLong: long)
                      
                      // Firebase Update
                 let successStatus = self.databaseController?.insertNewUserToFirebase(user: newUser)
