@@ -142,7 +142,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
         
     
         //Crop
-        cropRef = database.collection("cropsCompatibleOne")
+        cropRef = database.collection("cropsCompatibleTwo")
         cropRef?.order(by: "date", descending: false)
         cropRef?.addSnapshotListener { querySnapshot, error in
             guard (querySnapshot?.documents) != nil else {
@@ -315,7 +315,8 @@ class FirebaseController: NSObject, DatabaseProtocol {
                 
                 let maxSoilpH = stringUnwrapper(val: docData, key: "SOILpH_Max")
                 let minSoilpH = stringUnwrapper(val: docData, key: "SOILpH_Min")
-                
+                let maxTemp = stringUnwrapper(val: docData, key: "Max_Temp_Celcius")
+                let minTemp = stringUnwrapper(val: docData, key: "Min_temp_Celcius")
                 /// NEW ATTRIBUTES
                 let Description = stringUnwrapper(val: docData, key: "Description")
                 let AvMoisture_Percent = stringUnwrapper(val: docData, key: "AvMoisture_Percent")
@@ -338,7 +339,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
                 
                    if change.type == .added {
                        
-                    let newCrop = Crop(cropId: cropId, cropName: cropName, cropImage: cropImage, frostTol: frostTol, minSoilpH: minSoilpH, maxSoilpH: maxSoilpH, Description: Description, AvMoisture_Percent: AvMoisture_Percent, AvN_Percent: AvN_Percent, AvP_Percent: AvP_Percent, Days_to_maturity: Days_to_maturity, Height_Ranges: Height_Ranges, Light_Needs: Light_Needs, N_P_K_Req: N_P_K_Req, Plant_Type: Plant_Type, Soil_Additional: Soil_Additional, Water_Needs: Water_Needs, Soil_Type: Soil_Type, Spread_Ranges: Spread_Ranges, Compatible_plant: Compatible_plant, All_Compatible_plants: All_Compatible_plants)
+                    let newCrop = Crop(cropId: cropId, cropName: cropName, cropImage: cropImage, frostTol: frostTol, minSoilpH: minSoilpH, maxSoilpH: maxSoilpH, Description: Description, AvMoisture_Percent: AvMoisture_Percent, AvN_Percent: AvN_Percent, AvP_Percent: AvP_Percent, Days_to_maturity: Days_to_maturity, Height_Ranges: Height_Ranges, Light_Needs: Light_Needs, N_P_K_Req: N_P_K_Req, Plant_Type: Plant_Type, Soil_Additional: Soil_Additional, Water_Needs: Water_Needs, Soil_Type: Soil_Type, Spread_Ranges: Spread_Ranges, Compatible_plant: Compatible_plant, All_Compatible_plants: All_Compatible_plants, maxTemp: maxTemp, minTemp: minTemp)
                        
     //                   newCrop.ruleId = documentRef
                  

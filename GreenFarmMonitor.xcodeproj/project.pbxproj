@@ -52,6 +52,8 @@
 		E883C94824444BDB006F6AC8 /* DiseaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E883C94724444BDB006F6AC8 /* DiseaseTableViewCell.swift */; };
 		E883C94A24446A04006F6AC8 /* DetailOfDiseaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E883C94924446A04006F6AC8 /* DetailOfDiseaseViewController.swift */; };
 		E883C94C244473E1006F6AC8 /* SymptomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E883C94B244473E1006F6AC8 /* SymptomsViewController.swift */; };
+		E8871953246BE51B001614F7 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8871952246BE51B001614F7 /* Weather.swift */; };
+		E8871955246BEAFA001614F7 /* APIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8871954246BEAFA001614F7 /* APIProtocol.swift */; };
 		E8DF843D245000CA0032CFAB /* SelectCropForDiseaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DF843C245000CA0032CFAB /* SelectCropForDiseaseViewController.swift */; };
 		E8DF844124501B090032CFAB /* FoundDiseaseCropsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DF844024501B090032CFAB /* FoundDiseaseCropsTableViewCell.swift */; };
 		E8DF8443245024870032CFAB /* DiseaseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DF8442245024870032CFAB /* DiseaseListViewController.swift */; };
@@ -133,6 +135,8 @@
 		E883C94724444BDB006F6AC8 /* DiseaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseTableViewCell.swift; sourceTree = "<group>"; };
 		E883C94924446A04006F6AC8 /* DetailOfDiseaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOfDiseaseViewController.swift; sourceTree = "<group>"; };
 		E883C94B244473E1006F6AC8 /* SymptomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsViewController.swift; sourceTree = "<group>"; };
+		E8871952246BE51B001614F7 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		E8871954246BEAFA001614F7 /* APIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProtocol.swift; sourceTree = "<group>"; };
 		E8DF843C245000CA0032CFAB /* SelectCropForDiseaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCropForDiseaseViewController.swift; sourceTree = "<group>"; };
 		E8DF844024501B090032CFAB /* FoundDiseaseCropsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundDiseaseCropsTableViewCell.swift; sourceTree = "<group>"; };
 		E8DF8442245024870032CFAB /* DiseaseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseListViewController.swift; sourceTree = "<group>"; };
@@ -300,6 +304,8 @@
 			isa = PBXGroup;
 			children = (
 				1DB74B3124603CF900530B81 /* WeatherAPI.swift */,
+				E8871952246BE51B001614F7 /* Weather.swift */,
+				E8871954246BEAFA001614F7 /* APIProtocol.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -559,12 +565,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8871953246BE51B001614F7 /* Weather.swift in Sources */,
 				E8DF8443245024870032CFAB /* DiseaseListViewController.swift in Sources */,
 				1DFBCFC92446CF4C00DCC4B2 /* User.swift in Sources */,
 				E8DF844124501B090032CFAB /* FoundDiseaseCropsTableViewCell.swift in Sources */,
 				1DDEE7E12444363B005BC7D8 /* CropTableViewCell.swift in Sources */,
 				1DDEE7E924446777005BC7D8 /* MyCropCellTableViewCell.swift in Sources */,
 				1DDEE7DD244432CF005BC7D8 /* Crop.swift in Sources */,
+				E8871955246BEAFA001614F7 /* APIProtocol.swift in Sources */,
 				E8FDFCAB2447133F00143844 /* LocationAnnotation .swift in Sources */,
 				1D9EED33243C3A7D00EE97D2 /* ViewController.swift in Sources */,
 				1DDEE7E5244443CD005BC7D8 /* AddNewCropViewController.swift in Sources */,
@@ -771,6 +779,7 @@
 			baseConfigurationReference = 84188086EAE359F9609095B7 /* Pods-GreenFarmMonitor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "GreenFarmMonitor/FarmCommunity Together.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = GreenFarmMonitor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -789,6 +798,7 @@
 			baseConfigurationReference = 5199DFB7DDCBF11918E71EB6 /* Pods-GreenFarmMonitor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "GreenFarmMonitor/FarmCommunity Together.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = GreenFarmMonitor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

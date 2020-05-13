@@ -15,13 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var databaseController: DatabaseProtocol?
     // UserDefaults
     var userDefaultController: UserdefaultsProtocol?
-    
+    var weatherAPI: APIProtocol?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         databaseController = FirebaseController()
         
         //USer defaults
         userDefaultController = UserdefaultsController()
-        
+        weatherAPI = WeatherAPI()
+       
         return true
     }
     
@@ -34,6 +35,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
 
+    
+    
+    
+    
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
@@ -42,4 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
+
+    
+
 

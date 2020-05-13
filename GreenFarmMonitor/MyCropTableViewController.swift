@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class MyCropTableViewController: UITableViewController, DatabaseListener {
     func onUserChange(change: DatabaseChange, users: [User]) {
@@ -17,6 +18,7 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
     var listenerType: ListenerType = ListenerType.all // listener
     weak var databaseController: DatabaseProtocol?
     weak var userDefaultController: UserdefaultsProtocol?
+    weak var weatherAPI: APIProtocol?
     var deviceIDs: [String] = []
     
     func onDiseaseOfCropsChange(change: DatabaseChange, diseaseOfCrops: [DiseaseOfCrops]) {
@@ -31,6 +33,10 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
         self.performSegue(withIdentifier: "foldingSegue", sender: self)
         //self.performSegue(withIdentifier: "addNewCropSegue", sender: self)
     }
+    var maxt: [Double] = []
+    var mint: [Double] = []
+    var overheatmessage = ""
+    var overcoldmessage = ""
     func onUserCropRelationChange(change: DatabaseChange, userCropRelation: [UserCropRelation]) {
         let currentUserId = userDefaultController?.retrieveUserId()
         
@@ -39,6 +45,9 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
         
         myCropList = []
         deviceIDs = []
+        overheatmessage = ""
+        overcoldmessage = ""
+       
         for item in userCropRelation{
             if item.userId == currentUserId {
                 var crop = findCropById(cropId: item.cropId)
@@ -56,6 +65,65 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
                 tableView.reloadData()
             }
         }
+        if self.myCropList.count != 0{
+             maxt = []
+             mint = []
+        let allWeather = weatherAPI?.apiCall()
+       
+        for dailyWeather in allWeather!
+        {
+            maxt.append(dailyWeather.maxtemp)
+            mint.append(dailyWeather.mintemp)
+            print (maxt)
+        }
+         for crop in self.myCropList
+                {
+        
+//        
+//                    if let minTemp = Double(crop.minTemp), !(minTemp <= mint.min())
+//                    {
+//                    overheatmessage = overheatmessage + crop.cropName + ", "
+//        
+//                    }
+//                    if let maxTemp = Double(crop.maxTemp), maxTemp < maxt.max()!
+//                    {
+//                    overcoldmessage = overcoldmessage + crop.cropName + ", "
+//        
+//                    }
+        
+                }
+        }
+//        if self.myCropList.count != 0
+//        {
+//            for crop in self.myCropList
+//        {
+//
+//
+//            if let minTemp = Double(crop.minTemp),minTemp > mintemp.min()!
+//            {
+//            overheatmessage = overheatmessage + crop.cropName + ", "
+//
+//            }
+//            if let maxTemp = Double(crop.maxTemp), maxTemp < maxtemp.max()!
+//            {
+//                overcoldmessage = overcoldmessage + crop.cropName + ", "
+//
+//            }
+//
+//        }
+//        if overheatmessage != ""
+//        {
+//            overheatmessage = "The following crops will be overheat in the recent 16 days: " + overheatmessage
+//
+//            showNotifications(message:overheatmessage )}
+//        if overcoldmessage != ""
+//        {
+//            overcoldmessage = "The following crops will be overcold in the recent 16 days:" + overheatmessage
+//            showNotifications(message:overcoldmessage )
+//
+//        }
+//        }
+        
     }
     
 
@@ -65,7 +133,7 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
      let CELL_ACTIVITY = "myCropCell"
      var myCropList: [Crop] = []
      var selectedRow = 0
-    
+     var weather = [Weather]()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -75,7 +143,8 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         userDefaultController = appDelegate.userDefaultController
         databaseController = appDelegate.databaseController
-        
+        weatherAPI = appDelegate.weatherAPI
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -83,9 +152,47 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
 //
             //MARK:- TODO
-//        let weather = WeatherAPI()
+        
+        
+//        for weather in allWeather!
+//        {
+//            print(weather.maxtemp)
+//        showNotifications()
+//       }
+        
     }
 
+    
+    func showNotifications(message: String)
+    {
+        
+        //        ask permission
+                let center = UNUserNotificationCenter.current()
+                center.requestAuthorization(options: [.alert, .sound])
+                {(granted, error) in
+                }
+                    
+        //            create content
+                    let content = UNMutableNotificationContent()
+                    content.title = "Warning!"
+                    content.body = message
+                    
+        //       create trigger
+        //        let date = Date().addingTimeInterval(5)
+        //        let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
+        //        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+               let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+                let uuidString = UUID().uuidString
+                let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
+                
+                center.add(request)
+                {(error)in
+                    
+                }
+        
+    }
+    
+    
         override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
         self.navigationItem.hidesBackButton = true
@@ -100,8 +207,12 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
 //            self.onUserCropRelationChange(change: .update, userCropRelation: databaseController!.userCropRelation)
            //self.onRuleChange(change: .update, rule: databaseController!.ruleList)
             databaseController?.addListener(listener: self)
+            
         }
         
+    
+    
+    
         override func viewWillDisappear(_ animated: Bool) {
             super.viewWillDisappear(animated)
             databaseController?.removeListener(listener: self)

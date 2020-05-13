@@ -8,18 +8,21 @@
 
 import UIKit
 
-public struct DailyWeather: Codable {
-    
-    public let id: Int
-    public let title: String
-    public let overview: String
-    public let releaseDate: Date
-    public let voteAverage: Double
-    public let voteCount: Int
-    public let adult: Bool
-}
+//public struct DailyWeather: Codable {
+//
+//    public let id: Int
+//    public let title: String
+//    public let overview: String
+//    public let releaseDate: Date
+//    public let voteAverage: Double
+//    public let voteCount: Int
+//    public let adult: Bool
+//}
 
-class WeatherAPI: NSObject {
+
+
+
+class WeatherAPI: NSObject, APIProtocol {
 
 //    func fetchFilms(completionHandler: @escaping ([DailyWeather]) -> Void) {
 //      let url = URL(string: "https://api.weatherbit.io/v2.0/forecast/daily?city=Raleigh,NC&key=b26f508726974d9cb185ca7bdfa3636c")!
@@ -43,8 +46,9 @@ class WeatherAPI: NSObject {
 //      })
 //      task.resume()
 //    }
-    
-    func apiCall()  {
+    var weather = [Weather]()
+    func apiCall() -> [Weather]
+    {
         let session = URLSession.shared
         let url = URL(string: "https://api.weatherbit.io/v2.0/forecast/daily?city=Raleigh,NC&key=b26f508726974d9cb185ca7bdfa3636c")!
 
@@ -66,19 +70,44 @@ class WeatherAPI: NSObject {
             }
 
             do {
-                let json = try JSONSerialization.jsonObject(with: data!, options: [])
-                print(json)
+                
+                let json = try JSONSerialization.jsonObject(with: data!, options: [])as? [String: Any]
+//               print(json)
+                let jsonP = json!["data"] as! NSArray
+                for dailydata in jsonP
+                {
+                      let maxtemp = (dailydata as AnyObject).value(forKey: "max_temp") as! Double
+                      let mintemp = (dailydata as AnyObject).value(forKey: "min_temp") as! Double
+                      let date = (dailydata as AnyObject).value(forKey: "datetime") as! String
+                      let precip = (dailydata as AnyObject).value(forKey: "precip") as! Double
+                    
+                    self.weather.append(Weather(maxtemp: maxtemp, mintemp: mintemp, date: date, precip: precip))
+//                    print (self.weather)
+                }
+//                print(self.maxtemp)
+//                print(self.date)
+//                print(self.precip)
+//                
+                
+                
+                
+//                let weatherData = try! JSONDecoder().decode(weather.self, from: json as! Data)
+               
+                
+                
             } catch {
                 print("JSON error: \(error.localizedDescription)")
             }
         }
 
         task.resume()
+        return self.weather
+        
     }
-    
+   
     override init() {
         super.init()
-      apiCall()
+         apiCall()
     }
     
 }
