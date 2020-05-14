@@ -68,6 +68,7 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
 
  
         
+        
     }
     
 
@@ -89,6 +90,17 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
         databaseController = appDelegate.databaseController
         weatherAPI = appDelegate.weatherAPI
         
+        let currentUserId = userDefaultController?.retrieveUserId()
+        let userList = databaseController?.userList
+        for user in userList!
+        {
+            if user.userId == currentUserId!
+            {
+                weatherAPI?.apiCall(lat: user.farmLat, long: user.farmLong)
+                
+            }
+            
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -147,12 +159,12 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
 
                                if let minTemp = Double(crop.minTemp), minTemp > min!
                                {
-                               overheatmessage = overheatmessage + crop.cropName + ", "
+                               overcoldmessage = overcoldmessage + crop.cropName + ", "
 
                                }
                                if let maxTemp = Double(crop.maxTemp), maxTemp < max!
                                {
-                               overcoldmessage = overcoldmessage + crop.cropName + ", "
+                               overheatmessage = overheatmessage + crop.cropName + ", "
 
                                }
            
@@ -179,7 +191,7 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
                        }
                    if overcoldmessage != ""
                    {
-                       overcoldmessage = "The following crops will be overcold in the recent 16 days:" + overcoldmessage
+                       overcoldmessage = "The following crops will be overcold in the recent 16 days: " + overcoldmessage
                        
                        content.title = "Warning!"
                        content.body = overcoldmessage

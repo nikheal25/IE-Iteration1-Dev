@@ -23,6 +23,8 @@ import UIKit
 
 
 class WeatherAPI: NSObject, APIProtocol {
+ 
+    
 
 //    func fetchFilms(completionHandler: @escaping ([DailyWeather]) -> Void) {
 //      let url = URL(string: "https://api.weatherbit.io/v2.0/forecast/daily?city=Raleigh,NC&key=b26f508726974d9cb185ca7bdfa3636c")!
@@ -47,10 +49,14 @@ class WeatherAPI: NSObject, APIProtocol {
 //      task.resume()
 //    }
     var weather = [Weather]()
-    func apiCall() -> [Weather]
+    var lat = ""
+    var long = ""
+    func apiCall(lat: String, long: String) -> [Weather]
     {
+       
+        let para = "lat=\(lat)&lon=\(long)"
         let session = URLSession.shared
-        let url = URL(string: "https://api.weatherbit.io/v2.0/forecast/daily?city=Raleigh,NC&key=b26f508726974d9cb185ca7bdfa3636c")!
+        let url = URL(string: "https://api.weatherbit.io/v2.0/forecast/daily?\(para)&key=b26f508726974d9cb185ca7bdfa3636c")!
 
         let task = session.dataTask(with: url) { data, response, error in
 
@@ -72,7 +78,7 @@ class WeatherAPI: NSObject, APIProtocol {
             do {
                 
                 let json = try JSONSerialization.jsonObject(with: data!, options: [])as? [String: Any]
-//               print(json)
+               print(json)
                 let jsonP = json!["data"] as! NSArray
                 for dailydata in jsonP
                 {
@@ -108,7 +114,9 @@ class WeatherAPI: NSObject, APIProtocol {
     override init() {
         super.init()
         
-         apiCall()
+//        self.lat = "-37.8771"
+//        self.long = "145.0449"
+         apiCall(lat: lat, long: long)
     }
     
 }
