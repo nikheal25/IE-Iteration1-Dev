@@ -20,14 +20,14 @@
             landmarkType = "3">
             <Locations>
                <Location
-                  uuid = "AC75708D-DAD3-4922-AC79-907BAD7333DA - 978c36d7789d5f5b"
+                  uuid = "AC75708D-DAD3-4922-AC79-907BAD7333DA - bb33b92b6a05cf49"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "FarmCommunity_Together.MyCropCellTableViewCell.__allocating_init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; FarmCommunity_Together.MyCropCellTableViewCell"
                   moduleName = "FarmCommunity Together"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///var/folders/95/x26dv_cj67vf2xwvyf3w009j4qm8sq/T/tmp.wTkAFXcZ/Desktop/IE-Iteration1-Dev/GreenFarmMonitor/MyCropCellTableViewCell.swift"
+                  urlString = "file:///var/folders/95/x26dv_cj67vf2xwvyf3w009j4qm8sq/T/tmp.Tx9gIJIx/Desktop/IE-Iteration1-Dev/GreenFarmMonitor/MyCropCellTableViewCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -35,14 +35,14 @@
                   offsetFromSymbolStart = "12">
                </Location>
                <Location
-                  uuid = "AC75708D-DAD3-4922-AC79-907BAD7333DA - ff19be7923e1d7f9"
+                  uuid = "AC75708D-DAD3-4922-AC79-907BAD7333DA - d3a63185317947eb"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "FarmCommunity_Together.MyCropCellTableViewCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; FarmCommunity_Together.MyCropCellTableViewCell"
                   moduleName = "FarmCommunity Together"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///var/folders/95/x26dv_cj67vf2xwvyf3w009j4qm8sq/T/tmp.wTkAFXcZ/Desktop/IE-Iteration1-Dev/GreenFarmMonitor/MyCropCellTableViewCell.swift"
+                  urlString = "file:///var/folders/95/x26dv_cj67vf2xwvyf3w009j4qm8sq/T/tmp.Tx9gIJIx/Desktop/IE-Iteration1-Dev/GreenFarmMonitor/MyCropCellTableViewCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "13"
@@ -50,14 +50,14 @@
                   offsetFromSymbolStart = "182">
                </Location>
                <Location
-                  uuid = "AC75708D-DAD3-4922-AC79-907BAD7333DA - 44e33287c6ed00c3"
+                  uuid = "AC75708D-DAD3-4922-AC79-907BAD7333DA - 685cbd7bd47590d1"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "FarmCommunity_Together.MyCropCellTableViewCell.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;FarmCommunity_Together.MyCropCellTableViewCell&gt;"
                   moduleName = "FarmCommunity Together"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///var/folders/95/x26dv_cj67vf2xwvyf3w009j4qm8sq/T/tmp.wTkAFXcZ/Desktop/IE-Iteration1-Dev/GreenFarmMonitor/MyCropCellTableViewCell.swift"
+                  urlString = "file:///var/folders/95/x26dv_cj67vf2xwvyf3w009j4qm8sq/T/tmp.Tx9gIJIx/Desktop/IE-Iteration1-Dev/GreenFarmMonitor/MyCropCellTableViewCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -65,14 +65,14 @@
                   offsetFromSymbolStart = "12">
                </Location>
                <Location
-                  uuid = "AC75708D-DAD3-4922-AC79-907BAD7333DA - 73ffbd9e4ebe59d6"
+                  uuid = "AC75708D-DAD3-4922-AC79-907BAD7333DA - 5f4032625c26c9c4"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "FarmCommunity_Together.MyCropCellTableViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;FarmCommunity_Together.MyCropCellTableViewCell&gt;"
                   moduleName = "FarmCommunity Together"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///var/folders/95/x26dv_cj67vf2xwvyf3w009j4qm8sq/T/tmp.wTkAFXcZ/Desktop/IE-Iteration1-Dev/GreenFarmMonitor/MyCropCellTableViewCell.swift"
+                  urlString = "file:///var/folders/95/x26dv_cj67vf2xwvyf3w009j4qm8sq/T/tmp.Tx9gIJIx/Desktop/IE-Iteration1-Dev/GreenFarmMonitor/MyCropCellTableViewCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "13"
@@ -80,14 +80,14 @@
                   offsetFromSymbolStart = "119">
                </Location>
                <Location
-                  uuid = "AC75708D-DAD3-4922-AC79-907BAD7333DA - f7f82483804ce6f2"
+                  uuid = "AC75708D-DAD3-4922-AC79-907BAD7333DA - db47ab7f92d476e0"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "FarmCommunity_Together.MyCropCellTableViewCell.__deallocating_deinit"
                   moduleName = "FarmCommunity Together"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///var/folders/95/x26dv_cj67vf2xwvyf3w009j4qm8sq/T/tmp.wTkAFXcZ/Desktop/IE-Iteration1-Dev/GreenFarmMonitor/MyCropCellTableViewCell.swift"
+                  urlString = "file:///var/folders/95/x26dv_cj67vf2xwvyf3w009j4qm8sq/T/tmp.Tx9gIJIx/Desktop/IE-Iteration1-Dev/GreenFarmMonitor/MyCropCellTableViewCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"

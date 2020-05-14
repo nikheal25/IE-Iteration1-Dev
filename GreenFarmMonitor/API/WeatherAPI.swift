@@ -107,6 +107,7 @@ class WeatherAPI: NSObject, APIProtocol {
    
     override init() {
         super.init()
+        
          apiCall()
     }
     

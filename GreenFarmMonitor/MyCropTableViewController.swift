@@ -33,10 +33,8 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
         self.performSegue(withIdentifier: "foldingSegue", sender: self)
         //self.performSegue(withIdentifier: "addNewCropSegue", sender: self)
     }
-    var maxt: [Double] = []
-    var mint: [Double] = []
-    var overheatmessage = ""
-    var overcoldmessage = ""
+  
+    
     func onUserCropRelationChange(change: DatabaseChange, userCropRelation: [UserCropRelation]) {
         let currentUserId = userDefaultController?.retrieveUserId()
         
@@ -45,8 +43,7 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
         
         myCropList = []
         deviceIDs = []
-        overheatmessage = ""
-        overcoldmessage = ""
+        
        
         for item in userCropRelation{
             if item.userId == currentUserId {
@@ -65,48 +62,9 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
                 tableView.reloadData()
             }
         }
-       
-        let allWeather = weatherAPI?.apiCall()
-
-        for dailyWeather in allWeather!
-        {
-            maxt.append(dailyWeather.maxtemp)
-            mint.append(dailyWeather.mintemp)
-            print (maxt)
-            
-        }
-        print (maxt.max())
+       edit()
         
-         for crop in myCropList
-                {
-//
-//
-//                    if let minTemp = Double(crop.minTemp), minTemp > mint.min()!
-//                    {
-//                    overheatmessage = overheatmessage + crop.cropName + ", "
-//
-//                    }
-//                    if let maxTemp = Double(crop.maxTemp), maxTemp < maxt.max()!
-//                    {
-//                    overcoldmessage = overcoldmessage + crop.cropName + ", "
-//
-//                    }
-////
-//                }
-//
-
-//        if overheatmessage != ""
-//        {
-//            overheatmessage = "The following crops will be overheat in the recent 16 days: " + overheatmessage
-//
-//            showNotifications(message:overheatmessage )}
-        if overcoldmessage != ""
-        {
-            overcoldmessage = "The following crops will be overcold in the recent 16 days:" + overheatmessage
-            showNotifications(message:overcoldmessage )
-
-        }
-
+        
         
     }
     
@@ -117,18 +75,18 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
      let CELL_ACTIVITY = "myCropCell"
      var myCropList: [Crop] = []
      var selectedRow = 0
-     var weather = [Weather]()
+     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        myCropList = [Crop]()
+//        myCropList = [Crop]()
         deviceIDs = [String]()
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         userDefaultController = appDelegate.userDefaultController
         databaseController = appDelegate.databaseController
         weatherAPI = appDelegate.weatherAPI
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -143,38 +101,98 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
 //            print(weather.maxtemp)
 //        showNotifications()
 //       }
-        
+       //        ask permission
+       let center = UNUserNotificationCenter.current()
+       center.requestAuthorization(options: [.alert, .sound])
+       {(granted, error) in
+          
+       }
     }
-
     
-    func showNotifications(message: String)
-    {
-        
-        //        ask permission
-                let center = UNUserNotificationCenter.current()
-                center.requestAuthorization(options: [.alert, .sound])
-                {(granted, error) in
-                }
-                    
-        //            create content
-                    let content = UNMutableNotificationContent()
-                    content.title = "Warning!"
-                    content.body = message
-                    
-        //       create trigger
-        //        let date = Date().addingTimeInterval(5)
-        //        let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
-        //        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-               let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
-                let uuidString = UUID().uuidString
-                let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
-                
-                center.add(request)
-                {(error)in
-                    
-                }
-        
+    var maxt: [Double] = []
+      var mint: [Double] = []
+      var overheatmessage = ""
+      var overcoldmessage = ""
+    var allWeather:[Weather] = []
+    
+    //edit message in notification
+  func edit()
+  {
+                    maxt = []
+                   mint = []
+                   allWeather = weatherAPI!.weather
+                   overcoldmessage = ""
+                   overheatmessage = ""
+                   for dailyWeather in allWeather
+                   {
+                       maxt.append(dailyWeather.maxtemp)
+                       mint.append(dailyWeather.mintemp)
+                       
+                       
+                   }
+                   
+                   
+                    let max = maxt.max()
+                    let min = mint.min()
+                   print(min)
+                   print(max)
+           
+                   if max != nil && min != nil
+                   {
+                       for crop in myCropList
+                           {
+
+
+                               if let minTemp = Double(crop.minTemp), minTemp > min!
+                               {
+                               overheatmessage = overheatmessage + crop.cropName + ", "
+
+                               }
+                               if let maxTemp = Double(crop.maxTemp), maxTemp < max!
+                               {
+                               overcoldmessage = overcoldmessage + crop.cropName + ", "
+
+                               }
+           
+                           }
+                   }
+    //notification center
+        let center = UNUserNotificationCenter.current()
+        center.removeAllDeliveredNotifications()
+        center.removeAllPendingNotificationRequests()
+        let content = UNMutableNotificationContent()
+                   if overheatmessage != ""
+                   {
+                       overheatmessage = "The following crops will be overheat in the recent 16 days: " + overheatmessage
+
+                        
+                                          content.title = "Warning!"
+                                          content.body = overheatmessage
+                       let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+                       let uuidString = UUID().uuidString
+                       let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
+                       
+                       center.add(request)
+                       {(error)in }
+                       }
+                   if overcoldmessage != ""
+                   {
+                       overcoldmessage = "The following crops will be overcold in the recent 16 days:" + overcoldmessage
+                       
+                       content.title = "Warning!"
+                       content.body = overcoldmessage
+                    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+                                          let uuidString = UUID().uuidString
+                                          let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
+                                          
+                                          center.add(request)
+                                          {(error)in }
+                   }
+           
     }
+    
+    
+    
     
     
         override func viewWillAppear(_ animated: Bool) {
@@ -182,16 +200,18 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
         self.navigationItem.hidesBackButton = true
 //            self.navigationController!.navigationBar.barStyle = .black
             
-            
+           
             self.navigationController!.navigationBar.isTranslucent = true
 //            self.navigationController!.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
 //            self.navigationController!.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.99997437, blue: 0.9999912977, alpha: 1)
-            myCropList = []
+//            myCropList = []
+            
            // self.onTemperatureChange(change: .update, temperatures: databaseController!.tempList)
 //            self.onUserCropRelationChange(change: .update, userCropRelation: databaseController!.userCropRelation)
            //self.onRuleChange(change: .update, rule: databaseController!.ruleList)
             databaseController?.addListener(listener: self)
-            
+         
+           
         }
         
     
@@ -200,6 +220,7 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
         override func viewWillDisappear(_ animated: Bool) {
             super.viewWillDisappear(animated)
             databaseController?.removeListener(listener: self)
+           
         }
         
     
