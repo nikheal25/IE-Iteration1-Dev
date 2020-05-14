@@ -18,8 +18,12 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
     var currentDateTime = Date()
     let formatter = DateFormatter()
     
+    var rangeMaxValue = 50.00
+    var rangeMinValue = 0.00
+    
     var minIdealTemperature: [Double] = []
     var maxIdealTemperature: [Double] = []
+    var exactTemperature: [Double] = []
     lazy var plotTwoData: [Double] = self.generateRandomData(self.numberOfItems, max: 80, shouldIncludeOutliers: false)
     
     var numberOfItems = 16
@@ -30,6 +34,8 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
             return minIdealTemperature[pointIndex]
         case "two":
             return maxIdealTemperature[pointIndex]
+        case "three":
+            return exactTemperature[pointIndex]
         default:
             return 0
         }
@@ -44,7 +50,8 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
     }
     
     func showTempGraph() {
-        graphView.rangeMax = 50
+        graphView.rangeMax = rangeMaxValue
+        graphView.rangeMin = rangeMinValue
         setupGraph(graphView: graphView)
     }
     
@@ -76,11 +83,17 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
                 minIdealTemperature.insert(minValue, at: i)
                 maxIdealTemperature.insert(maxValue, at: i)
             }
+            //MARK:- set exact temperature
+            exactTemperature = self.generateRandomData(self.numberOfItems, max: 40, shouldIncludeOutliers: false)
+            
+            let tempExactMax = exactTemperature.max() as! Double
+            
+            rangeMaxValue = max( tempExactMax, maxValue ) + 10
+            print(rangeMaxValue)
         }
         
         graphView.dataSource = self
-//        graphView.rangeMax = 50
-//        setupGraph(graphView: graphView)
+
         showTempGraph()
         
     }
@@ -129,6 +142,19 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
         
         orangeLinePlot.adaptAnimationType = ScrollableGraphViewAnimationType.elastic
         
+        // Setup the third line plot.
+        let currentTemp = LinePlot(identifier: "three")
+        
+        currentTemp.lineWidth = 5
+        currentTemp.lineColor = UIColor.colorFromHex(hexString: "#447604")
+        currentTemp.lineStyle = ScrollableGraphViewLineStyle.smooth
+        
+        currentTemp.shouldFill = false
+        currentTemp.fillType = ScrollableGraphViewFillType.solid
+        currentTemp.fillColor = UIColor.colorFromHex(hexString: "#447604").withAlphaComponent(0.5)
+        
+        currentTemp.adaptAnimationType = ScrollableGraphViewAnimationType.elastic
+        
         // Customise the reference lines.
         let referenceLines = ReferenceLines()
         
@@ -146,6 +172,7 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
         graphView.addReferenceLines(referenceLines: referenceLines)
         graphView.addPlot(plot: blueLinePlot)
         graphView.addPlot(plot: orangeLinePlot)
+        graphView.addPlot(plot: currentTemp)
     }
     /*
      // MARK: - Navigation
