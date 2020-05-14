@@ -12,6 +12,7 @@ import ScrollableGraphView
 class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
     
     @IBOutlet weak var graphView: ScrollableGraphView!
+    @IBOutlet weak var secondGraph: ScrollableGraphView!
     
     var specificCrop: Crop?
     
@@ -78,17 +79,32 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
         setupGraph(graphView: graphView)
     }
     
+    var tempFlag = false
+    var rainFlag = false
+    
     @IBAction func segmentController(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
             hideFlagTemp = false
             hideFlagRain = true
+            //Hide and unhide the bars
+            graphView.isHidden = false
+            secondGraph.isHidden = true
             subtitileLabel.text = "Blue line represents actual temperature prediction"
-            showTempGraph()
+            if tempFlag == false {
+                showTempGraph()
+                tempFlag = true
+            }
         }else{
             hideFlagTemp = true
             hideFlagRain = false
-            subtitileLabel.text = "Blue line represents actual temperature prediction"
-            setupRainfallGraph(graphView: graphView)
+            //Hide and unhide the bars
+            graphView.isHidden = true
+            secondGraph.isHidden = false
+            subtitileLabel.text = "Area represents the precipitation prediction"
+            if rainFlag == false {
+                setupRainfallGraph(graphView: secondGraph)
+                rainFlag = true
+            }
         }
     }
     
@@ -120,6 +136,7 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = specificCrop?.cropName
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         weatherAPI = appDelegate.weatherAPI
         
@@ -158,9 +175,10 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
         }
         
         graphView.dataSource = self
+        secondGraph.dataSource = self
         
         showTempGraph()
-        
+        tempFlag = true
     }
     
     private func generateRandomData(_ numberOfItems: Int, max: Double, shouldIncludeOutliers: Bool = true) -> [Double] {

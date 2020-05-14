@@ -1327,10 +1327,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jm3-Rg-0qf">
-                                <rect key="frame" x="0.0" y="88" width="414" height="225"/>
+                                <rect key="frame" x="0.0" y="98" width="414" height="225"/>
                                 <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Wt-sy-xRP" customClass="ScrollableGraphView" customModule="ScrollableGraphView">
+                                        <rect key="frame" x="-1" y="-8" width="416" height="241"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <viewLayoutGuide key="contentLayoutGuide" id="5V6-AZ-ghu"/>
+                                        <viewLayoutGuide key="frameLayoutGuide" id="Gg0-qL-KTD"/>
+                                    </scrollView>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jlF-Fb-HlL" customClass="ScrollableGraphView" customModule="ScrollableGraphView">
-                                        <rect key="frame" x="0.0" y="0.0" width="415" height="240"/>
+                                        <rect key="frame" x="-1" y="-8" width="415" height="240"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <viewLayoutGuide key="contentLayoutGuide" id="5Xq-Ts-1jk"/>
                                         <viewLayoutGuide key="frameLayoutGuide" id="hgc-5a-J8O"/>
@@ -1342,7 +1348,7 @@
                                 </constraints>
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oDm-5e-yYt">
-                                <rect key="frame" x="20" y="363" width="374" height="32"/>
+                                <rect key="frame" x="20" y="373" width="374" height="32"/>
                                 <color key="backgroundColor" systemColor="placeholderTextColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <segments>
                                     <segment title="Temperature"/>
@@ -1353,13 +1359,13 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ZN-ec-Xhz">
-                                <rect key="frame" x="20" y="443" width="374" height="23"/>
+                                <rect key="frame" x="20" y="453" width="374" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue line represents actual temperature prediction" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdY-GR-D7q">
-                                <rect key="frame" x="20" y="341" width="374" height="12"/>
+                                <rect key="frame" x="20" y="351" width="374" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1379,7 +1385,7 @@
                             <constraint firstItem="gQy-g3-gwD" firstAttribute="trailing" secondItem="pdY-GR-D7q" secondAttribute="trailing" constant="20" id="dkw-MQ-LIp"/>
                             <constraint firstItem="Jm3-Rg-0qf" firstAttribute="leading" secondItem="gQy-g3-gwD" secondAttribute="leading" id="j5N-NC-zjN"/>
                             <constraint firstItem="gQy-g3-gwD" firstAttribute="trailing" secondItem="7ZN-ec-Xhz" secondAttribute="trailing" constant="20" id="peg-Xu-6sC"/>
-                            <constraint firstItem="Jm3-Rg-0qf" firstAttribute="top" secondItem="gQy-g3-gwD" secondAttribute="top" id="uQx-5S-ERR"/>
+                            <constraint firstItem="Jm3-Rg-0qf" firstAttribute="top" secondItem="gQy-g3-gwD" secondAttribute="top" constant="10" id="uQx-5S-ERR"/>
                             <constraint firstItem="Jm3-Rg-0qf" firstAttribute="centerX" secondItem="4R9-Qc-v3i" secondAttribute="centerX" id="x7z-aL-qvL"/>
                             <constraint firstItem="7ZN-ec-Xhz" firstAttribute="top" secondItem="oDm-5e-yYt" secondAttribute="bottom" constant="49" id="yAz-mX-nEm"/>
                         </constraints>
@@ -1389,6 +1395,7 @@
                     <connections>
                         <outlet property="graphView" destination="jlF-Fb-HlL" id="ce5-0V-ELr"/>
                         <outlet property="mainLabel" destination="7ZN-ec-Xhz" id="2f3-Zc-OXB"/>
+                        <outlet property="secondGraph" destination="5Wt-sy-xRP" id="G8a-AO-LMm"/>
                         <outlet property="subtitileLabel" destination="pdY-GR-D7q" id="A0o-Z1-r3Z"/>
                     </connections>
                 </viewController>
