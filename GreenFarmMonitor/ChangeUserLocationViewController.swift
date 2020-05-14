@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapViewDelegate,UITextFieldDelegate{
+    //database controller
     var listenerType = ListenerType.all
     
     func onDiseaseOfCropsChange(change: DatabaseChange, diseaseOfCrops: [DiseaseOfCrops]) {
@@ -81,8 +82,7 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
      userDefaultController = appDelegate.userDefaultController
         databaseController = appDelegate.databaseController
-     let currentUserId = userDefaultController?.retrieveUserId()
-     let userList = databaseController?.userList
+        
         self.mapView.delegate = self
         self.UIBtn.layer.cornerRadius = 8.0
         self.UIBtn.backgroundColor = UIColor(hexString: "#616163")
@@ -274,7 +274,12 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
         alertController.addAction(UIAlertAction(title: "Yes", style:UIAlertAction.Style.default)
         {
             (UIAlertAction) -> Void in
-            self.performSegue(withIdentifier: "continueSegue", sender: self)
+            if self.LocationList.count == 0{
+                self.displayMessage(title: "Warning!", message: "You must enter you farm location.")
+                
+            }else
+            {
+                self.performSegue(withIdentifier: "continueSegue", sender: self)}
         } )
         alertController.addAction(UIAlertAction(title: "No", style:UIAlertAction.Style.default , handler:nil) )
         self.present(alertController,animated: true,completion: nil)
