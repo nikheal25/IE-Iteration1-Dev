@@ -15,6 +15,9 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
     
     var specificCrop: Crop?
     
+    var currentDateTime = Date()
+    let formatter = DateFormatter()
+    
     var minIdealTemperature: [Double] = []
     lazy var plotTwoData: [Double] = self.generateRandomData(self.numberOfItems, max: 80, shouldIncludeOutliers: false)
     
@@ -32,7 +35,7 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
     }
     
     func label(atIndex pointIndex: Int) -> String {
-        return "FEB \(pointIndex+1)"
+        return setCurrentTime(day: pointIndex)
     }
     
     func numberOfPoints() -> Int {
@@ -50,6 +53,14 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
         }
     }
     
+    func setCurrentTime(day: Int) -> String{
+        formatter.dateFormat = "MMM d"
+        let interval = TimeInterval(60 * 60 * 24 * day)
+        let newDate = currentDateTime.addingTimeInterval(interval)
+        return formatter.string(from: newDate)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -60,9 +71,9 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
             for i in 0..<16 {
                 minIdealTemperature.insert(minValue, at: i)
             }
-//            print(minIdealTemperature)
+            //            print(minIdealTemperature)
         }
-
+        
         graphView.dataSource = self
         graphView.rangeMax = 50
         setupGraph(graphView: graphView)
