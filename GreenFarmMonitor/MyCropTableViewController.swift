@@ -334,9 +334,9 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
           if indexPath.section == SECTION_ACTIVITY{
             //MARK:- Cell click (TODO)
-//              selectedRow = indexPath.row
-//              tableView.deselectRow(at: indexPath, animated: true)
-//              self.performSegue(withIdentifier: "foldingSegue", sender: self)
+              selectedRow = indexPath.row
+              tableView.deselectRow(at: indexPath, animated: true)
+              self.performSegue(withIdentifier: "graphSegue", sender: self)
           }
       }
   
@@ -355,6 +355,10 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
                           let destination = segue.destination as! FoldingTableViewController
                   destination.registeredCrop = deviceIDs
                       }
+        
+        if segue.identifier == "graphSegue" {
+                let destination = segue.destination as! GraphViewController
+        }
         
     }
     

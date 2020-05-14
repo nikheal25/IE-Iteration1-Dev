@@ -577,7 +577,7 @@
                         <segue destination="RFN-Gy-5fg" kind="show" identifier="addNewCropSegue" id="gDm-6V-5H8"/>
                         <segue destination="yiQ-Q6-hV5" kind="show" identifier="newSpecificCrop" id="0BZ-rP-Cky"/>
                         <segue destination="auZ-DV-ex4" kind="show" identifier="foldingSegue" id="j93-du-V0Z"/>
-                        <segue destination="XuH-bc-lq7" kind="show" id="QPs-4C-iv0"/>
+                        <segue destination="XuH-bc-lq7" kind="show" identifier="graphSegue" id="QPs-4C-iv0"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hgc-TU-r9b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1449,7 +1449,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search for the crop" showsCancelButton="YES" id="4b0-Sy-8gg">
-                            <rect key="frame" x="0.0" y="0.0" width="786" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
