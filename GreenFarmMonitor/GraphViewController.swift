@@ -43,6 +43,8 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
             return maxIdealTemperature[pointIndex]
         case "three":
             return exactTemperature[pointIndex]
+        case "rainOne":
+            return exactTemperature[pointIndex]
         default:
             return 0
         }
@@ -66,7 +68,8 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
         if sender.selectedSegmentIndex == 0 {
             showTempGraph()
         }else{
-            setupGraph(graphView: graphView)
+         
+            setupRainfallGraph(graphView: graphView)
         }
     }
     
@@ -216,6 +219,42 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
         graphView.addPlot(plot: blueLinePlot)
         graphView.addPlot(plot: orangeLinePlot)
         graphView.addPlot(plot: currentTemp)
+    }
+    
+    func setupRainfallGraph(graphView: ScrollableGraphView) {
+        
+        // Setup the first line plot.
+        let linePlot = LinePlot(identifier: "rainOne")
+        
+        linePlot.lineWidth = 2
+        linePlot.lineColor = UIColor.colorFromHex(hexString: "#777777")
+        linePlot.lineStyle = ScrollableGraphViewLineStyle.smooth
+        
+        linePlot.shouldFill = true
+        linePlot.fillType = ScrollableGraphViewFillType.gradient
+        linePlot.fillGradientType = ScrollableGraphViewGradientType.linear
+        linePlot.fillGradientStartColor = UIColor.colorFromHex(hexString: "#555555")
+        linePlot.fillGradientEndColor = UIColor.colorFromHex(hexString: "#444444")
+//        linePlot.fillColor = UIColor.colorFromHex(hexString: "#16aafc").withAlphaComponent(0.5)
+//
+        linePlot.adaptAnimationType = ScrollableGraphViewAnimationType.elastic
+        
+        // Customise the reference lines.
+        let referenceLines = ReferenceLines()
+        
+        referenceLines.referenceLineLabelFont = UIFont.boldSystemFont(ofSize: 8)
+        referenceLines.referenceLineColor = UIColor.black.withAlphaComponent(0.2)
+        referenceLines.referenceLineLabelColor = UIColor.black
+        
+        referenceLines.dataPointLabelColor = UIColor.black.withAlphaComponent(1)
+        
+        // All other graph customisation is done in Interface Builder,
+        // e.g, the background colour would be set in interface builder rather than in code.
+        // graphView.backgroundFillColor = UIColor.colorFromHex(hexString: "#333333")
+        
+        // Add everything to the graph.
+        graphView.addReferenceLines(referenceLines: referenceLines)
+        graphView.addPlot(plot: linePlot)
     }
     /*
      // MARK: - Navigation
