@@ -87,7 +87,7 @@ class FoldingTableViewController: UITableViewController, UIPopoverPresentationCo
         userDefaultController = appDelegate.userDefaultController
         databaseController = appDelegate.databaseController
         
-        self.title = "All Crops"
+        self.title = "All Plants"
         
         tableView.tableFooterView = UIView()
         allCropsName = getRelevantCrops()

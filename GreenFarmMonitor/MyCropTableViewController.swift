@@ -92,7 +92,7 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
 //
 //                    }
 ////
-//                }
+                }
 //
 
 //        if overheatmessage != ""
