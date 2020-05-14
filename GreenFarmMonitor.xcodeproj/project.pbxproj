@@ -21,6 +21,7 @@
 		1D50297D243D90C100D4F426 /* UserdefaultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D50297C243D90C100D4F426 /* UserdefaultsController.swift */; };
 		1D502981243D919A00D4F426 /* UserdefaultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D502980243D919A00D4F426 /* UserdefaultsProtocol.swift */; };
 		1D879DA1246CC7B9008261D0 /* FertilixerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D879DA0246CC7B9008261D0 /* FertilixerViewController.swift */; };
+		1D879DE3246D0A39008261D0 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D879DE2246D0A39008261D0 /* GraphViewController.swift */; };
 		1D94FF06244AC82700CB2F25 /* FoldingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D94FF05244AC82700CB2F25 /* FoldingTableViewController.swift */; };
 		1D9EED2F243C3A7D00EE97D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9EED2E243C3A7D00EE97D2 /* AppDelegate.swift */; };
 		1D9EED31243C3A7D00EE97D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9EED30243C3A7D00EE97D2 /* SceneDelegate.swift */; };
@@ -94,6 +95,7 @@
 		1D50297C243D90C100D4F426 /* UserdefaultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserdefaultsController.swift; sourceTree = "<group>"; };
 		1D502980243D919A00D4F426 /* UserdefaultsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserdefaultsProtocol.swift; sourceTree = "<group>"; };
 		1D879DA0246CC7B9008261D0 /* FertilixerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FertilixerViewController.swift; sourceTree = "<group>"; };
+		1D879DE2246D0A39008261D0 /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		1D94FF05244AC82700CB2F25 /* FoldingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldingTableViewController.swift; sourceTree = "<group>"; };
 		1D9EED2B243C3A7D00EE97D2 /* FarmCommunity Together.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FarmCommunity Together.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D9EED2E243C3A7D00EE97D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 				1D19C543244C082C00989079 /* DemoTableViewCell.swift */,
 				1DE82CCE2465064F00EF54A6 /* PopOverViewController.swift */,
 				1D9EED34243C3A7D00EE97D2 /* Main.storyboard */,
+				1D879DE2246D0A39008261D0 /* GraphViewController.swift */,
 				1D879DA0246CC7B9008261D0 /* FertilixerViewController.swift */,
 				1DE82CD22465303600EF54A6 /* SortByViewController.swift */,
 				1DE82CD024650E1B00EF54A6 /* FilterViewController.swift */,
@@ -592,6 +595,7 @@
 				1DFBCFC72446CBBC00DCC4B2 /* LoginViewController.swift in Sources */,
 				1D94FF06244AC82700CB2F25 /* FoldingTableViewController.swift in Sources */,
 				1DE82CD32465303600EF54A6 /* SortByViewController.swift in Sources */,
+				1D879DE3246D0A39008261D0 /* GraphViewController.swift in Sources */,
 				1D124287244FF4D2001C6BAD /* GrowMyCropViewController.swift in Sources */,
 				1D9EED2F243C3A7D00EE97D2 /* AppDelegate.swift in Sources */,
 				1DE82CCF2465064F00EF54A6 /* PopOverViewController.swift in Sources */,

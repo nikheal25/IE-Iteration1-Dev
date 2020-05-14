@@ -1318,16 +1318,24 @@
             </objects>
             <point key="canvasLocation" x="-1041" y="747"/>
         </scene>
-        <!--View Controller-->
+        <!--Graph View Controller-->
         <scene sceneID="naK-mK-4p3">
             <objects>
-                <viewController id="XuH-bc-lq7" sceneMemberID="viewController">
+                <viewController id="XuH-bc-lq7" customClass="GraphViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4R9-Qc-v3i">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jm3-Rg-0qf">
                                 <rect key="frame" x="0.0" y="88" width="414" height="225"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jlF-Fb-HlL" customClass="ScrollableGraphView" customModule="ScrollableGraphView">
+                                        <rect key="frame" x="0.0" y="0.0" width="415" height="240"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <viewLayoutGuide key="contentLayoutGuide" id="5Xq-Ts-1jk"/>
+                                        <viewLayoutGuide key="frameLayoutGuide" id="hgc-5a-J8O"/>
+                                    </scrollView>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="225" id="gZN-wB-zHb"/>
@@ -1364,6 +1372,9 @@
                         <viewLayoutGuide key="safeArea" id="gQy-g3-gwD"/>
                     </view>
                     <navigationItem key="navigationItem" id="0Hn-Tq-fzd"/>
+                    <connections>
+                        <outlet property="graphView" destination="jlF-Fb-HlL" id="ce5-0V-ELr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RD5-5f-Gxa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1438,7 +1449,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search for the crop" showsCancelButton="YES" id="4b0-Sy-8gg">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="786" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
