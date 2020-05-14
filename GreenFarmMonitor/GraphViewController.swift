@@ -19,6 +19,7 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
     let formatter = DateFormatter()
     
     var minIdealTemperature: [Double] = []
+    var maxIdealTemperature: [Double] = []
     lazy var plotTwoData: [Double] = self.generateRandomData(self.numberOfItems, max: 80, shouldIncludeOutliers: false)
     
     var numberOfItems = 16
@@ -28,7 +29,7 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
         case "one":
             return minIdealTemperature[pointIndex]
         case "two":
-            return plotTwoData[pointIndex]
+            return maxIdealTemperature[pointIndex]
         default:
             return 0
         }
@@ -42,12 +43,14 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
         return numberOfItems
     }
     
+    func showTempGraph() {
+        graphView.rangeMax = 50
+        setupGraph(graphView: graphView)
+    }
+    
     @IBAction func segmentController(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
-            minIdealTemperature = self.generateRandomData(self.numberOfItems, max: 100, shouldIncludeOutliers: true)
-            plotTwoData = self.generateRandomData(self.numberOfItems, max: 100, shouldIncludeOutliers: true)
-            graphView.rangeMax = 50
-            setupGraph(graphView: graphView)
+            showTempGraph()
         }else{
             setupGraph(graphView: graphView)
         }
@@ -66,17 +69,19 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
         
         if specificCrop != nil {
             minIdealTemperature = []
+            maxIdealTemperature = []
             let minValue = (self.specificCrop?.minTemp as! NSString).doubleValue
-            
+            let maxValue = (self.specificCrop?.maxTemp as! NSString).doubleValue
             for i in 0..<16 {
                 minIdealTemperature.insert(minValue, at: i)
+                maxIdealTemperature.insert(maxValue, at: i)
             }
-            //            print(minIdealTemperature)
         }
         
         graphView.dataSource = self
-        graphView.rangeMax = 50
-        setupGraph(graphView: graphView)
+//        graphView.rangeMax = 50
+//        setupGraph(graphView: graphView)
+        showTempGraph()
         
     }
     
@@ -101,7 +106,7 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
         // Setup the first line plot.
         let blueLinePlot = LinePlot(identifier: "one")
         
-        blueLinePlot.lineWidth = 5
+        blueLinePlot.lineWidth = 2
         blueLinePlot.lineColor = UIColor.colorFromHex(hexString: "#16aafc")
         blueLinePlot.lineStyle = ScrollableGraphViewLineStyle.smooth
         
@@ -114,7 +119,7 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
         // Setup the second line plot.
         let orangeLinePlot = LinePlot(identifier: "two")
         
-        orangeLinePlot.lineWidth = 5
+        orangeLinePlot.lineWidth = 2
         orangeLinePlot.lineColor = UIColor.colorFromHex(hexString: "#ff7d78")
         orangeLinePlot.lineStyle = ScrollableGraphViewLineStyle.smooth
         
