@@ -577,6 +577,7 @@
                         <segue destination="RFN-Gy-5fg" kind="show" identifier="addNewCropSegue" id="gDm-6V-5H8"/>
                         <segue destination="yiQ-Q6-hV5" kind="show" identifier="newSpecificCrop" id="0BZ-rP-Cky"/>
                         <segue destination="auZ-DV-ex4" kind="show" identifier="foldingSegue" id="j93-du-V0Z"/>
+                        <segue destination="XuH-bc-lq7" kind="show" id="QPs-4C-iv0"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hgc-TU-r9b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1316,6 +1317,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hHd-yb-C3J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1041" y="747"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="naK-mK-4p3">
+            <objects>
+                <viewController id="XuH-bc-lq7" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4R9-Qc-v3i">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jm3-Rg-0qf">
+                                <rect key="frame" x="0.0" y="88" width="414" height="225"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="225" id="gZN-wB-zHb"/>
+                                </constraints>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oDm-5e-yYt">
+                                <rect key="frame" x="20" y="343" width="374" height="32"/>
+                                <segments>
+                                    <segment title="temperature"/>
+                                    <segment title="Rainfall"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ZN-ec-Xhz">
+                                <rect key="frame" x="20" y="424" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="oDm-5e-yYt" firstAttribute="top" secondItem="Jm3-Rg-0qf" secondAttribute="bottom" constant="30" id="01S-ve-d6n"/>
+                            <constraint firstItem="7ZN-ec-Xhz" firstAttribute="top" secondItem="oDm-5e-yYt" secondAttribute="bottom" constant="50" id="15D-GA-cLN"/>
+                            <constraint firstItem="7ZN-ec-Xhz" firstAttribute="centerX" secondItem="4R9-Qc-v3i" secondAttribute="centerX" id="3tq-nA-fwY"/>
+                            <constraint firstItem="7ZN-ec-Xhz" firstAttribute="leading" secondItem="gQy-g3-gwD" secondAttribute="leading" constant="20" id="L1O-T9-f5y"/>
+                            <constraint firstItem="Jm3-Rg-0qf" firstAttribute="trailing" secondItem="gQy-g3-gwD" secondAttribute="trailing" id="TPG-GD-Keo"/>
+                            <constraint firstItem="Jm3-Rg-0qf" firstAttribute="leading" secondItem="gQy-g3-gwD" secondAttribute="leading" id="j5N-NC-zjN"/>
+                            <constraint firstItem="gQy-g3-gwD" firstAttribute="trailing" secondItem="7ZN-ec-Xhz" secondAttribute="trailing" constant="20" id="peg-Xu-6sC"/>
+                            <constraint firstItem="oDm-5e-yYt" firstAttribute="leading" secondItem="gQy-g3-gwD" secondAttribute="leading" constant="20" id="rjm-GA-aUf"/>
+                            <constraint firstItem="gQy-g3-gwD" firstAttribute="trailing" secondItem="oDm-5e-yYt" secondAttribute="trailing" constant="20" id="ttO-2L-ufW"/>
+                            <constraint firstItem="Jm3-Rg-0qf" firstAttribute="top" secondItem="gQy-g3-gwD" secondAttribute="top" id="uQx-5S-ERR"/>
+                            <constraint firstItem="Jm3-Rg-0qf" firstAttribute="centerX" secondItem="4R9-Qc-v3i" secondAttribute="centerX" id="x7z-aL-qvL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gQy-g3-gwD"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0Hn-Tq-fzd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RD5-5f-Gxa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3071.0144927536235" y="1133.7053571428571"/>
         </scene>
         <!--Pop Over View Controller-->
         <scene sceneID="Yuz-80-05S">
