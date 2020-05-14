@@ -101,6 +101,12 @@ class GrowMyDetailCropViewController: UIViewController {
                 selectCrop = specificCrop!.cropName
                 destination.crop = selectCrop
                 }
+        if segue.identifier == "fertiliserSegue"
+        {
+            let destination = segue.destination as! FertilixerViewController
+            
+            destination.specificCrop = specificCrop
+            }
         }
     
     

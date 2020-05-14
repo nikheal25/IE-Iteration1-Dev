@@ -2063,6 +2063,13 @@
                                                             <segue destination="uRE-0F-6ZE" kind="show" identifier="diseaseSegue" id="DcB-GX-sFl"/>
                                                         </connections>
                                                     </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oh0-wG-qRS">
+                                                        <rect key="frame" x="15" y="598" width="343" height="30"/>
+                                                        <state key="normal" title="View Fertilisers   "/>
+                                                        <connections>
+                                                            <segue destination="oRy-rW-0vl" kind="show" identifier="fertiliserSegue" id="mJ4-GP-Q9y"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
@@ -2071,6 +2078,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="B56-i1-lPm" secondAttribute="trailing" constant="15" id="7b1-eW-IXn"/>
                                                     <constraint firstItem="MWV-RF-oFv" firstAttribute="leading" secondItem="O73-P0-N24" secondAttribute="leading" constant="15" id="9s2-gp-weQ"/>
                                                     <constraint firstItem="B56-i1-lPm" firstAttribute="leading" secondItem="O73-P0-N24" secondAttribute="leading" constant="15" id="BNk-yQ-GIL"/>
+                                                    <constraint firstItem="oh0-wG-qRS" firstAttribute="leading" secondItem="6Ux-Ud-1Lh" secondAttribute="leading" id="EBC-3x-Ahb"/>
                                                     <constraint firstItem="AUM-Jp-nY3" firstAttribute="leading" secondItem="O73-P0-N24" secondAttribute="leading" constant="15" id="Eva-Nh-w3d"/>
                                                     <constraint firstItem="3mz-Uo-8Mx" firstAttribute="leading" secondItem="O73-P0-N24" secondAttribute="leading" constant="15" id="FXw-zw-wpZ"/>
                                                     <constraint firstAttribute="trailing" secondItem="6Ux-Ud-1Lh" secondAttribute="trailing" constant="30" id="HgT-sv-iYD"/>
@@ -2080,12 +2088,14 @@
                                                     <constraint firstItem="HgX-iL-EFb" firstAttribute="leading" secondItem="O73-P0-N24" secondAttribute="leading" constant="15" id="OJX-qI-9Ud"/>
                                                     <constraint firstAttribute="trailing" secondItem="TeD-Tj-ISr" secondAttribute="trailing" constant="15" id="OnN-kb-BLj"/>
                                                     <constraint firstItem="oxM-j0-btn" firstAttribute="top" secondItem="5dR-1t-aYt" secondAttribute="bottom" constant="10" id="Phg-df-oDf"/>
+                                                    <constraint firstItem="oh0-wG-qRS" firstAttribute="top" secondItem="6Ux-Ud-1Lh" secondAttribute="bottom" constant="10" id="QQQ-a6-56n"/>
                                                     <constraint firstItem="B56-i1-lPm" firstAttribute="top" secondItem="U3C-oE-znO" secondAttribute="bottom" constant="10" id="TZL-h3-HAu"/>
                                                     <constraint firstItem="U3C-oE-znO" firstAttribute="leading" secondItem="O73-P0-N24" secondAttribute="leading" constant="15" id="VpW-PP-XS8"/>
                                                     <constraint firstAttribute="trailing" secondItem="5dR-1t-aYt" secondAttribute="trailing" constant="15" id="WOs-aV-KMg"/>
                                                     <constraint firstAttribute="trailing" secondItem="HgX-iL-EFb" secondAttribute="trailing" constant="15" id="XGC-uh-vNG"/>
                                                     <constraint firstItem="6Ux-Ud-1Lh" firstAttribute="leading" secondItem="TeD-Tj-ISr" secondAttribute="leading" id="Ytc-LU-3Yb"/>
                                                     <constraint firstItem="5dR-1t-aYt" firstAttribute="leading" secondItem="O73-P0-N24" secondAttribute="leading" constant="15" id="bNU-4Q-3Kg"/>
+                                                    <constraint firstItem="oh0-wG-qRS" firstAttribute="centerX" secondItem="O73-P0-N24" secondAttribute="centerX" id="cfL-po-8xd"/>
                                                     <constraint firstItem="yPp-YW-MJU" firstAttribute="leading" secondItem="O73-P0-N24" secondAttribute="leading" constant="15" id="d6U-20-uKj"/>
                                                     <constraint firstAttribute="trailing" secondItem="U3C-oE-znO" secondAttribute="trailing" constant="15" id="eD6-xO-0zk"/>
                                                     <constraint firstAttribute="trailing" secondItem="3mz-Uo-8Mx" secondAttribute="trailing" constant="15" id="k50-Zg-jfV"/>
@@ -2165,6 +2175,58 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jbs-T5-Vmn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="47.826086956521742" y="3154.6875"/>
+        </scene>
+        <!--Fertiliser-->
+        <scene sceneID="WhT-bH-jQq">
+            <objects>
+                <viewController id="oRy-rW-0vl" customClass="FertilixerViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w6J-tG-EQK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OCc-Qv-pyL">
+                                <rect key="frame" x="0.0" y="88" width="414" height="225"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="225" id="zmC-v2-ZyA"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbg-Bd-UdT">
+                                <rect key="frame" x="20" y="333" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ym9-rE-JJD">
+                                <rect key="frame" x="30" y="397" width="354" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="hrH-an-78W" firstAttribute="trailing" secondItem="dbg-Bd-UdT" secondAttribute="trailing" constant="20" id="1mB-3r-2mS"/>
+                            <constraint firstItem="OCc-Qv-pyL" firstAttribute="top" secondItem="hrH-an-78W" secondAttribute="top" id="A8S-uN-sCG"/>
+                            <constraint firstItem="Ym9-rE-JJD" firstAttribute="leading" secondItem="hrH-an-78W" secondAttribute="leading" constant="30" id="HU8-bB-pwU"/>
+                            <constraint firstItem="dbg-Bd-UdT" firstAttribute="top" secondItem="OCc-Qv-pyL" secondAttribute="bottom" constant="20" id="PWE-jo-iev"/>
+                            <constraint firstItem="Ym9-rE-JJD" firstAttribute="top" secondItem="dbg-Bd-UdT" secondAttribute="bottom" constant="40" id="Sb0-aj-LCd"/>
+                            <constraint firstItem="dbg-Bd-UdT" firstAttribute="leading" secondItem="hrH-an-78W" secondAttribute="leading" constant="20" id="Z7H-wd-Ige"/>
+                            <constraint firstItem="hrH-an-78W" firstAttribute="trailing" secondItem="Ym9-rE-JJD" secondAttribute="trailing" constant="30" id="ZtZ-FL-TS2"/>
+                            <constraint firstAttribute="trailing" secondItem="OCc-Qv-pyL" secondAttribute="trailing" id="iqq-wx-BTe"/>
+                            <constraint firstItem="OCc-Qv-pyL" firstAttribute="leading" secondItem="hrH-an-78W" secondAttribute="leading" id="mdf-1p-olo"/>
+                            <constraint firstItem="OCc-Qv-pyL" firstAttribute="centerX" secondItem="w6J-tG-EQK" secondAttribute="centerX" id="qZ0-zf-tBv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hrH-an-78W"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Fertiliser" id="7e7-la-huk"/>
+                    <connections>
+                        <outlet property="cropImageView" destination="OCc-Qv-pyL" id="ehE-q4-dPE"/>
+                        <outlet property="fertiliserLabel" destination="Ym9-rE-JJD" id="4Zl-GU-xFC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mVV-7v-ylr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="46.376811594202906" y="3952.9017857142853"/>
         </scene>
         <!--Sort By View Controller-->
         <scene sceneID="evH-YS-Wgb">

@@ -33,11 +33,13 @@ class Crop: NSObject {
     var minTemp:String
     var maxTemp:String
     //compatible
-        var Compatible_plant: String
-        var All_Compatible_plants: String
+    var Compatible_plant: String
+    var All_Compatible_plants: String
+    //Fertilizer
+    var Fertilizer_recommendation: String
     
     
-    internal init(cropId: String, cropName: String, cropImage: String, frostTol: String, minSoilpH: String, maxSoilpH: String, Description: String, AvMoisture_Percent: String, AvN_Percent: String, AvP_Percent: String, Days_to_maturity: String, Height_Ranges: String, Light_Needs: String, N_P_K_Req: String, Plant_Type: String, Soil_Additional: String, Water_Needs: String, Soil_Type: String, Spread_Ranges: String, Compatible_plant: String, All_Compatible_plants: String, maxTemp: String, minTemp: String) {
+    internal init(cropId: String, cropName: String, cropImage: String, frostTol: String, minSoilpH: String, maxSoilpH: String, Description: String, AvMoisture_Percent: String, AvN_Percent: String, AvP_Percent: String, Days_to_maturity: String, Height_Ranges: String, Light_Needs: String, N_P_K_Req: String, Plant_Type: String, Soil_Additional: String, Water_Needs: String, Soil_Type: String, Spread_Ranges: String, Compatible_plant: String, All_Compatible_plants: String, maxTemp: String, minTemp: String, Fertilizer_recommendation: String) {
         self.cropId = cropId
         self.cropName = cropName
         self.cropImage = cropImage
@@ -61,5 +63,6 @@ class Crop: NSObject {
         self.All_Compatible_plants = All_Compatible_plants
         self.maxTemp = maxTemp
         self.minTemp = minTemp
+        self.Fertilizer_recommendation = Fertilizer_recommendation
     }
 }
