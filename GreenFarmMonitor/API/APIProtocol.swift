@@ -8,5 +8,7 @@
 
 import Foundation
 protocol APIProtocol: AnyObject {
+    var weather:[Weather]{get}
     func apiCall() -> [Weather]
+     
 }
