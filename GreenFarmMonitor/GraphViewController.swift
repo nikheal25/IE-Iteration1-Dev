@@ -21,6 +21,8 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
     weak var weatherAPI: APIProtocol?
     var allWeather:[Weather] = []
     
+    var hideFlagTemp = false
+    var hideFlagRain = true
     
     var currentDateTime = Date()
     let formatter = DateFormatter()
@@ -38,12 +40,24 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
     func value(forPlot plot: Plot, atIndex pointIndex: Int) -> Double {
         switch(plot.identifier) {
         case "one":
+            if hideFlagTemp {
+                return -10
+            }
             return minIdealTemperature[pointIndex]
         case "two":
+            if hideFlagTemp {
+                return -10
+            }
             return maxIdealTemperature[pointIndex]
         case "three":
+            if hideFlagTemp {
+                return -10
+            }
             return exactTemperature[pointIndex]
         case "rainOne":
+            if hideFlagRain {
+                return -2000
+            }
             return exactTemperature[pointIndex]
         default:
             return 0
@@ -66,9 +80,14 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
     
     @IBAction func segmentController(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
+            hideFlagTemp = false
+            hideFlagRain = true
+            subtitileLabel.text = "Blue line represents actual temperature prediction"
             showTempGraph()
         }else{
-         
+            hideFlagTemp = true
+            hideFlagRain = false
+            subtitileLabel.text = "Blue line represents actual temperature prediction"
             setupRainfallGraph(graphView: graphView)
         }
     }
@@ -88,7 +107,7 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
                 valueArray.append(item.maxtemp)
             }
         } else if valueFlag == 2 {
-           for item in weatherData {
+            for item in weatherData {
                 valueArray.append(item.mintemp)
             }
         }else{
@@ -235,8 +254,8 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
         linePlot.fillGradientType = ScrollableGraphViewGradientType.linear
         linePlot.fillGradientStartColor = UIColor.colorFromHex(hexString: "#555555")
         linePlot.fillGradientEndColor = UIColor.colorFromHex(hexString: "#444444")
-//        linePlot.fillColor = UIColor.colorFromHex(hexString: "#16aafc").withAlphaComponent(0.5)
-//
+        //        linePlot.fillColor = UIColor.colorFromHex(hexString: "#16aafc").withAlphaComponent(0.5)
+        //
         linePlot.adaptAnimationType = ScrollableGraphViewAnimationType.elastic
         
         // Customise the reference lines.
