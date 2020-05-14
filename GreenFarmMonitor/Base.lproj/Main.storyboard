@@ -1341,12 +1341,15 @@
                                     <constraint firstAttribute="height" constant="225" id="gZN-wB-zHb"/>
                                 </constraints>
                             </view>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oDm-5e-yYt">
-                                <rect key="frame" x="20" y="343" width="374" height="32"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oDm-5e-yYt">
+                                <rect key="frame" x="20" y="344" width="374" height="32"/>
                                 <segments>
                                     <segment title="temperature"/>
                                     <segment title="Rainfall"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentController:" destination="XuH-bc-lq7" eventType="valueChanged" id="AdZ-Xl-wbz"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ZN-ec-Xhz">
                                 <rect key="frame" x="20" y="424" width="374" height="23"/>

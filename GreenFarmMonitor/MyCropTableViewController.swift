@@ -358,6 +358,7 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
         
         if segue.identifier == "graphSegue" {
                 let destination = segue.destination as! GraphViewController
+            destination.specificCrop = myCropList[selectedRow]
         }
         
     }

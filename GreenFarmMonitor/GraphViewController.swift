@@ -13,15 +13,17 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
     
     @IBOutlet weak var graphView: ScrollableGraphView!
     
-    lazy var plotOneData: [Double] = self.generateRandomData(self.numberOfItems, max: 100, shouldIncludeOutliers: true)
+    var specificCrop: Crop?
+    
+    var minIdealTemperature: [Double] = []
     lazy var plotTwoData: [Double] = self.generateRandomData(self.numberOfItems, max: 80, shouldIncludeOutliers: false)
     
-    var numberOfItems = 29
+    var numberOfItems = 16
     
     func value(forPlot plot: Plot, atIndex pointIndex: Int) -> Double {
         switch(plot.identifier) {
         case "one":
-            return plotOneData[pointIndex]
+            return minIdealTemperature[pointIndex]
         case "two":
             return plotTwoData[pointIndex]
         default:
@@ -37,10 +39,32 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
         return numberOfItems
     }
     
+    @IBAction func segmentController(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            minIdealTemperature = self.generateRandomData(self.numberOfItems, max: 100, shouldIncludeOutliers: true)
+            plotTwoData = self.generateRandomData(self.numberOfItems, max: 100, shouldIncludeOutliers: true)
+            graphView.rangeMax = 50
+            setupGraph(graphView: graphView)
+        }else{
+            setupGraph(graphView: graphView)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if specificCrop != nil {
+            minIdealTemperature = []
+            let minValue = (self.specificCrop?.minTemp as! NSString).doubleValue
+            
+            for i in 0..<16 {
+                minIdealTemperature.insert(minValue, at: i)
+            }
+//            print(minIdealTemperature)
+        }
+
         graphView.dataSource = self
+        graphView.rangeMax = 50
         setupGraph(graphView: graphView)
         
     }
