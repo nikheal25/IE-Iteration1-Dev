@@ -338,7 +338,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose the crop you want to grow" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Tf-Ds-maR">
-                                <rect key="frame" x="59.5" y="417.5" width="295.5" height="24"/>
+                                <rect key="frame" x="59.5" y="402.5" width="295.5" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -354,19 +354,19 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FarmCommunity Together" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2l5-wH-OPh">
-                                <rect key="frame" x="36.5" y="338.5" width="341.5" height="39"/>
+                                <rect key="frame" x="36.5" y="323.5" width="341.5" height="39"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find the ideal conditions for that crop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrc-M3-Dv8">
-                                <rect key="frame" x="46.5" y="471.5" width="321" height="24"/>
+                                <rect key="frame" x="46.5" y="456.5" width="321" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find the diseases related to the crop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFQ-Kc-gEs">
-                                <rect key="frame" x="50.5" y="525.5" width="313" height="24"/>
+                                <rect key="frame" x="50.5" y="510.5" width="313" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -382,7 +382,7 @@
                             <constraint firstItem="S1Q-vK-0Fs" firstAttribute="leading" secondItem="V40-Hf-TkI" secondAttribute="leading" constant="50" id="Rhb-YD-CDb"/>
                             <constraint firstItem="okr-UP-B6e" firstAttribute="top" secondItem="V40-Hf-TkI" secondAttribute="top" constant="200" id="Vv4-fd-S1g"/>
                             <constraint firstItem="hrc-M3-Dv8" firstAttribute="centerX" secondItem="tuh-dh-FYm" secondAttribute="centerX" id="XVM-5p-e5S"/>
-                            <constraint firstItem="2l5-wH-OPh" firstAttribute="top" secondItem="okr-UP-B6e" secondAttribute="bottom" constant="20" id="c0Z-fJ-3J0"/>
+                            <constraint firstItem="2l5-wH-OPh" firstAttribute="top" secondItem="okr-UP-B6e" secondAttribute="bottom" constant="5" id="c0Z-fJ-3J0"/>
                             <constraint firstItem="hrc-M3-Dv8" firstAttribute="top" secondItem="0Tf-Ds-maR" secondAttribute="bottom" constant="30" id="cjI-Xt-X4U"/>
                             <constraint firstItem="V40-Hf-TkI" firstAttribute="trailing" secondItem="S1Q-vK-0Fs" secondAttribute="trailing" constant="50" id="dTo-2d-FT1"/>
                             <constraint firstItem="0Tf-Ds-maR" firstAttribute="top" secondItem="2l5-wH-OPh" secondAttribute="bottom" constant="40" id="lQY-Zv-Lwc"/>
