@@ -1318,7 +1318,7 @@
             </objects>
             <point key="canvasLocation" x="-1041" y="747"/>
         </scene>
-        <!--Graph View Controller-->
+        <!--Forecast-->
         <scene sceneID="naK-mK-4p3">
             <objects>
                 <viewController id="XuH-bc-lq7" customClass="GraphViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
@@ -1344,7 +1344,7 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oDm-5e-yYt">
                                 <rect key="frame" x="20" y="344" width="374" height="32"/>
                                 <segments>
-                                    <segment title="temperature"/>
+                                    <segment title="Temperature"/>
                                     <segment title="Rainfall"/>
                                 </segments>
                                 <connections>
@@ -1374,7 +1374,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gQy-g3-gwD"/>
                     </view>
-                    <navigationItem key="navigationItem" id="0Hn-Tq-fzd"/>
+                    <navigationItem key="navigationItem" title="Forecast" id="0Hn-Tq-fzd"/>
                     <connections>
                         <outlet property="graphView" destination="jlF-Fb-HlL" id="ce5-0V-ELr"/>
                     </connections>
