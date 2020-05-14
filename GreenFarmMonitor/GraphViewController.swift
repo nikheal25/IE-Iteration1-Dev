@@ -15,6 +15,13 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
     
     var specificCrop: Crop?
     
+    @IBOutlet weak var subtitileLabel: UILabel!
+    @IBOutlet weak var mainLabel: UILabel!
+    
+    weak var weatherAPI: APIProtocol?
+    var allWeather:[Weather] = []
+    
+    
     var currentDateTime = Date()
     let formatter = DateFormatter()
     
@@ -70,30 +77,66 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
         return formatter.string(from: newDate)
     }
     
+    func returnValuesFromAPI(valueFlag: Int, weatherData: [Weather]) -> [Double] {
+        var valueArray = [Double]()
+        
+        if valueFlag == 1 {
+            for item in weatherData {
+                valueArray.append(item.maxtemp)
+            }
+        } else if valueFlag == 2 {
+           for item in weatherData {
+                valueArray.append(item.mintemp)
+            }
+        }else{
+            for item in weatherData {
+                valueArray.append(item.precip)
+            }
+        }
+        return valueArray
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        weatherAPI = appDelegate.weatherAPI
         
-        if specificCrop != nil {
+        allWeather = weatherAPI!.weather
+        let totalPredictedDays = allWeather.count
+        
+        if specificCrop != nil && totalPredictedDays > 10 {
+            //set total values on the graph
+            numberOfItems = totalPredictedDays
+            
             minIdealTemperature = []
             maxIdealTemperature = []
+            let minValue = (self.specificCrop?.minTemp as! NSString).doubleValue
+            let maxValue = (self.specificCrop?.maxTemp as! NSString).doubleValue
+            for i in 0..<totalPredictedDays {
+                minIdealTemperature.insert(minValue, at: i)
+                maxIdealTemperature.insert(maxValue, at: i)
+            }
+            //MARK:- set exact temperature
+            exactTemperature = returnValuesFromAPI(valueFlag: 1, weatherData: allWeather)
+            
+            let tempExactMax = exactTemperature.max() as! Double
+            
+            rangeMaxValue = max( tempExactMax, maxValue ) + 10
+            print(rangeMaxValue)
+        }else{
+            //MARK:- Dummy values
             let minValue = (self.specificCrop?.minTemp as! NSString).doubleValue
             let maxValue = (self.specificCrop?.maxTemp as! NSString).doubleValue
             for i in 0..<16 {
                 minIdealTemperature.insert(minValue, at: i)
                 maxIdealTemperature.insert(maxValue, at: i)
             }
-            //MARK:- set exact temperature
+            //MARK:- set random values
             exactTemperature = self.generateRandomData(self.numberOfItems, max: 40, shouldIncludeOutliers: false)
-            
-            let tempExactMax = exactTemperature.max() as! Double
-            
-            rangeMaxValue = max( tempExactMax, maxValue ) + 10
-            print(rangeMaxValue)
         }
         
         graphView.dataSource = self
-
+        
         showTempGraph()
         
     }

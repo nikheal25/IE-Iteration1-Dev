@@ -1341,8 +1341,9 @@
                                     <constraint firstAttribute="height" constant="225" id="gZN-wB-zHb"/>
                                 </constraints>
                             </view>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oDm-5e-yYt">
-                                <rect key="frame" x="20" y="344" width="374" height="32"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oDm-5e-yYt">
+                                <rect key="frame" x="20" y="363" width="374" height="32"/>
+                                <color key="backgroundColor" systemColor="placeholderTextColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <segments>
                                     <segment title="Temperature"/>
                                     <segment title="Rainfall"/>
@@ -1352,31 +1353,43 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ZN-ec-Xhz">
-                                <rect key="frame" x="20" y="424" width="374" height="23"/>
+                                <rect key="frame" x="20" y="443" width="374" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue line represents actual temperature prediction" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdY-GR-D7q">
+                                <rect key="frame" x="20" y="341" width="374" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="oDm-5e-yYt" firstAttribute="top" secondItem="Jm3-Rg-0qf" secondAttribute="bottom" constant="30" id="01S-ve-d6n"/>
-                            <constraint firstItem="7ZN-ec-Xhz" firstAttribute="top" secondItem="oDm-5e-yYt" secondAttribute="bottom" constant="50" id="15D-GA-cLN"/>
                             <constraint firstItem="7ZN-ec-Xhz" firstAttribute="centerX" secondItem="4R9-Qc-v3i" secondAttribute="centerX" id="3tq-nA-fwY"/>
+                            <constraint firstItem="oDm-5e-yYt" firstAttribute="top" secondItem="pdY-GR-D7q" secondAttribute="bottom" constant="10" id="9DD-IE-I7N"/>
+                            <constraint firstItem="oDm-5e-yYt" firstAttribute="trailing" secondItem="7ZN-ec-Xhz" secondAttribute="trailing" id="Jaw-ta-ofD"/>
                             <constraint firstItem="7ZN-ec-Xhz" firstAttribute="leading" secondItem="gQy-g3-gwD" secondAttribute="leading" constant="20" id="L1O-T9-f5y"/>
+                            <constraint firstItem="pdY-GR-D7q" firstAttribute="centerX" secondItem="4R9-Qc-v3i" secondAttribute="centerX" id="RTT-eR-l7q"/>
                             <constraint firstItem="Jm3-Rg-0qf" firstAttribute="trailing" secondItem="gQy-g3-gwD" secondAttribute="trailing" id="TPG-GD-Keo"/>
+                            <constraint firstItem="pdY-GR-D7q" firstAttribute="leading" secondItem="gQy-g3-gwD" secondAttribute="leading" constant="20" id="UqR-yW-nAg"/>
+                            <constraint firstItem="oDm-5e-yYt" firstAttribute="top" secondItem="Jm3-Rg-0qf" secondAttribute="bottom" constant="50" id="V54-Il-Utf"/>
+                            <constraint firstItem="oDm-5e-yYt" firstAttribute="leading" secondItem="7ZN-ec-Xhz" secondAttribute="leading" id="YSU-nQ-HaE"/>
+                            <constraint firstItem="gQy-g3-gwD" firstAttribute="trailing" secondItem="pdY-GR-D7q" secondAttribute="trailing" constant="20" id="dkw-MQ-LIp"/>
                             <constraint firstItem="Jm3-Rg-0qf" firstAttribute="leading" secondItem="gQy-g3-gwD" secondAttribute="leading" id="j5N-NC-zjN"/>
                             <constraint firstItem="gQy-g3-gwD" firstAttribute="trailing" secondItem="7ZN-ec-Xhz" secondAttribute="trailing" constant="20" id="peg-Xu-6sC"/>
-                            <constraint firstItem="oDm-5e-yYt" firstAttribute="leading" secondItem="gQy-g3-gwD" secondAttribute="leading" constant="20" id="rjm-GA-aUf"/>
-                            <constraint firstItem="gQy-g3-gwD" firstAttribute="trailing" secondItem="oDm-5e-yYt" secondAttribute="trailing" constant="20" id="ttO-2L-ufW"/>
                             <constraint firstItem="Jm3-Rg-0qf" firstAttribute="top" secondItem="gQy-g3-gwD" secondAttribute="top" id="uQx-5S-ERR"/>
                             <constraint firstItem="Jm3-Rg-0qf" firstAttribute="centerX" secondItem="4R9-Qc-v3i" secondAttribute="centerX" id="x7z-aL-qvL"/>
+                            <constraint firstItem="7ZN-ec-Xhz" firstAttribute="top" secondItem="oDm-5e-yYt" secondAttribute="bottom" constant="49" id="yAz-mX-nEm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gQy-g3-gwD"/>
                     </view>
                     <navigationItem key="navigationItem" title="Forecast" id="0Hn-Tq-fzd"/>
                     <connections>
                         <outlet property="graphView" destination="jlF-Fb-HlL" id="ce5-0V-ELr"/>
+                        <outlet property="mainLabel" destination="7ZN-ec-Xhz" id="2f3-Zc-OXB"/>
+                        <outlet property="subtitileLabel" destination="pdY-GR-D7q" id="A0o-Z1-r3Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RD5-5f-Gxa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
