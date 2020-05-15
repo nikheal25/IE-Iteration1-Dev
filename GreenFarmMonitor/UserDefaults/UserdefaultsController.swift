@@ -60,6 +60,30 @@ class UserdefaultsController: NSObject, UserdefaultsProtocol {
         return name
     }
     
+    func retriveLat() -> String
+    {
+        var lat: String = ""
+        if let userlat = defaults.string(forKey: "userLatKey") {
+            lat = userlat
+            
+        }
+        return lat
+        
+        
+    }
+    
+    func retriveLong() -> String
+       {
+           var long: String = ""
+           if let userlong = defaults.string(forKey: "userLongKey") {
+               long = userlong
+               
+           }
+           return long
+           
+           
+    }
+       
     func assignCLLocation(lat: String, long: String) {
         defaults.set(lat, forKey: "userLatKey")
         defaults.set(long, forKey: "userLongKey")

@@ -54,6 +54,7 @@ class GrowMyDetailCropViewController: UIViewController {
         self.lightIntLabel.minimumScaleFactor = 0.5
         self.lightIntLabel.text = specificCrop?.Light_Needs
         self.frostLabel.text = specificCrop?.frostTol
+        
     }
     
     func setImageView()  {

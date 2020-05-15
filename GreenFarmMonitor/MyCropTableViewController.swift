@@ -91,16 +91,20 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
         weatherAPI = appDelegate.weatherAPI
         
         let currentUserId = userDefaultController?.retrieveUserId()
-        let userList = databaseController?.userList
-        for user in userList!
-        {
-            if user.userId == currentUserId!
-            {
-                weatherAPI?.apiCall(lat: user.farmLat, long: user.farmLong)
-                
-            }
-            
-        }
+        let lat = userDefaultController?.retriveLat()
+        let long = userDefaultController?.retriveLong()
+        weatherAPI?.apiCall(lat: lat!, long: long!)
+        
+//        let userList = databaseController?.userList
+//        for user in userList!
+//        {
+//            if user.userId == currentUserId!
+//            {
+//                weatherAPI?.apiCall(lat: user.farmLat, long: user.farmLong)
+//
+//            }
+//
+//        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
