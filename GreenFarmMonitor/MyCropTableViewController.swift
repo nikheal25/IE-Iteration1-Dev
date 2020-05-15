@@ -63,12 +63,6 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
             }
         }
        edit()
-        
-        
-
- 
-        
-        
     }
     
 
