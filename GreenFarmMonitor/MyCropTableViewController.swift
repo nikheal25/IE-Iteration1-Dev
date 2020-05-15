@@ -62,6 +62,7 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
                 tableView.reloadData()
             }
         }
+       
        edit()
         
         
@@ -90,11 +91,8 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
         databaseController = appDelegate.databaseController
         weatherAPI = appDelegate.weatherAPI
         
-        let currentUserId = userDefaultController?.retrieveUserId()
-        let lat = userDefaultController?.retriveLat()
-        let long = userDefaultController?.retriveLong()
-        weatherAPI?.apiCall(lat: lat!, long: long!)
-        
+       
+       
 //        let userList = databaseController?.userList
 //        for user in userList!
 //        {
@@ -128,17 +126,18 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
     }
     
     var maxt: [Double] = []
-      var mint: [Double] = []
-      var overheatmessage = ""
-      var overcoldmessage = ""
+    var mint: [Double] = []
+    var overheatmessage = ""
+    var overcoldmessage = ""
     var allWeather:[Weather] = []
     
     //edit message in notification
-  func edit()
+    func edit()
   {
-                    maxt = []
-                   mint = []
-                   allWeather = weatherAPI!.weather
+    maxt = []
+    mint = []
+    allWeather = weatherAPI!.weather
+   
                    overcoldmessage = ""
                    overheatmessage = ""
                    for dailyWeather in allWeather
@@ -227,8 +226,21 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
            // self.onTemperatureChange(change: .update, temperatures: databaseController!.tempList)
 //            self.onUserCropRelationChange(change: .update, userCropRelation: databaseController!.userCropRelation)
            //self.onRuleChange(change: .update, rule: databaseController!.ruleList)
+            
+            //update api
+              let date = Date()
+             
+              let dateFormatter = DateFormatter()
+              dateFormatter.dateFormat = "yyyy-MM-dd"
+              let day = dateFormatter.string(from: date)
+              allWeather = weatherAPI!.weather
+              if allWeather.first?.date != day{
+                
+                let lat = userDefaultController?.retriveLat()
+                let long = userDefaultController?.retriveLong()
+                weatherAPI?.apiCall(lat: lat!, long: long!)
+            }
             databaseController?.addListener(listener: self)
-         
            
         }
         

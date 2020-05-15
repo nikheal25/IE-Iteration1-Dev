@@ -89,6 +89,7 @@ class WeatherAPI: NSObject, APIProtocol {
                     
                     self.weather.append(Weather(maxtemp: maxtemp, mintemp: mintemp, date: date, precip: precip))
 //                    print (self.weather)
+                    
                 }
 //                print(self.maxtemp)
 //                print(self.date)
@@ -105,10 +106,10 @@ class WeatherAPI: NSObject, APIProtocol {
                 print("JSON error: \(error.localizedDescription)")
             }
         }
-
-        task.resume()
-        return self.weather
         
+        task.resume()
+       
+        return weather
     }
    
     override init() {
@@ -116,7 +117,7 @@ class WeatherAPI: NSObject, APIProtocol {
         
 //        self.lat = "-37.8771"
 //        self.long = "145.0449"
-         apiCall(lat: lat, long: long)
+//         apiCall(lat: lat, long: long)
     }
     
 }
