@@ -166,7 +166,10 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
                                }
            
                            }
-                   }
+                    
+                    
+                   
+
     //notification center
         let center = UNUserNotificationCenter.current()
         center.removeAllDeliveredNotifications()
@@ -199,6 +202,7 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
                                           center.add(request)
                                           {(error)in }
                    }
+    }
            
     }
     
