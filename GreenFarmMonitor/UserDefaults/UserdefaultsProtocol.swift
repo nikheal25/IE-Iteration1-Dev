@@ -15,4 +15,6 @@ protocol UserdefaultsProtocol: AnyObject {
     func assignCLLocation(lat: String, long: String)
     func retrieveName() -> String
     func retrieveUserId() -> String
+    func retriveLat() -> String
+    func retriveLong() -> String
 }

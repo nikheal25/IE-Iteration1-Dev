@@ -12,7 +12,8 @@ class DetailOfDiseaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       content()
+        content()
+        
         navigationItem.title = name
         // Do any additional setup after loading the view.
     }
@@ -34,6 +35,7 @@ class DetailOfDiseaseViewController: UIViewController {
             NameLabel.text = name
             DiseaseImage.image = UIImage(named: image)
             DescriptionLabel.text = detail
+            
         }
         
     }

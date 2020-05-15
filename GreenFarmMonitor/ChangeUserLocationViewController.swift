@@ -152,6 +152,7 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
                      if successStatus! {
                         self.userDefaultController?.assignName(name: newUser.userName)
                         self.displayMessage(title: "Add to database", message: "Successfully!")
+                        self.userDefaultController?.assignCLLocation(lat: lat, long: long)
                 }
                 
                 
@@ -159,7 +160,7 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
             self.databaseController!.updateLocation(userId:currentUserId!, lat: lat ,locationName: "New farm", long: long)
             self.mapView.removeAnnotations(self.mapView.annotations)
             self.displayMessage(title: "Change database", message: "Successfully!")
-            
+                self.userDefaultController?.assignCLLocation(lat: lat, long: long)
 //            self.mapView.addAnnotation(location)
 //            self.focusOn(annotation:location)
             }
