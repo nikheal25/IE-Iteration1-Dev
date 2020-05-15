@@ -26,6 +26,7 @@ class FoldingTableViewController: UITableViewController, UIPopoverPresentationCo
     var registeredCrop: [String]?
     
     var searchedCrop = [Crop]()
+    var recomenededCropsName = [Crop]()
     var searching = false
     
     let SECTION_ACTIVITY = 0;
@@ -81,7 +82,8 @@ class FoldingTableViewController: UITableViewController, UIPopoverPresentationCo
     
     // MARK: Life Cycle
     override func viewDidLoad() {
-        sortingSchema = 1
+        //MARK:- Change sorting schema
+        sortingSchema = 2
         plantFilter = "Please select"
         soilFilter = "Please select"
         
@@ -115,8 +117,25 @@ class FoldingTableViewController: UITableViewController, UIPopoverPresentationCo
         return tempList
     }
     
+    func recommendedCrop() -> [Crop] {
+      var tempCrops: [Crop] = []
+        
+        for crop in allCropsName {
+            if recommendedCrops.contains(crop.cropName) {
+                tempCrops.append(crop)
+            }
+        }
+        return tempCrops
+    }
+    
     func sortCrops()  {
+        if sortingSchema == 1 {
+            searching = true
+            searchedCrop = recommendedCrop()
+        }
+        
         if sortingSchema == 2 {
+            searching = false
             allCropsName.sort {
                 $0.cropName < $1.cropName
             }
