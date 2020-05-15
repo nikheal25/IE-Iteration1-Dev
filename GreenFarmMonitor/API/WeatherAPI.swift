@@ -53,11 +53,20 @@ class WeatherAPI: NSObject, APIProtocol {
     var lat = ""
     var long = ""
     
-    func apiRecommendedCrop() -> [String]
+    func apiRecommendedCrop(lat: String, long: String) -> [String]
     {
+        var minTemp = 18.2
+        var maxTemp = 25.5
+        if weather.count > 0 {
+            minTemp = weather[0].mintemp
+             maxTemp = weather[0].maxtemp
+        }else{
+           print("********wait")
+        }
+        
         let session = URLSession.shared
         //MARK:-Backup values
-        self.recomendedCrops = ",Broccoli, Brussels Sprouts, Cauliflower, Garlic, Kale, Kohlrabi, Onion, Celery, Lettuce, Kohlrabi, Mustard Greens".components(separatedBy: ",")
+        self.recomendedCrops = "Broccoli, Brussels Sprouts, Cauliflower, Garlic, Kale, Kohlrabi, Onion, Celery, Lettuce, Kohlrabi, Mustard Greens".components(separatedBy: ",")
         let url = URL(string: "https://secure-shelf-88213.herokuapp.com/suggestions?tempLow=10&tempHigh=12&long=-192.55&lat=15.2")!
         
         let task = session.dataTask(with: url) { data, response, error in
@@ -86,7 +95,7 @@ class WeatherAPI: NSObject, APIProtocol {
                 
                 if cropArray.count > 0{
                     self.recomendedCrops = cropArray
-                }                
+                }
             } catch {
                 print("JSON error: \(error.localizedDescription)")
                 

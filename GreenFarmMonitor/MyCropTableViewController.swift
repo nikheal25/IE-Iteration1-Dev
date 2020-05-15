@@ -115,8 +115,6 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
        {(granted, error) in
           
        }
-        
-        weatherAPI?.apiRecommendedCrop()
     }
     
     var maxt: [Double] = []

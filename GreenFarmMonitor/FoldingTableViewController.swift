@@ -76,6 +76,9 @@ class FoldingTableViewController: UITableViewController, UIPopoverPresentationCo
     
     var cellHeights: [CGFloat] = []
     
+    weak var api: APIProtocol?
+    var recommendedCrops: [String] = []
+    
     // MARK: Life Cycle
     override func viewDidLoad() {
         sortingSchema = 1
@@ -86,6 +89,7 @@ class FoldingTableViewController: UITableViewController, UIPopoverPresentationCo
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         userDefaultController = appDelegate.userDefaultController
         databaseController = appDelegate.databaseController
+        api = appDelegate.weatherAPI
         
         self.title = "All Plants"
         
@@ -95,6 +99,7 @@ class FoldingTableViewController: UITableViewController, UIPopoverPresentationCo
         // Do any additional setup after
         
         setup()
+        recommendedCrops = (api?.apiRecommendedCrop(lat: "182", long: "154"))!
         
     }
     
