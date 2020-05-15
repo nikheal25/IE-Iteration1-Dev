@@ -1233,39 +1233,45 @@
         <scene sceneID="9bH-5N-hdR">
             <objects>
                 <viewController id="CM5-eV-gRe" customClass="DetailOfDiseaseViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="N78-xj-Pb4">
+                    <view key="view" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N78-xj-Pb4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vQd-mM-59Y">
-                                <rect key="frame" x="0.0" y="88" width="414" height="285.5"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="vQd-mM-59Y">
+                                <rect key="frame" x="0.0" y="88" width="414" height="252"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4E3-gw-CwA">
-                                <rect key="frame" x="20" y="475" width="374" height="268"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4E3-gw-CwA">
+                                <rect key="frame" x="20" y="438" width="374" height="305"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="269" id="78z-wf-dJ1"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6AO-jT-1ce">
-                                <rect key="frame" x="20" y="429.5" width="374" height="37"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6AO-jT-1ce">
+                                <rect key="frame" x="20" y="371" width="374" height="45"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69" id="4Da-mF-9mM"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6AO-jT-1ce" firstAttribute="centerY" secondItem="N78-xj-Pb4" secondAttribute="centerY" id="17s-LO-dbl"/>
-                            <constraint firstItem="6AO-jT-1ce" firstAttribute="leading" secondItem="N78-xj-Pb4" secondAttribute="leadingMargin" id="1dk-SQ-rIl"/>
-                            <constraint firstItem="vQd-mM-59Y" firstAttribute="leading" secondItem="PL5-j1-wO5" secondAttribute="leading" id="5Cf-gm-1zF"/>
-                            <constraint firstItem="vQd-mM-59Y" firstAttribute="top" secondItem="PL5-j1-wO5" secondAttribute="top" id="5Yh-d2-45A"/>
-                            <constraint firstItem="PL5-j1-wO5" firstAttribute="bottom" secondItem="4E3-gw-CwA" secondAttribute="bottom" constant="70" id="7ql-11-Ylj"/>
-                            <constraint firstItem="4E3-gw-CwA" firstAttribute="top" secondItem="6AO-jT-1ce" secondAttribute="bottom" constant="8.5" id="VxY-Gx-OMz"/>
-                            <constraint firstItem="6AO-jT-1ce" firstAttribute="trailing" secondItem="4E3-gw-CwA" secondAttribute="trailing" id="eC8-4h-YvD"/>
-                            <constraint firstItem="6AO-jT-1ce" firstAttribute="top" secondItem="vQd-mM-59Y" secondAttribute="bottom" constant="56" id="hHc-TC-2sW"/>
-                            <constraint firstItem="6AO-jT-1ce" firstAttribute="trailing" secondItem="N78-xj-Pb4" secondAttribute="trailingMargin" id="nIJ-uV-riG"/>
-                            <constraint firstItem="vQd-mM-59Y" firstAttribute="centerX" secondItem="6AO-jT-1ce" secondAttribute="centerX" id="uZT-du-Z0E"/>
-                            <constraint firstItem="6AO-jT-1ce" firstAttribute="leading" secondItem="4E3-gw-CwA" secondAttribute="leading" id="veq-zk-EEW"/>
+                            <constraint firstItem="PL5-j1-wO5" firstAttribute="trailing" secondItem="4E3-gw-CwA" secondAttribute="trailing" constant="20" id="GPz-sf-6VV"/>
+                            <constraint firstItem="6AO-jT-1ce" firstAttribute="leading" secondItem="N78-xj-Pb4" secondAttribute="leadingMargin" id="GoT-I5-SwU"/>
+                            <constraint firstItem="vQd-mM-59Y" firstAttribute="leading" secondItem="PL5-j1-wO5" secondAttribute="leading" id="OKf-fB-ATe"/>
+                            <constraint firstItem="4E3-gw-CwA" firstAttribute="top" secondItem="6AO-jT-1ce" secondAttribute="bottom" constant="34" id="R1C-xu-VPU"/>
+                            <constraint firstItem="6AO-jT-1ce" firstAttribute="top" secondItem="vQd-mM-59Y" secondAttribute="bottom" constant="31" id="Xo6-fM-son"/>
+                            <constraint firstItem="vQd-mM-59Y" firstAttribute="top" secondItem="PL5-j1-wO5" secondAttribute="top" id="dl0-us-cZJ"/>
+                            <constraint firstItem="6AO-jT-1ce" firstAttribute="trailing" secondItem="N78-xj-Pb4" secondAttribute="trailingMargin" id="g2J-Wu-Zbm"/>
+                            <constraint firstItem="4E3-gw-CwA" firstAttribute="leading" secondItem="PL5-j1-wO5" secondAttribute="leading" constant="20" id="hRh-3C-1q8"/>
+                            <constraint firstItem="vQd-mM-59Y" firstAttribute="centerX" secondItem="6AO-jT-1ce" secondAttribute="centerX" id="jrT-C0-Fbc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PL5-j1-wO5"/>
                     </view>
@@ -1278,7 +1284,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="207-uc-Kfo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2509" y="2975"/>
+            <point key="canvasLocation" x="2411.594202898551" y="2985.9375"/>
         </scene>
         <!--Disease-->
         <scene sceneID="C20-Sg-fLO">

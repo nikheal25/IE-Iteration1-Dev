@@ -45,6 +45,7 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
                 }
                 else
                 {
+                    mapView.removeAnnotations(mapView.annotations)
                     self.locationText.placeholder = "Change your farm here"
                     self.UIBtn.setTitle("Change", for:.normal)
 //                    self.locationText.placeholder = "Add your farm here"
@@ -90,6 +91,13 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
         self.continueUIBtn.layer.cornerRadius = 8.0
         
         self.locationText.delegate = self
+        //zoom to australia
+        let Australia = CLLocation(latitude: -25.2744, longitude: 133.7751)
+        let zoomRegion = MKCoordinateRegion(center: Australia.coordinate, latitudinalMeters: 5000000,longitudinalMeters: 5000000)
+        mapView.setRegion(zoomRegion, animated: true)
+        
+        
+        
         newUserId = (self.userDefaultController?.generateUniqueUserId())!
     }
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
@@ -116,8 +124,9 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
     
     @IBOutlet weak var UIBtn: UIButton!
     @IBOutlet weak var locationText: UITextField!
-    
+    var australiaMarks = [CLPlacemark]()
     @IBAction func ChangeBtn(_ sender: Any) {
+        
         let address = self.locationText.text
         if address!.isEmpty
         {
@@ -132,12 +141,33 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
         geoCoder.geocodeAddressString(address!)
         {(placemarks,error) in
             guard
-            let placemarks = placemarks?.first
+            
+                let markList = placemarks
+           
+                
             else
             {
                 self.displayMessage(title: "Invalid Location!", message: "Please enter an valid location!")
                 return}
-            let location = LocationAnnotation(newTitle: "New farm", lat: (placemarks.location?.coordinate.latitude)!, long: (placemarks.location?.coordinate.longitude)!)
+            
+            self.australiaMarks = []
+            for mark in markList
+            {
+                if mark.country == "Australia"
+                {
+                    self.australiaMarks.append(mark)
+                    
+                }
+                
+                
+            }
+                      
+            if self.australiaMarks.count != 0{
+                let result = self.australiaMarks.first
+            
+            
+            
+            let location = LocationAnnotation(newTitle: "New farm", lat: (result?.location!.coordinate.latitude)!, long: (result?.location!.coordinate.longitude)!)
             let lat = String(location.coordinate.latitude)
             let long = String(location.coordinate.longitude)
             
@@ -158,14 +188,23 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
                 
             }else{
             self.databaseController!.updateLocation(userId:currentUserId!, lat: lat ,locationName: "New farm", long: long)
-            self.mapView.removeAnnotations(self.mapView.annotations)
+//            self.mapView.removeAnnotations(self.mapView.annotations)
             self.displayMessage(title: "Change database", message: "Successfully!")
                 self.userDefaultController?.assignCLLocation(lat: lat, long: long)
 //            self.mapView.addAnnotation(location)
 //            self.focusOn(annotation:location)
-            }
                 }
-        }
+                
+            }else
+            {
+                
+                self.displayMessage(title: "Warning!", message: "Please enter the locations in Australia!")
+                
+            }
+            }
+    
+            }
+                
         
      
     }
