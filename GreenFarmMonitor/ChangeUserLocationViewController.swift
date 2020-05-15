@@ -155,7 +155,7 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
                         self.userDefaultController?.assignCLLocation(lat: lat, long: long)
                 }
                 
-                
+                // to be changed
             }else{
             self.databaseController!.updateLocation(userId:currentUserId!, lat: lat ,locationName: "New farm", long: long)
             self.mapView.removeAnnotations(self.mapView.annotations)
