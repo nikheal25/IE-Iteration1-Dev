@@ -10,5 +10,6 @@ import Foundation
 protocol APIProtocol: AnyObject {
     var weather:[Weather]{get}
     func apiCall(lat: String, long: String) -> [Weather]
-     
+    var recomendedCrops: [String]{get}
+    func apiRecommendedCrop() -> [String]
 }
