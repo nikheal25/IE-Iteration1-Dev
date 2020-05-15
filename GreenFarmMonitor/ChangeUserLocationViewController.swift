@@ -163,18 +163,18 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
             }
                       
             if self.australiaMarks.count != 0{
-                let result = self.australiaMarks.first
-            
-            
-            
-            let location = LocationAnnotation(newTitle: "New farm", lat: (result?.location!.coordinate.latitude)!, long: (result?.location!.coordinate.longitude)!)
-            let lat = String(location.coordinate.latitude)
-            let long = String(location.coordinate.longitude)
-            
+           
             
             if self.LocationList.count == 0
             {
-               
+               let result = self.australiaMarks.first
+                          
+                          
+                          
+                          let location = LocationAnnotation(newTitle: "New farm", lat: (result?.location!.coordinate.latitude)!, long: (result?.location!.coordinate.longitude)!)
+                          let lat = String(location.coordinate.latitude)
+                          let long = String(location.coordinate.longitude)
+                          
                 let newUser = User(userId: self.newUserId, userName: "TestUser", farmLocationName: "New farm", farmLat: lat, farmLong: long)
                      
                      // Firebase Update
@@ -187,12 +187,20 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
                 
                 
             }else{
-            self.databaseController!.updateLocation(userId:currentUserId!, lat: lat ,locationName: "New farm", long: long)
+               
+                    
+                    
+                let lat = String(self.mapView.annotations.first!.coordinate.latitude)
+                let long = String(self.mapView.annotations.first!.coordinate.longitude)
+               
+                    self.databaseController!.updateLocation(userId:currentUserId!, lat: lat ,locationName: "New farm", long: long)
 //            self.mapView.removeAnnotations(self.mapView.annotations)
-            self.displayMessage(title: "Change database", message: "Successfully!")
-                self.userDefaultController?.assignCLLocation(lat: lat, long: long)
+                    self.displayMessage(title: "Change database", message: "Successfully!")
+                    self.userDefaultController?.assignCLLocation(lat: lat, long: long)
 //            self.mapView.addAnnotation(location)
 //            self.focusOn(annotation:location)
+                    
+                
                 }
                 
             }else
@@ -245,7 +253,7 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
 //    }
     
     
-    
+    //Drag map
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         if self.UIBtn.titleLabel?.text == "Change"{
         self.mapView.removeAnnotations(mapView.annotations)
@@ -261,41 +269,49 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
         
         address.reverseGeocodeLocation(CLLocation.init(latitude: lat, longitude:long)) { (placemarks, error) in
             if error == nil{
+                  let pm = placemarks! as [CLPlacemark]
 
+                            if pm.count > 0 {
+                                let pm = placemarks![0]
+                //                print(pm.country)
+                //                print(pm.locality)
+                //                print(pm.subLocality)
+                //                print(pm.thoroughfare)
+                //                print(pm.postalCode)
+                //                print(pm.subThoroughfare)
+                                
+                                var addressString : String = ""
+                                if pm.subThoroughfare != nil {
+                                                   addressString = addressString + pm.subThoroughfare! + ", "
+                                               }
+                                if pm.subLocality != nil {
+                                    addressString = addressString + pm.subLocality! + ", "
+                                }
+                                if pm.thoroughfare != nil {
+                                    addressString = addressString + pm.thoroughfare! + ", "
+                                }
+                                if pm.postalCode != nil {
+                                    addressString = addressString + pm.postalCode! + ", "
+                                }
+                                if pm.locality != nil {
+                                    addressString = addressString + pm.locality! + ", "
+                                }
+                                if pm.country != nil {
+                                    addressString = addressString + pm.country!
+                                }
+                              
+                                
+                                self.locationText.text = addressString
             }
-            let pm = placemarks! as [CLPlacemark]
-
-            if pm.count > 0 {
-                let pm = placemarks![0]
-//                print(pm.country)
-//                print(pm.locality)
-//                print(pm.subLocality)
-//                print(pm.thoroughfare)
-//                print(pm.postalCode)
-//                print(pm.subThoroughfare)
-              var addressString : String = ""
-                if pm.subThoroughfare != nil {
-                                   addressString = addressString + pm.subThoroughfare! + ", "
-                               }
-                if pm.subLocality != nil {
-                    addressString = addressString + pm.subLocality! + ", "
-                }
-                if pm.thoroughfare != nil {
-                    addressString = addressString + pm.thoroughfare! + ", "
-                }
-                if pm.locality != nil {
-                    addressString = addressString + pm.locality! + ", "
-                }
-                if pm.country != nil {
-                    addressString = addressString + pm.country! 
-                }
-              
-                self.locationText.text = addressString
+          
             }
             
         }
         }
     }
+    
+    
+    
     func displayMessage(title:String,message:String)
     {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
