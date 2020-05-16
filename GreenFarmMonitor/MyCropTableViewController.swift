@@ -12,6 +12,10 @@ import UserNotifications
 class MyCropTableViewController: UITableViewController, DatabaseListener {
     func onUserChange(change: DatabaseChange, users: [User]) {
         
+        
+        
+        
+        
     }
     
     
@@ -177,10 +181,10 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
         let content = UNMutableNotificationContent()
                    if overheatmessage != ""
                    {
-                       overheatmessage = "The following crops will be overheat in the recent 16 days: " + overheatmessage
+                       overheatmessage = "Alert! The temperature on your location is more than the required temperature for " + overheatmessage + "\nView more on application."
 
                         
-                                          content.title = "Warning!"
+                                          content.title = "My Garden"
                                           content.body = overheatmessage
                        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
                        let uuidString = UUID().uuidString
@@ -191,9 +195,9 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
                        }
                    if overcoldmessage != ""
                    {
-                       overcoldmessage = "The following crops will be overcold in the recent 16 days: " + overcoldmessage
+                       overcoldmessage = "Alert! The temperature on your location is less than the required temperature for  " + overcoldmessage + "\nView more on application."
                        
-                       content.title = "Warning!"
+                       content.title = "My Garden"
                        content.body = overcoldmessage
                     let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
                                           let uuidString = UUID().uuidString
@@ -220,28 +224,39 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
 //            self.navigationController!.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
 //            self.navigationController!.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.99997437, blue: 0.9999912977, alpha: 1)
 //            myCropList = []
-            
+            updateApi()
            // self.onTemperatureChange(change: .update, temperatures: databaseController!.tempList)
 //            self.onUserCropRelationChange(change: .update, userCropRelation: databaseController!.userCropRelation)
            //self.onRuleChange(change: .update, rule: databaseController!.ruleList)
             
-            //update api
+            
+            databaseController?.addListener(listener: self)
+           
+        }
+          func updateApi()
+          {
+           //update api
               let date = Date()
              
               let dateFormatter = DateFormatter()
               dateFormatter.dateFormat = "yyyy-MM-dd"
               let day = dateFormatter.string(from: date)
               allWeather = weatherAPI!.weather
-              if allWeather.first?.date != day{
+            let lat = userDefaultController?.retriveLat()
+            let long = userDefaultController?.retriveLong()
+            
+//            if allWeather.first?.lat != lat || allWeather.first?.long != long
+//            {
+//               weatherAPI?.apiCall(lat: lat!, long: long!)
+//
+//            }else
+            if allWeather.first?.date != day {
                 
-                let lat = userDefaultController?.retriveLat()
-                let long = userDefaultController?.retriveLong()
+                
                 weatherAPI?.apiCall(lat: lat!, long: long!)
             }
-            databaseController?.addListener(listener: self)
-           
-        }
-        
+            
+    }
     
     
     
@@ -409,7 +424,8 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
                 let destination = segue.destination as! GraphViewController
             destination.specificCrop = myCropList[selectedRow]
         }
-        
+       
+       
     }
     
     //returns the object of crop, for specified ID
