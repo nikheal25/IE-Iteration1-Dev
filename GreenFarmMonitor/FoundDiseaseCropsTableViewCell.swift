@@ -19,7 +19,7 @@ class FoundDiseaseCropsTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
       self.contentView.backgroundColor = UIColor(hexString: "#3A4F41")
-    
+       self.cropNameLabel.adjustsFontSizeToFitWidth = true
         self.cellView.layer.cornerRadius = 8
         self.cellView.layer.shadowOpacity = 0.4
         self.cellView.layer.shadowRadius = 2
