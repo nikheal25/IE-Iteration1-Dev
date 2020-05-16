@@ -31,9 +31,13 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
     var rangeMaxValue = 50.00
     var rangeMinValue = 0.00
     
+    var rangeRainMaxValue = 100.0
+    var rangeRainMinValue = 0.00
+    
     var minIdealTemperature: [Double] = []
     var maxIdealTemperature: [Double] = []
     var exactTemperature: [Double] = []
+    var exactRain: [Double] = []
     lazy var plotTwoData: [Double] = self.generateRandomData(self.numberOfItems, max: 80, shouldIncludeOutliers: false)
     
     var numberOfItems = 16
@@ -59,7 +63,7 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
             if hideFlagRain {
                 return -2000
             }
-            return exactTemperature[pointIndex]
+            return exactRain[pointIndex]
         default:
             return 0
         }
@@ -102,6 +106,8 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
             secondGraph.isHidden = false
             subtitileLabel.text = "Area represents the precipitation prediction"
             if rainFlag == false {
+                secondGraph.rangeMax = rangeRainMaxValue
+                secondGraph.rangeMin = rangeRainMinValue
                 setupRainfallGraph(graphView: secondGraph)
                 rainFlag = true
             }
@@ -157,11 +163,12 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
             }
             //MARK:- set exact temperature
             exactTemperature = returnValuesFromAPI(valueFlag: 1, weatherData: allWeather)
+            exactRain = returnValuesFromAPI(valueFlag: 3, weatherData: allWeather)
             
             let tempExactMax = exactTemperature.max() as! Double
             
             rangeMaxValue = max( tempExactMax, maxValue ) + 10
-            print(rangeMaxValue)
+            rangeRainMaxValue = (exactRain.max() as! Double) * 1.2
         }else{
             //MARK:- Dummy values
             let minValue = (self.specificCrop?.minTemp as! NSString).doubleValue
@@ -172,6 +179,9 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
             }
             //MARK:- set random values
             exactTemperature = self.generateRandomData(self.numberOfItems, max: 40, shouldIncludeOutliers: false)
+            exactRain = self.generateRandomData(self.numberOfItems, max: 35, shouldIncludeOutliers: false)
+            rangeMaxValue = 50
+            rangeRainMaxValue = 80
         }
         
         graphView.dataSource = self
@@ -276,6 +286,14 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
         //
         linePlot.adaptAnimationType = ScrollableGraphViewAnimationType.elastic
         
+        
+        //Second
+        let dotPlot = DotPlot(identifier: "rainOne") // Add dots as well.
+        dotPlot.dataPointSize = 2
+        dotPlot.dataPointFillColor = UIColor.white
+        
+        dotPlot.adaptAnimationType = ScrollableGraphViewAnimationType.elastic
+        
         // Customise the reference lines.
         let referenceLines = ReferenceLines()
         
@@ -292,6 +310,7 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
         // Add everything to the graph.
         graphView.addReferenceLines(referenceLines: referenceLines)
         graphView.addPlot(plot: linePlot)
+        graphView.addPlot(plot: dotPlot)
     }
     /*
      // MARK: - Navigation

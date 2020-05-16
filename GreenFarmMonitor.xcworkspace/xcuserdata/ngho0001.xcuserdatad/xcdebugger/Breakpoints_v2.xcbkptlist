@@ -52,5 +52,53 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4B6FD8F0-1942-479C-BD72-B7C1C7AD371F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GreenFarmMonitor/GraphViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4B6FD8F0-1942-479C-BD72-B7C1C7AD371F - 72bbf1338c49e4d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FarmCommunity_Together.GraphViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "FarmCommunity Together"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///var/folders/1d/6yjtjkx1421dcyb0wmhrws905mvt7_/T/tmp.cpQ3ryPP/Desktop/IE%20project/GreenFarmMonitor/GreenFarmMonitor/GraphViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "174"
+                  endingLineNumber = "174"
+                  offsetFromSymbolStart = "5535">
+               </Location>
+               <Location
+                  uuid = "4B6FD8F0-1942-479C-BD72-B7C1C7AD371F - 72bbf1338c49e4d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FarmCommunity_Together.GraphViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "FarmCommunity Together"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///var/folders/1d/6yjtjkx1421dcyb0wmhrws905mvt7_/T/tmp.cpQ3ryPP/Desktop/IE%20project/GreenFarmMonitor/GreenFarmMonitor/GraphViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "174"
+                  endingLineNumber = "174"
+                  offsetFromSymbolStart = "8326">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
