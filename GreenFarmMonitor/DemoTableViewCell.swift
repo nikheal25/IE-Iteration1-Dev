@@ -69,23 +69,26 @@ class DemoTableViewCell: FoldingCell {
         self.descriptionLabel.sizeToFit()
         self.descriptionLabel.text = crop.Description
         
-       
+        
         self.cropImage.image = UIImage(named: crop.cropImage)
         self.cropImage.layer.cornerRadius = 6
         self.fullCropImage.image = UIImage(named: crop.cropImage)
         
         self.contentView.backgroundColor = UIColor(hexString: "#3A4F41")
-
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         userDefaultController = appDelegate.userDefaultController
         databaseController = appDelegate.databaseController
+        //based on your location apparagus grows best with
         
         self.specificCrop = crop
         self.companionCrop = companionCrop
         self.compatibleButton.setTitle("Add \(companionCrop.cropName) with this plant", for: .normal)
-
+        
+        self.bottomMostLabel.text = "Based on your location \(specificCrop!.cropName) grows best with \(companionCrop.cropName)."
         if self.specificCrop?.cropName == companionCrop.cropName  {
             self.compatibleButton.isHidden = true
+            self.bottomMostLabel.isHidden = true
         }
         self.compatibleButton.titleLabel?.minimumScaleFactor = 0.01
         self.compatibleButton.titleLabel?.adjustsFontSizeToFitWidth = true
