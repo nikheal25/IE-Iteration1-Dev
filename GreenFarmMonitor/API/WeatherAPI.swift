@@ -144,8 +144,9 @@ class WeatherAPI: NSObject, APIProtocol {
                       let mintemp = (dailydata as AnyObject).value(forKey: "min_temp") as! Double
                       let date = (dailydata as AnyObject).value(forKey: "datetime") as! String
                       let precip = (dailydata as AnyObject).value(forKey: "precip") as! Double
+                    let precipProb = (dailydata as AnyObject).value(forKey: "pop") as! Double
                     
-                    self.weather.append(Weather(maxtemp: maxtemp, mintemp: mintemp, date: date, precip: precip))
+                    self.weather.append(Weather(maxtemp: maxtemp, mintemp: mintemp, date: date, precip: precip, precipProb: precipProb))
 //                    print (self.weather)
                     
                 }

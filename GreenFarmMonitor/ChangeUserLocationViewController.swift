@@ -332,7 +332,6 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
             (UIAlertAction) -> Void in
             if self.LocationList.count == 0{
                 self.displayMessage(title: "Warning!", message: "You must enter you farm location.")
-                
             }else
             {
                 self.performSegue(withIdentifier: "continueSegue", sender: self)}

@@ -17,12 +17,15 @@
         <array key="OpenSans-Semibold.ttf">
             <string>OpenSans-Semibold</string>
         </array>
+        <array key="SFProText-Regular.ttf">
+            <string>SFProText-Regular</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Crops-->
         <scene sceneID="7nH-Ot-lEG">
             <objects>
-                <viewController title="Crops" id="Ex3-ue-bil" customClass="SelectCropForDiseaseViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Crops" id="Ex3-ue-bil" customClass="SelectCropForDiseaseViewController" customModule="MyGardenOz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7DT-qD-EWy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,7 +51,7 @@
                                 <rect key="frame" x="0.0" y="144" width="414" height="669"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Crop" rowHeight="138" id="0Ei-d8-k6X" customClass="FoundDiseaseCropsTableViewCell" customModule="FarmCommunity_Together" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Crop" rowHeight="138" id="0Ei-d8-k6X" customClass="FoundDiseaseCropsTableViewCell" customModule="MyGardenOz" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="138"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Ei-d8-k6X" id="xgm-ua-hcf">
@@ -139,7 +142,7 @@
         <!--Diseases-->
         <scene sceneID="GpI-O4-OFD">
             <objects>
-                <viewController id="uRE-0F-6ZE" customClass="DiseaseListViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="uRE-0F-6ZE" customClass="DiseaseListViewController" customModule="MyGardenOz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HM9-QO-5R6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -148,10 +151,10 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="disease" rowHeight="162" id="5AS-C7-z8u" customClass="DiseaseTableViewCell" customModule="FarmCommunity_Together" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="disease" rowHeight="162" id="5AS-C7-z8u" customClass="DiseaseTableViewCell" customModule="MyGardenOz" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="162"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5AS-C7-z8u" id="iF7-1F-TML" customClass="DiseaseTableViewCell" customModule="FarmCommunity_Together" customModuleProvider="target">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5AS-C7-z8u" id="iF7-1F-TML" customClass="DiseaseTableViewCell" customModule="MyGardenOz" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="162"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -230,7 +233,7 @@
         <!--Add Your Location-->
         <scene sceneID="L7m-X9-nAY">
             <objects>
-                <viewController id="xHO-5A-7f3" customClass="ChangeUserLocationViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xHO-5A-7f3" customClass="ChangeUserLocationViewController" customModule="MyGardenOz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RwT-CM-8js">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -326,7 +329,7 @@
         <!--FirstViewController-->
         <scene sceneID="O9v-aC-QGO">
             <objects>
-                <viewController storyboardIdentifier="FirstViewController" title="FirstViewController" id="0vi-oQ-bUa" customClass="FirstViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstViewController" title="FirstViewController" id="0vi-oQ-bUa" customClass="FirstViewController" customModule="MyGardenOz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tuh-dh-FYm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -337,9 +340,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose the crop you want to grow" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Tf-Ds-maR">
-                                <rect key="frame" x="59.5" y="402.5" width="295.5" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Personal Gardening Aide" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Tf-Ds-maR">
+                                <rect key="frame" x="93" y="402.5" width="228" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -353,37 +356,21 @@
                                     <action selector="nextButtonClicked:" destination="0vi-oQ-bUa" eventType="touchUpInside" id="cTC-Bm-h8O"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FarmCommunity Together" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2l5-wH-OPh">
-                                <rect key="frame" x="36.5" y="323.5" width="341.5" height="39"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MyGardenOz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2l5-wH-OPh">
+                                <rect key="frame" x="122.5" y="323.5" width="169.5" height="39"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="30"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find the ideal conditions for that crop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrc-M3-Dv8">
-                                <rect key="frame" x="46.5" y="456.5" width="321" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find the diseases related to the crop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFQ-Kc-gEs">
-                                <rect key="frame" x="50.5" y="510.5" width="313" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="AFQ-Kc-gEs" firstAttribute="centerX" secondItem="tuh-dh-FYm" secondAttribute="centerX" id="3SR-J5-vUI"/>
                             <constraint firstItem="S1Q-vK-0Fs" firstAttribute="centerX" secondItem="tuh-dh-FYm" secondAttribute="centerX" id="AXK-Gf-KG8"/>
                             <constraint firstItem="okr-UP-B6e" firstAttribute="centerX" secondItem="tuh-dh-FYm" secondAttribute="centerX" id="GmC-We-jOA"/>
                             <constraint firstItem="0Tf-Ds-maR" firstAttribute="centerX" secondItem="tuh-dh-FYm" secondAttribute="centerX" id="IOr-ox-B20"/>
-                            <constraint firstItem="AFQ-Kc-gEs" firstAttribute="top" secondItem="hrc-M3-Dv8" secondAttribute="bottom" constant="30" id="LT0-2x-1rZ"/>
                             <constraint firstItem="S1Q-vK-0Fs" firstAttribute="leading" secondItem="V40-Hf-TkI" secondAttribute="leading" constant="50" id="Rhb-YD-CDb"/>
                             <constraint firstItem="okr-UP-B6e" firstAttribute="top" secondItem="V40-Hf-TkI" secondAttribute="top" constant="200" id="Vv4-fd-S1g"/>
-                            <constraint firstItem="hrc-M3-Dv8" firstAttribute="centerX" secondItem="tuh-dh-FYm" secondAttribute="centerX" id="XVM-5p-e5S"/>
                             <constraint firstItem="2l5-wH-OPh" firstAttribute="top" secondItem="okr-UP-B6e" secondAttribute="bottom" constant="5" id="c0Z-fJ-3J0"/>
-                            <constraint firstItem="hrc-M3-Dv8" firstAttribute="top" secondItem="0Tf-Ds-maR" secondAttribute="bottom" constant="30" id="cjI-Xt-X4U"/>
                             <constraint firstItem="V40-Hf-TkI" firstAttribute="trailing" secondItem="S1Q-vK-0Fs" secondAttribute="trailing" constant="50" id="dTo-2d-FT1"/>
                             <constraint firstItem="0Tf-Ds-maR" firstAttribute="top" secondItem="2l5-wH-OPh" secondAttribute="bottom" constant="40" id="lQY-Zv-Lwc"/>
                             <constraint firstItem="V40-Hf-TkI" firstAttribute="bottom" secondItem="S1Q-vK-0Fs" secondAttribute="bottom" constant="100" id="v7I-xp-La2"/>
@@ -394,8 +381,6 @@
                     <navigationItem key="navigationItem" id="2Jp-1J-Czg"/>
                     <connections>
                         <outlet property="featureLable" destination="0Tf-Ds-maR" id="YHi-sH-vBL"/>
-                        <outlet property="featureThree" destination="AFQ-Kc-gEs" id="FcU-YU-WyH"/>
-                        <outlet property="featureTwo" destination="hrc-M3-Dv8" id="KuE-IF-1NC"/>
                         <outlet property="mainButton" destination="S1Q-vK-0Fs" id="SyR-Mf-avU"/>
                         <outlet property="mainLabel" destination="okr-UP-B6e" id="zn4-N5-Jwb"/>
                         <outlet property="subtitle" destination="2l5-wH-OPh" id="8jv-Jz-ufj"/>
@@ -410,7 +395,7 @@
         <!--Onboarding View Controller-->
         <scene sceneID="qyw-UC-HKT">
             <objects>
-                <viewController id="DVU-ys-H6N" customClass="OnboardingViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="DVU-ys-H6N" customClass="OnboardingViewController" customModule="MyGardenOz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PJh-IC-C6a">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -447,7 +432,7 @@
         <!--Get started-->
         <scene sceneID="70X-aW-u6T">
             <objects>
-                <viewController id="d3q-yA-hpY" customClass="LoginViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="d3q-yA-hpY" customClass="LoginViewController" customModule="MyGardenOz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fTH-wh-QsD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -484,13 +469,13 @@
         <!--MyGarden-->
         <scene sceneID="dUw-OU-e2l">
             <objects>
-                <tableViewController id="DHY-iT-N33" customClass="MyCropTableViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="DHY-iT-N33" customClass="MyCropTableViewController" customModule="MyGardenOz" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="o06-TL-ZHm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCropCell" id="6gT-vv-8rZ" customClass="MyCropMainTableViewCell" customModule="FarmCommunity_Together" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCropCell" id="6gT-vv-8rZ" customClass="MyCropMainTableViewCell" customModule="MyGardenOz" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="55.5" width="414" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6gT-vv-8rZ" id="o7f-wn-9k7">
@@ -567,7 +552,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="MyGarden" id="T71-E0-OmJ">
-                        <barButtonItem key="rightBarButtonItem" title="Add Crop" id="NhA-is-Hdm">
+                        <barButtonItem key="rightBarButtonItem" title="Add MyPlant" id="NhA-is-Hdm">
                             <connections>
                                 <action selector="addNewCrop:" destination="DHY-iT-N33" id="z8z-iJ-YX3"/>
                             </connections>
@@ -587,7 +572,7 @@
         <!--Grow Crop-->
         <scene sceneID="dCf-E4-mQL">
             <objects>
-                <viewController title="Grow Crop" id="YNr-Bz-n0u" customClass="GrowMyCropViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Grow Crop" id="YNr-Bz-n0u" customClass="GrowMyCropViewController" customModule="MyGardenOz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ta6-Lp-qhP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -614,7 +599,7 @@
                                 <rect key="frame" x="0.0" y="196" width="414" height="617"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="10" reuseIdentifier="Crop" id="Ux4-xO-sKe" customClass="GrowMyCropTableViewCell" customModule="FarmCommunity_Together" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="10" reuseIdentifier="Crop" id="Ux4-xO-sKe" customClass="GrowMyCropTableViewCell" customModule="MyGardenOz" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ux4-xO-sKe" id="Ntt-61-1GB">
@@ -732,7 +717,7 @@
         <!--Add MyPlant-->
         <scene sceneID="pJj-C0-a7B">
             <objects>
-                <viewController id="RFN-Gy-5fg" customClass="AddNewCropViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="RFN-Gy-5fg" customClass="AddNewCropViewController" customModule="MyGardenOz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Ow-Oe-x9R">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -749,7 +734,7 @@
                                 <rect key="frame" x="0.0" y="144" width="414" height="752"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Crop" id="ykX-ET-JuK" customClass="MyCropCellTableViewCell" customModule="FarmCommunity_Together" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Crop" id="ykX-ET-JuK" customClass="MyCropCellTableViewCell" customModule="MyGardenOz" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ykX-ET-JuK" id="ToY-UQ-TRk">
@@ -839,9 +824,9 @@
         <!--Detail Of The Crop View Controller-->
         <scene sceneID="mNU-Ir-YEq">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="yiQ-Q6-hV5" customClass="DetailOfTheCropViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="yiQ-Q6-hV5" customClass="DetailOfTheCropViewController" customModule="MyGardenOz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ePo-PE-W8y">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WZI-wE-y6t">
@@ -1119,7 +1104,7 @@
         <!--Detail New Crop View Controller-->
         <scene sceneID="Sb3-rU-tnB">
             <objects>
-                <viewController id="RG7-Oh-y8c" customClass="DetailNewCropViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="RG7-Oh-y8c" customClass="DetailNewCropViewController" customModule="MyGardenOz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9gY-m0-TOh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1201,6 +1186,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BDv-er-bsH" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AXQ-pB-8oT">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1215,7 +1201,7 @@
         <!--Symptoms-->
         <scene sceneID="u4d-JT-VYk">
             <objects>
-                <viewController id="2Kg-aO-PYg" customClass="SymptomsViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2Kg-aO-PYg" customClass="SymptomsViewController" customModule="MyGardenOz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pa3-Be-0pY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1231,7 +1217,7 @@
         <!--Details-->
         <scene sceneID="9bH-5N-hdR">
             <objects>
-                <viewController id="CM5-eV-gRe" customClass="DetailOfDiseaseViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="CM5-eV-gRe" customClass="DetailOfDiseaseViewController" customModule="MyGardenOz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N78-xj-Pb4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <subviews>
@@ -1292,6 +1278,7 @@
                     <tabBarItem key="tabBarItem" title="Plant Disease" image="icons8-virus-100" id="Q8H-22-n0O"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kH9-T9-YbH">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1310,6 +1297,7 @@
                     <tabBarItem key="tabBarItem" title="MyGarden" image="icons8-soil-100" id="AGm-Au-5FZ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ffb-7p-e5y">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1324,7 +1312,7 @@
         <!--Forecast-->
         <scene sceneID="naK-mK-4p3">
             <objects>
-                <viewController id="XuH-bc-lq7" customClass="GraphViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XuH-bc-lq7" customClass="GraphViewController" customModule="MyGardenOz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4R9-Qc-v3i">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1362,14 +1350,14 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ZN-ec-Xhz">
-                                <rect key="frame" x="20" y="453" width="374" height="23"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <rect key="frame" x="20" y="453" width="374" height="18"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue line represents actual temperature prediction" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdY-GR-D7q">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue line represents actual temperature prediction" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdY-GR-D7q">
                                 <rect key="frame" x="20" y="351" width="374" height="12"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="10"/>
                                 <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1396,7 +1384,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Forecast" id="0Hn-Tq-fzd"/>
                     <connections>
-                        <outlet property="graphView" destination="jlF-Fb-HlL" id="ce5-0V-ELr"/>
+                        <outlet property="firstGraphView" destination="jlF-Fb-HlL" id="ce5-0V-ELr"/>
                         <outlet property="mainLabel" destination="7ZN-ec-Xhz" id="2f3-Zc-OXB"/>
                         <outlet property="secondGraph" destination="5Wt-sy-xRP" id="G8a-AO-LMm"/>
                         <outlet property="subtitileLabel" destination="pdY-GR-D7q" id="A0o-Z1-r3Z"/>
@@ -1409,9 +1397,9 @@
         <!--Pop Over View Controller-->
         <scene sceneID="Yuz-80-05S">
             <objects>
-                <viewController id="0Ku-Rf-b4l" customClass="PopOverViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0Ku-Rf-b4l" customClass="PopOverViewController" customModule="MyGardenOz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aUj-Mh-FzM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Y28-QO-Vfg">
@@ -1465,17 +1453,17 @@
             </objects>
             <point key="canvasLocation" x="-3655.0724637681164" y="1863.6160714285713"/>
         </scene>
-        <!--All Crops-->
+        <!--Add MyPlant-->
         <scene sceneID="5RK-j0-OTk">
             <objects>
-                <tableViewController storyboardIdentifier="MainTableViewController" title="All Crops" id="auZ-DV-ex4" customClass="FoldingTableViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MainTableViewController" title="Add MyPlant" id="auZ-DV-ex4" customClass="FoldingTableViewController" customModule="MyGardenOz" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="618" sectionHeaderHeight="28" sectionFooterHeight="28" id="pF8-XU-PNN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="708"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search for the crop" showsCancelButton="YES" id="4b0-Sy-8gg">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="786" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
@@ -1483,7 +1471,7 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FoldingCell" rowHeight="618" id="gXt-61-trc" customClass="DemoTableViewCell" customModule="FarmCommunity_Together" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FoldingCell" rowHeight="618" id="gXt-61-trc" customClass="DemoTableViewCell" customModule="MyGardenOz" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="600" height="618"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gXt-61-trc" id="3IL-LK-O1a">
@@ -1628,17 +1616,17 @@
                                                     <rect key="frame" x="0.0" y="200" width="560" height="210"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwo-YL-Q4c">
-                                                            <rect key="frame" x="10" y="5" width="540" height="14.5"/>
+                                                            <rect key="frame" x="10" y="5" width="540" height="13.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" relation="lessThanOrEqual" constant="200" id="DTn-jB-v8h"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compatible crop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8B4-uo-qNI">
-                                                            <rect key="frame" x="10" y="29.5" width="540" height="18"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compatible crop" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8B4-uo-qNI">
+                                                            <rect key="frame" x="10" y="28.5" width="540" height="13.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -1713,6 +1701,7 @@
                                 <connections>
                                     <outlet property="addToButton" destination="Y6H-1m-3aI" id="Ohe-Ju-aVq"/>
                                     <outlet property="barView" destination="6HJ-hS-EeR" id="mXU-Jy-W9E"/>
+                                    <outlet property="bottomMostLabel" destination="SBq-Gv-yRx" id="dVt-bv-fmU"/>
                                     <outlet property="compatibleButton" destination="TnA-JY-nhP" id="KF5-TC-U38"/>
                                     <outlet property="compatibleCropLabel" destination="8B4-uo-qNI" id="QJr-49-Y02"/>
                                     <outlet property="containerView" destination="Jaq-VL-v0N" id="pVJ-Gr-lg7"/>
@@ -1760,6 +1749,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="9MU-u6-o2c"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jpv-zl-IUn">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1774,9 +1764,9 @@
         <!--Grow My Detail Crop View Controller-->
         <scene sceneID="mLJ-P0-gQD">
             <objects>
-                <viewController id="xMu-wD-XeD" customClass="GrowMyDetailCropViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xMu-wD-XeD" customClass="GrowMyDetailCropViewController" customModule="MyGardenOz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1sW-z1-Jn4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cph-kN-eAO">
@@ -2000,7 +1990,7 @@
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="55" id="jRq-c4-ddu"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Soil moisture(Avg %)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qru-vq-deS">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Soil moisture%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qru-vq-deS">
                                                                 <rect key="frame" x="63" y="0.0" width="172" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="gCn-ZG-ta3"/>
@@ -2145,15 +2135,17 @@
                                                         </subviews>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ux-Ud-1Lh">
-                                                        <rect key="frame" x="15" y="558" width="328" height="30"/>
+                                                        <rect key="frame" x="30" y="598" width="313" height="30"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                         <state key="normal" title="View diseases"/>
                                                         <connections>
                                                             <segue destination="uRE-0F-6ZE" kind="show" identifier="diseaseSegue" id="DcB-GX-sFl"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oh0-wG-qRS">
-                                                        <rect key="frame" x="15" y="598" width="343" height="30"/>
-                                                        <state key="normal" title="View Fertilisers   "/>
+                                                        <rect key="frame" x="30" y="558" width="313" height="30"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                        <state key="normal" title="View Fertiliser Requirement"/>
                                                         <connections>
                                                             <segue destination="oRy-rW-0vl" kind="show" identifier="fertiliserSegue" id="mJ4-GP-Q9y"/>
                                                         </connections>
@@ -2166,24 +2158,23 @@
                                                     <constraint firstAttribute="trailing" secondItem="B56-i1-lPm" secondAttribute="trailing" constant="15" id="7b1-eW-IXn"/>
                                                     <constraint firstItem="MWV-RF-oFv" firstAttribute="leading" secondItem="O73-P0-N24" secondAttribute="leading" constant="15" id="9s2-gp-weQ"/>
                                                     <constraint firstItem="B56-i1-lPm" firstAttribute="leading" secondItem="O73-P0-N24" secondAttribute="leading" constant="15" id="BNk-yQ-GIL"/>
-                                                    <constraint firstItem="oh0-wG-qRS" firstAttribute="leading" secondItem="6Ux-Ud-1Lh" secondAttribute="leading" id="EBC-3x-Ahb"/>
                                                     <constraint firstItem="AUM-Jp-nY3" firstAttribute="leading" secondItem="O73-P0-N24" secondAttribute="leading" constant="15" id="Eva-Nh-w3d"/>
+                                                    <constraint firstItem="6Ux-Ud-1Lh" firstAttribute="top" secondItem="oh0-wG-qRS" secondAttribute="bottom" constant="10" id="FNn-Yf-9Ce"/>
                                                     <constraint firstItem="3mz-Uo-8Mx" firstAttribute="leading" secondItem="O73-P0-N24" secondAttribute="leading" constant="15" id="FXw-zw-wpZ"/>
-                                                    <constraint firstAttribute="trailing" secondItem="6Ux-Ud-1Lh" secondAttribute="trailing" constant="30" id="HgT-sv-iYD"/>
                                                     <constraint firstAttribute="trailing" secondItem="MWV-RF-oFv" secondAttribute="trailing" constant="15" id="J34-ho-gwM"/>
                                                     <constraint firstItem="oxM-j0-btn" firstAttribute="leading" secondItem="O73-P0-N24" secondAttribute="leading" constant="15" id="NIt-ne-j4Y"/>
                                                     <constraint firstItem="b55-mc-M6a" firstAttribute="leading" secondItem="O73-P0-N24" secondAttribute="leading" constant="15" id="NxY-Hk-zUW"/>
                                                     <constraint firstItem="HgX-iL-EFb" firstAttribute="leading" secondItem="O73-P0-N24" secondAttribute="leading" constant="15" id="OJX-qI-9Ud"/>
                                                     <constraint firstAttribute="trailing" secondItem="TeD-Tj-ISr" secondAttribute="trailing" constant="15" id="OnN-kb-BLj"/>
                                                     <constraint firstItem="oxM-j0-btn" firstAttribute="top" secondItem="5dR-1t-aYt" secondAttribute="bottom" constant="10" id="Phg-df-oDf"/>
-                                                    <constraint firstItem="oh0-wG-qRS" firstAttribute="top" secondItem="6Ux-Ud-1Lh" secondAttribute="bottom" constant="10" id="QQQ-a6-56n"/>
+                                                    <constraint firstAttribute="trailing" secondItem="6Ux-Ud-1Lh" secondAttribute="trailing" constant="30" id="TLh-lI-eCh"/>
                                                     <constraint firstItem="B56-i1-lPm" firstAttribute="top" secondItem="U3C-oE-znO" secondAttribute="bottom" constant="10" id="TZL-h3-HAu"/>
+                                                    <constraint firstAttribute="trailing" secondItem="oh0-wG-qRS" secondAttribute="trailing" constant="30" id="UsY-mB-Tix"/>
                                                     <constraint firstItem="U3C-oE-znO" firstAttribute="leading" secondItem="O73-P0-N24" secondAttribute="leading" constant="15" id="VpW-PP-XS8"/>
                                                     <constraint firstAttribute="trailing" secondItem="5dR-1t-aYt" secondAttribute="trailing" constant="15" id="WOs-aV-KMg"/>
                                                     <constraint firstAttribute="trailing" secondItem="HgX-iL-EFb" secondAttribute="trailing" constant="15" id="XGC-uh-vNG"/>
-                                                    <constraint firstItem="6Ux-Ud-1Lh" firstAttribute="leading" secondItem="TeD-Tj-ISr" secondAttribute="leading" id="Ytc-LU-3Yb"/>
+                                                    <constraint firstItem="oh0-wG-qRS" firstAttribute="top" secondItem="HgX-iL-EFb" secondAttribute="bottom" constant="8" id="YLk-O7-EOc"/>
                                                     <constraint firstItem="5dR-1t-aYt" firstAttribute="leading" secondItem="O73-P0-N24" secondAttribute="leading" constant="15" id="bNU-4Q-3Kg"/>
-                                                    <constraint firstItem="oh0-wG-qRS" firstAttribute="centerX" secondItem="O73-P0-N24" secondAttribute="centerX" id="cfL-po-8xd"/>
                                                     <constraint firstItem="yPp-YW-MJU" firstAttribute="leading" secondItem="O73-P0-N24" secondAttribute="leading" constant="15" id="d6U-20-uKj"/>
                                                     <constraint firstAttribute="trailing" secondItem="U3C-oE-znO" secondAttribute="trailing" constant="15" id="eD6-xO-0zk"/>
                                                     <constraint firstAttribute="trailing" secondItem="3mz-Uo-8Mx" secondAttribute="trailing" constant="15" id="k50-Zg-jfV"/>
@@ -2193,8 +2184,9 @@
                                                     <constraint firstItem="U3C-oE-znO" firstAttribute="top" secondItem="yPp-YW-MJU" secondAttribute="bottom" constant="10" id="ouA-6U-KvR"/>
                                                     <constraint firstItem="AUM-Jp-nY3" firstAttribute="top" secondItem="TeD-Tj-ISr" secondAttribute="bottom" constant="10" id="pCS-mh-axd"/>
                                                     <constraint firstAttribute="trailing" secondItem="yPp-YW-MJU" secondAttribute="trailing" constant="15" id="plm-wA-d31"/>
-                                                    <constraint firstItem="6Ux-Ud-1Lh" firstAttribute="top" secondItem="HgX-iL-EFb" secondAttribute="bottom" constant="8" id="rbr-md-V2R"/>
                                                     <constraint firstItem="TeD-Tj-ISr" firstAttribute="top" secondItem="O73-P0-N24" secondAttribute="top" constant="10" id="soL-0A-1qq"/>
+                                                    <constraint firstItem="6Ux-Ud-1Lh" firstAttribute="leading" secondItem="O73-P0-N24" secondAttribute="leading" constant="30" id="t9m-Xx-CxV"/>
+                                                    <constraint firstItem="oh0-wG-qRS" firstAttribute="leading" secondItem="O73-P0-N24" secondAttribute="leading" constant="30" id="v7F-Yj-uW3"/>
                                                     <constraint firstAttribute="trailing" secondItem="oxM-j0-btn" secondAttribute="trailing" constant="15" id="v9z-n6-wXL"/>
                                                     <constraint firstAttribute="trailing" secondItem="b55-mc-M6a" secondAttribute="trailing" constant="15" id="vAt-k6-dWj"/>
                                                     <constraint firstItem="TeD-Tj-ISr" firstAttribute="centerX" secondItem="O73-P0-N24" secondAttribute="centerX" id="vC4-s2-sNe"/>
@@ -2264,52 +2256,55 @@
             </objects>
             <point key="canvasLocation" x="47.826086956521742" y="3154.6875"/>
         </scene>
-        <!--Fertiliser-->
+        <!--Fertiliser Requirement-->
         <scene sceneID="WhT-bH-jQq">
             <objects>
-                <viewController id="oRy-rW-0vl" customClass="FertilixerViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="oRy-rW-0vl" customClass="FertilixerViewController" customModule="MyGardenOz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w6J-tG-EQK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OCc-Qv-pyL">
-                                <rect key="frame" x="0.0" y="88" width="414" height="225"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uKx-uz-iEL">
+                                <rect key="frame" x="20" y="103" width="374" height="695"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OCc-Qv-pyL">
+                                        <rect key="frame" x="5" y="5" width="364" height="225"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="225" id="wGo-89-HSM"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ym9-rE-JJD">
+                                        <rect key="frame" x="20" y="270" width="334" height="18"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="225" id="zmC-v2-ZyA"/>
+                                    <constraint firstItem="Ym9-rE-JJD" firstAttribute="leading" secondItem="uKx-uz-iEL" secondAttribute="leading" constant="20" id="HuO-Uu-wI6"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ym9-rE-JJD" secondAttribute="trailing" constant="20" id="O21-yH-FWW"/>
+                                    <constraint firstItem="OCc-Qv-pyL" firstAttribute="top" secondItem="uKx-uz-iEL" secondAttribute="top" constant="5" id="aAL-Jg-qKy"/>
+                                    <constraint firstAttribute="trailing" secondItem="OCc-Qv-pyL" secondAttribute="trailing" constant="5" id="ac9-kO-2nK"/>
+                                    <constraint firstItem="OCc-Qv-pyL" firstAttribute="leading" secondItem="uKx-uz-iEL" secondAttribute="leading" constant="5" id="qfX-N3-cDE"/>
+                                    <constraint firstItem="Ym9-rE-JJD" firstAttribute="top" secondItem="OCc-Qv-pyL" secondAttribute="bottom" constant="40" id="y3z-ES-v0f"/>
                                 </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbg-Bd-UdT">
-                                <rect key="frame" x="20" y="333" width="374" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ym9-rE-JJD">
-                                <rect key="frame" x="30" y="397" width="354" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="hrH-an-78W" firstAttribute="trailing" secondItem="dbg-Bd-UdT" secondAttribute="trailing" constant="20" id="1mB-3r-2mS"/>
-                            <constraint firstItem="OCc-Qv-pyL" firstAttribute="top" secondItem="hrH-an-78W" secondAttribute="top" id="A8S-uN-sCG"/>
-                            <constraint firstItem="Ym9-rE-JJD" firstAttribute="leading" secondItem="hrH-an-78W" secondAttribute="leading" constant="30" id="HU8-bB-pwU"/>
-                            <constraint firstItem="dbg-Bd-UdT" firstAttribute="top" secondItem="OCc-Qv-pyL" secondAttribute="bottom" constant="20" id="PWE-jo-iev"/>
-                            <constraint firstItem="Ym9-rE-JJD" firstAttribute="top" secondItem="dbg-Bd-UdT" secondAttribute="bottom" constant="40" id="Sb0-aj-LCd"/>
-                            <constraint firstItem="dbg-Bd-UdT" firstAttribute="leading" secondItem="hrH-an-78W" secondAttribute="leading" constant="20" id="Z7H-wd-Ige"/>
-                            <constraint firstItem="hrH-an-78W" firstAttribute="trailing" secondItem="Ym9-rE-JJD" secondAttribute="trailing" constant="30" id="ZtZ-FL-TS2"/>
-                            <constraint firstAttribute="trailing" secondItem="OCc-Qv-pyL" secondAttribute="trailing" id="iqq-wx-BTe"/>
-                            <constraint firstItem="OCc-Qv-pyL" firstAttribute="leading" secondItem="hrH-an-78W" secondAttribute="leading" id="mdf-1p-olo"/>
-                            <constraint firstItem="OCc-Qv-pyL" firstAttribute="centerX" secondItem="w6J-tG-EQK" secondAttribute="centerX" id="qZ0-zf-tBv"/>
+                            <constraint firstItem="uKx-uz-iEL" firstAttribute="top" secondItem="hrH-an-78W" secondAttribute="top" constant="15" id="6Da-c9-FBT"/>
+                            <constraint firstItem="hrH-an-78W" firstAttribute="bottom" secondItem="uKx-uz-iEL" secondAttribute="bottom" constant="15" id="DSS-Z3-thw"/>
+                            <constraint firstItem="uKx-uz-iEL" firstAttribute="leading" secondItem="hrH-an-78W" secondAttribute="leading" constant="20" id="LkZ-9G-QN5"/>
+                            <constraint firstItem="hrH-an-78W" firstAttribute="trailing" secondItem="uKx-uz-iEL" secondAttribute="trailing" constant="20" id="nfF-w2-9ZR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hrH-an-78W"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Fertiliser" id="7e7-la-huk"/>
+                    <navigationItem key="navigationItem" title="Fertiliser Requirement" id="7e7-la-huk"/>
                     <connections>
                         <outlet property="cropImageView" destination="OCc-Qv-pyL" id="ehE-q4-dPE"/>
                         <outlet property="fertiliserLabel" destination="Ym9-rE-JJD" id="4Zl-GU-xFC"/>
+                        <outlet property="infoView" destination="uKx-uz-iEL" id="EEb-mb-Uy9"/>
+                        <outlet property="mainView" destination="w6J-tG-EQK" id="hTU-dQ-ecQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mVV-7v-ylr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2319,9 +2314,9 @@
         <!--Sort By View Controller-->
         <scene sceneID="evH-YS-Wgb">
             <objects>
-                <viewController id="hhe-hS-c5K" customClass="SortByViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hhe-hS-c5K" customClass="SortByViewController" customModule="MyGardenOz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="scZ-KU-NYz">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A3A-9u-KPc">
@@ -2421,9 +2416,9 @@
         <!--Filter View Controller-->
         <scene sceneID="PV0-uF-DmW">
             <objects>
-                <viewController id="ZHU-zq-8rR" customClass="FilterViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ZHU-zq-8rR" customClass="FilterViewController" customModule="MyGardenOz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nyT-d6-35Y">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mw3-FP-VAr">
