@@ -83,6 +83,9 @@ class DemoTableViewCell: FoldingCell {
         self.companionCrop = companionCrop
         self.compatibleButton.setTitle("Add \(companionCrop.cropName) with this plant", for: .normal)
 
+        if self.specificCrop?.cropName == companionCrop.cropName  {
+            self.compatibleButton.isHidden = true
+        }
         self.compatibleButton.titleLabel?.minimumScaleFactor = 0.01
         self.compatibleButton.titleLabel?.adjustsFontSizeToFitWidth = true
         self.compatibleCropLabel.text = "This crop grows best with \(companionCrop.All_Compatible_plants)"

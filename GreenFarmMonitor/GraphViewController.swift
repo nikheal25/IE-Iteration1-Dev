@@ -11,7 +11,7 @@ import ScrollableGraphView
 
 class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
     
-    @IBOutlet weak var graphView: ScrollableGraphView!
+    @IBOutlet weak var firstGraphView: ScrollableGraphView!
     @IBOutlet weak var secondGraph: ScrollableGraphView!
     
     var specificCrop: Crop?
@@ -31,7 +31,7 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
     var rangeMaxValue = 50.00
     var rangeMinValue = 0.00
     
-    var rangeRainMaxValue = 100.0
+    var rangeRainMaxValue = 80.0
     var rangeRainMinValue = 0.00
     
     var minIdealTemperature: [Double] = []
@@ -78,9 +78,9 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
     }
     
     func showTempGraph() {
-        graphView.rangeMax = rangeMaxValue
-        graphView.rangeMin = rangeMinValue
-        setupGraph(graphView: graphView)
+        firstGraphView.rangeMax = rangeMaxValue
+        firstGraphView.rangeMin = rangeMinValue
+        setupGraph(graphView: firstGraphView)
     }
     
     var tempFlag = false
@@ -91,9 +91,9 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
             hideFlagTemp = false
             hideFlagRain = true
             //Hide and unhide the bars
-            graphView.isHidden = false
+            firstGraphView.isHidden = false
             secondGraph.isHidden = true
-            subtitileLabel.text = "Blue line represents actual temperature prediction"
+            subtitileLabel.text = "Between red lines is the feasible temperature range \n Green line is the predicted temperature"
             if tempFlag == false {
                 showTempGraph()
                 tempFlag = true
@@ -102,7 +102,7 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
             hideFlagTemp = true
             hideFlagRain = false
             //Hide and unhide the bars
-            graphView.isHidden = true
+            firstGraphView.isHidden = true
             secondGraph.isHidden = false
             subtitileLabel.text = "Area represents the precipitation prediction"
             if rainFlag == false {
@@ -134,7 +134,7 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
             }
         }else{
             for item in weatherData {
-                valueArray.append(item.precip)
+                valueArray.append(item.precipProb)
             }
         }
         return valueArray
@@ -184,7 +184,7 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
             rangeRainMaxValue = 80
         }
         
-        graphView.dataSource = self
+        firstGraphView.dataSource = self
         secondGraph.dataSource = self
         
         showTempGraph()
@@ -213,12 +213,12 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
         let blueLinePlot = LinePlot(identifier: "one")
         
         blueLinePlot.lineWidth = 2
-        blueLinePlot.lineColor = UIColor.colorFromHex(hexString: "#16aafc")
+        blueLinePlot.lineColor = UIColor.colorFromHex(hexString: "#ff7d78")
         blueLinePlot.lineStyle = ScrollableGraphViewLineStyle.smooth
         
         blueLinePlot.shouldFill = false
         blueLinePlot.fillType = ScrollableGraphViewFillType.solid
-        blueLinePlot.fillColor = UIColor.colorFromHex(hexString: "#16aafc").withAlphaComponent(0.5)
+        blueLinePlot.fillColor = UIColor.colorFromHex(hexString: "#ff7d78").withAlphaComponent(0.5)
         
         blueLinePlot.adaptAnimationType = ScrollableGraphViewAnimationType.elastic
         
@@ -309,6 +309,8 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
         
         // Add everything to the graph.
         graphView.addReferenceLines(referenceLines: referenceLines)
+        graphView.rangeMax = rangeRainMaxValue
+        graphView.rangeMin = rangeRainMinValue
         graphView.addPlot(plot: linePlot)
         graphView.addPlot(plot: dotPlot)
     }

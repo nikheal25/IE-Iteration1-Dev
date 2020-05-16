@@ -34,7 +34,7 @@ class FirstViewController: UIViewController {
         performSegue(withIdentifier: "onBoardingSegue", sender: self)
     }
     func playVideo() {
-           guard let path = Bundle.main.path(forResource: "intro2", ofType: "mp4") else {
+        guard let path = Bundle.main.path(forResource: "intro2", ofType: "mp4") else {
                 print("no video found")
                return
            }

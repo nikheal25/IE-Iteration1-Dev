@@ -12,8 +12,10 @@ class OnboardingViewController: UIViewController, PaperOnboardingDataSource {
     
     weak var userDefaultController: UserdefaultsProtocol?
     weak var databaseController: DatabaseProtocol?
-    let titleFont = UIFont(name: "Nunito-Bold", size: 36.0) ?? UIFont.boldSystemFont(ofSize: 25.0)
-    let descriptionFont = UIFont(name: "OpenSans-Regular", size: 14.0) ?? UIFont.systemFont(ofSize: 14.0)
+//    let titleFont = UIFont(name: "Nunito-Bold", size: 36.0) ?? UIFont.boldSystemFont(ofSize: 25.0)
+//    let descriptionFont = UIFont(name: "OpenSans-Regular", size: 14.0) ?? UIFont.systemFont(ofSize: 14.0)
+    let titleFont = UIFont(name: "SFProText-Heavy", size: 36.0) ?? UIFont.boldSystemFont(ofSize: 25.0)
+    let descriptionFont = UIFont(name: "SFProText-Regular", size: 14.0) ?? UIFont.systemFont(ofSize: 14.0)
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -28,14 +30,14 @@ class OnboardingViewController: UIViewController, PaperOnboardingDataSource {
     @IBOutlet weak var nextAction: UIButton!
     
     @IBAction func onClick(_ sender: Any) {
-//        let newUserId = userDefaultController?.generateUniqueUserId()
-//        let newUser = User(userId: newUserId!, userName: "TestUser", farmLocationName: "Monash", farmLat: "-37.907803", farmLong: "145.133957")
-//
-//        // Firebase Update
-//        let successStatus = databaseController?.insertNewUserToFirebase(user: newUser)
-//        if successStatus! {
-//            userDefaultController?.assignName(name: newUser.userName)
-//        }
+        //        let newUserId = userDefaultController?.generateUniqueUserId()
+        //        let newUser = User(userId: newUserId!, userName: "TestUser", farmLocationName: "Monash", farmLat: "-37.907803", farmLong: "145.133957")
+        //
+        //        // Firebase Update
+        //        let successStatus = databaseController?.insertNewUserToFirebase(user: newUser)
+        //        if successStatus! {
+        //            userDefaultController?.assignName(name: newUser.userName)
+        //        }
         
     }
     override func viewDidLoad() {
@@ -74,35 +76,35 @@ class OnboardingViewController: UIViewController, PaperOnboardingDataSource {
         
         return [
             OnboardingItemInfo(informationImage: UIImage(named: "test1_sv")!,
-                               title: "Crop Ideal Conditions",
-                               description: "    Know the ideal conditions and requirements for your crop    ",
+                               title: "Ideal Conditions",
+                               description: "    Know the ideal conditions and requirements for plants    ",
                                pageIcon: UIImage(named: "test1_sv")!,
                                //Wallet
-                               color: UIColor(hexString: "#588B8B"),
-                               titleColor: UIColor.white,
-                               descriptionColor: UIColor.white,
-                               titleFont: titleFont,
-                               descriptionFont: descriptionFont),
-            
-            OnboardingItemInfo(informationImage: UIImage(named: "weather-svg-vect")!,
-                               title: "Crop Disease Identification",
-                               description: "    Know the common diseases and infections that might affect your crops    ",
-                               pageIcon: UIImage(named: "Shopping-cart")!,
-                               color: UIColor(hexString: "#E85D75"),   // #E85D75 - 3.5
+                color: UIColor(hexString: "#ffc15e"),
                 titleColor: UIColor.white,
                 descriptionColor: UIColor.white,
                 titleFont: titleFont,
                 descriptionFont: descriptionFont),
             
             OnboardingItemInfo(informationImage: UIImage(named: "weather-svg-vect")!,
-                                          title: "Location-based Aid",
-                                          description: "    Receive recommendations, alerts and personalised solution    ",
-                                          pageIcon: UIImage(named: "Shopping-cart")!,
-                                          color: UIColor(hexString: "#B1740F"),   // #E85D75 - 3.5
-                           titleColor: UIColor.white,
-                           descriptionColor: UIColor.white,
-                           titleFont: titleFont,
-                           descriptionFont: descriptionFont)
+                               title: "Disease Identification",
+                               description: "    Identify common diseases and symptoms    ",
+                               pageIcon: UIImage(named: "Shopping-cart")!,
+                               color: UIColor(hexString: "#f7934c"),   // #E85D75 - 3.5
+                titleColor: UIColor.white,
+                descriptionColor: UIColor.white,
+                titleFont: titleFont,
+                descriptionFont: descriptionFont),
+            
+            OnboardingItemInfo(informationImage: UIImage(named: "weather-svg-vect")!,
+                               title: "Location-based Aid",
+                               description: "    Receive recommendations, alerts and personalised solutions    ",
+                               pageIcon: UIImage(named: "weather-svg-vect")!,
+                               color: UIColor(hexString: "#ff9f1c"),   // #E85D75 - 3.5
+                titleColor: UIColor.white,
+                descriptionColor: UIColor.white,
+                titleFont: titleFont,
+                descriptionFont: descriptionFont)
             
             ][index]
     }
