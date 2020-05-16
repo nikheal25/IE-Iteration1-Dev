@@ -12,7 +12,15 @@ class DetailOfDiseaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.imageView.layer.cornerRadius = 15
+        self.imageView.layer.shadowOpacity = 0.4
+        self.imageView.layer.shadowRadius = 1
+        self.infoView.layer.cornerRadius = 15
+        self.infoView.layer.shadowOpacity = 0.4
+        self.infoView.layer.shadowRadius = 1
         
+        
+        self.mainView.backgroundColor = UIColor(hexString: "#3F6845")
         content()
         DescriptionLabel.backgroundColor = UIColor.white
         DescriptionLabel.layer.cornerRadius = 8
@@ -29,13 +37,16 @@ class DetailOfDiseaseViewController: UIViewController {
     
     @IBOutlet weak var DescriptionLabel: UILabel!
     
+    @IBOutlet weak var mainView: UIView!
     
+    @IBOutlet weak var imageView: UIView!
     
+    @IBOutlet weak var infoView: UIView!
     func content()
     {
         if name.isEmpty == false && image.isEmpty == false
         {
-            NameLabel.text = name
+            
             DiseaseImage.image = UIImage(named: image)
             DescriptionLabel.text = detail
             DescriptionLabel.sizeToFit()

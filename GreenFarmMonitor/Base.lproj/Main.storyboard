@@ -268,7 +268,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="66" id="fEY-4m-XBH"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -315,13 +315,14 @@
                     <connections>
                         <outlet property="UIBtn" destination="qmZ-eU-9uP" id="jlG-mU-qgO"/>
                         <outlet property="continueUIBtn" destination="FZi-mg-jg5" id="Xcp-bG-W9Q"/>
+                        <outlet property="introLabel" destination="epw-zg-MMU" id="WuZ-gw-1hm"/>
                         <outlet property="locationText" destination="0Et-gp-JTR" id="7Y1-rV-SLv"/>
                         <outlet property="mapView" destination="BuC-zj-nzL" id="YlP-3g-o7M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aw8-7O-obG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2509" y="440"/>
+            <point key="canvasLocation" x="-1667" y="66"/>
         </scene>
         <!--FirstViewController-->
         <scene sceneID="O9v-aC-QGO">
@@ -567,6 +568,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="MyGarden" id="T71-E0-OmJ">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="location" id="FJW-7G-gu0"/>
                         <barButtonItem key="rightBarButtonItem" title="Add Crop" id="NhA-is-Hdm">
                             <connections>
                                 <action selector="addNewCrop:" destination="DHY-iT-N33" id="z8z-iJ-YX3"/>
@@ -582,7 +584,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hgc-TU-r9b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-965.21739130434787" y="1567.6339285714284"/>
+            <point key="canvasLocation" x="-1709" y="1051"/>
         </scene>
         <!--Grow Crop-->
         <scene sceneID="dCf-E4-mQL">
@@ -841,7 +843,7 @@
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="yiQ-Q6-hV5" customClass="DetailOfTheCropViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ePo-PE-W8y">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WZI-wE-y6t">
@@ -1193,7 +1195,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0S1-i3-ZNc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="114" y="440"/>
+            <point key="canvasLocation" x="583" y="299"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Fw2-vt-6Rf">
@@ -1201,6 +1203,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BDv-er-bsH" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AXQ-pB-8oT">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1234,43 +1237,57 @@
                 <viewController id="CM5-eV-gRe" customClass="DetailOfDiseaseViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N78-xj-Pb4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="vQd-mM-59Y">
-                                <rect key="frame" x="0.0" y="88" width="414" height="252"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4E3-gw-CwA">
-                                <rect key="frame" x="20" y="438" width="374" height="305"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FbD-p1-je8">
+                                <rect key="frame" x="20" y="108" width="374" height="221"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="vQd-mM-59Y">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="221"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="269" id="78z-wf-dJ1"/>
+                                    <constraint firstAttribute="height" constant="221" id="o9s-xD-dhn"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6AO-jT-1ce">
-                                <rect key="frame" x="20" y="371" width="374" height="45"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="69" id="4Da-mF-9mM"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9XN-NB-NJS">
+                                <rect key="frame" x="20" y="337" width="374" height="430"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Symptoms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6AO-jT-1ce">
+                                        <rect key="frame" x="8" y="8" width="358" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="69" id="4Da-mF-9mM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4E3-gw-CwA">
+                                        <rect key="frame" x="8" y="61" width="358" height="305"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="269" id="78z-wf-dJ1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="PL5-j1-wO5" firstAttribute="trailing" secondItem="4E3-gw-CwA" secondAttribute="trailing" constant="20" id="GPz-sf-6VV"/>
-                            <constraint firstItem="6AO-jT-1ce" firstAttribute="leading" secondItem="N78-xj-Pb4" secondAttribute="leadingMargin" id="GoT-I5-SwU"/>
-                            <constraint firstItem="vQd-mM-59Y" firstAttribute="leading" secondItem="PL5-j1-wO5" secondAttribute="leading" id="OKf-fB-ATe"/>
-                            <constraint firstItem="4E3-gw-CwA" firstAttribute="top" secondItem="6AO-jT-1ce" secondAttribute="bottom" constant="34" id="R1C-xu-VPU"/>
-                            <constraint firstItem="6AO-jT-1ce" firstAttribute="top" secondItem="vQd-mM-59Y" secondAttribute="bottom" constant="31" id="Xo6-fM-son"/>
-                            <constraint firstItem="vQd-mM-59Y" firstAttribute="top" secondItem="PL5-j1-wO5" secondAttribute="top" id="dl0-us-cZJ"/>
-                            <constraint firstItem="6AO-jT-1ce" firstAttribute="trailing" secondItem="N78-xj-Pb4" secondAttribute="trailingMargin" id="g2J-Wu-Zbm"/>
-                            <constraint firstItem="4E3-gw-CwA" firstAttribute="leading" secondItem="PL5-j1-wO5" secondAttribute="leading" constant="20" id="hRh-3C-1q8"/>
-                            <constraint firstItem="vQd-mM-59Y" firstAttribute="centerX" secondItem="6AO-jT-1ce" secondAttribute="centerX" id="jrT-C0-Fbc"/>
+                            <constraint firstItem="FbD-p1-je8" firstAttribute="leading" secondItem="PL5-j1-wO5" secondAttribute="leading" constant="20" id="Kky-jA-A2m"/>
+                            <constraint firstItem="FbD-p1-je8" firstAttribute="leading" secondItem="9XN-NB-NJS" secondAttribute="leading" id="PFT-3y-B7y"/>
+                            <constraint firstItem="PL5-j1-wO5" firstAttribute="bottom" secondItem="9XN-NB-NJS" secondAttribute="bottom" constant="46" id="a9u-tb-Bfg"/>
+                            <constraint firstItem="FbD-p1-je8" firstAttribute="trailing" secondItem="9XN-NB-NJS" secondAttribute="trailing" id="esJ-xi-VXj"/>
+                            <constraint firstItem="FbD-p1-je8" firstAttribute="top" secondItem="PL5-j1-wO5" secondAttribute="top" constant="20" id="g8R-cE-R2W"/>
+                            <constraint firstItem="9XN-NB-NJS" firstAttribute="top" secondItem="FbD-p1-je8" secondAttribute="bottom" constant="8" symbolic="YES" id="kXB-eZ-0hj"/>
+                            <constraint firstItem="PL5-j1-wO5" firstAttribute="trailing" secondItem="FbD-p1-je8" secondAttribute="trailing" constant="20" id="pKJ-6N-seY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PL5-j1-wO5"/>
                     </view>
@@ -1279,6 +1296,9 @@
                         <outlet property="DescriptionLabel" destination="4E3-gw-CwA" id="LTA-6T-UFn"/>
                         <outlet property="DiseaseImage" destination="vQd-mM-59Y" id="u5C-eN-GXe"/>
                         <outlet property="NameLabel" destination="6AO-jT-1ce" id="H6A-Ka-xGB"/>
+                        <outlet property="imageView" destination="FbD-p1-je8" id="tYm-LV-njJ"/>
+                        <outlet property="infoView" destination="9XN-NB-NJS" id="kOE-NC-fsu"/>
+                        <outlet property="mainView" destination="N78-xj-Pb4" id="WnY-eb-Lnl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="207-uc-Kfo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1292,6 +1312,7 @@
                     <tabBarItem key="tabBarItem" title="Plant Disease" image="icons8-virus-100" id="Q8H-22-n0O"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kH9-T9-YbH">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1310,6 +1331,7 @@
                     <tabBarItem key="tabBarItem" title="MyGarden" image="icons8-soil-100" id="AGm-Au-5FZ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ffb-7p-e5y">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1319,7 +1341,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hHd-yb-C3J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1041" y="747"/>
+            <point key="canvasLocation" x="-399" y="748"/>
         </scene>
         <!--Forecast-->
         <scene sceneID="naK-mK-4p3">
@@ -1411,7 +1433,7 @@
             <objects>
                 <viewController id="0Ku-Rf-b4l" customClass="PopOverViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aUj-Mh-FzM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Y28-QO-Vfg">
@@ -1470,12 +1492,12 @@
             <objects>
                 <tableViewController storyboardIdentifier="MainTableViewController" title="All Crops" id="auZ-DV-ex4" customClass="FoldingTableViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="618" sectionHeaderHeight="28" sectionFooterHeight="28" id="pF8-XU-PNN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="708"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search for the crop" showsCancelButton="YES" id="4b0-Sy-8gg">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
@@ -1760,6 +1782,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="9MU-u6-o2c"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jpv-zl-IUn">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1776,7 +1799,7 @@
             <objects>
                 <viewController id="xMu-wD-XeD" customClass="GrowMyDetailCropViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1sW-z1-Jn4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cph-kN-eAO">
@@ -2321,7 +2344,7 @@
             <objects>
                 <viewController id="hhe-hS-c5K" customClass="SortByViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="scZ-KU-NYz">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A3A-9u-KPc">
@@ -2423,7 +2446,7 @@
             <objects>
                 <viewController id="ZHU-zq-8rR" customClass="FilterViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nyT-d6-35Y">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mw3-FP-VAr">
@@ -2526,14 +2549,15 @@
         <image name="GROWMY" width="28" height="28"/>
         <image name="Light intensity" width="28" height="28"/>
         <image name="Plant type" width="28" height="28"/>
-        <image name="chevron.down" catalog="system" width="32" height="32"/>
-        <image name="chevron.right" catalog="system" width="32" height="32"/>
+        <image name="chevron.down" catalog="system" width="64" height="36"/>
+        <image name="chevron.right" catalog="system" width="48" height="64"/>
         <image name="frost" width="28" height="28"/>
         <image name="greenHouse-1" width="222" height="333"/>
         <image name="greenHouse-2" width="666.5" height="889"/>
         <image name="icons8-soil-100" width="33" height="33"/>
         <image name="icons8-virus-100" width="33" height="33"/>
         <image name="image" width="16" height="16"/>
+        <image name="location" width="33" height="33"/>
         <image name="moisture" width="28" height="28"/>
         <image name="nutrient requirement" width="28" height="28"/>
         <image name="radio-checked" width="30" height="30"/>

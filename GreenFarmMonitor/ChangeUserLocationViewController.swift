@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
-class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapViewDelegate,UITextFieldDelegate{
+class ChangeUserLocationViewController: UIViewController, DatabaseListener,MKMapViewDelegate,UITextFieldDelegate{
     //database controller
     var listenerType = ListenerType.all
     
@@ -39,19 +39,20 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
                    }
         if LocationList.first?.coordinate == nil
                 {
-                    self.locationText.placeholder = "Add your farm here"
+                    self.locationText.placeholder = "Add location of garden here"
                     self.UIBtn.setTitle("Add", for:.normal)
                   
                 }
                 else
                 {
                     mapView.removeAnnotations(mapView.annotations)
-                    self.locationText.placeholder = "Change your farm here"
+                    self.locationText.placeholder = "Enter new garden here"
                     self.UIBtn.setTitle("Change", for:.normal)
 //                    self.locationText.placeholder = "Add your farm here"
 //                    self.UIBtn.setTitle("Add", for:.normal)
                     self.mapView.addAnnotations(LocationList)
                     self.focusOn(annotation: LocationList.first!)
+                    self.introLabel.text = "Change your location here."
                     
                              }
         
@@ -59,6 +60,8 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+//        self.navigationItem.hidesBackButton = true
+//        self.navigationController!.navigationBar.isTranslucent = true
         databaseController?.addListener(listener: self)
     }
     override func viewWillDisappear(_ animated: Bool) {
@@ -70,6 +73,7 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
   
     
 
+    @IBOutlet weak var introLabel: UILabel!
     var LocationList = [LocationAnnotation]()
     
     weak var userDefaultController: UserdefaultsProtocol?
@@ -92,12 +96,10 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
         
         self.locationText.delegate = self
         //zoom to australia
+       
         let Australia = CLLocation(latitude: -25.2744, longitude: 133.7751)
         let zoomRegion = MKCoordinateRegion(center: Australia.coordinate, latitudinalMeters: 5000000,longitudinalMeters: 5000000)
         mapView.setRegion(zoomRegion, animated: true)
-        
-        
-        
         newUserId = (self.userDefaultController?.generateUniqueUserId())!
     }
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
@@ -135,7 +137,7 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
             
         }
         else
-        {
+        {//convert to coordinate
         let currentUserId = userDefaultController?.retrieveUserId()
         let geoCoder = CLGeocoder()
         geoCoder.geocodeAddressString(address!)
@@ -164,16 +166,16 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
                       
             if self.australiaMarks.count != 0{
            
-            
+            let result = self.australiaMarks.first
+                                     
+                                     
+                                     
+            let location = LocationAnnotation(newTitle: "New farm", lat: (result?.location!.coordinate.latitude)!, long: (result?.location!.coordinate.longitude)!)
+            let lat = String(location.coordinate.latitude)
+            let long = String(location.coordinate.longitude)
             if self.LocationList.count == 0
             {
-               let result = self.australiaMarks.first
-                          
-                          
-                          
-                          let location = LocationAnnotation(newTitle: "New farm", lat: (result?.location!.coordinate.latitude)!, long: (result?.location!.coordinate.longitude)!)
-                          let lat = String(location.coordinate.latitude)
-                          let long = String(location.coordinate.longitude)
+              
                           
                 let newUser = User(userId: self.newUserId, userName: "TestUser", farmLocationName: "New farm", farmLat: lat, farmLong: long)
                      
@@ -181,7 +183,7 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
                 let successStatus = self.databaseController?.insertNewUserToFirebase(user: newUser)
                      if successStatus! {
                         self.userDefaultController?.assignName(name: newUser.userName)
-                        self.displayMessage(title: "Add to database", message: "Successfully!")
+                        self.displayMessage(title: "Location saved", message: "Successfully!")
                         self.userDefaultController?.assignCLLocation(lat: lat, long: long)
                 }
                 
@@ -190,13 +192,13 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
                
                     
                     
-                let lat = String(self.mapView.annotations.first!.coordinate.latitude)
-                let long = String(self.mapView.annotations.first!.coordinate.longitude)
+        
                
                     self.databaseController!.updateLocation(userId:currentUserId!, lat: lat ,locationName: "New farm", long: long)
 //            self.mapView.removeAnnotations(self.mapView.annotations)
-                    self.displayMessage(title: "Change database", message: "Successfully!")
+                    self.displayMessage(title: "Location saved", message: "Successfully!")
                     self.userDefaultController?.assignCLLocation(lat: lat, long: long)
+                
 //            self.mapView.addAnnotation(location)
 //            self.focusOn(annotation:location)
                     
@@ -221,7 +223,25 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
     
   
     @IBAction func continueBtn(_ sender: Any) {
-        displayContinueMessage(title: "Continue", message: "Do you ensure current location?")
+       
+        if self.LocationList.count == 0
+        {
+            
+            
+            let lat:String = "-37.8136"
+            let long:String = "144.9631"
+            let newUser = User(userId: self.newUserId, userName: "TestUser", farmLocationName: "New farm", farmLat: lat, farmLong: long)
+                               
+                               // default user
+                          let successStatus = self.databaseController?.insertNewUserToFirebase(user: newUser)
+                               if successStatus! {
+                                self.userDefaultController?.assignName(name: newUser.userName)
+                                self.userDefaultController?.assignCLLocation(lat: lat, long: long)
+                          }
+            
+            
+        }
+         
         
         
     }
@@ -266,19 +286,19 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
         let lat = annotation.coordinate.latitude
         let long = annotation.coordinate.longitude
         let address = CLGeocoder.init()
-        
+        // convert to text
         address.reverseGeocodeLocation(CLLocation.init(latitude: lat, longitude:long)) { (placemarks, error) in
             if error == nil{
                   let pm = placemarks! as [CLPlacemark]
 
                             if pm.count > 0 {
                                 let pm = placemarks![0]
-                //                print(pm.country)
-                //                print(pm.locality)
-                //                print(pm.subLocality)
-                //                print(pm.thoroughfare)
-                //                print(pm.postalCode)
-                //                print(pm.subThoroughfare)
+                                print(pm.country)
+                                print(pm.locality)
+                                print(pm.subLocality)
+                                print(pm.thoroughfare)
+                                print(pm.postalCode)
+                                print(pm.subThoroughfare)
                                 
                                 var addressString : String = ""
                                 if pm.subThoroughfare != nil {
@@ -290,11 +310,12 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
                                 if pm.thoroughfare != nil {
                                     addressString = addressString + pm.thoroughfare! + ", "
                                 }
-                                if pm.postalCode != nil {
-                                    addressString = addressString + pm.postalCode! + ", "
-                                }
+                               
                                 if pm.locality != nil {
                                     addressString = addressString + pm.locality! + ", "
+                                }
+                                if pm.postalCode != nil {
+                                    addressString = addressString + pm.postalCode! + ", "
                                 }
                                 if pm.country != nil {
                                     addressString = addressString + pm.country!
@@ -324,21 +345,21 @@ class ChangeUserLocationViewController: UIViewController,DatabaseListener,MKMapV
         self.present(alertController,animated: true,completion: nil)
         
     }
-    func displayContinueMessage(title:String, message:String)
-    {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-        alertController.addAction(UIAlertAction(title: "Yes", style:UIAlertAction.Style.default)
-        {
-            (UIAlertAction) -> Void in
-            if self.LocationList.count == 0{
-                self.displayMessage(title: "Warning!", message: "You must enter you farm location.")
-                
-            }else
-            {
-                self.performSegue(withIdentifier: "continueSegue", sender: self)}
-        } )
-        alertController.addAction(UIAlertAction(title: "No", style:UIAlertAction.Style.default , handler:nil) )
-        self.present(alertController,animated: true,completion: nil)
-        
-    }
+//    func displayContinueMessage(title:String, message:String)
+//    {
+//        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+//        alertController.addAction(UIAlertAction(title: "Yes", style:UIAlertAction.Style.default)
+//        {
+//            (UIAlertAction) -> Void in
+//            if self.LocationList.count == 0{
+//                self.displayMessage(title: "Warning!", message: "You must enter you farm location.")
+//
+//            }else
+//            {
+//                self.performSegue(withIdentifier: "continueSegue", sender: self)}
+//        } )
+//        alertController.addAction(UIAlertAction(title: "No", style:UIAlertAction.Style.default , handler:nil) )
+//        self.present(alertController,animated: true,completion: nil)
+//
+//    }
 }

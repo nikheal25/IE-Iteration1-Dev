@@ -137,7 +137,12 @@ class WeatherAPI: NSObject, APIProtocol {
                 
                 let json = try JSONSerialization.jsonObject(with: data!, options: [])as? [String: Any]
                print(json)
+                let lat = json!["lat"]as! Double
+                let long = json!["lon"]as! Double
+                print(lat)
+                print(long)
                 let jsonP = json!["data"] as! NSArray
+                
                 for dailydata in jsonP
                 {
                       let maxtemp = (dailydata as AnyObject).value(forKey: "max_temp") as! Double
@@ -145,7 +150,7 @@ class WeatherAPI: NSObject, APIProtocol {
                       let date = (dailydata as AnyObject).value(forKey: "datetime") as! String
                       let precip = (dailydata as AnyObject).value(forKey: "precip") as! Double
                     
-                    self.weather.append(Weather(maxtemp: maxtemp, mintemp: mintemp, date: date, precip: precip))
+                    self.weather.append(Weather(maxtemp: maxtemp, mintemp: mintemp, date: date, precip: precip, lat: String(lat) , long: String(long)))
 //                    print (self.weather)
                     
                 }
