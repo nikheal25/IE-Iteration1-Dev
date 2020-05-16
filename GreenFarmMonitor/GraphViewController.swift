@@ -274,14 +274,14 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
         let linePlot = LinePlot(identifier: "rainOne")
         
         linePlot.lineWidth = 2
-        linePlot.lineColor = UIColor.colorFromHex(hexString: "#777777")
+        linePlot.lineColor = UIColor.colorFromHex(hexString: "#345995") // - 777777
         linePlot.lineStyle = ScrollableGraphViewLineStyle.smooth
         
         linePlot.shouldFill = true
         linePlot.fillType = ScrollableGraphViewFillType.gradient
         linePlot.fillGradientType = ScrollableGraphViewGradientType.linear
-        linePlot.fillGradientStartColor = UIColor.colorFromHex(hexString: "#555555")
-        linePlot.fillGradientEndColor = UIColor.colorFromHex(hexString: "#444444")
+        linePlot.fillGradientStartColor = UIColor.colorFromHex(hexString: "#16aafc")
+        linePlot.fillGradientEndColor = UIColor.colorFromHex(hexString: "#CCDDE2") // -444444
         //        linePlot.fillColor = UIColor.colorFromHex(hexString: "#16aafc").withAlphaComponent(0.5)
         //
         linePlot.adaptAnimationType = ScrollableGraphViewAnimationType.elastic
@@ -290,7 +290,7 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
         //Second
         let dotPlot = DotPlot(identifier: "rainOne") // Add dots as well.
         dotPlot.dataPointSize = 2
-        dotPlot.dataPointFillColor = UIColor.white
+        dotPlot.dataPointFillColor = UIColor.black
         
         dotPlot.adaptAnimationType = ScrollableGraphViewAnimationType.elastic
         
