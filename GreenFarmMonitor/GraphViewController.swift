@@ -94,6 +94,7 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
             firstGraphView.isHidden = false
             secondGraph.isHidden = true
             subtitileLabel.text = "Between red lines is the feasible temperature range \n Green line is the predicted temperature"
+            mainLabel.text = "The feasible range to grow \(specificCrop!.cropName) is between \(specificCrop!.minTemp)℃ - \(specificCrop!.maxTemp)℃.\nYou will also receive alerts if the actual temperature is beyond this range. "
             if tempFlag == false {
                 showTempGraph()
                 tempFlag = true
@@ -104,7 +105,8 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
             //Hide and unhide the bars
             firstGraphView.isHidden = true
             secondGraph.isHidden = false
-            subtitileLabel.text = "Area represents the precipitation prediction"
+            subtitileLabel.text = "Area represents the rainfall prediction"
+            mainLabel.text = "The required rainfall to grow \(specificCrop!.cropName) is \(specificCrop!.Water_Needs).\nYou will also receive alerts if the actual rainfall(mm) is beyond this range. "
             if rainFlag == false {
                 secondGraph.rangeMax = rangeRainMaxValue
                 secondGraph.rangeMin = rangeRainMinValue
@@ -148,6 +150,8 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
         
         allWeather = weatherAPI!.weather
         let totalPredictedDays = allWeather.count
+        
+        mainLabel.text = "The feasible range to grow \(specificCrop!.cropName) is between \(specificCrop!.minTemp)℃ - \(specificCrop!.maxTemp)℃.\nYou will also receive alerts if the actual temperature is beyond this range. "
         
         if specificCrop != nil && totalPredictedDays > 10 {
             //set total values on the graph

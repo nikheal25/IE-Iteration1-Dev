@@ -17,6 +17,9 @@
         <array key="OpenSans-Semibold.ttf">
             <string>OpenSans-Semibold</string>
         </array>
+        <array key="SFProText-Regular.ttf">
+            <string>SFProText-Regular</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Crops-->
@@ -567,7 +570,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="MyGarden" id="T71-E0-OmJ">
-                        <barButtonItem key="rightBarButtonItem" title="Add Crop" id="NhA-is-Hdm">
+                        <barButtonItem key="rightBarButtonItem" title="Add MyPlant" id="NhA-is-Hdm">
                             <connections>
                                 <action selector="addNewCrop:" destination="DHY-iT-N33" id="z8z-iJ-YX3"/>
                             </connections>
@@ -1365,14 +1368,14 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ZN-ec-Xhz">
-                                <rect key="frame" x="20" y="453" width="374" height="23"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <rect key="frame" x="20" y="453" width="374" height="18"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue line represents actual temperature prediction" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdY-GR-D7q">
                                 <rect key="frame" x="20" y="351" width="374" height="12"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="10"/>
                                 <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1468,10 +1471,10 @@
             </objects>
             <point key="canvasLocation" x="-3655.0724637681164" y="1863.6160714285713"/>
         </scene>
-        <!--All Crops-->
+        <!--Add MyPlant-->
         <scene sceneID="5RK-j0-OTk">
             <objects>
-                <tableViewController storyboardIdentifier="MainTableViewController" title="All Crops" id="auZ-DV-ex4" customClass="FoldingTableViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MainTableViewController" title="Add MyPlant" id="auZ-DV-ex4" customClass="FoldingTableViewController" customModule="FarmCommunity_Together" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="618" sectionHeaderHeight="28" sectionFooterHeight="28" id="pF8-XU-PNN">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="708"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1716,6 +1719,7 @@
                                 <connections>
                                     <outlet property="addToButton" destination="Y6H-1m-3aI" id="Ohe-Ju-aVq"/>
                                     <outlet property="barView" destination="6HJ-hS-EeR" id="mXU-Jy-W9E"/>
+                                    <outlet property="bottomMostLabel" destination="SBq-Gv-yRx" id="dVt-bv-fmU"/>
                                     <outlet property="compatibleButton" destination="TnA-JY-nhP" id="KF5-TC-U38"/>
                                     <outlet property="compatibleCropLabel" destination="8B4-uo-qNI" id="QJr-49-Y02"/>
                                     <outlet property="containerView" destination="Jaq-VL-v0N" id="pVJ-Gr-lg7"/>
@@ -2157,7 +2161,8 @@
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oh0-wG-qRS">
                                                         <rect key="frame" x="15" y="598" width="343" height="30"/>
-                                                        <state key="normal" title="View Fertilisers   "/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                        <state key="normal" title="View Fertiliser Requirement"/>
                                                         <connections>
                                                             <segue destination="oRy-rW-0vl" kind="show" identifier="fertiliserSegue" id="mJ4-GP-Q9y"/>
                                                         </connections>

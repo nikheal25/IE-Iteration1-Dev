@@ -23,6 +23,7 @@ class DemoTableViewCell: FoldingCell {
     
     var specificCrop: Crop?
     var companionCrop: Crop?
+    @IBOutlet weak var bottomMostLabel: UILabel!
     
     @IBOutlet weak var barView: UIView!
     @IBOutlet weak var compatibleButton: UIButton!
@@ -88,7 +89,7 @@ class DemoTableViewCell: FoldingCell {
         }
         self.compatibleButton.titleLabel?.minimumScaleFactor = 0.01
         self.compatibleButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        self.compatibleCropLabel.text = "This crop grows best with \(companionCrop.All_Compatible_plants)"
+        self.compatibleCropLabel.text = "This crop grows best with \(crop.Compatible_plant), \(companionCrop.All_Compatible_plants)"
         self.compatibleCropLabel.adjustsFontSizeToFitWidth = true
         self.compatibleCropLabel.minimumScaleFactor = 0.5
     }
