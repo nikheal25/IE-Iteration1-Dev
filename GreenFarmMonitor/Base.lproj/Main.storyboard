@@ -2281,36 +2281,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uKx-uz-iEL">
-                                <rect key="frame" x="20" y="103" width="374" height="695"/>
+                                <rect key="frame" x="20" y="343" width="374" height="455"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OCc-Qv-pyL">
-                                        <rect key="frame" x="5" y="5" width="364" height="225"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="225" id="wGo-89-HSM"/>
-                                        </constraints>
-                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ym9-rE-JJD">
-                                        <rect key="frame" x="20" y="270" width="334" height="18"/>
+                                        <rect key="frame" x="15" y="30" width="344" height="18"/>
                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Ym9-rE-JJD" firstAttribute="leading" secondItem="uKx-uz-iEL" secondAttribute="leading" constant="20" id="HuO-Uu-wI6"/>
-                                    <constraint firstAttribute="trailing" secondItem="Ym9-rE-JJD" secondAttribute="trailing" constant="20" id="O21-yH-FWW"/>
-                                    <constraint firstItem="OCc-Qv-pyL" firstAttribute="top" secondItem="uKx-uz-iEL" secondAttribute="top" constant="5" id="aAL-Jg-qKy"/>
-                                    <constraint firstAttribute="trailing" secondItem="OCc-Qv-pyL" secondAttribute="trailing" constant="5" id="ac9-kO-2nK"/>
-                                    <constraint firstItem="OCc-Qv-pyL" firstAttribute="leading" secondItem="uKx-uz-iEL" secondAttribute="leading" constant="5" id="qfX-N3-cDE"/>
-                                    <constraint firstItem="Ym9-rE-JJD" firstAttribute="top" secondItem="OCc-Qv-pyL" secondAttribute="bottom" constant="40" id="y3z-ES-v0f"/>
+                                    <constraint firstItem="Ym9-rE-JJD" firstAttribute="centerX" secondItem="uKx-uz-iEL" secondAttribute="centerX" id="DS5-IW-Jo9"/>
+                                    <constraint firstItem="Ym9-rE-JJD" firstAttribute="leading" secondItem="uKx-uz-iEL" secondAttribute="leading" constant="15" id="SjA-26-pjc"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ym9-rE-JJD" secondAttribute="trailing" constant="15" id="TXk-ki-wPE"/>
+                                    <constraint firstItem="Ym9-rE-JJD" firstAttribute="top" secondItem="uKx-uz-iEL" secondAttribute="top" constant="30" id="xxU-MW-E4k"/>
                                 </constraints>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OCc-Qv-pyL">
+                                <rect key="frame" x="20" y="103" width="374" height="225"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="225" id="CBD-7B-xqr"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="uKx-uz-iEL" firstAttribute="top" secondItem="hrH-an-78W" secondAttribute="top" constant="15" id="6Da-c9-FBT"/>
+                            <constraint firstItem="OCc-Qv-pyL" firstAttribute="leading" secondItem="hrH-an-78W" secondAttribute="leading" constant="20" id="8Ie-vR-PcA"/>
+                            <constraint firstItem="OCc-Qv-pyL" firstAttribute="top" secondItem="hrH-an-78W" secondAttribute="top" constant="15" id="AMs-Hk-ESJ"/>
                             <constraint firstItem="hrH-an-78W" firstAttribute="bottom" secondItem="uKx-uz-iEL" secondAttribute="bottom" constant="15" id="DSS-Z3-thw"/>
                             <constraint firstItem="uKx-uz-iEL" firstAttribute="leading" secondItem="hrH-an-78W" secondAttribute="leading" constant="20" id="LkZ-9G-QN5"/>
+                            <constraint firstItem="hrH-an-78W" firstAttribute="trailing" secondItem="OCc-Qv-pyL" secondAttribute="trailing" constant="20" id="Q4y-Z0-O6e"/>
+                            <constraint firstItem="uKx-uz-iEL" firstAttribute="top" secondItem="OCc-Qv-pyL" secondAttribute="bottom" constant="15" id="mDD-gi-9oc"/>
                             <constraint firstItem="hrH-an-78W" firstAttribute="trailing" secondItem="uKx-uz-iEL" secondAttribute="trailing" constant="20" id="nfF-w2-9ZR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hrH-an-78W"/>
@@ -2557,6 +2558,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="0BZ-rP-Cky"/>
-        <segue reference="moI-cp-Hmg"/>
+        <segue reference="DcB-GX-sFl"/>
     </inferredMetricsTieBreakers>
 </document>
