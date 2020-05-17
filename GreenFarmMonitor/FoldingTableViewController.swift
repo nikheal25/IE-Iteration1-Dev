@@ -47,30 +47,30 @@ class FoldingTableViewController: UITableViewController, UIPopoverPresentationCo
         let view = MessageView.viewFromNib(layout: .cardView)
         
         var config = SwiftMessages.Config()
-
+        
         // Slide up from the bottom.
-//        config.presentationStyle = .bottom
+        //        config.presentationStyle = .bottom
         config.duration = .seconds(seconds: 0.8)
-
+        
         // Theme message elements with the warning style.
         //.success OR .warning OR .info OR .error
         view.configureTheme(.success)
-
+        
         // Add a drop shadow.
         view.configureDropShadow()
-
+        
         // Set message title, body, and icon. Here, we're overriding the default warning
         // image with an emoji character.
         let iconText = ["😄", "🌿", "🔝", "🆎"]
         view.configureContent(title: title, body: message, iconImage: nil, iconText: iconText[iconIndex], buttonImage: nil, buttonTitle: "Great", buttonTapHandler: nil)
-
+        
         // Increase the external margin around the card. In general, the effect of this setting
         // depends on how the given layout is constrained to the layout margins.
         view.layoutMarginAdditions = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
-
+        
         // Reduce the corner radius (applicable to layouts featuring rounded corners).
         (view.backgroundView as? CornerRoundingView)?.cornerRadius = 10
-
+        
         // Show the message.
         SwiftMessages.show(config: config, view: view)
     }
@@ -101,9 +101,38 @@ class FoldingTableViewController: UITableViewController, UIPopoverPresentationCo
         // Do any additional setup after
         
         setup()
-        recommendedCrops = (api?.apiRecommendedCrop(lat: "182", long: "154"))!
+        var latitude = "-37.840"
+        var longitude = "144.94"
+        if let latitudeOne = userDefaultController?.retriveLat() {
+            latitude = latitudeOne
+        }
+        if let longitudeTwo = userDefaultController?.retriveLong() {
+            longitude = longitudeTwo
+        }
+        recommendedCrops = ((api?.apiRecommendedCrop(lat: latitude, long: longitude))!)
+        print(recommendedCrops)
+        //        do{
+        //            sleep(2)
+        //        }
         
+        let concurrentQueue = DispatchQueue(label: "com.some.concurrentQueue", attributes: .concurrent)
+        
+        concurrentQueue.async {
+            do{
+                print("1")
+                do{
+                    sleep(3)
+                }
+                self.recommendedCrops = self.api!.recomendedCrops
+                print("2")
+                print(self.recommendedCrops)
+            }
+        }
+        
+        print("4")
     }
+    
+    
     
     func getRelevantCrops() -> [Crop] {
         let allCrops = databaseController!.cropsList
@@ -118,7 +147,7 @@ class FoldingTableViewController: UITableViewController, UIPopoverPresentationCo
     }
     
     func recommendedCrop() -> [Crop] {
-      var tempCrops: [Crop] = []
+        var tempCrops: [Crop] = []
         
         for crop in allCropsName {
             if recommendedCrops.contains(crop.cropName) {
