@@ -64,6 +64,11 @@ class FirstViewController: UIViewController {
         let player: AVPlayerItem = notification.object as! AVPlayerItem
         player.seek(to: CMTime.zero)
     }
-    
 
+}
+
+extension UIViewController{
+    func getFont() -> UIFont {
+        return UIFont(name: "SFProText-Regular", size: 17.0) ?? UIFont.boldSystemFont(ofSize: 17.0)
+    }
 }

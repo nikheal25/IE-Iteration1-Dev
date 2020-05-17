@@ -19,7 +19,7 @@ class FertilixerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        fertiliserLabel.font = FontHandler.getRegularFont()
         setInfoView()
         mainView.backgroundColor = UIColor(hexString: "#3F6845")
         self.cropImageView.image = UIImage(named: specificCrop!.cropImage)

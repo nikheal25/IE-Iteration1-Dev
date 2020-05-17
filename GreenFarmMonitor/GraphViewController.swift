@@ -144,6 +144,7 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.mainLabel.font = FontHandler.getRegularFont()
         self.title = specificCrop?.cropName
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         weatherAPI = appDelegate.weatherAPI

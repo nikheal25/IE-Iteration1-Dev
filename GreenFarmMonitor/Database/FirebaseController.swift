@@ -30,7 +30,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
     func insertNewUserToFirebase(user: User) -> Bool {
         // Add a new document in collection "user"
         var returnVal = true
-        database.collection("Users").document(user.userId).setData([
+        database.collection("UsersOne").document(user.userId).setData([
             "userName": user.userName,
             "userId": user.userId,
             "farmLong": user.farmLong,
@@ -173,7 +173,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
             self.parseDiseaseSnapshot(snapshot: querySnapshot!)
         }
         //User
-        userRef = database.collection("Users")
+        userRef = database.collection("UsersOne")
         userRef?.addSnapshotListener { querySnapshot, error in
             guard (querySnapshot?.documents) != nil else {
                 print("Error fetching documents: \(error!)")
@@ -461,7 +461,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
     func updateLocation(userId:String, lat:String, locationName:String, long:String)
     {
         
-        database.collection("Users").document(userId).updateData([
+        database.collection("UsersOne").document(userId).updateData([
             "farmLat":lat,
             "farmLocationName":locationName,
             "farmLong":long

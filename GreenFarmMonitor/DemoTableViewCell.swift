@@ -49,6 +49,8 @@ class DemoTableViewCell: FoldingCell {
     
     func setUp(crop: Crop, companionCrop: Crop) {
         
+        //
+        cropLabel.font = FontHandler.getRegularFont()
         // Change the color of Top bar - START
         self.barView.backgroundColor = UIColor(hexString: "#243119")
         self.barView.superview?.backgroundColor = UIColor(hexString: "#243119")
