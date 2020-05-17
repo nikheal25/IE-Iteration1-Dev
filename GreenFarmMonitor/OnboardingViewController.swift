@@ -86,10 +86,10 @@ class OnboardingViewController: UIViewController, PaperOnboardingDataSource {
                 titleFont: titleFont,
                 descriptionFont: descriptionFont),
             
-            OnboardingItemInfo(informationImage: UIImage(named: "weather-svg-vect")!,
+            OnboardingItemInfo(informationImage: UIImage(named: "Days to maturity")!,
                                title: "Disease Identification",
                                description: "    Identify common diseases and symptoms    ",
-                               pageIcon: UIImage(named: "Shopping-cart")!,
+                               pageIcon: UIImage(named: "Days to maturity")!,
                                color: UIColor(hexString: "#f7934c"),   // #E85D75 - 3.5
                 titleColor: UIColor.white,
                 descriptionColor: UIColor.white,
