@@ -691,7 +691,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WEj-q3-YBB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Know MyCrops" id="aVU-ZV-Zbk"/>
+                    <navigationItem key="navigationItem" title="Know MyPlants" id="aVU-ZV-Zbk"/>
                     <connections>
                         <outlet property="headerLabel" destination="Rs6-zf-7Rb" id="Hly-yb-Nhk"/>
                         <outlet property="tableView" destination="bXN-Pb-1M8" id="jbN-zV-RAM"/>
@@ -1485,7 +1485,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search for the crop" showsCancelButton="YES" id="4b0-Sy-8gg">
-                            <rect key="frame" x="0.0" y="0.0" width="786" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>

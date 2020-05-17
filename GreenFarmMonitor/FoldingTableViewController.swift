@@ -92,9 +92,9 @@ class FoldingTableViewController: UITableViewController, UIPopoverPresentationCo
         soilFilter = "Please select"
         
         //Looks for single or multiple taps.
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-
-        view.addGestureRecognizer(tap)
+//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+//
+//        self.addGestureRecognizer(tap)
         
         super.viewDidLoad()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -338,6 +338,10 @@ extension FoldingTableViewController {
 }
 
 extension FoldingTableViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
     
     func filterCells(term: String) -> [Crop] {
         var tempCrops: [Crop] = []
