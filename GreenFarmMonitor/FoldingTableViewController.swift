@@ -80,12 +80,21 @@ class FoldingTableViewController: UITableViewController, UIPopoverPresentationCo
     weak var api: APIProtocol?
     var recommendedCrops: [String] = []
     
+//    @objc override func dismissKeyboard() {
+//        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+//        view.endEditing(true)
+//    }
     // MARK: Life Cycle
     override func viewDidLoad() {
         //MARK:- Change sorting schema
         sortingSchema = 2
         plantFilter = "Please select"
         soilFilter = "Please select"
+        
+        //Looks for single or multiple taps.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+
+        view.addGestureRecognizer(tap)
         
         super.viewDidLoad()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
