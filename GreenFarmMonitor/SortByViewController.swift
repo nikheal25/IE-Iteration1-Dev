@@ -43,7 +43,7 @@ class SortByViewController: UIViewController {
     
     @IBAction func recommendedClicked(_ sender: UIButton) {
         if sender.isSelected {
-            sender.isSelected = false
+//            sender.isSelected = false
         } else {
             sender.isSelected = true
             alphabeticalButton.isSelected = false
@@ -52,7 +52,7 @@ class SortByViewController: UIViewController {
     
     @IBAction func alphabeticalClicked(_ sender: UIButton) {
         if sender.isSelected {
-            sender.isSelected = false
+//            sender.isSelected = false
         } else {
             sender.isSelected = true
             recommendedButton.isSelected = false
