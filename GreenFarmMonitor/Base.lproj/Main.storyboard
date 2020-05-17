@@ -329,7 +329,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aw8-7O-obG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1667" y="66"/>
+            <point key="canvasLocation" x="-1222" y="-276"/>
         </scene>
         <!--FirstViewController-->
         <scene sceneID="O9v-aC-QGO">
@@ -557,7 +557,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="MyGarden" id="T71-E0-OmJ">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="location" id="FJW-7G-gu0"/>
                         <barButtonItem key="rightBarButtonItem" title="Add MyPlant" id="NhA-is-Hdm">
                             <connections>
                                 <action selector="addNewCrop:" destination="DHY-iT-N33" id="z8z-iJ-YX3"/>
@@ -1373,7 +1372,7 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ZN-ec-Xhz">
-                                <rect key="frame" x="20" y="453" width="374" height="17.5"/>
+                                <rect key="frame" x="20" y="453" width="374" height="18"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1415,7 +1414,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RD5-5f-Gxa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3071.0144927536235" y="1133.7053571428571"/>
+            <point key="canvasLocation" x="-4225" y="1630"/>
         </scene>
         <!--Pop Over View Controller-->
         <scene sceneID="Yuz-80-05S">
@@ -1652,7 +1651,7 @@
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This crops grows best with" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBq-Gv-yRx">
-                                                            <rect key="frame" x="20" y="164" width="520" height="12"/>
+                                                            <rect key="frame" x="20" y="164" width="520" height="14"/>
                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
                                                             <color key="textColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="0.49546030410000003" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -2284,7 +2283,7 @@
                                 <rect key="frame" x="20" y="343" width="374" height="455"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ym9-rE-JJD">
-                                        <rect key="frame" x="15" y="30" width="344" height="17.5"/>
+                                        <rect key="frame" x="15" y="30" width="344" height="18"/>
                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -2546,7 +2545,6 @@
         <image name="icons8-soil-100" width="33" height="33"/>
         <image name="icons8-virus-100" width="33" height="33"/>
         <image name="image" width="16" height="16"/>
-        <image name="location" width="33" height="33"/>
         <image name="moisture" width="28" height="28"/>
         <image name="nutrient requirement" width="28" height="28"/>
         <image name="radio-checked" width="30" height="30"/>

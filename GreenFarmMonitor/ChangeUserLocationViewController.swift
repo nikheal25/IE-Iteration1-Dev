@@ -52,7 +52,7 @@ class ChangeUserLocationViewController: UIViewController, DatabaseListener,MKMap
 //                    self.UIBtn.setTitle("Add", for:.normal)
                     self.mapView.addAnnotations(LocationList)
                     self.focusOn(annotation: LocationList.first!)
-                    self.introLabel.text = "Change your location here."
+                   
                     
                              }
         
