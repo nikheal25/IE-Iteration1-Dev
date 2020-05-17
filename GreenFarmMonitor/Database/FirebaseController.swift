@@ -142,7 +142,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
         
         
         //Crop
-        cropRef = database.collection("cropsCompatibleTwo")
+        cropRef = database.collection("cropsCompatibleFinal")
         cropRef?.order(by: "date", descending: false)
         cropRef?.addSnapshotListener { querySnapshot, error in
             guard (querySnapshot?.documents) != nil else {
