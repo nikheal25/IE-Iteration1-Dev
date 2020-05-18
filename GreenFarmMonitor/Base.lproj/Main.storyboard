@@ -1383,20 +1383,30 @@
                                 <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="du3-FR-kAU">
+                                <rect key="frame" x="20" y="503.5" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="7ZN-ec-Xhz" firstAttribute="centerX" secondItem="4R9-Qc-v3i" secondAttribute="centerX" id="3tq-nA-fwY"/>
                             <constraint firstItem="oDm-5e-yYt" firstAttribute="top" secondItem="pdY-GR-D7q" secondAttribute="bottom" constant="10" id="9DD-IE-I7N"/>
+                            <constraint firstItem="du3-FR-kAU" firstAttribute="leading" secondItem="gQy-g3-gwD" secondAttribute="leading" constant="20" id="DUO-Tb-G3N"/>
                             <constraint firstItem="oDm-5e-yYt" firstAttribute="trailing" secondItem="7ZN-ec-Xhz" secondAttribute="trailing" id="Jaw-ta-ofD"/>
                             <constraint firstItem="7ZN-ec-Xhz" firstAttribute="leading" secondItem="gQy-g3-gwD" secondAttribute="leading" constant="20" id="L1O-T9-f5y"/>
+                            <constraint firstItem="du3-FR-kAU" firstAttribute="centerX" secondItem="4R9-Qc-v3i" secondAttribute="centerX" id="NU2-EJ-vpR"/>
                             <constraint firstItem="pdY-GR-D7q" firstAttribute="centerX" secondItem="4R9-Qc-v3i" secondAttribute="centerX" id="RTT-eR-l7q"/>
                             <constraint firstItem="Jm3-Rg-0qf" firstAttribute="trailing" secondItem="gQy-g3-gwD" secondAttribute="trailing" id="TPG-GD-Keo"/>
                             <constraint firstItem="pdY-GR-D7q" firstAttribute="leading" secondItem="gQy-g3-gwD" secondAttribute="leading" constant="20" id="UqR-yW-nAg"/>
                             <constraint firstItem="oDm-5e-yYt" firstAttribute="top" secondItem="Jm3-Rg-0qf" secondAttribute="bottom" constant="50" id="V54-Il-Utf"/>
                             <constraint firstItem="oDm-5e-yYt" firstAttribute="leading" secondItem="7ZN-ec-Xhz" secondAttribute="leading" id="YSU-nQ-HaE"/>
+                            <constraint firstItem="gQy-g3-gwD" firstAttribute="trailing" secondItem="du3-FR-kAU" secondAttribute="trailing" constant="20" id="bv3-iW-EfS"/>
                             <constraint firstItem="gQy-g3-gwD" firstAttribute="trailing" secondItem="pdY-GR-D7q" secondAttribute="trailing" constant="20" id="dkw-MQ-LIp"/>
                             <constraint firstItem="Jm3-Rg-0qf" firstAttribute="leading" secondItem="gQy-g3-gwD" secondAttribute="leading" id="j5N-NC-zjN"/>
+                            <constraint firstItem="du3-FR-kAU" firstAttribute="top" secondItem="7ZN-ec-Xhz" secondAttribute="bottom" constant="30" id="l6j-vA-yft"/>
                             <constraint firstItem="gQy-g3-gwD" firstAttribute="trailing" secondItem="7ZN-ec-Xhz" secondAttribute="trailing" constant="20" id="peg-Xu-6sC"/>
                             <constraint firstItem="Jm3-Rg-0qf" firstAttribute="top" secondItem="gQy-g3-gwD" secondAttribute="top" constant="10" id="uQx-5S-ERR"/>
                             <constraint firstItem="Jm3-Rg-0qf" firstAttribute="centerX" secondItem="4R9-Qc-v3i" secondAttribute="centerX" id="x7z-aL-qvL"/>
@@ -1485,7 +1495,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search for the crop" showsCancelButton="YES" id="4b0-Sy-8gg">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="786" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
@@ -1651,7 +1661,7 @@
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This crops grows best with" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBq-Gv-yRx">
-                                                            <rect key="frame" x="20" y="164" width="520" height="14"/>
+                                                            <rect key="frame" x="20" y="164" width="520" height="12"/>
                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
                                                             <color key="textColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="0.49546030410000003" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -2283,7 +2293,7 @@
                                 <rect key="frame" x="20" y="343" width="374" height="455"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ym9-rE-JJD">
-                                        <rect key="frame" x="15" y="30" width="344" height="20.5"/>
+                                        <rect key="frame" x="15" y="30" width="344" height="20"/>
                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
