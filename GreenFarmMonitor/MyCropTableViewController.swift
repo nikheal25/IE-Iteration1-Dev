@@ -171,7 +171,8 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
            
                            }
                     
-                    
+       
+    
                    
 
     //notification center
@@ -209,7 +210,12 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
     }
            
     }
-    
+//    func changeComma(str: String) ->String
+//      {
+//        
+//        
+//        
+//    }
     
     
     
