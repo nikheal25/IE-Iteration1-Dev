@@ -164,7 +164,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
         }
         //Disease
         //MARK:- new db ref
-        diseaseRef = database.collection("diseaseChange")  // Diseases
+        diseaseRef = database.collection("DiseaseIterationTwo")  // diseaseChange
         diseaseRef?.addSnapshotListener { querySnapshot, error in
             guard (querySnapshot?.documents) != nil else {
                 print("Error fetching documents: \(error!)")
