@@ -13,6 +13,7 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
     
     @IBOutlet weak var firstGraphView: ScrollableGraphView!
     @IBOutlet weak var secondGraph: ScrollableGraphView!
+    @IBOutlet weak var conclusionLabel: UILabel!
     
     var specificCrop: Crop?
     
@@ -83,6 +84,52 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
         setupGraph(graphView: firstGraphView)
     }
     
+    func showConclusion(flag: Bool)  {
+        if flag {
+            var outOfIndextLowerTemp = 0
+            var outOfIndextHighTemp = 0
+            
+            for temp in exactTemperature {
+                if temp < minIdealTemperature[0] {
+                    outOfIndextLowerTemp += 1
+                }
+                if temp > maxIdealTemperature[0] {
+                    outOfIndextHighTemp += 1
+                }
+            }
+            
+            var message = ""
+            
+            if outOfIndextLowerTemp == 0 && outOfIndextHighTemp == 0 {
+                message = "You have a great weather ahead! The temperature is in the boound of limits."
+            }
+            else{
+                if outOfIndextLowerTemp > 1 {
+                    message = "Forecast for next 2 weeks - You have temperature is going lower than expected limits in next \(outOfIndextLowerTemp) days."
+                }
+                if outOfIndextHighTemp > 1 {
+                    message = message + "You have temperature is going lower than expected limits in next \(outOfIndextLowerTemp) days."
+                }
+            }
+            conclusionLabel.text = message
+        }else{
+            var noRainDays = 0
+            for rain in exactRain{
+                if rain == 0.0 {
+                    noRainDays += 1
+                }
+            }
+            
+            if noRainDays == 0 {
+                conclusionLabel.text = "The rainfall is good for next 2 weeks."
+            }else{
+                conclusionLabel.text = "\(noRainDays) days in upcoming next 2 weeks have no rain. You need to water your plants for those days"
+            }
+            
+        }
+        
+    }
+    
     var tempFlag = false
     var rainFlag = false
     
@@ -99,6 +146,7 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
                 showTempGraph()
                 tempFlag = true
             }
+            showConclusion(flag: true)
         }else{
             hideFlagTemp = true
             hideFlagRain = false
@@ -113,6 +161,7 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
                 setupRainfallGraph(graphView: secondGraph)
                 rainFlag = true
             }
+            showConclusion(flag: false)
         }
     }
     
@@ -194,6 +243,8 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
         
         showTempGraph()
         tempFlag = true
+        showConclusion(flag: true)
+         subtitileLabel.text = "Between red lines is the feasible temperature range \n Green line is the predicted temperature"
     }
     
     private func generateRandomData(_ numberOfItems: Int, max: Double, shouldIncludeOutliers: Bool = true) -> [Double] {

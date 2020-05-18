@@ -1416,6 +1416,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Forecast" id="0Hn-Tq-fzd"/>
                     <connections>
+                        <outlet property="conclusionLabel" destination="du3-FR-kAU" id="f5k-vi-MsM"/>
                         <outlet property="firstGraphView" destination="jlF-Fb-HlL" id="ce5-0V-ELr"/>
                         <outlet property="mainLabel" destination="7ZN-ec-Xhz" id="2f3-Zc-OXB"/>
                         <outlet property="secondGraph" destination="5Wt-sy-xRP" id="G8a-AO-LMm"/>
