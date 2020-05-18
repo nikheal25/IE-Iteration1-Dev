@@ -20,14 +20,14 @@
             landmarkType = "3">
             <Locations>
                <Location
-                  uuid = "AC75708D-DAD3-4922-AC79-907BAD7333DA - f9c836a273c6214e"
+                  uuid = "AC75708D-DAD3-4922-AC79-907BAD7333DA - fb2c11d5ed105dd"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "MyGardenOz.MyCropCellTableViewCell.__allocating_init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; MyGardenOz.MyCropCellTableViewCell"
                   moduleName = "MyGardenOz"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///var/folders/95/x26dv_cj67vf2xwvyf3w009j4qm8sq/T/tmp.E85WU6I0/Desktop/IE-Iteration1-Dev/GreenFarmMonitor/MyCropCellTableViewCell.swift"
+                  urlString = "file:///var/folders/95/x26dv_cj67vf2xwvyf3w009j4qm8sq/T/tmp.2SMOO8oe/Desktop/IE-Iteration1-Dev/GreenFarmMonitor/MyCropCellTableViewCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -35,14 +35,14 @@
                   offsetFromSymbolStart = "12">
                </Location>
                <Location
-                  uuid = "AC75708D-DAD3-4922-AC79-907BAD7333DA - 7cd524a6c196c1d0"
+                  uuid = "AC75708D-DAD3-4922-AC79-907BAD7333DA - 8aafd319ec81e543"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "MyGardenOz.MyCropCellTableViewCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; MyGardenOz.MyCropCellTableViewCell"
                   moduleName = "MyGardenOz"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///var/folders/95/x26dv_cj67vf2xwvyf3w009j4qm8sq/T/tmp.E85WU6I0/Desktop/IE-Iteration1-Dev/GreenFarmMonitor/MyCropCellTableViewCell.swift"
+                  urlString = "file:///var/folders/95/x26dv_cj67vf2xwvyf3w009j4qm8sq/T/tmp.2SMOO8oe/Desktop/IE-Iteration1-Dev/GreenFarmMonitor/MyCropCellTableViewCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "13"
@@ -50,14 +50,14 @@
                   offsetFromSymbolStart = "182">
                </Location>
                <Location
-                  uuid = "AC75708D-DAD3-4922-AC79-907BAD7333DA - 2954a509737b290f"
+                  uuid = "AC75708D-DAD3-4922-AC79-907BAD7333DA - df2e52b65e6c0d9c"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "MyGardenOz.MyCropCellTableViewCell.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;MyGardenOz.MyCropCellTableViewCell&gt;"
                   moduleName = "MyGardenOz"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///var/folders/95/x26dv_cj67vf2xwvyf3w009j4qm8sq/T/tmp.E85WU6I0/Desktop/IE-Iteration1-Dev/GreenFarmMonitor/MyCropCellTableViewCell.swift"
+                  urlString = "file:///var/folders/95/x26dv_cj67vf2xwvyf3w009j4qm8sq/T/tmp.2SMOO8oe/Desktop/IE-Iteration1-Dev/GreenFarmMonitor/MyCropCellTableViewCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -65,14 +65,14 @@
                   offsetFromSymbolStart = "12">
                </Location>
                <Location
-                  uuid = "AC75708D-DAD3-4922-AC79-907BAD7333DA - 2dddf7696a00a21a"
+                  uuid = "AC75708D-DAD3-4922-AC79-907BAD7333DA - dba700d647178689"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "MyGardenOz.MyCropCellTableViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;MyGardenOz.MyCropCellTableViewCell&gt;"
                   moduleName = "MyGardenOz"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///var/folders/95/x26dv_cj67vf2xwvyf3w009j4qm8sq/T/tmp.E85WU6I0/Desktop/IE-Iteration1-Dev/GreenFarmMonitor/MyCropCellTableViewCell.swift"
+                  urlString = "file:///var/folders/95/x26dv_cj67vf2xwvyf3w009j4qm8sq/T/tmp.2SMOO8oe/Desktop/IE-Iteration1-Dev/GreenFarmMonitor/MyCropCellTableViewCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "13"
@@ -80,14 +80,14 @@
                   offsetFromSymbolStart = "119">
                </Location>
                <Location
-                  uuid = "AC75708D-DAD3-4922-AC79-907BAD7333DA - 48447de7613f59ce"
+                  uuid = "AC75708D-DAD3-4922-AC79-907BAD7333DA - be3e8a584c287d5d"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "MyGardenOz.MyCropCellTableViewCell.__deallocating_deinit"
                   moduleName = "MyGardenOz"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///var/folders/95/x26dv_cj67vf2xwvyf3w009j4qm8sq/T/tmp.E85WU6I0/Desktop/IE-Iteration1-Dev/GreenFarmMonitor/MyCropCellTableViewCell.swift"
+                  urlString = "file:///var/folders/95/x26dv_cj67vf2xwvyf3w009j4qm8sq/T/tmp.2SMOO8oe/Desktop/IE-Iteration1-Dev/GreenFarmMonitor/MyCropCellTableViewCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"

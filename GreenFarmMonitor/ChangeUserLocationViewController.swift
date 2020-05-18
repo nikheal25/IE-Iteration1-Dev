@@ -109,7 +109,7 @@ class ChangeUserLocationViewController: UIViewController, DatabaseListener,MKMap
     
     func focusOn(annotation:MKAnnotation){
         //mapView.selectedAnnotations(annotation,animated:true)
-        let zoomRegion =  MKCoordinateRegion(center: annotation.coordinate,latitudinalMeters:1000,longitudinalMeters: 1000)
+        let zoomRegion =  MKCoordinateRegion(center: annotation.coordinate,latitudinalMeters:2000,longitudinalMeters: 2000)
         mapView.setRegion(mapView.regionThatFits(zoomRegion), animated:true)
     }
 
