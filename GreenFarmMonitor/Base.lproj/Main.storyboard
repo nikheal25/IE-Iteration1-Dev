@@ -242,12 +242,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="BuC-zj-nzL">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="BuC-zj-nzL">
                                 <rect key="frame" x="0.0" y="235" width="414" height="528"/>
                             </mapView>
                             <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add your farm here" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0Et-gp-JTR">
                                 <rect key="frame" x="7" y="174" width="330" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZi-mg-jg5">
@@ -293,12 +293,42 @@
                                     <action selector="ChangeBtn:" destination="xHO-5A-7f3" eventType="touchUpInside" id="VyD-wl-NZ7"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NPx-Md-Xwr">
+                                <rect key="frame" x="7" y="209" width="330" height="255"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="255" id="Z7L-gn-XLL"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="relevantLocations" id="xPj-jE-UHC" userLabel="relevantLocations" customClass="relevantLocationsTableViewCell" customModule="MyGardenOz" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="330" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xPj-jE-UHC" id="G44-eF-iwO">
+                                            <rect key="frame" x="0.0" y="0.0" width="330" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sco-J0-CsE">
+                                                    <rect key="frame" x="0.0" y="0.0" width="330" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="searchResult" destination="sco-J0-CsE" id="jJE-vg-0nx"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="qmZ-eU-9uP" firstAttribute="trailing" secondItem="Vdp-4l-dXF" secondAttribute="trailing" id="6JP-5i-vaS"/>
                             <constraint firstItem="BuC-zj-nzL" firstAttribute="centerX" secondItem="FZi-mg-jg5" secondAttribute="centerX" id="6Yl-nS-6QZ"/>
-                            <constraint firstItem="BuC-zj-nzL" firstAttribute="top" secondItem="Vdp-4l-dXF" secondAttribute="bottom" constant="8" id="E2O-Db-6LV"/>
+                            <constraint firstItem="NPx-Md-Xwr" firstAttribute="leading" secondItem="Vdp-4l-dXF" secondAttribute="leading" id="8ex-Gv-Lrk"/>
+                            <constraint firstItem="BuC-zj-nzL" firstAttribute="top" secondItem="Vdp-4l-dXF" secondAttribute="bottom" constant="1" id="E2O-Db-6LV"/>
                             <constraint firstItem="epw-zg-MMU" firstAttribute="trailing" secondItem="FZi-mg-jg5" secondAttribute="trailing" id="Emh-1O-rh3"/>
                             <constraint firstItem="4pg-HS-muc" firstAttribute="bottom" secondItem="FZi-mg-jg5" secondAttribute="bottom" constant="49" id="H84-wi-BAj"/>
                             <constraint firstItem="epw-zg-MMU" firstAttribute="top" secondItem="4pg-HS-muc" secondAttribute="top" constant="12" id="JCj-gb-dKX"/>
@@ -306,12 +336,14 @@
                             <constraint firstItem="0Et-gp-JTR" firstAttribute="top" secondItem="qmZ-eU-9uP" secondAttribute="top" id="KmG-e9-lsv"/>
                             <constraint firstItem="Vdp-4l-dXF" firstAttribute="top" secondItem="0Et-gp-JTR" secondAttribute="bottom" constant="8" id="Nvx-n6-Z03"/>
                             <constraint firstItem="0Et-gp-JTR" firstAttribute="top" secondItem="epw-zg-MMU" secondAttribute="bottom" constant="8" id="Qm6-Iq-1IU"/>
+                            <constraint firstItem="NPx-Md-Xwr" firstAttribute="top" secondItem="epw-zg-MMU" secondAttribute="bottom" constant="43" id="Sbw-Va-fmk"/>
                             <constraint firstItem="epw-zg-MMU" firstAttribute="leading" secondItem="4pg-HS-muc" secondAttribute="leading" constant="7" id="Vaj-ix-Ozm"/>
                             <constraint firstItem="epw-zg-MMU" firstAttribute="trailing" secondItem="RwT-CM-8js" secondAttribute="trailingMargin" id="ZTk-jE-618"/>
                             <constraint firstItem="FZi-mg-jg5" firstAttribute="leading" secondItem="RwT-CM-8js" secondAttribute="leadingMargin" id="dpN-J6-n7e"/>
                             <constraint firstItem="4pg-HS-muc" firstAttribute="trailing" secondItem="qmZ-eU-9uP" secondAttribute="trailing" constant="9" id="eHy-en-0gG"/>
                             <constraint firstItem="0Et-gp-JTR" firstAttribute="leading" secondItem="Vdp-4l-dXF" secondAttribute="leading" id="gP0-gj-2h9"/>
                             <constraint firstItem="qmZ-eU-9uP" firstAttribute="leading" secondItem="0Et-gp-JTR" secondAttribute="trailing" constant="8" id="gzt-PI-cnv"/>
+                            <constraint firstItem="NPx-Md-Xwr" firstAttribute="trailing" secondItem="0Et-gp-JTR" secondAttribute="trailing" id="nxb-PA-dj7"/>
                             <constraint firstItem="0Et-gp-JTR" firstAttribute="centerY" secondItem="qmZ-eU-9uP" secondAttribute="centerY" id="o7p-RX-lBc"/>
                             <constraint firstItem="FZi-mg-jg5" firstAttribute="top" secondItem="BuC-zj-nzL" secondAttribute="bottom" constant="8" id="qFp-O0-dx7"/>
                             <constraint firstItem="BuC-zj-nzL" firstAttribute="leading" secondItem="4pg-HS-muc" secondAttribute="leading" id="rXy-OW-CMe"/>
@@ -325,11 +357,12 @@
                         <outlet property="introLabel" destination="epw-zg-MMU" id="WuZ-gw-1hm"/>
                         <outlet property="locationText" destination="0Et-gp-JTR" id="7Y1-rV-SLv"/>
                         <outlet property="mapView" destination="BuC-zj-nzL" id="YlP-3g-o7M"/>
+                        <outlet property="searchList" destination="NPx-Md-Xwr" id="TOA-4E-bYf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aw8-7O-obG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1222" y="-276"/>
+            <point key="canvasLocation" x="-1223.1884057971015" y="-276.5625"/>
         </scene>
         <!--FirstViewController-->
         <scene sceneID="O9v-aC-QGO">
@@ -1662,7 +1695,7 @@
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This crops grows best with" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBq-Gv-yRx">
-                                                            <rect key="frame" x="20" y="164" width="520" height="12"/>
+                                                            <rect key="frame" x="20" y="164" width="520" height="14"/>
                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
                                                             <color key="textColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="0.49546030410000003" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -2294,7 +2327,7 @@
                                 <rect key="frame" x="20" y="343" width="374" height="455"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ym9-rE-JJD">
-                                        <rect key="frame" x="15" y="30" width="344" height="20"/>
+                                        <rect key="frame" x="15" y="30" width="344" height="20.5"/>
                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
