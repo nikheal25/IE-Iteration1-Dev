@@ -39,14 +39,14 @@ class ChangeUserLocationViewController: UIViewController, DatabaseListener,MKMap
                    }
         if LocationList.first?.coordinate == nil
                 {
-                    self.locationText.placeholder = "Add location of garden here"
+                    self.locationText.placeholder = "Enter suburb or pincode of garden location"
                     self.UIBtn.setTitle("Add", for:.normal)
                   
                 }
                 else
                 {
                     mapView.removeAnnotations(mapView.annotations)
-                    self.locationText.placeholder = "Enter new garden here"
+                    self.locationText.placeholder = "Enter suburb or pincode of garden location"
                     self.UIBtn.setTitle("Change", for:.normal)
 //                    self.locationText.placeholder = "Add your farm here"
 //                    self.UIBtn.setTitle("Add", for:.normal)
