@@ -93,20 +93,82 @@ class ChangeUserLocationViewController: UIViewController, DatabaseListener,MKMap
         self.UIBtn.backgroundColor = UIColor(hexString: "#616163")
         self.continueUIBtn.backgroundColor = UIColor(hexString: "#616163")
         self.continueUIBtn.layer.cornerRadius = 8.0
-        
+        self.locationText.addTarget(self, action: #selector(self.textFieldDidChange(sender:)), for: UIControl.Event.editingChanged)
         self.locationText.delegate = self
+        
+        self.searchList.layer.cornerRadius = 8.0
+        self.searchList.dataSource = self
+        self.searchList.delegate = self
+        self.searchList.isHidden = true
         //zoom to australia
-       
         let Australia = CLLocation(latitude: -25.2744, longitude: 133.7751)
         let zoomRegion = MKCoordinateRegion(center: Australia.coordinate, latitudinalMeters: 5000000,longitudinalMeters: 5000000)
         mapView.setRegion(zoomRegion, animated: true)
         newUserId = (self.userDefaultController?.generateUniqueUserId())!
     }
-    func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        self.locationText.endEditing(true)
+    
+    @objc func textFieldDidChange(sender:UITextField)
+    {   australiaMarks = []
+        let address = self.locationText.text
+        let geoCoder = CLGeocoder()
+        geoCoder.geocodeAddressString(address!)
+        {(placemarks,error) in
+            guard
+            
+                let markList = placemarks
+           else
+            {
+               
+                return
+               }
+            
+            for mark in markList
+            {
+                if mark.country == "Australia"
+                {
+                        self.australiaMarks.append(mark)
+
+                }
+
+
+            }
+            print(self.australiaMarks.count)
+            if self.australiaMarks.count != 0{
+             self.searchList.reloadData()
+                self.searchList.isHidden = false
+                
+            }
+            else {
+                self.searchList.isHidden = true
+                
+            }
+        }
+       
+        
+        
+        
+        
+        
+        
+        
     }
     
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        
+        
+        self.searchList.isHidden = true
+       self.locationText.endEditing(true)
+       return true
+    }
+   
     
+    
+    
+    
+    
+      
+    
+    @IBOutlet weak var searchList: UITableView!
     func focusOn(annotation:MKAnnotation){
         //mapView.selectedAnnotations(annotation,animated:true)
         let zoomRegion =  MKCoordinateRegion(center: annotation.coordinate,latitudinalMeters:2000,longitudinalMeters: 2000)
@@ -123,12 +185,12 @@ class ChangeUserLocationViewController: UIViewController, DatabaseListener,MKMap
     }
     */
     @IBOutlet weak var continueUIBtn: UIButton!
-    
+    var resultList = [String]()
     @IBOutlet weak var UIBtn: UIButton!
     @IBOutlet weak var locationText: UITextField!
     var australiaMarks = [CLPlacemark]()
     @IBAction func ChangeBtn(_ sender: Any) {
-        
+        searchList.isHidden = true
         let address = self.locationText.text
         if address!.isEmpty
         {
@@ -300,26 +362,7 @@ class ChangeUserLocationViewController: UIViewController, DatabaseListener,MKMap
                                 print(pm.postalCode)
                                 print(pm.subThoroughfare)
                                 
-                                var addressString : String = ""
-                                if pm.subThoroughfare != nil {
-                                                   addressString = addressString + pm.subThoroughfare! + ", "
-                                               }
-                                if pm.subLocality != nil {
-                                    addressString = addressString + pm.subLocality! + ", "
-                                }
-                                if pm.thoroughfare != nil {
-                                    addressString = addressString + pm.thoroughfare! + ", "
-                                }
-                               
-                                if pm.locality != nil {
-                                    addressString = addressString + pm.locality! + ", "
-                                }
-                                if pm.postalCode != nil {
-                                    addressString = addressString + pm.postalCode! + ", "
-                                }
-                                if pm.country != nil {
-                                    addressString = addressString + pm.country!
-                                }
+                                let addressString = self.convertToString(location: pm)
                               
                                 
                                 self.locationText.text = addressString
@@ -366,4 +409,70 @@ class ChangeUserLocationViewController: UIViewController, DatabaseListener,MKMap
 //
 //    }
 
+}
+extension ChangeUserLocationViewController: UITableViewDelegate, UITableViewDataSource
+{
+    
+     
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return australiaMarks.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = searchList.dequeueReusableCell(withIdentifier: "relevantLocations", for: indexPath) as! relevantLocationsTableViewCell
+        let location = australiaMarks[indexPath.row]
+        
+        let addressString = convertToString(location: location)
+        
+        cell.searchResult.text = addressString
+        return cell
+    }
+    func convertToString (location: CLPlacemark) -> String
+    {
+        var addressString : String = ""
+        
+        if location.subThoroughfare != nil {
+                                                          addressString = addressString + location.subThoroughfare! + ", "
+                                                      }
+        if location.subLocality != nil {
+                                           addressString = addressString + location.subLocality! + ", "
+                                       }
+        if location.thoroughfare != nil {
+                                           addressString = addressString + location.thoroughfare! + ", "
+                                       }
+                                      
+        if location.locality != nil {
+                                           addressString = addressString + location.locality! + ", "
+                                       }
+        if location.postalCode != nil {
+                                           addressString = addressString + location.postalCode! + ", "
+                                       }
+        if location.country != nil {
+                                           addressString = addressString + location.country!
+                                       }
+        return addressString
+        
+        
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      let selectedMark = australiaMarks[indexPath.row]
+        let string = convertToString(location: selectedMark)
+        
+        
+        
+        self.locationText.text = string
+        searchList.isHidden = true
+        
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+       
+        self.searchList.heightAnchor.constraint(equalToConstant: searchList.contentSize.height).isActive = true
+       
+    }
+    
+    
+    
 }
