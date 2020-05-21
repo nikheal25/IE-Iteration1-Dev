@@ -16,7 +16,6 @@ class GrowMyDetailCropViewController: UIViewController {
     @IBOutlet weak var imageView: UIView!
     @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var cropImage: UIImageView!
-    
     @IBOutlet weak var plantTypeLabel: UILabel!
     @IBOutlet weak var daysToMatLabel: UILabel!
     @IBOutlet weak var spreadRangeLabel: UILabel!
@@ -29,7 +28,9 @@ class GrowMyDetailCropViewController: UIViewController {
     @IBOutlet weak var lightIntLabel: UILabel!
     @IBOutlet weak var frostLabel: UILabel!
     
+    /// Sets the label to UI
     func setLabels() {
+        // et values to all the labels of UI
         self.title = specificCrop?.cropName
         self.cropImage.image = UIImage(named: specificCrop!.cropImage)
         self.plantTypeLabel.text = specificCrop?.Plant_Type
@@ -44,7 +45,7 @@ class GrowMyDetailCropViewController: UIViewController {
         self.heightRangeLabel.adjustsFontSizeToFitWidth = true
         self.heightRangeLabel.minimumScaleFactor = 0.5
         self.heightRangeLabel.text = "\(specificCrop!.minTemp)-\(specificCrop!.maxTemp)"
-//        self.heightRangeLabel.text = specificCrop?.Height_Ranges
+        //        self.heightRangeLabel.text = specificCrop?.Height_Ranges
         self.soilTypeLabel.adjustsFontSizeToFitWidth = true
         self.soilTypeLabel.minimumScaleFactor = 0.5
         self.soilTypeLabel.text = specificCrop?.Soil_Type
@@ -70,17 +71,18 @@ class GrowMyDetailCropViewController: UIViewController {
         
     }
     
+    /// make rounded corners of view
     func setImageView()  {
         self.imageView.layer.cornerRadius = 15
         self.imageView.layer.shadowOpacity = 0.4
         self.imageView.layer.shadowRadius = 1
     }
     
+    /// make rounded corners of view
     func setInfoView()  {
         self.infoView.layer.cornerRadius = 15
         self.infoView.layer.shadowOpacity = 0.4
         self.infoView.layer.shadowRadius = 1
-        //        self.infoView.backgroundColor = UIColor(hexString: "#FCFCFC")
     }
     
     override func viewDidLoad() {
@@ -93,35 +95,23 @@ class GrowMyDetailCropViewController: UIViewController {
         mainView.backgroundColor = UIColor(hexString: "#3F6845")
         // Do any additional setup after loading the view.
     }
-    
-    
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+
     var selectCrop:String = ""
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if segue.identifier == "diseaseSegue"
-            {
-                let destination = segue.destination as!DiseaseListViewController
-                
-                selectCrop = specificCrop!.cropName
-                destination.crop = selectCrop
-                }
+        if segue.identifier == "diseaseSegue"
+        {
+            let destination = segue.destination as!DiseaseListViewController
+            
+            selectCrop = specificCrop!.cropName
+            destination.crop = selectCrop
+        }
         if segue.identifier == "fertiliserSegue"
         {
             let destination = segue.destination as! FertilixerViewController
             
             destination.specificCrop = specificCrop
-            }
         }
+    }
     
     
 }

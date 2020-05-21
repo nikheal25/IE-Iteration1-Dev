@@ -10,8 +10,7 @@ import UIKit
 
 class GrowMyCropViewController: UIViewController, DatabaseListener, GrowCropDelegate {
     
-    
-    
+    /// tableview
     @IBOutlet weak var tableView: UITableView!
     
     let SECTION_ACTIVITY = 0;
@@ -65,6 +64,10 @@ class GrowMyCropViewController: UIViewController, DatabaseListener, GrowCropDele
     }
     
     
+    /// This method only shows the crops that are related to the existing User
+    /// - Parameters:
+    ///   - change: <#change description#>
+    ///   - userCropRelation: <#userCropRelation description#>
     func onUserCropRelationChange(change: DatabaseChange, userCropRelation: [UserCropRelation]) {
         let currentUserId = userDefaultController?.retrieveUserId()
         
@@ -75,18 +78,14 @@ class GrowMyCropViewController: UIViewController, DatabaseListener, GrowCropDele
                 if crop == nil{
                     //
                 } else{
-                    
                     //End
                     self.myCropList.append(crop!)
                 }
-                
-                
                 tableView.reloadData()
             }
         }
         if myCropList.count == 0 {
             headerLabel.text = "Currently you have NO crops in your list Add Crops to continue"
-//            headerLabel.text = "Currently you have 0 crops in your list"
         }else{
             headerLabel.text = "Click on the crop that you want to grow"
         }
@@ -108,14 +107,16 @@ class GrowMyCropViewController: UIViewController, DatabaseListener, GrowCropDele
     
     //MARK: - MyCustomCellDelegator Methods
     func callSegueFromCell(crop: Crop) {
-        //        self.performSegue(withIdentifier: "growSpecificCropSegue", sender: self)
         passingVal = crop
         self.performSegue(withIdentifier: "newGrowDetailCropSegue", sender: self)
-        
     }
     
     var passingVal: Crop?
     
+    /// takes user to next view controller
+    /// - Parameters:
+    ///   - segue: <#segue description#>
+    ///   - sender: <#sender description#>
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "newGrowDetailCropSegue" {
             let destination = segue.destination as! GrowMyDetailCropViewController
@@ -135,8 +136,6 @@ extension GrowMyCropViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        
         if indexPath.section == SECTION_ACTIVITY {
             let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ACTIVITY, for: indexPath) as! GrowMyCropTableViewCell
             
@@ -149,7 +148,6 @@ extension GrowMyCropViewController: UITableViewDelegate, UITableViewDataSource {
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: CELL_COUNT, for: indexPath)
         cell.textLabel?.text = "\(myCropList.count) total crops in the list"
-//        cell.textLabel?.text = "Currently you have NO crops in your list Add Crops to continue"
         cell.selectionStyle = .none
         return cell
         
@@ -159,21 +157,6 @@ extension GrowMyCropViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == SECTION_ACTIVITY{
             selectedRow = indexPath.row
-            //            tableView.deselectRow(at: indexPath, animated: true)
-            //            self.performSegue(withIdentifier: "specificCropSegue", sender: self)
         }
     }
-    
-//        func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//
-//            // return "Add new Crops"
-//            if myCropList.count == 0 {
-//                return "Currently you have NO crops in your list Add Crops to continue"
-//            }
-//            return ""
-//
-//        }
-//    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        return 25
-//    }
 }
