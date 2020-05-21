@@ -307,12 +307,12 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
 //            return "Currently you have NO crops in your list Add Crops to continue"
             return ""
         }else{
-            return "\(myCropList.count ) crops in list"
+            return "\(myCropList.count ) plants in list"
         }
         }
        // return "Add new Crops"
         if myCropList.count == 0 {
-            return "Currently you have NO crops in your list Add Crops to continue"
+            return "Currently you have NO plants in your list Add Crops to continue"
         }
         return ""
 
@@ -379,6 +379,8 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
             databaseController?.updateMyCropList(new: false, userId: (userDefaultController?.retrieveUserId())!, cropId: myCropList[indexPath.row].cropId)
             myCropList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            //MARK:-delete if there is any problem
+            tableView.reloadData()
         } else if editingStyle == .insert {
 //             Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
