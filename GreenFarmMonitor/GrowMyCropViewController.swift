@@ -85,9 +85,9 @@ class GrowMyCropViewController: UIViewController, DatabaseListener, GrowCropDele
             }
         }
         if myCropList.count == 0 {
-            headerLabel.text = "Currently you have NO crops in your list Add Crops to continue"
+            headerLabel.text = "Currently you have NO plants in your list.\nAdd Plants to continue"
         }else{
-            headerLabel.text = "Click on the crop that you want to grow"
+            headerLabel.text = "Click on the plant that you want to grow"
         }
     }
     

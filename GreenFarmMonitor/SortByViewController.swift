@@ -96,7 +96,8 @@ class SortByViewController: UIViewController {
             recommendedButton.isSelected = true
         }
     }
-    
+    //MARK:-based on your location [ALL CAPS]
+    //MARK;-  A - Z
     //This action will set the icon of Alphabetical option to ON/OFF
     @objc func alphabeticalLabelClicked(sender:UITapGestureRecognizer) {
         if alphabeticalButton.isSelected == true {
