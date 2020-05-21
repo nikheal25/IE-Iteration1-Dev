@@ -292,9 +292,14 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
             cell.setCell(crop: myCropList[indexPath.row])
             return cell
         }
-        let cell = tableView.dequeueReusableCell(withIdentifier: CELL_COUNT, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: CELL_COUNT, for: indexPath) as! SubtitleTableViewCell
     //MARK:- TODO
 //        cell.textLabel?.text = "\(myCropList.count) crops in the list"
+    if myCropList.count == 0 {
+        cell.setSubtule(isHidden: true)
+    } else {
+        cell.setSubtule(isHidden: false)
+    }
         cell.selectionStyle = .none
         return cell
     }
@@ -316,18 +321,7 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
         return ""
 
     }
-    
-//    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        if myCropList.count == 0 {
-////        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 30))
-//        let headerView = UIView()
-//        headerView.backgroundColor = UIColor.red
-//        return headerView
-//        }
-//        let headerView = UIView()
-//        return headerView
-//    }
-//
+
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 25
     }
@@ -337,39 +331,13 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
 ////               headerView.backgroundColor = UIColor.red
 //               return headerView
 //    }
-//
-//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let headerView = UIView()
-//        headerView.backgroundColor = UIColor(hexString: "#588B8B")
-//        headerView.text
-//        let lbl = UILabel()
-//        lbl.text = "yourString"
-//
-//        // Enum type, two variations:
-//        lbl.textAlignment = NSTextAlignment.right
-//        lbl.textAlignment = .right
-//
-//        lbl.textColor = UIColor.red
-//        lbl.shadowColor = UIColor(hexString: "#588B8B")
-//        lbl.font = UIFont(name: "HelveticaNeue", size: CGFloat(22))
-//        headerView.addSubview(lbl)
-//        return headerView
-//    }
+
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == SECTION_ACTIVITY {
             return 40
         }
         return 20
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
 
     // MARK:- TODO
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -385,21 +353,6 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
         }    
     }
 
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     //This method gets called when any cell is selected by the user
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

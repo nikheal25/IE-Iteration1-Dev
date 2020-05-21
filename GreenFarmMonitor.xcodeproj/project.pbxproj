@@ -42,6 +42,7 @@
 		1DDEE7ED24448112005BC7D8 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEE7EC24448112005BC7D8 /* FirstViewController.swift */; };
 		1DDEE7F224448F72005BC7D8 /* intro2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1DDEE7F124448F68005BC7D8 /* intro2.mp4 */; };
 		1DDEE7F424449C46005BC7D8 /* MyCropMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEE7F324449C46005BC7D8 /* MyCropMainTableViewCell.swift */; };
+		1DE4DB0224764DEA007938F6 /* SubtitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE4DB0124764DEA007938F6 /* SubtitleTableViewCell.swift */; };
 		1DE82CCF2465064F00EF54A6 /* PopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE82CCE2465064F00EF54A6 /* PopOverViewController.swift */; };
 		1DE82CD124650E1B00EF54A6 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE82CD024650E1B00EF54A6 /* FilterViewController.swift */; };
 		1DE82CD32465303600EF54A6 /* SortByViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE82CD22465303600EF54A6 /* SortByViewController.swift */; };
@@ -125,6 +126,7 @@
 		1DDEE7EC24448112005BC7D8 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		1DDEE7F124448F68005BC7D8 /* intro2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = intro2.mp4; sourceTree = "<group>"; };
 		1DDEE7F324449C46005BC7D8 /* MyCropMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCropMainTableViewCell.swift; sourceTree = "<group>"; };
+		1DE4DB0124764DEA007938F6 /* SubtitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleTableViewCell.swift; sourceTree = "<group>"; };
 		1DE82CCE2465064F00EF54A6 /* PopOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverViewController.swift; sourceTree = "<group>"; };
 		1DE82CD024650E1B00EF54A6 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		1DE82CD22465303600EF54A6 /* SortByViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortByViewController.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 				1D19C543244C082C00989079 /* DemoTableViewCell.swift */,
 				1DE82CCE2465064F00EF54A6 /* PopOverViewController.swift */,
 				1D9EED34243C3A7D00EE97D2 /* Main.storyboard */,
+				1DE4DB0124764DEA007938F6 /* SubtitleTableViewCell.swift */,
 				1D879DE2246D0A39008261D0 /* GraphViewController.swift */,
 				1D6B17782470BA480019A36D /* FontHandler.swift */,
 				1D879DA0246CC7B9008261D0 /* FertilixerViewController.swift */,
@@ -600,6 +603,7 @@
 				1D2FCB872445A3110024FFBB /* FirebaseController.swift in Sources */,
 				1DDEE7DF244433D3005BC7D8 /* MyCropTableViewController.swift in Sources */,
 				E883C94C244473E1006F6AC8 /* SymptomsViewController.swift in Sources */,
+				1DE4DB0224764DEA007938F6 /* SubtitleTableViewCell.swift in Sources */,
 				1DFBCFC72446CBBC00DCC4B2 /* LoginViewController.swift in Sources */,
 				1D94FF06244AC82700CB2F25 /* FoldingTableViewController.swift in Sources */,
 				1DE82CD32465303600EF54A6 /* SortByViewController.swift in Sources */,

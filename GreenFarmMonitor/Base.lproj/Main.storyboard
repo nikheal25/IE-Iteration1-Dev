@@ -569,7 +569,7 @@
                                     <outlet property="imageTitle" destination="uP5-VC-k0j" id="wPo-EL-H1K"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellCounter" id="ZJe-eu-2WA">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellCounter" id="ZJe-eu-2WA" customClass="SubtitleTableViewCell" customModule="MyGardenOz" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="175.5" width="414" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZJe-eu-2WA" id="bAZ-HB-KcO">
@@ -600,6 +600,9 @@
                                         <constraint firstItem="Weo-IA-t8X" firstAttribute="top" secondItem="bAZ-HB-KcO" secondAttribute="topMargin" constant="40" id="uis-Tn-sz4"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="infoSubtileLabel" destination="RRX-Ss-GSD" id="geN-ZC-iGp"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
