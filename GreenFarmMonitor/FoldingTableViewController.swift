@@ -89,10 +89,10 @@ class FoldingTableViewController: UITableViewController, UIPopoverPresentationCo
     weak var api: APIProtocol?
     var recommendedCrops: [String] = []
     
-//    @objc override func dismissKeyboard() {
-//        //Causes the view (or one of its embedded text fields) to resign the first responder status.
-//        view.endEditing(true)
-//    }
+    //    @objc override func dismissKeyboard() {
+    //        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+    //        view.endEditing(true)
+    //    }
     // MARK: Life Cycle
     override func viewDidLoad() {
         //MARK:- Change sorting schema
@@ -100,7 +100,7 @@ class FoldingTableViewController: UITableViewController, UIPopoverPresentationCo
         plantFilter = "Please select"
         soilFilter = "Please select"
         
-
+        
         
         super.viewDidLoad()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -125,23 +125,23 @@ class FoldingTableViewController: UITableViewController, UIPopoverPresentationCo
             longitude = longitudeTwo
         }
         recommendedCrops = ((api?.apiRecommendedCrop(lat: latitude, long: longitude))!)
-       
+        
         let concurrentQueue = DispatchQueue(label: "com.some.concurrentQueue", attributes: .concurrent)
         
         //Adds delay to the call of API
         concurrentQueue.async {
             do{
-//                print("1")
+                //                print("1")
                 do{
                     sleep(3)
                 }
                 self.recommendedCrops = self.api!.recomendedCrops
-//                print("2")
-//                print(self.recommendedCrops)
+                //                print("2")
+                //                print(self.recommendedCrops)
             }
         }
         
-//        print("4")
+        //        print("4")
     }
     
     /// This method returns the list of crops that are registered by the user
@@ -419,7 +419,7 @@ extension FoldingTableViewController: filterDelgate {
     /// gets the sorting ID from another class
     /// - Parameter id: <#id description#>
     func sortOption(id: Int) {
-//        print("Inside folding cell \(id)")
+        //        print("Inside folding cell \(id)")
         sortingSchema = id
         sortCrops()
         tableView.reloadData()

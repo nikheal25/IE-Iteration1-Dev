@@ -11,12 +11,14 @@ import ScrollableGraphView
 
 class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
     
+    /// graphview for the graph
     @IBOutlet weak var firstGraphView: ScrollableGraphView!
     @IBOutlet weak var secondGraph: ScrollableGraphView!
     @IBOutlet weak var conclusionLabel: UILabel!
     
     var specificCrop: Crop?
     
+    /// labels for the graph
     @IBOutlet weak var subtitileLabel: UILabel!
     @IBOutlet weak var mainLabel: UILabel!
     
@@ -35,6 +37,7 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
     var rangeRainMaxValue = 80.0
     var rangeRainMinValue = 0.00
     
+    /// list of temperatures for all the days
     var minIdealTemperature: [Double] = []
     var maxIdealTemperature: [Double] = []
     var exactTemperature: [Double] = []
@@ -43,6 +46,10 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
     
     var numberOfItems = 16
     
+    /// method for ScrollableGraphViewDataSource
+    /// - Parameters:
+    ///   - plot: <#plot description#>
+    ///   - pointIndex: <#pointIndex description#>
     func value(forPlot plot: Plot, atIndex pointIndex: Int) -> Double {
         switch(plot.identifier) {
         case "one":
@@ -70,20 +77,26 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
         }
     }
     
+    /// method for ScrollableGraphViewDataSource
+    /// - Parameter pointIndex: <#pointIndex description#>
     func label(atIndex pointIndex: Int) -> String {
         return setCurrentTime(day: pointIndex)
     }
     
+    /// method for ScrollableGraphViewDataSource
     func numberOfPoints() -> Int {
         return numberOfItems
     }
     
+    /// shows the temperature graphs and selects the variable range
     func showTempGraph() {
         firstGraphView.rangeMax = rangeMaxValue
         firstGraphView.rangeMin = rangeMinValue
         setupGraph(graphView: firstGraphView)
     }
     
+    /// Analyses the weather and shows the conclusion for the days
+    /// - Parameter flag: <#flag description#>
     func showConclusion(flag: Bool)  {
         if flag {
             var outOfIndextLowerTemp = 0
@@ -133,6 +146,8 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
     var tempFlag = false
     var rainFlag = false
     
+    /// segement controller for the temperature and rainfall
+    /// - Parameter sender: <#sender description#>
     @IBAction func segmentController(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
             hideFlagTemp = false
@@ -165,6 +180,8 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
         }
     }
     
+    /// sets the current time for the graph
+    /// - Parameter day: <#day description#>
     func setCurrentTime(day: Int) -> String{
         formatter.dateFormat = "MMM d"
         let interval = TimeInterval(60 * 60 * 24 * day)
@@ -172,6 +189,10 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
         return formatter.string(from: newDate)
     }
     
+    /// processes the weather data, that is received from the API
+    /// - Parameters:
+    ///   - valueFlag: <#valueFlag description#>
+    ///   - weatherData: <#weatherData description#>
     func returnValuesFromAPI(valueFlag: Int, weatherData: [Weather]) -> [Double] {
         var valueArray = [Double]()
         
@@ -244,9 +265,14 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
         showTempGraph()
         tempFlag = true
         showConclusion(flag: true)
-         subtitileLabel.text = "Between red lines is the feasible temperature range \n Green line is the predicted temperature"
+        subtitileLabel.text = "Between red lines is the feasible temperature range \n Green line is the predicted temperature"
     }
     
+    /// method generates the random data. Used for testing purpose Only.
+    /// - Parameters:
+    ///   - numberOfItems: <#numberOfItems description#>
+    ///   - max: <#max description#>
+    ///   - shouldIncludeOutliers: <#shouldIncludeOutliers description#>
     private func generateRandomData(_ numberOfItems: Int, max: Double, shouldIncludeOutliers: Bool = true) -> [Double] {
         var data = [Double]()
         for _ in 0 ..< numberOfItems {
@@ -263,6 +289,8 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
         return data
     }
     
+    /// setup the graph for the Temperature
+    /// - Parameter graphView: <#graphView description#>
     func setupGraph(graphView: ScrollableGraphView) {
         
         // Setup the first line plot.
@@ -324,6 +352,8 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
         graphView.addPlot(plot: currentTemp)
     }
     
+    /// setup the graph for the rainfall
+    /// - Parameter graphView: <#graphView description#>
     func setupRainfallGraph(graphView: ScrollableGraphView) {
         
         // Setup the first line plot.
@@ -370,16 +400,6 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
         graphView.addPlot(plot: linePlot)
         graphView.addPlot(plot: dotPlot)
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
 
 extension UIColor {
