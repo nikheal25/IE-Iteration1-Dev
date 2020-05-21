@@ -357,8 +357,15 @@ extension FoldingTableViewController: UISearchBarDelegate {
         var tempCrops: [Crop] = []
         
         for crop in allCropsName {
+            
             if crop.cropName.lowercased().prefix(term.count) == term.lowercased() {
                 tempCrops.append(crop)
+            }else if let range = crop.cropName.range(of: " ") {
+                let secondWord = crop.cropName.lowercased()[range.upperBound...]
+                print("--\(secondWord)")
+                if secondWord.prefix(term.count) == term.lowercased() {
+                    tempCrops.append(crop)
+                }
             }
         }
         return tempCrops
