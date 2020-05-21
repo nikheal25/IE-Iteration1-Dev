@@ -26,7 +26,6 @@
 		1D94FF06244AC82700CB2F25 /* FoldingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D94FF05244AC82700CB2F25 /* FoldingTableViewController.swift */; };
 		1D9EED2F243C3A7D00EE97D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9EED2E243C3A7D00EE97D2 /* AppDelegate.swift */; };
 		1D9EED31243C3A7D00EE97D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9EED30243C3A7D00EE97D2 /* SceneDelegate.swift */; };
-		1D9EED33243C3A7D00EE97D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9EED32243C3A7D00EE97D2 /* ViewController.swift */; };
 		1D9EED36243C3A7D00EE97D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D9EED34243C3A7D00EE97D2 /* Main.storyboard */; };
 		1D9EED38243C3A7E00EE97D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D9EED37243C3A7E00EE97D2 /* Assets.xcassets */; };
 		1D9EED3B243C3A7E00EE97D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D9EED39243C3A7E00EE97D2 /* LaunchScreen.storyboard */; };
@@ -104,7 +103,6 @@
 		1D9EED2B243C3A7D00EE97D2 /* MyGardenOz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyGardenOz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D9EED2E243C3A7D00EE97D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D9EED30243C3A7D00EE97D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1D9EED32243C3A7D00EE97D2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1D9EED35243C3A7D00EE97D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1D9EED37243C3A7E00EE97D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D9EED3A243C3A7E00EE97D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -255,7 +253,6 @@
 				1D9EED2E243C3A7D00EE97D2 /* AppDelegate.swift */,
 				1D2FCB7524457FF10024FFBB /* Fonts */,
 				1D9EED30243C3A7D00EE97D2 /* SceneDelegate.swift */,
-				1D9EED32243C3A7D00EE97D2 /* ViewController.swift */,
 				1D19C543244C082C00989079 /* DemoTableViewCell.swift */,
 				1DE82CCE2465064F00EF54A6 /* PopOverViewController.swift */,
 				1D9EED34243C3A7D00EE97D2 /* Main.storyboard */,
@@ -589,7 +586,6 @@
 				1DDEE7DD244432CF005BC7D8 /* Crop.swift in Sources */,
 				E8871955246BEAFA001614F7 /* APIProtocol.swift in Sources */,
 				E8FDFCAB2447133F00143844 /* LocationAnnotation .swift in Sources */,
-				1D9EED33243C3A7D00EE97D2 /* ViewController.swift in Sources */,
 				1DDEE7E5244443CD005BC7D8 /* AddNewCropViewController.swift in Sources */,
 				1DB74B3224603CF900530B81 /* WeatherAPI.swift in Sources */,
 				1D12428B245068B9001C6BAD /* GrowMyDetailCropViewController.swift in Sources */,
