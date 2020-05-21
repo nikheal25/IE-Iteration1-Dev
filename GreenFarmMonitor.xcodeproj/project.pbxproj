@@ -84,7 +84,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1D0374F9246F93F700164EC2 /* garden.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = garden.mp4; sourceTree = "<group>"; };
 		1D124286244FF4D2001C6BAD /* GrowMyCropViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowMyCropViewController.swift; sourceTree = "<group>"; };
 		1D124288245002B9001C6BAD /* GrowMyCropTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowMyCropTableViewCell.swift; sourceTree = "<group>"; };
 		1D12428A245068B9001C6BAD /* GrowMyDetailCropViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowMyDetailCropViewController.swift; sourceTree = "<group>"; };
@@ -282,7 +281,6 @@
 				1DDEE7EC24448112005BC7D8 /* FirstViewController.swift */,
 				1DDEE7F124448F68005BC7D8 /* intro2.mp4 */,
 				E883C94924446A04006F6AC8 /* DetailOfDiseaseViewController.swift */,
-				1D0374F9246F93F700164EC2 /* garden.mp4 */,
 				1DDEE7F324449C46005BC7D8 /* MyCropMainTableViewCell.swift */,
 				E883C94724444BDB006F6AC8 /* DiseaseTableViewCell.swift */,
 				E883C94B244473E1006F6AC8 /* SymptomsViewController.swift */,
