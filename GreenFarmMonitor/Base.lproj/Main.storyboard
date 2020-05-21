@@ -530,21 +530,29 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vhT-15-fuc">
-                                                    <rect key="frame" x="203" y="30" width="167" height="50"/>
+                                                    <rect key="frame" x="193" y="30" width="177" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click here to view weather details for this plant" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gO3-Uk-6Ls">
+                                                    <rect key="frame" x="193" y="60.5" width="177" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <constraints>
                                                 <constraint firstItem="uP5-VC-k0j" firstAttribute="top" secondItem="V1c-eb-Xmv" secondAttribute="top" constant="12" id="3fd-xs-iN7"/>
+                                                <constraint firstItem="gO3-Uk-6Ls" firstAttribute="leading" secondItem="uP5-VC-k0j" secondAttribute="trailing" constant="60" id="BxL-be-NxB"/>
                                                 <constraint firstAttribute="bottom" secondItem="uP5-VC-k0j" secondAttribute="bottom" constant="12" id="CGV-PJ-M2F"/>
                                                 <constraint firstAttribute="trailing" secondItem="vhT-15-fuc" secondAttribute="trailing" constant="30" id="NqW-xm-jib"/>
                                                 <constraint firstItem="uP5-VC-k0j" firstAttribute="leading" secondItem="V1c-eb-Xmv" secondAttribute="leading" constant="8" id="RDd-zV-Qqm"/>
-                                                <constraint firstAttribute="bottom" secondItem="vhT-15-fuc" secondAttribute="bottom" constant="30" id="Xto-ti-3yT"/>
-                                                <constraint firstItem="vhT-15-fuc" firstAttribute="leading" secondItem="uP5-VC-k0j" secondAttribute="trailing" constant="70" id="eqk-dA-iqw"/>
+                                                <constraint firstAttribute="trailing" secondItem="gO3-Uk-6Ls" secondAttribute="trailing" constant="30" id="ccM-0E-VGP"/>
+                                                <constraint firstItem="vhT-15-fuc" firstAttribute="leading" secondItem="uP5-VC-k0j" secondAttribute="trailing" constant="60" id="eqk-dA-iqw"/>
                                                 <constraint firstItem="vhT-15-fuc" firstAttribute="top" secondItem="V1c-eb-Xmv" secondAttribute="top" constant="30" id="lKC-Ek-v5M"/>
+                                                <constraint firstItem="gO3-Uk-6Ls" firstAttribute="top" secondItem="vhT-15-fuc" secondAttribute="bottom" constant="10" id="nyC-cA-b8M"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -615,7 +623,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hgc-TU-r9b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1709" y="1051"/>
+            <point key="canvasLocation" x="-1710.144927536232" y="1050.6696428571429"/>
         </scene>
         <!--Grow Crop-->
         <scene sceneID="dCf-E4-mQL">
@@ -1539,7 +1547,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search for the crop" showsCancelButton="YES" id="4b0-Sy-8gg">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="786" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
