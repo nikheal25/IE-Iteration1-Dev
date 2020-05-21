@@ -437,7 +437,12 @@ extension FoldingTableViewController: filterDelgate {
     ///   - soilType: <#soilType description#>
     func filterOption(plantType: String, soilType: String) {
         print(plantType)
-        if plantType != "Please select" || soilType != "Please select" {
+        if plantType == "cancel" {
+            searching = false
+            self.plantFilter = "Please select"
+            self.soilFilter = "Please select"
+            tableView.reloadData()
+        } else if plantType != "Please select" || soilType != "Please select" {
             searchedCrop = []
             if soilType != "Please select" {
                 searchedCrop = filterCellsBySoilType(term: soilType)

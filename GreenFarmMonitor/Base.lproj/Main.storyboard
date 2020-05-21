@@ -2425,8 +2425,8 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BASED ON YOUR LOCATION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X0Z-57-DV7">
-                                <rect key="frame" x="70" y="85" width="65" height="16"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <rect key="frame" x="70" y="85" width="65" height="13.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -2469,8 +2469,8 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A - Z            " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKi-M0-Qte">
-                                <rect key="frame" x="70" y="145" width="50" height="16"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <rect key="frame" x="70" y="145" width="50" height="13.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -2514,7 +2514,7 @@
             <objects>
                 <viewController id="ZHU-zq-8rR" customClass="FilterViewController" customModule="MyGardenOz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nyT-d6-35Y">
-                        <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mw3-FP-VAr">
@@ -2574,11 +2574,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQs-Ew-AiT">
+                                <rect key="frame" x="30" y="338" width="90" height="30"/>
+                                <state key="normal" title="Clear Choices">
+                                    <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelButtonClicked:" destination="ZHU-zq-8rR" eventType="touchUpInside" id="tvF-Cw-qec"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="o3D-P1-NSc" secondAttribute="trailing" constant="20" id="1Bd-AG-2Jx"/>
+                            <constraint firstItem="APx-Dj-HYr" firstAttribute="trailing" secondItem="QQs-Ew-AiT" secondAttribute="trailing" constant="30" id="5Au-6K-M6z"/>
                             <constraint firstItem="8Gk-a7-OWK" firstAttribute="top" secondItem="g3k-Lj-h5r" secondAttribute="bottom" constant="5" id="8bX-5Z-vB3"/>
+                            <constraint firstItem="QQs-Ew-AiT" firstAttribute="top" secondItem="wfv-56-i1l" secondAttribute="bottom" constant="10" id="B9s-wY-Gq7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="V3T-4V-bJU" secondAttribute="trailing" constant="20" id="BDg-AA-x6o"/>
                             <constraint firstItem="wfv-56-i1l" firstAttribute="leading" secondItem="nyT-d6-35Y" secondAttribute="leading" constant="30" id="DJh-me-R5o"/>
                             <constraint firstItem="g3k-Lj-h5r" firstAttribute="top" secondItem="kq6-CQ-KAR" secondAttribute="bottom" constant="10" id="K7U-vv-4xI"/>
@@ -2593,12 +2604,14 @@
                             <constraint firstItem="8Gk-a7-OWK" firstAttribute="top" secondItem="kq6-CQ-KAR" secondAttribute="bottom" constant="30" id="lTN-62-2wb"/>
                             <constraint firstItem="o3D-P1-NSc" firstAttribute="centerY" secondItem="kq6-CQ-KAR" secondAttribute="centerY" id="rc9-Us-0Qd"/>
                             <constraint firstItem="g3k-Lj-h5r" firstAttribute="centerX" secondItem="nyT-d6-35Y" secondAttribute="centerX" id="rjh-FR-AvV"/>
+                            <constraint firstItem="QQs-Ew-AiT" firstAttribute="leading" secondItem="APx-Dj-HYr" secondAttribute="leading" constant="30" id="ruV-ko-cb4"/>
                             <constraint firstItem="kq6-CQ-KAR" firstAttribute="leading" secondItem="nyT-d6-35Y" secondAttribute="leading" constant="15" id="v1g-HR-v5v"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="APx-Dj-HYr"/>
                     </view>
-                    <size key="freeformSize" width="150" height="200"/>
+                    <size key="freeformSize" width="150" height="600"/>
                     <connections>
+                        <outlet property="cancelButton" destination="QQs-Ew-AiT" id="32S-0D-0j1"/>
                         <outlet property="doneButton" destination="wfv-56-i1l" id="cXt-0M-zIW"/>
                         <outlet property="instructionLabel" destination="g3k-Lj-h5r" id="xVe-YC-ZtT"/>
                         <outlet property="pickerView" destination="8Gk-a7-OWK" id="6Nb-rn-sAR"/>
