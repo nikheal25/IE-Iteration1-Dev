@@ -66,8 +66,8 @@ class GrowMyCropViewController: UIViewController, DatabaseListener, GrowCropDele
     
     /// This method only shows the crops that are related to the existing User
     /// - Parameters:
-    ///   - change: <#change description#>
-    ///   - userCropRelation: <#userCropRelation description#>
+    ///   - change:
+    ///   - userCropRelation:
     func onUserCropRelationChange(change: DatabaseChange, userCropRelation: [UserCropRelation]) {
         let currentUserId = userDefaultController?.retrieveUserId()
         
@@ -157,6 +157,8 @@ extension GrowMyCropViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == SECTION_ACTIVITY{
             selectedRow = indexPath.row
+            passingVal = myCropList[selectedRow]
+            self.performSegue(withIdentifier: "newGrowDetailCropSegue", sender: self)
         }
     }
 }
