@@ -26,7 +26,8 @@ class DemoTableViewCell: FoldingCell {
     @IBOutlet weak var bottomMostLabel: UILabel!
     
     @IBOutlet weak var barView: UIView!
-    @IBOutlet weak var compatibleButton: UIButton!
+//    @IBOutlet weak var compatibleButton: UIButton!
+    @IBOutlet weak var newButton: UIButton!
     
     @IBOutlet weak var cropImage: UIImageView!
     @IBOutlet weak var cropLabel: UILabel!
@@ -44,6 +45,7 @@ class DemoTableViewCell: FoldingCell {
     override func awakeFromNib() {
         foregroundView.layer.cornerRadius = 10
         foregroundView.layer.masksToBounds = true
+        self.contentView.isUserInteractionEnabled = true
         super.awakeFromNib()
     }
     
@@ -58,7 +60,7 @@ class DemoTableViewCell: FoldingCell {
         
         // Change the color of buttons - START
         self.addToButton.backgroundColor = UIColor(hexString: "#616163")
-        self.compatibleButton.backgroundColor = UIColor(hexString: "#616163")
+        self.newButton.backgroundColor = UIColor(hexString: "#616163")
         // END
         
         
@@ -85,30 +87,45 @@ class DemoTableViewCell: FoldingCell {
         
         self.specificCrop = crop
         self.companionCrop = companionCrop
-        self.compatibleButton.setTitle("Add \(companionCrop.cropName) with this plant", for: .normal)
+        self.newButton.setTitle("Add \(companionCrop.cropName) with this plant", for: .normal)
         
         self.bottomMostLabel.text = "Based on your location \(specificCrop!.cropName) grows best with \(companionCrop.cropName)."
         if self.specificCrop?.cropName == companionCrop.cropName  {
-            self.compatibleButton.isHidden = true
+            self.newButton.isHidden = true
             self.bottomMostLabel.isHidden = true
         }
-        self.compatibleButton.titleLabel?.minimumScaleFactor = 0.01
-        self.compatibleButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        self.newButton.titleLabel?.minimumScaleFactor = 0.01
+        self.newButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        self.newButton.layer.cornerRadius = 10
         self.compatibleCropLabel.text = "This crop grows best with \(crop.Compatible_plant), \(companionCrop.All_Compatible_plants)"
         self.compatibleCropLabel.adjustsFontSizeToFitWidth = true
         self.compatibleCropLabel.minimumScaleFactor = 0.5
+        
+        //MARK:-DELETE THIS
+        newButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
     }
     
+    @IBAction func compatibleButton(_ sender: Any) {
+                databaseController?.updateMyCropList(new: true, userId: (userDefaultController?.retrieveUserId())!, cropId: specificCrop!.cropId)
+                databaseController?.updateMyCropList(new: true, userId: (userDefaultController?.retrieveUserId())!, cropId: companionCrop!.cropId)
+                selectionDelegate.didAddCrop()
+        print("working \(companionCrop?.cropName)")
+    }
     @IBAction func clickAddCropButton(_ sender: Any) {
         databaseController?.updateMyCropList(new: true, userId: (userDefaultController?.retrieveUserId())!, cropId: specificCrop!.cropId)
         selectionDelegate.didAddCrop()
         //self.navigationController?.popToRootViewController(animated: true)
     }
+//
+//    @IBAction func compatibleButtonPressed(_ sender: Any) {
+//        databaseController?.updateMyCropList(new: true, userId: (userDefaultController?.retrieveUserId())!, cropId: specificCrop!.cropId)
+//        databaseController?.updateMyCropList(new: true, userId: (userDefaultController?.retrieveUserId())!, cropId: companionCrop!.cropId)
+//        selectionDelegate.didAddCrop()
+//    }
+//
     
-    @IBAction func compatibleButton(_ sender: Any) {
-        databaseController?.updateMyCropList(new: true, userId: (userDefaultController?.retrieveUserId())!, cropId: specificCrop!.cropId)
-        databaseController?.updateMyCropList(new: true, userId: (userDefaultController?.retrieveUserId())!, cropId: companionCrop!.cropId)
-        selectionDelegate.didAddCrop()
+    @objc func buttonAction(sender: UIButton!) {
+      print("Button tapped \(companionCrop?.cropName)")
     }
     
     override func animationDuration(_ itemIndex: NSInteger, type _: FoldingCell.AnimationType) -> TimeInterval {

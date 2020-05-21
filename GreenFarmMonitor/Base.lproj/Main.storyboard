@@ -14,9 +14,6 @@
         <array key="OpenSans-Regular.ttf">
             <string>OpenSans</string>
         </array>
-        <array key="OpenSans-Semibold.ttf">
-            <string>OpenSans-Semibold</string>
-        </array>
         <array key="SFProText-Regular.ttf">
             <string>SFProText-Regular</string>
         </array>
@@ -1683,26 +1680,10 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TnA-JY-nhP">
-                                                            <rect key="frame" x="30" y="123" width="500" height="31"/>
-                                                            <color key="backgroundColor" red="0.99607843139999996" green="0.74509803919999995" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="16"/>
-                                                            <state key="normal" title="Compatible">
-                                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </state>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                    <integer key="value" value="10"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                            <connections>
-                                                                <action selector="compatibleButton:" destination="gXt-61-trc" eventType="touchUpInside" id="m6c-NT-9Zi"/>
-                                                            </connections>
-                                                        </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y6H-1m-3aI">
-                                                            <rect key="frame" x="30" y="72" width="500" height="31"/>
+                                                            <rect key="frame" x="30" y="72" width="500" height="32"/>
                                                             <color key="backgroundColor" red="0.99607843139999996" green="0.74509803919999995" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="16"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <state key="normal" title="Add to MyGarden">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
@@ -1716,29 +1697,40 @@
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This crops grows best with" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBq-Gv-yRx">
-                                                            <rect key="frame" x="20" y="164" width="520" height="14"/>
+                                                            <rect key="frame" x="20" y="151" width="520" height="14"/>
                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
                                                             <color key="textColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="0.49546030410000003" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgs-Df-Gvw">
+                                                            <rect key="frame" x="30" y="114" width="500" height="32"/>
+                                                            <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <state key="normal" title="Button">
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="compatibleButton:" destination="gXt-61-trc" eventType="touchUpInside" id="Jkh-w9-pRQ"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="xwo-YL-Q4c" secondAttribute="trailing" constant="10" id="03h-NF-BJe"/>
                                                         <constraint firstItem="xwo-YL-Q4c" firstAttribute="leading" secondItem="Qbi-JT-8Ye" secondAttribute="leading" constant="10" id="8vb-qS-oE2"/>
                                                         <constraint firstItem="8B4-uo-qNI" firstAttribute="leading" secondItem="Qbi-JT-8Ye" secondAttribute="leading" constant="10" id="Fdi-sp-smN"/>
-                                                        <constraint firstItem="TnA-JY-nhP" firstAttribute="leading" secondItem="Qbi-JT-8Ye" secondAttribute="leading" constant="30" id="IzT-gd-xcg"/>
-                                                        <constraint firstItem="SBq-Gv-yRx" firstAttribute="top" secondItem="TnA-JY-nhP" secondAttribute="bottom" constant="10" id="LQ3-Kr-Rkw"/>
                                                         <constraint firstAttribute="trailing" secondItem="SBq-Gv-yRx" secondAttribute="trailing" constant="20" id="ON1-xV-bdw"/>
                                                         <constraint firstItem="xwo-YL-Q4c" firstAttribute="top" secondItem="Qbi-JT-8Ye" secondAttribute="top" constant="5" id="OdG-zl-X7t"/>
+                                                        <constraint firstAttribute="trailing" secondItem="rgs-Df-Gvw" secondAttribute="trailing" constant="30" id="RV7-fO-sCx"/>
                                                         <constraint firstItem="SBq-Gv-yRx" firstAttribute="leading" secondItem="Qbi-JT-8Ye" secondAttribute="leading" constant="20" id="TU7-SQ-sjd"/>
+                                                        <constraint firstItem="rgs-Df-Gvw" firstAttribute="leading" secondItem="Qbi-JT-8Ye" secondAttribute="leading" constant="30" id="V4l-3p-tbG"/>
+                                                        <constraint firstItem="rgs-Df-Gvw" firstAttribute="top" secondItem="Y6H-1m-3aI" secondAttribute="bottom" constant="10" id="V5V-6p-3Zn"/>
                                                         <constraint firstItem="Y6H-1m-3aI" firstAttribute="top" secondItem="8B4-uo-qNI" secondAttribute="bottom" constant="30" id="VgP-l6-WjM"/>
                                                         <constraint firstAttribute="height" constant="210" id="cfa-cs-Yrx"/>
                                                         <constraint firstAttribute="trailing" secondItem="8B4-uo-qNI" secondAttribute="trailing" constant="10" id="fDp-UH-Jzo"/>
-                                                        <constraint firstItem="TnA-JY-nhP" firstAttribute="top" secondItem="Y6H-1m-3aI" secondAttribute="bottom" constant="20" id="hro-yX-F1J"/>
                                                         <constraint firstItem="Y6H-1m-3aI" firstAttribute="leading" secondItem="Qbi-JT-8Ye" secondAttribute="leading" constant="30" id="juy-AT-r5g"/>
+                                                        <constraint firstItem="SBq-Gv-yRx" firstAttribute="top" secondItem="rgs-Df-Gvw" secondAttribute="bottom" constant="5" id="lLe-2d-S57"/>
                                                         <constraint firstItem="8B4-uo-qNI" firstAttribute="top" secondItem="xwo-YL-Q4c" secondAttribute="bottom" constant="10" id="pjj-jn-A4r"/>
-                                                        <constraint firstAttribute="trailing" secondItem="TnA-JY-nhP" secondAttribute="trailing" constant="30" id="tcu-yH-GWr"/>
                                                         <constraint firstItem="8B4-uo-qNI" firstAttribute="centerX" secondItem="Qbi-JT-8Ye" secondAttribute="centerX" id="y9v-bb-f8f"/>
                                                         <constraint firstAttribute="trailing" secondItem="Y6H-1m-3aI" secondAttribute="trailing" constant="30" id="zdz-9T-IPh"/>
                                                     </constraints>
@@ -1782,7 +1774,6 @@
                                     <outlet property="addToButton" destination="Y6H-1m-3aI" id="Ohe-Ju-aVq"/>
                                     <outlet property="barView" destination="6HJ-hS-EeR" id="mXU-Jy-W9E"/>
                                     <outlet property="bottomMostLabel" destination="SBq-Gv-yRx" id="dVt-bv-fmU"/>
-                                    <outlet property="compatibleButton" destination="TnA-JY-nhP" id="KF5-TC-U38"/>
                                     <outlet property="compatibleCropLabel" destination="8B4-uo-qNI" id="QJr-49-Y02"/>
                                     <outlet property="containerView" destination="Jaq-VL-v0N" id="pVJ-Gr-lg7"/>
                                     <outlet property="containerViewTop" destination="uxT-fU-qIh" id="p1P-fJ-owT"/>
@@ -1792,6 +1783,7 @@
                                     <outlet property="foregroundView" destination="42k-X6-as8" id="0z1-Up-pHA"/>
                                     <outlet property="foregroundViewTop" destination="mP6-Fe-0SN" id="ImM-mc-CuA"/>
                                     <outlet property="fullCropImage" destination="9BG-Ff-t9k" id="mQF-he-uqw"/>
+                                    <outlet property="newButton" destination="rgs-Df-Gvw" id="u7y-Kp-hZe"/>
                                     <outlet property="topBarLabel" destination="y87-Qw-tYY" id="vuU-f7-yzE"/>
                                 </connections>
                             </tableViewCell>
