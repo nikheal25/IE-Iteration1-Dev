@@ -8,16 +8,21 @@
 
 import UIKit
 
+/// delegates
 protocol filterDelgate {
     func filterOption(plantType: String, soilType: String)
     func sortOption(id: Int)
 }
 
 class PopOverViewController: UIViewController {
-
+    
+    /// class variables
     var sortingSchema: Int!
     var plantFilter: String!
     var soilFilter: String!
+    
+    
+    /// labels
     @IBOutlet weak var firstView: UIView!
     @IBOutlet weak var secondView: UIView!
     var filterSelectedDelegate: filterDelgate!
@@ -27,6 +32,8 @@ class PopOverViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    /// this method switches view between Sorting and Filtering
+    /// - Parameter sender: UISegmentedControl
     @IBAction func swichView(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
             firstView.alpha = 1
@@ -58,11 +65,17 @@ class PopOverViewController: UIViewController {
 }
 
 extension PopOverViewController: filterSelectionDelgate, sortSelectionDelgate {
+    /// implemetatin of delegate
+    /// - Parameter id
     func selectedSort(id: Int) {
         sortingSchema = id
         filterSelectedDelegate.sortOption(id: sortingSchema)
     }
     
+    /// implementation of delegate
+    /// - Parameters:
+    ///   - plantType: <#plantType description#>
+    ///   - soilType: <#soilType description#>
     func selectedChoiced(plantType: String, soilType: String){
         print(plantType)
         print(soilType)

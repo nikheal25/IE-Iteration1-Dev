@@ -8,16 +8,22 @@
 
 import UIKit
 
+/// delgate
 protocol filterSelectionDelgate {
     func selectedChoiced(plantType: String, soilType: String)
 }
 
+
+/// controller
 class FilterViewController: UIViewController {
     
+    /// class variables
     var filterDelegate: filterSelectionDelgate!
     var plantFilter: String!
     var soilFilter: String!
     
+    
+    /// classification type
     private var dataSource = ["Perennial","Herb", "Annual", "Fruit"]
     private let plantType = ["Perennial","Herb", "Annual", "Fruit"]
     private let soilType = ["Loam","Sand", "Clay"]
@@ -25,6 +31,8 @@ class FilterViewController: UIViewController {
     private var flag = 1
     var soil: String!
     var plant: String!
+    
+    /// labels
     @IBOutlet weak var soilTypeLabel: UILabel!
     @IBOutlet weak var platTypeLabel: UILabel!
     @IBOutlet weak var pickerView: UIPickerView!
@@ -49,6 +57,8 @@ class FilterViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    /// method gets called when use click on Done button
+    /// - Parameter sender: Any
     @IBAction func doneClicked(_ sender: Any) {
         pickerView.isHidden = true
         doneButton.isHidden = true
@@ -56,6 +66,9 @@ class FilterViewController: UIViewController {
         instructionLabel.isHidden = true
         dismiss(animated: true, completion: nil)
     }
+    
+    /// when Soil Type button is clicked, it will get invoked
+    /// - Parameter sender: Any
     @IBAction func soilTypeClicked(_ sender: Any) {
         pickerView.isHidden = false
         doneButton.isHidden = false
@@ -65,6 +78,9 @@ class FilterViewController: UIViewController {
         flag = 2
         pickerView.reloadComponent(0)
     }
+    
+    /// when Plant Type button is clicked, it will get invoked
+    /// - Parameter sender: Any
     @IBAction func platTypeClicked(_ sender: Any) {
         pickerView.isHidden = false
         doneButton.isHidden = false

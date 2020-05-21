@@ -12,6 +12,7 @@ import SwiftMessages
 
 class FoldingTableViewController: UITableViewController, UIPopoverPresentationControllerDelegate {
     
+    /// class variable
     var specificCrop: Crop?
     // MARK: Sort and Filter
     var sortingSchema: Int?
@@ -22,13 +23,16 @@ class FoldingTableViewController: UITableViewController, UIPopoverPresentationCo
     weak var databaseController: DatabaseProtocol?
     weak var userDefaultController: UserdefaultsProtocol?
     
+    /// List of crops
     var allCropsName: [Crop] = []
     var registeredCrop: [String]?
     
+    /// list of searched crops
     var searchedCrop = [Crop]()
     var recomenededCropsName = [Crop]()
     var searching = false
     
+    ///
     let SECTION_ACTIVITY = 0;
     let SECTION_COUNT = 1;
     let CELL_COUNT = "CellCounter"
@@ -43,6 +47,11 @@ class FoldingTableViewController: UITableViewController, UIPopoverPresentationCo
     }
     
     //MARK: Swiftmessage
+    /// This method will show the floating message on the screen
+    /// - Parameters:
+    ///   - title: <#title description#>
+    ///   - message: <#message description#>
+    ///   - iconIndex: <#iconIndex description#>
     func showSwiftMessage(title: String, message: String, iconIndex: Int) {
         let view = MessageView.viewFromNib(layout: .cardView)
         
@@ -91,10 +100,7 @@ class FoldingTableViewController: UITableViewController, UIPopoverPresentationCo
         plantFilter = "Please select"
         soilFilter = "Please select"
         
-        //Looks for single or multiple taps.
-//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-//
-//        self.addGestureRecognizer(tap)
+
         
         super.viewDidLoad()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -119,30 +125,26 @@ class FoldingTableViewController: UITableViewController, UIPopoverPresentationCo
             longitude = longitudeTwo
         }
         recommendedCrops = ((api?.apiRecommendedCrop(lat: latitude, long: longitude))!)
-        print(recommendedCrops)
-        //        do{
-        //            sleep(2)
-        //        }
-        
+       
         let concurrentQueue = DispatchQueue(label: "com.some.concurrentQueue", attributes: .concurrent)
         
+        //Adds delay to the call of API
         concurrentQueue.async {
             do{
-                print("1")
+//                print("1")
                 do{
                     sleep(3)
                 }
                 self.recommendedCrops = self.api!.recomendedCrops
-                print("2")
-                print(self.recommendedCrops)
+//                print("2")
+//                print(self.recommendedCrops)
             }
         }
         
-        print("4")
+//        print("4")
     }
     
-    
-    
+    /// This method returns the list of crops that are registered by the user
     func getRelevantCrops() -> [Crop] {
         let allCrops = databaseController!.cropsList
         var tempList: [Crop] = []
@@ -155,6 +157,7 @@ class FoldingTableViewController: UITableViewController, UIPopoverPresentationCo
         return tempList
     }
     
+    /// gets the list of recommended crops
     func recommendedCrop() -> [Crop] {
         var tempCrops: [Crop] = []
         
@@ -166,6 +169,7 @@ class FoldingTableViewController: UITableViewController, UIPopoverPresentationCo
         return tempCrops
     }
     
+    /// Sorts the crop according to the user input
     func sortCrops()  {
         if sortingSchema == 1 {
             searching = true
@@ -184,6 +188,10 @@ class FoldingTableViewController: UITableViewController, UIPopoverPresentationCo
         }
     }
     
+    /// Takes user to different view controller
+    /// - Parameters:
+    ///   - segue: <#segue description#>
+    ///   - sender: <#sender description#>
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showPopOverSegue" {
             let popoverViewController = segue.destination as! PopOverViewController
@@ -343,6 +351,8 @@ extension FoldingTableViewController: UISearchBarDelegate {
         searchBar.resignFirstResponder()
     }
     
+    /// filters the cell based on the crop
+    /// - Parameter term: <#term description#>
     func filterCells(term: String) -> [Crop] {
         var tempCrops: [Crop] = []
         
@@ -354,6 +364,8 @@ extension FoldingTableViewController: UISearchBarDelegate {
         return tempCrops
     }
     
+    /// filters cell by plant type
+    /// - Parameter term: <#term description#>
     func filterCellsByPlantType(term: String) -> [Crop] {
         var tempCrops: [Crop] = []
         
@@ -365,6 +377,8 @@ extension FoldingTableViewController: UISearchBarDelegate {
         return tempCrops
     }
     
+    /// filters the plant by sort
+    /// - Parameter term: <#term description#>
     func filterCellsBySoilType(term: String) -> [Crop] {
         var tempCrops: [Crop] = []
         
@@ -376,6 +390,10 @@ extension FoldingTableViewController: UISearchBarDelegate {
         return tempCrops
     }
     
+    /// searches the plants based on the user input
+    /// - Parameters:
+    ///   - searchBar: <#searchBar description#>
+    ///   - searchText: <#searchText description#>
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         //        searchedCountry = allCropsName.filter({$0.lowercased().prefix(searchText.count) == searchText.lowercased()})
         searchedCrop = filterCells(term: searchText)
@@ -398,8 +416,10 @@ extension FoldingTableViewController: SelectionDelegate{
     }
 }
 extension FoldingTableViewController: filterDelgate {
+    /// gets the sorting ID from another class
+    /// - Parameter id: <#id description#>
     func sortOption(id: Int) {
-        print("Inside folding cell \(id)")
+//        print("Inside folding cell \(id)")
         sortingSchema = id
         sortCrops()
         tableView.reloadData()
@@ -411,6 +431,10 @@ extension FoldingTableViewController: filterDelgate {
         
     }
     
+    /// gets the filter ID from another class
+    /// - Parameters:
+    ///   - plantType: <#plantType description#>
+    ///   - soilType: <#soilType description#>
     func filterOption(plantType: String, soilType: String) {
         print(plantType)
         if plantType != "Please select" || soilType != "Please select" {
