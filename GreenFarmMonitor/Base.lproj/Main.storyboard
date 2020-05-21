@@ -568,8 +568,14 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can add more plants to your list." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Weo-IA-t8X">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can add more plants to your list." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Weo-IA-t8X">
                                             <rect key="frame" x="45" y="51" width="324" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe left to Delete MyPlants from the list." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRX-Ss-GSD">
+                                            <rect key="frame" x="45" y="72" width="324" height="16"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -578,6 +584,10 @@
                                     <constraints>
                                         <constraint firstItem="Weo-IA-t8X" firstAttribute="centerX" secondItem="bAZ-HB-KcO" secondAttribute="centerX" id="06W-NH-soC"/>
                                         <constraint firstItem="Weo-IA-t8X" firstAttribute="leading" secondItem="bAZ-HB-KcO" secondAttribute="leadingMargin" constant="25" id="39L-Ct-r1Y"/>
+                                        <constraint firstItem="RRX-Ss-GSD" firstAttribute="top" secondItem="Weo-IA-t8X" secondAttribute="bottom" constant="5" id="Ni6-Wd-KNJ"/>
+                                        <constraint firstItem="RRX-Ss-GSD" firstAttribute="leading" secondItem="bAZ-HB-KcO" secondAttribute="leadingMargin" constant="25" id="ONe-bn-mGS"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="RRX-Ss-GSD" secondAttribute="trailing" constant="25" id="Q3i-5d-exe"/>
+                                        <constraint firstItem="RRX-Ss-GSD" firstAttribute="centerX" secondItem="bAZ-HB-KcO" secondAttribute="centerX" id="XEq-gN-TD5"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Weo-IA-t8X" secondAttribute="trailing" constant="25" id="e9c-zi-y1l"/>
                                         <constraint firstItem="Weo-IA-t8X" firstAttribute="top" secondItem="bAZ-HB-KcO" secondAttribute="topMargin" constant="40" id="uis-Tn-sz4"/>
                                     </constraints>

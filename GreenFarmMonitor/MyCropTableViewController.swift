@@ -18,7 +18,6 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
         
     }
     
-    
     var listenerType: ListenerType = ListenerType.all // listener
     weak var databaseController: DatabaseProtocol?
     weak var userDefaultController: UserdefaultsProtocol?
@@ -77,7 +76,7 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
      let CELL_ACTIVITY = "myCropCell"
      var myCropList: [Crop] = []
      var selectedRow = 0
-     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -312,7 +311,7 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
         }
        // return "Add new Crops"
         if myCropList.count == 0 {
-            return "Currently you have NO plants in your list Add Crops to continue"
+            return "Currently you have NO plants in your list. Add Plants to continue"
         }
         return ""
 
