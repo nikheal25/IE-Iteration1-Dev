@@ -107,6 +107,7 @@ class ChangeUserLocationViewController: UIViewController, DatabaseListener,MKMap
         newUserId = (self.userDefaultController?.generateUniqueUserId())!
     }
     
+    
     @objc func textFieldDidChange(sender:UITextField)
     {   australiaMarks = []
         let address = self.locationText.text
@@ -118,7 +119,7 @@ class ChangeUserLocationViewController: UIViewController, DatabaseListener,MKMap
                 let markList = placemarks
            else
             {
-               
+                self.searchList.isHidden = true
                 return
                }
             
@@ -143,15 +144,7 @@ class ChangeUserLocationViewController: UIViewController, DatabaseListener,MKMap
                 
             }
         }
-       
-        
-        
-        
-        
-        
-        
-        
-    }
+       }
     
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
         
@@ -251,12 +244,7 @@ class ChangeUserLocationViewController: UIViewController, DatabaseListener,MKMap
                 
                 // to be changed
             }else{
-               
-                    
-                    
-        
-               
-                    self.databaseController!.updateLocation(userId:currentUserId!, lat: lat ,locationName: "New farm", long: long)
+               self.databaseController!.updateLocation(userId:currentUserId!, lat: lat ,locationName: "New farm", long: long)
 //            self.mapView.removeAnnotations(self.mapView.annotations)
                     self.displayMessage(title: "Location saved", message: "Successfully!")
                     self.userDefaultController?.assignCLLocation(lat: lat, long: long)
@@ -434,7 +422,7 @@ extension ChangeUserLocationViewController: UITableViewDelegate, UITableViewData
         var addressString : String = ""
         
         if location.subThoroughfare != nil {
-                                                          addressString = addressString + location.subThoroughfare! + ", "
+                                            addressString = addressString + location.subThoroughfare! + ", "
                                                       }
         if location.subLocality != nil {
                                            addressString = addressString + location.subLocality! + ", "
@@ -457,13 +445,20 @@ extension ChangeUserLocationViewController: UITableViewDelegate, UITableViewData
         
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      let selectedMark = australiaMarks[indexPath.row]
+        
+        print (indexPath.row)
+        if australiaMarks.count >= 1{
+        
+        let selectedMark = australiaMarks[indexPath.row]
+        
         let string = convertToString(location: selectedMark)
         
         
         
         self.locationText.text = string
+        self.locationText.endEditing(true)
         searchList.isHidden = true
+        }
         
     }
     
