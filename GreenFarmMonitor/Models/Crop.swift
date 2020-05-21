@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Model class for the crops
 class Crop: NSObject {
     var cropId: String
     var cropName: String

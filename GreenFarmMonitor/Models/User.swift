@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Model for the user
 class User: NSObject {
     var userId: String
     var userName: String

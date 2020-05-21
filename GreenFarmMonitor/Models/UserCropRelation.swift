@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Model for relationship between User and Crops
 class UserCropRelation: NSObject {
     var relationId: String
     var userId: String

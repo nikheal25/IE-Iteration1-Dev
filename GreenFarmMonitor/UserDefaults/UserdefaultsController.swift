@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// This controller takes care of all the Userdefaults
 class UserdefaultsController: NSObject, UserdefaultsProtocol {
     let defaults = UserDefaults.standard
     
@@ -73,20 +74,20 @@ class UserdefaultsController: NSObject, UserdefaultsProtocol {
     }
     
     func retriveLong() -> String
-       {
-           var long: String = ""
-           if let userlong = defaults.string(forKey: "userLongKey") {
-               long = userlong
-               
-           }
-           return long
-           
-           
+    {
+        var long: String = ""
+        if let userlong = defaults.string(forKey: "userLongKey") {
+            long = userlong
+            
+        }
+        return long
+        
+        
     }
-       
+    
     func assignCLLocation(lat: String, long: String) {
         defaults.set(lat, forKey: "userLatKey")
         defaults.set(long, forKey: "userLongKey")
     }
-
+    
 }

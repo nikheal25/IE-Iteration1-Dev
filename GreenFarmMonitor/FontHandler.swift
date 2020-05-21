@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 class FontHandler{
+    /// Method returns the font that is required for the labels
     static func getRegularFont() -> UIFont {
-//        return UIFont(name: "SFProText-Regular", size: 17.0) ?? UIFont.boldSystemFont(ofSize: 17.0)
         return  UIFont(name: "SFProText-Regular", size: 17.0) ?? UIFont.systemFont(ofSize: 17.0)
-       }
+    }
 }

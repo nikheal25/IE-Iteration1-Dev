@@ -7,6 +7,7 @@
 //
 
 import Foundation
+/// Class for weather
 class Weather: NSObject {
     var maxtemp: Double
     var mintemp: Double

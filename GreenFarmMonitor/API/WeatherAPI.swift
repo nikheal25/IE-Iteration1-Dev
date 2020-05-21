@@ -22,6 +22,7 @@ import UIKit
 
 
 
+//MARK:-  This method contains the calls for the Crop Recommendation API and weather API
 class WeatherAPI: NSObject, APIProtocol {
  
     
@@ -54,6 +55,10 @@ class WeatherAPI: NSObject, APIProtocol {
     var long = ""
     var todaysForecast = [Weather]()
     
+    /// This method calls the API which is responsible for returning the data of all the recommended crops
+    /// - Parameters:
+    ///   - lat: <#lat description#>
+    ///   - long: <#long description#>
     func apiRecommendedCrop(lat: String, long: String) -> [String]
     {
         
@@ -64,7 +69,6 @@ class WeatherAPI: NSObject, APIProtocol {
             maxTemp = weather[0].maxtemp
         }else{
             todaysForecast = apiCall(lat: lat, long: long)
-//            todaysForecast = apiCall(lat: lat, long: long)
             minTemp = 15
             maxTemp = 18
             print("********wait")
@@ -96,7 +100,6 @@ class WeatherAPI: NSObject, APIProtocol {
             do {
                 
                 let json = try JSONSerialization.jsonObject(with: data!, options: [])as? [String: Any]
-//                print(json)
                 let suggestedCrops = json!["crops"] as! String
                 let cropArray = suggestedCrops.components(separatedBy: ",")
                 
