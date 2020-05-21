@@ -39,14 +39,14 @@ class ChangeUserLocationViewController: UIViewController, DatabaseListener,MKMap
                    }
         if LocationList.first?.coordinate == nil
                 {
-                    self.locationText.placeholder = "Enter suburb or pincode of garden location"
+                    self.searchBar.placeholder = "Enter suburb or pincode of garden location"
                     self.UIBtn.setTitle("Add", for:.normal)
                   
                 }
                 else
                 {
                     mapView.removeAnnotations(mapView.annotations)
-                    self.locationText.placeholder = "Enter suburb or pincode of garden location"
+                    self.searchBar.placeholder = "Enter suburb or pincode of garden location"
                     self.UIBtn.setTitle("Change", for:.normal)
 //                    self.locationText.placeholder = "Add your farm here"
 //                    self.UIBtn.setTitle("Add", for:.normal)
@@ -70,8 +70,8 @@ class ChangeUserLocationViewController: UIViewController, DatabaseListener,MKMap
     }
    
     
-  
-    
+   var searchSource: [String] = []
+    var australiaSource: [String] = []
 
     @IBOutlet weak var introLabel: UILabel!
     var LocationList = [LocationAnnotation]()
@@ -93,8 +93,8 @@ class ChangeUserLocationViewController: UIViewController, DatabaseListener,MKMap
         self.UIBtn.backgroundColor = UIColor(hexString: "#616163")
         self.continueUIBtn.backgroundColor = UIColor(hexString: "#616163")
         self.continueUIBtn.layer.cornerRadius = 8.0
-        self.locationText.addTarget(self, action: #selector(self.textFieldDidChange(sender:)), for: UIControl.Event.editingChanged)
-        self.locationText.delegate = self
+//        self.locationText.addTarget(self, action: #selector(self.textFieldDidChange(sender:)), for: UIControl.Event.editingChanged)
+//        self.locationText.delegate = self
         
         self.searchList.layer.cornerRadius = 8.0
         self.searchList.dataSource = self
@@ -102,57 +102,75 @@ class ChangeUserLocationViewController: UIViewController, DatabaseListener,MKMap
         self.searchList.isHidden = true
         //zoom to australia
         let Australia = CLLocation(latitude: -25.2744, longitude: 133.7751)
-        let zoomRegion = MKCoordinateRegion(center: Australia.coordinate, latitudinalMeters: 5000000,longitudinalMeters: 5000000)
+        let zoomRegion = MKCoordinateRegion(center: Australia.coordinate, latitudinalMeters: 3000000,longitudinalMeters: 4000000)
         mapView.setRegion(zoomRegion, animated: true)
         newUserId = (self.userDefaultController?.generateUniqueUserId())!
-    }
+       
+        self.searchCompleter.delegate = self
+        self.searchCompleter.region = mapView.region
+        
+        self.searchBar.delegate = self
+       
     
-    
-    @objc func textFieldDidChange(sender:UITextField)
-    {   australiaMarks = []
-        let address = self.locationText.text
-        let geoCoder = CLGeocoder()
-        geoCoder.geocodeAddressString(address!)
-        {(placemarks,error) in
-            guard
-            
-                let markList = placemarks
-           else
-            {
-                self.searchList.isHidden = true
-                return
-               }
-            
-            for mark in markList
-            {
-                if mark.country == "Australia"
-                {
-                        self.australiaMarks.append(mark)
-
-                }
-
-
-            }
-            print(self.australiaMarks.count)
-            if self.australiaMarks.count != 0{
-             self.searchList.reloadData()
-                self.searchList.isHidden = false
-                
-            }
-            else {
-                self.searchList.isHidden = true
-                
-            }
-        }
-       }
-    
-    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+   
         
         
-        self.searchList.isHidden = true
-       self.locationText.endEditing(true)
-       return true
+    
     }
+   var searchCompleter = MKLocalSearchCompleter()
+
+   var searchResults = [MKLocalSearchCompletion]()
+    
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    
+    
+//    @objc func textFieldDidChange(sender:UITextField)
+//    {   australiaMarks = []
+//        let address = self.locationText.text
+//        let geoCoder = CLGeocoder()
+//        geoCoder.geocodeAddressString(address!)
+//        {(placemarks,error) in
+//            guard
+//
+//                let markList = placemarks
+//           else
+//            {
+//                self.searchList.isHidden = true
+//                return
+//               }
+//
+//            for mark in markList
+//            {
+//                if mark.country == "Australia"
+//                {
+//                        self.australiaMarks.append(mark)
+//
+//                }
+//
+//
+//            }
+//            print(self.australiaMarks.count)
+//            if self.australiaMarks.count != 0{
+//             self.searchList.reloadData()
+//                self.searchList.isHidden = false
+//
+//            }
+//            else {
+//                self.searchList.isHidden = true
+//
+//            }
+//        }
+//       }
+//
+//    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+//
+//
+//        self.searchList.isHidden = true
+//       self.locationText.endEditing(true)
+//       return true
+//    }
    
     
     
@@ -180,14 +198,14 @@ class ChangeUserLocationViewController: UIViewController, DatabaseListener,MKMap
     @IBOutlet weak var continueUIBtn: UIButton!
     var resultList = [String]()
     @IBOutlet weak var UIBtn: UIButton!
-    @IBOutlet weak var locationText: UITextField!
+   
     var australiaMarks = [CLPlacemark]()
     @IBAction func ChangeBtn(_ sender: Any) {
         searchList.isHidden = true
-        let address = self.locationText.text
+        let address = self.searchBar.text
         if address!.isEmpty
         {
-           self.locationText.endEditing(true)
+           self.searchBar.endEditing(true)
             displayMessage(title: "Empty", message: "Invalid values!")
             
         }
@@ -353,7 +371,7 @@ class ChangeUserLocationViewController: UIViewController, DatabaseListener,MKMap
                                 let addressString = self.convertToString(location: pm)
                               
                                 
-                                self.locationText.text = addressString
+                                self.searchBar.text = addressString
             }
           
             }
@@ -369,7 +387,7 @@ class ChangeUserLocationViewController: UIViewController, DatabaseListener,MKMap
         let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         alertController.addAction(UIAlertAction(title: "OK", style:UIAlertAction.Style.default ){
             (UIAlertAction) -> Void in
-            self.locationText.endEditing(true)
+            self.searchBar.endEditing(true)
             
             
         } )
@@ -400,23 +418,27 @@ class ChangeUserLocationViewController: UIViewController, DatabaseListener,MKMap
 }
 extension ChangeUserLocationViewController: UITableViewDelegate, UITableViewDataSource
 {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return australiaSource.count ?? 0
+        }
+
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            //I've created SearchCell beforehand; it might be your cell type
+            let cell = searchList.dequeueReusableCell(withIdentifier: "relevantLocations", for: indexPath) as! relevantLocationsTableViewCell
+
+            cell.searchResult.text = self.australiaSource[indexPath.row]
+   
+
+            return cell
+        }
+    
+    
+    
     
      
     
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return australiaMarks.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = searchList.dequeueReusableCell(withIdentifier: "relevantLocations", for: indexPath) as! relevantLocationsTableViewCell
-        let location = australiaMarks[indexPath.row]
-        
-        let addressString = convertToString(location: location)
-        
-        cell.searchResult.text = addressString
-        return cell
-    }
+
     func convertToString (location: CLPlacemark) -> String
     {
         var addressString : String = ""
@@ -445,29 +467,57 @@ extension ChangeUserLocationViewController: UITableViewDelegate, UITableViewData
         
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+       
+
+        let selectedLocation = australiaSource[indexPath.row]
         
-        print (indexPath.row)
-        if australiaMarks.count >= 1{
-        
-        let selectedMark = australiaMarks[indexPath.row]
-        
-        let string = convertToString(location: selectedMark)
-        
-        
-        
-        self.locationText.text = string
-        self.locationText.endEditing(true)
+        self.searchBar.text = selectedLocation
+        self.searchBar.endEditing(true)
+            
+    
         searchList.isHidden = true
         }
+
+    
+    
+//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//
+//        self.searchList.heightAnchor.constraint(equalToConstant: searchList.contentSize.height).isActive = true
+//
+//    }
+    
+    
+    
+}
+//search
+extension ChangeUserLocationViewController: MKLocalSearchCompleterDelegate {
+    func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
+        //get result, transform it to our needs and fill our dataSource
         
+        self.searchSource = completer.results.map { $0.title + ", " + $0.subtitle }
+        self.australiaSource = searchSource.filter{ $0.contains("Australia")}
+        DispatchQueue.main.async {
+            self.searchList.reloadData()
+        }
     }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-       
-        self.searchList.heightAnchor.constraint(equalToConstant: searchList.contentSize.height).isActive = true
-       
+
+    func completer(_ completer: MKLocalSearchCompleter, didFailWithError error: Error) {
+        //handle the error
+        print(error.localizedDescription)
     }
-    
-    
+}
+
+extension ChangeUserLocationViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        //change searchCompleter depends on searchBar's text
+        if !searchText.isEmpty {
+            self.searchList.isHidden = false
+            searchCompleter.queryFragment = searchText
+        }else{
+            self.searchList.isHidden = true
+            
+        }
+    }
     
 }
