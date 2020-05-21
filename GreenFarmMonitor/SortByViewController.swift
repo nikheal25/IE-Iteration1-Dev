@@ -8,19 +8,28 @@
 
 import UIKit
 
+
+/// protocol
 protocol sortSelectionDelgate {
     func selectedSort(id: Int)
 }
 
+
+/// Controller
 class SortByViewController: UIViewController {
     
+    //variables
     var sortingSchema: Int!
     var sortSeletionDelegate:sortSelectionDelgate!
+    
+    //labels
     @IBOutlet weak var recommendedButton: UIButton!
     @IBOutlet weak var alphabeticalButton: UIButton!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var recomendLabel: UILabel!
     @IBOutlet weak var alphabetLabel: UILabel!
+    
+    /// 
     override func viewDidLoad() {
         super.viewDidLoad()
         doneButton.layer.cornerRadius = 10
@@ -40,7 +49,8 @@ class SortByViewController: UIViewController {
         alphabetLabel.addGestureRecognizer(alphabet)
     }
     
-    
+    /// The action will set once user click on recommended option
+    /// - Parameter sender:UIButton
     @IBAction func recommendedClicked(_ sender: UIButton) {
         if sender.isSelected {
 //            sender.isSelected = false
@@ -50,6 +60,8 @@ class SortByViewController: UIViewController {
         }
     }
     
+    /// The action will set once user click on alphabetical option
+    /// - Parameter sender:UIButton
     @IBAction func alphabeticalClicked(_ sender: UIButton) {
         if sender.isSelected {
 //            sender.isSelected = false
@@ -59,6 +71,9 @@ class SortByViewController: UIViewController {
         }
     }
     
+    
+    /// This action will get invoked once the use clicks on Done button
+    /// - Parameter sender: Any
     @IBAction func doneButtonClicked(_ sender: Any) {
         var val = 0
         if recommendedButton.isSelected == true {
@@ -67,10 +82,12 @@ class SortByViewController: UIViewController {
         if alphabeticalButton.isSelected == true {
             val = 2
         }
+        //Calls the delegate method which is responsible for sorting or recommending
         sortSeletionDelegate.selectedSort(id: val)
         dismiss(animated: true, completion: nil)
     }
     
+    //This action will set the icon of Recommended option to ON/OFF
     @objc func recommendedLabelClicked(sender:UITapGestureRecognizer) {
         if recommendedButton.isSelected == true {
             recommendedButton.isSelected = false
@@ -79,6 +96,8 @@ class SortByViewController: UIViewController {
             recommendedButton.isSelected = true
         }
     }
+    
+    //This action will set the icon of Alphabetical option to ON/OFF
     @objc func alphabeticalLabelClicked(sender:UITapGestureRecognizer) {
         if alphabeticalButton.isSelected == true {
             alphabeticalButton.isSelected = false
@@ -87,15 +106,5 @@ class SortByViewController: UIViewController {
             alphabeticalButton.isSelected = true
         }
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }
