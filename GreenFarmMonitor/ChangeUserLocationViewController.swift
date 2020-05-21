@@ -108,7 +108,7 @@ class ChangeUserLocationViewController: UIViewController, DatabaseListener,MKMap
        
         self.searchCompleter.delegate = self
         self.searchCompleter.region = mapView.region
-        
+self.searchBar[keyPath:\.searchTextField].font = UIFont(name: "SFProText-Regular", size: 12.0) ?? UIFont.boldSystemFont(ofSize: 12.0)
         self.searchBar.delegate = self
        
     
