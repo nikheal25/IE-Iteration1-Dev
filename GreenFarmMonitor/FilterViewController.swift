@@ -23,10 +23,10 @@ class FilterViewController: UIViewController {
     var soilFilter: String!
     
     
-    /// classification type
-    private var dataSource = ["Perennial","Herb", "Annual", "Fruit"]
-    private let plantType = ["Perennial","Herb", "Annual", "Fruit"]
-    private let soilType = ["Loam","Sand", "Clay"]
+    /// classification types
+    private var dataSource = ["Annual","Fruit", "Herb", "Perennial"]
+    private let plantType = ["Annual", "Fruit","Herb","Perennial"]
+    private let soilType = ["Clay","Loam","Sand"]
     
     private var flag = 1
     var soil: String!
@@ -37,12 +37,20 @@ class FilterViewController: UIViewController {
     @IBOutlet weak var platTypeLabel: UILabel!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var instructionLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         platTypeLabel.text = plantFilter
         soilTypeLabel.text = soilFilter
+        
+        // Hide the button if the silter is not selected
+        if platTypeLabel.text == "Please select" && soilTypeLabel.text == "Please select" {
+            cancelButton.isHidden = true
+        }else{
+            cancelButton.isHidden = false
+        }
         
         self.soilTypeLabel.adjustsFontSizeToFitWidth = true
         self.soilTypeLabel.minimumScaleFactor = 0.5
@@ -63,6 +71,16 @@ class FilterViewController: UIViewController {
         pickerView.isHidden = true
         doneButton.isHidden = true
         filterDelegate.selectedChoiced(plantType: platTypeLabel.text!, soilType: soilTypeLabel.text!)
+        instructionLabel.isHidden = true
+        dismiss(animated: true, completion: nil)
+    }
+    
+    /// Cancel button clicked
+    /// - Parameter sender: <#sender description#>
+    @IBAction func cancelButtonClicked(_ sender: Any) {
+        pickerView.isHidden = true
+        doneButton.isHidden = true
+        filterDelegate.selectedChoiced(plantType: "cancel", soilType: "cancel")
         instructionLabel.isHidden = true
         dismiss(animated: true, completion: nil)
     }

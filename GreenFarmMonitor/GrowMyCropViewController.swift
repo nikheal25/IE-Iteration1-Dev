@@ -66,8 +66,8 @@ class GrowMyCropViewController: UIViewController, DatabaseListener, GrowCropDele
     
     /// This method only shows the crops that are related to the existing User
     /// - Parameters:
-    ///   - change: <#change description#>
-    ///   - userCropRelation: <#userCropRelation description#>
+    ///   - change:
+    ///   - userCropRelation:
     func onUserCropRelationChange(change: DatabaseChange, userCropRelation: [UserCropRelation]) {
         let currentUserId = userDefaultController?.retrieveUserId()
         
@@ -85,9 +85,9 @@ class GrowMyCropViewController: UIViewController, DatabaseListener, GrowCropDele
             }
         }
         if myCropList.count == 0 {
-            headerLabel.text = "Currently you have NO crops in your list Add Crops to continue"
+            headerLabel.text = "Currently you have NO plants in your list.\nAdd Plants to continue"
         }else{
-            headerLabel.text = "Click on the crop that you want to grow"
+            headerLabel.text = "Click on the plant that you want to grow"
         }
     }
     
@@ -157,6 +157,8 @@ extension GrowMyCropViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == SECTION_ACTIVITY{
             selectedRow = indexPath.row
+            passingVal = myCropList[selectedRow]
+            self.performSegue(withIdentifier: "newGrowDetailCropSegue", sender: self)
         }
     }
 }

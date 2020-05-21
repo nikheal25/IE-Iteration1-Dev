@@ -88,7 +88,7 @@ class OnboardingViewController: UIViewController, PaperOnboardingDataSource {
             
             OnboardingItemInfo(informationImage: UIImage(named: "naturSunday")!,
                                title: "Disease Identification",
-                               description: "    Identify common diseases and symptoms    ",
+                               description: "    Identify common plant diseases and symptoms    ",
                                pageIcon: UIImage(named: "naturSunday")!,
                                color: UIColor(hexString: "#f7934c"),   // #E85D75 - 3.5
                 titleColor: UIColor.white,
@@ -98,7 +98,7 @@ class OnboardingViewController: UIViewController, PaperOnboardingDataSource {
             
             OnboardingItemInfo(informationImage: UIImage(named: "weather-svg-vect")!,
                                title: "Location-based Aid",
-                               description: "    Receive recommendations, alerts and personalised solutions    ",
+                               description: "    Receive recommendations, alerts and \n personalised solutions    ",
                                pageIcon: UIImage(named: "weather-svg-vect")!,
                                color: UIColor(hexString: "#ff9f1c"),   // #E85D75 - 3.5
                 titleColor: UIColor.white,
