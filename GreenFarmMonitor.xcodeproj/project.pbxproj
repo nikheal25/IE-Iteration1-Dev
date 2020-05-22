@@ -55,7 +55,6 @@
 		E883C944244442F3006F6AC8 /* DiseaseOfCrops.swift in Sources */ = {isa = PBXBuildFile; fileRef = E883C943244442F3006F6AC8 /* DiseaseOfCrops.swift */; };
 		E883C94824444BDB006F6AC8 /* DiseaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E883C94724444BDB006F6AC8 /* DiseaseTableViewCell.swift */; };
 		E883C94A24446A04006F6AC8 /* DetailOfDiseaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E883C94924446A04006F6AC8 /* DetailOfDiseaseViewController.swift */; };
-		E883C94C244473E1006F6AC8 /* SymptomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E883C94B244473E1006F6AC8 /* SymptomsViewController.swift */; };
 		E8871953246BE51B001614F7 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8871952246BE51B001614F7 /* Weather.swift */; };
 		E8871955246BEAFA001614F7 /* APIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8871954246BEAFA001614F7 /* APIProtocol.swift */; };
 		E8DF843D245000CA0032CFAB /* SelectCropForDiseaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DF843C245000CA0032CFAB /* SelectCropForDiseaseViewController.swift */; };
@@ -142,7 +141,6 @@
 		E883C943244442F3006F6AC8 /* DiseaseOfCrops.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseOfCrops.swift; sourceTree = "<group>"; };
 		E883C94724444BDB006F6AC8 /* DiseaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseTableViewCell.swift; sourceTree = "<group>"; };
 		E883C94924446A04006F6AC8 /* DetailOfDiseaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOfDiseaseViewController.swift; sourceTree = "<group>"; };
-		E883C94B244473E1006F6AC8 /* SymptomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsViewController.swift; sourceTree = "<group>"; };
 		E8871952246BE51B001614F7 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		E8871954246BEAFA001614F7 /* APIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProtocol.swift; sourceTree = "<group>"; };
 		E8DF843C245000CA0032CFAB /* SelectCropForDiseaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCropForDiseaseViewController.swift; sourceTree = "<group>"; };
@@ -280,7 +278,6 @@
 				E883C94924446A04006F6AC8 /* DetailOfDiseaseViewController.swift */,
 				1DDEE7F324449C46005BC7D8 /* MyCropMainTableViewCell.swift */,
 				E883C94724444BDB006F6AC8 /* DiseaseTableViewCell.swift */,
-				E883C94B244473E1006F6AC8 /* SymptomsViewController.swift */,
 				1DFBCFC62446CBBC00DCC4B2 /* LoginViewController.swift */,
 				1D4743DA2447ECA100866CEB /* DetailOfTheCropViewController.swift */,
 				E8FDFCA824470CED00143844 /* ChangeUserLocationViewController.swift */,
@@ -596,7 +593,6 @@
 				1DDEE7F424449C46005BC7D8 /* MyCropMainTableViewCell.swift in Sources */,
 				1D2FCB872445A3110024FFBB /* FirebaseController.swift in Sources */,
 				1DDEE7DF244433D3005BC7D8 /* MyCropTableViewController.swift in Sources */,
-				E883C94C244473E1006F6AC8 /* SymptomsViewController.swift in Sources */,
 				1DE4DB0224764DEA007938F6 /* SubtitleTableViewCell.swift in Sources */,
 				1DFBCFC72446CBBC00DCC4B2 /* LoginViewController.swift in Sources */,
 				1D94FF06244AC82700CB2F25 /* FoldingTableViewController.swift in Sources */,

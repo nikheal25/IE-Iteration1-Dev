@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 class ChangeUserLocationViewController: UIViewController, DatabaseListener,MKMapViewDelegate,UITextFieldDelegate{
-    //database controller
+    ///database controller
     var listenerType = ListenerType.all
     
     func onDiseaseOfCropsChange(change: DatabaseChange, diseaseOfCrops: [DiseaseOfCrops]) {
@@ -48,8 +48,7 @@ class ChangeUserLocationViewController: UIViewController, DatabaseListener,MKMap
                     mapView.removeAnnotations(mapView.annotations)
                     self.searchBar.placeholder = "Enter suburb or pincode of garden location"
                     self.UIBtn.setTitle("Change", for:.normal)
-//                    self.locationText.placeholder = "Add your farm here"
-//                    self.UIBtn.setTitle("Add", for:.normal)
+
                     self.mapView.addAnnotations(LocationList)
                     self.focusOn(annotation: LocationList.first!)
                    
@@ -60,8 +59,7 @@ class ChangeUserLocationViewController: UIViewController, DatabaseListener,MKMap
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        self.navigationItem.hidesBackButton = true
-//        self.navigationController!.navigationBar.isTranslucent = true
+
         databaseController?.addListener(listener: self)
     }
     override func viewWillDisappear(_ animated: Bool) {
@@ -80,10 +78,10 @@ class ChangeUserLocationViewController: UIViewController, DatabaseListener,MKMap
     
     weak var databaseController: DatabaseProtocol?
     var newUserId = ""
+    ///Settings of this Mapview, Tableview, searchbar and buttons
     override func viewDidLoad() {
         super.viewDidLoad()
-//        "20-05-07-18:12:17x5bxy"
-//        self.view.backgroundColor = UIColor(hexString: "#9bb666")
+
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
      userDefaultController = appDelegate.userDefaultController
         databaseController = appDelegate.databaseController
@@ -100,7 +98,7 @@ class ChangeUserLocationViewController: UIViewController, DatabaseListener,MKMap
         self.searchList.dataSource = self
         self.searchList.delegate = self
         self.searchList.isHidden = true
-        //zoom to australia
+        ///zoom to australia
         let Australia = CLLocation(latitude: -25.2744, longitude: 133.7751)
         let zoomRegion = MKCoordinateRegion(center: Australia.coordinate, latitudinalMeters: 3000000,longitudinalMeters: 4000000)
         mapView.setRegion(zoomRegion, animated: true)
@@ -180,26 +178,20 @@ self.searchBar[keyPath:\.searchTextField].font = UIFont(name: "SFProText-Regular
       
     
     @IBOutlet weak var searchList: UITableView!
+   /// Zoom in the annotation added in the Mapview
     func focusOn(annotation:MKAnnotation){
-        //mapView.selectedAnnotations(annotation,animated:true)
+        
         let zoomRegion =  MKCoordinateRegion(center: annotation.coordinate,latitudinalMeters:2000,longitudinalMeters: 2000)
         mapView.setRegion(mapView.regionThatFits(zoomRegion), animated:true)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   
     @IBOutlet weak var continueUIBtn: UIButton!
     var resultList = [String]()
     @IBOutlet weak var UIBtn: UIButton!
    
     var australiaMarks = [CLPlacemark]()
+    /// Function of the change button to change and add location
     @IBAction func ChangeBtn(_ sender: Any) {
         searchList.isHidden = true
         let address = self.searchBar.text
@@ -210,7 +202,8 @@ self.searchBar[keyPath:\.searchTextField].font = UIFont(name: "SFProText-Regular
             
         }
         else
-        {//convert to coordinate
+        {
+            ///convert to coordinate
         let currentUserId = userDefaultController?.retrieveUserId()
         let geoCoder = CLGeocoder()
         geoCoder.geocodeAddressString(address!)
@@ -252,7 +245,7 @@ self.searchBar[keyPath:\.searchTextField].font = UIFont(name: "SFProText-Regular
                           
                 let newUser = User(userId: self.newUserId, userName: "TestUser", farmLocationName: "New farm", farmLat: lat, farmLong: long)
                      
-                     // Firebase Update
+                     /// Firebase Update
                 let successStatus = self.databaseController?.insertNewUserToFirebase(user: newUser)
                      if successStatus! {
                         self.userDefaultController?.assignName(name: newUser.userName)
@@ -260,16 +253,13 @@ self.searchBar[keyPath:\.searchTextField].font = UIFont(name: "SFProText-Regular
                         self.userDefaultController?.assignCLLocation(lat: lat, long: long)
                 }
                 
-                // to be changed
+                
             }else{
                self.databaseController!.updateLocation(userId:currentUserId!, lat: lat ,locationName: "New farm", long: long)
-//            self.mapView.removeAnnotations(self.mapView.annotations)
+
                     self.displayMessage(title: "Location saved", message: "Successfully!")
                     self.userDefaultController?.assignCLLocation(lat: lat, long: long)
                 
-//            self.mapView.addAnnotation(location)
-//            self.focusOn(annotation:location)
-                    
                 
                 }
                 
@@ -289,7 +279,7 @@ self.searchBar[keyPath:\.searchTextField].font = UIFont(name: "SFProText-Regular
   
     @IBOutlet weak var mapView: MKMapView!
     
-  
+  ///Continue button to set default location
     @IBAction func continueBtn(_ sender: Any) {
        
         if self.LocationList.count == 0
@@ -341,7 +331,7 @@ self.searchBar[keyPath:\.searchTextField].font = UIFont(name: "SFProText-Regular
 //    }
     
     
-    //Drag map
+    ///Drag map function
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         if self.UIBtn.titleLabel?.text == "Change"{
         self.mapView.removeAnnotations(mapView.annotations)
@@ -361,12 +351,12 @@ self.searchBar[keyPath:\.searchTextField].font = UIFont(name: "SFProText-Regular
 
                             if pm.count > 0 {
                                 let pm = placemarks![0]
-                                print(pm.country)
-                                print(pm.locality)
-                                print(pm.subLocality)
-                                print(pm.thoroughfare)
-                                print(pm.postalCode)
-                                print(pm.subThoroughfare)
+//                                print(pm.country)
+//                                print(pm.locality)
+//                                print(pm.subLocality)
+//                                print(pm.thoroughfare)
+//                                print(pm.postalCode)
+//                                print(pm.subThoroughfare)
                                 
                                 let addressString = self.convertToString(location: pm)
                               
@@ -380,7 +370,7 @@ self.searchBar[keyPath:\.searchTextField].font = UIFont(name: "SFProText-Regular
         }
     }
     
-    
+    /// Display necessary message for users
     
     func displayMessage(title:String,message:String)
     {
@@ -397,27 +387,12 @@ self.searchBar[keyPath:\.searchTextField].font = UIFont(name: "SFProText-Regular
 
   
 
-//    func displayContinueMessage(title:String, message:String)
-//    {
-//        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-//        alertController.addAction(UIAlertAction(title: "Yes", style:UIAlertAction.Style.default)
-//        {
-//            (UIAlertAction) -> Void in
-//            if self.LocationList.count == 0{
-//                self.displayMessage(title: "Warning!", message: "You must enter you farm location.")
-//
-//            }else
-//            {
-//                self.performSegue(withIdentifier: "continueSegue", sender: self)}
-//        } )
-//        alertController.addAction(UIAlertAction(title: "No", style:UIAlertAction.Style.default , handler:nil) )
-//        self.present(alertController,animated: true,completion: nil)
-//
-//    }
+
 
 }
+
 extension ChangeUserLocationViewController: UITableViewDelegate, UITableViewDataSource
-{
+{/// Setting of tableview of relevant search results
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return australiaSource.count ?? 0
         }
@@ -438,7 +413,7 @@ extension ChangeUserLocationViewController: UITableViewDelegate, UITableViewData
      
     
     
-
+    /// Function to convert placemark to string address
     func convertToString (location: CLPlacemark) -> String
     {
         var addressString : String = ""
@@ -480,17 +455,12 @@ extension ChangeUserLocationViewController: UITableViewDelegate, UITableViewData
         }
 
     
-    
-//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//
-//        self.searchList.heightAnchor.constraint(equalToConstant: searchList.contentSize.height).isActive = true
-//
-//    }
+
     
     
     
 }
-//search
+///Search function
 extension ChangeUserLocationViewController: MKLocalSearchCompleterDelegate {
     func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
         //get result, transform it to our needs and fill our dataSource
@@ -507,7 +477,7 @@ extension ChangeUserLocationViewController: MKLocalSearchCompleterDelegate {
         print(error.localizedDescription)
     }
 }
-
+///Searchbar function
 extension ChangeUserLocationViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         //change searchCompleter depends on searchBar's text
