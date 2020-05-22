@@ -24,8 +24,8 @@ class FilterViewController: UIViewController {
     
     
     /// classification types
-    private var dataSource = ["Annual","Fruit", "Herb", "Perennial"]
-    private let plantType = ["Annual", "Fruit","Herb","Perennial"]
+    private var dataSource = ["Annual","Bromeliad","Climber","Fruit","Grass", "Herb", "Perennial","Shrub","Vegetable"]
+    private let plantType = ["Annual","Bromeliad","Climber","Fruit","Grass", "Herb", "Perennial","Shrub","Vegetable"]
     private let soilType = ["Clay","Loam","Sand"]
     
     private var flag = 1
