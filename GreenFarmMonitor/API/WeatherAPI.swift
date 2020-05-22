@@ -116,6 +116,7 @@ class WeatherAPI: NSObject, APIProtocol {
         return self.recomendedCrops
     }
     
+    /// This method calls the API which is responsible for returning the data of the weather according to the location
     func apiCall(lat: String, long: String) -> [Weather]
     {
         let para = "lat=\(lat)&lon=\(long)"
@@ -161,17 +162,10 @@ class WeatherAPI: NSObject, APIProtocol {
 
                     self.weather.append(Weather(maxtemp: maxtemp, mintemp: mintemp, date: date, precip: precip,  precipProb: precipProb, lat: String(lat) , long: String(long)))
 
-//                    print (self.weather)
+
                     
                 }
-//                print(self.maxtemp)
-//                print(self.date)
-//                print(self.precip)
-//
-                
-                
-                
-//                let weatherData = try! JSONDecoder().decode(weather.self, from: json as! Data)
+
                
                 
                 
@@ -189,9 +183,7 @@ class WeatherAPI: NSObject, APIProtocol {
     override init() {
         super.init()
         
-//        self.lat = "-37.8771"
-//        self.long = "145.0449"
-//         apiCall(lat: lat, long: long)
+
     }
     
 }

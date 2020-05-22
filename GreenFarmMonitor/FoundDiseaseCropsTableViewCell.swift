@@ -12,7 +12,7 @@ class FoundDiseaseCropsTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+       
     }
     @IBOutlet weak var cellView: UIView!
     
@@ -24,8 +24,7 @@ class FoundDiseaseCropsTableViewCell: UITableViewCell {
         self.cellView.layer.shadowOpacity = 0.4
         self.cellView.layer.shadowRadius = 2
          self.cropImage.layer.cornerRadius = 6
-        
-        // Configure the view for the selected state
+       
     }
 
     @IBOutlet weak var cropImage: UIImageView!

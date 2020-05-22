@@ -130,7 +130,7 @@ extension AddNewCropViewController: UITableViewDelegate, UITableViewDataSource {
                                  return cell
                              }
                              let cell = tableView.dequeueReusableCell(withIdentifier: CELL_COUNT, for: indexPath)
-cell.textLabel?.text = "\(allCropsName.count) total crops in the list"
+                            cell.textLabel?.text = "\(allCropsName.count) total crops in the list"
                              cell.selectionStyle = .none
                              return cell
         }

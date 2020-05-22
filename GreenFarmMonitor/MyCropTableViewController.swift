@@ -80,7 +80,7 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        myCropList = [Crop]()
+
         deviceIDs = [String]()
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -89,32 +89,12 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
         weatherAPI = appDelegate.weatherAPI
         
        
-       
-//        let userList = databaseController?.userList
-//        for user in userList!
-//        {
-//            if user.userId == currentUserId!
-//            {
-//                weatherAPI?.apiCall(lat: user.farmLat, long: user.farmLong)
-//
-//            }
-//
-//        }
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+  
 //
             //MARK:- TODO
         
-//        let allWeather = weatherAPI?.apiCall()
-//        for weather in allWeather!
-//        {
-//            print(weather.maxtemp)
-//        showNotifications()
-//       }
-       //        ask permission
+
+       ///        ask permission
        let center = UNUserNotificationCenter.current()
        center.requestAuthorization(options: [.alert, .sound])
        {(granted, error) in
@@ -128,7 +108,7 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
     var overcoldmessage = ""
     var allWeather:[Weather] = []
     
-    //edit message in notification
+    ///edit message in notification
     func edit()
   {
     maxt = []
@@ -159,29 +139,31 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
 
                                if let minTemp = Double(crop.minTemp), minTemp > min!
                                {
-                               overcoldmessage = overcoldmessage + crop.cropName + ", "
+                               overcoldmessage = overcoldmessage + " " + crop.cropName + ","
 
                                }
                                if let maxTemp = Double(crop.maxTemp), maxTemp < max!
                                {
-                               overheatmessage = overheatmessage + crop.cropName + ", "
+                               overheatmessage = overheatmessage + " " + crop.cropName + ","
 
                                }
            
                            }
                     
+                    
        
     
                    
 
-    //notification center
+    ///notification center
         let center = UNUserNotificationCenter.current()
         center.removeAllDeliveredNotifications()
         center.removeAllPendingNotificationRequests()
         let content = UNMutableNotificationContent()
                    if overheatmessage != ""
                    {
-                       overheatmessage = "Alert! The temperature on your location is more than the required temperature for " + overheatmessage + "\nView more on application."
+                    overheatmessage = String(overheatmessage.dropLast()) + "!"
+                       overheatmessage = "Alert! The temperature on your location is more than the required temperature for" + overheatmessage + "\nView more on application."
 
                         
                                           content.title = "My Garden"
@@ -195,7 +177,8 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
                        }
                    if overcoldmessage != ""
                    {
-                       overcoldmessage = "Alert! The temperature on your location is less than the required temperature for  " + overcoldmessage + "\nView more on application."
+                    overcoldmessage = String(overcoldmessage.dropLast()) + "!"
+                       overcoldmessage = "Alert! The temperature on your location is less than the required temperature for" + overcoldmessage + "\nView more on application."
                        
                        content.title = "My Garden"
                        content.body = overcoldmessage
@@ -209,12 +192,7 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
     }
            
     }
-//    func changeComma(str: String) ->String
-//      {
-//        
-//        
-//        
-//    }
+    
     
     
     
@@ -223,7 +201,7 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
             super.viewWillAppear(animated)
         self.navigationItem.hidesBackButton = true
 //            self.navigationController!.navigationBar.barStyle = .black
-            
+           
            
             self.navigationController!.navigationBar.isTranslucent = true
 //            self.navigationController!.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
@@ -238,9 +216,10 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
             databaseController?.addListener(listener: self)
            
         }
+    ///update api
           func updateApi()
           {
-           //update api
+           
               let date = Date()
              
               let dateFormatter = DateFormatter()
@@ -249,12 +228,7 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
               allWeather = weatherAPI!.weather
             let lat = userDefaultController?.retriveLat()
             let long = userDefaultController?.retriveLong()
-            
-//            if allWeather.first?.lat != lat || allWeather.first?.long != long
-//            {
-//               weatherAPI?.apiCall(lat: lat!, long: long!)
-//
-//            }else
+
             if allWeather.first?.date != day {
                 
                 
