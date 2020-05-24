@@ -377,9 +377,9 @@ extension FoldingTableViewController: UISearchBarDelegate {
         var tempCrops: [Crop] = []
         
         for crop in allCropsName {
-//            if crop.Plant_Type.lowercased().prefix(term.count) == term.lowercased() {
-//                tempCrops.append(crop)
-//            }
+            //            if crop.Plant_Type.lowercased().prefix(term.count) == term.lowercased() {
+            //                tempCrops.append(crop)
+            //            }
             if crop.Plant_Type.lowercased().contains(term.lowercased()) {
                 tempCrops.append(crop)
             }
@@ -394,6 +394,21 @@ extension FoldingTableViewController: UISearchBarDelegate {
         
         for crop in allCropsName {
             if crop.Soil_Type.lowercased().prefix(term.count) == term.lowercased() {
+                tempCrops.append(crop)
+            }
+        }
+        return tempCrops
+    }
+    
+    /// Filters the crop based on PlantType and SoilType
+    /// - Parameters:
+    ///   - plantType: <#plantType description#>
+    ///   - soilType: <#soilType description#>
+    func filterSoilAndPlantType(plantType: String, soilType: String) -> [Crop] {
+        var tempCrops: [Crop] = []
+        
+        for crop in allCropsName {
+            if crop.Soil_Type.lowercased().contains(soilType.lowercased()) && crop.Plant_Type.lowercased().contains(plantType.lowercased()) {
                 tempCrops.append(crop)
             }
         }
@@ -454,19 +469,34 @@ extension FoldingTableViewController: filterDelgate {
             tableView.reloadData()
         } else if plantType != "Please select" || soilType != "Please select" {
             searchedCrop = []
-            if soilType != "Please select" {
-                searchedCrop = filterCellsBySoilType(term: soilType)
+            if soilType != "Please select" && plantType != "Please select" {
+                searchedCrop = filterSoilAndPlantType(plantType: plantType, soilType: soilType)
                 searching = true
                 soilFilter = soilType
-                
-            }
-            if plantType != "Please select" {
-                //                searchedCrop = filterCellsByPlantType(term: plantType)
-                searchedCrop.append(contentsOf: filterCellsByPlantType(term: plantType))
-                searching = true
                 plantFilter = plantType
                 
+                if searchedCrop.count == 0 {
+                    searchedCrop = filterCellsBySoilType(term: soilType)
+                    searching = true
+                    soilFilter = soilType
+                    
+                    
+                }
+            }else{
+                if soilType != "Please select" {
+                    searchedCrop = filterCellsBySoilType(term: soilType)
+                    searching = true
+                    soilFilter = soilType
+                    
+                }
+                if plantType != "Please select" {
+                    searchedCrop.append(contentsOf: filterCellsByPlantType(term: plantType))
+                    searching = true
+                    plantFilter = plantType
+                    
+                }
             }
+            
             tableView.reloadData()
         }
         
