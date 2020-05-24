@@ -21,7 +21,12 @@ class DiseaseListViewController: UIViewController,UITableViewDataSource, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let diseaseCell = tableView.dequeueReusableCell(withIdentifier: "disease",for: indexPath)as! DiseaseTableViewCell
         let disease = shownDiseases[indexPath.row]
-        diseaseCell.diseaseImage.image = UIImage(named: disease.name.lowercased())
+        let image = UIImage(named: disease.name.lowercased())
+        if image == nil
+        {
+            diseaseCell.diseaseImage.image = UIImage(named: "not-found")
+        }else{
+            diseaseCell.diseaseImage.image = image}
         diseaseCell.diseaseNameLabel.text = disease.name
         return diseaseCell
     }
