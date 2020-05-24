@@ -9,7 +9,7 @@
 import UIKit
 
 class relevantLocationsTableViewCell: UITableViewCell {
-
+///Label for search relevant location cell
     @IBOutlet weak var searchResult: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()

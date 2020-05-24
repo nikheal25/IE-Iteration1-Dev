@@ -9,7 +9,7 @@
 import UIKit
 
 class SelectCropForDiseaseViewController: UIViewController , UITableViewDataSource,UISearchBarDelegate, UITableViewDelegate,DatabaseListener{
-
+/// Add database listener to reload data in the table view
     func onUserCropRelationChange(change: DatabaseChange, userCropRelation: [UserCropRelation]) {
         
     }
@@ -68,6 +68,7 @@ class SelectCropForDiseaseViewController: UIViewController , UITableViewDataSour
     @IBOutlet weak var cropTable: UITableView!
     
     @IBOutlet weak var searchBar: UISearchBar!
+    /// Tableview settings
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -99,13 +100,10 @@ class SelectCropForDiseaseViewController: UIViewController , UITableViewDataSour
     }
     var tempCrops:[Crop] = []
     var filterCrops: [Crop] = []
+///Searchbar function
     func updateSearchResults() -> [Crop]
     {
-//        for crop in currentCrops {
-//       if crop.cropName.lowercased().prefix(term.count) == term.lowercased() {
-//                tempCrops.append(crop)
-//            }
-//        }
+
         if let searchText = searchBar.text?.lowercased(),searchText.count > 0
         {
             tempCrops = currentCrops.filter({(crop:Crop) -> Bool in
@@ -115,7 +113,7 @@ class SelectCropForDiseaseViewController: UIViewController , UITableViewDataSour
         return tempCrops
     }
       func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-    //        searchedCountry = allCropsName.filter({$0.lowercased().prefix(searchText.count) == searchText.lowercased()})
+    
         
            filterCrops = updateSearchResults()
         print (filterCrops)
@@ -143,7 +141,6 @@ class SelectCropForDiseaseViewController: UIViewController , UITableViewDataSour
                 selectCrop = currentCrops[indexPath!.row].cropName
                 destination.crop = selectCrop
 
-//                print(selectCrop)
             }else{
                 selectCrop = filterCrops[indexPath!.row].cropName
                 destination.crop = selectCrop

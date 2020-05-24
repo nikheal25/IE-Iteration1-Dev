@@ -8,6 +8,7 @@
 
 import Foundation
 
+///Model class for disease
 class DiseaseOfCrops:NSObject
 {
 

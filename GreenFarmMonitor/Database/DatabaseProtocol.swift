@@ -32,9 +32,7 @@ protocol DatabaseProtocol: AnyObject {
     var userCropRelation: [UserCropRelation] {get}
    var diseaseList: [DiseaseOfCrops] {get}
     var userList: [User] {get}
-//    func addCrop(crop: Crop) -> Crop
-  //  func checkLogin(userName: String, password: String) -> User?
-//    func addUserCropRelation(userCropRelation: UserCropRelation) -> UserCropRelation
+
     func insertNewUserToFirebase(user: User) -> Bool
     func updateMyCropList(new: Bool, userId: String, cropId: String)
     func addListener(listener: DatabaseListener)

@@ -9,6 +9,7 @@
 import UIKit
 
 class DiseaseListViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
+    /// Tableview setting
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return shownDiseases.count
         
@@ -27,10 +28,11 @@ class DiseaseListViewController: UIViewController,UITableViewDataSource, UITable
     
    
     
-
+    ///Virables in the Class
     var crop:String = ""
     var shownDiseases:[DiseaseOfCrops] = []
-     weak var databaseController: DatabaseProtocol?
+    weak var databaseController: DatabaseProtocol?
+    /// Load the data to the tableview
     override func viewDidLoad() {
         super.viewDidLoad()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -49,8 +51,7 @@ class DiseaseListViewController: UIViewController,UITableViewDataSource, UITable
                         shownDiseases.append(disease)
                     }
                 }
-//                print(DiseasesList)
-        //      shownDiseases = diseaseOfCrops
+
             diseaseTable.reloadData()
         
             navigationItem.title = crop + " diseases"
@@ -60,7 +61,7 @@ class DiseaseListViewController: UIViewController,UITableViewDataSource, UITable
     var selectDisease:String = ""
     
     var diseaseDescription:String = ""
-    
+    /// Function of navigate to view the detail of disease
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      
         if segue.identifier == "SelectDiseaseSegue"
@@ -77,16 +78,7 @@ class DiseaseListViewController: UIViewController,UITableViewDataSource, UITable
         
         
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+   
     
     
     
