@@ -118,7 +118,7 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
             }
             else{
                 if outOfIndextLowerTemp > 1 {
-                    message = "Forecast for next 2 weeks - You have temperature is going lower than expected limits in next \(outOfIndextLowerTemp) days."
+                    message = "Forecast for next \(exactTemperature.count) weeks - You have temperature is going lower than expected limits in next \(outOfIndextLowerTemp) days."
                 }
                 if outOfIndextHighTemp > 1 {
                     message = message + "You have temperature is going lower than expected limits in next \(outOfIndextLowerTemp) days."
@@ -128,7 +128,7 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
         }else{
             var noRainDays = 0
             for rain in exactRain{
-                if rain == 0.0 {
+                if rain < 5.0 {
                     noRainDays += 1
                 }
             }
@@ -136,7 +136,7 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
             if noRainDays == 0 {
                 conclusionLabel.text = "The rainfall is good for next 2 weeks."
             }else{
-                conclusionLabel.text = "\(noRainDays) days in upcoming next 2 weeks have no rain. You need to water your plants for those days"
+                conclusionLabel.text = "\(noRainDays) days in upcoming next \(exactRain.count) days have no rain. You need to water your plants for those days"
             }
             
         }
@@ -253,7 +253,7 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
                 maxIdealTemperature.insert(maxValue, at: i)
             }
             //MARK:- set random values
-            exactTemperature = self.generateRandomData(self.numberOfItems, max: 40, shouldIncludeOutliers: false)
+            exactTemperature = self.generateRandomData(self.numberOfItems, max: 25, shouldIncludeOutliers: false)
             exactRain = self.generateRandomData(self.numberOfItems, max: 35, shouldIncludeOutliers: false)
             rangeMaxValue = 50
             rangeRainMaxValue = 80
