@@ -140,8 +140,8 @@ class FoldingTableViewController: UITableViewController, UIPopoverPresentationCo
                 //                print(self.recommendedCrops)
             }
         }
-        
-        //        print("4")
+        sortCrops()
+        self.tableView.reloadData()
     }
     
     /// This method returns the list of crops that are registered by the user
