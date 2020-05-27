@@ -100,7 +100,7 @@ class OnboardingViewController: UIViewController, PaperOnboardingDataSource, Pap
         return [
             OnboardingItemInfo(informationImage: UIImage(named: "test1_sv")!,
                                title: "Ideal Conditions",
-                               description: "Know the ideal conditions\n   and requirements for plants",
+                               description: "Know the ideal conditions\n   and requirements to grow your plants",
                                pageIcon: UIImage(named: "test1_sv")!,
                                //Wallet
                 color: UIColor(hexString: "#ffc15e"),
