@@ -44,9 +44,11 @@ class OnboardingViewController: UIViewController, PaperOnboardingDataSource, Pap
     @IBOutlet weak var exploreButt: UIButton!
     @IBOutlet weak var nextAction: UIButton!
     @IBAction func exploreButton(_ sender: Any) {
+        self.performSegue(withIdentifier: "onboardToMapSegue", sender: self)
     }
     
     @IBAction func onClick(_ sender: Any) {
+        self.performSegue(withIdentifier: "onboardToMapSegue", sender: self)
         //        let newUserId = userDefaultController?.generateUniqueUserId()
         //        let newUser = User(userId: newUserId!, userName: "TestUser", farmLocationName: "Monash", farmLat: "-37.907803", farmLong: "145.133957")
         //
@@ -98,7 +100,7 @@ class OnboardingViewController: UIViewController, PaperOnboardingDataSource, Pap
         return [
             OnboardingItemInfo(informationImage: UIImage(named: "test1_sv")!,
                                title: "Ideal Conditions",
-                               description: "Know the ideal conditions\nand requirements for plants    ",
+                               description: "Know the ideal conditions\n   and requirements for plants",
                                pageIcon: UIImage(named: "test1_sv")!,
                                //Wallet
                 color: UIColor(hexString: "#ffc15e"),
@@ -133,6 +135,10 @@ class OnboardingViewController: UIViewController, PaperOnboardingDataSource, Pap
     
     func onboardingItemsCount() -> Int {
         return 3
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
     }
     
 }

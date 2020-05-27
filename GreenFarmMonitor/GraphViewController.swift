@@ -118,7 +118,7 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
             }
             else{
                 if outOfIndextLowerTemp > 1 {
-                    message = "Forecast for next \(exactTemperature.count) weeks - You have temperature is going lower than expected limits in next \(outOfIndextLowerTemp) days."
+                    message = "Forecast for next \(exactTemperature.count) days - You have temperature is going lower than expected limits in next \(outOfIndextLowerTemp) days."
                 }
                 if outOfIndextHighTemp > 1 {
                     message = message + "You have temperature is going lower than expected limits in next \(outOfIndextLowerTemp) days."
@@ -134,7 +134,7 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
             }
             
             if noRainDays == 0 {
-                conclusionLabel.text = "The rainfall is good for next 2 weeks."
+                conclusionLabel.text = "The rainfall is good for next \(exactRain.count) days."
             }else{
                 conclusionLabel.text = "\(noRainDays) days in upcoming next \(exactRain.count) days have no rain. You need to water your plants for those days"
             }
