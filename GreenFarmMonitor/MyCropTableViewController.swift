@@ -290,7 +290,7 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
         }
        // return "Add new Crops"
         if myCropList.count == 0 {
-            return "Currently you have NO plants in your list. Add Plants to continue"
+            return "Currently you have NO plants in your list.\nAdd Plants to continue"
         }
         return ""
 

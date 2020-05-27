@@ -114,7 +114,7 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
             var message = ""
             
             if outOfIndextLowerTemp == 0 && outOfIndextHighTemp == 0 {
-                message = "You have a great weather ahead! The temperature is in the boound of limits."
+                message = "You have a great weather ahead! The temperature is in the feasible range."
             }
             else{
                 if outOfIndextLowerTemp > 1 {
@@ -155,7 +155,7 @@ class GraphViewController: UIViewController, ScrollableGraphViewDataSource {
             //Hide and unhide the bars
             firstGraphView.isHidden = false
             secondGraph.isHidden = true
-            subtitileLabel.text = "Between red lines is the feasible temperature range \n Green line is the predicted temperature"
+            subtitileLabel.text = "Between red lines is the feasible temperature range \n Green line is the predicted heighest temperature in your location."
             mainLabel.text = "The feasible range to grow \(specificCrop!.cropName) is between \(specificCrop!.minTemp)℃ - \(specificCrop!.maxTemp)℃.\nYou will also receive alerts if the actual temperature is beyond this range. "
             if tempFlag == false {
                 showTempGraph()

@@ -8,12 +8,26 @@
 import UIKit
 import paper_onboarding
 
-class OnboardingViewController: UIViewController, PaperOnboardingDataSource {
+class OnboardingViewController: UIViewController, PaperOnboardingDataSource, PaperOnboardingDelegate {
+    
+    func onboardingWillTransitonToIndex(_ index: Int) {
+        nextAction.isHidden = index == 2 ? true : false
+        exploreButt.isHidden = index == 2 ? false : true
+    }
+    
+    func onboardingConfigurationItem(_ item: OnboardingContentViewItem, index: Int) {
+        
+        // configure item
+        
+        //item.titleLabel?.backgroundColor = .redColor()
+        //item.descriptionLabel?.backgroundColor = .redColor()
+        //item.imageView = ...
+    }
     
     weak var userDefaultController: UserdefaultsProtocol?
     weak var databaseController: DatabaseProtocol?
-//    let titleFont = UIFont(name: "Nunito-Bold", size: 36.0) ?? UIFont.boldSystemFont(ofSize: 25.0)
-//    let descriptionFont = UIFont(name: "OpenSans-Regular", size: 14.0) ?? UIFont.systemFont(ofSize: 14.0)
+    //    let titleFont = UIFont(name: "Nunito-Bold", size: 36.0) ?? UIFont.boldSystemFont(ofSize: 25.0)
+    //    let descriptionFont = UIFont(name: "OpenSans-Regular", size: 14.0) ?? UIFont.systemFont(ofSize: 14.0)
     let titleFont = UIFont(name: "SFProText-Heavy", size: 36.0) ?? UIFont.boldSystemFont(ofSize: 25.0)
     let descriptionFont = UIFont(name: "SFProText-Regular", size: 14.0) ?? UIFont.systemFont(ofSize: 14.0)
     
@@ -27,7 +41,10 @@ class OnboardingViewController: UIViewController, PaperOnboardingDataSource {
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
+    @IBOutlet weak var exploreButt: UIButton!
     @IBOutlet weak var nextAction: UIButton!
+    @IBAction func exploreButton(_ sender: Any) {
+    }
     
     @IBAction func onClick(_ sender: Any) {
         //        let newUserId = userDefaultController?.generateUniqueUserId()
@@ -49,10 +66,13 @@ class OnboardingViewController: UIViewController, PaperOnboardingDataSource {
         
         //TODO - CHANGE
         nextAction.isHidden = false
-        
+        exploreButt.isHidden = true
+        exploreButt.layer.cornerRadius = 15
+        exploreButt.layer.borderColor = UIColor.black.cgColor
         
         let onboarding = PaperOnboarding()
         onboarding.dataSource = self
+        onboarding.delegate = self
         onboarding.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(onboarding)
         
@@ -70,6 +90,7 @@ class OnboardingViewController: UIViewController, PaperOnboardingDataSource {
         }
         
         view.bringSubviewToFront(nextAction)
+        view.bringSubviewToFront(exploreButt)
     }
     
     func onboardingItem(at index: Int) -> OnboardingItemInfo {
@@ -77,7 +98,7 @@ class OnboardingViewController: UIViewController, PaperOnboardingDataSource {
         return [
             OnboardingItemInfo(informationImage: UIImage(named: "test1_sv")!,
                                title: "Ideal Conditions",
-                               description: "    Know the ideal conditions \nand requirements for plants    ",
+                               description: "Know the ideal conditions\nand requirements for plants    ",
                                pageIcon: UIImage(named: "test1_sv")!,
                                //Wallet
                 color: UIColor(hexString: "#ffc15e"),
@@ -118,23 +139,12 @@ class OnboardingViewController: UIViewController, PaperOnboardingDataSource {
 
 
 
-// MARK: PaperOnboardingDelegate
-extension OnboardingViewController: PaperOnboardingDelegate {
-    
-    // TODO - the line below is not executing, need to make it executable
-    func onboardingWillTransitonToIndex(_ index: Int) {
-        //       nextAction.isHidden = index == 2 ? true : false
-    }
-    
-    func onboardingConfigurationItem(_ item: OnboardingContentViewItem, index: Int) {
-        
-        // configure item
-        
-        //item.titleLabel?.backgroundColor = .redColor()
-        //item.descriptionLabel?.backgroundColor = .redColor()
-        //item.imageView = ...
-    }
-}
+//// MARK: PaperOnboardingDelegate
+//extension OnboardingViewController {
+//
+//    // TODO - the line below is not executing, need to make it executable
+//
+//}
 
 //MARK: Constants
 extension OnboardingViewController {

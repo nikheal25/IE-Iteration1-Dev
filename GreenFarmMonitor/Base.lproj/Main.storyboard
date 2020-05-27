@@ -37,7 +37,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <searchBar contentMode="redraw" placeholder="Search for diseases" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g4d-UC-TIt">
+                            <searchBar contentMode="redraw" placeholder="Search" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g4d-UC-TIt">
                                 <rect key="frame" x="0.0" y="88" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -454,16 +454,32 @@
                                     <segue destination="xHO-5A-7f3" kind="show" id="FPC-GU-hdN"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="taa-hO-mzN">
+                                <rect key="frame" x="50" y="716" width="314" height="46"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Explore More">
+                                    <color key="titleColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="exploreButton:" destination="DVU-ys-H6N" eventType="touchUpInside" id="ell-dt-qCv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="taa-hO-mzN" firstAttribute="leading" secondItem="u11-4K-2Dx" secondAttribute="leading" constant="50" id="6dl-Pc-IBl"/>
+                            <constraint firstItem="u11-4K-2Dx" firstAttribute="bottom" secondItem="taa-hO-mzN" secondAttribute="bottom" constant="100" id="OSm-b9-frn"/>
+                            <constraint firstItem="u11-4K-2Dx" firstAttribute="trailing" secondItem="taa-hO-mzN" secondAttribute="trailing" constant="50" id="UNZ-XD-QbT"/>
                             <constraint firstItem="u11-4K-2Dx" firstAttribute="trailing" secondItem="8Rq-BV-hFR" secondAttribute="trailing" constant="50" id="YTW-8N-fvp"/>
+                            <constraint firstItem="taa-hO-mzN" firstAttribute="centerX" secondItem="PJh-IC-C6a" secondAttribute="centerX" id="cgW-9o-3GK"/>
                             <constraint firstItem="8Rq-BV-hFR" firstAttribute="top" secondItem="u11-4K-2Dx" secondAttribute="top" constant="25" id="wnE-n2-46r"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="u11-4K-2Dx"/>
                     </view>
                     <navigationItem key="navigationItem" id="0E6-d2-YT0"/>
                     <connections>
+                        <outlet property="exploreButt" destination="taa-hO-mzN" id="rJu-Kp-BQv"/>
                         <outlet property="nextAction" destination="8Rq-BV-hFR" id="YlV-px-GvL"/>
                     </connections>
                 </viewController>
@@ -1553,8 +1569,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search for the crop" showsCancelButton="YES" id="4b0-Sy-8gg">
-                            <rect key="frame" x="0.0" y="0.0" width="786" height="44"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search for Plant" showsCancelButton="YES" id="4b0-Sy-8gg">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
@@ -2652,6 +2668,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="0BZ-rP-Cky"/>
-        <segue reference="DcB-GX-sFl"/>
+        <segue reference="moI-cp-Hmg"/>
     </inferredMetricsTieBreakers>
 </document>
