@@ -31,7 +31,7 @@ class DiseaseListViewController: UIViewController,UITableViewDataSource, UITable
         return diseaseCell
     }
     
-   
+    
     
     ///Virables in the Class
     var crop:String = ""
@@ -46,20 +46,20 @@ class DiseaseListViewController: UIViewController,UITableViewDataSource, UITable
         
         self.diseaseTable.delegate = self
         self.diseaseTable.dataSource = self
-         shownDiseases = [DiseaseOfCrops]()
+        shownDiseases = [DiseaseOfCrops]()
         let DiseasesList = databaseController!.diseaseList
-               for disease in DiseasesList
-               {
-                if disease.crop.uppercased() == crop.uppercased()
-
-                    {
-                        shownDiseases.append(disease)
-                    }
-                }
-
-            diseaseTable.reloadData()
+        for disease in DiseasesList
+        {
+            if disease.crop.uppercased() == crop.uppercased()
+                
+            {
+                shownDiseases.append(disease)
+            }
+        }
         
-            navigationItem.title = crop + " diseases"
+        diseaseTable.reloadData()
+        
+        navigationItem.title = crop + " diseases"
     }
     
     @IBOutlet weak var diseaseTable: UITableView!
@@ -68,7 +68,7 @@ class DiseaseListViewController: UIViewController,UITableViewDataSource, UITable
     var diseaseDescription:String = ""
     /// Function of navigate to view the detail of disease
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     
+        
         if segue.identifier == "SelectDiseaseSegue"
         { let indexPath = self.diseaseTable.indexPathForSelectedRow
             selectDisease = shownDiseases[indexPath!.row].name
@@ -83,7 +83,7 @@ class DiseaseListViewController: UIViewController,UITableViewDataSource, UITable
         
         
     }
-   
+    
     
     
     

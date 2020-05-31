@@ -28,49 +28,49 @@ class ChangeUserLocationViewController: UIViewController, DatabaseListener,MKMap
     func onUserChange(change: DatabaseChange, users: [User]) {
         LocationList = [LocationAnnotation]()
         let currentUserId = userDefaultController?.retrieveUserId()
-              for user in users
-                   {
-                       if user.userId == currentUserId{
-                       let lat = Double(user.farmLat)
-                       let long = Double(user.farmLong)
-              
-                        self.LocationList.append(LocationAnnotation(newTitle: user.farmLocationName, lat: lat!, long: long!))
-                       }
-                   }
+        for user in users
+        {
+            if user.userId == currentUserId{
+                let lat = Double(user.farmLat)
+                let long = Double(user.farmLong)
+                
+                self.LocationList.append(LocationAnnotation(newTitle: user.farmLocationName, lat: lat!, long: long!))
+            }
+        }
         if LocationList.first?.coordinate == nil
-                {
-                    self.searchBar.placeholder = "Enter suburb or pincode of garden location"
-                    self.UIBtn.setTitle("Add", for:.normal)
-                  
-                }
-                else
-                {
-                    mapView.removeAnnotations(mapView.annotations)
-                    self.searchBar.placeholder = "Enter suburb or pincode of garden location"
-                    self.UIBtn.setTitle("Change", for:.normal)
-
-                    self.mapView.addAnnotations(LocationList)
-                    self.focusOn(annotation: LocationList.first!)
-                   
-                    
-                             }
+        {
+            self.searchBar.placeholder = "Enter suburb or pincode of garden location"
+            self.UIBtn.setTitle("Add", for:.normal)
+            
+        }
+        else
+        {
+            mapView.removeAnnotations(mapView.annotations)
+            self.searchBar.placeholder = "Enter suburb or pincode of garden location"
+            self.UIBtn.setTitle("Change", for:.normal)
+            
+            self.mapView.addAnnotations(LocationList)
+            self.focusOn(annotation: LocationList.first!)
+            
+            
+        }
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        
         databaseController?.addListener(listener: self)
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         databaseController?.removeListener(listener: self)
     }
-   
     
-   var searchSource: [String] = []
+    
+    var searchSource: [String] = []
     var australiaSource: [String] = []
-
+    
     @IBOutlet weak var introLabel: UILabel!
     var LocationList = [LocationAnnotation]()
     
@@ -81,9 +81,9 @@ class ChangeUserLocationViewController: UIViewController, DatabaseListener,MKMap
     ///Settings of this Mapview, Tableview, searchbar and buttons
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-     userDefaultController = appDelegate.userDefaultController
+        userDefaultController = appDelegate.userDefaultController
         databaseController = appDelegate.databaseController
         
         self.mapView.delegate = self
@@ -91,8 +91,8 @@ class ChangeUserLocationViewController: UIViewController, DatabaseListener,MKMap
         self.UIBtn.backgroundColor = UIColor(hexString: "#616163")
         self.continueUIBtn.backgroundColor = UIColor(hexString: "#616163")
         self.continueUIBtn.layer.cornerRadius = 8.0
-//        self.locationText.addTarget(self, action: #selector(self.textFieldDidChange(sender:)), for: UIControl.Event.editingChanged)
-//        self.locationText.delegate = self
+        //        self.locationText.addTarget(self, action: #selector(self.textFieldDidChange(sender:)), for: UIControl.Event.editingChanged)
+        //        self.locationText.delegate = self
         
         self.searchList.layer.cornerRadius = 8.0
         self.searchList.dataSource = self
@@ -103,93 +103,93 @@ class ChangeUserLocationViewController: UIViewController, DatabaseListener,MKMap
         let zoomRegion = MKCoordinateRegion(center: Australia.coordinate, latitudinalMeters: 3000000,longitudinalMeters: 4000000)
         mapView.setRegion(zoomRegion, animated: true)
         newUserId = (self.userDefaultController?.generateUniqueUserId())!
-       
+        
         self.searchCompleter.delegate = self
         self.searchCompleter.region = mapView.region
-self.searchBar[keyPath:\.searchTextField].font = UIFont(name: "SFProText-Regular", size: 12.0) ?? UIFont.boldSystemFont(ofSize: 12.0)
+        self.searchBar[keyPath:\.searchTextField].font = UIFont(name: "SFProText-Regular", size: 12.0) ?? UIFont.boldSystemFont(ofSize: 12.0)
         self.searchBar.delegate = self
-       
-    
-   
         
         
-    
+        
+        
+        
+        
     }
-   var searchCompleter = MKLocalSearchCompleter()
-
-   var searchResults = [MKLocalSearchCompletion]()
+    var searchCompleter = MKLocalSearchCompleter()
+    
+    var searchResults = [MKLocalSearchCompletion]()
     
     
     @IBOutlet weak var searchBar: UISearchBar!
     
     
     
-//    @objc func textFieldDidChange(sender:UITextField)
-//    {   australiaMarks = []
-//        let address = self.locationText.text
-//        let geoCoder = CLGeocoder()
-//        geoCoder.geocodeAddressString(address!)
-//        {(placemarks,error) in
-//            guard
-//
-//                let markList = placemarks
-//           else
-//            {
-//                self.searchList.isHidden = true
-//                return
-//               }
-//
-//            for mark in markList
-//            {
-//                if mark.country == "Australia"
-//                {
-//                        self.australiaMarks.append(mark)
-//
-//                }
-//
-//
-//            }
-//            print(self.australiaMarks.count)
-//            if self.australiaMarks.count != 0{
-//             self.searchList.reloadData()
-//                self.searchList.isHidden = false
-//
-//            }
-//            else {
-//                self.searchList.isHidden = true
-//
-//            }
-//        }
-//       }
-//
-//    func textFieldShouldClear(_ textField: UITextField) -> Bool {
-//
-//
-//        self.searchList.isHidden = true
-//       self.locationText.endEditing(true)
-//       return true
-//    }
-   
+    //    @objc func textFieldDidChange(sender:UITextField)
+    //    {   australiaMarks = []
+    //        let address = self.locationText.text
+    //        let geoCoder = CLGeocoder()
+    //        geoCoder.geocodeAddressString(address!)
+    //        {(placemarks,error) in
+    //            guard
+    //
+    //                let markList = placemarks
+    //           else
+    //            {
+    //                self.searchList.isHidden = true
+    //                return
+    //               }
+    //
+    //            for mark in markList
+    //            {
+    //                if mark.country == "Australia"
+    //                {
+    //                        self.australiaMarks.append(mark)
+    //
+    //                }
+    //
+    //
+    //            }
+    //            print(self.australiaMarks.count)
+    //            if self.australiaMarks.count != 0{
+    //             self.searchList.reloadData()
+    //                self.searchList.isHidden = false
+    //
+    //            }
+    //            else {
+    //                self.searchList.isHidden = true
+    //
+    //            }
+    //        }
+    //       }
+    //
+    //    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+    //
+    //
+    //        self.searchList.isHidden = true
+    //       self.locationText.endEditing(true)
+    //       return true
+    //    }
     
     
     
     
     
-      
+    
+    
     
     @IBOutlet weak var searchList: UITableView!
-   /// Zoom in the annotation added in the Mapview
+    /// Zoom in the annotation added in the Mapview
     func focusOn(annotation:MKAnnotation){
         
         let zoomRegion =  MKCoordinateRegion(center: annotation.coordinate,latitudinalMeters:2000,longitudinalMeters: 2000)
         mapView.setRegion(mapView.regionThatFits(zoomRegion), animated:true)
     }
-
-   
+    
+    
     @IBOutlet weak var continueUIBtn: UIButton!
     var resultList = [String]()
     @IBOutlet weak var UIBtn: UIButton!
-   
+    
     var australiaMarks = [CLPlacemark]()
     /// Function of the change button to change and add location
     @IBAction func ChangeBtn(_ sender: Any) {
@@ -197,91 +197,91 @@ self.searchBar[keyPath:\.searchTextField].font = UIFont(name: "SFProText-Regular
         let address = self.searchBar.text
         if address!.isEmpty
         {
-           self.searchBar.endEditing(true)
+            self.searchBar.endEditing(true)
             displayMessage(title: "Empty", message: "Invalid values!")
             
         }
         else
         {
             ///convert to coordinate
-        let currentUserId = userDefaultController?.retrieveUserId()
-        let geoCoder = CLGeocoder()
-        geoCoder.geocodeAddressString(address!)
-        {(placemarks,error) in
-            guard
-            
-                let markList = placemarks
-           
-                
-            else
-            {
-                self.displayMessage(title: "Invalid Location!", message: "Please enter an valid location!")
-                return}
-            
-            self.australiaMarks = []
-            for mark in markList
-            {
-                if mark.country == "Australia"
+            let currentUserId = userDefaultController?.retrieveUserId()
+            let geoCoder = CLGeocoder()
+            geoCoder.geocodeAddressString(address!)
+            {(placemarks,error) in
+                guard
+                    
+                    let markList = placemarks
+                    
+                    
+                    else
                 {
-                    self.australiaMarks.append(mark)
+                    self.displayMessage(title: "Invalid Location!", message: "Please enter an valid location!")
+                    return}
+                
+                self.australiaMarks = []
+                for mark in markList
+                {
+                    if mark.country == "Australia"
+                    {
+                        self.australiaMarks.append(mark)
+                        
+                    }
+                    
                     
                 }
                 
-                
-            }
-                      
-            if self.australiaMarks.count != 0{
-           
-            let result = self.australiaMarks.first
-                                     
-                                     
-                                     
-            let location = LocationAnnotation(newTitle: "New farm", lat: (result?.location!.coordinate.latitude)!, long: (result?.location!.coordinate.longitude)!)
-            let lat = String(location.coordinate.latitude)
-            let long = String(location.coordinate.longitude)
-            if self.LocationList.count == 0
-            {
-              
-                          
-                let newUser = User(userId: self.newUserId, userName: "TestUser", farmLocationName: "New farm", farmLat: lat, farmLong: long)
-                     
-                     /// Firebase Update
-                let successStatus = self.databaseController?.insertNewUserToFirebase(user: newUser)
-                     if successStatus! {
-                        self.userDefaultController?.assignName(name: newUser.userName)
+                if self.australiaMarks.count != 0{
+                    
+                    let result = self.australiaMarks.first
+                    
+                    
+                    
+                    let location = LocationAnnotation(newTitle: "New farm", lat: (result?.location!.coordinate.latitude)!, long: (result?.location!.coordinate.longitude)!)
+                    let lat = String(location.coordinate.latitude)
+                    let long = String(location.coordinate.longitude)
+                    if self.LocationList.count == 0
+                    {
+                        
+                        
+                        let newUser = User(userId: self.newUserId, userName: "TestUser", farmLocationName: "New farm", farmLat: lat, farmLong: long)
+                        
+                        /// Firebase Update
+                        let successStatus = self.databaseController?.insertNewUserToFirebase(user: newUser)
+                        if successStatus! {
+                            self.userDefaultController?.assignName(name: newUser.userName)
+                            self.displayMessage(title: "Location saved", message: "Successfully!")
+                            self.userDefaultController?.assignCLLocation(lat: lat, long: long)
+                        }
+                        
+                        
+                    }else{
+                        self.databaseController!.updateLocation(userId:currentUserId!, lat: lat ,locationName: "New farm", long: long)
+                        
                         self.displayMessage(title: "Location saved", message: "Successfully!")
                         self.userDefaultController?.assignCLLocation(lat: lat, long: long)
+                        
+                        
+                    }
+                    
+                }else
+                {
+                    
+                    self.displayMessage(title: "Warning!", message: "Please enter the locations in Australia!")
+                    
                 }
-                
-                
-            }else{
-               self.databaseController!.updateLocation(userId:currentUserId!, lat: lat ,locationName: "New farm", long: long)
-
-                    self.displayMessage(title: "Location saved", message: "Successfully!")
-                    self.userDefaultController?.assignCLLocation(lat: lat, long: long)
-                
-                
-                }
-                
-            }else
-            {
-                
-                self.displayMessage(title: "Warning!", message: "Please enter the locations in Australia!")
-                
             }
-            }
-    
-            }
-                
+            
+        }
         
-     
+        
+        
     }
-  
+    
     @IBOutlet weak var mapView: MKMapView!
     
-  ///Continue button to set default location
+    ///Continue button to set default location
     @IBAction func continueBtn(_ sender: Any) {
-       
+        
         if self.LocationList.count == 0
         {
             
@@ -289,84 +289,84 @@ self.searchBar[keyPath:\.searchTextField].font = UIFont(name: "SFProText-Regular
             let lat:String = "-37.8136"
             let long:String = "144.9631"
             let newUser = User(userId: self.newUserId, userName: "TestUser", farmLocationName: "New farm", farmLat: lat, farmLong: long)
-                               
-                               // default user
-                          let successStatus = self.databaseController?.insertNewUserToFirebase(user: newUser)
-                               if successStatus! {
-                                self.userDefaultController?.assignName(name: newUser.userName)
-                                self.userDefaultController?.assignCLLocation(lat: lat, long: long)
-                          }
+            
+            // default user
+            let successStatus = self.databaseController?.insertNewUserToFirebase(user: newUser)
+            if successStatus! {
+                self.userDefaultController?.assignName(name: newUser.userName)
+                self.userDefaultController?.assignCLLocation(lat: lat, long: long)
+            }
             
             
         }
-         
+        
         
         
     }
-//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-//
-//
-//
-//
-//            let reuseId = "test"
-//
-//        var anView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId)
-//            if anView == nil {
-//                anView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-//
-//                anView?.canShowCallout = true
-//
-//
-//                let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-//                imageView.image = UIImage(named: "anthracnose.jpg")
-//                imageView.layer.cornerRadius = imageView.layer.frame.size.width / 2
-//                imageView.layer.masksToBounds = true
-//                anView?.frame = imageView.frame
-//                anView?.addSubview(imageView)
-//            }
-//
-//
-//
-//                       return anView
-//    }
+    //    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+    //
+    //
+    //
+    //
+    //            let reuseId = "test"
+    //
+    //        var anView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId)
+    //            if anView == nil {
+    //                anView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+    //
+    //                anView?.canShowCallout = true
+    //
+    //
+    //                let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+    //                imageView.image = UIImage(named: "anthracnose.jpg")
+    //                imageView.layer.cornerRadius = imageView.layer.frame.size.width / 2
+    //                imageView.layer.masksToBounds = true
+    //                anView?.frame = imageView.frame
+    //                anView?.addSubview(imageView)
+    //            }
+    //
+    //
+    //
+    //                       return anView
+    //    }
     
     
     ///Drag map function
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         if self.UIBtn.titleLabel?.text == "Change"{
-        self.mapView.removeAnnotations(mapView.annotations)
-
-           // Add new annotation
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = mapView.centerCoordinate
-        annotation.title = self.LocationList.first?.title
-        self.mapView.addAnnotation(annotation)
-        let lat = annotation.coordinate.latitude
-        let long = annotation.coordinate.longitude
-        let address = CLGeocoder.init()
-        // convert to text
-        address.reverseGeocodeLocation(CLLocation.init(latitude: lat, longitude:long)) { (placemarks, error) in
-            if error == nil{
-                  let pm = placemarks! as [CLPlacemark]
-
-                            if pm.count > 0 {
-                                let pm = placemarks![0]
-//                                print(pm.country)
-//                                print(pm.locality)
-//                                print(pm.subLocality)
-//                                print(pm.thoroughfare)
-//                                print(pm.postalCode)
-//                                print(pm.subThoroughfare)
-                                
-                                let addressString = self.convertToString(location: pm)
-                              
-                                
-                                self.searchBar.text = addressString
-            }
-          
-            }
+            self.mapView.removeAnnotations(mapView.annotations)
             
-        }
+            // Add new annotation
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = mapView.centerCoordinate
+            annotation.title = self.LocationList.first?.title
+            self.mapView.addAnnotation(annotation)
+            let lat = annotation.coordinate.latitude
+            let long = annotation.coordinate.longitude
+            let address = CLGeocoder.init()
+            // convert to text
+            address.reverseGeocodeLocation(CLLocation.init(latitude: lat, longitude:long)) { (placemarks, error) in
+                if error == nil{
+                    let pm = placemarks! as [CLPlacemark]
+                    
+                    if pm.count > 0 {
+                        let pm = placemarks![0]
+                        //                                print(pm.country)
+                        //                                print(pm.locality)
+                        //                                print(pm.subLocality)
+                        //                                print(pm.thoroughfare)
+                        //                                print(pm.postalCode)
+                        //                                print(pm.subThoroughfare)
+                        
+                        let addressString = self.convertToString(location: pm)
+                        
+                        
+                        self.searchBar.text = addressString
+                    }
+                    
+                }
+                
+            }
         }
     }
     
@@ -384,33 +384,33 @@ self.searchBar[keyPath:\.searchTextField].font = UIFont(name: "SFProText-Regular
         self.present(alertController,animated: true,completion: nil)
         
     }
-
-  
-
-
-
+    
+    
+    
+    
+    
 }
 
 extension ChangeUserLocationViewController: UITableViewDelegate, UITableViewDataSource
 {/// Setting of tableview of relevant search results
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return australiaSource.count ?? 0
-        }
-
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            //I've created SearchCell beforehand; it might be your cell type
-            let cell = searchList.dequeueReusableCell(withIdentifier: "relevantLocations", for: indexPath) as! relevantLocationsTableViewCell
-
-            cell.searchResult.text = self.australiaSource[indexPath.row]
-   
-
-            return cell
-        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //I've created SearchCell beforehand; it might be your cell type
+        let cell = searchList.dequeueReusableCell(withIdentifier: "relevantLocations", for: indexPath) as! relevantLocationsTableViewCell
+        
+        cell.searchResult.text = self.australiaSource[indexPath.row]
+        
+        
+        return cell
+    }
     
     
     
     
-     
+    
     
     
     /// Function to convert placemark to string address
@@ -419,43 +419,43 @@ extension ChangeUserLocationViewController: UITableViewDelegate, UITableViewData
         var addressString : String = ""
         
         if location.subThoroughfare != nil {
-                                            addressString = addressString + location.subThoroughfare! + ", "
-                                                      }
+            addressString = addressString + location.subThoroughfare! + ", "
+        }
         if location.subLocality != nil {
-                                           addressString = addressString + location.subLocality! + ", "
-                                       }
+            addressString = addressString + location.subLocality! + ", "
+        }
         if location.thoroughfare != nil {
-                                           addressString = addressString + location.thoroughfare! + ", "
-                                       }
-                                      
+            addressString = addressString + location.thoroughfare! + ", "
+        }
+        
         if location.locality != nil {
-                                           addressString = addressString + location.locality! + ", "
-                                       }
+            addressString = addressString + location.locality! + ", "
+        }
         if location.postalCode != nil {
-                                           addressString = addressString + location.postalCode! + ", "
-                                       }
+            addressString = addressString + location.postalCode! + ", "
+        }
         if location.country != nil {
-                                           addressString = addressString + location.country!
-                                       }
+            addressString = addressString + location.country!
+        }
         return addressString
         
         
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-       
-
+        
+        
+        
         let selectedLocation = australiaSource[indexPath.row]
         
         self.searchBar.text = selectedLocation
         self.searchBar.endEditing(true)
-            
-    
+        
+        
         searchList.isHidden = true
-        }
-
+    }
     
-
+    
+    
     
     
     
@@ -471,7 +471,7 @@ extension ChangeUserLocationViewController: MKLocalSearchCompleterDelegate {
             self.searchList.reloadData()
         }
     }
-
+    
     func completer(_ completer: MKLocalSearchCompleter, didFailWithError error: Error) {
         //handle the error
         print(error.localizedDescription)

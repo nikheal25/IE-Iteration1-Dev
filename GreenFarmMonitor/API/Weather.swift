@@ -21,11 +21,11 @@ class Weather: NSObject {
         self.mintemp = mintemp
         self.date = date
         self.precip = precip
-
+        
         self.precipProb = precipProb
-
+        
         self.lat = lat
         self.long = long
-
+        
     }
 }

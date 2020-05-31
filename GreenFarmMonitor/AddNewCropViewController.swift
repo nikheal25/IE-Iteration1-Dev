@@ -13,7 +13,7 @@ class AddNewCropViewController: UIViewController, DatabaseListener{
         
     }		
     
-   
+    
     func onDiseaseOfCropsChange(change: DatabaseChange, diseaseOfCrops: [DiseaseOfCrops]) {
         
     }
@@ -22,7 +22,7 @@ class AddNewCropViewController: UIViewController, DatabaseListener{
         
     }
     
-   
+    
     var listenerType: ListenerType = ListenerType.all // listener
     weak var databaseController: DatabaseProtocol?
     weak var userDefaultController: UserdefaultsProtocol?
@@ -48,7 +48,7 @@ class AddNewCropViewController: UIViewController, DatabaseListener{
         userDefaultController = appDelegate.userDefaultController
         databaseController = appDelegate.databaseController
         
-   tableView.tableFooterView = UIView()
+        tableView.tableFooterView = UIView()
         allCropsName = getRelevantCrops()
         
         searchBar.delegate = self
@@ -56,11 +56,11 @@ class AddNewCropViewController: UIViewController, DatabaseListener{
         self.hideKeyboardWhenTappedAround() 
     }
     
-
+    
     func numberOfSections(in tableView: UITableView) -> Int {
-           return 2
-       }
-
+        return 2
+    }
+    
     func onUserCropRelationChange(change: DatabaseChange, userCropRelation: [UserCropRelation]){
         
     }
@@ -76,19 +76,19 @@ class AddNewCropViewController: UIViewController, DatabaseListener{
         }
         return tempList
     }
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addThatCropSegue" {
-//            let destination = segue.destination as! DetailOfTheCropViewController
-//            destination.specificCrop = allCropsName[selectedRow]
-//            destination.newCrop = true
+            //            let destination = segue.destination as! DetailOfTheCropViewController
+            //            destination.specificCrop = allCropsName[selectedRow]
+            //            destination.newCrop = true
         }
         if segue.identifier == "specificCropSegue" {
-                   let destination = segue.destination as! DetailNewCropViewController
-                   destination.specificCrop = allCropsName[selectedRow]
-               }
+            let destination = segue.destination as! DetailNewCropViewController
+            destination.specificCrop = allCropsName[selectedRow]
+        }
     }
-
+    
 }
 
 extension AddNewCropViewController: UITableViewDelegate, UITableViewDataSource {
@@ -111,41 +111,41 @@ extension AddNewCropViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
         if searching {
             if indexPath.section == SECTION_ACTIVITY {
-                                            let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ACTIVITY, for: indexPath) as! MyCropCellTableViewCell
-//                                            cell.textLabel?.text = searchedCountry[indexPath.row]
+                let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ACTIVITY, for: indexPath) as! MyCropCellTableViewCell
+                //                                            cell.textLabel?.text = searchedCountry[indexPath.row]
                 cell.cellView.layer.cornerRadius = cell.cellView.frame.height / 2
                 cell.cropImageView.layer.cornerRadius = cell.cropImageView.layer.frame.height / 2
                 cell.setCell(crop: searchedCrop[indexPath.row], opened: false)
-                                            return cell
-                                        }
-                                        let cell = tableView.dequeueReusableCell(withIdentifier: CELL_COUNT, for: indexPath)
+                return cell
+            }
+            let cell = tableView.dequeueReusableCell(withIdentifier: CELL_COUNT, for: indexPath)
             cell.textLabel?.text = "\(searchedCrop.count) total crops in the list"
-                                        cell.selectionStyle = .none
-                                        return cell
+            cell.selectionStyle = .none
+            return cell
         } else {
-             if indexPath.section == SECTION_ACTIVITY {
-                                 let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ACTIVITY, for: indexPath) as! MyCropCellTableViewCell
-//                cell.textLabel?.text = allCropsName[indexPath.row].cropName
+            if indexPath.section == SECTION_ACTIVITY {
+                let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ACTIVITY, for: indexPath) as! MyCropCellTableViewCell
+                //                cell.textLabel?.text = allCropsName[indexPath.row].cropName
                 cell.setCell(crop: allCropsName[indexPath.row], opened: false)
-                                 return cell
-                             }
-                             let cell = tableView.dequeueReusableCell(withIdentifier: CELL_COUNT, for: indexPath)
-                            cell.textLabel?.text = "\(allCropsName.count) total crops in the list"
-                             cell.selectionStyle = .none
-                             return cell
+                return cell
+            }
+            let cell = tableView.dequeueReusableCell(withIdentifier: CELL_COUNT, for: indexPath)
+            cell.textLabel?.text = "\(allCropsName.count) total crops in the list"
+            cell.selectionStyle = .none
+            return cell
         }
         return cell!
     }
     
     //This method gets called when any cell is selected by the user
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-          if indexPath.section == SECTION_ACTIVITY{
-              selectedRow = indexPath.row
-              tableView.deselectRow(at: indexPath, animated: true)
-              self.performSegue(withIdentifier: "specificCropSegue", sender: self)
-          }
-     
-      }
+        if indexPath.section == SECTION_ACTIVITY{
+            selectedRow = indexPath.row
+            tableView.deselectRow(at: indexPath, animated: true)
+            self.performSegue(withIdentifier: "specificCropSegue", sender: self)
+        }
+        
+    }
     
     
 }
@@ -164,7 +164,7 @@ extension AddNewCropViewController: UISearchBarDelegate {
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        searchedCountry = allCropsName.filter({$0.lowercased().prefix(searchText.count) == searchText.lowercased()})
+        //        searchedCountry = allCropsName.filter({$0.lowercased().prefix(searchText.count) == searchText.lowercased()})
         searchedCrop = filterCells(term: searchText)
         searching = true
         tableView.reloadData()
@@ -184,7 +184,7 @@ extension UIViewController {
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
-
+    
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }

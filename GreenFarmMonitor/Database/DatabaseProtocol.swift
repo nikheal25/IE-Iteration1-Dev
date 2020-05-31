@@ -22,7 +22,7 @@ enum ListenerType {
 }
 protocol DatabaseListener: AnyObject {
     var listenerType: ListenerType {get set}
-  func onDiseaseOfCropsChange(change: DatabaseChange, diseaseOfCrops:[DiseaseOfCrops])
+    func onDiseaseOfCropsChange(change: DatabaseChange, diseaseOfCrops:[DiseaseOfCrops])
     func onCropsChange(change: DatabaseChange, crops: [Crop])
     func onUserCropRelationChange(change: DatabaseChange, userCropRelation: [UserCropRelation])
     func onUserChange(change: DatabaseChange, users: [User])
@@ -30,9 +30,9 @@ protocol DatabaseListener: AnyObject {
 protocol DatabaseProtocol: AnyObject {
     var cropsList: [Crop] {get}
     var userCropRelation: [UserCropRelation] {get}
-   var diseaseList: [DiseaseOfCrops] {get}
+    var diseaseList: [DiseaseOfCrops] {get}
     var userList: [User] {get}
-
+    
     func insertNewUserToFirebase(user: User) -> Bool
     func updateMyCropList(new: Bool, userId: String, cropId: String)
     func addListener(listener: DatabaseListener)

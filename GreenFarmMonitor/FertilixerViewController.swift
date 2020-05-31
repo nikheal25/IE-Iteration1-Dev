@@ -9,7 +9,7 @@
 import UIKit
 
 class FertilixerViewController: UIViewController {
-
+    
     var specificCrop: Crop?
     
     @IBOutlet var mainView: UIView!

@@ -26,7 +26,7 @@ class DemoTableViewCell: FoldingCell {
     @IBOutlet weak var bottomMostLabel: UILabel!
     
     @IBOutlet weak var barView: UIView!
-//    @IBOutlet weak var compatibleButton: UIButton!
+    //    @IBOutlet weak var compatibleButton: UIButton!
     @IBOutlet weak var newButton: UIButton!
     
     @IBOutlet weak var cropImage: UIImageView!
@@ -106,9 +106,9 @@ class DemoTableViewCell: FoldingCell {
     }
     
     @IBAction func compatibleButton(_ sender: Any) {
-                databaseController?.updateMyCropList(new: true, userId: (userDefaultController?.retrieveUserId())!, cropId: specificCrop!.cropId)
-                databaseController?.updateMyCropList(new: true, userId: (userDefaultController?.retrieveUserId())!, cropId: companionCrop!.cropId)
-                selectionDelegate.didAddCrop()
+        databaseController?.updateMyCropList(new: true, userId: (userDefaultController?.retrieveUserId())!, cropId: specificCrop!.cropId)
+        databaseController?.updateMyCropList(new: true, userId: (userDefaultController?.retrieveUserId())!, cropId: companionCrop!.cropId)
+        selectionDelegate.didAddCrop()
         print("working \(companionCrop?.cropName)")
     }
     @IBAction func clickAddCropButton(_ sender: Any) {
@@ -116,16 +116,16 @@ class DemoTableViewCell: FoldingCell {
         selectionDelegate.didAddCrop()
         //self.navigationController?.popToRootViewController(animated: true)
     }
-//
-//    @IBAction func compatibleButtonPressed(_ sender: Any) {
-//        databaseController?.updateMyCropList(new: true, userId: (userDefaultController?.retrieveUserId())!, cropId: specificCrop!.cropId)
-//        databaseController?.updateMyCropList(new: true, userId: (userDefaultController?.retrieveUserId())!, cropId: companionCrop!.cropId)
-//        selectionDelegate.didAddCrop()
-//    }
-//
+    //
+    //    @IBAction func compatibleButtonPressed(_ sender: Any) {
+    //        databaseController?.updateMyCropList(new: true, userId: (userDefaultController?.retrieveUserId())!, cropId: specificCrop!.cropId)
+    //        databaseController?.updateMyCropList(new: true, userId: (userDefaultController?.retrieveUserId())!, cropId: companionCrop!.cropId)
+    //        selectionDelegate.didAddCrop()
+    //    }
+    //
     
     @objc func buttonAction(sender: UIButton!) {
-      print("Button tapped \(companionCrop?.cropName)")
+        print("Button tapped \(companionCrop?.cropName)")
     }
     
     override func animationDuration(_ itemIndex: NSInteger, type _: FoldingCell.AnimationType) -> TimeInterval {

@@ -28,7 +28,7 @@ class PopOverViewController: UIViewController {
     var filterSelectedDelegate: filterDelgate!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -44,9 +44,9 @@ class PopOverViewController: UIViewController {
         }
     }
     
-
+    
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "filterSegue" {
@@ -61,7 +61,7 @@ class PopOverViewController: UIViewController {
             destination.sortSeletionDelegate = self
         }
     }
-
+    
 }
 
 extension PopOverViewController: filterSelectionDelgate, sortSelectionDelgate {

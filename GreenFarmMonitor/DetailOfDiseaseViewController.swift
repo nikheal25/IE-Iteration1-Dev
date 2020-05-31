@@ -9,7 +9,7 @@
 import UIKit
 
 class DetailOfDiseaseViewController: UIViewController {
- 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.imageView.layer.cornerRadius = 15
@@ -47,19 +47,19 @@ class DetailOfDiseaseViewController: UIViewController {
         if name.isEmpty == false && image.isEmpty == false
         {
             let Image = UIImage(named: image)
-                   if Image == nil
-                   {
-                    DiseaseImage.image = UIImage(named: "not-found")
-                   }else{
-                       DiseaseImage.image = Image}
+            if Image == nil
+            {
+                DiseaseImage.image = UIImage(named: "not-found")
+            }else{
+                DiseaseImage.image = Image}
             
             DescriptionLabel.text = detail
             DescriptionLabel.sizeToFit()
-          
-           
+            
+            
         }
         
     }
- 
-
+    
+    
 }

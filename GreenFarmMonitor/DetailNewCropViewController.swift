@@ -9,7 +9,7 @@
 import UIKit
 
 class DetailNewCropViewController: UIViewController {
-
+    
     var specificCrop: Crop?
     weak var userDefaultController: UserdefaultsProtocol?
     weak var databaseController: DatabaseProtocol?
@@ -17,7 +17,7 @@ class DetailNewCropViewController: UIViewController {
     @IBOutlet weak var cropImage: UIImageView!
     @IBOutlet weak var detailLabel: UILabel!
     
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,15 +30,15 @@ class DetailNewCropViewController: UIViewController {
         databaseController = appDelegate.databaseController
     }
     
-
+    
     //This method shows a pop up informing changes in the information
     func showMessage(tittle: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action: UIAlertAction!) in
-        print("Handle Add Logic here")
+            print("Handle Add Logic here")
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
-        print("Handle Cancel Logic here")
+            print("Handle Cancel Logic here")
         }))
         self.present(alert, animated: true, completion: nil)
     }
@@ -48,13 +48,13 @@ class DetailNewCropViewController: UIViewController {
         _ = navigationController?.popToRootViewController(animated: true)
     }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

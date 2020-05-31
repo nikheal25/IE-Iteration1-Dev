@@ -32,21 +32,21 @@ class GrowMyCropTableViewCell: UITableViewCell {
         
         cropImageView.image = UIImage(named: crop.cropImage)
         
-//        self.growCropButton.layer.cornerRadius = 3
-//        self.growCropButton.layer.borderWidth = 1
-//        self.growCropButton.layer.borderColor = UIColor.black.cgColor
-       
+        //        self.growCropButton.layer.cornerRadius = 3
+        //        self.growCropButton.layer.borderWidth = 1
+        //        self.growCropButton.layer.borderColor = UIColor.black.cgColor
+        
         self.contentView.backgroundColor = UIColor(hexString: "#3A4F41")
         self.cellView.layer.cornerRadius = 8
         self.cellView.layer.shadowOpacity = 0.4
         self.cellView.layer.shadowRadius = 2
-
+        
         self.cropImageView.layer.cornerRadius = 6
         
         
         //MARK:- make image clickable
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(GrowMyCropTableViewCell.imageTapped(gesture:)))
-
+        
         // add it to the image view;
         arrowImage.addGestureRecognizer(tapGesture)
         // make sure imageView can be interacted with by user
@@ -60,9 +60,9 @@ class GrowMyCropTableViewCell: UITableViewCell {
             self.delegate.callSegueFromCell(crop: self.crop)
         }
     }
-            
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
-       
+        
     }
     
 }

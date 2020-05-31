@@ -9,19 +9,19 @@
 import UIKit
 
 class SubtitleTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var infoSubtileLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-    
+        
     }
     
     func setSubtule(isHidden: Bool) {
         infoSubtileLabel.isHidden = isHidden
     }
-
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//    }
-
+    
+    //    override func setSelected(_ selected: Bool, animated: Bool) {
+    //        super.setSelected(selected, animated: animated)
+    //    }
+    
 }

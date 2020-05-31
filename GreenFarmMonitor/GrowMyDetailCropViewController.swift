@@ -95,7 +95,7 @@ class GrowMyDetailCropViewController: UIViewController {
         mainView.backgroundColor = UIColor(hexString: "#3F6845")
         // Do any additional setup after loading the view.
     }
-
+    
     var selectCrop:String = ""
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "diseaseSegue"
