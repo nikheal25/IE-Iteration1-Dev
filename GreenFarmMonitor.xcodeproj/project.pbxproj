@@ -16,7 +16,6 @@
 		1D2FCB852445A2EF0024FFBB /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2FCB842445A2EF0024FFBB /* MulticastDelegate.swift */; };
 		1D2FCB872445A3110024FFBB /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2FCB862445A3110024FFBB /* FirebaseController.swift */; };
 		1D2FCB892445BB9F0024FFBB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D2FCB882445BB9F0024FFBB /* GoogleService-Info.plist */; };
-		1D4743DB2447ECA100866CEB /* DetailOfTheCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4743DA2447ECA100866CEB /* DetailOfTheCropViewController.swift */; };
 		1D4743DD24483F5E00866CEB /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4743DC24483F5E00866CEB /* OnboardingViewController.swift */; };
 		1D50297D243D90C100D4F426 /* UserdefaultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D50297C243D90C100D4F426 /* UserdefaultsController.swift */; };
 		1D502981243D919A00D4F426 /* UserdefaultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D502980243D919A00D4F426 /* UserdefaultsProtocol.swift */; };
@@ -46,7 +45,6 @@
 		1DE82CD124650E1B00EF54A6 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE82CD024650E1B00EF54A6 /* FilterViewController.swift */; };
 		1DE82CD32465303600EF54A6 /* SortByViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE82CD22465303600EF54A6 /* SortByViewController.swift */; };
 		1DFBCFC52446B63900DCC4B2 /* UserCropRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFBCFC42446B63900DCC4B2 /* UserCropRelation.swift */; };
-		1DFBCFC72446CBBC00DCC4B2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFBCFC62446CBBC00DCC4B2 /* LoginViewController.swift */; };
 		1DFBCFC92446CF4C00DCC4B2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFBCFC82446CF4C00DCC4B2 /* User.swift */; };
 		6992816D53F91886A2B7680D /* Pods_GreenFarmMonitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A122108DE2294E9FA457C053 /* Pods_GreenFarmMonitor.framework */; };
 		71835699E5530A901DEE4FB1 /* Pods_GreenFarmMonitorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F61D639F27E8DC5F2B99E811 /* Pods_GreenFarmMonitorTests.framework */; };
@@ -91,7 +89,6 @@
 		1D2FCB842445A2EF0024FFBB /* MulticastDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulticastDelegate.swift; sourceTree = "<group>"; };
 		1D2FCB862445A3110024FFBB /* FirebaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
 		1D2FCB882445BB9F0024FFBB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		1D4743DA2447ECA100866CEB /* DetailOfTheCropViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOfTheCropViewController.swift; sourceTree = "<group>"; };
 		1D4743DC24483F5E00866CEB /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		1D50297C243D90C100D4F426 /* UserdefaultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserdefaultsController.swift; sourceTree = "<group>"; };
 		1D502980243D919A00D4F426 /* UserdefaultsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserdefaultsProtocol.swift; sourceTree = "<group>"; };
@@ -127,7 +124,6 @@
 		1DE82CD024650E1B00EF54A6 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		1DE82CD22465303600EF54A6 /* SortByViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortByViewController.swift; sourceTree = "<group>"; };
 		1DFBCFC42446B63900DCC4B2 /* UserCropRelation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCropRelation.swift; sourceTree = "<group>"; };
-		1DFBCFC62446CBBC00DCC4B2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1DFBCFC82446CF4C00DCC4B2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		24C2FF36E3EE696890DBFDC0 /* Pods-GreenFarmMonitor-GreenFarmMonitorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreenFarmMonitor-GreenFarmMonitorUITests.debug.xcconfig"; path = "Target Support Files/Pods-GreenFarmMonitor-GreenFarmMonitorUITests/Pods-GreenFarmMonitor-GreenFarmMonitorUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5199DFB7DDCBF11918E71EB6 /* Pods-GreenFarmMonitor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreenFarmMonitor.release.xcconfig"; path = "Target Support Files/Pods-GreenFarmMonitor/Pods-GreenFarmMonitor.release.xcconfig"; sourceTree = "<group>"; };
@@ -278,8 +274,6 @@
 				E883C94924446A04006F6AC8 /* DetailOfDiseaseViewController.swift */,
 				1DDEE7F324449C46005BC7D8 /* MyCropMainTableViewCell.swift */,
 				E883C94724444BDB006F6AC8 /* DiseaseTableViewCell.swift */,
-				1DFBCFC62446CBBC00DCC4B2 /* LoginViewController.swift */,
-				1D4743DA2447ECA100866CEB /* DetailOfTheCropViewController.swift */,
 				E8FDFCA824470CED00143844 /* ChangeUserLocationViewController.swift */,
 				E8FDFCAA2447133F00143844 /* LocationAnnotation .swift */,
 				1D4743DC24483F5E00866CEB /* OnboardingViewController.swift */,
@@ -586,7 +580,6 @@
 				1DDEE7E5244443CD005BC7D8 /* AddNewCropViewController.swift in Sources */,
 				1DB74B3224603CF900530B81 /* WeatherAPI.swift in Sources */,
 				1D12428B245068B9001C6BAD /* GrowMyDetailCropViewController.swift in Sources */,
-				1D4743DB2447ECA100866CEB /* DetailOfTheCropViewController.swift in Sources */,
 				1DDEE7ED24448112005BC7D8 /* FirstViewController.swift in Sources */,
 				1DDEE7E724445EEC005BC7D8 /* DetailNewCropViewController.swift in Sources */,
 				1D502981243D919A00D4F426 /* UserdefaultsProtocol.swift in Sources */,
@@ -594,7 +587,6 @@
 				1D2FCB872445A3110024FFBB /* FirebaseController.swift in Sources */,
 				1DDEE7DF244433D3005BC7D8 /* MyCropTableViewController.swift in Sources */,
 				1DE4DB0224764DEA007938F6 /* SubtitleTableViewCell.swift in Sources */,
-				1DFBCFC72446CBBC00DCC4B2 /* LoginViewController.swift in Sources */,
 				1D94FF06244AC82700CB2F25 /* FoldingTableViewController.swift in Sources */,
 				1DE82CD32465303600EF54A6 /* SortByViewController.swift in Sources */,
 				1D879DE3246D0A39008261D0 /* GraphViewController.swift in Sources */,

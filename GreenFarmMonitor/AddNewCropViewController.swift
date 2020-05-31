@@ -79,9 +79,9 @@ class AddNewCropViewController: UIViewController, DatabaseListener{
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addThatCropSegue" {
-            let destination = segue.destination as! DetailOfTheCropViewController
-            destination.specificCrop = allCropsName[selectedRow]
-            destination.newCrop = true
+//            let destination = segue.destination as! DetailOfTheCropViewController
+//            destination.specificCrop = allCropsName[selectedRow]
+//            destination.newCrop = true
         }
         if segue.identifier == "specificCropSegue" {
                    let destination = segue.destination as! DetailNewCropViewController

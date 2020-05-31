@@ -344,9 +344,9 @@ class MyCropTableViewController: UITableViewController, DatabaseListener {
             destination.registeredCrop = deviceIDs
         }
         if segue.identifier == "newSpecificCrop" {
-            let destination = segue.destination as! DetailOfTheCropViewController
-            destination.specificCrop = myCropList[selectedRow]
-            destination.newCrop = false
+//            let destination = segue.destination as! DetailOfTheCropViewController
+//            destination.specificCrop = myCropList[selectedRow]
+//            destination.newCrop = false
         }
         
         if segue.identifier == "foldingSegue" {
