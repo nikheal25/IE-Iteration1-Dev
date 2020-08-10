@@ -1,0 +1,2 @@
+# IE-Iteration1-Dev
+MyGardenOz is an iOS-based mobile application that is built to support the farming community.  We aim at posing as a one-stop solution by providing the set of all the basic and essential requirements for farming a crop of their choice and also educating them of the diseases that might infect their crops, such that there can be careful monitoring and early detection based on the location-based recommendations and solutions, thereby promoting the well-being of the crop, the garden and the farmer.
