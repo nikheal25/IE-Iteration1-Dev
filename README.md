@@ -4,4 +4,5 @@ MyGardenOz is an iOS-based mobile application that is built to support the farmi
 ## Promo video
 [![Promo Video](http://img.youtube.com/vi/Tzktd5w51SM/0.jpg)](http://www.youtube.com/watch?v=Tzktd5w51SM)
 
-## Project development leads
+## Final Report
+[Final iteration report](https://drive.google.com/file/d/1LFWTelCJsTSpJ8deH9FwkXXMqyO3Ucfi/view?usp=sharing)
